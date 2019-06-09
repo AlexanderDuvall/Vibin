@@ -1,0 +1,7 @@
+<div class="container">
+  <% for user in @users %>
+         <div >
+           <%= link_to user.username, user_path(user.id) %>
+         </div>
+       <% end %>
+</div>

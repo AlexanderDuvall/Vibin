@@ -1,0 +1,8 @@
+<div class="container-fluid forall border" style="min-width: 850px;">
+
+<% for @u in @users %>
+  <div class="row">
+    <%= @u.username %> id <%= @u.id %>
+  </div>
+<% end %>
+</div>

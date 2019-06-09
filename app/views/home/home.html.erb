@@ -1,0 +1,134 @@
+<center><br>
+  <div class="row">
+    <% if logged_in? %>
+      <div class="left-column" >
+        <div class="container" >
+          <div class="row">
+            <div class="col-xs-4">
+              <% if @user.avatar.attached? %>
+                <%= image_tag (@user.avatar), class:"avatar-home"%>
+              <% else %>
+                <img src="default-avatar.jpg" class="avatar-home">
+              <% end %>
+            </div>
+            <div class="col-xs-8">
+              <div class="row">
+                <div class="col">
+                  <img src="/tree.jpg" class="badge-gold">
+                  <img src="/galaxy.jpg" class="badge-silver">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <h5><span class="badge badge-primary text-wrap"><%= @user.name %></span></h5>
+          </div>
+          <div class="row">
+            <h7><span class="badge badge-primary text-wrap"><%= link_to "@" + @user.username, user_path(@user.id), class:"links"%></span></h7>
+          </div>
+          <div class="row">
+            <h9><span class="badge badge-primary text-wrap"> <%= @user.zipcode %></span></h9>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-xs">
+              <h5><span class="badge badge-primary text-wrap"><%= @user.bio %></span></h5>
+            </div>
+          </div>
+          <div class="row justify-content-center ">
+            <div class="col-xs">
+              <h5><span class="badge badge-primary text-wrap">  Songs</span></h5>
+            </div>
+            <div class="col-xs ">
+              <h5><span class="badge badge-primary text-wrap"> Posts </span></h5>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-xs ">
+              <div class="badge badge-primary text-wrap">0</div>
+            </div>
+            <div class="col-xs">
+              <div class="badge badge-primary text-wrap">  <%= @user.posts.count %></div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-xs">
+              <div class="badge badge-primary text-wrap"> Followers</div>
+            </div>
+            <div class="col-xs">
+              <div class="badge badge-primary text-wrap"> Following</div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-xs">
+              <div class="badge badge-primary text-wrap"><%= link_to @user.followers.count, followers_user_path(@user), class:"links" %></div>
+            </div>
+            <div class="col-xs">
+              <div class="badge badge-primary text-wrap">  <%= link_to @user.following.count, following_user_path(@user), class:"links" %></div>
+            </div>
+          </div>
+          <div class="row justify-content-center ">
+              Social Media Links
+          </div>
+          <br/>
+          <div class="row justify-content-center " id="formdiv">
+            <%= link_to "Post", new_post_path, id:"butt", :class => 'btn btn-primary', remote: true %>
+            <%= link_to "Music", new_song_path, id:"butt1", :class => 'btn btn-primary', remote: true %>
+            <button hidden id="hidd" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"></button>
+            <button hidden id="hidd1" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"></button>
+
+          </div>
+        </div>
+      </div>
+      <!--  MIDDLE COLUMN FEED -->
+      <div class="center-column">
+        <%= render "/posts/userfeed" %>
+      </div>
+      <!-- RIGHT COLUMN -->
+      <div class="right-column ">
+        <p>Recommendation</p>
+    </div>
+
+
+    <% else %>
+    <div class="container-fluid">
+      <div class="row welcome">
+        <div class="col" style="width: 80%;">
+          <h2>Welcome to Vibin Music!</h2>
+        </div>
+      </div>
+      <p></p>
+      <div class="row justify-content-between">
+        <!-- How do I make the columns different heights -->
+        <div class="col-xs-6 ml-2 welcome " style="overflow: hidden; min-width:70%;">
+          Find new music<br>
+          Find your group<br>
+          Share music<br>
+          Upload Music
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-xs-3 mr-2 welcome" style="min-width:25%;">
+          <p> Top Songs </p>
+          <p> Top Songs </p>
+          <p> Top Songs </p>
+          <p> Top Songs </p>
+          <p> Top Songs </p>
+          <p> Top Songs </p>
+          <p> Top Songs </p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <div class="modal " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      </div>
+  </div>
+</center>
+
+<script>
+  $('#butt').click(function(){
+    $('#hidd').click();
+  });
+  $('#butt1').click(function(){
+    $('#hidd1').click();
+  });
+
+</script>

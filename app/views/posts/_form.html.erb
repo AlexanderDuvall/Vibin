@@ -1,0 +1,42 @@
+
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <%= form_with model: @post  do |f| %>
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Post</h5>
+       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+          <ul>
+            <% post.errors.full_messages.each do |message| %>
+              <% puts message %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+    <div class="modal-body">
+      <%= f.text_area :context, class: "col-xs context-form",  rows: "1", placeholder: "Text" %>
+      <!-- photo button -->
+      <div class="col-xs-3">
+        <label class="btn btn-primary btn-sm">
+          <%= image_tag "PictureUploadButton.png", style: "height:20px; width:20px;" %>
+          <%= f.file_field :images, id: "images", accept: "image/png, image/jpeg, image/tiff", multiple:true, onchange:"previewImage(this)" %>
+        </label>
+      </div>
+       <img src="" id="preview" height="80px" width="80px">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" data-dismiss="modal" >Close</button>
+      <label class="btn btn-success">
+        <%= image_tag "PostButton.png", style: "height:20px; width:20px;" %>
+        <span style="display:none;" class="">
+          <%= f.submit "", style: "width: 20px; height:20px;" %>
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+<% end %>

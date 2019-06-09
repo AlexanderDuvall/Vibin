@@ -1,0 +1,27 @@
+<h1> Go ahead and upload your Song! </h1>
+<p1> We accept Trash (music) too!</p1>
+<% form_for (@music) do |m| %>
+  <div class="row signup">
+    <%= f.label :title, "Title" %>
+    <%= f.text :title%>
+  </div>
+
+  <div class="row signup">
+    <%= f.label :text, "Text" %>
+    <%= f.text :text%>
+  </div>
+
+  <div class="row signup">
+    <%= f.label :genre, "Genre" %>
+    <%= f.select :genre, ['Pop','Rap','Jazz','Other']%>
+  </div>
+
+  <div class="row signup">
+    <%= f.label :song_file, "Upload Song File"  %>
+    <%= f.file_field :song_file,
+                     onchange: "validateFiles(this);",
+                     data: { max_file_size: 15.megabytes }%>
+  </div>
+
+  <%= f.submit "Add Music", class: "btn btn-primary" %>
+<% end %>

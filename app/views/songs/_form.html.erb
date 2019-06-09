@@ -1,0 +1,37 @@
+<div class="modal-dialog" role="document" >
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Song</h5>
+      <span hidden class="close" id="spa">&times;</span>
+
+    </div>
+    <div class="modal-body">
+
+    <%= form_with model: @song do |f| %>
+
+        <!-- photo button -->
+        <div class="col-xs-3">
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+          <hr/>
+          <%= f.file_field :cover_image, accept: "image/png, image/jpeg"%>
+
+          <%= image_tag "MusicButton.png", style: "height:20px; width:20px;" %>
+          <%= f.file_field :song_file, accept: "audio/mp3" %>
+             <hr/>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal" id="close">Close</button>
+          <label class="btn btn-success">
+            <%= image_tag "PostButton.png", style: "height:20px; width:20px;" %>
+            <span style="display:none;" class="">
+              <%= f.submit "", style: "width: 20px; height:20px;" %>
+            </span>
+          </label>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

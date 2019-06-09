@@ -1,0 +1,43 @@
+<div class="row border"  style="margin-top:20px;">
+
+  <div class="col ">
+  <% for @p in @posts %>
+  <% if @p.audio.present? %>
+  <div class="row  " style="padding:10px 0px 0px 0px;">
+
+          <div class="post-col-avi ml-3 mr-3"  >
+              <%= image_tag current_user.avatar.url, class: "rounded-img", style: "margin-top: 0px;" %>
+          </div>
+          <div class="col-xs-7 ml-4 " style=" text-align: left; height:20px;">
+              <h3 style="color:black;"><%= User.find(@p.user_id).username %></h3>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <p class="ml-3" style="color:black; text-align: left;"><%= @p.content %></p>
+
+                    <%= audio_tag @p.audio, class: "audio-play" %>
+                    <p class="btn btn-primary audioButton">Play</p>
+
+                </div>
+            </div>
+          </div>
+
+  </div>
+  <div class="row">
+    <div class="col-xs-3 ml-5" style="margin-left: 5px; padding:5px 5px 0px 0px;">
+    <button><span class="glyphicon glyphicon-retweet  "></span></button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3 ml-5" style="margin-left: 5px; padding:5px 5px 0px 0px;">
+  <button><span class="glyphicon glyphicon-heart "></span></button>
+</div>
+</div>
+<div class="row ml-4 border" style="margin-top: 10px; width:90%;">
+
+</div>
+<br>
+
+<% end %>
+<% end %>
+</div>
+</div>

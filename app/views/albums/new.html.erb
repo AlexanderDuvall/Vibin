@@ -1,0 +1,15 @@
+<div class="container forall border border-dark">
+
+  <h1>Create new album</h1>
+  <%= form_with model: @album, remote: true, local: true do |f| %>
+    <div class="row signup border border-dark">
+      <%= f.label :title, style: "margin-right: 36px;" %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="row signup">
+      <%= f.drag_and_drop_file_field :album_files, "Drop images here!" %>
+    </div>
+
+    <%= f.submit "Add Album", class: "btn btn-primary" %>
+  <% end %>
+</div>

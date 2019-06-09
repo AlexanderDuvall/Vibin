@@ -1,0 +1,13 @@
+<div class="container forall">
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

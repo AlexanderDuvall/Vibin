@@ -1,0 +1,39 @@
+
+  <center>
+    <div class="row song border border-primary ml-1" id="<%= song.id %>">
+      <div class="col-xs-3  justify-content-center text-center " style="width:16%;">
+        <%= image_tag (song.user.avatar), class: "post-ava" if song.user.avatar != nil %>
+        <h5><span class="badge badge-primary"><%= User.find(song.user_id).name %></span></h5>
+        <h5>
+          <span class="badge badge-primary"><%= link_to "@" + User.find(song.user_id).username, user_path(song.user_id), class: "links" %></span>
+        </h5>
+        <br/>
+        <br/>
+      </div>
+      <div class="col-xs-6  " style="width:67%;">
+        <br/>
+        <p style="margin-left:10px;" id="context"><%= song.title %></p>
+        <div class="row justify-content-center">
+          <%= image_tag (song.cover_image), style:"height: 40px; width:40px;"  %>
+
+          <label class="btn btn-primary btn-sm">
+            <img src="/playButton.jpg" id="" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>' , true)" alt="<%= url_for(song.song_file) %>" style="height:20px; width:20px;">
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-3  " style="width: 15%;">
+        <p style="size:10px;"><%= month(song.created_at)%></p>
+        <p><%= dayYear(song.created_at) %></p>
+        <p><%= age(Time.now, song.created_at)  %></p>
+        <% if song.user_id == current_user.id %>
+          <p><%= link_to "delete", song, method: :delete,
+                         data: {confirm: "You sure?"}, remote: true, class: "delete", id: song.id %></p>
+                         <% else %>
+                          <p id="song_<%= song.id %>_likes"><%= render partial: "/songs/likes", locals: {song: song} %></p>
+
+        <% end %>
+
+
+      </div>
+    </div>
+  </center>

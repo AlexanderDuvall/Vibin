@@ -1,0 +1,11 @@
+<div id="feed">
+
+<% @combine.each do |post| %>
+    <% if post.instance_of? Song %>
+      <%= render partial: "songs/song", locals: {song: post} %>
+    <% else %>
+      <%= render partial: "posts/#{post.post_type}", locals: {post: post}%>
+    <% end %>
+<% end %>
+
+</div>

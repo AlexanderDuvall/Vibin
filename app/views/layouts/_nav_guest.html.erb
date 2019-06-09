@@ -1,0 +1,25 @@
+<nav class="sticky-top " style="background:#e6e6e6; min-width:900px;">
+  <ul class="nav justify-content-left" style="opacity:0.5;">
+    <li class="nav-item">
+      <a class="nav-link active" href="/home">Vibin Music</a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link"  href="/explore">Explore</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/signup"> Sign up </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/login">Log in</a>
+    </li>
+
+    <%= form_tag(users_path, method: :get, class:"form-inline") do %>
+    <li class="nav-item " style="padding-top:5px 0 5px 0; height:35px; overflow:hidden">
+        <%= text_field_tag :username, params[:username], class:"form-control form-control-sm", style:"padding:5px 5px 5px 5px;"%>
+    </li>
+    <li class="nav-item" style="padding-top:5px 0 5px 0; height:35px;">
+       <%= image_submit_tag "Search.png" %>
+    </li>
+    <% end %>
+  </ul>
+</nav>

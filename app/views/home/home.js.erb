@@ -1,0 +1,3 @@
+console.log("loll");
+$('.container-fluid').html("<%= escape_javascript(render partial: 'home/home' , locals: { user: @user } )%>");
+history.pushState(null, null, "<%= root_url %>");

@@ -1,0 +1,116 @@
+<% if logged_in? %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div class="container-fluid border" style="min-width: 850px;">
+  <div class="row-eq-height">
+      <div class="col-xs-3 border border-dark mr-2" style="min-width: 200px; background-color: #b3ffb3; width:30%;">
+        <div class="row">
+          <div class="col-4 border border-dark" style="width: 80px; max-width: 80px;">
+            <img src="test profile img.jpg" style=" padding: 0px 0px 0px 0px; border-radius: 35px; margin-left: -10px; margin-top: 5px; height: 70px; width: 70px;">
+            <!-- achievement badges -->
+              <img src="1mil.png" style=" padding: 0px 0px 0px 0px; margin-left: -10px; margin-top: 5px; height: 25px; width: 25px;">
+              <img src="testachieve.jpg" style=" padding: 0px 0px 0px 0px;  margin-left: 2px; height: 25px; width: 25px; border-radius: 10px;">
+          </div>
+          <div class="col border border-dark" style="height: 100px;">
+            <h4 style="margin-left: -5px; padding: 0px 0px 0px 0px;"><%= @user.name%></h4>
+            <h5 style="padding: 0px;"> @<%= link_to @user.username, user_path(@user.username)%> </h5>
+            <p style="padding: 0px 0px 0px 0px;"> <%= @user.zipcode%> Houston, Texas </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p><%= @user.bio%></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4>  Songs</h4>
+          </div>
+          <div class="col">
+            <h4>  Posts </h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" style="margin-top: -10px;">
+            0
+          </div>
+          <div class="col" style="margin-top: -10px;">
+            <%= @user.posts.count %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4>  Followers</h4>
+          </div>
+          <div class="col">
+            <h4>  Following</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" style="margin-top: -10px;">
+        <%= link_to @user.followers.count, followers_user_path(@user), :style => "line-height:0px; transform: translate(0px,0px);" %>
+          </div>
+          <div class="col" style="margin-top: -10px;">
+            <%= link_to @user.following.count, following_user_path(@user), :style => "line-height:0px; transform: translate(0px,0px);" %>
+          </div>
+        </div>
+        <div class="row" style="bottom: 10px;">
+          Social Media Links
+        </div>
+        <div class="row">
+          <div class="col">
+          <%= render "/posts/form" %>
+          </div>
+        </div>
+      </div>
+            <!--  MIDDLE COLUMN FEED -->
+
+      <div class="col-xs-3 border border-dark" style="min-width: 300px; width:45%;">
+        <%= render "/posts/userfeed"%>
+      </div>
+
+        <!-- RIGHT COLUMN -->
+      <div class="col-xs-3 border border-dark ml-2" style="min-width:150px; width:20%; background-color: #b3ffb3; height: 150px;">
+        Recommended music
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<% else %>
+<div class="container-fluid forall">
+  <div class="row welcome">
+    <div class="col">
+      <h2>Welcome to Vibin Music!</h2>
+    </div>
+  </div>
+<p></p>
+  <div class="row justify-content-between">
+
+    <!-- How do I make the columns different heights -->
+    <div class="col-xs-6 ml-2 welcome " style="overflow: hidden; min-width:70%;">
+      Find new music<br>
+      Find your group<br>
+      Share music<br>
+      Upload Music
+    </div>
+        <div class="clearfix"></div>
+    <div class="col-xs-3 mr-2 welcome" style="min-width:25%;">
+      <p> Top Songs </p>
+          <p> Top Songs </p>
+              <p> Top Songs </p>
+                  <p> Top Songs </p>
+                      <p> Top Songs </p>
+                          <p> Top Songs </p>
+                              <p> Top Songs </p>
+
+    </div>
+  </div>
+  <div class="footer">Vibin inc. </div>
+</div>
+<% end %>

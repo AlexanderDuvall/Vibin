@@ -1,0 +1,35 @@
+<div class="row post border border-primary" style="cursor: pointer;">
+  <div class="col-xs-3 border border-warning justify-content-center text-center " style="width:18%;">
+    <%= image_tag (post.user.avatar), class: "post-ava" if post.user.avatar != nil %>
+    <span class="badge badge-primary" style="width:100%;"><%= User.find(post.user_id).name %></span>
+    <span><%= link_to "@" + User.find(post.user_id).username, user_path(post.user_id), class: "badge badge-primary", style: "width:100%;" %></span>
+    <br/>
+    <br/>
+  </div>
+  <div class="col-xs-6 border border-danger " style="width:70%;">
+    <br/>
+    <% @song = Song.find(post.id) %>
+    <h1 style="margin-left:15%; margin-right: 15%;"><%= @song.title %></h1>
+    <h5 style="margin-left:10px;"><b>Genre:</b><i> <%= @song.genre %></i></h5>
+     <p style="margin-left:10px; margin-top:20px"><%= @song.text %></p>
+    <div class="row justify-content-center">
+      <% if post.image1[0].presence %>
+        <div class="col-xs-3 img-wrapper img-post" style="margin-left: 30px;">
+          <%= image_tag (post.image1[0]), style: "height:105%; object-fit:cover; width:105%; display: inline-block; overflow: hidden;", class: "imageclass" %>
+        </div>
+      <% end %>
+      <% if post.image1[1].presence %>
+        <div class="col-xs-3 img-wrapper img-post" style="margin-left: 30px;">
+          <%= image_tag (post.image1[1]), style: "height:105%; object-fit:cover; width:105%; display: inline-block; overflow: hidden;" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-2  ml-auto border border-dark " style="width: 10%;">
+    <% if post.user_id != current_user.id %>
+      <%= link_to "Repost", repost_post_path(post), method: :post %>
+      <p id="post_<%= post.id %>_likes"><%= render partial: "/posts/likes", locals: {post: post} %></p>
+    <% end %>
+    <p style="font-size:8px; float:right;"><%= post.updated_at %></p>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container-fluid forall border" style="min-width: 850px;">
+<% provide(:title, @title) %>
+  <div class="row border border-success ">
+    <div class="col-md-8">
+      <h3><%= @title %></h3>
+        <div class="user_avatars">
+          <% for @p in @All %>
+          <div class="row border border-success">
+            User id: <%= link_to @p.follower_id, user_path(@p.follower_id) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

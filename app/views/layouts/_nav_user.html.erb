@@ -1,0 +1,40 @@
+<div class="navigation-bar ">
+  <ul class="nav justify-content-center" style="opacity:0.5;">
+
+    <li class="nav-item">
+      <%= link_to 'Vibin Music', home_path, class: "nav-link", remote: true %>
+  </li>
+    <li class="nav-item">
+      <a class="nav-link"  href="/explore" data-target="explore">Explore</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="noti">Notifications</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " id="groupies">Groupies</a>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Profile', user_path(current_user), class: "nav-link", remote: true %>
+    </li>
+    <li class="nav-item">
+      <%= link_to'Log Out',logout_path, method: :delete, class: "nav-link" %>
+    </li>
+
+    <%= form_tag(posts_path, method: :get, class: "form-inline", role: 'search', remote: true) do %>
+      <%= text_field_tag :term,
+          params[:term],
+          id: 'posts_search',
+          autocomplete: :off,
+          placeholder: 'Search',
+          class: 'form-control' %>
+           <div class="input-group-append border border-success">
+             <label class="btn btn-success">
+               <%= image_tag "Search.png", style: "height:20px; width:20px;" %>
+               <span style="display:none;" class="">
+                 <%= submit_tag  "", style: "width: 20px; height:20px;" %>
+               </span>
+             </label>
+      </div>
+  <% end %>
+  </ul>
+</div>

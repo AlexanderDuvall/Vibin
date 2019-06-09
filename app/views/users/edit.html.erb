@@ -1,0 +1,60 @@
+<% if logged_in? %>
+  <% provide(:title, "Edit user") %>
+    <div class="left_settings">
+      <center><h1> Settings</h1></center>
+      <ul>
+        <li>
+          <%= link_to 'Edit Profile', edit_user_url(current_user.id), :class => "nav-link" %>
+        </li>
+        <li>
+          <%= link_to 'Privacy and Security','/privacy_settings', :class =>  "nav-link" %>
+        </li>
+        <li><%= link_to "Deactivate", @user, method: :delete, data: {confirm: "You sure?"} %></li>
+      </ul>
+
+
+    </div>
+
+    <div class="right_settings">
+      <br/>
+      <%= form_for @user do |f| %>
+      <div class="row justify-content-center">
+
+        <div class="upload-btn-wrapper">
+          <button class="btn-avatar">  <%= image_tag @currentuser.avatar, id:"preview", style:"height:80px; width:80px;"%>
+      <%= f.file_field :avatar, id:"avatar", onchange: "previewFile()" %>
+        </div>
+      </div>
+        <%= f.label :name, class: "vibin_form_text ml-5" %>
+        <%= f.text_field :name, class: "form-control ml-5 ", style: "width:80%;" %>
+
+        <%= f.label :username, class: "vibin_form_text ml-5" %>
+        <%= f.text_field :username, class: "form-control ml-5", style: "width:80%;" %>
+
+        <%= f.label :bio, class: "vibin_form_text ml-5" %>
+        <%= f.text_area :bio, class: "form-control ml-5", style: "width:80%;" %>
+
+        <%= f.label :zipcode, class: "vibin_form_text ml-5" %>
+        <%= f.number_field :zipcode, class: "form-control ml-5", style: "width:80%;" %>
+
+        <%= f.submit "Save changes", class: "btn btn-primary vibin_btn" %>
+      <% end %>
+    </div>
+<% end %>
+
+
+<script>
+function previewFile() {
+
+  var preview = document.querySelector('#preview');
+  var file   = document.querySelector('#avatar').files[0];
+  var reader = new FileReader();
+  reader.addEventListener("load", function() {
+    preview.src = reader.result;
+  }, false);
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+
+</script>

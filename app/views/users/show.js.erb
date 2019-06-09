@@ -1,0 +1,3 @@
+console.log("lol");
+$('.container-fluid').html("<%= escape_javascript(render partial: 'users/show', locals: { user: @user } ) %>");
+history.pushState(null, null, "<%= user_path %>");

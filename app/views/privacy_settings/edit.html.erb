@@ -1,0 +1,21 @@
+<div class="container forall settings_center">
+  <div class="left_settings">
+    <center><h1> Settings</h1></center>
+    <ul>
+      <li>
+        <%= link_to 'Edit Profile', edit_user_url(current_user.id), :class => "nav-link" %>
+      </li>
+      <li>
+      </li>
+      <li>
+        <%= link_to 'Privacy and Security', '/privacy_settings', :class => "nav-link" %>
+      </li>
+      <li><%= link_to "deactivate", @user, method: :delete, data: {confirm: "You sure?"} %></li>
+    </ul>
+  </div>
+
+  <div class="right_settings">
+    <h1>Privacy Settings</h1>
+    <p>We're going to store your privacy settings here :3</p>
+  </div>
+</div>

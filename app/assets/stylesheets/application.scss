@@ -1,0 +1,187 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require jquery-ui
+ *= require_tree .
+ *= require_self
+  *= require active_storage_drag_and_drop
+
+  */
+@import "bootstrap";
+
+html {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #e6e6e6;
+  border-style: dotted;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  border-style: groove;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.MusicPlayer {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  bottom: 0;
+  background-color: lightgreen;
+  height: 90px;
+}
+
+.container-fluid {
+  min-width: 900px;
+  overflow-y: hidden;
+  height: calc(100% - 127px);
+}
+
+.content {
+  width: 100%;
+}
+
+.links {
+  color: white;
+}
+
+.navigation-bar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #e6e6e6;
+  min-width: 900px;
+}
+
+.input-bar {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.upload-btn-wrapper {
+  //position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn-avatar {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  //position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+p {
+  line-height: 10px;
+}
+
+.buticons {
+  border-radius: 10px;
+  margin-bottom: 2px;
+}
+
+#error_explanation {
+  color: red;
+
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+.field_with_errors {
+  .form-control {
+    color: black;
+  }
+}
+
+.profile-banner1 {
+  float: left;
+  width: 100%;
+  z-index: -1;
+}
+
+.bio {
+  //position: absolute;
+  top: 240px;
+}
+
+.profile-nav {
+  font-size: 15px;
+}
+
+.left_settings {
+  //  position: absolute;
+  width: 20%;
+  height: 600px;
+  overflow: auto;
+  color: #999999;
+}
+
+.right_settings {
+  transform: translateX(190px);
+  //  position: absolute;
+  height: 600px;
+
+  width: 80%;
+  color: #BBBBBB;
+}
+
+.settings_center {
+  width: auto;
+  height: 600px;
+  top: 80px;
+  color: #BBBBBB;
+
+}
+
+.vibin_btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+}
+
+.vibin_form_text {
+  margin-left: 15px;
+  font-size: 20px;
+  color: black;
+}

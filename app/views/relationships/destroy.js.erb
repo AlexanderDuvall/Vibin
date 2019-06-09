@@ -1,0 +1,2 @@
+$("#follow_form").html("<%= escape_javascript(render('users/follow', class:'btn btn-primary')) %>");
+$("#followers").html('<%= link_to @user.followers.count, followers_user_path(@user), :class => "badge badge-primary", :style => "line-height:10px; color:white; " %>');

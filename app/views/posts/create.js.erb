@@ -1,0 +1,5 @@
+$("textarea").val("");
+$('#feed').prepend("<%= j render @post %>");
+$('#myModal').modal('hide');
+$(".modal-backdrop").remove();
+console.log("prepend");

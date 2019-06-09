@@ -1,0 +1,66 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-ava {
+  display: inline-block;
+  overflow: hidden;
+  height: 60%;
+  width: 75%;
+  border-radius: 50%;
+}
+.post {
+  background-color: #b3ffb3;
+  width: 90%;
+  margin-bottom: 5px;
+  height: 150px;
+}
+.post-image{
+  height:105%;
+  object-fit:cover;
+  width:105%;
+  display: inline-block;
+  overflow: hidden;
+}
+.img-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  border: solid white 1px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  //position: relative;
+}
+
+
+
+.img-post {
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.img-post:hover {
+  transform: scale(4, 4);
+  -ms-transform: scale(4, 4); /* IE 9 */
+  -moz-transform: scale(4, 4); /* Firefox */
+  -webkit-transform: scale(4, 4); /* Safari and Chrome */
+  border-radius: 0;
+
+  -o-transform: scale(4, 4); /* Opera */
+  z-index: 1;
+  //position: relative;
+}
+.imageclass:hover {
+  height: 50%;
+  width: 50%;
+}
+.context-form{
+  background-color: transparent;
+  display:block;
+  border-radius:5px;
+  border:3px
+  solid green;
+}
