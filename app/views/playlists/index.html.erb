@@ -2,8 +2,12 @@
 <p>Find me in app/views/playlists/index.html.erb</p>
 <div id="playlists" class="list-group data-url" data-url="<%= sort_playlists_path %>">
   <% unless @song_position.nil? %>
+
     <% @song_position.each do |song_position| %>
-      <%= link_to_song song_position %>
+      <% @song, songLink, imageLink = link_to_song song_position %>
+      <div class="list-group-item">
+        <%= render partial: "songs/song", locals: {song: @song} %>
+       </div>
     <% end %>
   <% else %>
     <h1>You dont have a playlist yet... Go make one!</h1>

@@ -1,3 +1,13 @@
-console.log("lol");
-$('.container-fluid').html("<%= escape_javascript(render partial: 'users/show', locals: { user: @user } ) %>");
-history.pushState(null, null, "<%= user_path %>");
+
+  <% if @combine.current_page > 1 %>
+    $('#feed').append("<%= j render (@combine) %>");
+    <% if @combine.next_page %>
+      $('.pagination').replaceWith("<%= j will_paginate (@combine) %>");
+    <% else %>
+      $('.pagination').remove();
+    <% end %>
+  <% else %>
+    console.log("lol");
+    $('.container-fluid').html("<%= j render 'users/show' %>");
+    history.pushState(null, null, "<%= user_path %>");
+  <% end %>

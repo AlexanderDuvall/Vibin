@@ -5,16 +5,16 @@ class SongsController < ApplicationController
   #  respond_to :js, :json, :html
 
   def create
-    @song = current_user.songs.new(song_params)#, :post_id => @post.id)
+    @song = current_user.songs.new(song_params) #, :post_id => @post.id)
     respond_to do |format|
-         if @song.save!
-          format.js
-          format.html {redirect_to @song, notice: 'Song was successfully created.'}
-          format.json {render :show, status: :created, location: @song}
-        else
-          format.html {render :new}
-          format.json {render json: @song.errors, status: :unprocessable_entity}
-        end
+      if @song.save!
+        format.js
+        format.html {redirect_to @song, notice: 'Song was successfully created.'}
+        format.json {render :show, status: :created, location: @song}
+      else
+        format.html {render :new}
+        format.json {render json: @song.errors, status: :unprocessable_entity}
+      end
     end
   end
 
@@ -29,6 +29,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    puts getsongs_songs_path
     @song = Song.find(params[:id])
   end
 
@@ -62,6 +63,7 @@ class SongsController < ApplicationController
       redirect_to login_url
     end
   end
+
 
 
   def find_song

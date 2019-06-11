@@ -1,20 +1,20 @@
 <div class="row">
   <div class="col">
     <p>posts</p>
-<% @posts.each do |post| %>
-<div class="row">
-  <%= render partial: "posts/#{post.post_type}", locals: {post: post} %>
-</div>
-<% end %>
-</div>
-<div class="col">
-  <p>songs</p>
-<% @songs.each do |song| %>
-<div class="row">
-  <%= render partial: "songs/song", locals: {song: song} %>
-</div>
-<% end %>
-</div>
+    <% @posts.each do |post| %>
+      <div class="row">
+        <%= render partial: "posts/#{post.post_type}", locals: {post: post} %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col">
+    <p>songs</p>
+    <% @songs.each do |song| %>
+      <div class="row">
+        <%= render partial: "songs/song", locals: {song: song} %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 

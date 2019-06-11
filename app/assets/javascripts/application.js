@@ -40,53 +40,42 @@ var SongUsername = null;
 var songQueue = new Array();
 
 
-function setSong(song, username) {
-    currentSong = song;
-    SongUsername = username;
+function buildPlayer(song, username, title) {
+    audio.src = "";
+    $('#usernameSong').text(username);
+    $('#titleSong').text(title);
+    audio.src = song.alt
+    audio.play();
+    console.log(audio);
 }
 
-function SelectedSong(song, username, title, singleSong) {
+function SelectedSong(song, username, title, singleSong, ...args) {
 
     if (singleSong) {
-        audio.src = "";
-        $('#usernameSong').text(username);
-        $('#titleSong').text(title);
-        setSong(song.alt, username);
-        audio.src = getCurrentSong();
-        audio.play();
-        console.log(audio);
+        buildPlayer(song, username, title);
     } else {
-        songQueue.push(song.id);
-        if (songQueue.length == 1) {
-            setSong(song.alt);
-            audio.src = getCurrentSong();
-            audio.play();
-        }
-
+        songQueue = args[0];
+        console.log(args[1]);
+        Rails.ajax({
+            url: ":id/getsongs",
+            type: "GET",
+            processData: false,
+            data: {id: parseInt(songQueue[0])},
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
     }
-
 }
 
 function nextSong() {
     songQueue.shift();
-    var song = searchSong(songQueue[0]);
     // might not work. may need to make rails function. if the case preload songs. up to so many.
-    setSong(song.alt, "test")
 }
 
-function searchSong(id) {
-    $.ajax({
-        type: "GET",
-        url: "/songs/find_song?id=" + id,
-        processData: false,
-        success: function (data) {
-            if (data == "record not found")
-                console.log("song not found");
-            else
-                console.log("found it!");
-        }
-    });
-}
 
 function getCurrentSong() {
     return currentSong;

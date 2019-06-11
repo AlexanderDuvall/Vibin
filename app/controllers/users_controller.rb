@@ -1,3 +1,4 @@
+require "will_paginate/array"
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :destroy, :following, :followers]
   before_action :correct_user, only: [:edit, :update]
@@ -43,7 +44,7 @@ class UsersController < ApplicationController
     @songs = Song.all.where("user_id = ?", @user)
     @likedsongs = Musiclike.all.where("user_id = ?", @user).reverse
 
-    @combine = (@songs + @posts).sort_by {|post| post.created_at}.reverse
+    @combine = (@songs + @posts).sort_by {|post| post.created_at}.reverse.paginate(page: params[:page], per_page: 10)
 
   end
 

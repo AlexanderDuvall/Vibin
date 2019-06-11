@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/users/:id/following' => 'users#show_following'
   get '/users/:id/followers' => 'users#show_followers'
   get '/users/:id/Music' => 'home#profileMusic'
+  get '/playlists/:id/getsongs' => 'playlists#getsongs'
   resources :playlists do
     collection do
       patch :sort

@@ -1,3 +1,4 @@
+require "will_paginate/array"
 class HomeController < ApplicationController
   before_action :logged_in?, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user, only: [:edit, :update]
@@ -39,8 +40,7 @@ class HomeController < ApplicationController
       @usersongpost = Song.all.where("user_id IN (?) ", @asss)
       @image1 = Active_storage_attachment.all.where("record_id = ?", 21)
       @posts = @userpost
-      @combine = (@usersongpost + @posts).sort_by {|post| post.created_at}.reverse
-      @test = @userpost.paginate(page: params[:page], per_page: 10)
+      @combine = (@usersongpost + @posts).sort_by {|post| post.created_at}.reverse.paginate(page: params[:page], per_page: 10)
     end
    end
 

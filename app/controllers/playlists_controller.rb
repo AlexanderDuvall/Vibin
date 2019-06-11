@@ -22,9 +22,9 @@ class PlaylistsController < ApplicationController
         SongPosition.where(id: id).update_all(position: index + 1)
       end
     end
-    puts "we made it down here"
     head :ok
   end
+
 
   def index
     @song_position = current_user.playlists.first
@@ -36,6 +36,6 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @playlists = Playlist[:id]
+    @playlists = current_user.playlists
   end
 end

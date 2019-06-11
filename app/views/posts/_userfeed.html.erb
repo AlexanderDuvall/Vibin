@@ -1,5 +1,6 @@
 <div id="feed">
 
+
 <% @combine.each do |post| %>
     <% if post.instance_of? Song %>
       <%= render partial: "songs/song", locals: {song: post} %>
@@ -9,3 +10,4 @@
 <% end %>
 
 </div>
+<%= will_paginate @combine %>

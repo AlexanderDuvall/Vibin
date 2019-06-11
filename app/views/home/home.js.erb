@@ -1,3 +1,16 @@
-console.log("loll");
-$('.container-fluid').html("<%= escape_javascript(render partial: 'home/home' , locals: { user: @user } )%>");
-history.pushState(null, null, "<%= root_url %>");
+
+
+  <% if @combine.current_page > 1 %>
+    console.log("current page > 1");
+    $('#feed').append("<%= j render (@combine) %>");
+    <% if @combine.next_page %>
+      $('.pagination').replaceWith("<%= j will_paginate (@combine) %>");
+    <% else %>
+      $('.pagination').remove();
+    <% end %>
+  <% else %>
+    console.log("lol");
+    $('.container-fluid').html("<%= j render 'home/home' %>");
+    testing()
+    history.pushState(null, null, "<%= root_url %>");
+  <% end %>

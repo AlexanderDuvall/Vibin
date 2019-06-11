@@ -3,14 +3,6 @@ let isPlayList = false;
 let mouseDownSeek = false;
 let mouseDownVolume = false;
 let isMute = false;
-let playlist = {};
-
-function removeSong(position){
-    playlist[position] = null;
-}
-function getNext(){
-    return playlist.shift();
-}
 window.addEventListener("DOMContentLoaded", function (e) {
 
     var usernamee = document.querySelector("#usernameSong");
@@ -20,6 +12,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
     let muteButtonIcon = muteButton.querySelector(".ion-volume-high");
     let playButton = document.querySelector('.play');
     let playButtonIcon = playButton.querySelector('.ion-play');
+    playButtonIcon.style.height = 10 + 'px';
     let fillBar = seekBar.querySelector('.fill');
     let skipForward = document.querySelector('.skip_forward');
     let volume = document.querySelector('.volume_bar');
