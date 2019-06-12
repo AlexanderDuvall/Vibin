@@ -1,13 +1,21 @@
-
 $blue: #0af;
-$hover-color:#25a805;
+$hover-color: #25a805;
 .audio-player {
   display: flex;
   align-items: center;
-  width: 500px;
+  width: 600px;
   height: 90px;
   margin: auto;
-   button.play {
+
+  button.playlist-modal {
+    position: absolute;
+    display: flex;
+    width: 100px;
+    height: 50px;
+    margin-left: 500px;
+  }
+
+  button.play {
     display: block;
     width: 60px;
     height: 60px;
@@ -17,9 +25,10 @@ $hover-color:#25a805;
     font-size: 30px;
     border-radius: 100000px;
     cursor: pointer;
-     &:hover{
-       background-color: $hover-color;
-     }
+
+    &:hover {
+      background-color: $hover-color;
+    }
   }
 
   .seek-bar {
@@ -46,7 +55,7 @@ $hover-color:#25a805;
       transform: scale(2);
       transition: all 0.1s;
 
-      &:hover{
+      &:hover {
         background-color: $hover-color;
         transform: scale(3);
       }
@@ -65,7 +74,8 @@ $hover-color:#25a805;
     font-size: 30px;
     border-radius: 100000px;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
       background-color: $hover-color;
     }
   }
@@ -82,7 +92,8 @@ $hover-color:#25a805;
     font-size: 30px;
     border-radius: 100000px;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
       background-color: $hover-color;
     }
   }
@@ -114,12 +125,13 @@ $hover-color:#25a805;
       transition: all 0.1s;
 
       &:hover {
-        background-color:$hover-color;
+        background-color: $hover-color;
         transform: scale(3);
       }
     }
   }
 }
+
 .song {
   background-color: #26F5DB;
   width: 90%;

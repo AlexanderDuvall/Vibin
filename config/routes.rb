@@ -17,10 +17,15 @@ Rails.application.routes.draw do
   get '/users/:id/following' => 'users#show_following'
   get '/users/:id/followers' => 'users#show_followers'
   get '/users/:id/Music' => 'home#profileMusic'
-  get '/playlists/:id/getsongs' => 'playlists#getsongs'
+  get '/getsongs' => 'playlists#getsongs'
+  get '/get_playlist_songs' => 'playlists#get_positions'
   resources :playlists do
     collection do
       patch :sort
+      get :get_positions
+    end
+    member do
+      get :getsongs
     end
   end
   resources :song_positions

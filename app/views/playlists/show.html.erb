@@ -5,9 +5,9 @@
   <p> You dont have any playlists... Go like some songs and make one!</p>
 <% else %>
   <p>
-    <%= current_user.username %>'s Playlists</p>
+    <%= current_user.username %>'s Playlists </p>
   <% @playlists.each do |f| %>
-    <h1 onclick='SelectedSong(null, null,null,false,<%=PlaylistToArray(f.id).to_json%>)'>
+    <h1 onclick='SelectedSong(null, null,null,false,<%=PlaylistToArray(f.id).to_json%>, <%= f.id.to_json %>)'>
       <%= f.title %> ..... click me to test the functionality</h1>
   <% end %>
 <% end %>

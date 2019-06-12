@@ -29,7 +29,6 @@ class SongsController < ApplicationController
   end
 
   def show
-    puts getsongs_songs_path
     @song = Song.find(params[:id])
   end
 
@@ -62,12 +61,6 @@ class SongsController < ApplicationController
       flash[:danger] = "Please log in"
       redirect_to login_url
     end
-  end
-
-
-
-  def find_song
-    @play_song = Active_storage_attachment.blobs.find_by_id(params[:id])
   end
 
 end

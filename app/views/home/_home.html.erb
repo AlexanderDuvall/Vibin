@@ -5,7 +5,7 @@
         <div class="container" >
           <div class="row">
             <div class="col-xs-4">
-              <% if @user.avatar.record_id != nil %>
+              <% if @user.avatar.attached? %>
                 <%= image_tag (@user.avatar), class:"avatar-home"%>
               <% else %>
                 <img src="default-avatar.jpg" class="avatar-home">
@@ -14,8 +14,8 @@
             <div class="col-xs-8">
               <div class="row">
                 <div class="col">
-                  <img src="1mil.png" class="badge-gold">
-                  <img src="testachieve.jpg" class="badge-silver">
+                  <img src="/tree.jpg" class="badge-gold">
+                  <img src="/galaxy.jpg" class="badge-silver">
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="row justify-content-center ">
-            Social Media Links
+              Social Media Links
           </div>
           <br/>
           <div class="row justify-content-center " id="formdiv">
@@ -80,15 +80,14 @@
         </div>
       </div>
       <!--  MIDDLE COLUMN FEED -->
-      <div class=" center-column">
+      <div class="center-column" id="center_column">
         <%= render "/posts/userfeed" %>
       </div>
       <!-- RIGHT COLUMN -->
       <div class="right-column ">
         <p>Recommendation</p>
     </div>
-    <div class="modal" id="myModal">
-    </div>
+
 
     <% else %>
     <div class="container-fluid">
@@ -119,6 +118,8 @@
       </div>
     </div>
     <% end %>
+    <div class="modal " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      </div>
   </div>
 </center>
 
@@ -129,6 +130,5 @@
   $('#butt1').click(function(){
     $('#hidd1').click();
   });
-
 
 </script>

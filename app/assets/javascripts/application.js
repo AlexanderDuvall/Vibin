@@ -21,6 +21,24 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //=
+
+var counter = 0;
+
+function setNewPlaylistSong(position) {
+    counter = position - 1;
+    nextSong();
+}
+
+function set_current_playlist(id) {
+    Cookies.set('playlist');
+    Cookies.set('playlist', id, {expires: 14});
+    console.log('playlist: ' + Cookies.get('playlist'));
+}
+
+function get_current_playlist() {
+    return Cookies.get('playlist');
+}
+
 function previewImage(id) {
 
     var preview = document.querySelector('#preview');
@@ -44,7 +62,8 @@ function buildPlayer(song, username, title) {
     audio.src = "";
     $('#usernameSong').text(username);
     $('#titleSong').text(title);
-    audio.src = song.alt
+    console.log(song);
+    audio.src = song;
     audio.play();
     console.log(audio);
 }
@@ -52,33 +71,47 @@ function buildPlayer(song, username, title) {
 function SelectedSong(song, username, title, singleSong, ...args) {
 
     if (singleSong) {
-        buildPlayer(song, username, title);
+        buildPlayer(song.alt, username, title);
+        isPlayList = false;
     } else {
         songQueue = args[0];
-        console.log(args[1]);
+        set_current_playlist(args[1]);
+        isPlayList = true;
+        counter = 0;
+        nextSong();
+    }
+}
+function ReorderSongs(songarray){
+    console.log("Old array: " + songQueue);
+    songQueue = songarray;
+    console.log("New array: "+ songarray)
+}
+
+
+function nextSong() {
+    if (counter != songQueue.length) {
+        let song = songQueue[counter];
+        console.log("getting next song:" + song);
         Rails.ajax({
-            url: ":id/getsongs",
+            url: "/getsongs?id=" + song,
             type: "GET",
             processData: false,
-            data: {id: parseInt(songQueue[0])},
-            success: function (data) {
+            success: function (data, textStatus, xhr) {
+                console.log("success");
                 console.log(data);
+                let url = data.song_url;
+                let title = data.title;
+                let username = data.username;
+                buildPlayer(url, username, title);
             },
             error: function (data) {
                 console.log(data);
             }
         });
+        counter++;
+    } else{
+        console.log("end of list");
     }
-}
-
-function nextSong() {
-    songQueue.shift();
-    // might not work. may need to make rails function. if the case preload songs. up to so many.
-}
-
-
-function getCurrentSong() {
-    return currentSong;
 }
 
 function validateFiles(inputFile) {

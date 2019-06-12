@@ -3,8 +3,9 @@ let isPlayList = false;
 let mouseDownSeek = false;
 let mouseDownVolume = false;
 let isMute = false;
-window.addEventListener("DOMContentLoaded", function (e) {
 
+
+window.addEventListener("DOMContentLoaded", function (e) {
     var usernamee = document.querySelector("#usernameSong");
     usernamee.innerHTML = "";
     let seekBar = document.querySelector('.seek-bar');
@@ -12,18 +13,37 @@ window.addEventListener("DOMContentLoaded", function (e) {
     let muteButtonIcon = muteButton.querySelector(".ion-volume-high");
     let playButton = document.querySelector('.play');
     let playButtonIcon = playButton.querySelector('.ion-play');
-    playButtonIcon.style.height = 10 + 'px';
     let fillBar = seekBar.querySelector('.fill');
     let skipForward = document.querySelector('.skip_forward');
     let volume = document.querySelector('.volume_bar');
     let volume_fill = volume.querySelector(".volume_fill");
+    let modal = document.getElementById("myModal");
+    let btn = document.getElementById("myBtn");
+    btn.onclick = function () {
+        Rails.ajax({
+            url: '/get_playlist_songs',
+            type: 'GET',
+            processData: false,
+            success: function (data) {
+                console.log(data.song_position[0]);
 
+                modal.style.display = "block";
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
 
-    skipForward.addEventListener('click', function () {
-        if (isPlayList) {
-            //skip to next playlist song
-            nextSong();
+    };
+// When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
+    };
+    skipForward.addEventListener('click', function () {
+        //skip to next playlist song
+        nextSong();
     });
     muteButton.addEventListener('click', function () {
         if (isMute) {
@@ -125,7 +145,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
             // audio.currentTime = p * audio.duration;
         }
 
-        console.log("------------Mouse Up -------------")
+        console.log("------------Mouse Up -------------");
     });
 
 });

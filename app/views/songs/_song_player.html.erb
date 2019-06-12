@@ -1,24 +1,40 @@
 <div class="row justify-content-center">
   <div class="col-xs-3 ml-5 border border-primary">
-    <p id="usernameSong">lol</p>
-    <p id="titleSong">lol</p>
+    <p id="usernameSong"></p>
+    <p id="titleSong"></p>
   </div>
 
-<div class="col-xs-5">
-<div class="audio-player border border-primary">
-  <button class="play border border-dark" onclick="playPause()"><i id = "play-icon" class="ion-play"></i></button>
-  <div class="seek-bar">
-    <div class="fill"></div>
-    <div class="handle"></div>
+  <div class="col-xs-5">
+    <div class="audio-player border border-primary">
+      <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
+      <div class="seek-bar">
+        <div class="fill"></div>
+        <div class="handle"></div>
+      </div>
+      <button id="myBtn" class="playlist-modal audio-player">Open modal</button>
+
+    </div>
+    <div class='audio-player border border-success'>
+      <button class="volume"><i class="ion-volume-high"></i></button>
+      <div class="volume_bar">
+        <div class="volume_fill"></div>
+        <div class="volume_handle"></div>
+      </div>
+      <button class="skip_forward"><i class="ion-skip-forward"></i></button>
+    </div>
+    <button id="myBtn" class="playlist-modal audio-player">Open modal</button>
+  </div>
+  <div class="col-xs-2"><span id="broadcast"><p>Post Broadcast</p></span>
+  </div>
+  <div id="myModal" class="modal">
+    <div class=" modal-content">
+      <%= render partial: "playlists/songs" %>
+    </div>
   </div>
 </div>
-<div class='audio-player border border-success'>
-  <button class="volume"><i class="ion-volume-high"></i></button>
-  <div class="volume_bar">
-    <div class="volume_fill"></div>
-    <div class="volume_handle"></div>
-  </div>
-  <button class="skip_forward"><i class="ion-skip-forward"></i></button>
-</div>
-</div>
-</div>
+<script>
+  $("#broadcast").on("click", function(){
+    alert("8========D");
+  });
+
+</script>

@@ -9,5 +9,6 @@
   <% else %>
     console.log("lol");
     $('.container-fluid').html("<%= j render 'users/show' %>");
+    ajProfile();
     history.pushState(null, null, "<%= user_path %>");
   <% end %>

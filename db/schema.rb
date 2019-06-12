@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 2019_06_08_195059) do
   end
 
   create_table "albums", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "musiclist"
     t.string "title"
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_albums_on_user_id"
+    t.string "message"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -119,12 +119,10 @@ ActiveRecord::Schema.define(version: 2019_06_08_195059) do
 
   create_table "song_positions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "position"
-    t.bigint "songs_id"
     t.bigint "song_id"
     t.bigint "playlist_id"
     t.index ["playlist_id"], name: "index_song_positions_on_playlist_id"
     t.index ["song_id"], name: "index_song_positions_on_song_id"
-    t.index ["songs_id"], name: "index_song_positions_on_songs_id"
   end
 
   create_table "songs", id: :bigint, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -158,16 +156,17 @@ ActiveRecord::Schema.define(version: 2019_06_08_195059) do
     t.datetime "updated_at", null: false
     t.boolean "Terms_of_Agreement", default: true
     t.string "remember_digest"
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "posts", "users"
   add_foreign_key "song_positions", "playlists"
+  add_foreign_key "song_positions", "songs"
 end
