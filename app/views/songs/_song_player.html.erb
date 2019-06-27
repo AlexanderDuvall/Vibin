@@ -12,7 +12,6 @@
         <div class="handle"></div>
       </div>
       <button id="myBtn" class="playlist-modal audio-player">Open modal</button>
-
     </div>
     <div class='audio-player border border-success'>
       <button class="volume"><i class="ion-volume-high"></i></button>
@@ -23,8 +22,11 @@
       <button class="skip_forward"><i class="ion-skip-forward"></i></button>
     </div>
     <button id="myBtn" class="playlist-modal audio-player">Open modal</button>
-  </div>
-  <div class="col-xs-2"><span id="broadcast"><p>Post Broadcast</p></span>
+  </div>mu
+  <div class="col-xs-2">
+    <button id="broadcast_text" data-session="<%= current_user.id.to_json if logged_in? %>">Post Broadcast</button>
+    <button id="requestButton" onclick="requestData()">Request info</button>
+
   </div>
   <div id="myModal" class="modal">
     <div class=" modal-content">
@@ -32,9 +34,3 @@
     </div>
   </div>
 </div>
-<script>
-  $("#broadcast").on("click", function(){
-    alert("8========D");
-  });
-
-</script>

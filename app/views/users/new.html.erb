@@ -2,8 +2,8 @@
   <center><h1>Sign up</h1></center>
   <%= form_for(@user) do |f| %>
     <div class="row border border-primary">
-    <%= render 'shared/error_messages' %>
-  </div>
+      <%= render 'shared/error_messages' %>
+    </div>
     <div class="row signup ">
       <%= f.label :email, style: "margin-right: 36px;" %>
       <%= f.email_field :email %>
@@ -51,14 +51,14 @@
     <div class="row signup">
       <div class="col-xs-3">
         <div class="upload-btn-wrapper">
-          <button class="btn-avatar">  <img src="/default-avatar.jpg" id="preview" height="80px" width="80px"></button>
-      <%= f.file_field :avatar, id:"avatar", onchange: "previewFile()" %>
-        </div>
+          <button class="btn-avatar"><img src="/default-avatar.jpg" id="preview" height="80px" width="80px"></button>
+          <%= f.submit "Create my account", class: "btn btn-primary" %>
+          <%= f.file_field :avatar, id: "avatar", onchange: "previewFile()" %>
+         </div>
       </div>
     </div>
     <br/>
     <div class="row signup">
-    <%= f.submit "Create my account", class: "btn btn-primary" %>
     </div>
   <% end %>
 

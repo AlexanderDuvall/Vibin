@@ -23,6 +23,90 @@
 //=
 
 var counter = 0;
+var x = new XMLHttpRequest();
+
+function isBroadcasting(...args) {
+    if (args.length == 1 && (args[0] == false || args[0] == true))
+        broadcasting = args[0];
+    return broadcasting;
+}
+
+
+function connect(user_id) {
+    console.log(user_id);
+    x.onreadystatechange = function () {
+        if (x.readyState === 1) {
+            console.log("CONNECTION OPENED");
+        }
+        if (x.readyState === 2) {
+            console.log("DATA HAS BEEN SENT");
+        }
+        if (x.readyState === 3) {
+            console.log("LOADING");
+        }
+        if (x.readyState === 4) {
+            console.log("DONE...");
+            let results = x.response;
+            console.log(x.response);
+            if (results.length > 0) {
+                let lines = results.split("\n");
+                results = {};
+                for (let i = 0; i < lines.length; i++) {
+                    var content = lines[i].split(/:(.+)/);
+                    if (content.length == 3)
+                        content.pop();
+                    console.log(content);
+                    console.log(content.length);
+                    if (content.length == 2) {
+                        console.log("hashing");
+                        results[content[0]] = content[1];
+                    }
+                }
+                console.log(results);
+                if (results.hasOwnProperty("Machine-Reached-Status") && results['Machine-Reached-Status'] == "True") {
+                    console.log("MACHINE REACHED");
+                    isBroadcasting(true);
+                } else if (results.hasOwnProperty("Song_id") && results.hasOwnProperty("Duration")) {
+                    console.log("HAS SONG ID AND DURATION VARIABLE")
+                } else {
+                    console.log("Machine NOT REACHED");
+                }
+            } else {
+                console.log("no response");
+            }
+        }
+    };
+    x.open("POST", "http://192.168.1.91:4444", true);
+    let data = new FormData();
+    data.append("User_id", user_id);
+    x.send(data);
+}
+
+function requestData() {
+    try {
+        x.open("POST", "http://192.168.1.91:4446");
+        let a = new FormData();
+        a.append("Broadcaster_id", "1");
+        x.send(a);
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+function sendData(duration, user_id) {
+    try {
+        x.open("POST", "http://192.168.1.91:4444", true);
+        let a = new FormData();
+        a.append("Duration", duration);
+        a.append("Song_id", get_current_song());
+        x.send(a);
+        //   x.abort();
+        console.log("sent it out");
+
+    } catch (e) {
+        console.log(e);
+    }
+}
 
 function setNewPlaylistSong(position) {
     counter = position - 1;
@@ -32,11 +116,21 @@ function setNewPlaylistSong(position) {
 function set_current_playlist(id) {
     Cookies.set('playlist');
     Cookies.set('playlist', id, {expires: 14});
-    console.log('playlist: ' + Cookies.get('playlist'));
+    /// console.log('playlist: ' + Cookies.get('playlist'));
+}
+
+function set_current_song(id) {
+    Cookies.set('current_song');
+    Cookies.set('current_song', id, {expires: 14});
+
 }
 
 function get_current_playlist() {
     return Cookies.get('playlist');
+}
+
+function get_current_song() {
+    return Cookies.get('current_song');
 }
 
 function previewImage(id) {
@@ -66,31 +160,46 @@ function buildPlayer(song, username, title) {
     audio.src = song;
     audio.play();
     console.log(audio);
+    lastTime = 0;
 }
 
 function SelectedSong(song, username, title, singleSong, ...args) {
-
     if (singleSong) {
+        set_current_song(args[0]);
         buildPlayer(song.alt, username, title);
         isPlayList = false;
     } else {
+        set_current_song(args[2]);
         songQueue = args[0];
+        console.log("\n\nSong Queue" + songQueue + "\n\n");
         set_current_playlist(args[1]);
         isPlayList = true;
         counter = 0;
         nextSong();
     }
 }
-function ReorderSongs(songarray){
+
+function ReorderSongs(songarray) {
+    console.log(songarray);
+    console.log(Date.now());
     console.log("Old array: " + songQueue);
     songQueue = songarray;
-    console.log("New array: "+ songarray)
+    console.log("New array: " + songQueue);
+    Rails.ajax({
+        url: "",
+        type: "GET",
+        processData: false,
+        success: function () {
+
+        }
+    })
 }
 
 
 function nextSong() {
     if (counter != songQueue.length) {
         let song = songQueue[counter];
+        set_current_song(songQueue[counter]);
         console.log("getting next song:" + song);
         Rails.ajax({
             url: "/getsongs?id=" + song,
@@ -109,8 +218,9 @@ function nextSong() {
             }
         });
         counter++;
-    } else{
+    } else {
         console.log("end of list");
+        set_current_song(-1)
     }
 }
 

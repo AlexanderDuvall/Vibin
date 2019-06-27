@@ -16,7 +16,7 @@
         <%= image_tag (song.cover_image), style: "height: 40px; width:40px;" %>
 
         <label class="btn btn-primary btn-sm">
-          <img src="/playButton.jpg" id="" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>' , true)" alt="<%= url_for(song.song_file) %>" style="height:20px; width:20px;">
+          <img src="/playButton.jpg" id="" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>' , true,<%=song.id %>)" alt="<%= url_for(song.song_file) %>" style="height:20px; width:20px;">
         </label>
       </div>
     </div>

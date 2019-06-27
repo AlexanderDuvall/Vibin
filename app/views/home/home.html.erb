@@ -86,6 +86,8 @@
       <!-- RIGHT COLUMN -->
       <div class="right-column ">
         <p>Recommendation</p>
+        <span id="DJ"><p id="changee">DJ PLAY THAT SHIT</p> </span>
+        <span id="listener"><p>Listen in</p> </span>
     </div>
 
 
@@ -131,4 +133,14 @@
     $('#hidd1').click();
   });
 
+  $('#DJ').click(function() {
+    Rails.ajax({
+        url: $(this).data("url"),
+        type: "GET",
+        success: function () {
+          console.log("lol");
+          <% broadcastMusic %>;
+        }
+    })
+  });
 </script>

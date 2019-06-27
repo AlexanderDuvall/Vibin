@@ -1,0 +1,48 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.message-wr{
+  height: 75vh;
+  margin: auto;
+  width: 80vw;
+}
+.messages{
+  background-color: #fff;
+  box-shadow: 0 0 0 5px #f4f2ed inset;
+  box-sizing: border-box;
+  height: 87%;
+  overflow: scroll;
+  padding: 20px;
+}
+.messages-table{
+  display: table;
+  width: 100%;
+}
+.message{
+  line-height: 1.6;
+}
+
+.message-user{
+  color: #666;
+  font-size: 13px;
+  margin-right: 10px;
+}
+.message-content{
+  width: 100%;
+}
+.message-input{
+  background-color: rgba(0,0,0,0.03);
+  box-sizing: border-box;
+  height: 13%;
+  padding: 0 5px 5px;
+}
+.message-input form{
+    height: 100%;
+  }
+.message-input textarea{
+    height: 100%;
+    width: 84.5%;
+}
+.message-input input{
+    display: none
+}

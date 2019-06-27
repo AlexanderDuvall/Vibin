@@ -17,16 +17,17 @@ class PlaylistsController < ApplicationController
     @var = params[:song_position]
     puts @var.inspect
     unless @var.nil?
-      puts "not null"
       params[:song_position].each_with_index do |id, index|
         SongPosition.where(id: id).update_all(position: index + 1)
-
       end
     end
-    puts "we made it down here"
+    puts "List reordered in DB.  #{Time.new.inspect}"
     head :ok
   end
 
+  def songs
+    @song_pos = Get_Positions
+  end
 
   def index
     @song_position = current_user.playlists.first.song_positions.order(:position)
@@ -47,7 +48,6 @@ class PlaylistsController < ApplicationController
           :song_url => url_for(@song.song_file),
           :username => User.find(@song.user_id).username,
           :title => @song.title
-
       }
     end
   end
@@ -67,4 +67,7 @@ class PlaylistsController < ApplicationController
         :song_position => @song_position
     }
   end
+
+
+
 end

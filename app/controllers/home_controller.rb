@@ -7,11 +7,12 @@ class HomeController < ApplicationController
    end
    # back-end code for pages/home
      def home
-#       # here current_user
-# # This isn't right. Let me do the login first. YOu'll be able to have the current user
-# once I get that going. It's a method in the 'sessions_helper.rb' file
-  @user = current_user
-      # @songs = Array.new
+       #exec('python /Users/edwardsotelojr/Library/Mobile\ Documents/com\~apple\~CloudDocs/VibinMusic_Beta/lib/assets/test.py')
+       #       # here current_user
+       # # This isn't right. Let me do the login first. YOu'll be able to have the current user
+       # once I get that going. It's a method in the 'sessions_helper.rb' file
+       @user = current_user
+       # @songs = Array.new
        #following = Array.new
        #following.push(current_user.id)
         #for @f in current_user.following do
@@ -38,7 +39,6 @@ class HomeController < ApplicationController
 
       @userpost = Post.all.where("user_id IN (?) ", @asss)
       @usersongpost = Song.all.where("user_id IN (?) ", @asss)
-      @image1 = Active_storage_attachment.all.where("record_id = ?", 21)
       @posts = @userpost
       @combine = (@usersongpost + @posts).sort_by {|post| post.created_at}.reverse.paginate(page: params[:page], per_page: 10)
     end

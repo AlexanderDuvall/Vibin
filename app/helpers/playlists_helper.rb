@@ -1,9 +1,14 @@
 module PlaylistsHelper
 
   def Get_Positions
-    @song_position = Playlist.find_by_id(cookies[:playlist].to_i)
-    @song_position = @song_position.song_positions.order(:position)
-    @song_position
+    #@song_position = Playlist.find_by_id(cookies[:playlist].to_i)
+    #puts '--------------------------------'
+    #puts @song_position
+    #puts "----------------------------------"
+  #@song_position = @song_position.song_positions.order(:position)
+  #  puts "got reordered list! #{Time.new.inspect}"
+  #  @song_position
+
   end
 
   def link_to_song (songpositions)
@@ -13,19 +18,18 @@ module PlaylistsHelper
   end
 
 
-  def PlaylistToArray(id)
-    @playlist = current_user.playlists.find_by_id(id)
-    @songs = @playlist.song_positions.order(:position)
-    @song_ids = Array.new
-    @songs.each do |f|
-      @song_ids.push(f.song_id.to_int)
-    end
-    puts "-------------------------COMPARE------------------------------------------"
-    puts @song_ids.inspect
-    puts "--------------------------------------------------------------------"
-    # Playlist.save_playlist(id);
-    #
-    @song_ids
+  def playlistToArray(id)
+#    playlist = current_user.playlists.find_by_id(id)
+#    songs = playlist.song_positions.order(:position)
+#    song_ids = Array.new
+#    songs.each do |f|
+#      song_ids.push(f.song_id.to_int)
+#    end
+#    puts "-------------------------COMPARE------------------------------------------"
+#    puts song_ids.inspect
+#    puts "--------------------------------------------------------------------"
+
+#    song_ids
   end
 
 

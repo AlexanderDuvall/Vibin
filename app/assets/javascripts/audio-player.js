@@ -3,11 +3,11 @@ let isPlayList = false;
 let mouseDownSeek = false;
 let mouseDownVolume = false;
 let isMute = false;
-
-
+var broadcasting = false;
+let lastTime = 0;
 window.addEventListener("DOMContentLoaded", function (e) {
-    var usernamee = document.querySelector("#usernameSong");
-    usernamee.innerHTML = "";
+    var username = document.querySelector("#usernameSong");
+    username.innerHTML = "";
     let seekBar = document.querySelector('.seek-bar');
     let muteButton = document.querySelector(".volume");
     let muteButtonIcon = muteButton.querySelector(".ion-volume-high");
@@ -19,6 +19,12 @@ window.addEventListener("DOMContentLoaded", function (e) {
     let volume_fill = volume.querySelector(".volume_fill");
     let modal = document.getElementById("myModal");
     let btn = document.getElementById("myBtn");
+    let broadcast = document.getElementById("broadcast_text");
+    broadcast.onclick = function () {
+        let id = $("#broadcast_text").data("session");
+        console.log(id + " uhuh")
+        connect(id);
+    };
     btn.onclick = function () {
         Rails.ajax({
             url: '/get_playlist_songs',
@@ -76,10 +82,14 @@ window.addEventListener("DOMContentLoaded", function (e) {
 
     audio.addEventListener('timeupdate', function () {
         if (mouseDownSeek) return;
-
-        let p = audio.currentTime / audio.duration;
-
+        let currentTime = audio.currentTime;
+        let p = currentTime / audio.duration;
         fillBar.style.width = p * 100 + '%';
+        if (isBroadcasting() && currentTime > (lastTime + 5)) {
+            lastTime = currentTime;
+            console.log(currentTime);
+            sendData(currentTime)
+        }
     });
 
     function clamp(min, val, max) {

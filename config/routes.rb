@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :broadcasters
+  get 'messages/index'
+  resources :messages
   get 'playlists/create'
   get 'playlists/new'
   get 'playlists/show'
@@ -10,7 +13,7 @@ Rails.application.routes.draw do
   get '/search' => 'home#search'
   resources :users do
     member do
-      get :following, :followers, :autocomplete
+      get :following, :followers, :autocomplete, :broadcast_user
     end
   end
   get '/users/:id' => 'home#profile'
@@ -18,6 +21,7 @@ Rails.application.routes.draw do
   get '/users/:id/followers' => 'users#show_followers'
   get '/users/:id/Music' => 'home#profileMusic'
   get '/getsongs' => 'playlists#getsongs'
+  get '/getbroadcaster' => 'broadcasters#get_broadcaster'
   get '/get_playlist_songs' => 'playlists#get_positions'
   resources :playlists do
     collection do
@@ -75,5 +79,5 @@ Rails.application.routes.draw do
   #  get '/livestream' => 'audio#stream'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  mount ActionCable.server, at: '/cable'
 end

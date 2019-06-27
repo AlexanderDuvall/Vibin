@@ -1,4 +1,4 @@
-<% @song_pos = Get_Positions() %>
+<% @song_pos = Get_Positions()%>
 <div id="playlists" class="list-group data-url" data-url="<%= sort_playlists_path %>">
   <% unless @song_pos.nil? %>
     <% @song_pos.each do |song_position| %>
@@ -22,7 +22,7 @@
                 type: "PATCH",
                 data: $(this).sortable('serialize'),
                 success: function () {
-                    ReorderSongs(<%=PlaylistToArray(cookies[:playlist])%>);
+                    ReorderSongs(<%=playlistToArray(cookies[:playlist])%>);
                 }
             })
         }
