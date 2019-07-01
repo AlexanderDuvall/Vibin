@@ -1,6 +1,6 @@
 <% if logged_in? && current_user.likeMusic?(song) %>
-<%= link_to (image_tag "unfire.png", style: "height:22px;"), song_like_path(song), class: "btn btn-info btn-sm buticons glyphicon glyphicon-fire", method: :delete, remote: true %>
+    <a data-remote="true" rel="nofollow" data-method="delete" href="/songs/<%= song.id %>/like"><img src="unfire.png" height="40px;"></a>
 <% else %>
-<%= link_to (image_tag("fire.png", style:"height:22px;")), song_like_path(song), class: "btn btn-info btn-sm buticons glyphicon glyphicon-fire",method: :post, remote: true %>
+    <a data-remote="true" rel="nofollow" data-method="post" href="/songs/<%= song.id %>/like"><img src="fire.png" height="40px;"></a>
 <% end %>
 <%= song.musiclikes.count %>

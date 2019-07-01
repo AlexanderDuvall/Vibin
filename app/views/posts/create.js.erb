@@ -1,5 +1,6 @@
+console.log("creating post");
 $("textarea").val("");
 $('#feed').prepend("<%= j render @post %>");
-$('#myModal').modal('hide');
 $(".modal-backdrop").remove();
+$(".close").click();
 console.log("prepend");

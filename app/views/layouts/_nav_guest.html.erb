@@ -1,25 +1,22 @@
-<nav class="sticky-top " style="background:#e6e6e6; min-width:900px;">
-  <ul class="nav justify-content-left" style="opacity:0.5;">
-    <li class="nav-item">
-      <a class="nav-link active" href="/home">Vibin Music</a>
-    </li>
-    <li class="nav-item ">
-      <a class="nav-link"  href="/explore">Explore</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/signup"> Sign up </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/login">Log in</a>
-    </li>
+<%= link_to 'Vibin Music', home_path, remote: true %>
+<a href="/explore" data-target="explore">Explore</a>
+<a href="/signup"> Sign up </a>
+<a href="/login">Log in</a>
+<%= form_tag(posts_path, method: :get, class: "", role: 'search', remote: true) do %>
+<%= text_field_tag :term,
+    params[:term],
+    id: 'posts_search',
+    autocomplete: :off,
+    placeholder: 'Search',
+    class: '' %>
 
-    <%= form_tag(users_path, method: :get, class:"form-inline") do %>
-    <li class="nav-item " style="padding-top:5px 0 5px 0; height:35px; overflow:hidden">
-        <%= text_field_tag :username, params[:username], class:"form-control form-control-sm", style:"padding:5px 5px 5px 5px;"%>
-    </li>
-    <li class="nav-item" style="padding-top:5px 0 5px 0; height:35px;">
-       <%= image_submit_tag "Search.png" %>
-    </li>
-    <% end %>
-  </ul>
-</nav>
+<% end %>
+<script>
+
+document.getElementById("posts_search").addEventListener('keypress', function(event) {
+if (event.keyCode == 13) {
+  $("#posts_search").submit()
+}
+});
+
+</script>

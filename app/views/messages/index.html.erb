@@ -1,4 +1,6 @@
-<div class="message-wr">
-  <%= render 'messages' %>
-  <%= render 'message_form' %>
+<div class="row" style="margin-top: 80px">
+<p>List of Open DM'S</p>
+  <% @messages.each do |dm| %>
+    <%= dm %>
+  <% end %>
 </div>

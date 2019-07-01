@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   before_action :get_messages
 
   def index
-
+    @messages = Message.where("user_id = 1")
   end
 
   def create

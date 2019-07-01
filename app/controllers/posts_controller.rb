@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :logged_in?, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :repost]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def new
     @post = Post.new
@@ -42,40 +42,19 @@ class PostsController < ApplicationController
     end
   end
 
-
   def repost
-    post = current_user.posts.new(post_id: @post.id, context: @post.context)
-    # error is right here ^
-    if post.save!
-      redirect_to root_url
-    else
-      redirect_to :back, alert: "Unable to repost"
+    @post = current_user.posts.new(repost_params)
+    respond_to do |format|
+      if @post.save!
+        format.js
+        format.html {redirect_to @post, notice: 'Post was successfully created.'}
+        format.json {render :show, status: :created, location: @post}
+      else
+        format.html {render :new}
+        format.json {render json: @post.errors, status: :unprocessable_entity}
+      end
     end
   end
-
-#
-#def repost
-#  @error = true;
-#  begin
-#    post = current_user.posts.new(post_id: @post.id)
-#    if post.save!
-#      redirect_to root_url
-#      @error = false;
-#    else
-#      raise
-#      redirect_to root_url, alert: "Unable to repost"
-#    end
-#  rescue Exception => e
-#    puts "ERROR---------------------\n #{e}"
-#  ensure
-#    if error
-#      redirect_to root_url, alert: "Unable to repost"
-#    else
-#      redirect_to root_url
-#    end
-#  end
-#end
-
 
   def destroy
     @post.destroy
@@ -97,6 +76,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:user_id, :context, :post_id, images: [])
+  end
+
+  def repost_params
+    params.permit(:user_id, :post_id)
   end
 
   def set_post

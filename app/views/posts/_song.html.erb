@@ -11,7 +11,7 @@
     <% @song = Song.find(post.id) %>
     <h1 style="margin-left:15%; margin-right: 15%;"><%= @song.title %></h1>
     <h5 style="margin-left:10px;"><b>Genre:</b><i> <%= @song.genre %></i></h5>
-     <p style="margin-left:10px; margin-top:20px"><%= @song.text %></p>
+    <p style="margin-left:10px; margin-top:20px"><%= @song.text %></p>
     <div class="row justify-content-center">
       <% if post.image1[0].presence %>
         <div class="col-xs-3 img-wrapper img-post" style="margin-left: 30px;">
@@ -31,5 +31,7 @@
       <p id="post_<%= post.id %>_likes"><%= render partial: "/posts/likes", locals: {post: post} %></p>
     <% end %>
     <p style="font-size:8px; float:right;"><%= post.updated_at %></p>
+    <button onclick="repost(<%=post.id %>)">repost</button>
+
   </div>
 </div>

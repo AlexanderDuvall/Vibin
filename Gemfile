@@ -31,10 +31,6 @@ gem 'autoprefixer-rails'
 gem 'searchkick'
 gem 'jquery-ui-rails'
 gem 'plyr-rails'
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 gem 'rails_sortable'
 gem 'acts_as_list'
 gem 'bootstrap', '>= 4.1.3'

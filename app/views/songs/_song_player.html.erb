@@ -1,36 +1,49 @@
-<div class="row justify-content-center">
-  <div class="col-xs-3 ml-5 border border-primary">
-    <p id="usernameSong"></p>
-    <p id="titleSong"></p>
+<div class="row ">
+  <div class="col">
+    <p id="usernameSong">Username</p>
   </div>
-
-  <div class="col-xs-5">
-    <div class="audio-player border border-primary">
-      <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
-      <div class="seek-bar">
-        <div class="fill"></div>
-        <div class="handle"></div>
-      </div>
-      <button id="myBtn" class="playlist-modal audio-player">Open modal</button>
+  <div class="col">
+    <div class="row" style="height:13px;">
+      <div class="col"><center>
+          <p id="titleSong">Song Title</p>
+      </center></div>
     </div>
-    <div class='audio-player border border-success'>
-      <button class="volume"><i class="ion-volume-high"></i></button>
-      <div class="volume_bar">
-        <div class="volume_fill"></div>
-        <div class="volume_handle"></div>
+    <div class="row">
+      <div class="col">
+        <div class="seek-bar">
+          <div class="fill"></div>
+          <div class="handle"></div>
+        </div>
       </div>
-      <button class="skip_forward"><i class="ion-skip-forward"></i></button>
     </div>
-    <button id="myBtn" class="playlist-modal audio-player">Open modal</button>
-  </div>mu
-  <div class="col-xs-2">
+    <div class="row">
+      <div class="col"><center>
+        <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
+      </center></div>
+    </div>
+    <div class="row">
+      <div class="col" style="margin-top:-20px;">
+        <button class="volume"><i class="ion-volume-high"></i></button>
+      </div>
+      <div class="col">
+        <div class="volume_bar">
+          <div class="volume_fill"></div>
+          <div class="volume_handle"></div>
+        </div>
+      </div>
+      <div class="col" style="margin-top:-20px;">
+        <button class="skip_forward"><i class="ion-skip-forward"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
     <button id="broadcast_text" data-session="<%= current_user.id.to_json if logged_in? %>">Post Broadcast</button>
     <button id="requestButton" onclick="requestData()">Request info</button>
-
+    <button id="myBtn" class="playlist-modal audio-player">Open modal</button>
   </div>
-  <div id="myModal" class="modal">
-    <div class=" modal-content">
-      <%= render partial: "playlists/songs" %>
-    </div>
+</div>
+<div id="myModal" class="modal">
+  <div class=" modal-content">
+    <%= render partial: "playlists/songs" %>
   </div>
 </div>

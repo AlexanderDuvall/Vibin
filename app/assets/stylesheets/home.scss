@@ -3,28 +3,32 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .homePage{
   min-width: 900px;
-  width: 99%;
 }
 .left-column{
-
+  border-style: solid;
+  border-color: blue;
+  border-width: thin;
   height: 380px;
-  width: 200px;
+  width: 20%;
+  margin-top: 70px;
+
   background-color: #b3ffb3;
 }
 .center-column::-webkit-scrollbar {
     width: 0px; /*For Chrome, Safari and Opera*/
 }
 .center-column{
-  height: 98vh;
-  width: calc(75% - 100px);
-  overflow-x: hidden;
-  overflow-y: auto;
+  width: 45%;
+  margin-top: 70px;
 }
 .right-column{
-  width: calc(25% - 100px);
+  border-style: solid;
+  border-color: blue;
+  border-width: thin;
+  width: 25%;
   height: 300px;
-  top: 60px;
   background-color: #b3ffb3;
+  margin-top: 70px;
 }
 .avatar-home{
   border-style: solid;
@@ -47,5 +51,5 @@
   border-color: silver;
   margin-top: 5px;
   height: 25px;
-  width: 25px
+  width: 25px;
 }

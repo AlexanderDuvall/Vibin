@@ -4,13 +4,14 @@
     console.log("current page > 1");
     $('#feed').append("<%= j render (@combine) %>");
     <% if @combine.next_page %>
+    console.log("adding");
       $('.pagination').replaceWith("<%= j will_paginate (@combine) %>");
     <% else %>
       $('.pagination').remove();
     <% end %>
   <% else %>
-    console.log("lol");
-    $('.container-fluid').html("<%= j render 'home/home' %>");
+    console.log("Ajax to Home page");
+    $('.container').html("<%= j render 'home/home' %>");
     aj();
     history.pushState(null, null, "<%= root_url %>");
   <% end %>

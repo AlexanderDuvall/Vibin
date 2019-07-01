@@ -13,11 +13,13 @@
 //= require active_storage_drag_and_drop
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+
 //= require jquery
 //= require jquery-ui/widget
 //= require jquery-ui/widgets/sortable
+//= require turbolinks
 //= require popper
+//= require bootstrap
 //= require bootstrap-sprockets
 //= require_tree .
 //=
@@ -25,12 +27,26 @@
 var counter = 0;
 var x = new XMLHttpRequest();
 
+function repost(postid) {
+    console.log("reposting...");
+    Rails.ajax({
+        url: "/repost?post_id=" + postid,
+        type: "POST",
+        processData: false,
+        success: function (data, textStatus, xhr) {
+            console.log(data);
+        },
+        error: function (data) {
+            console.log(data);
+        }
+    });
+}
+
 function isBroadcasting(...args) {
     if (args.length == 1 && (args[0] == false || args[0] == true))
         broadcasting = args[0];
     return broadcasting;
 }
-
 
 function connect(user_id) {
     console.log(user_id);
@@ -68,6 +84,8 @@ function connect(user_id) {
                     isBroadcasting(true);
                 } else if (results.hasOwnProperty("Song_id") && results.hasOwnProperty("Duration")) {
                     console.log("HAS SONG ID AND DURATION VARIABLE")
+                    console.log(results["Song_id"] + "," + results["Duration"]);
+                    nextSong(results["Song_id"], results["Duration"]);
                 } else {
                     console.log("Machine NOT REACHED");
                 }
@@ -84,6 +102,50 @@ function connect(user_id) {
 
 function requestData() {
     try {
+        x.onreadystatechange = function () {
+            if (x.readyState === 1) {
+                console.log("CONNECTION OPENED");
+            }
+            if (x.readyState === 2) {
+                console.log("DATA HAS BEEN SENT");
+            }
+            if (x.readyState === 3) {
+                console.log("LOADING");
+            }
+            if (x.readyState === 4) {
+                console.log("DONE...");
+                let results = x.response;
+                console.log(x.response);
+                if (results.length > 0) {
+                    let lines = results.split("\n");
+                    results = {};
+                    for (let i = 0; i < lines.length; i++) {
+                        var content = lines[i].split(/:(.+)/);
+                        if (content.length == 3)
+                            content.pop();
+                        console.log(content);
+                        console.log(content.length);
+                        if (content.length == 2) {
+                            console.log("hashing");
+                            results[content[0]] = content[1];
+                        }
+                    }
+                    console.log(results);
+                    if (results.hasOwnProperty("Machine-Reached-Status") && results['Machine-Reached-Status'] == "True") {
+                        console.log("MACHINE REACHED");
+                        isBroadcasting(true);
+                    } else if (results.hasOwnProperty("Song_id") && results.hasOwnProperty("Duration")) {
+                        console.log("HAS SONG ID AND DURATION VARIABLE");
+                        console.log(results["Song_id"] + "," + results["Duration"]);
+                        nextSong(results["Song_id"], results["Duration"]);
+                    } else {
+                        console.log("Machine NOT REACHED");
+                    }
+                } else {
+                    console.log("no response");
+                }
+            }
+        };
         x.open("POST", "http://192.168.1.91:4446");
         let a = new FormData();
         a.append("Broadcaster_id", "1");
@@ -152,12 +214,16 @@ var SongUsername = null;
 var songQueue = new Array();
 
 
-function buildPlayer(song, username, title) {
+function buildPlayer(song, username, title, ...args) {
     audio.src = "";
     $('#usernameSong').text(username);
     $('#titleSong').text(title);
     console.log(song);
     audio.src = song;
+    if (args.length != 0) {
+        let duration = args[0];
+        audio.currentTime = duration;
+    }
     audio.play();
     console.log(audio);
     lastTime = 0;
@@ -165,10 +231,12 @@ function buildPlayer(song, username, title) {
 
 function SelectedSong(song, username, title, singleSong, ...args) {
     if (singleSong) {
+        console.log("SINGLE SONG");
         set_current_song(args[0]);
-        buildPlayer(song.alt, username, title);
+        buildPlayer(args[1], username, title);
         isPlayList = false;
     } else {
+        console.log("NOT SINGLE SONG");
         set_current_song(args[2]);
         songQueue = args[0];
         console.log("\n\nSong Queue" + songQueue + "\n\n");
@@ -196,13 +264,39 @@ function ReorderSongs(songarray) {
 }
 
 
-function nextSong() {
-    if (counter != songQueue.length) {
-        let song = songQueue[counter];
-        set_current_song(songQueue[counter]);
-        console.log("getting next song:" + song);
+function nextSong(...args) {
+    if (args.length != 0) {
+        if (counter != songQueue.length) {
+            let song = songQueue[counter];
+            set_current_song(songQueue[counter]);
+            console.log("getting next song:" + song);
+            Rails.ajax({
+                url: "/getsongs?id=" + song,
+                type: "GET",
+                processData: false,
+                success: function (data, textStatus, xhr) {
+                    console.log("success");
+                    console.log(data);
+                    let url = data.song_url;
+                    let title = data.title;
+                    let username = data.username;
+                    buildPlayer(url, username, title);
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+            counter++;
+        } else {
+            console.log("end of list");
+            set_current_song(-1)
+        }
+    } else {
+        //Getting Broadcaster info from user 1
+        let songId = args[0];
+        let duration = args[1];
         Rails.ajax({
-            url: "/getsongs?id=" + song,
+            url: "/getsongs?id=" + songId,
             type: "GET",
             processData: false,
             success: function (data, textStatus, xhr) {
@@ -211,16 +305,12 @@ function nextSong() {
                 let url = data.song_url;
                 let title = data.title;
                 let username = data.username;
-                buildPlayer(url, username, title);
+                buildPlayer(url, username, title, duration);
             },
             error: function (data) {
                 console.log(data);
             }
         });
-        counter++;
-    } else {
-        console.log("end of list");
-        set_current_song(-1)
     }
 }
 

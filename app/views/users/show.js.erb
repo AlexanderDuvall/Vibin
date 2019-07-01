@@ -7,8 +7,8 @@
       $('.pagination').remove();
     <% end %>
   <% else %>
-    console.log("lol");
-    $('.container-fluid').html("<%= j render 'users/show' %>");
+    console.log("Ajax to user profile");
+    $('.container').html("<%= j render 'users/show' %>");
     ajProfile();
     history.pushState(null, null, "<%= user_path %>");
   <% end %>

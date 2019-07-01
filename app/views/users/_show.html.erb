@@ -1,7 +1,5 @@
 <% if logged_in? %>
-<!--  <img src="/galaxy.jpg" style="min-width: 400px; left:0px; width:50%; height: 280px; top:auto; z-index:-1;">
-   <img src="/tree.jpg" style="left:50%; min-width: 400px; width:50%; height: 280px; top:auto; z-index:-1; "> -->
-    <div class="row justify-content-center " style="height: 20px;">
+  <div class="row justify-content-center " style="height: 20px;">
       <div class="col-xs-auto ">
         <p><span class="badge badge-primary text-white" ><%= @user.name %></span></p>
       </div>
@@ -45,7 +43,7 @@
         </div>
         <div class="col-xs-auto" style="width: 20%;">
           <center>
-            <% if @user.avatar != nil %>
+            <% if @user.avatar.attached?%>
               <%= image_tag (@user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
             <% else %>
               <img src="/default-avatar.jpg" style="width:100px; height:100px; object-fit:cover;">
@@ -64,8 +62,8 @@
           <span class="badge badge-success" style="width: 300px; height:auto;"> <%= @user.bio %></span>
         </div>
       </div>
-      <div class="row bg-success " >
-        <ul class="nav nav-tabs " id="myTab" role="tablist">
+      <div class="row-fluid border border-primary bg-success" style='width:100%;' >
+        <ul class="nav nav-tabs " id="myTab" role="tablist" >
           <li class="nav-item">
             <a class="nav-link active" id="Posts-tab" data-toggle="tab" href="#Posts" role="tab" aria-controls="Posts" aria-selected="true">Posts</a>
           </li>
@@ -77,6 +75,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" id="Media-tab" data-toggle="tab" href="#Media" role="tab" aria-controls="Media" aria-selected="false">Media</a>
+          </li>
+          <li class="nav-item" id="MusicButtons" style="display: block;">
+          <div class="btn-group" role="group" aria-label="Basic example" >
+            <button type="button" class="btn btn-sm" id="your">Your Songs</button>
+            <button type="button" class="btn btn-sm" id="like">Liked Songs</button>
+            </div>
           </li>
           <% if !logged_in? %>
             <li class="nav-item">
@@ -95,10 +99,34 @@
       </div>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active user-post border border-primary" id="Posts" role="tabpanel" aria-labelledby="Posts-tab"><%= render "posts/userfeed" %></div>
-        <div class="tab-pane fade" id="Music" role="tabpanel" aria-labelledby="Music-tab"><%= render "songs/show_music" %></div>
+        <div class="tab-pane fade user-post" id="Music" role="tabpanel" aria-labelledby="Music-tab"><%= render "songs/show_music" %></div>
         <div class="tab-pane fade" id="Playlists" role="tabpanel" aria-labelledby="Playlists-tab"></div>
         <div class="tab-pane fade" id="Media" role="tabpanel" aria-labelledby="Media-tab"><%= render "posts/PhotosOnly" %></div>
-        <div class="tab-pane fade" id="AddMusic" role="tabpanel" aria-labelledby="AddMusic-tab"><%= link_to %></div>
-        <div class="tab-pane fade" id="Settings" role="tabpanel" aria-labelledby="Settings-tab">dfsdf</div>
       </div>
 <% end %>
+<script>
+
+$(document).on("click", "#Music-tab", function(){
+  console.log("lol");
+    $("#MusicButtons").css("display", "block");
+});
+$(document).on("click", "#Posts-tab", function() {
+    $("#MusicButtons").css("display", "none");
+});
+$(document).on("click", "#Playlists-tab", function() {
+    $("#MusicButtons").css("display", "none");
+});
+$(document).on("click", "#Media-tab", function() {
+    $("#MusicButtons").css("display", "none");
+});
+
+  $("#your").on("click", function(){
+    $("#yoursongs").css("display", "block");
+    $("#likedsongs").css("display", "none");
+    console.log("moa");
+  });
+  $("#like").on("click", function(){
+    $("#yoursongs").css("display", "none");
+    $("#likedsongs").css("display", "block");
+ });
+</script>

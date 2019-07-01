@@ -1,6 +1,7 @@
 <% if logged_in? && current_user.likePost?(post) %>
-<%= link_to (image_tag "unfire.png", style: "height:22px;"), post_like_path(post), class: "btn btn-info btn-sm buticons glyphicon glyphicon-fire", method: :delete, remote: true %>
+  <a data-remote="true" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>/like"><img src="unfire.png" height="40px;"></a>
 <% else %>
-<%= link_to (image_tag("fire.png", style:"height:22px;")), post_like_path(post), class: "btn btn-info btn-sm buticons glyphicon glyphicon-fire",method: :post, remote: true %>
+<a data-remote="true" rel="nofollow" data-method="post" href="/posts/<%= post.id %>/like"><img src="fire.png" height="40px;"></a>
+
 <% end %>
 <%= post.likes.count %>

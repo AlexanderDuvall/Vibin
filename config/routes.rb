@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :broadcasters
-  get 'messages/index'
   resources :messages
   get 'playlists/create'
   get 'playlists/new'
@@ -35,13 +34,11 @@ Rails.application.routes.draw do
   resources :song_positions
   resources :posts, only: [:create, :destroy]
   resources :posts do
+    post :repost
     resource :like, module: :posts
-    member do
-      post :repost
-    end
   end
   get '/posts/:post_id' => 'posts#show'
-
+  post '/repost/:id' => 'posts#repost'
   get 'songs/:id' => 'songs#show'
   get '/signup' => 'users#new'
   get '/login', to: 'sessions#new'

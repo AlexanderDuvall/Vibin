@@ -4,12 +4,12 @@ class User < ActiveRecord::Base
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :songs
-  has_one_attached :avatar
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :albums
+  has_one_attached :avatar
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-   validates :email, presence: true, length: {maximum: 255},
+  validates :email, presence: true, length: {maximum: 255},
             format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :name, presence: true, length: {maximum: 40}
   validates :username, presence: true, length: {maximum: 30}, uniqueness: true

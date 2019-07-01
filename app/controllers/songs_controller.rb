@@ -22,7 +22,7 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new
+    @song = Song.new(params[:id])
   end
 
   def destroy

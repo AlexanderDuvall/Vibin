@@ -1,0 +1,27 @@
+
+<center><p> quote </p>
+  <div class="row post border border-primary ml-1" id="<%= post.id %>" >
+    <div class="col-xs-3  justify-content-center text-center " style="width:16%;">
+      <%= image_tag (post.user.avatar), class:"post-ava" if post.user.avatar != nil %>
+      <h5><span class="badge badge-primary"><%= User.find(post.user_id).name %></span></h5>
+      <h5><span class="badge badge-primary" ><%= link_to "@"+User.find(post.user_id).username, user_path(post.user_id), class:"links"%></span></h5>
+      <br/>
+      <br/>
+    </div>
+    <div class="col-xs-6  " style="width:67%;" >
+      <br/>
+      <p style="margin-left:10px;" id="context"><%= post.context %></p>
+      <div class="row justify-content-center">
+
+        <% post.images.each do |image| %>
+          <div class="col-xs-3 img-wrapper img-post" style="margin-left: 30px;">
+            <%= image_tag (image), class:"imageclass" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-3  " style="width: 15%;">
+       <p style="font-size:13px; float:right;"><%= month(post.updated_at) %> <br><%= dayYear(post.updated_at) %><br><%= age(Time.now, post.updated_at)%></p>
+    </div>
+  </div>
+</center>

@@ -1,5 +1,120 @@
 $blue: #0af;
 $hover-color: #25a805;
+
+.playButton{
+  height: 90px;
+  width: 90px;
+  border-style: solid;
+  border-color: white;
+  background-color: inherit;
+}
+.playButtonImage{
+  height: 90px;
+  width:90px;
+}
+.seek-bar {
+  width: 400px;
+  background-color: #b3ffb3;
+  display: flex;
+  border-radius: 100000px;
+  cursor: pointer;
+}
+.fill {
+  height: 5px;
+  background-color: $blue;
+  border-radius: 100000px;
+}
+
+.handle {
+  width: 5px;
+  height: 5px;
+  background-color: $blue;
+  border-radius: 100000px;
+  margin-left: -5px;
+  transform: scale(2);
+  transition: all 0.1s;
+}
+button.play {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 5px 0px 5px 0px;
+  border: 0;
+  background-color: $blue;
+  color: white;
+  font-size: 15px;
+  border-radius: 100000px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+button.volume{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background-color: $blue;
+  color: white;
+  font-size: 15px;
+  border-radius: 100000px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+button.skip_forward {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background-color: $blue;
+  color: white;
+  font-size: 15px;
+  border-radius: 100000px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+.volume_bar {
+  width: 250px;
+  background-color: #730E15;
+  display: flex;
+  align-items: center;
+  border-radius: 100000px;
+  cursor: pointer;
+
+
+  .volume_fill {
+    height: 5px;
+    background-color: $blue;
+    border-radius: 100000px;
+  }
+
+  .volume_handle {
+    width: 5px;
+    height: 5px;
+    background-color: $blue;
+    border-radius: 100000px;
+    margin-left: -5px;
+    transform: scale(2);
+    transition: all 0.1s;
+
+    &:hover {
+      background-color: $hover-color;
+      transform: scale(3);
+    }
+  }
+}
+
+/*
 .audio-player {
   display: flex;
   align-items: center;
@@ -17,8 +132,8 @@ $hover-color: #25a805;
 
   button.play {
     display: block;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border: 0;
     background-color: $blue;
     color: white;
@@ -48,25 +163,25 @@ $hover-color: #25a805;
       background-color: $hover-color;
     }
   }
-
+  .center{
+    float: center;
+  }
   .seek-bar {
-    margin: 30px;
     width: 400px;
     background-color: #b3ffb3;
     display: flex;
-    align-items: center;
     border-radius: 100000px;
     cursor: pointer;
 
     .fill {
-      height: 10px;
+      height: 5px;
       background-color: $blue;
       border-radius: 100000px;
     }
 
     .handle {
-      width: 10px;
-      height: 10px;
+      width: 5px;
+      height: 5px;
       background-color: $blue;
       border-radius: 100000px;
       margin-left: -5px;
@@ -149,6 +264,7 @@ $hover-color: #25a805;
     }
   }
 }
+*/
 
 .song {
   background-color: #26F5DB;

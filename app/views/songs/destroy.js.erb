@@ -1,0 +1,4 @@
+$('.delete').bind('ajax:success', function(){
+  var idd = this.id;
+  $("#"+idd).fadeOut();
+});

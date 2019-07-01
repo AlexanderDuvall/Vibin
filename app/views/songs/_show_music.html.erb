@@ -1,8 +1,4 @@
 <div class="row justify-content-center">
-  <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-secondary" id="your">Your Songs</button>
-    <button type="button" class="btn btn-secondary" id="like">Liked Songs</button>
-    </div>
 </div>
 <div id="likedsongs" style="display:block;">
 <% @likedsongs.each do |song| %>
@@ -17,15 +13,5 @@
 <% end %>
 </div>
 <script>
-$(document).ready(function(){
-  $("#your").click( function(){
-    $("#yoursongs").css("display", "block");
-    $("#likedsongs").css("display", "none");
-    console.log("moa");
-  });
-  $("#like").click( function(){
-    $("#yoursongs").css("display", "none");
-    $("#likedsongs").css("display", "block");
-  });
- });
+
 </script>

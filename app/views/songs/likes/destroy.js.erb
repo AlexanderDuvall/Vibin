@@ -1,1 +1,6 @@
 $("#song_<%= @song.id %>_likes").html("<%=j render partial: "songs/likes", locals: {song: @song} %>");
+$('.delete').bind('ajax:success', function(){
+    console.log("ajax delete success")
+    var idd = this.id;
+    $("#"+idd).fadeOut();
+  });
