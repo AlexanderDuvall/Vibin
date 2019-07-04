@@ -2,10 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.postLeft{
+  width: 25%;
+  position: relative;
+}
+
+.postCenter{
+  width:60%;
+}
+
+.postRight{
+  width: 15%;
+}
+
 .post-ava {
   display: inline-block;
   overflow: hidden;
-  height: 54%;
+  height: 50%;
   width: 50%;
   border-radius: 50%;
   border-color: white;

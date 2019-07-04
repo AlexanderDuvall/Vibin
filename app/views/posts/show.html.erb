@@ -1,5 +1,5 @@
 <center>
-  <div class="row post border border-primary ml-1" id="<%= @post.id %>" style="margin-top:80px;" >
+  <div class="row post border border-primary ml-1" id="<%= @post.id %>" >
     <div class="col-xs-3  justify-content-center text-center " style="width:16%;">
       <%= image_tag (@post.user.avatar), class:"post-ava" if @post.user.avatar != nil %>
       <h5><span class="badge badge-primary"><%= User.find(@post.user_id).name %></span></h5>

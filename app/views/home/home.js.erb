@@ -1,17 +1,10 @@
-
-
-  <% if @combine.current_page > 1 %>
-    console.log("current page > 1");
-    $('#feed').append("<%= j render (@combine) %>");
-    <% if @combine.next_page %>
-    console.log("adding");
-      $('.pagination').replaceWith("<%= j will_paginate (@combine) %>");
-    <% else %>
-      $('.pagination').remove();
-    <% end %>
-  <% else %>
-    console.log("Ajax to Home page");
-    $('.container').html("<%= j render 'home/home' %>");
-    aj();
-    history.pushState(null, null, "<%= root_url %>");
-  <% end %>
+<% if @combine.current_page > 1 %>
+console.log("current page > 1");
+$('#feed').append("<%= j render (@combine) %>");
+<% if @combine.next_page %>
+console.log("adding");
+$('.pagination').replaceWith("<%= j will_paginate (@combine) %>");
+<% else %>
+$('.pagination').remove();
+<% end %>
+<% end %>

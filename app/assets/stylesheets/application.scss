@@ -21,7 +21,7 @@
 }
 html {
   height: 100%;
-  background-color: #e6e6e6;
+  background-color: white;
 }
 
 body {margin:0;}
@@ -51,6 +51,8 @@ body {margin:0;}
 }
 
 .main { /* Used in this example to enable scrolling */
+  margin-top:80px;
+  min-width: 900px;
 }
 
 .musicbar {
@@ -72,6 +74,7 @@ body {margin:0;}
 
 .container {
   height: 100%;
+  min-width: 900px;
 }
 
 .content {
@@ -113,9 +116,6 @@ body {margin:0;}
   opacity: 0;
 }
 
-p {
-  line-height: 10px;
-}
 
 .buticons {
   border-radius: 10px;

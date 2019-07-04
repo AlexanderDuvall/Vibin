@@ -6,9 +6,5 @@
     <% else %>
       $('.pagination').remove();
     <% end %>
-  <% else %>
-    console.log("Ajax to user profile");
-    $('.container').html("<%= j render 'users/show' %>");
-    ajProfile();
-    history.pushState(null, null, "<%= user_path %>");
+
   <% end %>

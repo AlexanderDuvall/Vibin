@@ -1,7 +1,6 @@
 <% if logged_in? && current_user.likePost?(post) %>
   <a data-remote="true" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>/like"><img src="unfire.png" height="40px;"></a>
 <% else %>
-<a data-remote="true" rel="nofollow" data-method="post" href="/posts/<%= post.id %>/like"><img src="fire.png" height="40px;"></a>
-
+  <a data-remote="true" rel="nofollow" data-method="post" href="/posts/<%= post.id %>/like"><img src="fire.png" height="40px;"></a>
 <% end %>
 <%= post.likes.count %>

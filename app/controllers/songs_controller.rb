@@ -18,6 +18,32 @@ class SongsController < ApplicationController
     end
   end
 
+  def incrementSongPlays
+    @songCounter = UserSongPlayCounter.where(user_id: current_user, song_id: params[:id]).first_or_create
+    if @songCounter.plays == ""
+      puts "null"
+      @songCounter.plays = 1
+    else
+      puts "increment"
+      @songCounter.increment!(:plays)
+    end
+    puts "*******"
+    puts "*******"
+    puts "*******"
+    puts params[:id]
+    puts "*******"
+    puts "*******"
+    puts "*******"
+    song = Song.find(params[:id])
+    if song.present?
+      song.increment!(:plays)
+      puts song.plays
+    end
+    puts "*******"
+    puts "*******"
+    puts "*******"
+  end
+
   def edit
   end
 
@@ -44,7 +70,6 @@ class SongsController < ApplicationController
 
   def song_params
     params.require(:song).permit(:title, :song_file, :cover_image)
-
   end
 
   def set_song

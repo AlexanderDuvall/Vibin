@@ -11,4 +11,6 @@ class Song < ApplicationRecord
   belongs_to :song_positions, optional: true
   #belongs_to :post, optional: true
   validates :title, length: {maximum: 40}
+
+
 end

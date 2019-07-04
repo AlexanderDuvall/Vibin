@@ -4,9 +4,11 @@
   </div>
   <div class="col">
     <div class="row" style="height:13px;">
-      <div class="col"><center>
+      <div class="col">
+        <center>
           <p id="titleSong">Song Title</p>
-      </center></div>
+        </center>
+      </div>
     </div>
     <div class="row">
       <div class="col">
@@ -17,9 +19,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col"><center>
-        <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
-      </center></div>
+      <div class="col">
+        <center>
+          <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
+        </center>
+      </div>
     </div>
     <div class="row">
       <div class="col" style="margin-top:-20px;">
@@ -38,12 +42,19 @@
   </div>
   <div class="col">
     <button id="broadcast_text" data-session="<%= current_user.id.to_json if logged_in? %>">Post Broadcast</button>
-    <button id="requestButton" onclick="requestData()">Request info</button>
+    <button id="requestButton" onclick=requestData(listenerCallback())>Request info</button>
     <button id="myBtn" class="playlist-modal audio-player">Open modal</button>
   </div>
 </div>
+<script>
+
+
+
+    ;</script>
+<!--
 <div id="myModal" class="modal">
   <div class=" modal-content">
     <%= render partial: "playlists/songs" %>
   </div>
 </div>
+-->

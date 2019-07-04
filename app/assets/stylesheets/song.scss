@@ -1,6 +1,29 @@
 $blue: #0af;
 $hover-color: #25a805;
 
+.postLeft{
+  width: 25%;
+  position: relative;
+}
+
+.postCenter{
+  width:60%;
+}
+
+.postRight{
+  width: 15%;
+}
+
+.post-ava {
+  display: inline-block;
+  overflow: hidden;
+  height: 50%;
+  width: 50%;
+  border-radius: 50%;
+  border-color: white;
+  border-style: solid;
+}
+
 .playButton{
   height: 90px;
   width: 90px;

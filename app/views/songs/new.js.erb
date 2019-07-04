@@ -1,2 +1,3 @@
-$('.modal').html("<%= j render 'form', song: @song %>");
+$('.modal-content').html("<%= j render 'form', song: @song %>");
 console.log("render song form");
+$("#myModal").css("display", "block");

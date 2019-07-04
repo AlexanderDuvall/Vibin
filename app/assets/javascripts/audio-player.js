@@ -4,6 +4,7 @@ let mouseDownSeek = false;
 let mouseDownVolume = false;
 let isMute = false;
 var broadcasting = false;
+var listening = false;
 let lastTime = 0;
 window.addEventListener("DOMContentLoaded", function (e) {
     var username = document.querySelector("#usernameSong");
@@ -85,10 +86,17 @@ window.addEventListener("DOMContentLoaded", function (e) {
         let currentTime = audio.currentTime;
         let p = currentTime / audio.duration;
         fillBar.style.width = p * 100 + '%';
-        if (isBroadcasting() && currentTime > (lastTime + 5)) {
+        if (isBroadcasting() && currentTime > (lastTime + 2)) {
             lastTime = currentTime;
             console.log(currentTime);
             sendData(currentTime)
+            console.log("broadcasting update...")
+        } else if (isListening() && (currentTime - lastTime) > 3) {
+            console.log(typeof (currentTime - lastTime));
+            console.log(currentTime - lastTime > 3);
+            console.log("TIME UPDATE: " + currentTime + " vs " + lastTime);
+            lastTime = currentTime;
+            requestData(listenerCallback(), true);
         }
     });
 

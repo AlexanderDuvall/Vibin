@@ -23,6 +23,31 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //=
+$(document).ready(function () {
+    console.log($('.main'));
+});
+
+$("#G").on("click", function () {
+    console.log("lolas");
+});
+
+function sendTheAJAX(controller, ...id) {
+    var x = new XMLHttpRequest;
+    x.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(this.responseText, 'text/html');
+            var elem = doc.getElementById(controller);
+            console.log(elem);
+            $(".container").html(elem);
+            //    $(".main").html(this);
+        }
+    };
+    x.open("GET", '/' + controller + '/' + id[0], true);
+    x.send();
+    var url = '/' + controller + '/' + id[0];
+    history.pushState(null, null, url);
+}
 
 var counter = 0;
 var x = new XMLHttpRequest();
@@ -47,12 +72,12 @@ function isBroadcasting(...args) {
         broadcasting = args[0];
     return broadcasting;
 }
-
 function connect(user_id) {
     console.log(user_id);
     x.onreadystatechange = function () {
         if (x.readyState === 1) {
             console.log("CONNECTION OPENED");
+
         }
         if (x.readyState === 2) {
             console.log("DATA HAS BEEN SENT");
@@ -82,10 +107,6 @@ function connect(user_id) {
                 if (results.hasOwnProperty("Machine-Reached-Status") && results['Machine-Reached-Status'] == "True") {
                     console.log("MACHINE REACHED");
                     isBroadcasting(true);
-                } else if (results.hasOwnProperty("Song_id") && results.hasOwnProperty("Duration")) {
-                    console.log("HAS SONG ID AND DURATION VARIABLE")
-                    console.log(results["Song_id"] + "," + results["Duration"]);
-                    nextSong(results["Song_id"], results["Duration"]);
                 } else {
                     console.log("Machine NOT REACHED");
                 }
@@ -100,7 +121,25 @@ function connect(user_id) {
     x.send(data);
 }
 
-function requestData() {
+function listenerCallback() {
+    console.log("comparing....");
+    let results = this;
+    if (results.length != 0) {
+        let difference = audio.currentTime - parseInt(results["Duration"]);
+        console.log("difference:" + difference);
+        if (difference <= 6) {
+            //update times
+            audio.currentTime = parseInt(results["Duration"]);
+        } else {
+            console.log("still in sync!")
+        }
+    } else {
+        console.log("no need");
+    }
+}
+
+function requestData(callback, justUpdating) {
+    console.log("loading....");
     try {
         x.onreadystatechange = function () {
             if (x.readyState === 1) {
@@ -131,29 +170,37 @@ function requestData() {
                         }
                     }
                     console.log(results);
-                    if (results.hasOwnProperty("Machine-Reached-Status") && results['Machine-Reached-Status'] == "True") {
-                        console.log("MACHINE REACHED");
-                        isBroadcasting(true);
-                    } else if (results.hasOwnProperty("Song_id") && results.hasOwnProperty("Duration")) {
+                    if (results.hasOwnProperty("Song_id") && results.hasOwnProperty("Duration")) {
                         console.log("HAS SONG ID AND DURATION VARIABLE");
                         console.log(results["Song_id"] + "," + results["Duration"]);
-                        nextSong(results["Song_id"], results["Duration"]);
+                        //
+                        //callback[1] true when updating time
+                        //false when updating and getting song
+                        if (Math.abs(lastTime - results["Duration"]) > 3)
+                            nextSong(results["Song_id"], results["Duration"], justUpdating);
+                        console.log("SENDING REQUEST DATA  TO THE CLIENT........");
+                        if (typeof callback != "undefined")
+                            callback.apply(results);
                     } else {
                         console.log("Machine NOT REACHED");
+                        //callback[0].apply();
                     }
                 } else {
+                    // callback.apply();
                     console.log("no response");
                 }
+                //x.close();
             }
         };
         x.open("POST", "http://192.168.1.91:4446");
         let a = new FormData();
-        a.append("Broadcaster_id", "1");
+        a.append("Broadcaster_id", "2");
         x.send(a);
     } catch (e) {
         console.log(e);
     }
 }
+
 
 function sendData(duration, user_id) {
     try {
@@ -195,15 +242,30 @@ function get_current_song() {
     return Cookies.get('current_song');
 }
 
+function previewFile() {
+
+  var preview = document.querySelector('#preview');
+  var file   = document.querySelector('#avatar').files[0];
+  var reader = new FileReader();
+  reader.addEventListener("load", function() {
+    preview.src = reader.result;
+  }, false);
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+
 function previewImage(id) {
 
     var preview = document.querySelector('#preview');
     var file = document.querySelector(id).files[0];
     var reader = new FileReader();
     reader.addEventListener("load", function () {
+        console.log("loaded");
         preview.src = reader.result;
     }, false);
     if (file) {
+      console.log("file exist");
         reader.readAsDataURL(file);
     }
 }
@@ -214,20 +276,43 @@ var SongUsername = null;
 var songQueue = new Array();
 
 
+
 function buildPlayer(song, username, title, ...args) {
-    audio.src = "";
-    $('#usernameSong').text(username);
-    $('#titleSong').text(title);
-    console.log(song);
-    audio.src = song;
-    if (args.length != 0) {
+    let buildSong = function () {
+        audio.src = "";
+        $('#usernameSong').text(username);
+        $('#titleSong').text(title);
+        console.log(song);
+        audio.src = song;
+        console.log(audio);
+    };
+    let updateSong = function () {
         let duration = args[0];
         audio.currentTime = duration;
+        lastTime = duration;
+    };
+    if (args.length != 0) {
+        if (args.length == 2 && args[1] == true) {
+            //just updating time...
+            updateSong();
+            // audio.play();
+        } else {
+            //changing and updating song...
+            // audio.pause();
+            buildSong();
+            updateSong();
+            audio.play();
+
+        }
+    } else {
+        audio.pause();
+        buildSong();
+        lastTime = 0;
+        audio.play();
+
     }
-    audio.play();
-    console.log(audio);
-    lastTime = 0;
 }
+
 
 function SelectedSong(song, username, title, singleSong, ...args) {
     if (singleSong) {
@@ -264,8 +349,10 @@ function ReorderSongs(songarray) {
 }
 
 
+
 function nextSong(...args) {
-    if (args.length != 0) {
+    if (args.length == 0) {
+        isListening(false);
         if (counter != songQueue.length) {
             let song = songQueue[counter];
             set_current_song(songQueue[counter]);
@@ -288,15 +375,15 @@ function nextSong(...args) {
             });
             counter++;
         } else {
-            console.log("end of list");
+            console.log("end of list...");
             set_current_song(-1)
         }
     } else {
         //Getting Broadcaster info from user 1
-        let songId = args[0];
+        let song_id = args[0];
         let duration = args[1];
         Rails.ajax({
-            url: "/getsongs?id=" + songId,
+            url: "/getsongs?id=" + song_id,
             type: "GET",
             processData: false,
             success: function (data, textStatus, xhr) {
@@ -305,13 +392,20 @@ function nextSong(...args) {
                 let url = data.song_url;
                 let title = data.title;
                 let username = data.username;
-                buildPlayer(url, username, title, duration);
+                buildPlayer(url, username, title, duration, args[2]);
+                isListening(true);
             },
             error: function (data) {
                 console.log(data);
             }
         });
     }
+}
+
+function isListening(...args) {
+    if (args.length == 1 && (args[0] == false || args[0] == true))
+        listening = args[0];
+    return listening;
 }
 
 function validateFiles(inputFile) {

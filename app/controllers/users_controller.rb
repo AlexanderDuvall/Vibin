@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = Post.all.where("user_id = ?", @user)
-
+    @favoriteSongs = UserSongPlayCounter.all.where("user_id= ?", @user);
     @songs = Song.all.where("user_id = ?", @user)
     @likedsongs = Musiclike.all.where("user_id = ?", @user).reverse
 

@@ -1,22 +1,19 @@
 <center>
-  <div class="row post border border-primary" id="<%= post.id %>">
-    <div class="col-xs-3  justify-content-center text-center " style="width:16%;">
-      <p> repost </p>
-      <%= image_tag (post.user.avatar), class: "post-ava" if post.user.avatar != nil %>
-      <h5><span class="badge badge-primary"><%= User.find(post.user_id).name %>'s repost!</span></h5>
-      <h5>
-        <span class="badge badge-primary"><%= link_to "@" + User.find(post.user_id).username, user_path(post.user_id), class: "links" %></span>
-      </h5>
-      <br/>
-      <br/>
-    </div>
-    <div class="col-xs-6  " style="width:67%;">
-      <br/>
-      <% repost = Post.find(post.post_id) %>
-      <% context = repost.context %>
-      <p style="margin-left:10px;" id="context">REPOST: <%= context %></p>
-      <div class="row justify-content-center">
+  <% repost = Post.find(post.post_id) %>
+  <div class="row post" id="<%= post.id %>">
+    <div class="postLeft justify-content-center text-center">
+      <div style="position: absolute; top:0">   <p> repost by <%= User.find(post.user_id).name %> </p></div>
+      <div style="position: absolute; bottom:0;">
 
+        <%= image_tag (repost.user.avatar), class: "post-ava" if repost.user.avatar != nil %>
+        <h6 style="margin:0; padding:0;"><span class="badge badge-primary"><%= User.find(repost.user_id).name %></span></h6>
+        <h6 style="margin:0; padding:0;"><span class="badge badge-primary"><%= link_to "@" + User.find(repost.user_id).username, user_path(repost.user_id), onclick: "sendTheAJAX('users', #{repost.user_id})" %></span></h6>
+      </div>
+    </div>
+    <div class="postCenter justify-content-center">
+      <br/>    <% context = repost.context %>
+      <p style="margin-left:10px; font-size:15px;" id="context"><%= context %></p>
+      <div class="row justify-content-center">
         <% repost.images.each do |image| %>
           <div class="col-xs-3 img-wrapper img-post" style="margin-left: 30px;">
             <%= image_tag (image), class: "imageclass" %>
@@ -24,9 +21,19 @@
         <% end %>
       </div>
     </div>
-    <div class="col-xs-3  " style="width: 15%;">
-      <p style="font-size:13px; float:right;"><%= month(post.updated_at) %> <br><%= dayYear(post.updated_at) %>
-        <br><%= age(Time.now, post.updated_at) %></p>
+    <div class="postRight">
+      <div class="" style="float:right;">
+        <p ><%= month(post.updated_at) %><br><%= dayYear(post.updated_at) %><br><%= age(Time.now, post.updated_at) %></p>
+      </div>
+      <div class="" style="float:right;">
+        <% if post.user_id != current_user.id %>
+          <%= link_to "Repost", post_repost_path(post), method: :post %>
+          <div id="post_<%= post.id %>_likes"><%= render partial: "/posts/likes", locals: {post: post} %></div>
+        <% else %>
+          <p><%= link_to "delete", post, method: :delete,
+                         data: {confirm: "You sure?"}, remote: true, class: "delete", id: post.id %></p>
+        <% end %>
+      </div>
     </div>
   </div>
 </center>

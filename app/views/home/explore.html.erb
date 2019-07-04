@@ -1,8 +1,10 @@
-<div class="container border">
-
-<% for @u in @users %>
-  <div class="row">
-    <%= @u.username %> id <%= @u.id %>
-  </div>
-<% end %>
+<div id="explore">
+<div class="row" >
+  <h1> Welcome to explore.</h1>
+  <% for @u in @users %>
+    <div class="col">
+      <%= @u.username %> id <%= @u.id %>
+    </div>
+  <% end %>
+</div>
 </div>

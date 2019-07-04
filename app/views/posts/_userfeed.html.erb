@@ -3,7 +3,7 @@
     <% if post.instance_of? Song %>
       <%= render partial: "songs/song", locals: {song: post} %>
     <% else %>
-      <%= render partial: "posts/#{post.post_type}", locals: {post: post}%>
+      <%= render partial: "posts/#{post.post_type}", locals: {post: post} %>
     <% end %>
   <% end %>
 </div>

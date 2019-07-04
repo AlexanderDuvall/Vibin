@@ -1,16 +1,35 @@
-<div id="map" style="height:300px; width:100%; margin-top:80px;"></div>
-<input id="pac-input" class="controls" type="text" placeholder="Search Box">
-<script>
-function initMap() {
-// The location of Uluru
-var uluru = {lat: -25.344, lng: 131.036};
-// The map, centered at Uluru
-var map = new google.maps.Map(
-    document.getElementById('map'), {zoom: 4, center: uluru});
-// The marker, positioned at Uluru
-var marker = new google.maps.Marker({position: uluru, map: map});
-}
-  </script>
+<div id="groupies">
+<div class="row">
+  <div class="leftColumn">
+    <div class="row border border-primary">
+      LMAO
+    </div>
+    <div class="row">
+      LMAO
+    </div>
+    <div class="row">
+      LMAO
+    </div>
+  </div>
+  <div class="rightColumn">
+    <div id="map" style="height:300px; width:100%;">
+    </div>
+  </div>
+</div>
+  <script>
+  function initMap() {
+
+    console.log("lol")
+  var mapProp= {
+    center:new google.maps.LatLng(29.793,-95.367),
+    zoom:12,
+  };
+  var map = new google.maps.Map(document.getElementById("map"),mapProp);
+  };
+    </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABBVE90zE3SB_kb52KWFSS2Fqumy303do&callback=initMap">
     </script>
+</div>
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+</div>

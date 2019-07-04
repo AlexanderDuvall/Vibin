@@ -1,37 +1,21 @@
-      <%= link_to 'Vibin Music', home_path, remote: true %>
-      <a href="/explore" data-target="explore">Explore</a>
-      <a href="/notifications" id="noti">Notifications</a>
-      <a id="groupies">Groupies</a>
-      <%= link_to 'Profile', user_path(current_user), remote: true %>
-      <%= link_to'Log Out',logout_path, method: :delete %>
-    <%= form_tag(posts_path, method: :get, class: "", role: 'search', remote: true) do %>
-      <%= text_field_tag :term,
-          params[:term],
-          id: 'posts_search',
-          autocomplete: :off,
-          placeholder: 'Search',
-          class: '' %>
+<%= link_to 'Vibin Music', home_path, onclick: "sendTheAJAX('home','')" %>
+<a onclick="sendTheAJAX('explore', '')">Explore</a>
+<a>Notifications</a>
+<a id="G" onclick="sendTheAJAX('groupies','')">Groupies</a>
+<%= link_to 'Profile', user_path(current_user), onclick: "sendTheAJAX('users',#{current_user.id})" %>
+<%= link_to 'Log Out', logout_path, method: :delete %>
+<%= form_tag(posts_path, method: :get, class: "", role: 'search', remote: true) do %>
+  <%= text_field_tag :term,
+                     params[:term],
+                     id: 'posts_search',
+                     autocomplete: :off,
+                     placeholder: 'Search',
+                     class: '' %>
 
-    <% end %>
+<% end %>
 <script>
-var httpRequest;
- document.getElementById("groupies").addEventListener('click', makeRequest);
-
- function makeRequest() {
-console.log("LOL");
-Rails.ajax({
-  url: "http://localhost:3000/",
-  type: "get",
-  data: "",
-  success: function(data) {
-     var jqObj = $(data);
-     console.log(jqObj);
-    console.log(data);
-     $('.main').html(data);
-
-  },
-  error: function(data) {}
-})
-
- }
+$("#G").on("click", function (){
+  console.log("lolas");
+  initMap();
+});
 </script>

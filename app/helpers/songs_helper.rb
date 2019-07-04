@@ -7,7 +7,17 @@ module SongsHelper
       puts "NO SONG AVAILABLE"
     end
   end
+  def incrementSongPlays
+  #  song = Song.find(params[:id])
+  #  if song.present?
+  #    song.increment!(:plays)
+  #  end
+  puts "*******"
+  puts "*******"
+  puts "*******"
 
+
+  end
   def set_up_Post(post)
     3.times {post.songs.build}
       post
