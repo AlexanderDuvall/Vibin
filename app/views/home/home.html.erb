@@ -1,10 +1,9 @@
 <div id="home">
   <% if logged_in? %>
   <% @user = current_user %>
-  <div class="row " style="min-width:800px;">
-    <div class="left-column">
-      <div class="container">
-        <div class="row">
+  <div class="row border border-primary">
+    <div class="left-column ">
+        <div class="row border border-success">
           <div class="col-xs-4">
             <% if @user.avatar.attached? %>
               <%= image_tag (@user.avatar), class: "avatar-home" %>
@@ -15,7 +14,9 @@
           <div class="col-xs-8">
             <div class="row">
               <div class="col">
+                <% if @user.Verified %>
                 <img src="/Verified.png" class="badge-verified">
+                <% end %>
                 <img src="/tree.jpg" class="badge-gold">
                 <img src="/galaxy.jpg" class="badge-silver">
               </div>
@@ -31,19 +32,25 @@
           </h7>
         </div>
         <div class="row">
-          <h9><span class="badge badge-primary text-wrap"> <%= @user.zipcode %></span></h9>
+          <h9>
+            <span class="badge badge-primary text-wrap"> <%= @user.zipcode %></span>
+          </h9>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-xs">
-            <h5><span class="badge badge-primary text-wrap"><%= @user.bio %></span></h5>
-          </div>
+        <div class="row">
+            <h5>
+              <span class="badge badge-primary text-wrap"><%= @user.bio %></span>
+            </h5>
         </div>
-        <div class="row justify-content-center ">
-          <div class="col-xs">
-            <h5><span class="badge badge-primary text-wrap">  Songs</span></h5>
+        <div class="row border border-primary">
+          <div class="col">
+            <h5>
+              <span class="badge badge-primary text-wrap">  Songs</span>
+            </h5>
           </div>
-          <div class="col-xs ">
-            <h5><span class="badge badge-primary text-wrap"> Posts </span></h5>
+          <div class="col">
+            <h5>
+              <span class="badge badge-primary text-wrap"> Posts </span>
+            </h5>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -78,7 +85,6 @@
           <%= link_to "Post", new_post_path, id: "butt", :class => 'btn btn-primary', remote: true %>
           <%= link_to "Music", new_song_path, id: "butt1", :class => 'btn btn-primary', remote: true %>
         </div>
-      </div>
     </div>
     <!--  MIDDLE COLUMN FEED -->
     <div class="center-column" id="center_column">
@@ -91,7 +97,6 @@
       <p>lmao</p>
     </div>
     <%= will_paginate @combine %>
-  </div>
 <% else %>
   <div class="row">
     <div class="col" style="width: 80%;">

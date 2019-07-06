@@ -1,18 +1,21 @@
-<% @song_pos = Get_Positions()%>
-<div id="playlists" class="list-group data-url" data-url="<%= sort_playlists_path %>">
-  <% unless @song_pos.nil? %>
-    <% @song_pos.each do |song_position| %>
-      <div class="list-group-item list-item" id='<%= dom_id(song_position) %>' onclick="setNewPlaylistSong(<%= song_position.position.to_json%>)">
-        <% @songdata = link_to_song song_position %>
-        <img src='<%= url_for @songdata.cover_image %>' style="width: 40px; height: 40px;"/>
-        <h6><%= @songdata.title %></h6>
-      </div>
-    <% end %>
-  <% else %>
-    <h4>You dont have a playlist yet... Go make one!</h4>
-  <% end %>
-
-</div>
+<% unless cookies[:playlist].to_s.length == 0 %>
+  <div class="modal-body">
+    <% @song_pos = Get_Positions() %>
+    <div id="playlists" class="list-group data-url" data-url="<%= sort_playlists_path %>">
+      <% unless @song_pos.nil? %>
+        <% @song_pos.each do |song_position| %>
+          <div class="list-group-item list-item" id='<%= dom_id(song_position) %>' onclick="setNewPlaylistSong(<%= song_position.position.to_json%>)">
+            <% @songdata = link_to_song song_position %>
+            <img src='<%= url_for @songdata.cover_image %>' style="width: 40px; height: 40px;"/>
+            <h6><%= @songdata.title %></h6>
+          </div>
+        <% end %>
+      <% else %>
+        <h4>You dont have a playlist yet... Go make one!</h4>
+      <% end %>
+    </div>
+  </div>
+<% end %>
 <script>
     $("#playlists").sortable({
         update: function (a, ui) {
@@ -21,10 +24,12 @@
                 url: $(this).data("url"),
                 type: "PATCH",
                 data: $(this).sortable('serialize'),
-                success: function () {
-                    ReorderSongs(<%=playlistToArray(cookies[:playlist])%>);
+                success: function (data) {
+                    ReorderSongs(data.id);
+                }, error: function (data) {
+                    console.log(data);
                 }
-            })
+            });
         }
     });
 </script>

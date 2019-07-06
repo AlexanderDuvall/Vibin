@@ -1,46 +1,6 @@
-<div class="container forall" >
-  <div class="row">
-    <div class="col">
-      <%= @song.title %>
-    <br/>
-
-      <%=@song.id %>
-    <br/>
-      <%=@song.user_id %>
-
-      <div class="row" ><p id="demo"></p></div>
-      <section id="audio" >
-
-      </section>
-    </div>
-  </div>
+<div class="container forall">
+  <h1><%= current_user.username %>'s songs</h1>
+  <% @songs.each do |song| %>
+    <%= render partial: "songs/song", locals: {song: song} %>
+  <% end %>
 </div>
-<script>
-    function play() {
-
-      var audioSection = $('section#audio');
-
-          var audio = $('<audio>', {
-              controls: 'controls',
-              autoplay: 'autoplay'
-          });
-
-          audioSection.html(audio);
-          return false;
-
-    }
-    $(document).ready(function () {
-        var audioSection = $('section#audio');
-        $('a.html5').click(function () {
-            var audio = $('<audio>', {
-                controls: 'controls',
-                autoplay: 'autoplay'
-            });
-            var url = $(this).attr('href');
-            document.getElementById("")
-            $('<source>').attr('src', url).appendTo(audio);
-            audioSection.html(audio);
-            return false;
-        });
-    });
-</script>

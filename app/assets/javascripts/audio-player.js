@@ -19,11 +19,11 @@ window.addEventListener("DOMContentLoaded", function (e) {
     let volume = document.querySelector('.volume_bar');
     let volume_fill = volume.querySelector(".volume_fill");
     let modal = document.getElementById("myModal");
-    let btn = document.getElementById("myBtn");
+    let btn = document.getElementById("renderPlaylist");
     let broadcast = document.getElementById("broadcast_text");
     broadcast.onclick = function () {
         let id = $("#broadcast_text").data("session");
-        console.log(id + " uhuh")
+        console.log(id + " uhuh");
         connect(id);
     };
     btn.onclick = function () {
@@ -32,9 +32,8 @@ window.addEventListener("DOMContentLoaded", function (e) {
             type: 'GET',
             processData: false,
             success: function (data) {
-                console.log(data.song_position[0]);
-
-                modal.style.display = "block";
+                console.log("buibmbubm");
+                console.log(data);
             },
             error: function (data) {
                 console.log(data);
@@ -42,12 +41,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
         });
 
     };
-// When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    };
+
     skipForward.addEventListener('click', function () {
         //skip to next playlist song
         nextSong();
@@ -66,15 +60,14 @@ window.addEventListener("DOMContentLoaded", function (e) {
         }
     });
 
-
     audio.addEventListener('error', function (e) {
         console.log(e);
     });
+
     audio.addEventListener('play', function () {
         playButtonIcon.className = 'ion-pause';
         volume_fill.style.width = 100 + '%';
         audio.volume = 1;
-
     });
 
     audio.addEventListener('pause', function () {
@@ -126,7 +119,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
         //changing volume
     });
 
-
     seekBar.addEventListener('mousedown', function (e) {
         mouseDownSeek = true;
         let p = getP(e);
@@ -159,13 +151,11 @@ window.addEventListener("DOMContentLoaded", function (e) {
             volume_fill.style.width = p * 100 + '%';
             audio.volume = p;
             pastAudio = audio.volume;
-
             // audio.currentTime = p * audio.duration;
         }
 
         console.log("------------Mouse Up -------------");
     });
-
 });
 
 function playPause() {

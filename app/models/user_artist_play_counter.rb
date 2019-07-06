@@ -1,0 +1,2 @@
+class UserArtistPlayCounter < ApplicationRecord
+end

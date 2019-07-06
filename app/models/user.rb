@@ -32,6 +32,8 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :playlists, dependent: :destroy
   has_many :messages
+  has_many :user_song_play_counters
+  has_many :user_artist_play_counters
   # Remembers a user in the database for use in persistent sessions.
   def remember
     # the cookie

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_03_233718) do
+ActiveRecord::Schema.define(version: 2019_07_06_190117) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -40,10 +40,8 @@ ActiveRecord::Schema.define(version: 2019_07_03_233718) do
   end
 
   create_table "albums", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "musiclist"
     t.string "title"
     t.bigint "user_id"
-    t.string "context"
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
@@ -125,12 +123,6 @@ ActiveRecord::Schema.define(version: 2019_07_03_233718) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-  create_table "postsliked", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "list"
-    t.integer "users_id"
-    t.index ["users_id"], name: "index_postsliked_on_users_id"
-  end
-
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
@@ -144,16 +136,20 @@ ActiveRecord::Schema.define(version: 2019_07_03_233718) do
 
   create_table "song_positions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "position"
+    t.bigint "songs_id"
     t.bigint "song_id"
     t.bigint "playlist_id"
     t.index ["playlist_id"], name: "index_song_positions_on_playlist_id"
     t.index ["song_id"], name: "index_song_positions_on_song_id"
+    t.index ["songs_id"], name: "index_song_positions_on_songs_id"
   end
 
-  create_table "songs", id: :bigint, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "songs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "text"
     t.string "genre"
+    t.integer "albums_id"
+    t.integer "users_id"
     t.bigint "user_id"
     t.string "song_path"
     t.datetime "created_at"
@@ -161,8 +157,20 @@ ActiveRecord::Schema.define(version: 2019_07_03_233718) do
     t.bigint "post_id"
     t.integer "plays"
     t.boolean "premium", default: false
+    t.index ["albums_id"], name: "index_songs_on_albums_id"
     t.index ["post_id"], name: "index_songs_on_post_id"
     t.index ["user_id"], name: "index_songs_on_user_id"
+    t.index ["users_id"], name: "index_songs_on_users_id"
+  end
+
+  create_table "user_artist_play_counters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "artist_id"
+    t.integer "plays"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_user_artist_play_counters_on_artist_id"
+    t.index ["user_id"], name: "index_user_artist_play_counters_on_user_id"
   end
 
   create_table "user_song_play_counters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -202,5 +210,4 @@ ActiveRecord::Schema.define(version: 2019_07_03_233718) do
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "song_positions", "playlists"
-  add_foreign_key "song_positions", "songs"
 end

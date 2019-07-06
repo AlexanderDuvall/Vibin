@@ -3,7 +3,6 @@
     <%= form_with model: @post  do |f| %>
     <div class="modal-header">
       <h5 class="modal-title" id="exampleModalLabel">Post</h5>
-       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       <% if @post.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>

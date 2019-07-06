@@ -23,6 +23,15 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //=
+
+
+window.onclick = function (event) {
+    var modal = document.getElementById("myModal");
+    if (event.target == modal) {
+        console.log("true");
+        $('#myModal').css("display", "none");
+    }
+};
 $(document).ready(function () {
     console.log($('.main'));
 });
@@ -72,6 +81,7 @@ function isBroadcasting(...args) {
         broadcasting = args[0];
     return broadcasting;
 }
+
 function connect(user_id) {
     console.log(user_id);
     x.onreadystatechange = function () {
@@ -115,7 +125,7 @@ function connect(user_id) {
             }
         }
     };
-    x.open("POST", "http://192.168.1.91:4444", true);
+    x.open("POST", "http://10.0.0.67:4444", true);
     let data = new FormData();
     data.append("User_id", user_id);
     x.send(data);
@@ -192,7 +202,7 @@ function requestData(callback, justUpdating) {
                 //x.close();
             }
         };
-        x.open("POST", "http://192.168.1.91:4446");
+        x.open("POST", "http://10.0.0.67:4446");
         let a = new FormData();
         a.append("Broadcaster_id", "2");
         x.send(a);
@@ -204,7 +214,7 @@ function requestData(callback, justUpdating) {
 
 function sendData(duration, user_id) {
     try {
-        x.open("POST", "http://192.168.1.91:4444", true);
+        x.open("POST", "http://10.0.0.67:4444", true);
         let a = new FormData();
         a.append("Duration", duration);
         a.append("Song_id", get_current_song());
@@ -225,7 +235,7 @@ function setNewPlaylistSong(position) {
 function set_current_playlist(id) {
     Cookies.set('playlist');
     Cookies.set('playlist', id, {expires: 14});
-    /// console.log('playlist: ' + Cookies.get('playlist'));
+    console.log('playlist: ' + Cookies.get('playlist'));
 }
 
 function set_current_song(id) {
@@ -234,25 +244,26 @@ function set_current_song(id) {
 
 }
 
-function get_current_playlist() {
-    return Cookies.get('playlist');
-}
-
 function get_current_song() {
     return Cookies.get('current_song');
 }
 
+function get_current_playlist() {
+    return Cookies.get('playlist');
+}
+
+
 function previewFile() {
 
-  var preview = document.querySelector('#preview');
-  var file   = document.querySelector('#avatar').files[0];
-  var reader = new FileReader();
-  reader.addEventListener("load", function() {
-    preview.src = reader.result;
-  }, false);
-  if (file) {
-    reader.readAsDataURL(file);
-  }
+    var preview = document.querySelector('#preview');
+    var file = document.querySelector('#avatar').files[0];
+    var reader = new FileReader();
+    reader.addEventListener("load", function () {
+        preview.src = reader.result;
+    }, false);
+    if (file) {
+        reader.readAsDataURL(file);
+    }
 }
 
 function previewImage(id) {
@@ -265,7 +276,7 @@ function previewImage(id) {
         preview.src = reader.result;
     }, false);
     if (file) {
-      console.log("file exist");
+        console.log("file exist");
         reader.readAsDataURL(file);
     }
 }
@@ -274,7 +285,6 @@ var audio = new Audio();
 var currentSong = null;
 var SongUsername = null;
 var songQueue = new Array();
-
 
 
 function buildPlayer(song, username, title, ...args) {
@@ -332,23 +342,25 @@ function SelectedSong(song, username, title, singleSong, ...args) {
     }
 }
 
-function ReorderSongs(songarray) {
-    console.log(songarray);
-    console.log(Date.now());
+function ReorderSongs(data) {
+    console.log(data);
+    console.log("^^ DATA");
     console.log("Old array: " + songQueue);
-    songQueue = songarray;
+    songQueue = data;
     console.log("New array: " + songQueue);
-    Rails.ajax({
-        url: "",
-        type: "GET",
-        processData: false,
-        success: function () {
-
-        }
-    })
+    resetCurrentSong();
 }
 
-
+function resetCurrentSong() {
+    let song = get_current_song();
+    let index = -1;
+    for (let i = 0; x < songQueue.length; i++) {
+        if (songQueue[i] == song) {
+            counter = i;
+            break;
+        }
+    }
+}
 
 function nextSong(...args) {
     if (args.length == 0) {

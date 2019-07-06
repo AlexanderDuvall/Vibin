@@ -16,16 +16,13 @@
 
   */
   @import "bootstrap";
-.min-width{
-  min-width: 900px
-}
+
 html {
   height: 100%;
   background-color: white;
 }
 
 body {margin:0;}
-
 
 .navbar {
   overflow: hidden;
@@ -34,6 +31,7 @@ body {margin:0;}
   background-color: white;
   top: 0;
   width: 100%;
+  min-width: 900px;
 }
 
 .navbar a {
@@ -61,11 +59,12 @@ body {margin:0;}
   background-color: #f2f2f2;
   bottom: 0;
   width: 100%;
+  min-width: 900px;
 }
 .MusicPlayer {
 
   width: 100%;
-  min-width: 910px;
+  min-width: 900px;
   z-index: 1;
   bottom: 0;
   background-color: lightgreen;
@@ -75,6 +74,7 @@ body {margin:0;}
 .container {
   height: 100%;
   min-width: 900px;
+  width: 100%;
 }
 
 .content {

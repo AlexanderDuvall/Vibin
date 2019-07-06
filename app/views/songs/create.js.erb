@@ -1,5 +1,4 @@
 //$("textarea").val("");
 $('#feed').prepend("<%= j render @song %>");
-$('#myModal').modal('hide');
-$(".modal-backdrop").remove();
+$(".modal").css("display", "none");
 console.log("prepend");

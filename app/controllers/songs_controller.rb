@@ -19,6 +19,7 @@ class SongsController < ApplicationController
   end
 
   def incrementSongPlays
+    @artistCounter = UserArtistPlayCounter.where(user_id: current_user, artist_id: params[:artist_id]).first_or_create
     @songCounter = UserSongPlayCounter.where(user_id: current_user, song_id: params[:id]).first_or_create
     if @songCounter.plays == ""
       puts "null"
@@ -26,6 +27,13 @@ class SongsController < ApplicationController
     else
       puts "increment"
       @songCounter.increment!(:plays)
+    end
+    if @artistCounter.plays == ""
+      puts "null"
+      @artistCounter.plays = 1
+    else
+      puts "increment"
+      @artistCounter.increment!(:plays)
     end
     puts "*******"
     puts "*******"
@@ -69,7 +77,7 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title, :song_file, :cover_image)
+    params.require(:song).permit(:title, :song_file, :cover_image, :premium)
   end
 
   def set_song

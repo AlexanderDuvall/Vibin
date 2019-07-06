@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     Post.where("user_id = ?", id)
   end
 
+  R
+
   def new
     @user = User.new
   end
@@ -23,8 +25,12 @@ class UsersController < ApplicationController
       @user.save UserMailer.account_activation(@user).deliver_now
       #log_in @user
       #flash[:success] = "Success!"
-      flash[:success] = "Please check your email to activate your account."
-      redirect_to root_url
+      @playlists = @user.playlists.new(:title => "#{current_user.name} 's Playlist")
+      if @playlists.save!
+        flash[:success] = "Please check your email to activate your account."
+        cookies[:playlists] = @playlists.id
+        redirect_to root_url
+      end
     else
       flash[:error] = "Invalid, please try again"
       render 'new'
@@ -40,10 +46,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = Post.all.where("user_id = ?", @user)
-    @favoriteSongs = UserSongPlayCounter.all.where("user_id= ?", @user);
+    if current_user.user_song_play_counters
+      @favoriteArtists = current_user.user_artist_play_counters.limit(5).order(plays: :desc)
+      @favoriteSongs = current_user.user_song_play_counters.limit(5).order(plays: :desc)
+    end
     @songs = Song.all.where("user_id = ?", @user)
     @likedsongs = Musiclike.all.where("user_id = ?", @user).reverse
-
     @combine = (@songs + @posts).sort_by {|post| post.created_at}.reverse.paginate(page: params[:page], per_page: 10)
 
   end

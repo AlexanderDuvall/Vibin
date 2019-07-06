@@ -4,11 +4,6 @@ class PlaylistsController < ApplicationController
   def create
     @playlists = current_user.playlists.new(:title => "#{current_user.name} 's Playlist")
     if @playlists.save!
-      @songs = Song.all
-      @songs.each_with_index do |f, index|
-        @song_position = @playlists.song_positions.new(:song_id => f.id, :position => index + 1)
-        @song_position.save!
-      end
       redirect_to root_path
     end
   end
@@ -21,8 +16,8 @@ class PlaylistsController < ApplicationController
         SongPosition.where(id: id).update_all(position: index + 1)
       end
     end
-    puts "List reordered in DB.  #{Time.new.inspect}"
-    head :ok
+    puts "List reordered in DB. #{Time.new.inspect}"
+    get_positions
   end
 
   def songs
@@ -60,14 +55,15 @@ class PlaylistsController < ApplicationController
 
   def get_positions
     puts "getting positions with cookies: #{cookies[:playlist]}"
-    @song_position = Playlist.find_by_id(cookies[:playlist].to_i)
-    puts @song_position.inspect
-    @song_position = @song_position.song_positions.order(:position)
+    song_position = Playlist.find_by_id(cookies[:playlist].to_i)
+    song_position = song_position.song_positions.order(:position)
+    array = Array.new
+    song_position.each do |f|
+      array.push(f.song_id)
+    end
     render :json => {
-        :song_position => @song_position
+        :id => array
     }
+    array
   end
-
-
-
 end

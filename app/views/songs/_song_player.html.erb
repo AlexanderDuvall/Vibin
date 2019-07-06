@@ -43,18 +43,13 @@
   <div class="col">
     <button id="broadcast_text" data-session="<%= current_user.id.to_json if logged_in? %>">Post Broadcast</button>
     <button id="requestButton" onclick=requestData(listenerCallback())>Request info</button>
-    <button id="myBtn" class="playlist-modal audio-player">Open modal</button>
+    <button id="renderPlaylist" class="playlist-modal audio-player">Open modal</button>
   </div>
 </div>
 <script>
-
-
-
-    ;</script>
-<!--
-<div id="myModal" class="modal">
-  <div class=" modal-content">
-    <%= render partial: "playlists/songs" %>
-  </div>
-</div>
--->
+    $('#renderPlaylist').on("click", function () {
+        $('.modal-content').html("<%= j render partial:'playlists/songs'%>");
+        console.log("render playlist");
+        $("#myModal").css("display", "block");
+    });
+</script>

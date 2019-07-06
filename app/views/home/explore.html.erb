@@ -1,10 +1,30 @@
 <div id="explore">
-<div class="row" >
-  <h1> Welcome to explore.</h1>
-  <% for @u in @users %>
-    <div class="col">
-      <%= @u.username %> id <%= @u.id %>
+  <div class="row border border-primary" style="height:1000px;">
+    <div class="col border border-success">
+      <h5> Top DJ's</h5>
     </div>
-  <% end %>
-</div>
+    <div class="col">
+      <h5> Top Chart</h5>
+    </div>
+    <div class="col">
+      <h5> Top Chart for ___</h5>
+      <select>
+        <option value="EDM">EDM</option>
+        <option value="Rock">Rock</option>
+        <option value="Jazz">Jazz</option>
+        <option value="Dubstep">Dubstep</option>
+        <option value="Blues">Blues</option>
+        <option value="Techno">Techno</option>
+        <option value="Country">Country</option>
+        <option value="Electro">Electro</option>
+        <option value="Rap">Rap</option>
+        <option value="IndieRock">Indie Rock</option>
+        <option value="Pop">Pop</option>
+        <option value="Classic">Classic</option>
+      </select>
+    </div>
+    <div class="col">
+      <h5> Clout List</h5>
+    </div>
+  </div>
 </div>

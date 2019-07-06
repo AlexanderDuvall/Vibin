@@ -14,8 +14,11 @@
 
 <% end %>
 <script>
-$("#G").on("click", function (){
-  console.log("lolas");
-  initMap();
+
+document.getElementById("posts_search").addEventListener('keypress', function(event) {
+if (event.keyCode == 13) {
+  $("#posts_search").submit()
+}
 });
+
 </script>
