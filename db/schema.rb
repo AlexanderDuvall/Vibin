@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_06_190117) do
+ActiveRecord::Schema.define(version: 2019_07_06_194353) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_190117) do
     t.index ["users_id"], name: "index_albumlikes_on_users_id"
   end
 
-  create_table "albums", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_albums_on_user_id"
@@ -157,6 +157,8 @@ ActiveRecord::Schema.define(version: 2019_07_06_190117) do
     t.bigint "post_id"
     t.integer "plays"
     t.boolean "premium", default: false
+    t.bigint "album_id"
+    t.index ["album_id"], name: "index_songs_on_album_id"
     t.index ["albums_id"], name: "index_songs_on_albums_id"
     t.index ["post_id"], name: "index_songs_on_post_id"
     t.index ["user_id"], name: "index_songs_on_user_id"
@@ -210,4 +212,5 @@ ActiveRecord::Schema.define(version: 2019_07_06_190117) do
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "song_positions", "playlists"
+  add_foreign_key "songs", "albums"
 end
