@@ -54,9 +54,10 @@ ActiveRecord::Schema.define(version: 2019_07_06_194353) do
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    ###################################
     t.bigint "user_id"
     t.text "comment"
-    t.integer "NumberofLikes"
+    t.integer "NumberofLikes"###
     t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -75,6 +76,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_194353) do
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+   ###################################################
     t.integer "user_id"
     t.integer "post_id"
     t.datetime "created_at", null: false
@@ -85,6 +87,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_194353) do
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    ##########################
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -107,12 +110,14 @@ ActiveRecord::Schema.define(version: 2019_07_06_194353) do
   end
 
   create_table "playlists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+   #############################################################################################
     t.string "title"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    ###########################################
     t.text "context"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -135,6 +140,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_194353) do
   end
 
   create_table "song_positions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+   #############################################################################################
     t.integer "position"
     t.bigint "songs_id"
     t.bigint "song_id"
@@ -145,6 +151,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_194353) do
   end
 
   create_table "songs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+ #########################################
     t.string "title"
     t.string "text"
     t.string "genre"
@@ -166,6 +173,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_194353) do
   end
 
   create_table "user_artist_play_counters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+   #######################################################
     t.integer "user_id"
     t.integer "artist_id"
     t.integer "plays"
@@ -176,6 +184,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_194353) do
   end
 
   create_table "user_song_play_counters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+   #########################################
     t.integer "user_id"
     t.integer "song_id"
     t.integer "plays"
@@ -184,6 +193,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_194353) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    ###############################################
     t.string "email"
     t.string "username", limit: 20
     t.string "password_digest"
@@ -206,7 +216,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_194353) do
     t.string "confirm_token"
     t.boolean "Verified", default: false
   end
-
+  #####################################
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "broadcasters", "users"
   add_foreign_key "messages", "users"
