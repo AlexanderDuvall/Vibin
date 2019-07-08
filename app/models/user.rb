@@ -26,8 +26,7 @@ class User < ActiveRecord::Base
   has_many :albumlikes
   has_many :favorites
   has_many :songs, dependent: :destroy
-  has_many :likesMusic
-  has_many :pictures
+   has_many :pictures #remove this table
   has_many :posts, dependent: :destroy
   has_many :likes
   has_many :playlists, dependent: :destroy
