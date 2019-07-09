@@ -40,7 +40,9 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
   end
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "musiclist"
     t.string "title"
+    t.string "message"
     t.integer "user_id"
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
@@ -162,8 +164,8 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
   create_table "songlikes", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "song_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["song_id"], name: "index_songlikes_on_song_id"
     t.index ["user_id"], name: "index_songlikes_on_user_id"
   end
@@ -193,12 +195,14 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
     t.index ["user_id"], name: "index_user_artist_play_counter_on_user_id"
   end
 
-  create_table "user_song_play_counter", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "user_song_play_counters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "plays"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "song_id"
     t.integer "user_id"
-    t.index ["song_id"], name: "index_user_song_play_counter_on_song_id"
-    t.index ["user_id"], name: "index_user_song_play_counter_on_user_id"
+    t.index ["song_id"], name: "index_user_song_play_counters_on_song_id"
+    t.index ["user_id"], name: "index_user_song_play_counters_on_user_id"
   end
 
   create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -215,13 +219,13 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
     t.datetime "updated_at", null: false
     t.boolean "Terms_of_Agreement", default: true
     t.string "remember_digest"
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.boolean "Verified", default: false
     t.string "city"
     t.string "state"
@@ -246,6 +250,6 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
   add_foreign_key "songs", "playlists"
   add_foreign_key "songs", "users"
   add_foreign_key "user_artist_play_counter", "users"
-  add_foreign_key "user_song_play_counter", "songs"
-  add_foreign_key "user_song_play_counter", "users"
+  add_foreign_key "user_song_play_counters", "songs"
+  add_foreign_key "user_song_play_counters", "users"
 end

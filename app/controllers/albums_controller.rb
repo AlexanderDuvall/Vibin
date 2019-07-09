@@ -11,6 +11,8 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
+    @album.songs.build
+    @album
   end
 
   def edit

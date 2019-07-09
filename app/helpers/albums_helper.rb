@@ -1,9 +1,4 @@
 module AlbumsHelper
-  def setupAlbum
-    album = current_user.albums.new
-    album
-  end
-
   def link_to_add_fields(name = nil, f = nil, association = nil, options = nil, html_options = nil, &block)
     # If a block is provided there is no name attribute and the arguments are
     # shifted with one position to the left. This re-assigns those values.
@@ -17,13 +12,7 @@ module AlbumsHelper
     else
       locals = {}
     end
-
-    if options.include? :partial
-      partial = options[:partial]
-    else
-      partial = 'songs/album_form'
-    end
-
+    partial = "songs/album_form"
     # Render the form fields from a file with the association name provided
     new_object = f.object.class.reflect_on_association(association).klass.new
     fields = f.fields_for(association, new_object, child_index: 'new_record') do |builder|

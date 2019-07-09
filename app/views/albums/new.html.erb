@@ -1,21 +1,25 @@
 <div class="container forall border border-dark">
 
   <h1>Create new album</h1>
-  <%= form_for setupAlbum do |f| %>
+  <%= form_for @album do |f| %>
     <div class="row signup border border-dark">
       <%= f.label :title, style: "margin-right: 36px;" %>
       <%= f.text_field :title %>
     </div>
     <h1>Songs</h1>
+    <%= f.fields_for :songs do |f| %>
+      <%= render "songs/album_form", {f: f} %>
+      <h1>yup</h1>
+    <% end %>
     <%= link_to_add_fields 'Add Song to Album', f, :songs %>
-    <%= f.submit "Add Album", class: "btn btn-primary" %>
+    <%= f.submit "Add Album", class: "btn btn-primary", style: "margin-bottom: 100px;" %>
   <% end %>
 </div>
 
 <script>$("[data-form-prepend]").click(function (e) {
     var obj = $($(this).attr("data-form-prepend"));
     obj.find("input, select, textarea").each(function () {
-        $(this).attr("title", function () {
+        $(this).attr("name", function () {
             return $(this)
                 .attr("name")
                 .replace("new_record", new Date().getTime());
