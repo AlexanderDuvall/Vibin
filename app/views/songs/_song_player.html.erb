@@ -45,11 +45,9 @@
     <button id="requestButton" onclick=requestData(listenerCallback())>Request info</button>
     <button id="renderPlaylist" class="playlist-modal audio-player">Open modal</button>
   </div>
+  <div id="audio-modal" class="modal-audio">
+    <div class="modal-content-audio">
+      <%= render partial: "playlists/songs" %>
+    </div>
+  </div>
 </div>
-<script>
-    $('#renderPlaylist').on("click", function () {
-        $('.modal-content').html("<%= j render partial:'playlists/songs'%>");
-        console.log("render playlist");
-        $("#myModal").css("display", "block");
-    });
-</script>

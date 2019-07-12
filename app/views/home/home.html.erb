@@ -92,9 +92,11 @@
     </div>
     <!-- RIGHT COLUMN -->
     <div class="right-column ">
-      <p>lmao</p>
-      <p>lmao</p>
-      <p>lmao</p>
+      <% @recommendedSongs.each do |song| %>
+      <div class="row">
+        song
+      </div>
+      <% end %>
     </div>
     <%= will_paginate @combine %>
 <% else %>

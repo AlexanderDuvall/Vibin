@@ -751,3 +751,99 @@
 
   <div class="modal" id="myModal" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   </div>
+
+
+  <div class="row">
+    <div class="col">
+      <p>posts</p>
+  <% @posts.each do |post| %>
+  <div class="row">
+    <%= render partial: "posts/#{post.post_type}", locals: {post: post} %>
+  </div>
+  <% end %>
+  </div>
+  <div class="col">
+    <p>songs</p>
+  <% @songs.each do |song| %>
+  <div class="row">
+    <%= render partial: "songs/song", locals: {song: song} %>
+  </div>
+  <% end %>
+  </div>
+  </div>
+
+
+  <br>
+
+
+
+    def autocomplete
+      render json: User.search(params[:term], fields: [{username: :text_start}], limit: 10).map(&:username)
+    end
+
+    <%= link_to 'Log Out', logout_path, method: :delete %>
+
+
+    <div id="messages">
+    <div class="row" style="margin-top: 80px">
+      <div class="col">
+        <p>List of Open DM'S</p>
+        <%= form_tag messages_path, method: :get, remote: true do %>
+        <%= text_field_tag :term, nil, placeholder: "Search User"%>
+        <% end %>
+        <div id="user-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @users.each do |user| %>
+                <tr>
+                  <td><%= user.name %></td>
+                  <td><%= user.username %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div id="search-results">
+
+        </div>
+        <% @messages.each do |dm| %>
+          <%= dm %>
+        <% end %>
+      </div>
+      <div class="col">
+
+      </div>
+    </div>
+    </div>
+
+    $("#user-table").hide();
+    $("#search-results").html("<%= escape_javascript(render :partial => 'results') %>");
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>DM Button </th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @searchUsers.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.username %></td>
+            <td>  </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>

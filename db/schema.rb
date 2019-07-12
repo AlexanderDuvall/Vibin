@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_08_183525) do
+ActiveRecord::Schema.define(version: 2019_07_11_202520) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "musiclist"
     t.string "title"
-    t.string "message"
+    t.string "context"
     t.integer "user_id"
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
@@ -76,6 +76,14 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "conversations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sender_id", "receiver_id"], name: "index_conversations_on_sender_id_and_receiver_id", unique: true
+  end
+
   create_table "favorites", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "musicid"
     t.integer "count"
@@ -94,25 +102,14 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "message", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-  end
-
   create_table "messages", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "receiver_id"
+    t.integer "conversation_id"
     t.integer "user_id"
-    t.index ["receiver_id"], name: "index_messages_on_receiver_id"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "pictures", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.binary "image"
-    t.integer "users_id"
-    t.integer "posts_id"
-    t.index ["posts_id"], name: "index_pictures_on_posts_id"
-    t.index ["users_id"], name: "index_pictures_on_users_id"
   end
 
   create_table "playlistlikes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -127,6 +124,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "default"
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
@@ -164,8 +162,8 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
   create_table "songlikes", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "song_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["song_id"], name: "index_songlikes_on_song_id"
     t.index ["user_id"], name: "index_songlikes_on_user_id"
   end
@@ -174,7 +172,6 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
     t.string "title"
     t.string "text"
     t.string "genre"
-    t.integer "albums_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "plays"
@@ -182,6 +179,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
     t.bigint "album_id"
     t.integer "user_id"
     t.integer "playlist_id"
+    t.string "subGenre", null: false
     t.index ["album_id"], name: "index_songs_on_album_id"
     t.index ["playlist_id"], name: "index_songs_on_playlist_id"
     t.index ["user_id"], name: "index_songs_on_user_id"
@@ -207,10 +205,10 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
 
   create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
-    t.string "username", limit: 20
+    t.string "username", limit: 30
     t.string "password_digest"
-    t.string "name", limit: 30
-    t.integer "zipcode", limit: 3
+    t.string "name", limit: 40
+    t.integer "zipcode"
     t.boolean "public", default: true
     t.string "gender"
     t.string "bio", limit: 150
@@ -219,13 +217,13 @@ ActiveRecord::Schema.define(version: 2019_07_08_183525) do
     t.datetime "updated_at", null: false
     t.boolean "Terms_of_Agreement", default: true
     t.string "remember_digest"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
     t.boolean "Verified", default: false
     t.string "city"
     t.string "state"

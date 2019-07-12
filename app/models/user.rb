@@ -1,4 +1,12 @@
 class User < ActiveRecord::Base
+  searchkick text_start: [:username, :name]
+
+  def search_data
+    {
+      username: username,
+      name: name
+    }
+  end
   attr_accessor :remember_token, :reset_token
   before_create :set_confirmation_token
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -11,29 +19,57 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 255},
             format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
-  validates :name, presence: true, length: {maximum: 40}
-  validates :username, presence: true, length: {maximum: 30}, uniqueness: true
+  validates :name, presence: true
+  validates :username, presence: true, uniqueness: true
   validates :Terms_of_Agreement, presence: true
-  validates :zipcode, presence: true, length: {minimum: 5, maximum: 5}
+  validates :zipcode, presence: true
   validates :gender, presence: true
   validates :birthday, presence: true
   validates :bio, length: {maximum: 250}
   validates :avatar, presence: true
   has_secure_password
   validates :password_digest, presence: true, length: {minimum: 6}, allow_nil: true
-
-  has_many :albums
   has_many :albumlikes
   has_many :favorites
   has_many :songs, dependent: :destroy
-   has_many :pictures #remove this table
   has_many :posts, dependent: :destroy
   has_many :likes
+  has_many :messages, dependent: :destroy
   has_many :playlists, dependent: :destroy
-  has_many :messages
+  has_many :sended_conversations, class_name: 'Conversation', foreign_key: "sender_id"
+  has_many :received_conversations, class_name: 'Conversation', foreign_key: "received_id"
   has_many :user_song_play_counters
   has_many :user_artist_play_counters
+  has_many :songlikes
   # Remembers a user in the database for use in persistent sessions.
+
+  def as_indexed_json(_options = {})
+    {
+        name: "#{name}",
+        suggest: {
+            input: [name],
+            output: "name",
+            payload: {id: id, name: name}
+        }
+    }
+  end
+
+  # class method to execute autocomplete search
+  def self.auto_complete(q)
+    return nil if q.blank?
+
+    search_definition = {
+        'name-suggest' => {
+            text: q,
+            completion: {
+                field: 'suggest'
+            }
+        }
+    }
+
+    __elasticsearch__.client.perform_request('GET', "#{index_name}/_suggest", {}, search_definition).body['name-suggest'].first['options']
+  end
+
   def remember
     # the cookie
     self.remember_token = User.new_token
@@ -70,7 +106,7 @@ class User < ActiveRecord::Base
   end
 
   def likeMusic?(song)
-    song.musiclikes.where(user_id: id).any?
+    song.songlikes.where(user_id: id).any?
   end
 
   def create_reset_digest
@@ -113,13 +149,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.search(username)
-    if username
-      where('username LIKE ?', "%#{username}%")
-    else
-      all
-    end
-  end
+
 
   private
 
@@ -138,4 +168,5 @@ class User < ActiveRecord::Base
                BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+
 end

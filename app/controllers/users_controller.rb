@@ -4,15 +4,18 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
-  def index
-    @users = User.search(params[:username])
+  def autocomplete
+    render json: User.search(params[:term], {fields: ["username", "name"], limit: 10, match: :text_start}).map(&:username)
+  end
+
+ def index
+   @users = User.all
   end
 
   def feed
     Post.where("user_id = ?", id)
   end
 
-  R
 
   def new
     @user = User.new
@@ -25,7 +28,7 @@ class UsersController < ApplicationController
       @user.save UserMailer.account_activation(@user).deliver_now
       #log_in @user
       #flash[:success] = "Success!"
-      @playlists = @user.playlists.new(:title => "#{current_user.name} 's Playlist")
+      @playlists = @user.playlists.new(:title => "#{@user.name} 's Playlist")
       if @playlists.save!
         flash[:success] = "Please check your email to activate your account."
         cookies[:playlists] = @playlists.id
@@ -47,11 +50,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = Post.all.where("user_id = ?", @user)
     if current_user.user_song_play_counters
-      @favoriteArtists = current_user.user_artist_play_counters.limit(5).order(plays: :desc)
+      #error @favoriteArtists = current_user.user_artist_play_counter.limit(5).order(plays: :desc)
       @favoriteSongs = current_user.user_song_play_counters.limit(5).order(plays: :desc)
     end
     @songs = Song.all.where("user_id = ?", @user)
-    @likedsongs = Musiclike.all.where("user_id = ?", @user).reverse
+    @likedsongs = Songlike.all.where("user_id = ?", @user).reverse
     @combine = (@songs + @posts).sort_by {|post| post.created_at}.reverse.paginate(page: params[:page], per_page: 10)
 
   end
@@ -88,9 +91,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def autocomplete
-    render json: User.search(params[:term], fields: [{username: :text_start}], limit: 10).map(&:username)
-  end
 
   def following
     @title = "following"

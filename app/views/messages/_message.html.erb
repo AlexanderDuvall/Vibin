@@ -1,8 +1,4 @@
-<div class="message">
-  <div class="message-user">
-    <%= message.user.username %>:
-  </div>
-  <div class="message-content">
-    <%= message.content %>
-  </div>
-</div>
+<p><%= message.content %></p>
+<p>at <strong><%= message.created_at %></strong><br>
+  by <strong><%= message.user.name %></strong></p>
+<hr>

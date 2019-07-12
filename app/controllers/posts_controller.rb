@@ -8,12 +8,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    if params[:term].present?
-      @posts = Post.search(params[:term])
-      @songs = Song.search(params[:term])
-    else
-      @posts = Post.all.page params[:page]
-    end
+
   end
 
   def create
@@ -75,7 +70,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:user_id, :context, :post_id, images: [])
+    params.require(:post).permit(:user_id, :content, :post_id, images: [])
   end
 
   def repost_params

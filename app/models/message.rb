@@ -1,6 +1,10 @@
 class Message < ApplicationRecord
   belongs_to :user
+  belongs_to :conversation
   validates :content, presence: true
-  validates :receiver, presence: true
-  scope :for_display, -> { order(:created_at).last(50) }
+
+  after_create_commit do
+    conversation.touch
+    NotificationBroadcastJob.perform_later(self)
+  end
 end

@@ -13,8 +13,11 @@
 //= require active_storage_drag_and_drop
 //= require rails-ujs
 //= require activestorage
-
+//= require conversations
+//= require cable
 //= require jquery
+//= require jquery_ujs
+//= require jquery-ui
 //= require jquery-ui/widget
 //= require jquery-ui/widgets/sortable
 //= require turbolinks
@@ -23,6 +26,7 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //=
+
 
 
 window.onclick = function (event) {
@@ -39,7 +43,9 @@ $(document).ready(function () {
 $("#G").on("click", function () {
     console.log("lolas");
 });
+function likeSong(id){
 
+}
 function sendTheAJAX(controller, ...id) {
     var x = new XMLHttpRequest;
     x.onreadystatechange = function () {
@@ -446,5 +452,15 @@ function validateFiles(inputFile) {
     if (extError) {
         window.alert(extErrorMessage);
         $(inputFile).val('');
+    }
+}
+
+function readUrl(input) {
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function (e) {
+            $('#Album_Cover').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
     }
 }

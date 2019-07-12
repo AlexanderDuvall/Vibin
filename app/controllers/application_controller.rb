@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # call the configured params
   add_flash_types :danger, :info, :warning, :success
-
+  #need before_action authenticate_user
   def broadcastMusic
      ActionCable.server.broadcast "music_channel", message: "lmao"
   end

@@ -19,6 +19,6 @@ class AlbumsController < ApplicationController
   end
 
   def strong_params
-    params.require(:album).permit(:title, album_files: [], songs_attributes: [:id, :title, :song_file, :cover_image, :premium, :user_id])
+    params.require(:album).permit(:title, :album_cover, songs_attributes: [:id, :title, :song_file, :cover_image, :premium, :user_id])
   end
 end

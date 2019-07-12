@@ -10,7 +10,7 @@
       </div>
       <div class="col-xs-6 border border-danger " style="width:70%;" >
       <br/>
-      <p style="margin-left:10px;"><%= post.context %></p>
+      <p style="margin-left:10px;"><%= post.content %></p>
       <% post.images.each do |image| %>
         <div class="row img-wrapper img-post" style="margin-left: 30px;">
           <%= image_tag (image), style: "height:120%; object-fit:cover; width:100%; display: inline-block; overflow: hidden;" %>

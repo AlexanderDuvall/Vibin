@@ -2,21 +2,3 @@
 <a href="/explore" data-target="explore">Explore</a>
 <a href="/signup"> Sign up </a>
 <a href="/login">Log in</a>
-<%= form_tag(posts_path, method: :get, class: "", role: 'search', remote: true) do %>
-<%= text_field_tag :term,
-    params[:term],
-    id: 'posts_search',
-    autocomplete: :off,
-    placeholder: 'Search',
-    class: '' %> 
-
-<% end %>
-<script>
-
-document.getElementById("posts_search").addEventListener('keypress', function(event) {
-if (event.keyCode == 13) {
-  $("#posts_search").submit()
-}
-});
-
-</script>

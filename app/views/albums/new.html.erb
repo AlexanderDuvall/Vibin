@@ -1,10 +1,19 @@
 <div class="container forall border border-dark">
 
   <h1>Create new album</h1>
+
   <%= form_for @album do |f| %>
-    <div class="row signup border border-dark">
-      <%= f.label :title, style: "margin-right: 36px;" %>
-      <%= f.text_field :title %>
+    <div class="album">
+      <div class="album_view">>
+        <img src=<%= image_url("PictureUploadButton.png") %> class="album" id="Album_Cover"/>
+        <%= f.label :title, style: "margin-right: 36px;", id: "title" %>
+      </div>
+      <div class="album_view">
+        <%= f.text_field :title, id: "title_text_space" %>
+      </div>
+    </div>
+    <div class="album_view">
+      <%= f.file_field :cover_image, accept: "image/png, image/jpeg", id: "cover_image" %>
     </div>
     <h1>Songs</h1>
     <%= f.fields_for :songs do |f| %>
@@ -16,17 +25,21 @@
   <% end %>
 </div>
 
-<script>$("[data-form-prepend]").click(function (e) {
-    var obj = $($(this).attr("data-form-prepend"));
-    obj.find("input, select, textarea").each(function () {
-        $(this).attr("name", function () {
-            return $(this)
-                .attr("name")
-                .replace("new_record", new Date().getTime());
+<script>
+    $("[data-form-prepend]").click(function (e) {
+        var obj = $($(this).attr("data-form-prepend"));
+        obj.find("input, select, textarea").each(function () {
+            $(this).attr("name", function () {
+                return $(this)
+                    .attr("name")
+                    .replace("new_record", new Date().getTime());
+            });
         });
+        obj.insertBefore(this);
+        return false;
     });
-    obj.insertBefore(this);
-    return false;
-});
 
+    $("#cover_image").change(function () {
+        readUrl(this);
+    });
 </script>

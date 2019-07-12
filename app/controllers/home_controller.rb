@@ -4,12 +4,11 @@ class HomeController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  def index
-  end
 
   # back-end code for pages/home
   def home
     @user = current_user
+    @recommendedSongs = Song.all.where("genre = ?", "NULL")
     # @songs = Array.new
     #following = Array.new
     #following.push(current_user.id)
@@ -65,11 +64,14 @@ class HomeController < ApplicationController
   end
 
   def search
-    if params[:search]
-      @users = User.find_by_username params[:search]
-    else
-      @users = User.all
-    end
+    query = params[:term].presence || "*"
+    @searchUsers = User.search(query)
+    @searchSongs = Song.search(query)
+    @searchPosts = Post.search(query)
+  end
+
+  def autocomplete
+    render json: ["test"]
   end
 
   private

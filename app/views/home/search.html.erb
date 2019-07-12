@@ -1,8 +1,24 @@
-<div class="container-fluid forall border"  >
-  <%= form_tag(search_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
-    <%= submit_tag 'Search', :username => nil %>
-  <% end %>
 
+<div class="row">
+  <div class="col">
+    <p>Users</p>
+<% @searchUsers.each do |user| %>
+<div class="row">
+  <%= user.username %>
+  </div>
+<% end %>
+</div>
+<div class="col border border-primary">
+  <p>Songs</p>
+<% @searchSongs.each do |song| %>
+  <%= render partial: "songs/song", locals: {song: song} %>
+<% end %>
+</div>
+<div class="col border border-primary">
+  <p>Posts</p>
+<% @searchPosts.each do |post| %>
+  <%= render partial: "posts/#{post.post_type}", locals: {post: post} %>
 
+<% end %>
+</div>
 </div>

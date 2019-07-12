@@ -1,9 +1,18 @@
 module PlaylistsHelper
 
   def Get_Positions
-    @song_position = Playlist.find_by_id(cookies[:playlist].to_i)
-    @song_position = @song_position.song_positions.order(:position)
-    @song_position
+    song_position = Playlist.find_by_id(cookies[:playlist].to_i)
+    puts "========="
+    puts song_position
+    puts "=========="
+    if song_position != nil
+      song_position = song_position.song_positions.order(:position)
+      puts "-----------my mang help me----------- #{song_position.length}"
+      puts song_position.inspect
+      return song_position
+    else
+      puts "-"
+    end
   end
 
   def link_to_song (songpositions)
@@ -29,6 +38,4 @@ module PlaylistsHelper
       @song_ids
     end
   end
-
-
 end

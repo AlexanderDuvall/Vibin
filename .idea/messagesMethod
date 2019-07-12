@@ -1,0 +1,5 @@
+1. [users/show.html.erb]
+<%= link_to 'send a message', new_message_path(receiver_id: @user.id) %> <==== pass user.id to params
+                              messages new method
+2. DO before_action :find_conversation! <= what is the exclamation point for?
+3.if conversation not found then create one

@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   #include Elasticsearch::Model
   #include Elasticsearch::Model::Callbacks
-  #searchkick
+  searchkick
 
   belongs_to :user
 #  accepts_nested_attributes_for :songs, allow_destroy: true #, reject_if: proc{|a| a['song_files'].blank? || a['title'].blank?}
@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   has_many_attached :images
   default_scope -> {order(created_at: :desc)}
   validates :user_id, presence: true
-  validates :context, presence: false
+  validates :content, presence: false
   validates :images, presence: false
   has_many :likes
 # has_many :songs
@@ -18,9 +18,9 @@ class Post < ApplicationRecord
 
 
   def post_type
-    if post_id? && context?
+    if post_id? && content?
       "quote"
-    elsif !context? && post_id?
+    elsif !content? && post_id?
       "repost"
     else
       "post"

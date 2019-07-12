@@ -103,12 +103,16 @@
             <button type="button" class="btn btn-sm" id="like">Liked Songs</button>
           </div>
         </li>
-        <% if !logged_in? %>
+        <% if current_user.id == @user.id %>
           <li class="nav-item">
             <%= link_to "Add Music", new_song_url, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Settings", edit_user_url(current_user), class: "nav-link" %>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to 'send a message', new_message_path(receiver_id: @user.id) %>
           </li>
         <% end %>
       </ul>

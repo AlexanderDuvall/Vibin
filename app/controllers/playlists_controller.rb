@@ -2,7 +2,12 @@ class PlaylistsController < ApplicationController
 
 
   def create
-    @playlists = current_user.playlists.new(:title => "#{current_user.name} 's Playlist")
+    @playlists = nil
+    if (current_user.playlists)
+      @playlists = current_user.playlists.new(:title => "Liked Music", :default => true)
+    else
+      @playlists = current_user.playlists.new(:title => "Playlist #{current_user.id}", :default => false)
+    end
     if @playlists.save!
       redirect_to root_path
     end
@@ -21,7 +26,7 @@ class PlaylistsController < ApplicationController
   end
 
   def songs
-    @song_pos = Get_Positions
+   # @song_pos = Get_Positions
   end
 
   def index

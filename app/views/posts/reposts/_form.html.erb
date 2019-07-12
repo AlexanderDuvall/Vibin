@@ -2,7 +2,7 @@
 <center>
   <div class="row">
     <div class="col">
-      <%= f.text_area :context, class: "col-xs context-form",  rows: "1", placeholder: "Text" %>
+      <%= f.text_area :content, class: "col-xs content-form",  rows: "1", placeholder: "Text" %>
 </div>
 </div>
   <div class="row post border border-primary ml-1">
@@ -15,7 +15,7 @@
     </div>
     <div class="col-xs-6  " style="width:67%;" >
       <br/>
-    <%= @OGpost.context %>
+    <%= @OGpost.content %>
     <div class="row justify-content-center">
         <% @OGpost.images.each do |image| %>
           <div class="col-xs-3 img-wrapper img-post" style="margin-left: 30px;">

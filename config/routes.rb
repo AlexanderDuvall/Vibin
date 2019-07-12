@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
   resources :broadcasters
-  resources :messages
+  resources :messages, only: [:new, :create]
+  resources :conversations, only: [:index, :show]
   get '/playCounter' => "songs#incrementSongPlays"
   get 'playlists/create'
   get 'playlists/new'
   get 'playlists/show'
   root 'home#home'
+  get '/dm' => "conversations#index"
   # Define routes for Pages
   get '/home' => 'home#home'
+  get '/search' => 'home#search'
   get '/explore' => 'home#explore'
   get '/groupies' => 'home#groupies'
   get '/search' => 'home#search'
+
   resources :users do
     member do
       get :following, :followers, :autocomplete, :broadcast_user

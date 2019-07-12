@@ -1,3 +1,11 @@
+$(function () {
+  console.log($("#term"));
+  $("#term").autocomplete({
+    source: "/users/autocomplete",
+    minLength: 2
+  });
+});
+
 
 $('#DJ').click(function () {
     Rails.ajax({

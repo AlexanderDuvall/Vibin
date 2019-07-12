@@ -2,23 +2,13 @@
 <a onclick="sendTheAJAX('explore', '')">Explore</a>
 <a>Notifications</a>
 <a id="G" onclick="sendTheAJAX('groupies','')">Groupies</a>
+<%= link_to'Log Out',logout_path, method: :delete, class: "nav-link" %>
 <%= link_to 'Profile', user_path(current_user), onclick: "sendTheAJAX('users',#{current_user.id})" %>
-<%= link_to 'Log Out', logout_path, method: :delete %>
-<%= form_tag(posts_path, method: :get, class: "", role: 'search', remote: true) do %>
-  <%= text_field_tag :term,
-                     params[:term],
-                     id: 'posts_search',
-                     autocomplete: :off,
-                     placeholder: 'Search',
-                     class: '' %>
+<a onclick="sendTheAJAX('conversations', '')">Messages</a>
+<%= form_tag search_path, method: :get do %>
+  <%= text_field_tag :term, nil, placeholder: "Search" %>
 
 <% end %>
-<script>
-
-document.getElementById("posts_search").addEventListener('keypress', function(event) {
-if (event.keyCode == 13) {
-  $("#posts_search").submit()
-}
-});
-
-</script>
+<% if logged_in? %>
+  <div id="current-user"></div>
+<% end %>

@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
     let skipForward = document.querySelector('.skip_forward');
     let volume = document.querySelector('.volume_bar');
     let volume_fill = volume.querySelector(".volume_fill");
-    let modal = document.getElementById("myModal");
+    let modal = document.getElementById("audio-modal");
     let btn = document.getElementById("renderPlaylist");
     let broadcast = document.getElementById("broadcast_text");
     broadcast.onclick = function () {
@@ -32,8 +32,9 @@ window.addEventListener("DOMContentLoaded", function (e) {
             type: 'GET',
             processData: false,
             success: function (data) {
-                console.log("buibmbubm");
-                console.log(data);
+                console.log("......");
+                console.log(data.id);
+                modal.style.display = "block";
             },
             error: function (data) {
                 console.log(data);
@@ -41,7 +42,11 @@ window.addEventListener("DOMContentLoaded", function (e) {
         });
 
     };
-
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
     skipForward.addEventListener('click', function () {
         //skip to next playlist song
         nextSong();

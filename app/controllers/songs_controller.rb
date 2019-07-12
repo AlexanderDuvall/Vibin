@@ -4,17 +4,11 @@ class SongsController < ApplicationController
   #before_action :set_song, only: [:show]
   #  respond_to :js, :json, :html
 
+
   def create
     @song = current_user.songs.new(song_params) #, :post_id => @post.id)
-    respond_to do |format|
-      if @song.save!
-        format.js
-        format.html {redirect_to @song, notice: 'Song was successfully created.'}
-        format.json {render :show, status: :created, location: @song}
-      else
-        format.html {render :new}
-        format.json {render json: @song.errors, status: :unprocessable_entity}
-      end
+    if @song.save!
+      redirect_to root_url
     end
   end
 
@@ -74,10 +68,19 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
+  def like_song
+    song_id = params[:id]
+    if (Song.likeMusic?(2))
+      Songlike.find_by(:user_id => current_user.id, :song_id => song_id)
+    else
+      @songlike = current_user.songlikes
+    end
+  end
+
   private
 
   def song_params
-    params.require(:song).permit(:title, :song_file, :cover_image, :premium)
+    params.require(:song).permit(:title, :song_file, :cover_image, :premium, songs_attributes: [:id, :title, :song_file, :cover_image, :premium, :user_id])
   end
 
   def set_song
