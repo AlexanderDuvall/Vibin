@@ -2,8 +2,11 @@
   <div class="row post" id="<%= post.id %>">
     <div class="postLeft justify-content-center text-center">
       <div style="position: absolute; bottom:0;">
-        <%= image_tag (post.user.avatar), class: "post-ava" if post.user.avatar != nil %>
-        <h6 style="margin:0; padding:0;"><span class="badge badge-primary"><%= User.find(post.user_id).name %></span>
+        <% if @user.avatar.attached? %>
+          <%= image_tag (@user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
+        <% else %>
+          <img src="/default-avatar.jpg" style="width:100px; height:100px; object-fit:cover;">
+        <% end %>  <h6 style="margin:0; padding:0;"><span class="badge badge-primary"><%= User.find(post.user_id).name %></span>
         </h6>
         <h6 style="margin:0; padding:0;">
           <span class="badge badge-primary"><%= link_to "@" + User.find(post.user_id).username, user_path(post.user_id), onclick: "sendTheAJAX('users', #{post.user_id})" %></span>

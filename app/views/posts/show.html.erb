@@ -1,7 +1,11 @@
 <center>
   <div class="row post border border-primary ml-1" id="<%= @post.id %>" >
     <div class="col-xs-3  justify-content-center text-center " style="width:16%;">
-      <%= image_tag (@post.user.avatar), class:"post-ava" if @post.user.avatar != nil %>
+      <% if @user.avatar.attached? %>
+        <%= image_tag (@user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
+      <% else %>
+        <img src="/default-avatar.jpg" style="width:100px; height:100px; object-fit:cover;">
+      <% end %>
       <h5><span class="badge badge-primary"><%= User.find(@post.user_id).name %></span></h5>
       <h5><span class="badge badge-primary" ><%= link_to "@"+User.find(@post.user_id).username, user_path(@post.user_id), class:"links"%></span></h5>
       <br/>

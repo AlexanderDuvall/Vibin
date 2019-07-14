@@ -17,6 +17,7 @@ class ConversationsController < ApplicationController
     format.html
     format.js
   end
+  @friends = User.all
 end
 
   private
@@ -32,6 +33,8 @@ end
   end
 
   def set_conversation
+    @message = current_user.messages.build
+
     @conversation = Conversation.find_by(id: params[:id])
   end
 

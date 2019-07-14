@@ -9,12 +9,11 @@ require 'rails/all'
 module VibinMusicBeta
   class Application < Rails::Application
 
-
+    config.public_file_server.enabled = true
     # Initialize configuration defaults for originally generated Rails version.
   #  config.load_defaults 5.2
   #  host = "localhost:3000"
   #  config.action_mailer.default_url_options = { host: host }
-
     config.action_view.embed_authenticity_token_in_remote_forms = true
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

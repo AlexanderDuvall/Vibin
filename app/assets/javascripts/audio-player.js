@@ -6,13 +6,14 @@ let isMute = false;
 var broadcasting = false;
 var listening = false;
 let lastTime = 0;
+var playButton = null;
 window.addEventListener("DOMContentLoaded", function (e) {
     var username = document.querySelector("#usernameSong");
     username.innerHTML = "";
     let seekBar = document.querySelector('.seek-bar');
     let muteButton = document.querySelector(".volume");
     let muteButtonIcon = muteButton.querySelector(".ion-volume-high");
-    let playButton = document.querySelector('.play');
+    playButton = document.querySelector('.play');
     let playButtonIcon = playButton.querySelector('.ion-play');
     let fillBar = seekBar.querySelector('.fill');
     let skipForward = document.querySelector('.skip_forward');
@@ -87,14 +88,16 @@ window.addEventListener("DOMContentLoaded", function (e) {
         if (isBroadcasting() && currentTime > (lastTime + 2)) {
             lastTime = currentTime;
             console.log(currentTime);
-            sendData(currentTime)
+            sendData(currentTime);
             console.log("broadcasting update...")
         } else if (isListening() && (currentTime - lastTime) > 3) {
             console.log(typeof (currentTime - lastTime));
             console.log(currentTime - lastTime > 3);
             console.log("TIME UPDATE: " + currentTime + " vs " + lastTime);
             lastTime = currentTime;
-            requestData(listenerCallback(), true);
+            requestData(function (results) {
+                listenerCallback(results);
+            });
         }
     });
 
@@ -167,8 +170,8 @@ function playPause() {
     console.log("play button clicked");
     if (audio.paused) {
         audio.play();
-        console.log("play");
     } else {
+        sendData(null, "Pause");
         audio.pause();
     }
 }

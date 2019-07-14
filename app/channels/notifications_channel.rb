@@ -1,6 +1,6 @@
 class NotificationsChannel < ApplicationCable::Channel
   def subscribed
-    puts "id:   #{current_user.id}"
+    puts current_user.inspect
     stream_from("notifications_#{current_user.id}_channel")
   end
 

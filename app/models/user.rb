@@ -3,10 +3,11 @@ class User < ActiveRecord::Base
 
   def search_data
     {
-      username: username,
-      name: name
+        username: username,
+        name: name
     }
   end
+
   attr_accessor :remember_token, :reset_token
   before_create :set_confirmation_token
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -41,6 +42,7 @@ class User < ActiveRecord::Base
   has_many :user_song_play_counters
   has_many :user_artist_play_counters
   has_many :songlikes
+  has_one :broadcaster
   # Remembers a user in the database for use in persistent sessions.
 
   def as_indexed_json(_options = {})
@@ -69,6 +71,7 @@ class User < ActiveRecord::Base
 
     __elasticsearch__.client.perform_request('GET', "#{index_name}/_suggest", {}, search_definition).body['name-suggest'].first['options']
   end
+
 
   def remember
     # the cookie
@@ -148,7 +151,6 @@ class User < ActiveRecord::Base
       return false;
     end
   end
-
 
 
   private

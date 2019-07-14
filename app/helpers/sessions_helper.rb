@@ -2,7 +2,11 @@ module SessionsHelper
   def log_in(user)
     session[:user_id] = user.id
   end
-
+  def tests
+    if 1 == 1
+      puts ""
+    end
+  end
   # Remembers a user in a persistent session.
   def remember(user)
     user.remember
@@ -27,13 +31,16 @@ module SessionsHelper
   end
 
   def current_user
-#@current_user = User.find_by(id: 2)
+  #@current_user = User.find_by(2)
     if (user_id = session[:user_id])
+      puts "session[:user_id] = #{user_id}"
       @current_user ||= User.find_by(id: user_id)
     elsif (user_id = cookies.signed[:user_id])
       user = User.find_by(id: user_id)
+      puts "user equals User.find_by"
       if user && user.authenticated?(:remember, cookies[:remember_token])
         log_in(user)
+        puts "user && user.auth. current_user: #{user}"
         @current_user = user
       end
     end

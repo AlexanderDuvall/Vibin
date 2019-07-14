@@ -6,14 +6,19 @@ class MessagesController < ApplicationController
   end
 
   def create
-
     @conversation ||= Conversation.create(sender_id: current_user.id, receiver_id: @receiver.id)
-    @message = current_user.messages.build(message_params)
+    @message = current_user.messages.new(message_params)
     @message.conversation_id = @conversation.id
-        puts @message
-    if @message.save!
-      flash[:success] = "Your message was sent!"
-      redirect_to conversation_path(@conversation)
+    puts @message
+    respond_to do |format|
+      if @message.save!
+        format.js
+        format.html {redirect_to @message, notice: 'message was successfully created.'}
+        format.json {render :show, status: :created, location: @message}
+      else
+        format.html {render :new}
+        format.json {render json: @message.errors, status: :unprocessable_entity}
+      end
     end
   end
 

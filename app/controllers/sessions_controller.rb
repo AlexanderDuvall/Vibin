@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       if user.activated?
         log_in user
+        cookies[:current_user_id] = user.id
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
         redirect_to root_url
       else

@@ -10,6 +10,7 @@
           <%= link_to 'Privacy and Security','/privacy_settings', :class =>  "nav-link" %>
         </li>
         <li><%= link_to "Deactivate", @user, method: :delete, data: {confirm: "You sure?"} %></li>
+        <li><%= link_to'Log Out',logout_path, method: :delete %></li>
       </ul>
 
 
@@ -21,8 +22,14 @@
       <div class="row justify-content-center">
 
         <div class="upload-btn-wrapper">
-          <button class="btn-avatar">  <%= image_tag @currentuser.avatar, id:"preview", style:"height:80px; width:80px;"%>
-      <%= f.file_field :avatar, id:"avatar", onchange: "previewFile()" %>
+          <center>
+            <% if @user.avatar.attached? %>
+              <%= image_tag (@user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
+            <% else %>
+              <img src="/default-avatar.jpg" style="width:100px; height:100px; object-fit:cover;">
+            <% end %>
+          </center>
+                <%= f.file_field :avatar, id:"avatar", onchange: "previewFile()" %>
         </div>
       </div>
         <%= f.label :name, class: "vibin_form_text ml-5" %>

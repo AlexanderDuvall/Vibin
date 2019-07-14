@@ -42,7 +42,7 @@
   </div>
   <div class="col">
     <button id="broadcast_text" data-session="<%= current_user.id.to_json if logged_in? %>">Post Broadcast</button>
-    <button id="requestButton" onclick=requestData(listenerCallback())>Request info</button>
+    <button id="requestButton" onclick=requestData()>Request info</button>
     <button id="renderPlaylist" class="playlist-modal audio-player">Open modal</button>
   </div>
   <div id="audio-modal" class="modal-audio">

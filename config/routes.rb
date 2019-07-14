@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :broadcasters
   resources :messages, only: [:new, :create]
   resources :conversations, only: [:index, :show]
   get '/playCounter' => "songs#incrementSongPlays"

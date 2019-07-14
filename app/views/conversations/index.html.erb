@@ -1,7 +1,14 @@
 
 
-
 <div id="conversations">
-  <h1>Your conversations</h1>
-  <%= render @conversations %>
+  <div class="row">
+    <div class="col-xs-4" id="conversationUserList">
+      <h1>Your Friends</h1>
+      <%= render @friends %>
+    </div>
+    <div class="col" id="conversationList">
+      <h1>Your conversations</h1>
+      <%= render @conversations %>
+    </div>
+  </div>
 </div>
