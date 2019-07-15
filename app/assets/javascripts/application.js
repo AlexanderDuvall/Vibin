@@ -144,7 +144,7 @@ function listenerCallback(results) {
     } else if (results.length != 0) {
         let difference = audio.currentTime - parseInt(results["Duration"]);
         console.log("difference:" + difference);
-        if (difference >= 6) {
+        if (Math.abs(difference) >= 4) {
             //update times
             audio.currentTime = parseInt(results["Duration"]);
         } else {
@@ -153,6 +153,12 @@ function listenerCallback(results) {
     } else {
         console.log("no need");
     }
+}
+
+function needsUpdate(...args) {
+    if (args.length == 1 && (args[0] == false || args[0] == true))
+        update = args[0];
+    return update
 }
 
 function requestData(callback) {
@@ -193,10 +199,19 @@ function requestData(callback) {
                         //
                         //callback[1] true when updating time
                         //false when updating and getting song
-
-                        if (Math.abs(lastTime - results["Duration"]) > 3 && !isListening())
+                        if (parseInt(results["Song_id"]) !== parseInt(get_current_song())) {
+                            console.log("mismatching songs...")
+                            needsUpdate(true);
+                        }
+                        if ((Math.abs(lastTime - results["Duration"]) > 3 && !isListening()) || needsUpdate()) {
+                            if (needsUpdate()) {
+                                console.log("UPDATING.....")
+                            }
                             nextSong(results["Song_id"], results["Duration"]);
-                        console.log("SENDING REQUEST DATA  TO THE CLIENT........");
+                            console.log("SENDING REQUEST DATA  TO THE CLIENT........");
+
+                            needsUpdate(false);
+                        }
 
                         if (typeof callback != "undefined" && isListening()) {
                             console.log("callback... running");
@@ -397,6 +412,8 @@ function nextSong(...args) {
                     let url = data.song_url;
                     let title = data.title;
                     let username = data.username;
+                    if (isBroadcasting())
+                        sendData(0);
                     buildPlayer(url, username, title);
                 },
                 error: function (data) {
@@ -412,8 +429,10 @@ function nextSong(...args) {
         //Getting Broadcaster info from user 1
         let song_id = args[0];
         let duration = args[1];
-        if (song_id === "-1") {
+        if (song_id === "-1" && !isListening()) {
             alert("Stream Not Available...");
+        } else if (song_id === "-1" && isListening()) {
+            alert("Stream stopped...");
             isListening(false);
         } else
             Rails.ajax({

@@ -7,6 +7,7 @@ var broadcasting = false;
 var listening = false;
 let lastTime = 0;
 var playButton = null;
+var update = false;
 window.addEventListener("DOMContentLoaded", function (e) {
     var username = document.querySelector("#usernameSong");
     username.innerHTML = "";
@@ -79,7 +80,15 @@ window.addEventListener("DOMContentLoaded", function (e) {
     audio.addEventListener('pause', function () {
         playButtonIcon.className = 'ion-play';
     });
-
+    audio.addEventListener("ended", function () {
+        if (isListening()) {
+            needsUpdate(true);
+            setTimeout(requestData(), 1300);
+            //needsUpdate(false)
+        } else {
+            nextSong();
+        }
+    });
     audio.addEventListener('timeupdate', function () {
         if (mouseDownSeek) return;
         let currentTime = audio.currentTime;
