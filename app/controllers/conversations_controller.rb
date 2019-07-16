@@ -17,7 +17,10 @@ class ConversationsController < ApplicationController
     format.html
     format.js
   end
-  @friends = User.all
+  query = params[:term].presence || "*"
+  @searchUsers = User.search(query)
+  @user = User.find(current_user.id)
+  @friends = Relationship.all.where("follower_id = ?", @user)
 end
 
   private

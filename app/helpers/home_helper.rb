@@ -15,6 +15,15 @@ module HomeHelper
     end
   end
 
+  def conversation(current_user, other)
+
+    if @convo = Conversation.where(sender_id: current_user, receiver_id: other).first
+      "existing dm"
+    else
+      "new convo"
+    end
+  end
+
   def month(x)
     case (x.month)
     when 1

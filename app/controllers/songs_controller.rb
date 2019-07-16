@@ -80,7 +80,7 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title, :song_file, :cover_image, :premium, songs_attributes: [:id, :title, :song_file, :cover_image, :premium, :user_id])
+    params.require(:song).permit(:title, :song_file, :cover_image, :premium, :subGenre)
   end
 
   def set_song

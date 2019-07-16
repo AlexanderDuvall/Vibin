@@ -26,6 +26,16 @@
 //= require_tree .
 //=
 
+$(function () {
+    $('#ed').live("click", function () {
+        $.getScript(this.href);
+        return false;
+    });
+    $("#").submit(function () {
+        $.get(this.action, $(this).serialize(), null, "script");
+        return false;
+    })
+});
 
 window.onclick = function (event) {
     var modal = document.getElementById("myModal");
@@ -128,7 +138,7 @@ function connect(user_id) {
             }
         }
     };
-    x.open("POST", "http://192.168.1.79:4444", true);
+    x.open("POST", "http://192.168.1.91:4444", true);
     let data = new FormData();
     data.append("User_id", user_id);
     x.send(data);
@@ -200,7 +210,14 @@ function requestData(callback) {
                         //callback[1] true when updating time
                         //false when updating and getting song
                         if (parseInt(results["Song_id"]) !== parseInt(get_current_song())) {
-                            console.log("mismatching songs...")
+                            console.log(typeof results["Song_id"]);
+                            console.log(results["Song_id"].length);
+                            console.log(results["Song_id"]);
+
+                            console.log(typeof get_current_song());
+                            console.log(get_current_song().length);
+                            console.log(get_current_song());
+                            console.log("mismatching songs...");
                             needsUpdate(true);
                         }
                         if ((Math.abs(lastTime - results["Duration"]) > 3 && !isListening()) || needsUpdate()) {
@@ -228,9 +245,9 @@ function requestData(callback) {
                 //x.close();
             }
         };
-        x.open("POST", "http://192.168.1.79:4446");
+        x.open("POST", "http://192.168.1.91:4446");
         let a = new FormData();
-        a.append("Broadcaster_id", "4");
+        a.append("Broadcaster_id", "1");
         x.send(a);
     } catch (e) {
         console.log(e);
@@ -241,7 +258,7 @@ function requestData(callback) {
 function sendData(duration, ...args) {
     try {
         if (args.length == 0) {
-            x.open("POST", "http://192.168.1.79:4444", true);
+            x.open("POST", "http://192.168.1.91:4444", true);
             let a = new FormData();
             a.append("Duration", duration);
             a.append("Song_id", get_current_song());
@@ -249,7 +266,7 @@ function sendData(duration, ...args) {
             //   x.abort();
             console.log("sent it out");
         } else {
-            x.open("POST", "http://192.168.1.79:4444", true);
+            x.open("POST", "http://192.168.1.91:4444", true);
             let a = new FormData();
             a.append("Action", args[0]);
             x.send(a);
@@ -274,7 +291,6 @@ function set_current_playlist(id) {
 function set_current_song(id) {
     Cookies.set('current_song');
     Cookies.set('current_song', id, {expires: 14});
-
 }
 
 function get_current_song() {
@@ -445,6 +461,7 @@ function nextSong(...args) {
                     let url = data.song_url;
                     let title = data.title;
                     let username = data.username;
+                    set_current_song(song_id);
                     buildPlayer(url, username, title, duration, args[2]);
                     isListening(true);
                 },

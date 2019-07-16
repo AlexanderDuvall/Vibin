@@ -72,6 +72,10 @@ class User < ActiveRecord::Base
     __elasticsearch__.client.perform_request('GET', "#{index_name}/_suggest", {}, search_definition).body['name-suggest'].first['options']
   end
 
+  def get_users
+    conn = openConn
+    conn.puts "Action:get_users"
+  end
 
   def remember
     # the cookie
@@ -155,6 +159,14 @@ class User < ActiveRecord::Base
 
   private
 
+
+  def openConn
+    ip = ENV["Broadcasting_Server"]
+    port = 4447
+    conn = TCPSocket.open(ip, port)
+    conn
+  end
+
   def set_confirmation_token
     if self.confirm_token.blank?
       self.confirm_token = SecureRandom.urlsafe_base64.to_s
@@ -170,5 +182,6 @@ class User < ActiveRecord::Base
                BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+
 
 end

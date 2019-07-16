@@ -4,9 +4,9 @@ class NotificationBroadcastJob < ApplicationJob
     def perform(message)
       mess = render_message(message)
 
-      ActionCable.server.broadcast "notifications_#{message.user.id}_channel user_id",
-                                   message: mess,
-                                   conversation_id: message.conversation.id
+      #ActionCable.server.broadcast "notifications_#{message.conversation.receiver.id}_channel user_id",
+      #                             message: mess,
+      #                             conversation_id: message.conversation.id
 
       ActionCable.server.broadcast "notifications_#{message.conversation.receiver.id}_channel",
                              notification: render_notification(message),

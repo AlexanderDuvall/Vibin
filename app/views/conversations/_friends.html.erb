@@ -1,0 +1,14 @@
+<% @friends.each do |friend| %>
+<div class="row">
+  <div class="col-xs-4">
+  <% if User.find(friend.followed_id).avatar.attached? %>
+    <%= image_tag (User.find(friend.followed_id).avatar), class: "search-ava" %>
+  <% else %>
+    <img src="/default-avatar.jpg" class="search-ava" >
+  <% end %>
+</div>
+<div class="col">
+  <%= User.find(friend.followed_id).username %>
+</div>
+</div>
+<% end %>

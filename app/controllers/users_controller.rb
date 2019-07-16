@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     @posts = Post.all.where("user_id = ?", @user)
     if current_user.user_song_play_counters
       #error @favoriteArtists = current_user.user_artist_play_counter.limit(5).order(plays: :desc)
-      @favoriteSongs = current_user.user_song_play_counters.limit(5).order(plays: :desc)
+     # @favoriteSongs = current_user.user_song_play_counters.limit(5).order(plays: :desc)
     end
     @songs = Song.all.where("user_id = ?", @user)
     @likedsongs = Songlike.all.where("user_id = ?", @user).reverse

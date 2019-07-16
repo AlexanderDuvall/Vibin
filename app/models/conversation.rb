@@ -2,7 +2,7 @@ class Conversation < ApplicationRecord
   belongs_to :sender, class_name: 'User'
   belongs_to :receiver, class_name: 'User'
   validates :sender, uniqueness: {scope: :receiver}
-  has_many :messages, -> { order(created_at: :asc) }, dependent: :destroy
+  has_many :messages, -> {order(created_at: :asc)}, dependent: :destroy
 
   scope :participating, -> (user) do
     where("(conversations.sender_id = ? OR conversations.receiver_id = ?)", user.id, user.id)
@@ -14,6 +14,12 @@ class Conversation < ApplicationRecord
 
   def with(current_user)
     sender == current_user ? receiver : sender
+  end
+
+  def Conversation.findExistingConvo(sender_id, receiver_id)
+    conversation = Conversation.find_by(:sender_id => sender_id, :receiver_id => receiver_id)
+    conversation ||= Conversation.find_by(:sender_id => receiver_id, :receiver_id => sender_id)
+    conversation
   end
 
   def participates?(user)

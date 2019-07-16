@@ -1,4 +1,6 @@
-<p><%= message.content %></p>
-<p>at <strong><%= message.created_at %></strong><br>
-  by <strong><%= message.user.name %></strong></p>
-<hr>
+
+<div class="row border border-primary" style="width:100%; margin-left: 5px;">
+  <p style="float: left;"><%= message.content %></p>
+<p style="float: right;">at <%= message.created_at %>
+  by <%= message.user.name %></p>
+</div>

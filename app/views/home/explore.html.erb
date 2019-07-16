@@ -5,6 +5,14 @@
     </div>
     <div class="col">
       <h5> Top Chart</h5>
+      <% @TopChart.each do |song| %>
+        <div class="row">
+          <%= song.title %>
+          <button class="playButton" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
+            <%= image_tag (song.cover_image), class: "playButtonImage" %>
+          </button>
+        </div>
+      <% end %>
     </div>
     <div class="col">
       <h5> Top Chart for ___</h5>

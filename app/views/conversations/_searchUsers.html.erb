@@ -1,0 +1,19 @@
+<%= @searchUsers.each do |user| %>
+<div class="row">
+  <div class="col-xs-4">
+  <% if user.avatar.attached? %>
+    <%= image_tag (user.avatar), class: "search-ava" %>
+  <% else %>
+    <img src="/default-avatar.jpg" class="search-ava" >
+  <% end %>
+</div>
+<div class="col">
+  <%= user.name%><%= user.username %>|
+  <% if Conversation.findExistingConvo(current_user.id, user.id) %><!-- if conversation already exist -->
+  <p>Existing Convo</p><%= link_to "Open DM", conversation_path(Conversation.findExistingConvo(current_user.id, user.id)), remote: true%>
+  <% else %>
+    <p>Non existion</p><!--  <%#= link_to "DM", new_conversation_path%> create new conversation -->
+  <% end %>
+</div>
+</div>
+<% end %>

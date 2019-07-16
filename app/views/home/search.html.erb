@@ -1,11 +1,22 @@
 
 <div class="row">
-  <div class="col">
+  <div class="col" style="overflow-y: auto; height:500px;">
     <p>Users</p>
 <% @searchUsers.each do |user| %>
 <div class="row">
-  <%= user.username %>
+  <div class="col-xs-4">
+    <% if user.avatar.attached? %>
+      <%= image_tag (user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
+    <% else %>
+      <img src="/default-avatar.jpg" class="search-ava" >
+    <% end %>
   </div>
+  <div class="col-xs-4">
+      <p><%= user.name %><br>
+      <span  onclick="sendTheAJAX('users','<%= user.id%>')">@<%= user.username %></p></span>
+  </div>
+</div>
+<hr>
 <% end %>
 </div>
 <div class="col border border-primary">

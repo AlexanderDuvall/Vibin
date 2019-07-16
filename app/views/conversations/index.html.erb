@@ -1,14 +1,20 @@
-
-
 <div id="conversations">
   <div class="row">
-    <div class="col-xs-4" id="conversationUserList">
-      <h1>Your Friends</h1>
-      <%= render @friends %>
+    <div class="col-xs-4" style="max-width:400px;">
+      <%= form_tag conversations_path, method: :get, remote: true do %>
+        <%= text_field_tag :term, nil, placeholder: "Search" %>
+        <%= submit_tag "search" %>
+      <% end %>
+          <div id="searchUser">
+          </div>
+          <h1 id="conversationUserList">Your Friends</h1>
+          <%= render "friends" %>
+        <h1 id="conversationList">Your conversations</h1>
+        <%= render @conversations %>
+
     </div>
-    <div class="col" id="conversationList">
-      <h1>Your conversations</h1>
-      <%= render @conversations %>
+    <div class="col" id="convo">
+
     </div>
   </div>
 </div>

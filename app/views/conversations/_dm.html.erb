@@ -1,0 +1,27 @@
+<h1>Chatting with <%= @conversation.with(current_user).name %></h1>
+
+<div id="conversation-main">
+  <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
+    <%= render @conversation.messages %>
+  </div>
+
+  <%= form_for @messages, remote: true do |f| %>
+    <%= hidden_field_tag 'conversation_id', @conversation.id %>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
+
+
+<script>
+var height = 0;
+$('#conversation-body p').each(function(i, value){
+    height += parseInt($(this).height());
+});
+
+height += '';
+
+$('#conversation-body').animate({scrollTop: height});
+</script>

@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
+  get 'broadcasters/index'
+  get 'broadcasters/setup'
+  get 'broadcasters/show'
+  get 'broadcasters/settings'
   resources :messages, only: [:new, :create]
-  resources :conversations, only: [:index, :show]
+  resources :conversations, only: [:index, :show, :search]
   get '/playCounter' => "songs#incrementSongPlays"
   get 'playlists/create'
   get 'playlists/new'
   get 'playlists/show'
   root 'home#home'
-  get '/dm' => "conversations#index"
   # Define routes for Pages
   get '/home' => 'home#home'
   get '/search' => 'home#search'

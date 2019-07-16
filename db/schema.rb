@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_11_202520) do
+ActiveRecord::Schema.define(version: 2019_07_15_191402) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -42,13 +42,12 @@ ActiveRecord::Schema.define(version: 2019_07_11_202520) do
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "musiclist"
     t.string "title"
-    t.string "context"
+    t.string "message"
     t.integer "user_id"
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
   create_table "broadcasters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "broadcast_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
@@ -162,8 +161,8 @@ ActiveRecord::Schema.define(version: 2019_07_11_202520) do
   create_table "songlikes", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "song_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["song_id"], name: "index_songlikes_on_song_id"
     t.index ["user_id"], name: "index_songlikes_on_user_id"
   end
@@ -172,6 +171,7 @@ ActiveRecord::Schema.define(version: 2019_07_11_202520) do
     t.string "title"
     t.string "text"
     t.string "genre"
+    t.integer "albums_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "plays"
@@ -217,13 +217,13 @@ ActiveRecord::Schema.define(version: 2019_07_11_202520) do
     t.datetime "updated_at", null: false
     t.boolean "Terms_of_Agreement", default: true
     t.string "remember_digest"
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.boolean "Verified", default: false
     t.string "city"
     t.string "state"

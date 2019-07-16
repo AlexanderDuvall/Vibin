@@ -57,6 +57,7 @@ class HomeController < ApplicationController
   # back-end code for pages/explore
   def explore
     @users = User.all
+    @TopChart = Song.all
   end
 
   def groupies
