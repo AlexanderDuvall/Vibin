@@ -2,16 +2,16 @@
   <% if logged_in? %>
   <% @user = current_user %>
   <div class="row border border-primary">
-    <div class="left-column ">
-        <div class="row border border-success">
-          <div class="col-xs-4">
+    <div class="left-column border border-warning">
+        <div class="home-header-row border border-success">
+          <div class="home-header-column-avatar ">
             <% if @user.avatar.attached? %>
               <%= image_tag (@user.avatar), class: "avatar-home" %>
             <% else %>
               <img src="default-avatar.jpg" class="avatar-home">
             <% end %>
           </div>
-          <div class="col-xs-8">
+          <div class="home-header-column-badges">
             <div class="row">
               <div class="col">
                 <% if @user.Verified %>
@@ -23,31 +23,34 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <h5><span class="badge badge-primary text-wrap"><%= @user.name %></span></h5>
+        <div class="home-user-name">
+          <h5>
+            <span class="badge badge-primary text-wrap"><%= @user.name %></span>
+          </h5>
         </div>
-        <div class="row">
+        <div class="home-user-username">
           <h7>
             <span class="badge badge-primary text-wrap"><%= link_to "@" + @user.username, user_path(@user.id), class: "links" %></span>
           </h7>
         </div>
-        <div class="row">
+        <div class="home-user-location">
           <h9>
-            <span class="badge badge-primary text-wrap"> <%= @user.zipcode %></span>
+            <span class="badge badge-primary text-wrap"> <%= @user.city%>, <%= @user.state%></span>
           </h9>
         </div>
-        <div class="row">
+        <div class="home-user-bio">
             <h5>
               <span class="badge badge-primary text-wrap"><%= @user.bio %></span>
             </h5>
         </div>
-        <div class="row border border-primary">
-          <div class="col">
+        <br>
+        <div class="home-song-post-row ">
+          <div class="home-song-post-column-left">
             <h5>
               <span class="badge badge-primary text-wrap">  Songs</span>
             </h5>
           </div>
-          <div class="col">
+          <div class="home-song-post-column-right">
             <h5>
               <span class="badge badge-primary text-wrap"> Posts </span>
             </h5>
@@ -98,6 +101,7 @@
       </div>
       <% end %>
     </div>
+    </div>
     <%= will_paginate @combine %>
 <% else %>
   <div class="row">
@@ -126,5 +130,5 @@
     </div>
   </div>
 <% end %>
-</div>
+
 </div>

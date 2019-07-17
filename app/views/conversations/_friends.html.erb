@@ -8,7 +8,14 @@
   <% end %>
 </div>
 <div class="col">
-  <%= User.find(friend.followed_id).username %>
+  <h6><%= User.find(friend.followed_id).name %></h6>
+  <h6>@<%= User.find(friend.followed_id).username %></h6>
+
+  <% if Conversation.findExistingConvo(current_user.id, User.find(friend.followed_id).id) %><!-- if conversation already exist -->
+    <%= link_to "Open DM", conversation_path(Conversation.findExistingConvo(current_user.id, User.find(friend.followed_id).id)), remote: true %>
+  <% else %>
+    <%= link_to "DM", new_conversation_path(sender_id: current_user.id, receiver_id: User.find(friend.followed_id).id), remote: true %>
+  <% end %>
 </div>
 </div>
 <% end %>

@@ -1,16 +1,16 @@
 $blue: #0af;
 $hover-color: #25a805;
 
-.postLeft{
+.postLeft {
   width: 25%;
   position: relative;
 }
 
-.postCenter{
-  width:60%;
+.postCenter {
+  width: 60%;
 }
 
-.postRight{
+.postRight {
   width: 15%;
 }
 
@@ -24,17 +24,30 @@ $hover-color: #25a805;
   border-style: solid;
 }
 
-.playButton{
+.broadcaster-ava {
+
+  display: inline-block;
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border-color: white;
+  border-style: solid;
+}
+
+.playButton {
   height: 90px;
   width: 90px;
   border-style: solid;
   border-color: white;
   background-color: inherit;
 }
-.playButtonImage{
+
+.playButtonImage {
   height: 90px;
-  width:90px;
+  width: 90px;
 }
+
 .seek-bar {
   width: 400px;
   background-color: #b3ffb3;
@@ -42,6 +55,7 @@ $hover-color: #25a805;
   border-radius: 100000px;
   cursor: pointer;
 }
+
 .fill {
   height: 5px;
   background-color: $blue;
@@ -57,6 +71,7 @@ $hover-color: #25a805;
   transform: scale(2);
   transition: all 0.1s;
 }
+
 button.play {
   display: block;
   width: 30px;
@@ -74,7 +89,7 @@ button.play {
   }
 }
 
-button.volume{
+button.volume {
   display: block;
   width: 30px;
   height: 30px;
@@ -291,6 +306,13 @@ button.skip_forward {
 
 .song {
   background-color: #26F5DB;
+  width: 90%;
+  margin-bottom: 5px;
+  height: 150px;
+}
+
+.broadcaster {
+  background-color: #730E15;
   width: 90%;
   margin-bottom: 5px;
   height: 150px;

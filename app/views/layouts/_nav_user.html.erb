@@ -1,21 +1,31 @@
-<%= link_to 'Vibin Music', home_path, onclick: "sendTheAJAX('home','')" %>
-<a onclick="sendTheAJAX('explore', '')">Explore</a>
-<a>Notifications</a>
-<a id="G" onclick="sendTheAJAX('groupies','')">Groupies</a>
-<%= link_to'Log Out',logout_path, method: :delete, class: "nav-link" %>
-<%= link_to 'Profile', user_path(current_user), onclick: "sendTheAJAX('users',#{current_user.id})" %>
-<a onclick="sendTheAJAX('conversations', '')">Messages</a>
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+<%= link_to 'Vibin Music', home_path, onclick: "sendTheAJAX('home','')", class:"VibinTab" %>
+<a class="ExploreTab" onclick="sendTheAJAX('explore', '')">Explore</a>
+<a class="GroupiesTab" id="G" onclick="sendTheAJAX('groupies','')">Groupies</a>
+
+<%= form_tag search_path, method: :get, remote: true do %>
+  <%= text_field_tag :term, nil, placeholder: "Search", class: "SearchBar" %>
+<% end %>
+
+<a class="MessagesTab" onclick="sendTheAJAX('conversations', '')">Messages</a>
+<div class="NotificationTabDiv">
+  <%= image_tag "fire.png", style: "height: 55px; width: 100%;" %>
+  <div class="dropdown-content-notification">
+    <h6><%= current_user.name %></h6>
   </div>
 </div>
-<%= form_tag search_path, method: :get, remote: true do %>
-  <%= text_field_tag :term, nil, placeholder: "Search" %>
-<% end %>
+<div class="userTabDiv">
+  <%= link_to image_tag("default-avatar.jpg", class: "search-ava"), user_path(current_user), onclick: "sendTheAJAX('users',#{current_user.id})", id:"userTab" %>
+  <div class="dropdown-content">
+    <h6><%= current_user.name %></h6>
+    <h6><%= link_to "@#{current_user.username}", user_path(current_user), onclick: "sendTheAJAX('users',#{current_user.id})" %> </h6>
+    <%= link_to 'Setting', edit_user_path(current_user), style: "width:100%;"%>
+    <%= link_to 'Log Out',logout_path, method: :delete, style: "width:100%;" %>
+  </div>
+</div>
 <% if logged_in? %>
   <div id="current-user"></div>
 <% end %>
+
+<script>
+
+</script>

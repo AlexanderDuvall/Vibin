@@ -4,11 +4,63 @@
 .homePage{
   min-width: 900px;
 }
+
+.home-header-row {
+    height: 80px;
+    width: 100%;
+}
+
+.home-header-column-avatar {
+  height: 100%;
+  width: 40%;
+  float: left;
+}
+
+.home-header-column-badges {
+  height: 100%;
+  width: 60%;
+  float: right;
+}
+
+.home-user-name{
+  height: 20px;
+  width: 100%;
+}
+.home-user-username{
+  height: 17px;
+  width: 100%;
+}
+.home-user-location{
+  height: 20px;
+  width: 100%;
+}
+.home-user-bio{
+  height: 25px;
+  width: 100%;
+}
+
+.home-song-post-row{
+  height: 35px;
+  width: 100%;
+}
+
+.home-song-post-column-left{
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+
+.home-song-post-column-right{
+  height: 100%;
+  width: 50%;
+  float: right;
+}
+
 .left-column{
   border-style: solid;
   border-color: blue;
   border-width: thin;
-  height: 380px;
+  height: 410px;
   min-width: 200px;
   width: 20%;
 
@@ -67,14 +119,4 @@
   margin-top: 5px;
   height: 25px;
   width: 25px;
-}
-
-.search-ava{
-  display: inline-block;
-  overflow: hidden;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  border-color: white;
-  border-style: solid;
 }

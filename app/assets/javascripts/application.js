@@ -25,6 +25,7 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //=
+let socketAddress = "192.168.1.91";
 
 $(function () {
     $('#ed').live("click", function () {
@@ -138,7 +139,7 @@ function connect(user_id) {
             }
         }
     };
-    x.open("POST", "http://192.168.1.91:4444", true);
+    x.open("POST", "http://" + socketAddress + ":4444", true);
     let data = new FormData();
     data.append("User_id", user_id);
     x.send(data);
@@ -171,7 +172,7 @@ function needsUpdate(...args) {
     return update
 }
 
-function requestData(callback) {
+function requestData(callback, broadcaster) {
     console.log("loading....");
     try {
         x.onreadystatechange = function () {
@@ -205,19 +206,14 @@ function requestData(callback) {
                     console.log(results);
                     if (results.hasOwnProperty("Song_id") && results.hasOwnProperty("Duration")) {
                         console.log("HAS SONG ID AND DURATION VARIABLE");
-                        console.log(results["Song_id"] === ("-1"));
+                        console.log("results[Song_id] === (-1) = " + results["Song_id"] === ("-1"));
                         //
                         //callback[1] true when updating time
                         //false when updating and getting song
                         if (parseInt(results["Song_id"]) !== parseInt(get_current_song())) {
                             console.log(typeof results["Song_id"]);
-                            console.log(results["Song_id"].length);
-                            console.log(results["Song_id"]);
 
                             console.log(typeof get_current_song());
-                            console.log(get_current_song().length);
-                            console.log(get_current_song());
-                            console.log("mismatching songs...");
                             needsUpdate(true);
                         }
                         if ((Math.abs(lastTime - results["Duration"]) > 3 && !isListening()) || needsUpdate()) {
@@ -230,7 +226,7 @@ function requestData(callback) {
                             needsUpdate(false);
                         }
 
-                        if (typeof callback != "undefined" && isListening()) {
+                        if ((typeof callback != "undefined" ^ callback != null) && isListening()) {
                             console.log("callback... running");
                             callback(results);
                         }
@@ -245,10 +241,11 @@ function requestData(callback) {
                 //x.close();
             }
         };
-        x.open("POST", "http://192.168.1.91:4446");
+        x.open("POST", "http://" + socketAddress + ":4446");
         let a = new FormData();
-        a.append("Broadcaster_id", "1");
+        a.append("Broadcaster_id", broadcaster);
         x.send(a);
+
     } catch (e) {
         console.log(e);
     }
@@ -258,7 +255,7 @@ function requestData(callback) {
 function sendData(duration, ...args) {
     try {
         if (args.length == 0) {
-            x.open("POST", "http://192.168.1.91:4444", true);
+            x.open("POST", "http://" + socketAddress + ":4444", true);
             let a = new FormData();
             a.append("Duration", duration);
             a.append("Song_id", get_current_song());
@@ -266,11 +263,11 @@ function sendData(duration, ...args) {
             //   x.abort();
             console.log("sent it out");
         } else {
-            x.open("POST", "http://192.168.1.91:4444", true);
+            x.open("POST", "http://" + socketAddress + ":4444", true);
             let a = new FormData();
             a.append("Action", args[0]);
             x.send(a);
-            console.log("sent it out");
+            consolde.log("sent it out");
         }
     } catch (e) {
         console.log(e);

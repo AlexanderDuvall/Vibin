@@ -3,8 +3,8 @@ class ConversationsController < ApplicationController
   before_action :check_participating!, except: [:index]
 
   def new
-    redirect_to conversation_path(@conversation) and return if @conversation
     @message = current_user.messages.build
+    @conversation
   end
 
   def show
@@ -37,11 +37,10 @@ end
 
   def set_conversation
     @message = current_user.messages.build
-
     @conversation = Conversation.find_by(id: params[:id])
   end
 
   def check_participating!
-    redirect_to root_path unless @conversation && @conversation.participates?(current_user)
+   Conversation.create(sender_id: params[:sender_id], receiver_id: params[:receiver_id])  unless @conversation && @conversation.participates?(current_user)
   end
 end

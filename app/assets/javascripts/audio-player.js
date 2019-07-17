@@ -8,6 +8,7 @@ var listening = false;
 let lastTime = 0;
 var playButton = null;
 var update = false;
+var currentBroadcaster  = null;
 window.addEventListener("DOMContentLoaded", function (e) {
     var username = document.querySelector("#usernameSong");
     username.innerHTML = "";
@@ -83,7 +84,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
     audio.addEventListener("ended", function () {
         if (isListening()) {
             needsUpdate(true);
-            setTimeout(requestData(), 1300);
+            setTimeout(requestData(null, currentBroadcaster), 1300);
             //needsUpdate(false)
         } else {
             nextSong();
@@ -104,9 +105,10 @@ window.addEventListener("DOMContentLoaded", function (e) {
             console.log(currentTime - lastTime > 3);
             console.log("TIME UPDATE: " + currentTime + " vs " + lastTime);
             lastTime = currentTime;
+
             requestData(function (results) {
                 listenerCallback(results);
-            });
+            },currentBroadcaster);
         }
     });
 

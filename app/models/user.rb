@@ -72,10 +72,17 @@ class User < ActiveRecord::Base
     __elasticsearch__.client.perform_request('GET', "#{index_name}/_suggest", {}, search_definition).body['name-suggest'].first['options']
   end
 
-  def get_users
-    conn = openConn
+  def User.get_broadcasters
+    conn = User.openConn
     conn.puts "Action:get_users"
+    users = conn.gets.to_s.split(",")
+    @user_list = Array.new
+    users.each do |f|
+      @user_list.push(User.find(f))
+    end
+    @user_list
   end
+
 
   def remember
     # the cookie
@@ -156,16 +163,15 @@ class User < ActiveRecord::Base
     end
   end
 
-
-  private
-
-
-  def openConn
-    ip = ENV["Broadcasting_Server"]
+  def User.openConn
+    ip = "192.168.1.91" # ENV["Broadcasting_Server"]
     port = 4447
     conn = TCPSocket.open(ip, port)
     conn
   end
+
+  private
+
 
   def set_confirmation_token
     if self.confirm_token.blank?

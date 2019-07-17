@@ -18,7 +18,10 @@ class Conversation < ApplicationRecord
 
   def Conversation.findExistingConvo(sender_id, receiver_id)
     conversation = Conversation.find_by(:sender_id => sender_id, :receiver_id => receiver_id)
+    puts "sender_id#{sender_id} + #{receiver_id} + #{conversation}"
+
     conversation ||= Conversation.find_by(:sender_id => receiver_id, :receiver_id => sender_id)
+    puts "sender_id#{sender_id} + #{receiver_id} + #{conversation}"
     conversation
   end
 

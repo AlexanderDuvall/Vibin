@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   get 'broadcasters/setup'
   get 'broadcasters/show'
   get 'broadcasters/settings'
+
   resources :messages, only: [:new, :create]
-  resources :conversations, only: [:index, :show, :search]
+  resources :conversations, only: [:index, :show, :search, :new]
   get '/playCounter' => "songs#incrementSongPlays"
   get 'playlists/create'
   get 'playlists/new'
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
       get :following, :followers, :autocomplete, :broadcast_user
     end
   end
+  resources :broadcasters
   get '/users/:id' => 'home#profile'
   get '/users/:id/following' => 'users#show_following'
   get '/users/:id/followers' => 'users#show_followers'

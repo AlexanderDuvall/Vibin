@@ -1,4 +1,5 @@
-<%= @searchUsers.each do |user| %>
+<div class="border border-primary">
+<% @searchUsers.each do |user| %>
 <div class="row">
   <div class="col-xs-4">
   <% if user.avatar.attached? %>
@@ -17,3 +18,4 @@
 </div>
 </div>
 <% end %>
+</div>
