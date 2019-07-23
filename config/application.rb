@@ -8,8 +8,7 @@ require 'rails/all'
 
 module VibinMusicBeta
   class Application < Rails::Application
-
-    config.public_file_server.enabled = true
+     config.public_file_server.enabled = true
     # Initialize configuration defaults for originally generated Rails version.
   #  config.load_defaults 5.2
   #  host = "localhost:3000"

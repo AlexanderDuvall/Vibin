@@ -13,10 +13,13 @@ class User < ActiveRecord::Base
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :songs
+  has_one :broadcaster
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :albums
   has_one_attached :avatar
+  has_one_attached :firstHeader
+  has_one_attached :secondHeader
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 255},
             format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
@@ -78,11 +81,21 @@ class User < ActiveRecord::Base
     users = conn.gets.to_s.split(",")
     @user_list = Array.new
     users.each do |f|
-      @user_list.push(User.find(f))
+      @user_list.push(User.find(f).broadcaster)
     end
     @user_list
   end
 
+  def User.activated?
+    @user = User.find(params[:id])
+    if @user.activated == 1
+      @user.activated = 0
+      return false
+    else
+      @user.activated = 1
+      return true
+    end
+  end
 
   def remember
     # the cookie
@@ -164,7 +177,7 @@ class User < ActiveRecord::Base
   end
 
   def User.openConn
-    ip = "192.168.1.91" # ENV["Broadcasting_Server"]
+    ip = "192.168.1.73" # ENV["Broadcasting_Server"]
     port = 4447
     conn = TCPSocket.open(ip, port)
     conn

@@ -8,7 +8,9 @@ class SongsController < ApplicationController
   def create
     @song = current_user.songs.new(song_params) #, :post_id => @post.id)
     if @song.save!
-      redirect_to root_url
+      respond_to do |format|
+        format.js
+      end
     end
   end
 

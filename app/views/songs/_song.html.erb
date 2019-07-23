@@ -7,10 +7,10 @@
         <% else %>
           <img src="default-avatar.jpg" class="post-ava">
         <% end %>
-        <h6 style="margin:0; padding:0;"><span class="badge badge-primary"><%= User.find(song.user_id).name %></span>
+        <h6 style="margin:0; padding:0;"><span class="badge badge-primary"><%= (song.user).name %></span>
         </h6>
         <h6 style="margin:0; padding:0;">
-          <span class="badge badge-primary"><%= link_to "@" + User.find(song.user_id).username, user_path(song.user_id), onclick: "sendTheAJAX('users', #{song.user_id})" %></span>
+          <span class="badge badge-primary"><%= link_to "@" + song.user.username, user_path(song.user_id), onclick: "sendTheAJAX('users', #{song.user_id})" %></span>
         </h6>
       </div>
     </div>
@@ -18,7 +18,7 @@
       <br/>
       <p style="margin-left:10px;" id="content"><%= song.title %></p>
       <div class="row justify-content-center">
-        <button class="playButton" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
+        <button class="playButton" onclick="SelectedSong(this,  '<%= song.user.username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
           <%= image_tag (song.cover_image), class: "playButtonImage" %>
         </button>
       </div>
@@ -38,19 +38,3 @@
     </div>
   </div>
 </center>
-<script>
-    function incrementPlays(id, artist_id) {
-        console.log(id + "in incrementPlays");
-        console.log(artist_id);
-        // ajax request
-        $.ajax({
-            url: "/playCounter",
-            type: "GET",
-            data: {
-                id: id,
-                artist_id: artist_id
-            },
-            dataType: "script",
-        });
-    }
-</script>

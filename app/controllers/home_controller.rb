@@ -9,16 +9,6 @@ class HomeController < ApplicationController
   def home
     @user = current_user
     @recommendedSongs = Song.all.where("genre = ?", "NULL")
-    # @songs = Array.new
-    #following = Array.new
-    #following.push(current_user.id)
-    #for @f in current_user.following do
-    #  following.push(@f.id)
-    #end
-    #@posts = Post.where("user_id IN (?)", following)
-    #@userpost = Post.all.where("user_id = ?", current_user.id)
-    #@followers = Relationship.all.where("followed_id = ?", current_user.id)
-    #@following = Relationship.all.where("follower_id = ?", current_user.id)
     if logged_in?
       # array with current_user id
       @asss = [current_user]
@@ -31,7 +21,19 @@ class HomeController < ApplicationController
       @userpost = Post.all.where("user_id IN (?) ", @asss)
       @usersongpost = Song.all.where("user_id IN (?) ", @asss)
       @posts = @userpost
-      @combine = (@usersongpost + @posts).sort_by {|post| post.created_at}.reverse.paginate(page: params[:page], per_page: 10)
+      @broadcasters = Broadcaster.where("user_id IN (?) AND is_playing IN (?)", @asss, 1)
+      @combine = (@usersongpost + @posts + @broadcasters).sort_by {|post| post.created_at}.reverse.paginate(page: params[:page], per_page: 10)
+      @recommendedUsers = User.last(5)
+      # @songs = Array.new
+      #following = Array.new
+      #following.push(current_user.id)
+      #for @f in current_user.following do
+      #  following.push(@f.id)
+      #end
+      #@posts = Post.where("user_id IN (?)", following)
+      #@userpost = Post.all.where("user_id = ?", current_user.id)
+      #@followers = Relationship.all.where("followed_id = ?", current_user.id)
+      #@following = Relationship.all.where("follower_id = ?", current_user.id)
     end
   end
 
@@ -58,6 +60,7 @@ class HomeController < ApplicationController
   def explore
     @users = User.all
     @TopChart = Song.all
+    @TopArtist = User.last(5)
   end
 
   def groupies

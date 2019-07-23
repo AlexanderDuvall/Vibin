@@ -1,36 +1,20 @@
 Rails.application.routes.draw do
-  get 'broadcasters/index'
-  get 'broadcasters/setup'
-  get 'broadcasters/show'
-  get 'broadcasters/settings'
-
-  resources :messages, only: [:new, :create]
-  resources :conversations, only: [:index, :show, :search, :new]
-  get '/playCounter' => "songs#incrementSongPlays"
-  get 'playlists/create'
-  get 'playlists/new'
-  get 'playlists/show'
-  root 'home#home'
-  # Define routes for Pages
-  get '/home' => 'home#home'
-  get '/search' => 'home#search'
-  get '/explore' => 'home#explore'
-  get '/groupies' => 'home#groupies'
-  get '/search' => 'home#search'
-
+  mount ActionCable.server, at: '/cable'
   resources :users do
     member do
-      get :following, :followers, :autocomplete, :broadcast_user
+      get :following, :followers, :autocomplete
     end
   end
+  resources :account_activations, only: [:edit]
+  resources :password_resets
   resources :broadcasters
-  get '/users/:id' => 'home#profile'
-  get '/users/:id/following' => 'users#show_following'
-  get '/users/:id/followers' => 'users#show_followers'
-  get '/users/:id/Music' => 'home#profileMusic'
-  get '/getsongs' => 'playlists#getsongs'
-  get '/getbroadcaster' => 'broadcasters#get_broadcaster'
-  get '/get_playlist_songs' => 'playlists#get_positions'
+  resources :messages, only: [:new, :create]
+  resources :conversations, only: [:index, :show, :search, :new]
+  resources :songs, only: [:create, :destroy]
+  resources :songs do
+    resource :like, module: :songs
+  end
+  resources :albums
   resources :playlists do
     collection do
       patch :sort
@@ -46,6 +30,29 @@ Rails.application.routes.draw do
     post :repost
     resource :like, module: :posts
   end
+  resources :relationships, only: [:create, :destroy]
+
+  root 'home#home'
+  get '/home' => 'home#home'
+  get '/search' => 'home#search'
+  get '/explore' => 'home#explore'
+  get '/groupies' => 'home#groupies'
+  get '/search' => 'home#search'
+  get '/settings/:id' => 'users#settings'
+  get '/users/:id' => 'home#profile'
+  get '/users/:id/following' => 'users#show_following'
+  get '/users/:id/followers' => 'users#show_followers'
+  get 'broadcasters/index'
+  get 'broadcasters/setup'
+  get 'broadcasters/show'
+  get 'broadcasters/settings'
+  get '/playCounter' => "songs#incrementSongPlays"
+  get 'playlists/create'
+  get 'playlists/new'
+  get 'playlists/show'
+  get '/getsongs' => 'playlists#getsongs'
+  get '/getbroadcaster' => 'broadcasters#get_broadcaster'
+  get '/get_playlist_songs' => 'playlists#get_positions'
   get '/posts/:post_id' => 'posts#show'
   post '/repost/:id' => 'posts#repost'
   get 'songs/:id' => 'songs#show'
@@ -54,6 +61,7 @@ Rails.application.routes.draw do
   get '/settings', to: 'users#edit'
   get '/password_reset', to: 'password_resets#new'
   get '/privacy_settings', to: 'privacy_settings#edit'
+  get '/deactivate_current_user', to:'users#deactivate'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get 'users/:id/add_album', to: 'albums#new'
@@ -68,22 +76,8 @@ Rails.application.routes.draw do
   get 'password_resets/update'
   get 'password_resets/new'
   get '/:token/confirm_email/', :to => "users#confirm_email", as: 'confirm_email'
-  #get 'users/index'
   get '/new_song' => 'songs#new'
   get '/playlists' => 'playlists#index'
   get '/new_playlist' => 'playlists#new'
-  resources :account_activations, only: [:edit]
-  resources :password_resets
-  resources :songs, only: [:create, :destroy]
-  resources :songs do
-    resource :like, module: :songs
-  end
-  resources :albums
-
-  resources :relationships, only: [:create, :destroy]
-
   #  get '/livestream' => 'audio#stream'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  mount ActionCable.server, at: '/cable'
 end

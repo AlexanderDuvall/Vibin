@@ -1,24 +1,25 @@
 <div id="home">
   <% if logged_in? %>
-  <% @user = current_user %>
-  <div class="row border border-primary">
-    <div class="left-column border border-warning">
-        <div class="home-header-row border border-success">
+    <% @user = current_user %>
+    <div class="row">
+      <div class="left-column border border-light">
+        <div class="home-header-row ">
           <div class="home-header-column-avatar ">
             <% if @user.avatar.attached? %>
               <%= image_tag (@user.avatar), class: "avatar-home" %>
             <% else %>
-              <img src="default-avatar.jpg" class="avatar-home">
+              <img src=" http://localhost:3000/default-avatar.jpg" class="avatar-home">
             <% end %>
           </div>
           <div class="home-header-column-badges">
             <div class="row">
               <div class="col">
                 <% if @user.Verified %>
-                <img src="/Verified.png" class="badge-verified">
+                  <img src="/Verified.png" class="badge-verified">
                 <% end %>
                 <img src="/tree.jpg" class="badge-gold">
                 <img src="/galaxy.jpg" class="badge-silver">
+                <button id="refresh">refresh feed</button>
               </div>
             </div>
           </div>
@@ -35,13 +36,13 @@
         </div>
         <div class="home-user-location">
           <h9>
-            <span class="badge badge-primary text-wrap"> <%= @user.city%>, <%= @user.state%></span>
+            <span class="badge badge-primary text-wrap"> <%= @user.city %>, <%= @user.state %></span>
           </h9>
         </div>
         <div class="home-user-bio">
-            <h5>
-              <span class="badge badge-primary text-wrap"><%= @user.bio %></span>
-            </h5>
+          <h5>
+            <span class="badge badge-primary text-wrap"><%= @user.bio %></span>
+          </h5>
         </div>
         <br>
         <div class="home-song-post-row ">
@@ -88,47 +89,75 @@
           <%= link_to "Post", new_post_path, id: "butt", :class => 'btn btn-primary', remote: true %>
           <%= link_to "Music", new_song_path, id: "butt1", :class => 'btn btn-primary', remote: true %>
         </div>
-    </div>
-    <!--  MIDDLE COLUMN FEED -->
-    <div class="center-column" id="center_column">
-      <%= render "/posts/userfeed" %>
-    </div>
-    <!-- RIGHT COLUMN -->
-    <div class="right-column ">
-      <% @recommendedSongs.each do |song| %>
-      <div class="row">
-        song
       </div>
-      <% end %>
+      <!--  MIDDLE COLUMN FEED -->
+      <div class="center-column border border-light" id="center_column">
+        <%= render "/posts/userfeed" %>
+      </div>
+      <!-- RIGHT COLUMN -->
+      <div class="right-column border border-light">
+        Users recommended
+        <div class="recommendedUsers">
+          <% @recommendedUsers.each do |user| %>
+            <div class="recommendedUser">
+              <%= user.id %>
+            </div>
+          <% end %>
+        </div>
+        <div class="recommendedSongs border border-primary">
+          <% @recommendedSongs.each do |song| %>
+            <div class="recommendedSong">
+              <%= song.title %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= will_paginate @combine %>
+  <% else %>
+    <div class="row">
+      <div class="col" style="width: 80%;">
+        <h2>Welcome to Vibin Music!</h2>
+      </div>
     </div>
+    <p></p>
+    <div class="row justify-content-between">
+      <!-- How do I make the columns different heights -->
+      <div class="col-xs-6 ml-2 welcome " style="overflow: hidden; min-width:70%;">
+        Find new music<br>
+        Find your group<br>
+        Share music<br>
+        Upload Music
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-xs-3 mr-2 welcome" style="min-width:25%;">
+        <p> Top Songs </p>
+        <p> Top Songs </p>
+        <p> Top Songs </p>
+        <p> Top Songs </p>
+        <p> Top Songs </p>
+        <p> Top Songs </p>
+        <p> Top Songs </p>
+      </div>
     </div>
-    <%= will_paginate @combine %>
-<% else %>
-  <div class="row">
-    <div class="col" style="width: 80%;">
-      <h2>Welcome to Vibin Music!</h2>
-    </div>
-  </div>
-  <p></p>
-  <div class="row justify-content-between">
-    <!-- How do I make the columns different heights -->
-    <div class="col-xs-6 ml-2 welcome " style="overflow: hidden; min-width:70%;">
-      Find new music<br>
-      Find your group<br>
-      Share music<br>
-      Upload Music
-    </div>
-    <div class="clearfix"></div>
-    <div class="col-xs-3 mr-2 welcome" style="min-width:25%;">
-      <p> Top Songs </p>
-      <p> Top Songs </p>
-      <p> Top Songs </p>
-      <p> Top Songs </p>
-      <p> Top Songs </p>
-      <p> Top Songs </p>
-      <p> Top Songs </p>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 
+  </div>
 </div>
+<script>
+    $("#refresh").on("click", function () {
+        // will call refreshPartial every 3 seconds
+        //  setInterval(refreshPartial, 10000)
+        $('.center-column').html("<%= escape_javascript(render 'posts/userfeed')%>");
+    });
+
+    $(function () {
+        $(".main").on("scroll", function (e) {
+            if ($(".main").scrollTop() == -1) {
+                // refresh timeline
+                console.log("refresh timeline");
+                $('.center-column').html("<%= escape_javascript(render 'posts/userfeed')%>");
+            }
+        });
+    });
+
+</script>

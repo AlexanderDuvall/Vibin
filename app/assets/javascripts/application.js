@@ -25,18 +25,8 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //=
-let socketAddress = "192.168.1.91";
+let Server_Address = "192.168.1.73";
 
-$(function () {
-    $('#ed').live("click", function () {
-        $.getScript(this.href);
-        return false;
-    });
-    $("#").submit(function () {
-        $.get(this.action, $(this).serialize(), null, "script");
-        return false;
-    })
-});
 
 window.onclick = function (event) {
     var modal = document.getElementById("myModal");
@@ -45,13 +35,11 @@ window.onclick = function (event) {
         $('#myModal').css("display", "none");
     }
 };
-$(document).ready(function () {
-    console.log($('.main'));
-});
 
 $("#G").on("click", function () {
     console.log("lolas");
 });
+
 var counter = 0;
 var x = new XMLHttpRequest();
 
@@ -63,7 +51,7 @@ function sendTheAJAX(controller, ...id) {
             var doc = parser.parseFromString(this.responseText, 'text/html');
             var elem = doc.getElementById(controller);
             console.log(elem);
-            $(".container").html(elem);
+            $(".main").html(elem);
             //    $(".main").html(this);
         }
     };
@@ -131,6 +119,17 @@ function connect(user_id) {
                 if (results.hasOwnProperty("Machine-Reached-Status") && results['Machine-Reached-Status'] == "True") {
                     console.log("MACHINE REACHED");
                     isBroadcasting(true);
+                    Rails.ajax({
+                        type: "Patch",
+                        url: "broadcasters/" + user_id + "?is_playing=" + true,
+                        processData: false,
+                        success: function (data, textStatus, xhr) {
+                            console.log(data)
+                        },
+                        error: function (data) {
+                            console.log(data);
+                        }
+                    })
                 } else {
                     console.log("Machine NOT REACHED");
                 }
@@ -139,7 +138,7 @@ function connect(user_id) {
             }
         }
     };
-    x.open("POST", "http://" + socketAddress + ":4444", true);
+    x.open("POST", "http://localhost:4444", true);
     let data = new FormData();
     data.append("User_id", user_id);
     x.send(data);
@@ -169,7 +168,7 @@ function listenerCallback(results) {
 function needsUpdate(...args) {
     if (args.length == 1 && (args[0] == false || args[0] == true))
         update = args[0];
-    return update
+    return update;
 }
 
 function requestData(callback, broadcaster) {
@@ -241,7 +240,7 @@ function requestData(callback, broadcaster) {
                 //x.close();
             }
         };
-        x.open("POST", "http://" + socketAddress + ":4446");
+        x.open("POST", "http://" + Server_Address + ":4446");
         let a = new FormData();
         a.append("Broadcaster_id", broadcaster);
         x.send(a);
@@ -255,7 +254,7 @@ function requestData(callback, broadcaster) {
 function sendData(duration, ...args) {
     try {
         if (args.length == 0) {
-            x.open("POST", "http://" + socketAddress + ":4444", true);
+            x.open("POST", "http://" + "localhost" + ":4444", true);
             let a = new FormData();
             a.append("Duration", duration);
             a.append("Song_id", get_current_song());
@@ -263,7 +262,7 @@ function sendData(duration, ...args) {
             //   x.abort();
             console.log("sent it out");
         } else {
-            x.open("POST", "http://" + socketAddress + ":4444", true);
+            x.open("POST", "http://" + "localhost" + ":4444", true);
             let a = new FormData();
             a.append("Action", args[0]);
             x.send(a);

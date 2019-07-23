@@ -11,3 +11,70 @@
 .user-post::-webkit-scrollbar {
     width: 0px; /*For Chrome, Safari and Opera*/
 }
+.left_settings {
+  position: fixed;
+  width: 15%;
+  min-width: 150px;
+  height:100%;
+  float: left;
+  top:55px;
+  background-color: red;
+}
+
+.right_settings {
+  float:right;
+  width:85%;
+
+}
+
+.settings_center {
+  width: auto;
+  height: 600px;
+  top: 80px;
+  color: #BBBBBB;
+
+}
+
+.upload-preview {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin: -70px 0 0 -70px;
+}
+
+.images {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+.left-header {
+  width: 50%;
+  float: left;
+  height: 100%;
+  border-style: dotted;
+  overflow-y: scroll;
+}
+
+.right-header {
+  width: 50%;
+  height: 100%;
+  border-style: dotted;
+  overflow-y: scroll;
+  float: right;
+}
+
+.left-header-image {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+.right-header-image {
+  height: auto;
+  width: 100%;
+}

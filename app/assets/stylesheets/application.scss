@@ -17,35 +17,45 @@
   */
 @import "bootstrap";
 
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
 html {
   height: 100%;
   background-color: white;
 }
 
 body {
-  margin: 0;
+  position: fixed;
+  top: 55px;
+  width: 100%;
+  min-width: 900px;
+  height: calc(100% - 135px);
+}
+
+.main { /* Used in this example to enable scrolling */
+  width: 100%;
+  height: 100%;
+  min-width: 900px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
 }
 
 .navbar {
   position: fixed;
   z-index: 1;
-  background-color: grey;
+  background-color: #ffdbdb ;
   top: 0;
   width: 100%;
-  height:55px;
+  height: 55px;
   min-width: 900px;
-}
-
-.navbar a {
-  color: lightgreen;
-  line-height: 20px;
- display: block;
- text-align: center;
- vertical-align: middle;
-  padding: 0px 0px 0px 0px;
-  text-decoration: none;
-  font-size: 17px;
+  a {
     height: 55px;
+    vertical-align: middle;
+  }
 }
 
 .navbar a:hover {
@@ -55,13 +65,18 @@ body {
 .VibinTab {
   position: fixed;
   top: 0;
-  left:0;
+  left: 0;
   width: 120px;
+  p{
+    color: #a5e3eb;
+    font-size: 15px;
+
+  }
 }
 
 .ExploreTab {
   position: fixed;
-  top:0;
+  top: 0;
   left: 120px;
   width: 100px;
 }
@@ -69,36 +84,37 @@ body {
 .GroupiesTab {
   position: fixed;
   top: 0;
-  left:220px;
+  left: 220px;
   width: 100px;
 }
 
-.SearchBar{
+.SearchBar {
   position: fixed;
   top: 0;
   left: 320px;
   width: 20%;
 }
 
-.MessagesTab{
+.MessagesTab {
   position: fixed;
   top: 0;
-  right: 150px;
+  right: 130px;
   width: 65px;
 }
 
-.NotificationTabDiv:hover .dropdown-content-notification{
- display: block;
+.NotificationTabDiv:hover .dropdown-content-notification {
+  display: block;
 }
+
 .dropdown-content-notification:hover {
- display: block;
+  display: block;
 }
 
 .NotificationTabDiv {
   position: fixed;
   top: 0;
-  right: 70px;
-  width: 70px;
+  right: 65px;
+  width: 60px;
 }
 
 .dropdown-content-notification {
@@ -109,7 +125,7 @@ body {
   width: 100px;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 /* Links inside the dropdown */
@@ -125,9 +141,9 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 70px;
+  width: 55px;
+  height: 55px;
 }
-
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -138,7 +154,7 @@ body {
   width: 100px;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 /* Links inside the dropdown */
@@ -150,15 +166,15 @@ body {
   z-index: 999;
 }
 
-.userTabDiv:hover .dropdown-content{
- display: block;
+.userTabDiv:hover .dropdown-content {
+  display: block;
 }
+
 .dropdown-content:hover {
- display: block;
+  display: block;
 }
 
-
-.search-ava{
+.search-ava {
   display: inline-block;
   overflow: hidden;
   height: 50px;
@@ -166,11 +182,6 @@ body {
   border-radius: 50%;
   border-color: white;
   border-style: solid;
-}
-
-.main { /* Used in this example to enable scrolling */
-  margin-top: 80px;
-  min-width: 900px;
 }
 
 .musicbar {
@@ -192,11 +203,6 @@ body {
   height: 90px;
 }
 
-.container {
-  height: 100%;
-  min-width: 900px;
-  width: 100%;
-}
 
 .content {
   width: 100%;
@@ -237,7 +243,6 @@ body {
   top: 0;
   opacity: 0;
 }
-
 
 .buticons {
   border-radius: 10px;
@@ -284,30 +289,7 @@ input {
   font-size: 15px;
 }
 
-.left_settings {
-  //  position: absolute;
-  width: 20%;
-  height: 600px;
-  overflow: auto;
-  color: #999999;
-}
 
-.right_settings {
-  transform: translateX(190px);
-  //  position: absolute;
-  height: 600px;
-
-  width: 80%;
-  color: #BBBBBB;
-}
-
-.settings_center {
-  width: auto;
-  height: 600px;
-  top: 80px;
-  color: #BBBBBB;
-
-}
 
 .vibin_btn {
   display: block;
@@ -323,7 +305,6 @@ input {
 }
 
 /* The Modal (background) */
-
 
 /* Add Animation */
 @-webkit-keyframes slideIn {
@@ -375,8 +356,8 @@ input {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   -webkit-animation-name: fadeIn; /* Fade in the background */
   -webkit-animation-duration: 0.4s;
   animation-name: fadeIn;
@@ -417,6 +398,19 @@ input {
   border: 1px solid #888;
   width: 80%;
 }
+.broadcast_cover_area{
+  margin-left: 50px;
+}
+.broadcast_cover {
+  width: 270px;
+  height: 270px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
 
 /* The Close Button */
 .close {
@@ -452,5 +446,14 @@ input {
   padding: 10px;
   border: 1px solid black;
   background-color: #fff;
-  .close {cursor: pointer}
+  .close {
+    cursor: pointer
+  }
+}
+.broadcaster {
+  background-color: #730E15;
+  width: 90%;
+  margin-bottom: 5px;
+  height: 350px;
+  margin-left: 57px;
 }

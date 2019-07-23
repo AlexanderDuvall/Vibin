@@ -11,11 +11,33 @@ class PostsController < ApplicationController
 
   end
 
+  def userfeed
+    if logged_in?
+      # array with current_user id
+      @getUsers = [current_user]
+      # array of following row ids the current user is in
+      @followingRows = Relationship.all.where("follower_id = ?", current_user)
+      @followingRows.each do |a|
+        #append following user's id
+        @getUsers.push(a.followed_id)
+      end
+      @userpost = Post.all.where("user_id IN (?)", @getUsers)
+      @usersongpost = Song.all.where("user_id IN (?) ", @getUsers)
+      puts "IN BROADCASTERS #{@broadcasters}"
+      @posts = @userpost
+      @combine = (@usersongpost + @posts).sort_by {|post| post.created_at}.reverse.paginate(page: params[:page], per_page: 10)
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+
   def create
     @post = current_user.posts.new(post_params)
     respond_to do |format|
       if @post.save!
         format.js
+        puts "skipping js?"
         format.html {redirect_to @post, notice: 'Post was successfully created.'}
         format.json {render :show, status: :created, location: @post}
       else

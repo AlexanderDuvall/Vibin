@@ -186,3 +186,17 @@ function playPause() {
         audio.pause();
     }
 }
+function incrementPlays(id, artist_id) {
+    console.log(id + "in incrementPlays");
+    console.log(artist_id);
+    // ajax request
+    $.ajax({
+        url: "/playCounter",
+        type: "GET",
+        data: {
+            id: id,
+            artist_id: artist_id
+        },
+        dataType: "script",
+    });
+}

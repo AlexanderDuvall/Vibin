@@ -2,8 +2,10 @@
   <% @combine.each do |post| %>
     <% if post.instance_of? Song %>
       <%= render partial: "songs/song", locals: {song: post} %>
-    <% else %>
+    <% elsif post.instance_of? Post %>
       <%= render partial: "posts/#{post.post_type}", locals: {post: post} %>
+    <% else %>
+      <%= render partial: "broadcasters/post", locals: {broadcaster: post} %>
     <% end %>
   <% end %>
 </div>

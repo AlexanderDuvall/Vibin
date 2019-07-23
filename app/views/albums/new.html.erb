@@ -4,12 +4,11 @@
 
   <%= form_for @album do |f| %>
     <div class="album">
-      <div class="album_view">>
+      <div class="album_view">
         <img src=<%= image_url("PictureUploadButton.png") %> class="album" id="Album_Cover"/>
         <%= f.label :title, style: "margin-right: 36px;", id: "title" %>
-      </div>
-      <div class="album_view">
         <%= f.text_field :title, id: "title_text_space" %>
+
       </div>
     </div>
     <div class="album_view">

@@ -1,4 +1,4 @@
-<%= link_to 'Vibin Music', home_path, onclick: "sendTheAJAX('home','')", class:"VibinTab" %>
+<a class="VibinTab" onclick="sendTheAJAX('home', '')"><center><p>Vibin Music</p></center></a>
 <a class="ExploreTab" onclick="sendTheAJAX('explore', '')">Explore</a>
 <a class="GroupiesTab" id="G" onclick="sendTheAJAX('groupies','')">Groupies</a>
 
@@ -14,11 +14,11 @@
   </div>
 </div>
 <div class="userTabDiv">
-  <%= link_to image_tag("default-avatar.jpg", class: "search-ava"), user_path(current_user), onclick: "sendTheAJAX('users',#{current_user.id})", id:"userTab" %>
+  <%= link_to image_tag("default-avatar.jpg", class: "search-ava"), user_path(current_user) , id:"userTab"%>
   <div class="dropdown-content">
     <h6><%= current_user.name %></h6>
-    <h6><%= link_to "@#{current_user.username}", user_path(current_user), onclick: "sendTheAJAX('users',#{current_user.id})" %> </h6>
-    <%= link_to 'Setting', edit_user_path(current_user), style: "width:100%;"%>
+    <h6><%= link_to "@#{current_user.username}", user_path(current_user) %> </h6>
+    <%= link_to "Settings", "", :onclick => "sendTheAJAX('settings', '#{current_user.id}')"%>
     <%= link_to 'Log Out',logout_path, method: :delete, style: "width:100%;" %>
   </div>
 </div>

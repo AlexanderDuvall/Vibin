@@ -1,20 +1,32 @@
 <div id="explore">
-  <div class="row border border-primary" style="height:1000px;">
-    <div class="col border border-success">
+  <div class="explore-page-row" >
+    <div class="explore-TopDj-column">
       <h5> Top DJ's</h5>
     </div>
-    <div class="col">
+    <div class="explore-TopChart-column">
       <h5> Top Chart</h5>
       <% @TopChart.each do |song| %>
-        <div class="row">
-          <%= song.title %>
-          <button class="playButton" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
-            <%= image_tag (song.cover_image), class: "playButtonImage" %>
-          </button>
+        <div class="explore-TopChart-row">
+          <div class="explore-TopChart-row-column">
+            <button class="playButton" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
+              <%= image_tag (song.cover_image), class: "playButtonImage" %>
+            </button>
+          </div>
+          <div class="explore-TopChart-info-column">
+            <p><%= song.user.name %></p>
+              <p><%= song.title %></p>
+          </div>
         </div>
       <% end %>
     </div>
-    <div class="col">
+    <div class="explore-TopArtist-column">
+      <h5> Top Artist</h5>
+      <% @TopArtist.each do |artist| %>
+        <%= artist.name %>
+        @<%= artist.username %>
+      <% end %>
+    </div>
+    <div class="explore-TopChartforGenre-column">
       <h5> Top Chart for ___</h5>
       <select>
         <option value="EDM">EDM</option>
@@ -31,7 +43,7 @@
         <option value="Classic">Classic</option>
       </select>
     </div>
-    <div class="col">
+    <div class="explore-Clout-column">
       <h5> Clout List</h5>
     </div>
   </div>

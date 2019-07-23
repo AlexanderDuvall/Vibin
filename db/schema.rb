@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_15_191402) do
+ActiveRecord::Schema.define(version: 2019_07_21_001547) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2019_07_15_191402) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "broadcast_key"
+    t.boolean "is_playing", default: false
     t.index ["user_id"], name: "index_broadcasters_on_user_id"
   end
 
@@ -185,12 +187,12 @@ ActiveRecord::Schema.define(version: 2019_07_15_191402) do
     t.index ["user_id"], name: "index_songs_on_user_id"
   end
 
-  create_table "user_artist_play_counter", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "user_artist_play_counters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "artist_id"
     t.integer "plays"
     t.integer "user_id"
-    t.index ["artist_id"], name: "index_user_artist_play_counter_on_artist_id"
-    t.index ["user_id"], name: "index_user_artist_play_counter_on_user_id"
+    t.index ["artist_id"], name: "index_user_artist_play_counters_on_artist_id"
+    t.index ["user_id"], name: "index_user_artist_play_counters_on_user_id"
   end
 
   create_table "user_song_play_counters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -247,7 +249,7 @@ ActiveRecord::Schema.define(version: 2019_07_15_191402) do
   add_foreign_key "songs", "albums"
   add_foreign_key "songs", "playlists"
   add_foreign_key "songs", "users"
-  add_foreign_key "user_artist_play_counter", "users"
+  add_foreign_key "user_artist_play_counters", "users"
   add_foreign_key "user_song_play_counters", "songs"
   add_foreign_key "user_song_play_counters", "users"
 end
