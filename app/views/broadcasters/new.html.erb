@@ -1,0 +1,17 @@
+<h1>Become a Broadcaster</h1>
+<p>Info on how broadcasting works</p>
+<div class="container forall border border-dark">
+  <div class="center">
+    <%= form_for @broadcaster do |f| %>
+      <img src="<%= image_url("PictureUploadButton.png") %>" class="album" id="Album_Cover"/>
+      <%= f.file_field :broadcast_cover, accept: "image/png, image/jpeg", id: "cover_image" %>
+      <h1>hello</h1>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <script>
+      $("#cover_image").change(function () {
+          readUrl(this);
+      });
+  </script>
+</div>

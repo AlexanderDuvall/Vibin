@@ -1,0 +1,29 @@
+<div class="row broadcaster" id="<%= broadcaster.id %>">
+  <div class="postLeft justify-content-center text-center ">
+    <div style="position:absolute; margin-top:20px;">
+      <% %>
+      <% if broadcaster.user.avatar.attached? %>
+        <%= image_tag (broadcaster.user.avatar), class: "post-ava" %>
+      <% else %>
+        <img src="default-avatar.jpg" class="post-ava">
+      <% end %>
+      <h6 style="margin:0; padding:0;">
+        <span class="badge badge-primary"><%= User.find(broadcaster.user_id).name %></span>
+      </h6>
+      <h6 style="margin:0; padding:0;">
+        <span class="badge badge-primary"><%= link_to "@" + User.find(broadcaster.user_id).username, user_path(broadcaster.user_id), onclick: "sendTheAJAX('users', #{broadcaster.user_id})" %></span>
+      </h6>
+    </div>
+  </div>
+  <div class="postCenter justify-content-center broadcast_cover_area">
+    <br/>
+    <%= image_tag (broadcaster.broadcast_cover), class: "broadcast_cover", onclick: "requestData(null," + "#{broadcaster.id})" %>
+    <h3 style="color:white">Join my Stream!</h3>
+  </div>
+  <div class="postRight">
+    <div class="" style="float:right;">
+      <p><%= month(broadcaster.updated_at) %><br><%= dayYear(broadcaster.updated_at) %>
+        <br><%= age(Time.now, broadcaster.updated_at) %></p>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,7 @@ var listening = false;
 let lastTime = 0;
 var playButton = null;
 var update = false;
-var currentBroadcaster  = null;
+var currentBroadcaster = null;
 window.addEventListener("DOMContentLoaded", function (e) {
     var username = document.querySelector("#usernameSong");
     username.innerHTML = "";
@@ -108,7 +108,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
 
             requestData(function (results) {
                 listenerCallback(results);
-            },currentBroadcaster);
+            }, currentBroadcaster);
         }
     });
 
@@ -182,10 +182,12 @@ function playPause() {
     if (audio.paused) {
         audio.play();
     } else {
-        sendData(null, "Pause");
+        if (isBroadcasting())
+            sendData(null, "Pause");
         audio.pause();
     }
 }
+
 function incrementPlays(id, artist_id) {
     console.log(id + "in incrementPlays");
     console.log(artist_id);

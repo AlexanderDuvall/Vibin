@@ -1,0 +1,17 @@
+<h1>Broadcasters#index</h1>
+<p>Find me in app/views/broadcasters/index.html.erb</p>
+<% if @broadcasters.nil? %>
+  <h1>Back to the lab again</h1>
+<% else %>
+  <% @broadcasters.each do |f| %>
+    <%= render partial: "broadcasters/post", :locals => {:broadcaster => f} %>
+  <% end %>
+<% end %>
+
+<script>
+    $("#stream_image").click(function (e) {
+        let id = $(this).data("id");
+        console.log("We've been clicked... going to stream..." + $(this).data("id"));
+        requestData(null, id)
+    });
+</script>
