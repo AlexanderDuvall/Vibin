@@ -47,11 +47,12 @@ body {
 .navbar {
   position: fixed;
   z-index: 1;
-  background-color: #ffdbdb ;
+  background-color: #ffdbdb;
   top: 0;
   width: 100%;
   height: 55px;
   min-width: 900px;
+
   a {
     height: 55px;
     vertical-align: middle;
@@ -67,7 +68,8 @@ body {
   top: 0;
   left: 0;
   width: 120px;
-  p{
+
+  p {
     color: #a5e3eb;
     font-size: 15px;
 
@@ -93,6 +95,18 @@ body {
   top: 0;
   left: 320px;
   width: 20%;
+}
+
+.RootPage {
+  background: url(Vibin_logo.jpg) center no-repeat;
+  background-size: 100% 100%;
+  width:  150px;
+  height: 70px;
+  margin-left: -20px;
+  margin-top: -17px;
+  border-style: solid;
+  padding-right: 20px;
+  style: none;
 }
 
 .MessagesTab {
@@ -290,7 +304,6 @@ input {
 }
 
 
-
 .vibin_btn {
   display: block;
   margin-left: auto;
@@ -398,9 +411,11 @@ input {
   border: 1px solid #888;
   width: 80%;
 }
-.broadcast_cover_area{
+
+.broadcast_cover_area {
   margin-left: 50px;
 }
+
 .broadcast_cover {
   width: 270px;
   height: 270px;
@@ -446,10 +461,12 @@ input {
   padding: 10px;
   border: 1px solid black;
   background-color: #fff;
+
   .close {
     cursor: pointer
   }
 }
+
 .broadcaster {
   background-color: #730E15;
   width: 90%;
