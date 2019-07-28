@@ -11,10 +11,11 @@ class Song < ApplicationRecord
   has_many :songlikes
   belongs_to :song_positions, optional: true
   has_many :songlikes
-  #validates :premium
+  has_many :user_song_play_counter
+  has_one :total_song_play
+  #valiates :premium
   #belongs_to :post, optional: true
   validates :title, presence: true, length: {maximum: 40}
-
 
 
   def Song.likeMusic?(song)

@@ -12,49 +12,43 @@
  *= require jquery-ui
  *= require_tree .
  *= require_self
-  *= require active_storage_drag_and_drop
-
+ *= require active_storage_drag_and_drop
+ *= require jquery.minicolors
   */
 @import "bootstrap";
 
+// no visible scrollbar
 ::-webkit-scrollbar {
   width: 0px;
   height: 0px;
 }
 
 html {
-  height: 100%;
-  background-color: white;
+  min-width: 1200px;
 }
 
 body {
-  position: fixed;
-  top: 55px;
-  width: 100%;
-  min-width: 900px;
-  height: calc(100% - 135px);
+  min-width: 1200px;
+  min-height: 1000px;
 }
 
-.main { /* Used in this example to enable scrolling */
-  width: 100%;
-  height: 100%;
-  min-width: 900px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-
-}
+//
+////
+////// Nav bar
+////
+//
 
 .navbar {
   position: fixed;
-  z-index: 1;
+  z-index: 999;
   background-color: #ffdbdb;
   top: 0;
   width: 100%;
-  height: 55px;
-  min-width: 900px;
+  min-width: 1000px;
+  height: 50px;
 
   a {
-    height: 55px;
+    height: 50px;
     vertical-align: middle;
   }
 }
@@ -97,11 +91,37 @@ body {
   width: 20%;
 }
 
+.login {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 85px;
+  height: 50px;
+}
+
+.dropdown-content-login {
+  top: 49px;
+  right: 0;
+  display: none;
+  position: fixed;
+  width: 300px;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.login:hover .dropdown-content-login {
+  display: block;
+}
+
+.dropdown-content-login:hover {
+  display: block;
+}
+
 .RootPage {
   background: url(Vibin_logo.jpg) center no-repeat;
   background-size: 100% 100%;
-  width:  150px;
-  height: 70px;
+  width: 150px;
+  height: 50px;
   margin-left: -20px;
   margin-top: -17px;
   border-style: solid;
@@ -132,7 +152,7 @@ body {
 }
 
 .dropdown-content-notification {
-  top: 55px;
+  top: 50px;
   right: 50px;
   display: none;
   position: fixed;
@@ -156,12 +176,12 @@ body {
   top: 0;
   right: 0;
   width: 55px;
-  height: 55px;
+  height: 50px;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  top: 55px;
+  top: 50px;
   right: 0;
   display: none;
   position: fixed;
@@ -198,13 +218,34 @@ body {
   border-style: solid;
 }
 
+
+//
+////
+////// main
+////
+//
+
+.main {
+  margin-top: 50px;
+  margin-bottom: 105px;
+  min-width: 1200px;
+  min-height: 1000px;
+}
+
+//
+////
+////// Footer
+////
+//
+
 .musicbar {
   overflow: hidden;
   position: fixed;
   background-color: #f2f2f2;
   bottom: 0;
   width: 100%;
-  min-width: 900px;
+  height: 100px;
+  min-width: 1200px;
 }
 
 .MusicPlayer {
@@ -217,109 +258,12 @@ body {
   height: 90px;
 }
 
+//
+////
+////// The Modal (background)
+////  Add Animation
+//
 
-.content {
-  width: 100%;
-}
-
-.links {
-  color: white;
-}
-
-.input-bar {
-  width: 100%;
-}
-
-.hidden {
-  display: none;
-}
-
-.upload-btn-wrapper {
-  //position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
-
-.btn-avatar {
-  border: 2px solid gray;
-  color: gray;
-  background-color: white;
-  padding: 8px 20px;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.upload-btn-wrapper input[type=file] {
-  font-size: 100px;
-  //position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-
-.buticons {
-  border-radius: 10px;
-  margin-bottom: 2px;
-}
-
-#error_explanation {
-  color: red;
-
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-input {
-  height: auto !important;
-}
-
-.field_with_errors {
-  .form-control {
-    color: black;
-  }
-}
-
-.profile-banner1 {
-  float: left;
-  width: 100%;
-  z-index: -1;
-}
-
-.bio {
-  //position: absolute;
-  top: 240px;
-}
-
-.profile-nav {
-  font-size: 15px;
-}
-
-
-.vibin_btn {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
-}
-
-.vibin_form_text {
-  margin-left: 15px;
-  font-size: 20px;
-  color: black;
-}
-
-/* The Modal (background) */
-
-/* Add Animation */
 @-webkit-keyframes slideIn {
   from {
     bottom: -300px;

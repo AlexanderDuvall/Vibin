@@ -1,6 +1,8 @@
 jQuery(document).on 'turbolinks:load', ->
-  messages = $('#conversation-body');
-  messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
+    messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
+    messages = $('#conversation-body')
+    if messages.length > 0
+      messages_to_bottom()
 
   if $('#current-user').size() > 0
     App.personal_chat = App.cable.subscriptions.create {

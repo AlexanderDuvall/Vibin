@@ -7,20 +7,32 @@ module SongsHelper
       puts "NO SONG AVAILABLE"
     end
   end
+
   def incrementSongPlays
-  #  song = Song.find(params[:id])
-  #  if song.present?
-  #    song.increment!(:plays)
-  #  end
-  puts "*******"
-  puts "*******"
-  puts "*******"
+    #  song = Song.find(params[:id])
+    #  if song.present?
+    #    song.increment!(:plays)
+    #  end
+    puts "*******"
+    puts "*******"
+    puts "*******"
 
 
   end
+
+  def getTopSong(genre)
+    @songs = Song.find_by(:genre => genre).sort_by {|e| -e[:plays]}
+    song = song.first
+    song
+  end
+
   def set_up_Post(post)
     3.times {post.songs.build}
-      post
+    post
+  end
+
+  def getTopSong(genre)
+    @song = Song.find_by(:genre => genre)
   end
 
   def add_song_view(name, f, association, **args)

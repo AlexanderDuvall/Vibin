@@ -1,3 +1,12 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.loginBox{
+  height: 100%;
+  width: 100%;
+  .emailBox{
+    border-radius: 10px;
+    width: 100%;
+  }
+}

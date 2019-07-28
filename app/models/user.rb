@@ -1,15 +1,9 @@
 class User < ActiveRecord::Base
   searchkick text_start: [:username, :name]
+  genderList = ["male", "female"]
 
-  def search_data
-    {
-        username: username,
-        name: name
-    }
-  end
-
-  attr_accessor :remember_token, :reset_token
-  before_create :set_confirmation_token
+  attr_accessor :remember_token, :reset_token, :activation_token
+  before_create :set_confirmation_token, :create_activation_digest
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :songs
@@ -26,11 +20,16 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :username, presence: true, uniqueness: true
   validates :Terms_of_Agreement, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
   validates :zipcode, presence: true
   validates :gender, presence: true
   validates :birthday, presence: true
   validates :bio, length: {maximum: 250}
   validates :avatar, presence: true
+  validates :badgeColor, presence: true
+  validates :badgeTextColor, presence: true
+  validates :country, presence: true
   has_secure_password
   validates :password_digest, presence: true, length: {minimum: 6}, allow_nil: true
   has_many :albumlikes
@@ -47,6 +46,13 @@ class User < ActiveRecord::Base
   has_many :songlikes
   has_one :broadcaster
   # Remembers a user in the database for use in persistent sessions.
+
+  def search_data
+    {
+        username: username,
+        name: name
+    }
+  end
 
   def as_indexed_json(_options = {})
     {
@@ -177,14 +183,18 @@ class User < ActiveRecord::Base
   end
 
   def User.openConn
-    ip = "192.168.1.73" # ENV["Broadcasting_Server"]
+    ip =  ENV["Broadcasting_Server"]
     port = 4447
     conn = TCPSocket.open(ip, port)
     conn
   end
 
   private
-
+  def create_activation_digest
+    # Creates and assigns the activation token and digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
+  end
 
   def set_confirmation_token
     if self.confirm_token.blank?

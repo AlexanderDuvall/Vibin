@@ -9,47 +9,121 @@ let lastTime = 0;
 var playButton = null;
 var update = false;
 var currentBroadcaster = null;
+var dur=  $('#dur');
+
 window.addEventListener("DOMContentLoaded", function (e) {
-    var username = document.querySelector("#usernameSong");
-    username.innerHTML = "";
+  playButton = $(".play");
+  let playButtonIcon = $('.ion-play');
+  let volume_fill = volume.querySelector(".volume_fill");
+
+  audio.addEventListener('play', function () {
+
+    playButtonIcon.className = 'ion-pause';
+    volume_fill.style.width = pastAudio * 100 + '%';
+    audio.volume = pastAudio;
+    console.log("song playing");
+  });
+
+  audio.addEventListener('pause', function () {
+    playButtonIcon.className = 'ion-play';
+    console.log("song paused");
+  });
+
+  audio.addEventListener('timeupdate', function () {
+    dur.value = audio.currentTime
+    console.log('timeupdate');
+  });
+
+  audio.addEventListener("loadedmetadata", function () {
+    dur.max = audio.duration
+    console.log(dur.max);
+  });
+});
+
+function incrementPlays(id, artist_id) {
+  console.log(id + "in incrementPlays");
+  console.log(artist_id);
+  // ajax request
+  $.ajax({
+      url: "/playCounter",
+      type: "GET",
+      data: {
+          id: id,
+          artist_id: artist_id
+      },
+      dataType: "script",
+  });
+}
+
+function playPause() {
+  console.log("play button clicked");
+  if (audio.paused) {
+      audio.play();
+  } else {
+      sendData(null, "Pause");
+      audio.pause();
+  }
+}
+
+function mSet(){
+  audio.currentTime = dur.value;
+  console.log('mset');
+}
+/*
+
+window.addEventListener("DOMContentLoaded", function (e) {
     let seekBar = document.querySelector('.seek-bar');
-    let muteButton = document.querySelector(".volume");
-    let muteButtonIcon = muteButton.querySelector(".ion-volume-high");
     playButton = document.querySelector('.play');
     let playButtonIcon = playButton.querySelector('.ion-play');
     let fillBar = seekBar.querySelector('.fill');
-    let skipForward = document.querySelector('.skip_forward');
+    //let muteButton = document.querySelector(".volume");
+    //let muteButtonIcon = muteButton.querySelector(".ion-volume-high");
+    //let skipForward = document.querySelector('.skip_forward');
     let volume = document.querySelector('.volume_bar');
     let volume_fill = volume.querySelector(".volume_fill");
     let modal = document.getElementById("audio-modal");
-    let btn = document.getElementById("renderPlaylist");
-    let broadcast = document.getElementById("broadcast_text");
-    broadcast.onclick = function () {
-        let id = $("#broadcast_text").data("session");
-        console.log(id + " uhuh");
-        connect(id);
-    };
-    btn.onclick = function () {
-        Rails.ajax({
-            url: '/get_playlist_songs',
-            type: 'GET',
-            processData: false,
-            success: function (data) {
-                console.log("......");
-                console.log(data.id);
-                modal.style.display = "block";
-            },
-            error: function (data) {
-                console.log(data);
-            }
-        });
+    audio.addEventListener('play', function () {
+        playButtonIcon.className = 'ion-pause';
+        volume_fill.style.width = pastAudio * 100 + '%';
+        audio.volume = pastAudio;
+        console.log("song playing");
+    });
 
-    };
+    audio.addEventListener('pause', function () {
+        playButtonIcon.className = 'ion-play';
+        console.log("song paused");
+    });
+    //let btn = document.getElementById("renderPlaylist");
+    //let broadcast = document.getElementById("broadcast_text");
+    /*
+      broadcast.onclick = function () {
+          let id = $("#broadcast_text").data("session");
+          console.log(id + " uhuh");
+          connect(id);
+      };
+      btn.onclick = function () {
+          Rails.ajax({
+              url: '/get_playlist_songs',
+              type: 'GET',
+              processData: false,
+              success: function (data) {
+                  console.log("......");
+                  console.log(data.id);
+                  modal.style.display = "block";
+              },
+              error: function (data) {
+                  console.log(data);
+              }
+          });
+
+      };
+
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     };
+    /*
     skipForward.addEventListener('click', function () {
         //skip to next playlist song
         nextSong();
@@ -72,15 +146,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
         console.log(e);
     });
 
-    audio.addEventListener('play', function () {
-        playButtonIcon.className = 'ion-pause';
-        volume_fill.style.width = 100 + '%';
-        audio.volume = 1;
-    });
 
-    audio.addEventListener('pause', function () {
-        playButtonIcon.className = 'ion-play';
-    });
     audio.addEventListener("ended", function () {
         if (isListening()) {
             needsUpdate(true);
@@ -94,7 +160,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
         if (mouseDownSeek) return;
         let currentTime = audio.currentTime;
         let p = currentTime / audio.duration;
-        fillBar.style.width = p * 100 + '%';
+        fillBar.style.width = p * 80 + '%';
         if (isBroadcasting() && currentTime > (lastTime + 2)) {
             lastTime = currentTime;
             console.log(currentTime);
@@ -132,7 +198,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
     volume.addEventListener('mousedown', function (e) {
         mouseDownVolume = true;
         let p = getP(e);
-        volume_fill.style.width = p * 100 + '%';
+        volume_fill.style.width = p * 50 + '%';
         audio.volume = p;
         pastAudio = audio.volume;
         //changing volume
@@ -141,13 +207,13 @@ window.addEventListener("DOMContentLoaded", function (e) {
     seekBar.addEventListener('mousedown', function (e) {
         mouseDownSeek = true;
         let p = getP(e);
-        fillBar.style.width = p * 100 + '%';
+        fillBar.style.width = p * 80 + '%';
     });
 
     window.addEventListener('mousemove', function (e) {
         if (mouseDownVolume) {
             let p = getP(e);
-            volume_fill.style.width = p * 100 + '%';
+            volume_fill.style.width = p * 50 + '%';
             audio.volume = p;
             pastAudio = audio.volume;
 
@@ -162,12 +228,12 @@ window.addEventListener("DOMContentLoaded", function (e) {
         if (mouseDownSeek) {
             mouseDownSeek = false;
             let p = getP(e);
-            fillBar.style.width = p * 100 + '%';
+            fillBar.style.width = p * 80 + '%';
             audio.currentTime = p * audio.duration;
         } else if (mouseDownVolume) {
             mouseDownVolume = false;
             let p = getP(e);
-            volume_fill.style.width = p * 100 + '%';
+            volume_fill.style.width = p * 50 + '%';
             audio.volume = p;
             pastAudio = audio.volume;
             // audio.currentTime = p * audio.duration;
@@ -176,29 +242,4 @@ window.addEventListener("DOMContentLoaded", function (e) {
         console.log("------------Mouse Up -------------");
     });
 });
-
-function playPause() {
-    console.log("play button clicked");
-    if (audio.paused) {
-        audio.play();
-    } else {
-        if (isBroadcasting())
-            sendData(null, "Pause");
-        audio.pause();
-    }
-}
-
-function incrementPlays(id, artist_id) {
-    console.log(id + "in incrementPlays");
-    console.log(artist_id);
-    // ajax request
-    $.ajax({
-        url: "/playCounter",
-        type: "GET",
-        data: {
-            id: id,
-            artist_id: artist_id
-        },
-        dataType: "script",
-    });
-}
+*/

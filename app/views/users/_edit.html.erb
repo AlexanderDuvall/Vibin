@@ -1,0 +1,99 @@
+<br>
+<%= form_for @user do |f| %>
+
+<div class="images border border-primary">
+  <div class="left-header">
+    <%= image_tag "fire.png", :class => "left-header-image" %>
+    <%#= f.file_field image_tag("fire.png"), :firstHeader %>
+  </div>
+  <div class="right-header">
+    <%= image_tag "cancel.png", :class => "right-header-image" %>
+  </div>
+  <div class="upload-preview">
+    <center>
+      <% if @user.avatar.attached? %>
+        <%= image_tag (@user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
+      <% else %>
+        <img src="/default-avatar.jpg" style="width:100px; height:100px; object-fit:cover;">
+      <% end %>
+    </center>
+  </div>
+</div>
+<br/><br/>
+
+<input hidden class="photo_upload" type="file" name="user[avatar]" id="user_avatar">
+<input hidden class="photo_upload" type="file" name="user[firstHeader]" id="user_firstHeader">
+<input hidden class="photo_upload" type="file" name="user[secondHeader]" id="user_secondHeader">
+
+
+  <%= f.label :name, class: "vibin_form_text ml-5" %>
+  <%= f.text_field :name, class: "form-control ml-5 ", style: "width:80%;" %>
+
+  <%= f.label :bio, class: "vibin_form_text ml-5" %>
+  <%= f.text_area :bio, class: "form-control ml-5", style: "width:80%;" %>
+
+  <%= f.label :city, class: "vibin_form_text ml-5" %>
+  <%= f.text_field :city, class: "form-control ml-5", style: "width:80%;" %>
+
+  <%= f.label :state, class: "vibin_form_text ml-5" %>
+  <%= f.text_field :state, class: "form-control ml-5", style: "width:80%;" %>
+
+  <%= f.label :zipcode, class: "vibin_form_text ml-5" %>
+  <%= f.number_field :zipcode, class: "form-control ml-5", style: "width:80%;" %>
+
+  <%= f.submit "Save changes", class: "btn btn-primary vibin_btn" %>
+<% end %>
+
+<script>
+$(document).ready(function(){
+   $(".upload-preview").on("click", function() {
+        $("#user_avatar").trigger("click");
+    });
+   $(".left-header").on("click", function() {
+         $("#user_firstHeader").trigger("click");
+    });
+   $(".right-header").on("click", function() {
+        $("#user_secondHeader").trigger("click");
+    });
+    var previewAvatar = $(".upload-preview img");
+    var previewFirstHeader = $(".left-header img");
+    var previewSecondHeader = $(".right-header img");
+    $("#user_avatar").change(function(event){
+       var input = $(event.currentTarget);
+       var file = input[0].files[0];
+       var reader = new FileReader();
+       reader.onload = function(e){
+
+           image_base64 = e.target.result;
+           console.log(image_base64);
+           previewAvatar.attr("src", image_base64);
+       };
+       reader.readAsDataURL(file);
+    });
+    $("#user_firstHeader").change(function(event){
+       var input = $(event.currentTarget);
+       var file = input[0].files[0];
+       var reader = new FileReader();
+       reader.onload = function(e){
+
+           image_base64 = e.target.result;
+           console.log(image_base64);
+           previewFirstHeader.attr("src", image_base64);
+       };
+       reader.readAsDataURL(file);
+    });
+    $("#user_secondHeader").change(function(event){
+       var input = $(event.currentTarget);
+       var file = input[0].files[0];
+       var reader = new FileReader();
+       reader.onload = function(e){
+
+           image_base64 = e.target.result;
+           console.log(image_base64);
+           previewSecondHeader.attr("src", image_base64);
+       };
+       reader.readAsDataURL(file);
+    });
+});
+
+</script>

@@ -33,7 +33,6 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   root 'home#home'
-  get '/home' => 'home#home'
   get '/search' => 'home#search'
   get '/explore' => 'home#explore'
   get '/groupies' => 'home#groupies'
@@ -45,10 +44,13 @@ Rails.application.routes.draw do
   get 'broadcasters/index'
   get 'broadcasters/setup'
   get 'broadcasters/show'
+  get '/topSong', to: 'songs#getTopSong'
   get 'broadcasters/settings'
   get '/playCounter' => "songs#incrementSongPlays"
   get 'playlists/create'
   get 'playlists/new'
+  post '/decrement' => 'broadcasters#decrement'
+  post '/increment' => 'broadcasters#increment'
   get 'playlists/show'
   get '/getsongs' => 'playlists#getsongs'
   get '/getbroadcaster' => 'broadcasters#get_broadcaster'
@@ -61,7 +63,7 @@ Rails.application.routes.draw do
   get '/settings', to: 'users#edit'
   get '/password_reset', to: 'password_resets#new'
   get '/privacy_settings', to: 'privacy_settings#edit'
-  get '/deactivate_current_user', to:'users#deactivate'
+  get '/deactivate_current_user', to: 'users#deactivate'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get 'users/:id/add_album', to: 'albums#new'

@@ -33,6 +33,18 @@ class BroadcastersController < ApplicationController
     params.require(:broadcaster).permit(:broadcast_cover)
   end
 
+  def increment
+    broadcaster_id = params[:id]
+    @broadcaster = Broadcaster.find(broadcaster_id)
+    @broadcaster.increment!(:num_listeners)
+  end
+
+  def decrement
+    broadcaster_id = params[:id]
+    @broadcaster = Broadcaster.find(broadcaster_id)
+    @broadcaster.decrement!(:num_listeners)
+  end
+
   def update_params
     params.permit(:id, :is_playing)
 

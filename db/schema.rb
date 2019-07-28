@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_21_001547) do
+ActiveRecord::Schema.define(version: 2019_07_27_222620) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_07_21_001547) do
     t.integer "user_id"
     t.string "broadcast_key"
     t.boolean "is_playing", default: false
+    t.integer "num_listeners"
     t.index ["user_id"], name: "index_broadcasters_on_user_id"
   end
 
@@ -176,7 +177,7 @@ ActiveRecord::Schema.define(version: 2019_07_21_001547) do
     t.integer "albums_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer "plays"
+    t.integer "plays", default: 0
     t.boolean "premium", default: false
     t.bigint "album_id"
     t.integer "user_id"
@@ -229,6 +230,11 @@ ActiveRecord::Schema.define(version: 2019_07_21_001547) do
     t.boolean "Verified", default: false
     t.string "city"
     t.string "state"
+    t.string "country", null: false
+    t.string "longitude", null: false
+    t.string "latitude", null: false
+    t.string "badgeColor", default: "#8ff478"
+    t.string "badgeTextColor", default: "#ffffff"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

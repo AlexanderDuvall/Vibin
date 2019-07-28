@@ -5,7 +5,7 @@
       <% if broadcaster.user.avatar.attached? %>
         <%= image_tag (broadcaster.user.avatar), class: "post-ava" %>
       <% else %>
-        <img src="default-avatar.jpg" class="post-ava">
+        <img src="http://localhost:3000/default-avatar.jpg" class="post-ava">
       <% end %>
       <h6 style="margin:0; padding:0;">
         <span class="badge badge-primary"><%= User.find(broadcaster.user_id).name %></span>

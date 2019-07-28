@@ -1,4 +1,4 @@
-<div id="home">
+<div class="home" id="home">
   <% if logged_in? %>
     <% @user = current_user %>
     <div class="row">
@@ -8,7 +8,7 @@
             <% if @user.avatar.attached? %>
               <%= image_tag (@user.avatar), class: "avatar-home" %>
             <% else %>
-              <img src=" http://localhost:3000/default-avatar.jpg" class="avatar-home">
+              <img src="http://localhost:3000/default-avatar.jpg" class="avatar-home">
             <% end %>
           </div>
           <div class="home-header-column-badges">
@@ -112,42 +112,108 @@
           <% end %>
         </div>
       </div>
+    </div>
       <%= will_paginate @combine %>
   <% else %>
-    <div class="row">
-      <div class="col" style="width: 80%;">
-        <h2>Welcome to Vibin Music!</h2>
+  <!-- Welcome to Vibin First Impression -->
+  <div class="topRow">
+    <div class="slideshow">
+       <!--Carousel -->
+      <div id="carouselExampleIndicators" class="carousel slide carouselBox" data-ride="carousel" data-interval="12000">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner carouselBox">
+          <div class="carousel-item active">
+            <img class="d-block w-100 carouselBox" src="http://localhost:3000/slide1.png" alt="First slide">
+          </div>
+          <div class="carousel-item carouselBox">
+            <img class="d-block w-100 carouselBox" src="" alt="talk about groupies">
+          </div>
+          <div class="carousel-item carouselBox">
+            <img class="d-block w-100 carouselBox" src="" alt="talk about premium">
+          </div>
+        </div>
+        <a class="carousel-control-prev remove" href="#carouselExampleIndicators" role="button" data-slide="prev" style="background-color: inherit;">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="background-color: inherit;">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
-    <p></p>
-    <div class="row justify-content-between">
-      <!-- How do I make the columns different heights -->
-      <div class="col-xs-6 ml-2 welcome " style="overflow: hidden; min-width:70%;">
-        Find new music<br>
-        Find your group<br>
-        Share music<br>
-        Upload Music
-      </div>
-      <div class="clearfix"></div>
-      <div class="col-xs-3 mr-2 welcome" style="min-width:25%;">
-        <p> Top Songs </p>
-        <p> Top Songs </p>
-        <p> Top Songs </p>
-        <p> Top Songs </p>
-        <p> Top Songs </p>
-        <p> Top Songs </p>
-        <p> Top Songs </p>
+  </div>
+  <!-- Mobile App details, Premium Details -->
+  <div class="bottomRow">
+    <div class="mobileAppColumn">
+      <div class="iphone">
+        <img src= "http://localhost:3000/iphone.png" style="height: 100%; width: 100%;">
       </div>
     </div>
-  <% end %>
-
+    <div class="premiumColumn">
+      <div class="premiumTab">
+        <p> Non User Benefits<br>
+          Premium Benefits</p>
+      </div>
+    </div>
+  </div>
+  <!-- Top broadcast Right Now, Top Songs -->
+  <div class="rightMenu">
+    <div class="topBroadcast">
+      <div class="BCPlayer">
+        <div class="BCPlayerUserAvatar">
+        </div>
+        <div class="BCUserInfo">
+          <h6>User name</h6>
+          <h6>@username</h6>
+          <h6>Houston, TX</h6>
+        </div>
+        <div class="BCCurrentSongCover">
+        </div>
+        <div class="BCInfo">
+          <h6>Listeners: 1000</h6>
+        </div>
+      </div>
+      <div class="BCChat">
+      </div>
+    </div>
+    <div class="topChart">
+        <center><h4> Top Chart <h4></center>
+          <div class="topChartFeed">
+            <% @TopChart.each do |song| %>
+            <div class="topChart-row">
+              <div class="topChart-info-column">
+                <p><%= song.title %><br>
+                  subgenre, genre </p>
+              </div>
+              <div class="topChart-cover-column">
+                <center>
+                  <button class="playButton" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
+                    <%= image_tag (song.cover_image), class: "playButtonImage" %>
+                  </button>
+                </center>
+              </div>
+              <div class="topChart-artist-column">
+                <p><%= song.user.name %><br>
+                  @<%= song.user.username%><br>
+                  Houston, TX</p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 <script>
     $("#refresh").on("click", function () {
         // will call refreshPartial every 3 seconds
         //  setInterval(refreshPartial, 10000)
-        $('.center-column').html("<%= escape_javascript(render 'posts/userfeed')%>");
+
     });
 
     $(function () {
@@ -155,7 +221,7 @@
             if ($(".main").scrollTop() == -1) {
                 // refresh timeline
                 console.log("refresh timeline");
-                $('.center-column').html("<%= escape_javascript(render 'posts/userfeed')%>");
+                $('.center-column').html("<%#= escape_javascript(render 'posts/userfeed')%>");
             }
         });
     });

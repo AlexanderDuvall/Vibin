@@ -847,3 +847,90 @@
         <% end %>
       </tbody>
     </table>
+
+    <div id="SignUp">
+      <div class="LeftMenu">
+        <center>
+        <span class="badge badge-primary" style="height: 100%;">
+          <p> Users benefits </p>
+        </span>
+      </center></div>
+      <div class="RightSide">
+        <center><h1>Sign up</h1></center>
+        <%= form_for(@user) do |f| %>
+          <div class="row border border-primary">
+            <%= render 'shared/error_messages' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :email, style: "margin-right: 36px;" %>
+            <%= f.email_field :email, class: "form-control", placeholder: "example@example.com" %>
+          </div>
+          <div class="row signup">
+          <%= f.label :username, style: "margin-right: 32px;" %>
+          <%= f.text_field :username %>
+        </div>
+        <div class="row signup">
+          <%= f.label :name, style: "margin-right: 32px;" %>
+          <%= f.text_field :name %>
+        </div>
+        <div class="row signup">
+          <%= f.label :city, style: "margin-right: 32px;" %>
+          <%= f.text_field :city %>
+        </div>
+        <div class="row signup">
+          <%= f.label :state, style: "margin-right: 32px;" %>
+          <%= f.text_field :state %>
+        </div>
+        <div class="row signup">
+          <%= f.label :zipcode, style: "margin-right: 32px;" %>
+          <%= f.number_field :zipcode %>
+        </div>
+        <div class="row signup">
+          <%= f.label :gender, style: "margin-right: 32px;" %>
+          <%= f.select(:gender, ["Male", "Female"]) %>
+        </div>
+        <div class="row signup">
+          <%= f.label :password, style: "margin-right: 5px;" %>
+          <%= f.password_field :password %>
+        </div>
+        <div class="row signup">
+          <%= f.label :password_confirmation, "Confirmation" %>
+          <%= f.password_field :password_confirmation %>
+        </div>
+
+        <div class="row signup">
+          <%= f.label :birthday, style: "margin-right: 32px;" %>
+          <%= f.date_select :birthday, order: [:month, :day, :year],
+                            prompt: {day: 'Select day', month: 'Select month', year: 'Select year'},
+                            start_year: Date.today.year - 5, end_year: Date.today.year - 120 %></div>
+
+        <div class="row signup">
+          <div class="col-xs-3">
+            <%= f.check_box :Terms_of_Agreement, style: "margin-top: 5px; margin-right:5px" %>
+          </div>
+          <div class="col">
+            <%= f.label :Terms_of_Agreement, "I accept the Terms of Agreement" %>
+          </div>
+        </div>
+      <div class="row signup">
+        <button class="btn-avatar"><img src="/default-avatar.jpg" id="preview" height="80px" width="80px"></button>
+          <%= f.file_field :avatar, id: "avatar", onchange: "previewFile()" %>
+        </div>
+        <div class="row signup">
+          <div class="col-xs-3">
+            <div class="upload-btn-wrapper">
+              <%= f.submit "Create my account", class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+        <br/>
+      <% end %>
+    </div>
+    </div>
+
+
+    <script>
+      $(".btn-avatar").on("click", function(e){
+          e.preventDefault();
+      });
+    </script>

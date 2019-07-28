@@ -59,7 +59,7 @@
           <% if @user.avatar.attached? %>
             <%= image_tag (@user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
           <% else %>
-            <img src="/default-avatar.jpg" style="width:100px; height:100px; object-fit:cover;">
+            <img src="http://localhost:3000/default-avatar.jpg" style="width:100px; height:100px; object-fit:cover;">
           <% end %>
         </center>
       </div>

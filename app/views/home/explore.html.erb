@@ -1,5 +1,5 @@
 <div id="explore">
-  <div class="explore-page-row" >
+  <div class="explore-page-row">
     <div class="explore-TopDj-column">
       <h5> Top DJ's</h5>
     </div>
@@ -8,13 +8,13 @@
       <% @TopChart.each do |song| %>
         <div class="explore-TopChart-row">
           <div class="explore-TopChart-row-column">
-            <button class="playButton" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
+            <button class="playButton" onclick="SelectedSong(this, '<%=song.user.name%>' ,'<%= song.user.username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
               <%= image_tag (song.cover_image), class: "playButtonImage" %>
             </button>
           </div>
           <div class="explore-TopChart-info-column">
             <p><%= song.user.name %></p>
-              <p><%= song.title %></p>
+            <p><%= song.title %></p>
           </div>
         </div>
       <% end %>
@@ -28,8 +28,9 @@
     </div>
     <div class="explore-TopChartforGenre-column">
       <h5> Top Chart for ___</h5>
-      <select>
+      <select id="genre_value">
         <option value="EDM">EDM</option>
+        <option value="African">African</option>
         <option value="Rock">Rock</option>
         <option value="Jazz">Jazz</option>
         <option value="Dubstep">Dubstep</option>
@@ -42,9 +43,58 @@
         <option value="Pop">Pop</option>
         <option value="Classic">Classic</option>
       </select>
+      <div id="topsongs" class=album>
+        <div id="top_song_pic" class=album_view>
+
+
+        </div>
+
+        <div id="top_song_details" class=album_view>
+
+
+        </div>
+      </div>
     </div>
     <div class="explore-Clout-column">
       <h5> Clout List</h5>
     </div>
   </div>
 </div>
+<script>
+
+    $("#genre_value").change(function () {
+        let text = $(this).children("option:selected").val();
+        Rails.ajax({
+            url: "/topSong?genre=" + text.trim(),
+            type: "get",
+            processData: false,
+            success: function (song) {
+
+                let button = document.createElement("button");
+                button.setAttribute("class", "playButton");
+                console.log(song.song_file)
+                button.addEventListener('click', event => {
+                    SelectedSong(this, String(song.name), String(song.username), String(song.title), true, parseInt(song.id), String(song.song_file));
+                    incrementPlays(parseInt(song.id), parseInt(song.user_id))
+                });
+                let img = document.createElement("img");
+                img.setAttribute("src", song.cover);
+                img.setAttribute("class", "playButtonImage");
+                button.appendChild(img);
+                let title = document.createElement("p");
+                title.appendChild(document.createTextNode(song.title));
+                let name = document.createElement("p");
+                name.appendChild(document.createTextNode(song.name));
+                $("#top_song_pic").append(button);
+                $("#top_song_details").append(name);
+                $("#top_song_details").append(title);
+
+
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        })
+    });
+</script>
+

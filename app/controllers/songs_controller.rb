@@ -14,6 +14,24 @@ class SongsController < ApplicationController
     end
   end
 
+  def getTopSong
+    genre = params[:genre]
+    puts "-----------------genre-----------#{genre}"
+    @song = Song.where(genre: genre.to_s)
+    puts @song
+    @song = @song.sort_by {|e| -e[:plays]}
+    @song = @song.first
+    render :json => {
+        id: @song.id,
+        username: User.find(@song.user_id).username,
+        name: User.find(@song.user_id).name,
+        user_id: @song.user.id,
+        song_file: url_for(@song.song_file),
+        cover: url_for(@song.cover_image),
+        title: @song.title
+    }
+  end
+
   def incrementSongPlays
     @artistCounter = UserArtistPlayCounter.where(user_id: current_user, artist_id: params[:artist_id]).first_or_create
     @songCounter = UserSongPlayCounter.where(user_id: current_user, song_id: params[:id]).first_or_create
@@ -82,7 +100,7 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title, :song_file, :cover_image, :premium, :subGenre)
+    params.require(:song).permit(:title, :song_file, :cover_image, :premium, :subGenre, :genre)
   end
 
   def set_song
@@ -100,5 +118,6 @@ class SongsController < ApplicationController
       redirect_to login_url
     end
   end
+
 
 end

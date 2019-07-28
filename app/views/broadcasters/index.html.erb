@@ -12,6 +12,9 @@
     $("#stream_image").click(function (e) {
         let id = $(this).data("id");
         console.log("We've been clicked... going to stream..." + $(this).data("id"));
-        requestData(null, id)
+        if (currentBroadcaster != null && currentBroadcaster !== id)
+            decrement(id);
+        currentBroadcaster = id;
+        requestData(null, id, true);
     });
 </script>

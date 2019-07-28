@@ -128,9 +128,10 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :username, :name, :zipcode, :bio,
+    params.require(:user).permit(:email, :username, :name, :country, :city, :state, :zipcode, :bio,
                                  :gender, :password, :password_confirmation,
-                                 :birthday, :Terms_of_Agreement, :avatar)
+                                 :birthday, :Terms_of_Agreement, :avatar, :firstHeader,
+                                  :secondHeader, :badgeColor, :badgeTextColor)
   end
 
 
