@@ -18,13 +18,15 @@
 @import "bootstrap";
 
 // no visible scrollbar
+/*
 ::-webkit-scrollbar {
   width: 0px;
   height: 0px;
 }
-
+*/
 html {
   min-width: 1200px;
+  overflow-x: hidden;
 }
 
 body {
@@ -189,6 +191,7 @@ body {
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 
 /* Links inside the dropdown */

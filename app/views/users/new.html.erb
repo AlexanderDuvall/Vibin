@@ -9,7 +9,7 @@
   <div class="RightSide">
     <center>
       <div class="badge signup-form-badge">
-        <%= form_for(@user) do |f| %>
+        <%= form_for(@user, multipart: true) do |f| %>
           <div class="images">
             <div class="left-header">
               <%= image_tag "insert.png", :class => "left-header-image" %>
@@ -25,15 +25,17 @@
               </center>
             </div>
             <%= f.text_area :bio , placeholder: "bio", class: "bio-box"%>
-            <input hidden class="photo_upload" type="file" name="user[avatar]" id="user_avatar">
-            <input hidden class="photo_upload" type="file" name="user[firstHeader]" id="user_firstHeader">
-            <input hidden class="photo_upload" type="file" name="user[secondHeader]" id="user_secondHeader">
+            <input hidden class="photo_upload" type="file" name="avatar" id="avatar">
+            <input hidden class="photo_upload" type="file" name="firstHeader" id="firstHeader">
+            <input hidden class="photo_upload" type="file" name="secondHeader" id="secondHeader">
+            <input hidden type="text" name="user[longitude]" id="user_longitude" value="30">
+            <input hidden type="text" name="user[latitude]" id="user_latitude" value="30">
           </div>
           <br>
           <center>
           <div class="rowcss">
             <%= f.email_field :email, class: "email-box", placeholder: "example@example.com" %>
-          <input type="text" class="birthday" id="user_birthday" >
+          <input type="date" class="birthday" name="user[birthday]" id="user_birthday" placeholder="Date of Birth" value="2019-07-27" >
             <%= f.select "gender", options_for_select(["Agender", "Androgyne", "Androgynous", "Bigender",
                                           "Cis", "Cisgender", "Cis Female", "Cis Male", "Cis Man", "Cis Woman",
                                           "Cisgender Female", "Cisgender Male", "Cisgender Man", "Cisgender Woman",
@@ -92,18 +94,18 @@
 <script>
   $( function() {
     $(".upload-preview").on("click", function() {
-         $("#user_avatar").trigger("click");
+         $("#avatar").trigger("click");
      });
     $(".left-header").on("click", function() {
-          $("#user_firstHeader").trigger("click");
+          $("#firstHeader").trigger("click");
      });
     $(".right-header").on("click", function() {
-         $("#user_secondHeader").trigger("click");
+         $("#secondHeader").trigger("click");
      });
      var previewAvatar = $(".upload-preview img");
      var previewFirstHeader = $(".left-header img");
      var previewSecondHeader = $(".right-header img");
-     $("#user_avatar").change(function(event){
+     $("#avatar").change(function(event){
         var input = $(event.currentTarget);
         var file = input[0].files[0];
         var reader = new FileReader();
@@ -114,7 +116,7 @@
         };
         reader.readAsDataURL(file);
      });
-     $("#user_firstHeader").change(function(event){
+     $("#firstHeader").change(function(event){
         var input = $(event.currentTarget);
         var file = input[0].files[0];
         var reader = new FileReader();
@@ -125,7 +127,7 @@
         };
         reader.readAsDataURL(file);
      });
-     $("#user_secondHeader").change(function(event){
+     $("#secondHeader").change(function(event){
         var input = $(event.currentTarget);
         var file = input[0].files[0];
         var reader = new FileReader();

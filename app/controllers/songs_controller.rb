@@ -21,15 +21,21 @@ class SongsController < ApplicationController
     puts @song
     @song = @song.sort_by {|e| -e[:plays]}
     @song = @song.first
-    render :json => {
-        id: @song.id,
-        username: User.find(@song.user_id).username,
-        name: User.find(@song.user_id).name,
-        user_id: @song.user.id,
-        song_file: url_for(@song.song_file),
-        cover: url_for(@song.cover_image),
-        title: @song.title
-    }
+    unless @song.nil?
+      render :json => {
+          id: @song.id,
+          username: User.find(@song.user_id).username,
+          name: User.find(@song.user_id).name,
+          user_id: @song.user.id,
+          song_file: url_for(@song.song_file),
+          cover: url_for(@song.cover_image),
+          title: @song.title
+      }
+    else
+      render :json => {
+          id: -1
+      }
+    end
   end
 
   def incrementSongPlays

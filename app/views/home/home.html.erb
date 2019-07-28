@@ -1,7 +1,38 @@
 <div class="home" id="home">
   <% if logged_in? %>
     <% @user = current_user %>
-    <div class="row">
+    <div class="userHomePage">
+      <div class="userBanner">
+        <div class="home-header-column-avatar ">
+          <% if @user.avatar.attached? %>
+            <%= image_tag (@user.avatar), class: "avatar-home" %>
+          <% else %>
+            <img src="http://localhost:3000/default-avatar.jpg" class="avatar-home">
+          <% end %>
+        </div>
+        <%= link_to "Post", new_post_path, id: "butt", :class => 'btn btn-primary', remote: true %>
+      </div>
+      <div class="userfeed">
+          <%= render "/posts/userfeed" %>
+      </div>
+      <div class="recommended">
+        Users recommended
+        <div class="recommendedUsers">
+          <% @recommendedUsers.each do |user| %>
+            <div class="recommendedUser">
+              <%= user.id %>
+            </div>
+          <% end %>
+        </div>
+        <div class="recommendedSongs border border-primary">
+          <% @recommendedSongs.each do |song| %>
+            <div class="recommendedSong">
+              <%= song.title %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <!--
       <div class="left-column border border-light">
         <div class="home-header-row ">
           <div class="home-header-column-avatar ">
@@ -90,11 +121,13 @@
           <%= link_to "Music", new_song_path, id: "butt1", :class => 'btn btn-primary', remote: true %>
         </div>
       </div>
-      <!--  MIDDLE COLUMN FEED -->
+      <div class="left-columnHidden">
+      </div>
+      <!-  MIDDLE COLUMN FEED ->
       <div class="center-column border border-light" id="center_column">
         <%= render "/posts/userfeed" %>
       </div>
-      <!-- RIGHT COLUMN -->
+      <!- RIGHT COLUMN ->
       <div class="right-column border border-light">
         Users recommended
         <div class="recommendedUsers">
@@ -111,7 +144,7 @@
             </div>
           <% end %>
         </div>
-      </div>
+      </div> -->
     </div>
       <%= will_paginate @combine %>
   <% else %>

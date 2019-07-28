@@ -20,16 +20,19 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :username, presence: true, uniqueness: true
   validates :Terms_of_Agreement, presence: true
+  validates :country, presence: true
   validates :city, presence: true
   validates :state, presence: true
-  validates :zipcode, presence: true
+  validates :longitude, presence: true
+  validates :latitude, presence: true
   validates :gender, presence: true
   validates :birthday, presence: true
   validates :bio, length: {maximum: 250}
   validates :avatar, presence: true
+  validates :firstHeader, presence: true
+  validates :secondHeader, presence: true
   validates :badgeColor, presence: true
   validates :badgeTextColor, presence: true
-  validates :country, presence: true
   has_secure_password
   validates :password_digest, presence: true, length: {minimum: 6}, allow_nil: true
   has_many :albumlikes
