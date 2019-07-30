@@ -69,12 +69,10 @@
             type: "get",
             processData: false,
             success: function (song) {
-
                 if (parseInt(song.id) === -1) {
                     $("#top_song_pic").empty();
                     $("#top_song_details").empty();
                     $("#top_song_details").append("<h2>No top chart yet!</h2>")
-
                 } else {
                     $("#top_song_pic").empty();
                     $("#top_song_details").empty();

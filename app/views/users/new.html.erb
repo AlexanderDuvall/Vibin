@@ -83,6 +83,8 @@
           </div>
         </div>
         <%= f.submit "Submit", style: "width: 30px;" %>
+        <button id="coordinates">Coordinates</button>
+        <h2 id="longandlat"></p>
       </center>
         <% end %>
       </div>
@@ -154,4 +156,11 @@
       $('.bio-box').css("color", Color);
     });
    });
+   $('#coordinates').on('click', function(e){
+     e.preventDefault();
+     console.log("preventDefault");
+     results = Geocoder.search("Paris")
+     $("#longandlat").text(results.first.coordinates);
+  });
+
 </script>

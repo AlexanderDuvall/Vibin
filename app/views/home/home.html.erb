@@ -10,6 +10,57 @@
             <img src="http://localhost:3000/default-avatar.jpg" class="avatar-home">
           <% end %>
         </div>
+        <div class="home-header-column-user">
+          <h7>
+            <span class="badge badge-primary text-wrap"><%= @user.name %></span>
+            <span class="badge badge-primary text-wrap"><%= link_to "@" + @user.username, user_path(@user.id), class: "links" %></span>
+            <span class="badge badge-primary text-wrap"> <%= @user.city %>, <%= @user.state %></span>
+          </h7>
+        </div>
+        <div class="home-header-column-posts">
+          <center>
+          <div class="postBadge">
+            <h5>
+              <span class="badge badge-primary text-wrap">Posts</span>
+            </h5>
+          </div>
+          <div class="songBadge">
+            <h5>
+              <span class="badge badge-primary text-wrap">Songs</span>
+            </h5>
+          </div>
+          <div class="postsTotal">
+            <h5>
+              <span class="badge badge-primary text-wrap">  <%= @user.posts.count %> </span>
+            </h5>
+          </div>
+          <div class="songsTotal">
+            <h5>
+              <span class="badge badge-primary text-wrap">  <%= @user.songs.count %> </span>
+            </h5>
+          </div>
+          <div class="followersBadge">
+            <h5>
+              <span class="badge badge-primary text-wrap">Followers</span>
+            </h5>
+          </div>
+          <div class="followingBadge">
+            <h5>
+              <span class="badge badge-primary text-wrap">Followings</span>
+            </h5>
+          </div>
+          <div class="followersTotal">
+            <h5>
+              <span class="badge badge-primary text-wrap"><%= link_to @user.followers.count, followers_user_path(@user), class: "links" %></span>
+            </h5>
+          </div>
+          <div class="followingTotal">
+            <h5>
+              <span class="badge badge-primary text-wrap"><%= link_to @user.following.count, following_user_path(@user), class: "links" %></span>
+            </h5>
+          </div>
+        </center>
+        </div>
         <%= link_to "Post", new_post_path, id: "butt", :class => 'btn btn-primary', remote: true %>
       </div>
       <div class="userfeed">

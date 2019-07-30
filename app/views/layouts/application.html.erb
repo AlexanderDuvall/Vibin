@@ -16,6 +16,18 @@
 <div class="navbar">
   <%= render "layouts/nav" %>
 </div>
+<% if logged_in? %>
+  <div class="dropdown-content">
+    <h6><%= current_user.name %></h6>
+    <!-- DONT USER LINK TO, IT REFRESHES THE PAGE AND STOPS AUDIO FUNCTIONS. DO IT LIKE YOU DID THE LINKS UP TOP. -->
+    <h6><%= link_to "@#{current_user.username}", user_path(current_user) %> </h6>
+    <%= link_to "Settings", "#", :onclick => "sendTheAJAX('settings', '#{current_user.id}')" %>
+    <%= link_to 'Log Out', logout_path, method: :delete, style: "width:100%;" %>
+  </div>
+  <div class="dropdown-content-notification">
+    <h6><%= current_user.name %></h6>
+  </div>
+<% end %>
 <div class="main" id="main">
 
   <%= yield %>

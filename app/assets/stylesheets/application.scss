@@ -46,57 +46,74 @@ body {
   background-color: #ffdbdb;
   top: 0;
   width: 100%;
-  min-width: 1000px;
+  min-width: 900px;
   height: 50px;
-
-  a {
+  .VibinTab {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
     height: 50px;
-    vertical-align: middle;
+  }
+  .ExploreTab {
+    position: fixed;
+    top: 0;
+    left: 60px;
+    width: 60px;
+    height: 50px;
+  }
+  .GroupiesTab {
+    position: fixed;
+    top: 0;
+    left: 120px;
+    height: 50px;
+    width: 60px;
+  }
+  .SearchBar {
+    position: fixed;
+    top: 0;
+    left: 180px;
+    height: 50px;
+    width: 200px;
+  }
+  .MessagesTab {
+    position: relative;
+    float: right;
+    height: 100%;
+    width: 50px;
+  }
+
+  .NotificationTabDiv:hover .dropdown-content-notification {
+    display: block;
+  }
+
+  .dropdown-content-notification:hover {
+    display: block;
+  }
+
+  .NotificationTabDiv {
+    position: relative;
+    float: right;
+    width: 50px;
+    height: 50px;
+  }
+  .userTabDiv {
+    position: relative;
+    float: right;
+    width: 50px;
+    height: 50px;
+    padding: 0;
   }
 }
 
-.navbar a:hover {
+.navbar span:hover {
   background: #ddd;
 }
 
-.VibinTab {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 120px;
-
-  p {
-    color: #a5e3eb;
-    font-size: 15px;
-
-  }
-}
-
-.ExploreTab {
-  position: fixed;
-  top: 0;
-  left: 120px;
-  width: 100px;
-}
-
-.GroupiesTab {
-  position: fixed;
-  top: 0;
-  left: 220px;
-  width: 100px;
-}
-
-.SearchBar {
-  position: fixed;
-  top: 0;
-  left: 320px;
-  width: 20%;
-}
 
 .login {
-  position: fixed;
-  top: 0;
-  right: 0;
+  position: relative;
+  float: right;
   width: 85px;
   height: 50px;
 }
@@ -119,6 +136,7 @@ body {
   display: block;
 }
 
+/*
 .RootPage {
   background: url(Vibin_logo.jpg) center no-repeat;
   background-size: 100% 100%;
@@ -130,28 +148,8 @@ body {
   padding-right: 20px;
   style: none;
 }
+*/
 
-.MessagesTab {
-  position: fixed;
-  top: 0;
-  right: 130px;
-  width: 65px;
-}
-
-.NotificationTabDiv:hover .dropdown-content-notification {
-  display: block;
-}
-
-.dropdown-content-notification:hover {
-  display: block;
-}
-
-.NotificationTabDiv {
-  position: fixed;
-  top: 0;
-  right: 65px;
-  width: 60px;
-}
 
 .dropdown-content-notification {
   top: 50px;
@@ -173,13 +171,7 @@ body {
   z-index: 999;
 }
 
-.userTabDiv {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 55px;
-  height: 50px;
-}
+
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {

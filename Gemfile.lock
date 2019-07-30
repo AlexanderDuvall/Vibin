@@ -105,8 +105,10 @@ GEM
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
     ffi (1.11.1-x64-mingw32)
+    geocoder (1.5.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gmaps4rails (2.1.2)
     hashie (3.6.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
@@ -264,6 +266,8 @@ DEPENDENCIES
   elasticsearch-model
   elasticsearch-rails
   faker
+  geocoder
+  gmaps4rails
   jbuilder (~> 2.5)
   jquery-minicolors-rails
   jquery-rails

@@ -12,6 +12,7 @@
       position: fixed;
       top: 50px;
       height: 100px;
+      min-width: 1000px;
       width: 100%;
       background-color: cyan;
       z-index: 555;
@@ -28,6 +29,72 @@
           width: 100%;
           border-radius: 40px;
         }
+      }
+      .home-header-column-user{
+        position: relative;
+        float: left;
+        width: 140px;
+        height: 100%;
+      }
+      .home-header-column-posts{
+        position: relative;
+        float: left;
+        height: 100%;
+        width: 140px;
+        border-style: dashed;
+        .postBadge{
+          position: relative;
+          float: left;
+          width: 50%;
+          height: 25px;
+        }
+        .songBadge{
+          position: relative;
+          float: left;
+          width: 50%;
+          height: 25px;
+        }
+        .postsTotal{
+          position: relative;
+          float: left;
+          width: 50%;
+          height: 25px;
+          border-style:dashed;
+        }
+        .songsTotal{
+          position: relative;
+          float: left;
+          width: 50%;
+          height: 25px;
+        }
+        .followersBadge{
+          border-style: dashed;
+          position: relative;
+          float: left;
+          width: 50%;
+          height: 25px;
+
+        }
+        .followingBadge{
+          position: relative;
+          float: left;
+          width: 50%;
+          height: 25%;
+
+        }
+        .followersTotal{
+          position: relative;
+          float: left;
+          width: 50%;
+          height: 25px;
+        }
+        .followingTotal{
+          position: relative;
+          float: left;
+          width: 50%;
+          height: 25px;
+        }
+
       }
     }
     .userfeed{

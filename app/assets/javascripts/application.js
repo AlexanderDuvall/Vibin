@@ -35,9 +35,16 @@ var SongUsername = null;
 var songQueue = new Array();
 var x = new XMLHttpRequest();
 
+$(function(){
+  $('.userTabDiv').mouseover(function(){
+    $('.dropdown-content').css('display', 'block');
+  });
+});
+
 function buildPlayer(song, name, username, title, ...args) {
     let buildSong = function () {
         audio.src = "";
+
         $('#SongArtistName').text(name);
         $('#songArtistUsername').text('@' + username);
         $('#songTitle').text(title);
@@ -46,6 +53,26 @@ function buildPlayer(song, name, username, title, ...args) {
         audio.src = song;
         console.log(audio);
     };
+
+    function calculateTotalValue(length) {
+      var minutes = Math.floor(length / 60),
+        seconds_int = length - minutes * 60,
+        seconds_str = seconds_int.toString(),
+        seconds = seconds_str.substr(0, 2),
+        time = minutes + ':' + seconds
+
+      return time;
+    }
+
+    function calculateCurrentValue(currentTime) {
+      var current_hour = parseInt(currentTime / 3600) % 24,
+        current_minute = parseInt(currentTime / 60) % 60,
+        current_seconds_long = currentTime % 60,
+        current_seconds = current_seconds_long.toFixed(),
+        current_time = (current_minute < 10 ? "0" + current_minute : current_minute) + ":" + (current_seconds < 10 ? "0" + current_seconds : current_seconds);
+
+      return current_time;
+    }
     let updateSong = function () {
         let duration = args[0];
         audio.currentTime = duration;
@@ -62,7 +89,7 @@ function buildPlayer(song, name, username, title, ...args) {
             buildSong();
             updateSong();
             audio.play();
-
+            initProgressBar();
         }
     } else {
         audio.pause();
@@ -152,6 +179,8 @@ function get_current_song() {
 function get_current_playlist() {
     return Cookies.get('playlist');
 }
+
+
 
 function isBroadcasting(...args) {
     if (args.length == 1 && (args[0] == false || args[0] == true))
@@ -418,9 +447,8 @@ function SelectedSong(song, name, username, title, singleSong, ...args) {
         isPlayList = false;
         if (isListening())
             isListening(false);
-
-    } else {
-        if (isListening())
+        } else {
+          if (isListening())
             isListening(false);
         console.log("NOT SINGLE SONG");
         set_current_song(args[2]);

@@ -28,15 +28,134 @@ window.addEventListener("DOMContentLoaded", function (e) {
     playButtonIcon.className = 'ion-play';
     console.log("song paused");
   });
+  function SetVolume(val)
+   {
+       console.log('Before: ' + audio.volume);
+       audio.volume = val / 100;
+       console.log('After: ' + audio.volume);
+   };
+   /*
+  function initProgressBar() {
+    var length = audio.duration;
+    var current_time = audio.currentTime;
 
+    // calculate total length of value
+    var totalLength = calculateTotalValue(length)
+    //jQuery(".end-time").html(totalLength);
+
+    // calculate current value time
+    var currentTime = calculateCurrentValue(current_time);
+    //jQuery(".start-time").html(currentTime);
+
+    var progressbar = document.getElementById('seekObj');
+    progressbar.value = (audio.currentTime / audio.duration);
+    progressbar.addEventListener("click", seek);
+
+    if (audio.currentTime == audio.duration) {
+    //  $('#play-btn').removeClass('pause');
+    }
+
+    function seek(evt) {
+      var percent = evt.offsetX / this.offsetWidth;
+      audio.currentTime = percent * audio.duration;
+      progressbar.value = percent / 100;
+    }
+  };
+  function calculateTotalValue(length) {
+    var minutes = Math.floor(length / 60),
+      seconds_int = length - minutes * 60,
+      seconds_str = seconds_int.toString(),
+      seconds = seconds_str.substr(0, 2),
+      time = minutes + ':' + seconds
+
+    return time;
+  }
+
+  function calculateCurrentValue(currentTime) {
+    var current_hour = parseInt(currentTime / 3600) % 24,
+      current_minute = parseInt(currentTime / 60) % 60,
+      current_seconds_long = currentTime % 60,
+      current_seconds = current_seconds_long.toFixed(),
+      current_time = (current_minute < 10 ? "0" + current_minute : current_minute) + ":" + (current_seconds < 10 ? "0" + current_seconds : current_seconds);
+
+    return current_time;
+  }
+  */
   audio.addEventListener('timeupdate', function () {
-    dur.value = audio.currentTime
-    console.log('timeupdate');
+      if (mouseDownSeek) return;
+      let currentTime = audio.currentTime;
+      let p = currentTime / audio.duration;
+      fillBar.style.width = p * 80 + '%';
+      if (isBroadcasting() && currentTime > (lastTime + 2)) {
+          lastTime = currentTime;
+          console.log(currentTime);
+          sendData(currentTime);
+          console.log("broadcasting update...")
+      } else if (isListening() && (currentTime - lastTime) > 3) {
+          console.log(typeof (currentTime - lastTime));
+          console.log(currentTime - lastTime > 3);
+          console.log("TIME UPDATE: " + currentTime + " vs " + lastTime);
+          lastTime = currentTime;
+
+          requestData(function (results) {
+              listenerCallback(results);
+          }, currentBroadcaster);
+      }
   });
 
-  audio.addEventListener("loadedmetadata", function () {
-    dur.max = audio.duration
-    console.log(dur.max);
+  function clamp(min, val, max) {
+      return Math.min(Math.max(min, val), max);
+  }
+
+  function getP(e) {
+      let p;
+      if (mouseDownSeek) {
+          p = (e.clientX - seekBar.offsetLeft) / seekBar.clientWidth;
+          p = clamp(0, p, 1);
+      } else {
+          p = (e.clientX - volume.offsetLeft) / volume.clientWidth;
+          p = clamp(0, p, 1);
+      }
+      return p;
+  }
+
+
+  seekBar.addEventListener('mousedown', function (e) {
+      mouseDownSeek = true;
+      let p = getP(e);
+      fillBar.style.width = p * 80 + '%';
+  });
+
+  window.addEventListener('mousemove', function (e) {
+      if (mouseDownVolume) {
+          let p = getP(e);
+          volume_fill.style.width = p * 50 + '%';
+          audio.volume = p;
+          pastAudio = audio.volume;
+
+      } else if (mouseDownSeek) {
+          let p = getP(e);
+          fillBar.style.width = p * 100 + '%';
+      }
+
+  });
+
+  window.addEventListener('mouseup', function (e) {
+      if (mouseDownSeek) {
+          mouseDownSeek = false;
+          let p = getP(e);
+          fillBar.style.width = p * 80 + '%';
+          audio.currentTime = p * audio.duration;
+      } else if (mouseDownVolume) {
+          mouseDownVolume = false;
+          let p = getP(e);
+          volume_fill.style.width = p * 50 + '%';
+          audio.volume = p;
+          pastAudio = audio.volume;
+          // audio.currentTime = p * audio.duration;
+      }
+
+      console.log("------------Mouse Up -------------");
   });
 });
 
