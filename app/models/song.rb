@@ -13,8 +13,8 @@ class Song < ApplicationRecord
   has_many :songlikes
   has_many :user_song_play_counter
   has_one :total_song_play
-  #valiates :premium
-  #belongs_to :post, optional: true
+  validates :premium, default: false
+  belongs_to :post, optional: true
   validates :title, presence: true, length: {maximum: 40}
 
 

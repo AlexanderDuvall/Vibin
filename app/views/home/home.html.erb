@@ -19,256 +19,152 @@
         </div>
         <div class="home-header-column-posts">
           <center>
-          <div class="postBadge">
-            <h5>
-              <span class="badge badge-primary text-wrap">Posts</span>
-            </h5>
-          </div>
-          <div class="songBadge">
-            <h5>
-              <span class="badge badge-primary text-wrap">Songs</span>
-            </h5>
-          </div>
-          <div class="postsTotal">
-            <h5>
-              <span class="badge badge-primary text-wrap">  <%= @user.posts.count %> </span>
-            </h5>
-          </div>
-          <div class="songsTotal">
-            <h5>
-              <span class="badge badge-primary text-wrap">  <%= @user.songs.count %> </span>
-            </h5>
-          </div>
-          <div class="followersBadge">
-            <h5>
-              <span class="badge badge-primary text-wrap">Followers</span>
-            </h5>
-          </div>
-          <div class="followingBadge">
-            <h5>
-              <span class="badge badge-primary text-wrap">Followings</span>
-            </h5>
-          </div>
-          <div class="followersTotal">
-            <h5>
-              <span class="badge badge-primary text-wrap"><%= link_to @user.followers.count, followers_user_path(@user), class: "links" %></span>
-            </h5>
-          </div>
-          <div class="followingTotal">
-            <h5>
-              <span class="badge badge-primary text-wrap"><%= link_to @user.following.count, following_user_path(@user), class: "links" %></span>
-            </h5>
-          </div>
-        </center>
+            <div class="postBadge">
+              <h5>
+                <span class="badge badge-primary">Posts</span>
+              </h5>
+            </div>
+            <div class="songBadge">
+              <h5>
+                <span class="badge badge-primary">Songs</span>
+              </h5>
+            </div>
+            <div class="postsTotal">
+              <h5>
+                <span class="badge badge-primary"> <%= @user.posts.count %> </span>
+              </h5>
+            </div>
+            <div class="songsTotal">
+              <h5>
+                <span class="badge badge-primary"> <%= @user.songs.count %> </span>
+              </h5>
+            </div>
+            <div class="followersBadge">
+              <h5>
+                <span class="badge badge-primary">Followers</span>
+              </h5>
+            </div>
+            <div class="followingBadge">
+              <h5>
+                <span class="badge badge-primary">Followings</span>
+              </h5>
+            </div>
+            <div class="followersTotal">
+              <h5>
+                <span class="badge badge-primary" onclick="sendTheAJAX('<%= followers_user_path(@user)%>', '')"><%= @user.followers.count %></span>
+              </h5>
+            </div>
+            <div class="followingTotal">
+              <h5>
+                <span class="badge badge-primary" onclick="sendTheAJAX('<%= following_user_path(@user) %>', '')"><%= @user.following.count %></span>
+              </h5>
+            </div>
+          </center>
         </div>
-        <%= link_to "Post", new_post_path, id: "butt", :class => 'btn btn-primary', remote: true %>
+        <div class="post">
+          <a class="btn-post" data-remote="true" href="/posts/new" id='butt'>Post</a>
+          <a class="btn-song" data-remote="true" href="/songs/new" id='butt1'>Song</a>
+        </div>
       </div>
       <div class="userfeed">
-          <%= render "/posts/userfeed" %>
-      </div>
-      <div class="recommended">
-        Users recommended
-        <div class="recommendedUsers">
-          <% @recommendedUsers.each do |user| %>
-            <div class="recommendedUser">
-              <%= user.id %>
-            </div>
-          <% end %>
-        </div>
-        <div class="recommendedSongs border border-primary">
-          <% @recommendedSongs.each do |song| %>
-            <div class="recommendedSong">
-              <%= song.title %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <!--
-      <div class="left-column border border-light">
-        <div class="home-header-row ">
-          <div class="home-header-column-avatar ">
-            <% if @user.avatar.attached? %>
-              <%= image_tag (@user.avatar), class: "avatar-home" %>
-            <% else %>
-              <img src="http://localhost:3000/default-avatar.jpg" class="avatar-home">
-            <% end %>
-          </div>
-          <div class="home-header-column-badges">
-            <div class="row">
-              <div class="col">
-                <% if @user.Verified %>
-                  <img src="/Verified.png" class="badge-verified">
-                <% end %>
-                <img src="/tree.jpg" class="badge-gold">
-                <img src="/galaxy.jpg" class="badge-silver">
-                <button id="refresh">refresh feed</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="home-user-name">
-          <h5>
-            <span class="badge badge-primary text-wrap"><%= @user.name %></span>
-          </h5>
-        </div>
-        <div class="home-user-username">
-          <h7>
-            <span class="badge badge-primary text-wrap"><%= link_to "@" + @user.username, user_path(@user.id), class: "links" %></span>
-          </h7>
-        </div>
-        <div class="home-user-location">
-          <h9>
-            <span class="badge badge-primary text-wrap"> <%= @user.city %>, <%= @user.state %></span>
-          </h9>
-        </div>
-        <div class="home-user-bio">
-          <h5>
-            <span class="badge badge-primary text-wrap"><%= @user.bio %></span>
-          </h5>
-        </div>
-        <br>
-        <div class="home-song-post-row ">
-          <div class="home-song-post-column-left">
-            <h5>
-              <span class="badge badge-primary text-wrap">  Songs</span>
-            </h5>
-          </div>
-          <div class="home-song-post-column-right">
-            <h5>
-              <span class="badge badge-primary text-wrap"> Posts </span>
-            </h5>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-xs ">
-            <div class="badge badge-primary text-wrap">0</div>
-          </div>
-          <div class="col-xs">
-            <div class="badge badge-primary text-wrap">  <%= @user.posts.count %></div>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-xs">
-            <div class="badge badge-primary text-wrap"> Followers</div>
-          </div>
-          <div class="col-xs">
-            <div class="badge badge-primary text-wrap"> Following</div>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-xs">
-            <div class="badge badge-primary text-wrap"><%= link_to @user.followers.count, followers_user_path(@user), class: "links" %></div>
-          </div>
-          <div class="col-xs">
-            <div class="badge badge-primary text-wrap">  <%= link_to @user.following.count, following_user_path(@user), class: "links" %></div>
-          </div>
-        </div>
-        <div class="row justify-content-center ">
-          Social Media Links
-        </div>
-        <br/>
-        <div class="row justify-content-center " id="formdiv">
-          <%= link_to "Post", new_post_path, id: "butt", :class => 'btn btn-primary', remote: true %>
-          <%= link_to "Music", new_song_path, id: "butt1", :class => 'btn btn-primary', remote: true %>
-        </div>
-      </div>
-      <div class="left-columnHidden">
-      </div>
-      <!-  MIDDLE COLUMN FEED ->
-      <div class="center-column border border-light" id="center_column">
         <%= render "/posts/userfeed" %>
       </div>
-      <!- RIGHT COLUMN ->
-      <div class="right-column border border-light">
-        Users recommended
-        <div class="recommendedUsers">
-          <% @recommendedUsers.each do |user| %>
-            <div class="recommendedUser">
-              <%= user.id %>
+      <div class="recommended">
+        <center>
+          <div class="recommended-column">
+            <h4 style="float:left; margin-left: 30px;">Users Recommended</h4>
+            <div class="recommendedUsers">
+              <% @recommendedUsers.each do |user| %>
+                <div class="recommendedUser">
+                  <%= user.id %>
+                </div>
+              <% end %>
             </div>
-          <% end %>
-        </div>
-        <div class="recommendedSongs border border-primary">
-          <% @recommendedSongs.each do |song| %>
-            <div class="recommendedSong">
-              <%= song.title %>
+            <h4 style="float:left; margin-left: 30px;">Songs Recommended</h4>
+
+            <div class="recommendedSongs">
+              <% @recommendedSongs.each do |song| %>
+                <div class="recommendedSong">
+                  <%= song.title %>
+                </div>
+              <% end %>
             </div>
-          <% end %>
-        </div>
-      </div> -->
+          </div>
+        </center>
+      </div>
     </div>
-      <%= will_paginate @combine %>
+    <%= will_paginate @combine %>
   <% else %>
-  <!-- Welcome to Vibin First Impression -->
-  <div class="topRow">
-    <div class="slideshow">
-       <!--Carousel -->
-      <div id="carouselExampleIndicators" class="carousel slide carouselBox" data-ride="carousel" data-interval="12000">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner carouselBox">
-          <div class="carousel-item active">
-            <img class="d-block w-100 carouselBox" src="http://localhost:3000/slide1.png" alt="First slide">
+    <!-- Welcome to Vibin First Impression -->
+    <div class="topRow">
+      <div class="slideshow">
+        <!--Carousel -->
+        <div id="carouselExampleIndicators" class="carousel slide carouselBox" data-ride="carousel" data-interval="12000">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner carouselBox">
+            <div class="carousel-item active">
+              <img class="d-block w-100 carouselBox" src="http://localhost:3000/slide1.png" alt="First slide">
+            </div>
+            <div class="carousel-item carouselBox">
+              <img class="d-block w-100 carouselBox" src="" alt="talk about groupies">
+            </div>
+            <div class="carousel-item carouselBox">
+              <img class="d-block w-100 carouselBox" src="" alt="talk about premium">
+            </div>
           </div>
-          <div class="carousel-item carouselBox">
-            <img class="d-block w-100 carouselBox" src="" alt="talk about groupies">
+          <a class="carousel-control-prev remove" href="#carouselExampleIndicators" role="button" data-slide="prev" style="background-color: inherit;">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="background-color: inherit;">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile App details, Premium Details -->
+    <div class="bottomRow">
+      <div class="mobileAppColumn">
+        <div class="iphone">
+          <img src="http://localhost:3000/iphone.png" style="height: 100%; width: 100%;">
+        </div>
+      </div>
+      <div class="premiumColumn">
+        <div class="premiumTab">
+          <p> Non User Benefits<br>
+            Premium Benefits</p>
+        </div>
+      </div>
+    </div>
+    <!-- Top broadcast Right Now, Top Songs -->
+    <div class="rightMenu">
+      <div class="topBroadcast">
+        <div class="BCPlayer">
+          <div class="BCPlayerUserAvatar">
           </div>
-          <div class="carousel-item carouselBox">
-            <img class="d-block w-100 carouselBox" src="" alt="talk about premium">
+          <div class="BCUserInfo">
+            <h6>User name</h6>
+            <h6>@username</h6>
+            <h6>Houston, TX</h6>
+          </div>
+          <div class="BCCurrentSongCover">
+          </div>
+          <div class="BCInfo">
+            <h6>Listeners: 1000</h6>
           </div>
         </div>
-        <a class="carousel-control-prev remove" href="#carouselExampleIndicators" role="button" data-slide="prev" style="background-color: inherit;">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="background-color: inherit;">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-  </div>
-  <!-- Mobile App details, Premium Details -->
-  <div class="bottomRow">
-    <div class="mobileAppColumn">
-      <div class="iphone">
-        <img src= "http://localhost:3000/iphone.png" style="height: 100%; width: 100%;">
-      </div>
-    </div>
-    <div class="premiumColumn">
-      <div class="premiumTab">
-        <p> Non User Benefits<br>
-          Premium Benefits</p>
-      </div>
-    </div>
-  </div>
-  <!-- Top broadcast Right Now, Top Songs -->
-  <div class="rightMenu">
-    <div class="topBroadcast">
-      <div class="BCPlayer">
-        <div class="BCPlayerUserAvatar">
-        </div>
-        <div class="BCUserInfo">
-          <h6>User name</h6>
-          <h6>@username</h6>
-          <h6>Houston, TX</h6>
-        </div>
-        <div class="BCCurrentSongCover">
-        </div>
-        <div class="BCInfo">
-          <h6>Listeners: 1000</h6>
+        <div class="BCChat">
         </div>
       </div>
-      <div class="BCChat">
-      </div>
-    </div>
-    <div class="topChart">
-        <center><h4> Top Chart <h4></center>
-          <div class="topChartFeed">
-            <% @TopChart.each do |song| %>
+      <div class="topChart">
+        <center><h4> Top Chart </h4></center>
+        <div class="topChartFeed">
+          <% @TopChart.each do |song| %>
             <div class="topChart-row">
               <div class="topChart-info-column">
                 <p><%= song.title %><br>
@@ -283,14 +179,14 @@
               </div>
               <div class="topChart-artist-column">
                 <p><%= song.user.name %><br>
-                  @<%= song.user.username%><br>
+                  @<%= song.user.username %><br>
                   Houston, TX</p>
               </div>
             </div>
           <% end %>
         </div>
       </div>
-    <% end %>
+  <% end %>
   </div>
 </div>
 <script>
@@ -301,6 +197,15 @@
     });
 
     $(function () {
+      //$('.iphone').on('click', function(){
+      //  var url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyABBVE90zE3SB_kb52KWFSS2Fqumy303do",
+      //  $(this).getJSON( url, {
+      //    format: "json"
+      //  })
+      //  .done(function( data ) {
+    //      console.log(data);
+      //  });
+    //  });
         $(".main").on("scroll", function (e) {
             if ($(".main").scrollTop() == -1) {
                 // refresh timeline

@@ -19,4 +19,39 @@
 <% end %>
 </div>
 <script>
+$(function() {
+   $("#preview").on("click", function() {
+       $("#cover_image").trigger("click");
+   });
+   var preview = $("#preview");
+   console.log(preview);
+   $("#cover_image").change(function(event){
+      var input = $(event.currentTarget);
+      var file = input[0].files[0];
+      var reader = new FileReader();
+      reader.onload = function(e){
+          image_base64 = e.target.result;
+          preview.attr("src", image_base64);
+      };
+      $('#preview').css('background-color', "none");
+      reader.readAsDataURL(file);
+   });
+
+  var textarea = document.querySelector('textarea');
+
+  textarea.addEventListener('keydown', autosize);
+
+  function autosize(){
+    var el = this;
+    setTimeout(function(){
+      el.style.cssText = 'height:auto;';
+      // for box-sizing other than "content-box" use:
+      // el.style.cssText = '-moz-box-sizing:content-box';
+      el.style.cssText = 'height:' + (el.scrollHeight + 10)+ 'px';
+    },0);
+  }
+
+});
+
+
 </script>

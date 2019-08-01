@@ -1,23 +1,39 @@
-<span onclick="sendTheAJAX('home', '')" class="VibinTab">Vibin</span>
+<span onclick="sendTheAJAX('', '')" class="VibinTab">Vibin</span>
 <span class="ExploreTab" onclick="sendTheAJAX('explore', '')">Explore</span>
+
 <span class="GroupiesTab" id="G" onclick="sendTheAJAX('groupies','')">Groupies</span>
 
 <%= form_tag search_path, method: :get, remote: true do %>
   <%= text_field_tag :term, nil, placeholder: "Search", class: "SearchBar" %>
+
 <% end %>
+
 <div style="float: right;">
-<a class="MessagesTab" onclick="sendTheAJAX('conversations', '')">Messages</a>
-<div class="NotificationTabDiv">
-  <%= image_tag "fire.png", style: "height: 55px; width: 100%;" %>
-</div>
-<div class="userTabDiv">
-    <span onclick="sendTheAJAX('<%= user_path(current_user) %>', '')"><%= image_tag "default-avatar.jpg", class: "search-ava" %></span>
-</div>
+  <a class="MessagesTab" onclick="sendTheAJAX('conversations', '')">Messages</a>
+  <div class="NotificationTabDiv">
+    <%= image_tag "fire.png", style: "height: 55px; width: 100%;" %>
+    <div class="dropdown-content-notification">
+      <h6><%= current_user.name %></h6>
+    </div>
+  </div>
+  <div class="userTabDiv">
+    <span onclick="sendTheAJAX('<%= user_path(current_user) %>', '')" id="userProfile">
+      <% if current_user.avatar.attached? %>
+        <%= image_tag (current_user.avatar), class: "search-ava" %>
+      <% else %>
+        <img src="http://localhost:3000/default-avatar.jpg" class="search-ava">
+      <% end %>
+    </span>
+    <div class="dropdown-content">
+      <h6><%= current_user.name %></h6>
+      <!-- DONT USER LINK TO, IT REFRESHES THE PAGE AND STOPS AUDIO FUNCTIONS. DO IT LIKE YOU DID THE LINKS UP TOP. -->
+      <h6><%= link_to "@#{current_user.username}", user_path(current_user) %> </h6>
+      <%= link_to "Settings", "#", :onclick => "sendTheAJAX('settings', '#{current_user.id}')" %>
+      <%= link_to 'Log Out', logout_path, method: :delete, style: "width:100%;" %>
+    </div>
+  </div>
 
-<% if logged_in? %>
-  <div id="current-user"></div>
-<% end %>
+  <% if logged_in? %>
+    <div id="current-user"></div>
+  <% end %>
 </div>
-<script>
-
-</script>

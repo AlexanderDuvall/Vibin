@@ -2,6 +2,113 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//
+////
+////// Profile
+////
+//
+.users{
+  background-color: red;
+  display: flex;
+}
+.header{
+  width: 70%;
+  min-height: 500px;
+  background-color: blue;
+  display: flex;
+}
+.headermini{
+  display: none;
+  height: 500px;
+  width: 500px;
+  background-color: yellow;
+}
+.ads{
+  width: 30%;
+  height: 100%;
+  background-color: green;
+}
+
+.leftHeader{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  background-size: 100% 100%;
+}
+.profileFavoriteSong{
+  width: 100px;
+  height: 30px;
+  margin-left: 200px;
+  margin-top: 50px;
+  z-index: 1;
+  display: block;
+
+}
+.profileFavoriteSongs{
+  z-index: 1;
+  margin-left: 100px;
+  height: 150px;
+  display: block;
+  width: 300px;
+}
+.favoriteSongRow{
+  display: block;
+  border-style: dashed;
+  height: 30px;
+  background-color: green;
+  margin-top: 3px;
+  z-index: 1;
+}
+.favoriteSongRowCoverImage{
+  position: relative;
+  float: left;
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  border-style: solid;
+  border-width: thin;
+  background-color: white;
+}
+.rightHeader{
+  width: 50%;
+  display: flex;
+  height: 300px;
+  background-size: 100% 100%;
+}
+.profileName{
+  position: absolute;
+  top: 60px;
+  z-index: 1;
+}
+.profileUsername{
+  position: absolute;
+  z-index: 1;
+}
+.profileLocation{
+  position: absolute;
+  z-index: 1;
+}
+.profileAvatar{
+  position: absolute;
+  z-index: 1;
+  height: 100px;
+  width: 100px;
+}
+.profileBio{
+  position: absolute;
+  z-index: 1;
+
+}
+
+
+//
+////
+//////
+////
+//
+
+
 .user-post{
   min-height: 200px;
   max-height: 260px;
@@ -13,18 +120,189 @@
 }
 .left_settings {
   position: fixed;
-  width: 15%;
-  min-width: 150px;
+  width: 150px;
   height:100%;
-  float: left;
-  top:55px;
+  left: 0;
+  top:50px;
   background-color: red;
 }
 
 .right_settings {
-  float:right;
-  width:85%;
+  position: fixed;
+  top: 50px;
+  left: 150px;
+  width: calc(100% - 150px);
+  height: 100%;
+  overflow-y: scroll;
 
+}
+.editRightSide{
+  width: 90%;
+  .signup-form-badge {
+    margin-top: 70px;
+    width: 80%;
+    min-width: 500px;
+    background-color: #0392CF;
+    .images {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-top: 35%;
+      .upload-preview {
+          width: 15%;
+          height: 15%;
+          max-height: 130px;
+          position: absolute;
+          left: 43%;
+          top:70px;
+      }
+        .name-box {
+          height: 20px;
+          background-color: #9AD3EB;
+          border-radius: 0;
+          border-style: none;
+          color: white;
+          font-size: 17px;
+          position: absolute;
+          top: 10px;
+          left: 41%;
+          width: 18%;
+        }
+        .name-box::placeholder {
+          color: white;
+        }
+        .username-box {
+          width: 18%;
+          height: 20px;
+          border-radius: 0;
+          font-size: 20px;
+          border-style: none;
+          background-color: #9AD3EB;
+          position: absolute;
+          top: 40px;
+          left: 41%;
+          color: white;
+        }
+        .username-box::placeholder {
+          color: white;
+        }
+        .bio-box {
+          height: 22%;
+          width: 50%;
+          position: absolute;
+          bottom: 5px;
+          background-color: #9AD3EB;
+          left: 25%;
+          font-size: 20px;
+          border-radius: 0;
+          border-style: none;
+          color: white;
+        }
+        .bio-box::placeholder {
+          color: white;
+        }
+      .left-header {
+        position: absolute;
+        width: 50%;
+        top:0;
+        left: 0;
+        height: 100%;
+        overflow: hidden;
+        .left-header-image {
+          object-fit: fill;
+          width: 100%;
+        }
+      }
+      .right-header {
+        position: absolute;
+        width: 50%;
+        right:0;
+        top: 0;
+        height: 100%;
+        overflow-y: scroll;
+        .right-header-image {
+          object-fit: fill;
+          width: 100%;
+        }
+      }
+    }
+    .rowcss {
+      position: relative;
+      width: 90%;
+      height: 30px;
+      .email-box {
+        position: absolute;
+        width: 30%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+      .birthday {
+        position: absolute;
+        width: 85px;
+        left: 35%;
+        top: 0;
+      }
+      .birthday::placeholder {
+      }
+      .gender {
+        position: absolute;
+        top: 0;
+        left: 400px;
+        width: 30%;
+      }
+      .country-box{
+        width: 25%;
+        float: left;
+
+      }
+      .city-box{
+        margin-left: 10px;
+        width: 20%;
+        float: left;
+      }
+      .state-box{
+        margin-left: 10px;
+        width: 15%;
+        float: left;
+      }
+      .badgeColor{
+        width: 20px;
+        position: absolute;
+        left: 95px;
+        background-color: red;
+      }
+      .badgeColor2 {
+        width: 20px;
+        position: absolute;
+        left: 90px;
+        background-color: red;
+      }
+      .password {
+        position: absolute;
+        width: 30%;
+        right: 0;
+      }
+    }
+    .rowcss2{
+      width: 100%;
+      height: auto;
+      .TermsOfAgreement-box {
+        height: 220px;
+        width: 70%;
+        background-color: gray;
+      }
+      .TermsOfAgreement-textbox {
+        position: relative;
+        top: 5px;
+        height: 190px;
+        width: 95%;
+        overflow-y: scroll;
+        background-color: white;
+      }
+    }
+  }
 }
 
 .settings_center {

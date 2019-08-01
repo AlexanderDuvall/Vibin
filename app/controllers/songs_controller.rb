@@ -7,9 +7,14 @@ class SongsController < ApplicationController
 
   def create
     @song = current_user.songs.new(song_params) #, :post_id => @post.id)
-    if @song.save!
-      respond_to do |format|
+    respond_to do |format|
+      if @song.save!
         format.js
+        format.html {redirect_to @song, notice: 'Song was successfully created.'}
+        format.json {render :show, status: :created, location: @song}
+      else
+        format.html {render :new}
+        format.json {render json: @song.errors, status: :unprocessable_entity}
       end
     end
   end

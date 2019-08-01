@@ -1,35 +1,73 @@
-  <%= form_with model: @post do |f| %>
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Post</h5>
-      <% if @post.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-          <ul>
-            <% post.errors.full_messages.each do |message| %>
-              <% puts message %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    </div>
-    <div class="modal-body">
-      <%= f.text_area :content, class: "col-xs content-form",  rows: "1", placeholder: "Text" %>
-      <!-- photo button -->
-      <div class="col-xs-3">
-        <label class="btn btn-primary btn-sm">
-          <%= image_tag "PictureUploadButton.png", style: "height:20px; width:20px;" %>
-          <%= f.file_field :images, id: "images", accept: "image/png, image/jpeg, image/tiff", multiple:true, onchange:"previewImage(this)" %>
-        </label>
+<%= form_with(model: @post, multipart: true) do |f| %>
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Post</h5>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+        <ul>
+          <% post.errors.full_messages.each do |message| %>
+            <% puts message %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
       </div>
-       <img src="" id="preview" height="80px" width="80px">
-    </div>
-    <div class="modal-footer">
-      <label class="btn btn-success">
-        <%= image_tag "PostButton.png", style: "height:20px; width:20px;" %>
-        <span style="display:none;" class="">
+    <% end %>
+  </div>
+  <div class="modal-body">
+    <%= f.text_area :content, class: "form-content", rows: 1, placeholder: "Text" %>
+    <!-- photo button -->
+    <label class="btn btn-primary btn-sm">
+      <%= image_tag "PictureUploadButton.png", style: "height:30px; width:30px;", id: "imagesUploader" %>
+    </label>
+    <input hidden class="photo_upload" name="post[images][]" id="images" type="file" multiple="true" accept="image/jpeg, image/tiff, image/png">
+    <img src="" id="previewPostImage" height="80px" width="80px">
+  </div>
+  <div class="modal-footer">
+    <label class="btn btn-success">
+      <%= image_tag "PostButton.png", style: "height:20px; width:20px;" %>
+      <span style="display:none;" class="">
           <%= f.submit "", style: "width: 20px; height:20px;" %>
         </span>
-      </label>
-    </div>
+    </label>
+  </div>
 <% end %>
+
+<script>
+    $(function () {
+        $("#imagesUploader").on("click", function () {
+            $("#images").trigger("click");
+            console.log("lmaooo");
+        });
+        var preview = $("#previewPostImage");
+        console.log(preview);
+        $("#images").change(function (event) {
+            var input = $(event.currentTarget);
+            var file = input[0].files[0];
+            var reader = new FileReader();
+            console.log("lmaooo");
+            reader.onload = function (e) {
+                console.log("lmaooo");
+                image_base64 = e.target.result;
+                preview.attr("src", image_base64);
+            };
+            reader.readAsDataURL(file);
+        });
+
+        var textarea = document.querySelector('textarea');
+
+        textarea.addEventListener('keydown', autosize);
+
+        function autosize() {
+            var el = this;
+            setTimeout(function () {
+                el.style.cssText = 'height:auto;';
+                // for box-sizing other than "content-box" use:
+                // el.style.cssText = '-moz-box-sizing:content-box';
+                el.style.cssText = 'height:' + (el.scrollHeight + 10) + 'px';
+            }, 0);
+        }
+
+    });
+
+
+</script>

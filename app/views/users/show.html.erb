@@ -1,5 +1,53 @@
-<% if logged_in? %>
-  <div id="users">
+    <div id="users" class="users">
+        <div class="header">
+          <div class="leftHeader">
+                      <!--
+                    <div class="profileUsername" id="profileUsername">
+                      <p><span class="badge badge-primary text-white">@<%= @user.username %></span></p>
+                    </div>
+                    <div class="profileLocation" id="profileLocation">
+                      <p><span class="badge badge-primary text-white"><%= @user.zipcode %></span></p>
+                    </div>
+                    <div class="profileAvatar" id="profileAvatar">
+                        <% if @user.avatar.attached? %>
+                          <%= image_tag (@user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
+                        <% else %>
+                          <img src="http://localhost:3000/default-avatar.jpg" style="width:100px; height:100px; object-fit:cover;">
+                        <% end %>
+                    </div>
+                    <div class="profileBio" id="profileBio">
+                      <p><span class="badge badge-success"> <%= @user.bio %></span></p>
+                    </div>
+                  -->
+                    <div class="profileFavoriteSong" id="profileFavoriteSong">
+                        <span class="badge badge-secondary">Favorite Song</span>
+                    </div>
+                    <div class="profileName" id="profileName">
+                    <span class="badge badge-primary text-white"><%= @user.name %></span>
+                    </div>
+                    <!-- display the top 5 most played song by user -->
+                    <div class="profileFavoriteSongs" id="profileFavoriteSongs">
+
+                      <% @favoriteSongs.each do |song| %>
+                        <div class="favoriteSongRow">
+                          <% if Song.find(song.song_id).cover_image.presence %>
+                            <%= image_tag url_for(Song.find(song.song_id).cover_image), class: "favoriteSongRowCoverImage" %>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="rightHeader">
+                    <div class="profileFavorite" style="width: 40%;">
+                    </div>
+                  </div>
+        </div>
+        <div class="headermini">
+          <p>When window width is small</p>
+        <div class="ads">
+          <p>Ad Column</p>
+        </div>
+    <!--
     <div class="row justify-content-center " style="height: 20px;">
       <div class="col-xs-auto ">
         <p><span class="badge badge-primary text-white"><%= @user.name %></span></p>
@@ -22,7 +70,7 @@
           <h3 style="font-size: 20px; ">
             <span class="badge badge-secondary" style="width:75%; max-width: 120px;">Favorite Song</span></h3>
           <h4><a href="#" class="badge badge-primary" style="line-height:10px;">
-            <!--- display the top 5 most played song by user -->
+            <- display the top 5 most played song by user ->
             <% if @favoriteArtists.present? %>
               <% @favoriteArtists.each do |artist| %>
                 <p><%= User.find(artist.user_id).name %></p>
@@ -68,7 +116,7 @@
           <h3 style="font-size: 20px; ">
             <span class="badge badge-secondary" style="width:75%; max-width: 120px;">Favorite Song</span></h3>
           <h4><a href="#" class="badge badge-primary" style="line-height:10px;">
-            <!--- display the top 5 most played song by user -->
+            <!- display the top 5 most played song by user ->
             <% if @favoriteArtists.present? %>
               <% @favoriteSongs.each do |song| %>
                 <p><%= User.find(song.user_id).name %> - <%= Song.find(song.song_id).title %></p>
@@ -128,23 +176,59 @@
       <div class="tab-pane fade" id="Playlists" role="tabpanel" aria-labelledby="Playlists-tab"></div>
       <div class="tab-pane fade" id="Media" role="tabpanel" aria-labelledby="Media-tab"><%= render "posts/PhotosOnly" %></div>
     </div>
-  </div>
-<% end %>
-<script>
+--><script>
+  $(function (){
+  $('.leftHeader').css('background-image', 'url(<%= url_for(@user.firstHeader)%>)');
+  $('.rightHeader').css('background-image', 'url(<%= url_for(@user.secondHeader)%>)');
 
-    $(document).on("click", "#Music-tab", function () {
-        console.log("lol");
-        $("#MusicButtons").css("display", "block");
-    });
-    $(document).on("click", "#Posts-tab", function () {
-        $("#MusicButtons").css("display", "none");
-    });
-    $(document).on("click", "#Playlists-tab", function () {
-        $("#MusicButtons").css("display", "none");
-    });
-    $(document).on("click", "#Media-tab", function () {
-        $("#MusicButtons").css("display", "none");
-    });
+    var nameWidth = $('#profileName').width() / -2;
+    console.log(nameWidth);
+    //$('#profileName').css('right', '0' + 'px');
+    var usernameWidth = $('#profileUsername').width() / -2;
+    $('#profileUsername').css('top', ($('#profileName').height() - 6));
+    $('#profileUsername').css('right', usernameWidth + 'px');
+    var locationWidth = $('#profileLocation').width() / -2;
+    $('#profileLocation').css('top', ($('#profileName').height() + $('#profileUsername').height() - 16));
+    $('#profileLocation').css('right', locationWidth + 'px');
+    var avatar = $('#profileAvatar').width() / 2;
+    $('#profileAvatar').css('top', ($('#profileName').height() + $('#profileUsername').height() + $('#profileLocation').height() - 25));
+    $('#profileAvatar').css('right', '-' + avatar + 'px');
+    var bio = $('#profileBio').width() / 2;
+    $('#profileBio').css('top', ($('#profileName').height() + $('#profileUsername').height() + $('#profileLocation').height()+ $('#profileAvatar').height() - 20));
+    $('#profileBio').css('right', '-' + bio + 'px');
+    var profileFavoriteSong = $('#profileFavoriteSong').width();
+    $('#profileFavoriteSong').css('left', 'calc(50% - 50px)');
+    var profileFavoriteSongs = $('#profileFavoriteSongs').width();
+});
+
+  //$('#profileFavoriteSongs').css('left', 'calc(50% - 0px)');
+  /*
+  $(window).resize(function(){
+    if($(window).width() < 800){
+      $('.header').css('display', 'none');
+      $('.headermini').css('display', 'block');
+      $('.ads').css('display', 'none');
+    }else{
+      $('.header').css('display', 'block');
+      $('.headermini').css('display', 'none');
+      $('.ads').css('display', 'block');
+    }
+  });
+*/
+/*
+  $(document).on("click", "#Music-tab", function () {
+    console.log("lol");
+    $("#MusicButtons").css("display", "block");
+  });
+  $(document).on("click", "#Posts-tab", function () {
+    $("#MusicButtons").css("display", "none");
+  });
+  $(document).on("click", "#Playlists-tab", function () {
+    $("#MusicButtons").css("display", "none");
+  });
+  $(document).on("click", "#Media-tab", function () {
+    $("#MusicButtons").css("display", "none");
+  });
 
     $("#your").on("click", function () {
         $("#yoursongs").css("display", "block");
@@ -154,5 +238,6 @@
     $("#like").on("click", function () {
         $("#yoursongs").css("display", "none");
         $("#likedsongs").css("display", "block");
-    });
+    });*/
 </script>
+</div>

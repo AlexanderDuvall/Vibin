@@ -27,7 +27,9 @@
         .avatar-home{
           height: 100%;
           width: 100%;
-          border-radius: 40px;
+          border-radius: 50%;
+          border-color: white;
+          border-style: solid;
         }
       }
       .home-header-column-user{
@@ -39,9 +41,8 @@
       .home-header-column-posts{
         position: relative;
         float: left;
-        height: 100%;
-        width: 140px;
-        border-style: dashed;
+        height: 100px;
+        width: 200px;
         .postBadge{
           position: relative;
           float: left;
@@ -59,7 +60,6 @@
           float: left;
           width: 50%;
           height: 25px;
-          border-style:dashed;
         }
         .songsTotal{
           position: relative;
@@ -68,7 +68,6 @@
           height: 25px;
         }
         .followersBadge{
-          border-style: dashed;
           position: relative;
           float: left;
           width: 50%;
@@ -86,30 +85,82 @@
           position: relative;
           float: left;
           width: 50%;
+          margin-top: -7px;
           height: 25px;
         }
         .followingTotal{
           position: relative;
           float: left;
+          margin-top: -7px;
           width: 50%;
           height: 25px;
         }
-
+      }
+      .post{
+        position: relative;
+        float: left;
+        height: 100%;
+        width: 50px;
+        .btn-post{
+          position: relative;
+          float: left;
+          background-color: white;
+          height: 50px;
+          width: 50px;
+        }
+        .btn-song{
+          position: relative;
+          float: left;
+          height: 50px;
+          width: 50px;
+          background-color: white;
+        }
       }
     }
     .userfeed{
       position: relative;
       float: left;
       width: 50%;
-      background-color: pink;
-      margin-top: 100px;
+      margin-top: 110px;
     }
     .recommended{
       position: relative;
+      margin-top: 100px;
       float: left;
       width: 50%;
-      background-color: purple;
-        margin-top: 100px;
+      .recommended-column{
+        border-radius: 50px;
+        width: 90%;
+        background-color: #3ca4e3;
+        .recommendedUsers{
+          height: 200px;
+          width: 100%;
+          overflow-x: scroll;
+          overflow-y: hidden;
+          white-space: nowrap;
+          .recommendedUser{
+            display: inline-block;
+            height: 180px;
+            width:250px;
+            border-style: dotted;
+          }
+        }
+        .recommendedUsers::-webkit-scrollbar {
+          width: 0px;
+          height: 0px;
+        }
+        .recommendedSongs{
+          height: 200px;
+          width: 100%;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          .recommendedSong{
+            height: 200px;
+            width: 150px;
+            border-style: dotted;
+          }
+        }
+      }
     }
     /*
     .left-columnHidden{
@@ -224,30 +275,7 @@
       min-width: 295px;
       height: 300px;
       background-color: #b3ffb3;
-      .recommendedUsers{
-        height: 100px;
-        width: 100%;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
-        .recommendedUser{
-          display: inline-block;
-          height: 80px;
-          width: 80px;
-          border-style: dotted;
-        }
-      }
-      .recommendedSongs{
-        height: calc(100% - 130px);
-        width: 100%;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        .recommendedSong{
-          height: 80px;
-          width: 100%;
-          border-style: dotted;
-        }
-      }
+
     }
     */
   }

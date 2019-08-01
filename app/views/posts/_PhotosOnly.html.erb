@@ -2,7 +2,11 @@
   <% if post.images[0].presence %>
     <div class="row post border border-primary" style="cursor: pointer;">
       <div class="col-xs-3 border border-warning justify-content-center text-center " style="width:18%;">
-        <%= image_tag (post.user.avatar), class:"post-ava" if post.user.avatar != nil %>
+        <% if post.user.avatar.attached? %>
+          <%= image_tag (post.user.avatar), class: "avatar-home" %>
+        <% else %>
+          <img src="http://localhost:3000/default-avatar.jpg" class="avatar-home">
+        <% end %>
         <span class="badge badge-primary" style="width:100%;"><%= User.find(post.user_id).name %></span>
         <span><%= link_to "@"+User.find(post.user_id).username, user_path(post.user_id), class: "badge badge-primary", style: "width:100%;"%></span>
         <br/>

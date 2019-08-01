@@ -1,64 +1,126 @@
-<br>
-<%= form_for @user do |f| %>
-
-<div class="images border border-primary">
-  <div class="left-header">
-    <%= image_tag "fire.png", :class => "left-header-image" %>
-    <%#= f.file_field image_tag("fire.png"), :firstHeader %>
-  </div>
-  <div class="right-header">
-    <%= image_tag "cancel.png", :class => "right-header-image" %>
-  </div>
-  <div class="upload-preview">
-    <center>
-      <% if @user.avatar.attached? %>
-        <%= image_tag (@user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
-      <% else %>
-        <img src="/default-avatar.jpg" style="width:100px; height:100px; object-fit:cover;">
-      <% end %>
-    </center>
-  </div>
+<center>
+<div class="editRightSide">
+  <center>
+    <div class="badge signup-form-badge">
+      <%= form_with(model: @user, multipart: true) do |f| %>
+        <div class="images">
+          <div class="left-header">
+            <%= image_tag "insert.png", id: "leftHeaderView", :class => "left-header-image" %>
+          </div>
+          <div class="right-header">
+            <%= image_tag "insert.png", id: "rightHeaderView", :class => "right-header-image" %>
+          </div>
+          <%= f.text_field :name , placeholder: "name", class: "name-box"%>
+        <div class="upload-preview">
+            <center>
+              <% if @user.avatar.attached? %>
+                <%= image_tag (@user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
+              <% else %>
+                <img src="http://localhost:3000/default-avatar.jpg" style="width:100px; height:100px; object-fit:cover;" id="avatarView">
+              <% end %>
+            </center>
+          </div>
+          <%= f.text_area :bio , placeholder: "bio", class: "bio-box"%>
+          <input hidden class="photo_upload" type="file" name="user[avatar]" id="avatar">
+          <input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader">
+          <input hidden class="photo_upload" type="file" name="user[secondHeader]" id="secondHeader">
+          <input hidden type="text" name="user[longitude]" id="user_longitude" value="30">
+          <input hidden type="text" name="user[latitude]" id="user_latitude" value="30">
+        </div>
+        <br>
+        <center>
+        <div class="rowcss">
+          <%= f.email_field :email, class: "email-box", placeholder: "example@example.com" %>
+        <input type="date" class="birthday" name="user[birthday]" id="user_birthday" placeholder="Date of Birth" value="2019-07-27" >
+          <div class="gender"><%= f.select "gender", options_for_select(["Agender", "Androgyne", "Androgynous", "Bigender",
+                                        "Cis", "Cisgender", "Cis Female", "Cis Male", "Cis Man", "Cis Woman",
+                                        "Cisgender Female", "Cisgender Male", "Cisgender Man", "Cisgender Woman",
+                                        "Female to Male", "FTM", "Gender Fluid", "Gender Nonconforming",
+                                        "Gender Questioning", "Gender Variant", "Genderqueer", "Intersex",
+                                        "Male to Female", "MTF", "Neither", "Neutrois", "Non-binary", "Other",
+                                        "Pangender", "Trans", "Trans*", "Trans Female", "Trans* Female",
+                                        "Trans Male", "Trans* Male", "Trans Man", "Trans* Man", "Trans Person",
+                                        "Trans* Person", "Trans Woman", "Trans* Woman", "Transfeminine", "Transgender",
+                                        "Transgender Female", "Transgender Male", "Transgender Man", "Transgender Person",
+                                        "Transgender Woman", "Transmasculine", "Transsexual", "Transsexual Female", "Transsexual Male",
+                                        "Transsexual Man", "Transsexual Person", "Transsexual Woman",
+        "Two-Spirit"]) %>
 </div>
-<br/><br/>
+      </div>
+      <div class="rowcss border border-primary">
+          <%= f.text_field :country , placeholder: "country", class: "country-box"%>
+          <%= f.text_field :city , placeholder: "city", class: "city-box"%>
+          <%= f.text_field :state , placeholder: "state", class: "state-box"%>
+      </div>
+      <div class="rowcss">
+          <p style="float: left;">Badge Color</p>
+          <div style="float: left; margin-left: 10px;">
+            <%= f.text_field :badgeColor %>
+          </div>
+          <%= f.password_field :password, class: "password", placeholder: "password" %>
+      </div>
+      <div class="rowcss">
+        <p style="float: left;">Text Color </p>
+        <div style="float: left; margin-left: 10px;">
+          <%= f.text_field :badgeTextColor %>
+        </div>
+        <%= f.password_field :password_confirmation, class: "password", placeholder: "comfirm password" %>
+     </div>
 
-<input hidden class="photo_upload" type="file" name="user[avatar]" id="user_avatar">
-<input hidden class="photo_upload" type="file" name="user[firstHeader]" id="user_firstHeader">
-<input hidden class="photo_upload" type="file" name="user[secondHeader]" id="user_secondHeader">
-
-
-  <%= f.label :name, class: "vibin_form_text ml-5" %>
-  <%= f.text_field :name, class: "form-control ml-5 ", style: "width:80%;" %>
-
-  <%= f.label :bio, class: "vibin_form_text ml-5" %>
-  <%= f.text_area :bio, class: "form-control ml-5", style: "width:80%;" %>
-
-  <%= f.label :city, class: "vibin_form_text ml-5" %>
-  <%= f.text_field :city, class: "form-control ml-5", style: "width:80%;" %>
-
-  <%= f.label :state, class: "vibin_form_text ml-5" %>
-  <%= f.text_field :state, class: "form-control ml-5", style: "width:80%;" %>
-
-  <%= f.label :zipcode, class: "vibin_form_text ml-5" %>
-  <%= f.number_field :zipcode, class: "form-control ml-5", style: "width:80%;" %>
-
-  <%= f.submit "Save changes", class: "btn btn-primary vibin_btn" %>
-<% end %>
-
+      <%= f.submit "Submit", style: "width: 30px;" %>
+      <span id="coordinates">Coordinates</span>
+      <h2 id="longandlat"></h2>
+    </center>
+      <% end %>
+    </div>
+  </center>
+</div>
+</center>
 <script>
+function printResults(data) {
+    var jsonData = JSON.stringify(data);
+    console.log(jsonData);
+
+   }
 $(document).ready(function(){
+  $('#coordinates').on('click', function() {
+    var xhr = $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=77009&key=AIzaSyABBVE90zE3SB_kb52KWFSS2Fqumy303do");
+    xhr.done(printResults);
+  });
+
+
+  /*
+  $('#user_badgeColor').minicolors();
+  $('#user_badgeColor').on('change', function() {
+    var badgeColor;
+    badgeColor = $('.minicolors-swatch-color').eq(0).css('background-color');
+    $('.name-box').css('background-color', badgeColor);
+    $('.username-box').css('background-color', badgeColor);
+    $('.bio-box').css('background-color', badgeColor);
+  });
+  $('#user_badgeTextColor').minicolors();
+  $('#user_badgeTextColor').on('change', function() {
+    var Color;
+    Color = $('.minicolors-swatch-color').eq(1).css('background-color');
+    $('.name-box').css('color', Color);
+    $('.username-box').css('color', Color);
+    $('.bio-box').css('color', Color);
+  });
+  */
    $(".upload-preview").on("click", function() {
-        $("#user_avatar").trigger("click");
+        $("#avatar").trigger("click");
+        console.log('lol');
     });
    $(".left-header").on("click", function() {
-         $("#user_firstHeader").trigger("click");
+         $("#firstHeader").trigger("click");
     });
    $(".right-header").on("click", function() {
-        $("#user_secondHeader").trigger("click");
+        $("#secondHeader").trigger("click");
     });
-    var previewAvatar = $(".upload-preview img");
-    var previewFirstHeader = $(".left-header img");
-    var previewSecondHeader = $(".right-header img");
-    $("#user_avatar").change(function(event){
+    var previewAvatar = $("#avatarView");
+    var previewFirstHeader = $("#leftHeaderView");
+    var previewSecondHeader = $("#rightHeaderView");
+    $("#avatar").change(function(event){
        var input = $(event.currentTarget);
        var file = input[0].files[0];
        var reader = new FileReader();
@@ -70,7 +132,7 @@ $(document).ready(function(){
        };
        reader.readAsDataURL(file);
     });
-    $("#user_firstHeader").change(function(event){
+    $("#firstHeader").change(function(event){
        var input = $(event.currentTarget);
        var file = input[0].files[0];
        var reader = new FileReader();
@@ -82,7 +144,7 @@ $(document).ready(function(){
        };
        reader.readAsDataURL(file);
     });
-    $("#user_secondHeader").change(function(event){
+    $("#secondHeader").change(function(event){
        var input = $(event.currentTarget);
        var file = input[0].files[0];
        var reader = new FileReader();

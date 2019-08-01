@@ -17,7 +17,7 @@
   </div>
   <div class="postCenter justify-content-center broadcast_cover_area">
     <br/>
-    <%= image_tag (broadcaster.broadcast_cover), class: "broadcast_cover", onclick: "requestData(null," + "#{broadcaster.id})" %>
+    <%= image_tag (broadcaster.broadcast_cover), class: "broadcast_cover", onclick: "newBroadcaster(#{broadcaster.id})" %>
     <h3 style="color:white">Join my Stream!</h3>
   </div>
   <div class="postRight">
@@ -27,3 +27,13 @@
     </div>
   </div>
 </div>
+
+<script>
+    function newBroadcaster(id) {
+        console.log("We've been clicked... going to stream..." + id);
+        if (currentBroadcaster != null && currentBroadcaster !== id)
+            decrement(id);
+        currentBroadcaster = id;
+        requestData(null, id, true);
+    }
+</script>

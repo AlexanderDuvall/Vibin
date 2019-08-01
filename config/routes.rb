@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   root 'home#home'
   get '/search' => 'home#search'
   get '/explore' => 'home#explore'
+  get '/new_broadcaster' => 'broadcasters#new'
   get '/groupies' => 'home#groupies'
   get '/search' => 'home#search'
   get '/settings/:id' => 'users#settings'
@@ -49,8 +50,8 @@ Rails.application.routes.draw do
   get '/playCounter' => "songs#incrementSongPlays"
   get 'playlists/create'
   get 'playlists/new'
-  post '/decrement' => 'broadcasters#decrement'
-  post '/increment' => 'broadcasters#increment'
+  patch '/decrement' => 'broadcasters#decrement'
+  patch '/increment' => 'broadcasters#increment'
   get 'playlists/show'
   get '/getsongs' => 'playlists#getsongs'
   get '/getbroadcaster' => 'broadcasters#get_broadcaster'

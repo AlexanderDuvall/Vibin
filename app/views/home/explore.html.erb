@@ -2,6 +2,11 @@
   <div class="explore-page-row">
     <div class="explore-TopDj-column">
       <h5> Top DJ's</h5>
+      <% @topDJ.each_with_index do |a, index| %>
+        <h1><%= index +1 %></h1>
+        <%= image_tag url_for(a.broadcast_cover), style: "width:130px; height:130px" %>
+
+      <% end %>
     </div>
     <div class="explore-TopChart-column">
       <h5> Top Chart</h5>
@@ -102,4 +107,3 @@
         })
     });
 </script>
-

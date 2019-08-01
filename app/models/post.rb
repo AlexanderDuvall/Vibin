@@ -11,7 +11,6 @@ class Post < ApplicationRecord
   default_scope -> {order(created_at: :desc)}
   validates :user_id, presence: true
   validates :content, presence: false
-  validates :images, presence: false
   has_many :likes
 # has_many :songs
   has_many :comments, dependent: :destroy

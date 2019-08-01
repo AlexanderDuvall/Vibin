@@ -62,6 +62,7 @@ class HomeController < ApplicationController
     @users = User.all
     @TopChart = Song.all
     @TopArtist = User.last(5)
+    @topDJ = Broadcaster.find_by_sql("select * from broadcasters where is_playing = true order by num_listeners DESC limit 5")
   end
 
   def groupies

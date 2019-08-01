@@ -5,7 +5,7 @@
         <% if @song.user.avatar.attached? %>
           <%= image_tag (@song.user.avatar), class: "post-ava" %>
         <% else %>
-          <img src="default-avatar.jpg" class="post-ava">
+          <img src="http://localhost:3000/default-avatar.jpg" class="post-ava">
         <% end %>
         <h6 style="margin:0; padding:0;"><span class="badge badge-primary"><%= User.find(@song.user_id).name %></span>
         </h6>
@@ -29,7 +29,7 @@
       </div>
       <div class="" style="float:right;">
         <% if @song.user_id == current_user.id %>
-          <p><%= link_to "delete", song, method: :delete,
+          <p><%= link_to "delete", @song, method: :delete,
                          data: {confirm: "You sure?"}, remote: true, class: "delete", id: @song.id %></p>
         <% else %>
           <div id="song_<%= @song.id %>_likes"><%= render partial: "/songs/likes", locals: {song: @song} %></div>
@@ -38,19 +38,3 @@
     </div>
   </div>
 </center>
-<script>
-    function incrementPlays(id, artist_id) {
-        console.log(id + "in incrementPlays");
-        console.log(artist_id);
-        // ajax request
-        $.ajax({
-            url: "/playCounter",
-            type: "GET",
-            data: {
-                id: id,
-                artist_id: artist_id
-            },
-            dataType: "script",
-        });
-    }
-</script>

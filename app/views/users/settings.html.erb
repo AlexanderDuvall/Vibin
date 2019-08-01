@@ -1,0 +1,13 @@
+<div id="settings">
+  <div class="left_settings">
+    <center><h1> Settings</h1></center>
+    <p><%= link_to 'Edit Profile', edit_user_url(current_user.id), :class => "nav-link", remote: true %></p>
+    <p><%= link_to 'Privacy and Security', '/privacy_settings', :class => "nav-link" %></p>
+    <p><%= link_to 'Deactivate', '/deactivate_current_user', data: {confirm: "You sure you want to deactivate your account?"}, remote: true %></p>
+    <p><%= link_to 'Log Out', logout_path, method: :delete %></p>
+  </div>
+  <div class="right_settings border border-primary">
+    <%= render 'edit', locals: {:id => current_user.id} %>
+  </div>
+
+</div>

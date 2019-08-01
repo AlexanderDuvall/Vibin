@@ -19,85 +19,86 @@
 //= require jquery-ui
 //= require jquery-ui/widget
 //= require jquery-ui/widgets/sortable
-//= require jquery.minicolors
-//= require jquery.minicolors.simple_form
 //= require turbolinks
 //= require popper
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require_tree .
-
-var audio = new Audio();
-var counter = 0;
-var currentSong = null;
+//=
 let Server_Address = "192.168.1.70";
-var SongUsername = null;
-var songQueue = new Array();
-var x = new XMLHttpRequest();
 
-$(function(){
-  $('.userTabDiv').mouseover(function(){
-    $('.dropdown-content').css('display', 'block');
+$(function () {
+    $(window).on("click", function (e) {
+        console.log(e);
+        if (e.target == document.getElementById('myModal')) {
+            $('#myModal').css("display", 'none');
+        }
+    });
+    $("#userProfile").click(function(){
+  $.getScript('javascripts/users.coffee', function() {
+    console.log("lmaoo");
   });
 });
+});
 
-function buildPlayer(song, name, username, title, ...args) {
-    let buildSong = function () {
-        audio.src = "";
 
-        $('#SongArtistName').text(name);
-        $('#songArtistUsername').text('@' + username);
-        $('#songTitle').text(title);
-        //$('#songSubGenre').text();
-        console.log(song);
-        audio.src = song;
-        console.log(audio);
-    };
+$("#G").on("click", function () {
+    console.log("lolas");
+});
 
-    function calculateTotalValue(length) {
-      var minutes = Math.floor(length / 60),
-        seconds_int = length - minutes * 60,
-        seconds_str = seconds_int.toString(),
-        seconds = seconds_str.substr(0, 2),
-        time = minutes + ':' + seconds
+var counter = 0;
+var x = new XMLHttpRequest();
 
-      return time;
-    }
-
-    function calculateCurrentValue(currentTime) {
-      var current_hour = parseInt(currentTime / 3600) % 24,
-        current_minute = parseInt(currentTime / 60) % 60,
-        current_seconds_long = currentTime % 60,
-        current_seconds = current_seconds_long.toFixed(),
-        current_time = (current_minute < 10 ? "0" + current_minute : current_minute) + ":" + (current_seconds < 10 ? "0" + current_seconds : current_seconds);
-
-      return current_time;
-    }
-    let updateSong = function () {
-        let duration = args[0];
-        audio.currentTime = duration;
-        lastTime = duration;
-    };
-    if (args.length != 0) {
-        if (args.length == 2 && args[1] == true) {
-            //just updating time...
-            updateSong();
-            // audio.play();
-        } else {
-            //changing and updating song...
-            // audio.pause();
-            buildSong();
-            updateSong();
-            audio.play();
-            initProgressBar();
+function sendTheAJAX(controller, ...id) {
+    var x = new XMLHttpRequest;
+    x.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(this.responseText, 'text/html');
+            var elem = doc.getElementById(div);
+            console.log(elem);
+            $(".main").html(elem);
+            //    $(".main").html(this);
         }
+    };
+    if (controller.charAt(0) == '/') {
+        x.open("GET", '/' + controller.substring(1) + '/' + id[0], true);
+        var url = '/' + controller.substring(1) + '/' + id[0];
+        var temp = controller.split("/")
+        var div = temp[1];
+    } else if (controller == '') {
+        x.open("GET", '/', true);
+        var url = '/';
+        var div = 'home';
     } else {
-        audio.pause();
-        buildSong();
-        lastTime = 0;
-        audio.play();
-
+        x.open("GET", '/' + controller + '/' + id[0], true);
+        var url = '/' + controller + '/' + id[0];
+        var div = controller;
     }
+    x.send();
+    history.pushState(null, null, url);
+}
+
+
+function repost(postid) {
+    console.log("reposting...");
+    Rails.ajax({
+        url: "/repost?post_id=" + postid,
+        type: "POST",
+        processData: false,
+        success: function (data, textStatus, xhr) {
+            console.log(data);
+        },
+        error: function (data) {
+            console.log(data);
+        }
+    });
+}
+
+function isBroadcasting(...args) {
+    if (args.length == 1 && (args[0] == false || args[0] == true))
+        broadcasting = args[0];
+    return broadcasting;
 }
 
 function connect(user_id) {
@@ -161,39 +162,6 @@ function connect(user_id) {
     x.send(data);
 }
 
-function decrement(id) {
-    Rails.ajax({
-        url: "/decrement?id=" + id,
-        processData: false,
-        type: "Patch",
-        success: function (e) {
-
-        }
-    });
-}
-
-function get_current_song() {
-    return Cookies.get('current_song');
-}
-
-function get_current_playlist() {
-    return Cookies.get('playlist');
-}
-
-
-
-function isBroadcasting(...args) {
-    if (args.length == 1 && (args[0] == false || args[0] == true))
-        broadcasting = args[0];
-    return broadcasting;
-}
-
-function isListening(...args) {
-    if (args.length == 1 && (args[0] == false || args[0] == true))
-        listening = args[0];
-    return listening;
-}
-
 function listenerCallback(results) {
     console.log("comparing....\n RESULTS: ");
     console.log(results.length);
@@ -203,6 +171,7 @@ function listenerCallback(results) {
         isListening(false);
     } else if (results.length != 0) {
         let difference = audio.currentTime - parseInt(results["Duration"]);
+        console.log("difference:" + difference);
         if (Math.abs(difference) >= 4) {
             //update times
             audio.currentTime = parseInt(results["Duration"]);
@@ -218,6 +187,252 @@ function needsUpdate(...args) {
     if (args.length == 1 && (args[0] == false || args[0] == true))
         update = args[0];
     return update;
+}
+
+function increment(id) {
+    Rails.ajax({
+        url: "/increment?id=" + id,
+        type: "PATCH",
+        processData: false,
+        error: function (error) {
+            console.log(error)
+        }
+    })
+}
+
+function decrement(id) {
+    Rails.ajax({
+        url: "/decrement?id=" + id,
+        type: "POST",
+        processData: false,
+        error: function (error) {
+            console.log(error)
+        }
+    })
+}
+
+
+function requestData(callback, broadcaster, newBroadcaster) {
+    console.log("loading....");
+    try {
+        x.onreadystatechange = function () {
+            if (x.readyState === 1) {
+                console.log("CONNECTION OPENED");
+            }
+            if (x.readyState === 2) {
+                console.log("DATA HAS BEEN SENT");
+            }
+            if (x.readyState === 3) {
+                console.log("LOADING");
+            }
+            if (x.readyState === 4) {
+                console.log("DONE...");
+                let results = x.response;
+                console.log(x.response);
+                if (results.length > 0) {
+                    let lines = results.split("\n");
+                    results = {};
+                    for (let i = 0; i < lines.length; i++) {
+                        var content = lines[i].split(/:(.+)/);
+                        if (content.length == 3)
+                            content.pop();
+                        console.log(content);
+                        console.log(content.length);
+                        if (content.length == 2) {
+                            console.log("hashing");
+                            results[content[0]] = content[1];
+                        }
+                    }
+                    console.log(results);
+                    if (results.hasOwnProperty("Song_id") && results.hasOwnProperty("Duration")) {
+                        console.log("HAS SONG ID AND DURATION VARIABLE");
+                        console.log("results[Song_id] === (-1) = " + results["Song_id"] === ("-1"));
+                        //
+                        //callback[1] true when updating time
+                        //false when updating and getting song
+                        if (parseInt(results["Song_id"]) !== parseInt(get_current_song())) {
+                            console.log(typeof results["Song_id"]);
+                            console.log(typeof get_current_song());
+                            needsUpdate(true);
+                        }
+                        if ((Math.abs(lastTime - results["Duration"]) > 3 && !isListening()) || needsUpdate()) {
+                            if (needsUpdate()) {
+                                console.log("UPDATING.....")
+                            }
+                            if (newBroadcaster)
+                                increment(broadcaster);
+
+                            nextSong(results["Song_id"], results["Duration"]);
+                            console.log("SENDING REQUEST DATA  TO THE CLIENT........");
+
+                            needsUpdate(false);
+                        }
+
+                        if ((typeof callback != "undefined" ^ callback != null) && isListening()) {
+                            console.log("callback... running");
+                            callback(results);
+                        }
+                    } else {
+                        console.log("Machine NOT REACHED");
+                        //callback[0].apply();
+                    }
+                } else {
+                    // callback.apply();
+                    console.log("no response");
+                }
+                //x.close();
+            }
+        };
+        x.open("POST", "http://" + Server_Address + ":4446");
+        let a = new FormData();
+        a.append("Broadcaster_id", broadcaster);
+        x.send(a);
+
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+
+function sendData(duration, ...args) {
+    try {
+        if (args.length == 0) {
+            x.open("POST", "http://" + "localhost" + ":4444", true);
+            let a = new FormData();
+            a.append("Duration", duration);
+            a.append("Song_id", get_current_song());
+            x.send(a);
+            //   x.abort();
+            console.log("sent it out");
+        } else {
+            x.open("POST", "http://" + "localhost" + ":4444", true);
+            let a = new FormData();
+            a.append("Action", args[0]);
+            x.send(a);
+            consolde.log("sent it out");
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+function setNewPlaylistSong(position) {
+    counter = position - 1;
+    nextSong();
+}
+
+function set_current_playlist(id) {
+    Cookies.set('playlist');
+    Cookies.set('playlist', id, {expires: 14});
+    console.log('playlist: ' + Cookies.get('playlist'));
+}
+
+function set_current_song(id) {
+    Cookies.set('current_song');
+    Cookies.set('current_song', id, {expires: 14});
+}
+
+function get_current_song() {
+    return Cookies.get('current_song');
+}
+
+function get_current_playlist() {
+    return Cookies.get('playlist');
+}
+
+
+function previewFile() {
+
+    var preview = document.querySelector('#preview');
+    var file = document.querySelector('#avatar').files[0];
+    var reader = new FileReader();
+    reader.addEventListener("load", function () {
+        preview.src = reader.result;
+    }, false);
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+
+var audio = new Audio();
+var currentSong = null;
+var SongUsername = null;
+var songQueue = new Array();
+
+
+function buildPlayer(song, username, title, ...args) {
+    let buildSong = function () {
+        audio.src = "";
+        $('#usernameSong').text(username);
+        $('#titleSong').text(title);
+        console.log(song);
+        audio.src = song;
+        console.log(audio);
+    };
+    let updateSong = function () {
+        let duration = args[0];
+        audio.currentTime = duration;
+        lastTime = duration;
+    };
+    if (args.length != 0) {
+        if (args.length == 2 && args[1] == true) {
+            //just updating time...
+            updateSong();
+            // audio.play();
+        } else {
+            //changing and updating song...
+            // audio.pause();
+            buildSong();
+            updateSong();
+            audio.play();
+
+        }
+    } else {
+        audio.pause();
+        buildSong();
+        lastTime = 0;
+        audio.play();
+
+    }
+}
+
+
+function SelectedSong(song, username, title, singleSong, ...args) {
+    if (singleSong) {
+        console.log("SINGLE SONG");
+        set_current_song(args[0]);
+        buildPlayer(args[1], username, title);
+        isPlayList = false;
+    } else {
+        console.log("NOT SINGLE SONG");
+        set_current_song(args[2]);
+        songQueue = args[0];
+        console.log("\n\nSong Queue" + songQueue + "\n\n");
+        set_current_playlist(args[1]);
+        isPlayList = true;
+        counter = 0;
+        nextSong();
+    }
+}
+
+function ReorderSongs(data) {
+    console.log(data);
+    console.log("^^ DATA");
+    console.log("Old array: " + songQueue);
+    songQueue = data;
+    console.log("New array: " + songQueue);
+    resetCurrentSong();
+}
+
+function resetCurrentSong() {
+    let song = get_current_song();
+    let index = -1;
+    for (let i = 0; x < songQueue.length; i++) {
+        if (songQueue[i] == song) {
+            counter = i;
+            break;
+        }
+    }
 }
 
 function nextSong(...args) {
@@ -251,12 +466,11 @@ function nextSong(...args) {
             set_current_song(-1)
         }
     } else {
-
+        //Getting Broadcaster info from user 1
         let song_id = args[0];
         let duration = args[1];
         if (song_id === "-1" && !isListening()) {
             alert("Stream Not Available...");
-            isListening(false)
         } else if (song_id === "-1" && isListening()) {
             alert("Stream stopped...");
             isListening(false);
@@ -282,247 +496,10 @@ function nextSong(...args) {
     }
 }
 
-function previewFile() {
-
-    var preview = document.querySelector('#preview');
-    var file = document.querySelector('#avatar').files[0];
-    var reader = new FileReader();
-    reader.addEventListener("load", function () {
-        preview.src = reader.result;
-    }, false);
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-}
-
-function previewImage(id) {
-
-    var preview = document.querySelector('#preview');
-    var file = document.querySelector(id).files[0];
-    var reader = new FileReader();
-    reader.addEventListener("load", function () {
-        console.log("loaded");
-        preview.src = reader.result;
-    }, false);
-    if (file) {
-        console.log("file exist");
-        reader.readAsDataURL(file);
-    }
-}
-
-function readUrl(input) {
-    if (input.files && input.files[0]) {
-        let reader = new FileReader();
-        reader.onload = function (e) {
-            $('#Album_Cover').attr('src', e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-function ReorderSongs(data) {
-    console.log(data);
-    console.log("^^ DATA");
-    console.log("Old array: " + songQueue);
-    songQueue = data;
-    console.log("New array: " + songQueue);
-    resetCurrentSong();
-}
-
-function repost(postid) {
-    console.log("reposting...");
-    Rails.ajax({
-        url: "/repost?post_id=" + postid,
-        type: "POST",
-        processData: false,
-        success: function (data, textStatus, xhr) {
-            console.log(data);
-        },
-        error: function (data) {
-            console.log(data);
-        }
-    });
-}
-
-function requestData(callback, broadcaster, newBroadcast) {
-    console.log("loading....");
-    try {
-        x.onreadystatechange = function () {
-            if (x.readyState === 1) {
-                console.log("CONNECTION OPENED");
-            }
-            if (x.readyState === 2) {
-                console.log("DATA HAS BEEN SENT");
-            }
-            if (x.readyState === 3) {
-                console.log("LOADING");
-            }
-            if (x.readyState === 4) {
-                console.log("DONE...");
-                let results = x.response;
-                console.log(x.response);
-                if (results.length > 0) {
-                    let lines = results.split("\n");
-                    results = {};
-                    for (let i = 0; i < lines.length; i++) {
-                        var content = lines[i].split(/:(.+)/);
-                        if (content.length == 3)
-                            content.pop();
-                        console.log(content);
-                        console.log(content.length);
-                        if (content.length == 2) {
-                            console.log("hashing");
-                            results[content[0]] = content[1];
-                        }
-                    }
-                    console.log(results);
-                    //SUCCESS
-                    if (results.hasOwnProperty("Song_id") && results.hasOwnProperty("Duration")) {
-                        console.log("HAS SONG ID AND DURATION VARIABLE");
-                        //callback[1] true when updating time
-                        //false when updating and getting song
-                        if (newBroadcast) {
-                            Rails.ajax({
-                                url: "/increment?id=" + currentBroadcaster,
-                                type: "PATCH",
-                                processData: false
-                            });
-                            if (parseInt(results["Song_id"]) !== parseInt(get_current_song())) {
-                                console.log(typeof results["Song_id"]);
-                                console.log(typeof get_current_song());
-                                needsUpdate(true);
-                            }
-                            if (/**(Math.abs(lastTime - results["Duration"]) > 3 && !isListening()) ||**/ needsUpdate()) {
-                                if (needsUpdate()) {
-                                    console.log("UPDATING.....")
-                                }
-                                nextSong(results["Song_id"], results["Duration"]);
-                                console.log("SENDING REQUEST DATA  TO THE CLIENT........");
-
-                                needsUpdate(false);
-                            }
-
-                            if ((typeof callback != "undefined" ^ callback != null) && isListening()) {
-                                console.log("callback... running");
-                                callback(results);
-                            }
-                        } else {
-                            console.log("Machine NOT REACHED");
-                            //callback[0].apply();
-                        }
-                    } else {
-                        // callback.apply();
-                        console.log("no response");
-                    }
-                    //x.close();
-                }
-            }
-            x.open("POST", "http://" + Server_Address + ":4446");
-            let a = new FormData();
-            a.append("Broadcaster_id", broadcaster);
-            x.send(a);
-
-        };
-    } catch (e) {
-        console.log(e);
-    }
-}
-
-function resetCurrentSong() {
-    let song = get_current_song();
-    let index = -1;
-    for (let i = 0; x < songQueue.length; i++) {
-        if (songQueue[i] == song) {
-            counter = i;
-            break;
-        }
-    }
-}
-
-function SelectedSong(song, name, username, title, singleSong, ...args) {
-    if (singleSong) {
-        console.log("SINGLE SONG");
-        set_current_song(args[0]);
-        buildPlayer(args[1], name, username, title);
-        isPlayList = false;
-        if (isListening())
-            isListening(false);
-        } else {
-          if (isListening())
-            isListening(false);
-        console.log("NOT SINGLE SONG");
-        set_current_song(args[2]);
-        songQueue = args[0];
-        console.log("\n\nSong Queue" + songQueue + "\n\n");
-        set_current_playlist(args[1]);
-        isPlayList = true;
-        counter = 0;
-        nextSong();
-    }
-}
-
-function sendData(duration, ...args) {
-    try {
-        if (args.length == 0) {
-            x.open("POST", "http://localhost:4444", true);
-            let a = new FormData();
-            a.append("Duration", duration);
-            a.append("Song_id", get_current_song());
-            x.send(a);
-            //   x.abort();
-            console.log("sent it out");
-        } else {
-            x.open("POST", "http://" + "localhost" + ":4444", true);
-            let a = new FormData();
-            a.append("Action", args[0]);
-            x.send(a);
-            console.log("sent it out");
-        }
-    } catch (e) {
-        console.log(e);
-    }
-}
-
-function sendTheAJAX(controller, ...id) {
-    var x = new XMLHttpRequest;
-    x.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(this.responseText, 'text/html');
-            var elem = doc.getElementById(controller);
-            console.log(elem);
-            $(".main").html(elem);
-            //    $(".main").html(this);
-        }
-    };
-    if (controller == 'home') {
-        x.open("GET", '/', true);
-        console.log("home");
-        var url = "/";
-    } else {
-        x.open("GET", '/' + controller + '/' + id[0], true);
-        console.log("controller not home");
-        var url = '/' + controller + '/' + id[0];
-        console.log(url);
-    }
-    x.send();
-    history.pushState(null, null, url);
-}
-
-
-function set_current_playlist(id) {
-    Cookies.set('playlist');
-    Cookies.set('playlist', id, {expires: 14});
-}
-
-function set_current_song(id) {
-    Cookies.set('current_song');
-    Cookies.set('current_song', id, {expires: 14});
-}
-
-function setNewPlaylistSong(position) {
-    counter = position - 1;
-    nextSong();
+function isListening(...args) {
+    if (args.length == 1 && (args[0] == false || args[0] == true))
+        listening = args[0];
+    return listening;
 }
 
 function validateFiles(inputFile) {
@@ -554,9 +531,12 @@ function validateFiles(inputFile) {
     }
 }
 
-window.onclick = function (event) {
-    var modal = document.getElementById("myModal");
-    if (event.target == modal) {
-        $('#myModal').css("display", "none");
+function readUrl(input) {
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function (e) {
+            $('#Album_Cover').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
     }
-};
+}

@@ -7,48 +7,30 @@
     <p id="songSubGenre">Song Subgenre</p>
     <p id="songGenre">Song Genre</p>
   </div>
-  <div class="player">
-  <!--  <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>-->
-    <center>
-      <div id="currentTime" style="position:absolute; top: 5px; left: 5px; ">0:00</div>
-        <div class="seek-bar">
- 	        <div class="fill"></div>
- 	        <div class="handle"></div>
- 	      </div>
-      <div id="duration" style="position:absolute; top: 5px; right: 5px; ;">4:20</div>
-      <button class="play" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
-      <div class="volume">
-        <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
-
-      </div>
-    </center>
-    <div class="BCButton">
+  <div class="audio-player border border-primary">
+    <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
+    <div class="seek-bar">
+      <div class="fill"></div>
+      <div class="handle"></div>
     </div>
-    <!--
+    <button id="broadcast_text" class="postButton" data-session="<%= current_user.id.to_json if logged_in? %>">Post
+      Broadcast
+    </button>
+    <button id="renderPlaylist" class="playlist-modal">Open modal</button>
+  </div>
+  <div class='audio-player border border-success'>
+    <button class="volume"><i class="ion-volume-high"></i></button>
     <div class="volume_bar">
       <div class="volume_fill"></div>
       <div class="volume_handle"></div>
     </div>
-    <button id="broadcast_text" class = "postButton" data-session="<%= current_user.id.to_json if logged_in? %>">Post Broadcast</button>
-    <button id="renderPlaylist" class="playlist-modal audio-player">Open modal</button>
-    <div class='audio-player border border-success'>
-      <button class="volume"><i class="ion-volume-high"></i></button>
-      <div class="volume_bar">
-        <div class="volume_fill"></div>
-        <div class="volume_handle"></div>
-      </div>
-      <button class="skip_forward"><i class="ion-skip-forward"></i></button>
-    </div> -->
+    <button class="skip_forward"><i class="ion-skip-forward"></i></button>
   </div>
-  <div class="userDetails">
-  <p id="SongArtistName">Artist Name</p>
-  <p id="songArtistUsername">@ArtistUsername</p>
+  <div class="songDetails">
+  </div>
+  <div id="audio-modal" class="modal-audio">
+    <div class="modal-content-audio">
+      <%= render partial: "playlists/songs" %>
+    </div>
   </div>
 </div>
-<!--
-<div id="audio-modal" class="modal-audio">
-  <div class="modal-content-audio">
-    <%= render partial: "playlists/songs" %>
-  </div>
-</div>
--->

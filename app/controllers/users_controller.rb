@@ -88,22 +88,23 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = Post.all.where("user_id = ?", @user)
-    #if current_user.user_song_play_counters
-    #error @favoriteArtists = current_user.user_artist_play_counter.limit(5).order(plays: :desc)
-    # @favoriteSongs = current_user.user_song_play_counters.limit(5).order(plays: :desc)
-    #end
+    if current_user.user_song_play_counters
+      @favoriteArtists = current_user.user_artist_play_counters.limit(5).order(plays: :desc)
+      @favoriteSongs = current_user.user_song_play_counters.limit(5).order(plays: :desc)
+    end
     @songs = Song.all.where("user_id = ?", @user)
     @likedsongs = Songlike.all.where("user_id = ?", @user).reverse
     @combine = (@songs + @posts).sort_by {|post| post.created_at}.reverse.paginate(page: params[:page], per_page: 10)
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    user = current_user
+    if user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to @user
+      redirect_to user
     else
-      render "edit"
+      puts "FAILED TO UPDATE"
+      render "/settings"
     end
   end
 

@@ -3,9 +3,9 @@
     <div class="postLeft justify-content-center text-center">
       <div style="position: absolute; bottom:0;">
         <% if @user.avatar.attached? %>
-          <%= image_tag (@user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
+          <%= image_tag (@user.avatar), class: "post-ava" %>
         <% else %>
-          <img src="http://localhost:3000/default-avatar.jpg" style="width:100px; height:100px; object-fit:cover;">
+          <img src="http://localhost:3000/default-avatar.jpg" class= 'post-ava'>
         <% end %>
          <h6 style="margin:0; padding:0;"><span class="badge badge-primary"><%= User.find(post.user_id).name %></span>
         </h6>
