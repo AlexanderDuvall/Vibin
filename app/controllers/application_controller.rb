@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
-  include ActionController::MimeResponds
+  #include ActionController::MimeResponds
   protect_from_forgery with: :exception
   # call the configured params
   add_flash_types :danger, :info, :warning, :success

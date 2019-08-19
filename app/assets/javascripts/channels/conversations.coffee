@@ -1,9 +1,9 @@
-jQuery(document).on 'turbolinks:load', ->
-    messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
-    messages = $('#conversation-body')
-    if messages.length > 0
-      messages_to_bottom()
-
+#
+#jQuery(document).on 'turbolinks:load', ->
+ #  messages = $('#conversation-body')
+ #   if messages.length > 0
+ #     messages_to_bottom()
+###
   if $('#current-user').size() > 0
     App.personal_chat = App.cable.subscriptions.create {
       channel: "NotificationsChannel"
@@ -30,7 +30,7 @@ jQuery(document).on 'turbolinks:load', ->
 
   $(document).on 'click', '#notification .close', ->
     $(this).parents('#notification').fadeOut(1000)
-
+###
 ###
   if messages.length > 0
     messages_to_bottom()

@@ -7,96 +7,180 @@
 ////// Profile
 ////
 //
-.users{
+.users {
   background-color: red;
   display: flex;
 }
-.header{
-  width: 70%;
-  min-height: 500px;
-  background-color: blue;
+
+.header {
+  width: 75%;
+  min-height: 400px;
+  background-color: white;
   display: flex;
+  position: relative;
 }
-.headermini{
+
+.avatar{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border-color: white;
+  border-style: solid;
+}
+
+.userData {
+  width: 100%;
+  top:350px;
+  min-height: 500px;
+  background-color: pink;
+  position: absolute;
+}
+
+.headermini {
   display: none;
   height: 500px;
   width: 500px;
   background-color: yellow;
 }
-.ads{
-  width: 30%;
+
+.ads {
+  width: 25%;
   height: 100%;
   background-color: green;
 }
 
-.leftHeader{
+.leftHeader {
   width: 50%;
   display: flex;
   flex-direction: column;
   height: 300px;
   background-size: 100% 100%;
 }
-.profileFavoriteSong{
+
+.profileFavoriteSong {
   width: 100px;
   height: 30px;
-  margin-left: 200px;
   margin-top: 50px;
   z-index: 1;
   display: block;
+}
 
-}
-.profileFavoriteSongs{
+.profileFavoriteSongs {
   z-index: 1;
-  margin-left: 100px;
+  margin-left: 80px;
   height: 150px;
+  overflow: auto;
   display: block;
-  width: 300px;
+  min-width: 250px;
+  width: 63%;
 }
-.favoriteSongRow{
+.profileFavoriteSongs::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.favoriteSongRow {
   display: block;
-  border-style: dashed;
-  height: 30px;
-  background-color: green;
+  height: 55px;
+  background-color: gray;
+  opacity: 50%;
+  border-radius: 10px;
+  border-color: white;
+  border-width: thin;
+  border-style: solid;
   margin-top: 3px;
   z-index: 1;
 }
-.favoriteSongRowCoverImage{
+
+.profileFavoriteArtist {
+  width: 100px;
+  height: 30px;
+  margin-top: 50px;
+  z-index: 1;
+  display: block;
+}
+
+.profileFavoriteArtists {
+  z-index: 1;
+  margin-left: 80px;
+  height: 150px;
+  overflow: auto;
+  display: block;
+  min-width: 250px;
+  width: 63%;
+}
+
+.profileFavoriteArtists::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.favoriteArtistRow {
+  display: block;
+  background-color: gray;
+  opacity: 50%;
+  border-radius: 10px;
+  border-color: white;
+  border-width: thin;
+  border-style: solid;
+  height: 55px;
+  margin-top: 3px;
+  z-index: 1;
+}
+
+
+.favoriteSongRowCoverImage {
   position: relative;
   float: left;
-  height: 30px;
-  width: 30px;
-  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
   border-style: solid;
   border-width: thin;
+  border-color: white;
   background-color: white;
 }
-.rightHeader{
+
+.rightHeader {
   width: 50%;
   display: flex;
+  flex-direction: column;
   height: 300px;
   background-size: 100% 100%;
 }
-.profileName{
+
+.profileName {
+  z-index: 1;
+  //display: flex;
+  //align-items: center;
+//  margin-left: auto;
   position: absolute;
-  top: 60px;
+}
+
+.profileUsername {
+  position: absolute;
+  top: 25px;
   z-index: 1;
 }
-.profileUsername{
+
+.profileLocation {
   position: absolute;
+  top: 47px;
   z-index: 1;
 }
-.profileLocation{
+
+.profileAvatar {
   position: absolute;
-  z-index: 1;
-}
-.profileAvatar{
-  position: absolute;
+  top: 75px;
   z-index: 1;
   height: 100px;
   width: 100px;
 }
-.profileBio{
+
+.profileBio {
   position: absolute;
+  top: 250px;
+  max-width: 100px;
   z-index: 1;
 
 }
@@ -109,21 +193,22 @@
 //
 
 
-.user-post{
-  min-height: 200px;
-  max-height: 260px;
+.user-post {
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 .user-post::-webkit-scrollbar {
-    width: 0px; /*For Chrome, Safari and Opera*/
+  width: 0px; /*For Chrome, Safari and Opera*/
 }
+
 .left_settings {
   position: fixed;
   width: 150px;
-  height:100%;
+  height: 100%;
   left: 0;
-  top:50px;
+  top: 50px;
   background-color: red;
 }
 
@@ -136,101 +221,117 @@
   overflow-y: scroll;
 
 }
-.editRightSide{
+
+.editRightSide {
   width: 90%;
+
   .signup-form-badge {
     margin-top: 70px;
     width: 80%;
     min-width: 500px;
     background-color: #0392CF;
+
     .images {
       position: relative;
       top: 0;
       left: 0;
       width: 100%;
       padding-top: 35%;
+
       .upload-preview {
-          width: 15%;
-          height: 15%;
-          max-height: 130px;
-          position: absolute;
-          left: 43%;
-          top:70px;
+        width: 15%;
+        height: 15%;
+        max-height: 130px;
+        position: absolute;
+        left: 43%;
+        top: 70px;
       }
-        .name-box {
-          height: 20px;
-          background-color: #9AD3EB;
-          border-radius: 0;
-          border-style: none;
-          color: white;
-          font-size: 17px;
-          position: absolute;
-          top: 10px;
-          left: 41%;
-          width: 18%;
-        }
-        .name-box::placeholder {
-          color: white;
-        }
-        .username-box {
-          width: 18%;
-          height: 20px;
-          border-radius: 0;
-          font-size: 20px;
-          border-style: none;
-          background-color: #9AD3EB;
-          position: absolute;
-          top: 40px;
-          left: 41%;
-          color: white;
-        }
-        .username-box::placeholder {
-          color: white;
-        }
-        .bio-box {
-          height: 22%;
-          width: 50%;
-          position: absolute;
-          bottom: 5px;
-          background-color: #9AD3EB;
-          left: 25%;
-          font-size: 20px;
-          border-radius: 0;
-          border-style: none;
-          color: white;
-        }
-        .bio-box::placeholder {
-          color: white;
-        }
+
+      .name-box {
+        height: 20px;
+        background-color: #9AD3EB;
+        border-radius: 0;
+        border-style: none;
+        color: white;
+        font-size: 17px;
+        position: absolute;
+        top: 10px;
+        left: 41%;
+        width: 18%;
+      }
+
+      .name-box::placeholder {
+        color: white;
+      }
+
+      .username-box {
+        width: 18%;
+        height: 20px;
+        border-radius: 0;
+        font-size: 20px;
+        border-style: none;
+        background-color: #9AD3EB;
+        position: absolute;
+        top: 40px;
+        left: 41%;
+        color: white;
+      }
+
+      .username-box::placeholder {
+        color: white;
+      }
+
+      .bio-box {
+        height: 22%;
+        width: 50%;
+        position: absolute;
+        bottom: 5px;
+        background-color: #9AD3EB;
+        left: 25%;
+        font-size: 20px;
+        border-radius: 0;
+        border-style: none;
+        color: white;
+      }
+
+      .bio-box::placeholder {
+        color: white;
+      }
+
       .left-header {
         position: absolute;
         width: 50%;
-        top:0;
+        top: 0;
         left: 0;
         height: 100%;
         overflow: hidden;
+
         .left-header-image {
           object-fit: fill;
           width: 100%;
         }
       }
+
       .right-header {
         position: absolute;
         width: 50%;
-        right:0;
+        right: 0;
         top: 0;
         height: 100%;
         overflow-y: scroll;
+
         .right-header-image {
           object-fit: fill;
           width: 100%;
         }
       }
     }
+
     .rowcss {
       position: relative;
       width: 90%;
       height: 30px;
+
       .email-box {
         position: absolute;
         width: 30%;
@@ -238,61 +339,73 @@
         left: 0;
         top: 0;
       }
+
       .birthday {
         position: absolute;
         width: 85px;
         left: 35%;
         top: 0;
       }
+
       .birthday::placeholder {
       }
+
       .gender {
         position: absolute;
         top: 0;
         left: 400px;
         width: 30%;
       }
-      .country-box{
+
+      .country-box {
         width: 25%;
         float: left;
 
       }
-      .city-box{
+
+      .city-box {
         margin-left: 10px;
         width: 20%;
         float: left;
       }
-      .state-box{
+
+      .state-box {
         margin-left: 10px;
         width: 15%;
         float: left;
       }
-      .badgeColor{
+
+      .badgeColor {
         width: 20px;
         position: absolute;
         left: 95px;
         background-color: red;
       }
+
       .badgeColor2 {
         width: 20px;
         position: absolute;
         left: 90px;
         background-color: red;
       }
+
       .password {
         position: absolute;
         width: 30%;
         right: 0;
       }
     }
-    .rowcss2{
+
+    .rowcss2 {
       width: 100%;
       height: auto;
+
       .TermsOfAgreement-box {
         height: 220px;
         width: 70%;
         background-color: gray;
       }
+
       .TermsOfAgreement-textbox {
         position: relative;
         top: 5px;
@@ -320,12 +433,14 @@
   height: 1100px;
   width: 100%;
 }
+
 .LeftMenu {
 
   background-color: #0392CF;
-  float:left;
+  float: left;
   width: 20%;
   height: 100%;
+
   .user-benefits-badge {
     margin-top: 70px;
     height: 80%;
@@ -338,95 +453,110 @@
   float: right;
   width: 80%;
   height: 100%;
+
   .signup-form-badge {
     margin-top: 70px;
     width: 80%;
     background-color: #0392CF;
+
     .images {
       position: relative;
       top: 0;
       left: 0;
       width: 100%;
       padding-top: 35%;
+
       .upload-preview {
-          width: 15%;
-          height: 15%;
-          max-height: 130px;
-          position: absolute;
-          left: 43%;
-          top:70px;
+        width: 15%;
+        height: 15%;
+        max-height: 130px;
+        position: absolute;
+        left: 43%;
+        top: 70px;
       }
-        .name-box {
-          height: 20px;
-          background-color: #9AD3EB;
-          border-radius: 0;
-          border-style: none;
-          color: white;
-          position: absolute;
-          top: 10px;
-          left: 41%;
-          width: 18%;
-        }
-        .name-box::placeholder {
-          color: white;
-        }
-        .username-box {
-          width: 18%;
-          height: 20px;
-          border-radius: 0;
-          border-style: none;
-          background-color: #9AD3EB;
-          position: absolute;
-          top: 40px;
-          left: 41%;
-          color: white;
-        }
-        .username-box::placeholder {
-          color: white;
-        }
-        .bio-box {
-          height: 22%;
-          width: 50%;
-          position: absolute;
-          bottom: 5px;
-          background-color: #9AD3EB;
-          left: 25%;
-          border-radius: 0;
-          border-style: none;
-          color: white;
-        }
-        .bio-box::placeholder {
-          color: white;
-        }
+
+      .name-box {
+        height: 20px;
+        background-color: #9AD3EB;
+        border-radius: 0;
+        border-style: none;
+        color: white;
+        position: absolute;
+        top: 10px;
+        left: 41%;
+        width: 18%;
+      }
+
+      .name-box::placeholder {
+        color: white;
+      }
+
+      .username-box {
+        width: 18%;
+        height: 20px;
+        border-radius: 0;
+        border-style: none;
+        background-color: #9AD3EB;
+        position: absolute;
+        top: 40px;
+        left: 41%;
+        color: white;
+      }
+
+      .username-box::placeholder {
+        color: white;
+      }
+
+      .bio-box {
+        height: 22%;
+        width: 50%;
+        position: absolute;
+        bottom: 5px;
+        background-color: #9AD3EB;
+        left: 25%;
+        border-radius: 0;
+        border-style: none;
+        color: white;
+      }
+
+      .bio-box::placeholder {
+        color: white;
+      }
+
       .left-header {
         position: absolute;
         width: 50%;
-        top:0;
+        top: 0;
         left: 0;
         height: 100%;
         overflow: hidden;
+
         .left-header-image {
           object-fit: fill;
           width: 100%;
         }
       }
+
       .right-header {
         position: absolute;
         width: 50%;
-        right:0;
+        right: 0;
         top: 0;
         height: 100%;
         overflow-y: scroll;
+
         .right-header-image {
           object-fit: fill;
           width: 100%;
         }
       }
     }
+
     .rowcss {
       position: relative;
       width: 90%;
       height: 30px;
+
       .email-box {
         position: absolute;
         width: 30%;
@@ -434,61 +564,73 @@
         left: 0;
         top: 0;
       }
+
       .birthday {
         position: absolute;
         width: 85px;
         left: 35%;
         top: 0;
       }
+
       .birthday::placeholder {
       }
+
       #user_gender {
         position: absolute;
         top: 0;
         left: 55%;
         width: 30%;
       }
-      .country-box{
+
+      .country-box {
         width: 25%;
         float: left;
 
       }
-      .city-box{
+
+      .city-box {
         margin-left: 10px;
         width: 20%;
         float: left;
       }
-      .state-box{
+
+      .state-box {
         margin-left: 10px;
         width: 15%;
         float: left;
       }
-      .badgeColor{
+
+      .badgeColor {
         width: 20px;
         position: absolute;
         left: 95px;
         background-color: red;
       }
+
       .badgeColor2 {
         width: 20px;
         position: absolute;
         left: 90px;
         background-color: red;
       }
+
       .password {
         position: absolute;
         width: 30%;
         right: 0;
       }
     }
-    .rowcss2{
+
+    .rowcss2 {
       width: 100%;
       height: auto;
+
       .TermsOfAgreement-box {
         height: 220px;
         width: 70%;
         background-color: gray;
       }
+
       .TermsOfAgreement-textbox {
         position: relative;
         top: 5px;

@@ -1,32 +1,51 @@
 <div class="musicPlayer">
   <div class="songDetails">
     <div class="songCover">
-      <img src="http://localhost:3000/fire.png" style="width:100%; height:100%;">
+      <img id="playerCoverImage" src="" class="playerCoverImage">
     </div>
-    <p id="songTitle">Song Title</p>
-    <p id="songSubGenre">Song Subgenre</p>
-    <p id="songGenre">Song Genre</p>
+      <div class="songArtist">
+        <p id="songInfo" style="font-size: 17px; display: block;"></p>
+        <div id="songArtistAvatar" style="display: block; margin-top: -8px;">
+        </div>
+    </div>
   </div>
-  <div class="audio-player border border-primary">
-    <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
-    <div class="seek-bar">
-      <div class="fill"></div>
-      <div class="handle"></div>
+  <div>
+    <div class="audio-player">
+      <button class="shuffle border border-dark" onclick="playPause()"><i id="play-icon" class="ion-shuffle"></i>
+      </button>
+      <button class="back border border-dark" onclick="playPause()"><i id="play-icon" class="ion-skip-backward"></i>
+      </button>
+      <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
+      <button class="skip_forward border border-dark" onclick="playPause()">
+        <i id="play-icon" class="ion-skip-forward"></i>
+      </button>
     </div>
-    <button id="broadcast_text" class="postButton" data-session="<%= current_user.id.to_json if logged_in? %>">Post
-      Broadcast
-    </button>
-    <button id="renderPlaylist" class="playlist-modal">Open modal</button>
-  </div>
-  <div class='audio-player border border-success'>
-    <button class="volume"><i class="ion-volume-high"></i></button>
-    <div class="volume_bar">
-      <div class="volume_fill"></div>
-      <div class="volume_handle"></div>
+    <div class='audio-player'>
+      <div class="seek-bar">
+        <div class="fill"></div>
+        <div class="handle"></div>
+      </div>
     </div>
-    <button class="skip_forward"><i class="ion-skip-forward"></i></button>
   </div>
   <div class="songDetails">
+  </div>
+  <div class="right_footer">
+    <div class="right_elements">
+      <button id="broadcast_text" class="broadcast border border-dark" data-session="<%= current_user.id.to_json if logged_in? %>">
+        <i id="play-icon" class="ion-wifi"></i>
+      </button>
+      <button id="renderPlaylist" class="playlist border border-dark">
+        <ion-icon name="list"></ion-icon>
+      </button>
+    </div>
+    <div class="right_elements">
+      <button class="volume"><i class="ion-volume-high"></i></button>
+      <div class="volume_bar">
+        <div class="volume_fill"></div>
+        <div class="volume_handle"></div>
+      </div>
+    </div>
+
   </div>
   <div id="audio-modal" class="modal-audio">
     <div class="modal-content-audio">

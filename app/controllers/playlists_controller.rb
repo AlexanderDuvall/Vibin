@@ -47,7 +47,8 @@ class PlaylistsController < ApplicationController
       render :json => {
           :song_url => url_for(@song.song_file),
           :username => User.find(@song.user_id).username,
-          :title => @song.title
+          :title => @song.title,
+          :cover => @song.cover_image
       }
     end
   end

@@ -1,0 +1,43 @@
+<div class="col-xs-3">
+  <hr/>
+
+  <%= f.fields_for :songs do |song| %>
+
+    <%= song.label :title %>
+    <%= song.text_field :title %>
+    <%= song.file_field :cover_image, accept: "image/png, image/jpeg" %>
+
+    <%= image_tag "MusicButton.png", style: "height:20px; width:20px;" %>
+    <%= song.file_field :song_file, accept: "audio/mp3" %>
+    <%= song.label :genre %>
+    <select name="song[genre]" id="song_genre" class="genres">
+      <option value="African" selected="selected">African</option>
+      <option value="Arabic">Arabic</option>
+      <option value="Asian">Asian</option>
+      <option value="East Asian">East Asian</option>
+      <option value="South Asian">South Asian</option>
+      <option value="Avant-garde">Avant-garde</option>
+      <option value="Blues">Blues</option>
+      <option value="Caribbean">Caribbean</option>
+      <option value="Classical">Classical</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Country">Country</option>
+      <option value="Dance">Dance</option>
+      <option value="Elevator Music">Elevator Music</option>
+      <option value="Electronic">Electronic</option>
+      <option value="Folk">Folk</option>
+      <option value="Hip-hop">Hip-hop</option>
+      <option value="Jazz">Jazz</option>
+      <option value="Latin">Latin</option>
+      <option value="Pop">Pop</option>
+      <option value="R&B">R&B</option>
+      <option value="Rock">Rock</option>
+    </select>
+    <%= song.label :subGenre %>
+    <%= song.text_field :subGenre %>
+
+    <%= song.label :premium %>
+    <%= song.check_box :premium %>
+  <% end %>
+
+</div>

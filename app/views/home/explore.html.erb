@@ -13,12 +13,13 @@
       <% @TopChart.each do |song| %>
         <div class="explore-TopChart-row">
           <div class="explore-TopChart-row-column">
-            <button class="playButton" onclick="SelectedSong(this, '<%=song.user.name%>' ,'<%= song.user.username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
+            <% user = getArtist(song) %>
+            <button class="playButton" onclick="SelectedSong(this, '<%=user.name%>' ,'<%= user.username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>','<%=url_for(song.cover_image) %>'); incrementPlays(<%= song.id %>, <%= user.id%>)">
               <%= image_tag (song.cover_image), class: "playButtonImage" %>
             </button>
           </div>
           <div class="explore-TopChart-info-column">
-            <p><%= song.user.name %></p>
+            <p><%= user.name %></p>
             <p><%= song.title %></p>
           </div>
         </div>
@@ -85,7 +86,7 @@
                     button.setAttribute("class", "playButton");
                     console.log(song.song_file)
                     button.addEventListener('click', event => {
-                        SelectedSong(this, String(song.name), String(song.username), String(song.title), true, parseInt(song.id), String(song.song_file));
+                        SelectedSong(this, String(song.name), String(song.username), String(song.title), true, parseInt(song.id), String(song.song_file), String(song.cover));
                         incrementPlays(parseInt(song.id), parseInt(song.user_id))
                     });
                     let img = document.createElement("img");

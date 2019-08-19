@@ -1,20 +1,31 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.infobadge{
+  display: block;
+  margin-top: 4px;
+  margin-right: 4px;
+  background-color: #e2e7f2;
+  color: #425173;
+  width: auto;
+  font-size: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
 .home{
   min-width: 1200px;
   min-height: 1000px;
 
   .userHomePage{
     min-width: 1200px;
-    height: 100px;
+    height: 1000px;
     .userBanner{
       position: fixed;
       top: 50px;
       height: 100px;
       min-width: 1000px;
       width: 100%;
-      background-color: cyan;
+      background-color: #c5cfe6;
       z-index: 555;
       .home-header-column-avatar {
         position: relative;
@@ -35,14 +46,25 @@
       .home-header-column-user{
         position: relative;
         float: left;
-        width: 140px;
+        margin-left: 5px;
         height: 100%;
+        .userbadge{
+          display: block;
+          margin-top: 8px;
+          background-color: #e2e7f2;
+          color: #425173;
+          font-size: 15px;
+          border-radius: 5px;
+          font-weight: bold;
+        }
       }
       .home-header-column-posts{
         position: relative;
         float: left;
+        margin-left: 8px;
         height: 100px;
         width: 200px;
+
         .postBadge{
           position: relative;
           float: left;
@@ -96,24 +118,22 @@
           height: 25px;
         }
       }
-      .post{
+      .postColumn{
         position: relative;
         float: left;
-        height: 100%;
+        margin-left: 10px;
+        height: 100px;
         width: 50px;
         .btn-post{
-          position: relative;
-          float: left;
-          background-color: white;
-          height: 50px;
-          width: 50px;
-        }
-        .btn-song{
-          position: relative;
-          float: left;
-          height: 50px;
-          width: 50px;
-          background-color: white;
+          display: block;
+          background-color: #e2e7f2;
+          height: 40px;
+          width: 40px;
+          margin-top: 5px;
+          color: #425173;
+          font-size: 15px;
+          border-radius: 5px;
+          font-weight: bold;
         }
       }
     }
@@ -125,7 +145,7 @@
     }
     .recommended{
       position: relative;
-      margin-top: 100px;
+      margin-top: 110px;
       float: left;
       width: 50%;
       .recommended-column{
@@ -143,9 +163,20 @@
             height: 180px;
             width:250px;
             border-style: dotted;
+            .recommendedUserAvatar{
+              height: 90px;
+              width: 90px;
+              border-radius: 45px;
+              border: thin;
+              border-width: thin;
+            }
           }
         }
         .recommendedUsers::-webkit-scrollbar {
+          width: 0px;
+          height: 0px;
+        }
+        .recommendedSongs::-webkit-scrollbar {
           width: 0px;
           height: 0px;
         }

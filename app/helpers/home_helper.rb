@@ -3,6 +3,19 @@ module HomeHelper
     session[:user_id] = user.id
   end
 
+  def getArtist(song)
+    if (!song.user_id.nil?)
+      song.user
+    elsif (!song.album_id.nil?)
+      song.album.user
+    elsif (!song.playlist_id.nil?)
+      song.playlist.user
+    else
+      puts"bad record...."
+      nil
+    end
+  end
+
   def current_user
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)

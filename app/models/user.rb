@@ -183,13 +183,14 @@ class User < ActiveRecord::Base
   end
 
   def User.openConn
-    ip =  ENV["Broadcasting_Server"]
+    ip = ENV["Broadcasting_Server"]
     port = 4447
     conn = TCPSocket.open(ip, port)
     conn
   end
 
   private
+
   def create_activation_digest
     # Creates and assigns the activation token and digest
     self.activation_token = User.new_token

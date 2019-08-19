@@ -3,33 +3,48 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .postLeft{
-  width: 25%;
+  margin-top: 5px;
+  max-width: 150px;
   position: relative;
+  float: left;
 }
 
 .postCenter{
-  width:60%;
+  min-width: 150px;
+  max-width: calc(100% - 240px);
+  position: relative;
+  float: left;
+}
+
+.imagePost{
+  max-height: 300px;
+  display: inline-block;
 }
 
 .postRight{
-  width: 15%;
+  max-width: 90px;
+  position: relative;
+  float: left;
 }
 
 .post-ava {
-  position: absolute;
-  bottom: 20px;
-  left: 5px;
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
+  display: block;
+  height: 90px;
+  width: 90px;
+  border-radius: 50px;
   border-color: white;
   border-style: solid;
 }
 .post {
-  background-color: #b3ffb3;
-  width: 90%;
-  margin-bottom: 5px;
-  height: 150px;
+  display: block;
+  overflow: hidden;
+  background-color: #4d7ce3;
+  width: 100%;
+  margin-bottom: 10px;
+  min-height: 150px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #C2D5E3;
 }
 .post-image{
   height:105%;
@@ -48,31 +63,6 @@
   //position: relative;
 }
 
-
-
-.img-post {
-  -webkit-transition: all .2s ease;
-  -moz-transition: all .2s ease;
-  -ms-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
-}
-
-.img-post:hover {
-  transform: scale(4, 4);
-  -ms-transform: scale(4, 4); /* IE 9 */
-  -moz-transform: scale(4, 4); /* Firefox */
-  -webkit-transform: scale(4, 4); /* Safari and Chrome */
-  border-radius: 0;
-
-  -o-transform: scale(4, 4); /* Opera */
-  z-index: 1;
-  //position: relative;
-}
-.imageclass:hover {
-  height: 50%;
-  width: 50%;
-}
 .form-content{
 
   border-radius:5px;

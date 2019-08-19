@@ -2,7 +2,8 @@ class Song < ApplicationRecord
   #include Elasticsearch::Model
   #include Elasticsearch::Model::Callbacks
   searchkick
-
+  validates :title, presence: true, length: {maximum: 40}
+  validates :premium, default: false
   has_one_attached :song_file
   has_one_attached :cover_image
   belongs_to :user, optional: true
@@ -13,9 +14,7 @@ class Song < ApplicationRecord
   has_many :songlikes
   has_many :user_song_play_counter
   has_one :total_song_play
-  validates :premium, default: false
   belongs_to :post, optional: true
-  validates :title, presence: true, length: {maximum: 40}
 
 
   def Song.likeMusic?(song)

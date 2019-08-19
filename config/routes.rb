@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount ActionCable.server, at: '/cable'
+ #mount ActionCable.server, at: '/cable'
   resources :users do
     member do
       get :following, :followers, :autocomplete
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :password_resets
   resources :broadcasters
   resources :messages, only: [:new, :create]
-  resources :conversations, only: [:index, :show, :search, :new]
+ # resources :conversations, only: [:index, :show, :search, :new]
   resources :songs, only: [:create, :destroy]
   resources :songs do
     resource :like, module: :songs

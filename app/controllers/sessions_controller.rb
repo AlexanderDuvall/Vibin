@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       if user.activated?
         log_in user
+        puts "logged in"
         cookies[:current_user_id] = user.id
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
         redirect_to root_url
@@ -17,7 +18,7 @@ class SessionsController < ApplicationController
         render 'user_mailer/account_activation'
       end
     else
-      flash.now[:danger] = 'Invalid email/password combination'
+      puts 'Invalid email/password combination'
       render 'new'
     end
 end

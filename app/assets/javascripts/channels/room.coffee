@@ -1,3 +1,4 @@
+###
 App.room = App.cable.subscriptions.create "RoomChannel",
   connected: ->
     #called  when the subscription is ready for use on the server
@@ -27,3 +28,4 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 #scroll_bottom = () ->
 #  console.log(";p;")
 #  $('#messages').scrollTop($('#messages')[0].scrollHeight)
+###

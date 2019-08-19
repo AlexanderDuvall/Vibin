@@ -88,7 +88,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = Post.all.where("user_id = ?", @user)
-    if current_user.user_song_play_counters
+    if !current_user.user_song_play_counters.nil?
       @favoriteArtists = current_user.user_artist_play_counters.limit(5).order(plays: :desc)
       @favoriteSongs = current_user.user_song_play_counters.limit(5).order(plays: :desc)
     end

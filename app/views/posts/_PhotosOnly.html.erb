@@ -23,7 +23,7 @@
     </div>
     <div class="col-xs-2  ml-auto border border-dark " style="width: 10%;">
       <% if post.user_id != current_user.id %>
-        <%= link_to "Repost", repost_post_path(post), method: :post%>
+        <%= link_to "Repost", post_repost_path(post), method: :post%>
         <p id="post_<%= post.id %>_likes"><%= render partial: "/posts/likes", locals: {post: post} %></p>
       <% end %>
       <p style="font-size:8px; float:right;"><%= post.updated_at %></p>

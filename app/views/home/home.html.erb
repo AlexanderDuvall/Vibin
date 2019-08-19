@@ -12,58 +12,58 @@
         </div>
         <div class="home-header-column-user">
           <h7>
-            <span class="badge badge-primary text-wrap"><%= @user.name %></span>
-            <span class="badge badge-primary text-wrap"><%= link_to "@" + @user.username, user_path(@user.id), class: "links" %></span>
-            <span class="badge badge-primary text-wrap"> <%= @user.city %>, <%= @user.state %></span>
+            <span class="userbadge"><%= @user.name %></span>
+            <span class="userbadge"><%= link_to "@" + @user.username, user_path(@user.id), class: "links", style: "color: #425173;" %></span>
+            <span class="userbadge"> <%= @user.city %>, <%= @user.state %></span>
           </h7>
         </div>
         <div class="home-header-column-posts">
           <center>
             <div class="postBadge">
               <h5>
-                <span class="badge badge-primary">Posts</span>
+                <span class="infobadge">Posts</span>
               </h5>
             </div>
             <div class="songBadge">
               <h5>
-                <span class="badge badge-primary">Songs</span>
+                <span class="infobadge">Songs</span>
               </h5>
             </div>
             <div class="postsTotal">
               <h5>
-                <span class="badge badge-primary"> <%= @user.posts.count %> </span>
+                <span class="infobadge"> <%= @user.posts.count %> </span>
               </h5>
             </div>
             <div class="songsTotal">
               <h5>
-                <span class="badge badge-primary"> <%= @user.songs.count %> </span>
+                <span class="infobadge"> <%= @user.songs.count %> </span>
               </h5>
             </div>
             <div class="followersBadge">
               <h5>
-                <span class="badge badge-primary">Followers</span>
+                <span class="infobadge">Followers</span>
               </h5>
             </div>
             <div class="followingBadge">
               <h5>
-                <span class="badge badge-primary">Followings</span>
+                <span class="infobadge">Followings</span>
               </h5>
             </div>
             <div class="followersTotal">
               <h5>
-                <span class="badge badge-primary" onclick="sendTheAJAX('<%= followers_user_path(@user)%>', '')"><%= @user.followers.count %></span>
+                <span class="infobadge" onclick="sendTheAJAX('<%= followers_user_path(@user)%>', '')"><%= @user.followers.count %></span>
               </h5>
             </div>
             <div class="followingTotal">
               <h5>
-                <span class="badge badge-primary" onclick="sendTheAJAX('<%= following_user_path(@user) %>', '')"><%= @user.following.count %></span>
+                <span class="infobadge" onclick="sendTheAJAX('<%= following_user_path(@user) %>', '')"><%= @user.following.count %></span>
               </h5>
             </div>
           </center>
         </div>
-        <div class="post">
+        <div class="postColumn">
           <a class="btn-post" data-remote="true" href="/posts/new" id='butt'>Post</a>
-          <a class="btn-song" data-remote="true" href="/songs/new" id='butt1'>Song</a>
+          <a class="btn-post" data-remote="true" href="/songs/new" id='butt1'>Song</a>
         </div>
       </div>
       <div class="userfeed">
@@ -93,7 +93,7 @@
         </center>
       </div>
     </div>
-    <%= will_paginate @combine %>
+    <%= will_paginate @combine, style: "display: none;" %>
   <% else %>
     <!-- Welcome to Vibin First Impression -->
     <div class="topRow">
@@ -172,7 +172,7 @@
               </div>
               <div class="topChart-cover-column">
                 <center>
-                  <button class="playButton" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
+                  <button class="playButton" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>', '<%=url_for(song.cover_image) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
                     <%= image_tag (song.cover_image), class: "playButtonImage" %>
                   </button>
                 </center>

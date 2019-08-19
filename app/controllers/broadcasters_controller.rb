@@ -11,7 +11,7 @@ class BroadcastersController < ApplicationController
   end
 
   def update
-    broadcaster = Broadcaster.find(params[:id])
+    broadcaster = Broadcaster.find_by(:user_id => params[:id]) # error here
     if broadcaster
       if broadcaster.update_attributes(update_params)
         flash[:success] = "Broadcast updated"

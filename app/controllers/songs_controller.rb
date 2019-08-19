@@ -44,37 +44,39 @@ class SongsController < ApplicationController
   end
 
   def incrementSongPlays
-    @artistCounter = UserArtistPlayCounter.where(user_id: current_user, artist_id: params[:artist_id]).first_or_create
-    @songCounter = UserSongPlayCounter.where(user_id: current_user, song_id: params[:id]).first_or_create
-    if @songCounter.plays == ""
-      puts "null"
-      @songCounter.plays = 1
-    else
-      puts "increment"
-      @songCounter.increment!(:plays)
+    if current_user.present?
+      @artistCounter = UserArtistPlayCounter.where(user_id: current_user, artist_id: params[:artist_id]).first_or_create
+      @songCounter = UserSongPlayCounter.where(user_id: current_user, song_id: params[:id]).first_or_create
+      if @songCounter.plays == ""
+        puts "null"
+        @songCounter.plays = 1
+      else
+        puts "increment"
+        @songCounter.increment!(:plays)
+      end
+      if @artistCounter.plays == ""
+        puts "null"
+        @artistCounter.plays = 1
+      else
+        puts "increment"
+        @artistCounter.increment!(:plays)
+      end
+      puts "*******"
+      puts "*******"
+      puts "*******"
+      puts params[:id]
+      puts "*******"
+      puts "*******"
+      puts "*******"
+      song = Song.find(params[:id])
+      if song.present?
+        song.increment!(:plays)
+        puts song.plays
+      end
+      puts "*******"
+      puts "*******"
+      puts "*******"
     end
-    if @artistCounter.plays == ""
-      puts "null"
-      @artistCounter.plays = 1
-    else
-      puts "increment"
-      @artistCounter.increment!(:plays)
-    end
-    puts "*******"
-    puts "*******"
-    puts "*******"
-    puts params[:id]
-    puts "*******"
-    puts "*******"
-    puts "*******"
-    song = Song.find(params[:id])
-    if song.present?
-      song.increment!(:plays)
-      puts song.plays
-    end
-    puts "*******"
-    puts "*******"
-    puts "*******"
   end
 
   def edit

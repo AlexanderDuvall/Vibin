@@ -4,23 +4,35 @@ $hover-color: #25a805;
 .musicPlayer {
   height: 100px;
   width: 100%;
+  background-color: #5d7ca6;
+  display: flex;
+  align-items: center;
 
   .songDetails {
     position: relative;
     float: left;
     height: 100%;
-    width: 25%;
-    background-color: green;
+    min-width: 300px;
 
     .songCover {
       position: relative;
       float: left;
       height: 100%;
       width: 100px;
-      background-color: yellow;
+      margin-right: 5px;
+    }
+    .songArtist{
+      position: relative;
+      float: left;
     }
   }
-
+  .songArtistAvatarImage{
+    height: 35px;
+    width: 35px;
+    border-radius: 20px;
+    border-color: white;
+    border: thin;
+  }
   .userDetails {
     position: relative;
     float: left;
@@ -28,27 +40,36 @@ $hover-color: #25a805;
     height: 100%;
     background-color: blue;
   }
+
 }
 
+.playerCoverImage {
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 90px;
+  height: 90px;
+  border: none;
+}
+
+
+
 .postLeft {
-  width: 25%;
-  position: relative;
+  margin-top: 5px;
 }
 
 .postCenter {
-  width: 60%;
+  min-width: calc(100% - 240px);
 }
 
 .postRight {
-  width: 15%;
+  min-width: 90px;
 }
 
 .post-ava {
-  display: inline-block;
-  overflow: hidden;
-  height: 50%;
-  width: 50%;
-  border-radius: 50%;
+  display: block;
+  height: 90px;
+  width: 90px;
+  border-radius: 50px;
   border-color: white;
   border-style: solid;
 }
@@ -65,25 +86,24 @@ $hover-color: #25a805;
 }
 
 .playButton {
-  height: 90px;
-  width: 90px;
-  border-style: solid;
-  border-color: white;
-  background-color: inherit;
+  height: 140px;
+  width: 140px;
 }
 
 .playButtonImage {
-  height: 90px;
-  width: 90px;
+  height: 140px;
+  width: 140px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: white;
+  background-color: inherit;
 }
-
 
 .audio-player {
   display: flex;
   align-items: center;
   width: 600px;
-  height: 90px;
-  background-color: red;
+  background-color: #5d7ca6;
   margin: auto;
 
   button.playlist-modal {
@@ -96,26 +116,9 @@ $hover-color: #25a805;
 
   button.play {
     display: block;
+    margin-left: 10px;
     width: 50px;
     height: 50px;
-    border: 0;
-    background-color: $blue;
-    color: white;
-    font-size: 30px;
-    border-radius: 100000px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $hover-color;
-    }
-  }
-
-  button.broadcast {
-    margin-left: 10px;
-    margin-top: -130px;
-    display: block;
-    width: 46px;
-    height: 46px;
     border: 0;
     background-color: $blue;
     color: white;
@@ -138,11 +141,12 @@ $hover-color: #25a805;
 
   .seek-bar {
     width: 400px;
+    margin-top: 10px;
     background-color: #730E15;
     display: flex;
     border-radius: 100000px;
     cursor: pointer;
-    margin-left: 15px;
+    margin-left: 90px;
     height: 7px;
     paddinng-right: 5px;
 
@@ -153,11 +157,12 @@ $hover-color: #25a805;
     }
 
     .handle {
-      width: 10px;
-      height: 10px;
+      width: 7px;
+      height: 7px;
       background-color: $blue;
       border-radius: 100000px;
       margin-left: -5px;
+      margin-bottom: 30px;
       transform: scale(2);
       transition: all 0.1s;
 
@@ -169,12 +174,8 @@ $hover-color: #25a805;
   }
 
   button.volume {
-    margin-left: 140px;
-    margin-top: -125px;
-    display: block;
     width: 46px;
     height: 46px;
-    border: 0;
     background-color: $blue;
     color: white;
     font-size: 30px;
@@ -188,10 +189,9 @@ $hover-color: #25a805;
 
   button.skip_forward {
     margin-left: 10px;
-    margin-top: -125px;
     display: block;
-    width: 46px;
-    height: 46px;
+    width: 50px;
+    height: 50px;
     border: 0;
     background-color: $blue;
     color: white;
@@ -204,46 +204,140 @@ $hover-color: #25a805;
     }
   }
 
-  .volume_bar {
-    margin-top: -125px;
-    margin-left: 15px;
-    width: 150px;
-    background-color: #730E15;
-    display: flex;
-    align-items: center;
+  button.back {
+    margin-left: 10px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background-color: $blue;
+    color: white;
+    font-size: 30px;
     border-radius: 100000px;
     cursor: pointer;
-    height: 7px;
 
-
-    .volume_fill {
-      height: 7px;
-      background-color: $blue;
-      border-radius: 100000px;
+    &:hover {
+      background-color: $hover-color;
     }
+  }
 
-    .volume_handle {
-      width: 10px;
-      height: 10px;
+  button.shuffle {
+    margin-left: 25%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background-color: $blue;
+    color: white;
+    font-size: 30px;
+    border-radius: 100000px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+}
+
+button.volume {
+  width: 50px;
+  height: 50px;
+  background-color: $blue;
+  color: white;
+  border: 0;
+  font-size: 30px;
+  border-radius: 100000px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+.right_footer {
+  float: right;
+  width: 200px;
+  .right_elements {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    button.broadcast {
+      display: block;
+      width: 43px;
+      height: 43px;
+      margin-left: 30px;
+      border: 0;
       background-color: $blue;
+      color: white;
+      font-size: 30px;
       border-radius: 100000px;
-      margin-left: -5px;
-      transform: scale(2);
-      transition: all 0.1s;
+      cursor: pointer;
 
       &:hover {
         background-color: $hover-color;
-        transform: scale(3);
+      }
+    }
+    button.playlist {
+      display: block;
+      width: 43px;
+      height: 43px;
+      margin-left: 10px;
+      border: 0;
+      background-color: $blue;
+      color: white;
+      font-size: 30px;
+      border-radius: 100000px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+    .volume_bar {
+      margin-left: 15px;
+      width: 150px;
+      background-color: #730E15;
+      display: flex;
+      align-items: center;
+      border-radius: 100000px;
+      cursor: pointer;
+      height: 7px;
+
+      .volume_fill {
+        height: 7px;
+        background-color: $blue;
+        border-radius: 100000px;
+      }
+
+      .volume_handle {
+        width: 10px;
+        height: 10px;
+        background-color: $blue;
+        border-radius: 100000px;
+        margin-left: -5px;
+        transform: scale(2);
+        transition: all 0.1s;
+
+        &:hover {
+          background-color: $hover-color;
+          transform: scale(3);
+        }
       }
     }
   }
 }
 
 .song {
-  background-color: #26F5DB;
-  width: 90%;
-  margin-bottom: 5px;
-  height: 150px;
+  background-color: #7096e8;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 10px;
+  min-height: 150px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #C2D5E3;
 }
 
 .genres {

@@ -34,6 +34,17 @@ body {
   min-height: 1000px;
 }
 
+a {
+  text-decoration:none;
+}
+
+a:hover {
+  background-color: inherit;
+  text-decoration: none;
+  color: white;
+}
+
+
 //
 ////
 ////// Nav bar
@@ -43,7 +54,7 @@ body {
 .navbar {
   position: fixed;
   z-index: 999;
-  background-color: #ffdbdb;
+  background-color: #99abd3;
   top: 0;
   width: 100%;
   min-width: 600px;
@@ -51,36 +62,48 @@ body {
   .VibinTab {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 60px;
+    left: 10px;
+    width: 80px;
     height: 50px;
   }
   .ExploreTab {
     position: fixed;
     top: 0;
-    left: 60px;
+    left: 90px;
     width: 60px;
     height: 50px;
   }
   .GroupiesTab {
     position: fixed;
     top: 0;
-    left: 120px;
+    left: 150px;
     height: 50px;
     width: 60px;
   }
   .SearchBar {
     position: fixed;
-    top: 0;
-    left:220px;
-    height: 50px;
+    top: 5px;
+    left:230px;
+    height: 40px;
     width: 250px;
+    border-radius: 5px;
   }
   .MessagesTab {
     position: relative;
     float: left;
     height: 100%;
     width: 50px;
+  }
+  .messages{
+    height: 45px;
+    width: 45px;
+    margin-top: 3px;
+  }
+
+  .notification{
+    height: 45px;
+    width: 100%;
+    margin-top: 3px;
   }
 
   .NotificationTabDiv:hover .dropdown-content-notification {
@@ -400,4 +423,14 @@ body {
   margin-bottom: 5px;
   height: 350px;
   margin-left: 57px;
+}
+
+.playerAvatarImage {
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 40px;
+  height: 40px;
+  border: thin;
+  border-radius: 20px;
+  border-color: white;
 }

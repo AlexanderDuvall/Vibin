@@ -4,11 +4,11 @@ let mouseDownSeek = false;
 let mouseDownVolume = false;
 let isMute = false;
 var broadcasting = false;
-var listening = false;
 let lastTime = 0;
 var playButton = null;
 var update = false;
 var currentBroadcaster = null;
+
 window.addEventListener("DOMContentLoaded", function (e) {
     //var username = document.querySelector("#usernameSong");
     //username.innerHTML = "";
@@ -106,9 +106,10 @@ window.addEventListener("DOMContentLoaded", function (e) {
             console.log("TIME UPDATE: " + currentTime + " vs " + lastTime);
             lastTime = currentTime;
 
-            requestData(function (results) {
-                listenerCallback(results);
-            }, currentBroadcaster);
+            requestData(
+                function (results) {
+                    listenerCallback(results);
+                }, currentBroadcaster);
         }
     });
 
@@ -177,16 +178,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
     });
 });
 
-function playPause() {
-    console.log("play button clicked");
-    if (audio.paused) {
-        audio.play();
-    } else {
-        if (isBroadcasting())
-            sendData(null, "Pause");
-        audio.pause();
-    }
-}
 
 function incrementPlays(id, artist_id) {
     console.log(id + "in incrementPlays");
@@ -201,4 +192,15 @@ function incrementPlays(id, artist_id) {
         },
         dataType: "script",
     });
+}
+
+function playPause() {
+    console.log("play button clicked");
+    if (audio.paused) {
+        audio.play();
+    } else {
+        if (isBroadcasting())
+            sendData(null, "Pause");
+        audio.pause();
+    }
 }

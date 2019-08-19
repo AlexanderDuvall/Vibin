@@ -40,9 +40,8 @@ ActiveRecord::Schema.define(version: 2019_07_27_222620) do
   end
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "musiclist"
     t.string "title"
-    t.string "message"
+    t.string "context"
     t.integer "user_id"
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
@@ -164,8 +163,8 @@ ActiveRecord::Schema.define(version: 2019_07_27_222620) do
   create_table "songlikes", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "song_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["song_id"], name: "index_songlikes_on_song_id"
     t.index ["user_id"], name: "index_songlikes_on_user_id"
   end
@@ -174,7 +173,6 @@ ActiveRecord::Schema.define(version: 2019_07_27_222620) do
     t.string "title"
     t.string "text"
     t.string "genre"
-    t.integer "albums_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "plays", default: 0
@@ -220,13 +218,13 @@ ActiveRecord::Schema.define(version: 2019_07_27_222620) do
     t.datetime "updated_at", null: false
     t.boolean "Terms_of_Agreement", default: true
     t.string "remember_digest"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
     t.boolean "Verified", default: false
     t.string "city"
     t.string "state"
