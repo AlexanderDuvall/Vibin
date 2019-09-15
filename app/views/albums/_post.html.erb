@@ -1,0 +1,34 @@
+<center>
+  <div class="post" id="<%= album.id %>">
+    <div class="postLeft">
+      <% if album.user.avatar.attached? %>
+        <%= image_tag (album.user.avatar), class: "post-ava" %>
+      <% else %>
+        <img src="http://localhost:3000/default-avatar.jpg" class='post-ava'>
+      <% end %>
+      <span style="color: white; display: block; font-size: 15px;"><%= album.user.name %></span>
+      <%= link_to "@" + album.user.username, user_path(album.user_id), onclick: "sendTheAJAX('users', #{album.user_id})", style: "color: white;" %>
+    </div>
+    <div class="postCenter">
+      <div style="margin-left: 4px; display: block; overflow: hidden;" id="content">
+        <p style="font-size:18px; text-align: left;"><%= album.title %></p>
+      </div>
+      <div style="display: block; overflow: hidden;">
+        <% if album.album_cover.attached? %>
+          <%= image_tag (album.album_cover), class: "imagePost" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="postRight">
+      <p style="color: white;"><%= album.updated_at.month %>/<%= album.updated_at.day %>/<%= album.updated_at.year %>
+        <br><%= age(Time.now, album.updated_at) %></p>
+      <% if album.user_id != current_user.id %>
+        <%= link_to "Repost", post_repost_path(album), method: :post %>
+        <div id="post_<%= album.id %>_likes"><%= render partial: "/posts/likes", locals: {post: album} %></div>
+      <% else %>
+        <p><%= link_to "delete", album, method: :delete,
+                       data: {confirm: "You sure?"}, remote: true, class: "delete", id: album.id %></p>
+      <% end %>
+    </div>
+  </div>
+</center>

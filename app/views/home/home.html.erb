@@ -76,7 +76,24 @@
             <div class="recommendedUsers">
               <% @recommendedUsers.each do |user| %>
                 <div class="recommendedUser">
-                  <%= user.id %>
+                  <div class="recommendedUserTop">
+                    <img src="http://localhost:3000/default-avatar.jpg" style="width: 30px; height: 30px;">
+                    <%= user.name %>
+                  </div>
+                  <div class="recommendedUserMiddle">
+                    <img src="http://localhost:3000/default-avatar.jpg" class="recommendedUserFav">
+                    <% if user.avatar.attached? %>
+                      <%= image_tag (user.avatar), class: "recommendedUserAvatar" %>
+                    <% else %>
+                      <img src="http://localhost:3000/default-avatar.jpg" class="recommendedUserAvatar">
+                    <% end %>
+                  </div>
+                  <div class="recommendedUserMiddle">
+
+                    <div class="recommendedUserInfo">
+                      <p style="text-align: center;">@<%= user.username %> <br><%= user.city %></p>
+                    </div>
+                  </div>
                 </div>
               <% end %>
             </div>

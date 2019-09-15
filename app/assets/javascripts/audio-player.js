@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
     };
     window.onclick = function (event) {
         if (event.target == modal) {
-            modal.style.display = "none";
+            modal.style.display = "hidden";
         }
     };
     skipForward.addEventListener('click', function () {

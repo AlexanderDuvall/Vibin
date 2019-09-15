@@ -1,18 +1,25 @@
 module HomeHelper
-  def log_in(user)
-    session[:user_id] = user.id
+
+  def age(x, y)
+    difference = (x - y) / 60
+    if (difference > 60)
+      difference = difference / 60
+      if (difference > 24)
+        difference = difference / 24
+        return "#{difference.floor} days"
+      else
+        return "#{difference.floor} hrs"
+      end
+    else
+      return "#{difference.floor} mins."
+    end
   end
 
-  def getArtist(song)
-    if (!song.user_id.nil?)
-      song.user
-    elsif (!song.album_id.nil?)
-      song.album.user
-    elsif (!song.playlist_id.nil?)
-      song.playlist.user
+  def conversation(current_user, other)
+    if @convo = Conversation.where(sender_id: current_user, receiver_id: other).first
+      "existing dm"
     else
-      puts"bad record...."
-      nil
+      "new convo"
     end
   end
 
@@ -28,13 +35,36 @@ module HomeHelper
     end
   end
 
-  def conversation(current_user, other)
+  def dayYear(x)
+    return "#{x.day}, #{x.year}"
+  end
 
-    if @convo = Conversation.where(sender_id: current_user, receiver_id: other).first
-      "existing dm"
+  def getUserFavArtist(user_id)
+    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!lol"
+#    favArtist = User_artist_play_counter.find_by("user_id": 97).order("plays": :desc)
+    #puts favArtist
+    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+  end
+
+  def getUserFavSong(user_id)
+
+  end
+
+  def getArtist(song)
+    if (!song.user_id.nil?)
+      song.user
+    elsif (!song.album_id.nil?)
+      song.album.user
+    elsif (!song.playlist_id.nil?)
+      song.playlist.user
     else
-      "new convo"
+      puts"bad record...."
+      nil
     end
+  end
+
+  def log_in(user)
+    session[:user_id] = user.id
   end
 
   def month(x)
@@ -67,22 +97,5 @@ module HomeHelper
     return "#{month}"
   end
 
-  def dayYear(x)
-    return "#{x.day}, #{x.year}"
-  end
 
-  def age(x, y)
-    difference = (x - y) / 60
-    if (difference > 60)
-      difference = difference / 60
-      if (difference > 24)
-        difference = difference / 24
-        return "#{difference.floor} days"
-      else
-        return "#{difference.floor} hrs"
-      end
-    else
-      return "#{difference.floor} mins."
-    end
-  end
 end

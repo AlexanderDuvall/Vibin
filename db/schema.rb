@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_27_222620) do
+ActiveRecord::Schema.define(version: 2019_08_28_172045) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -180,7 +180,7 @@ ActiveRecord::Schema.define(version: 2019_07_27_222620) do
     t.bigint "album_id"
     t.integer "user_id"
     t.integer "playlist_id"
-    t.string "subGenre", null: false
+    t.string "subGenre"
     t.index ["album_id"], name: "index_songs_on_album_id"
     t.index ["playlist_id"], name: "index_songs_on_playlist_id"
     t.index ["user_id"], name: "index_songs_on_user_id"

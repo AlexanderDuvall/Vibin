@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   before_create :set_confirmation_token, :create_activation_digest
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
-  has_many :songs
   has_one :broadcaster
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
@@ -34,7 +33,7 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true, length: {minimum: 6}, allow_nil: true
   has_many :albumlikes
   has_many :favorites
-  has_many :songs, dependent: :destroy
+  has_many :songs, inverse_of: :user, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :likes
   has_many :messages, dependent: :destroy

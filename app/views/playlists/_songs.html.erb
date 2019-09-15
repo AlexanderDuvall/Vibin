@@ -3,8 +3,8 @@
     <% @song_pos = Get_Positions() %>
     <div id="playlists" class="list-group data-url" data-url="<%= sort_playlists_path %>">
       <% unless @song_pos.nil? %>
-        <% @song_pos.each_with_index do |song_position, index| %>
-          <div class="list-group-item list-item" id='<%= dom_id(song_position) %>' onclick="setNewPlaylistSong(<%=song_position.song_id%>)">
+        <% @song_pos.each do |song_position| %>
+          <div class="list-group-item list-item" id='<%= dom_id(song_position) %>' onclick="setNewPlaylistSong(<%= song_position.position.to_json%>)">
             <% @songdata = link_to_song song_position %>
             <img src='<%= url_for @songdata.cover_image %>' style="width: 40px; height: 40px;"/>
             <h6><%= @songdata.title %></h6>

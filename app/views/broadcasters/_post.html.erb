@@ -1,34 +1,24 @@
-<div class="row broadcaster" id="<%= broadcaster.id %>">
-  <div class="postLeft justify-content-center text-center ">
-    <div style="position:absolute; margin-top:20px;">
-      <% %>
+<center>
+<div class="broadcaster" id="<%= broadcaster.id %>">
+  <div class="broadcasterLeft">
       <% if broadcaster.user.avatar.attached? %>
-        <%= image_tag (broadcaster.user.avatar), class: "post-ava" %>
+        <%= image_tag (broadcaster.user.avatar), class: "broadcaster-ava" %>
       <% else %>
-        <img src="http://localhost:3000/default-avatar.jpg" class="post-ava">
+        <img src="http://localhost:3000/default-avatar.jpg" class="broadcaster-ava">
       <% end %>
-      <h6 style="margin:0; padding:0;">
-        <span class="badge badge-primary"><%= User.find(broadcaster.user_id).name %></span>
-      </h6>
-      <h6 style="margin:0; padding:0;">
-        <span class="badge badge-primary"><%= link_to "@" + User.find(broadcaster.user_id).username, user_path(broadcaster.user_id), onclick: "sendTheAJAX('users', #{broadcaster.user_id})" %></span>
-      </h6>
-    </div>
+      <span style="color: white; display: block; font-size: 15px;"><%= User.find(broadcaster.user_id).name %></span>
+      <%= link_to "@" + User.find(broadcaster.user_id).username, user_path(broadcaster.user_id), onclick: "sendTheAJAX('users', #{broadcaster.user_id})", style: "color: white;"%>
   </div>
-  <div class="postCenter justify-content-center broadcast_cover_area">
-    <br/>
-    <%= image_tag (broadcaster.broadcast_cover), class: "broadcast_cover", onclick: "newBroadcaster(#{broadcaster.id})" %>
-
+  <div class="broadcasterCenter">
+    <%= image_tag (broadcaster.broadcast_cover), class: "imageBroadcast", onclick: "newBroadcaster(#{broadcaster.id})" %>
     <h3 style="color:white" onclick="newBroadcaster(1)">Join my Stream!</h3>
   </div>
-  <div class="postRight">
-    <div class="" style="float:right;">
+  <div class="broadcasterRight">
       <p><%= month(broadcaster.updated_at) %><br><%= dayYear(broadcaster.updated_at) %>
         <br><%= age(Time.now, broadcaster.updated_at) %></p>
-    </div>
   </div>
 </div>
-
+</center>
 <script>
     function newBroadcaster(id) {
         console.log("We've been clicked... going to stream..." + id);

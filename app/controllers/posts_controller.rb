@@ -36,9 +36,9 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
     respond_to do |format|
       if @post.save!
-        format.js
+        format.js #FIX ME not rendering 
         puts "skipping js?"
-        format.html {redirect_to @post, notice: 'Post was successfully created.'}
+        format.html {redirect_to root_url, notice: 'Post was successfully created.'}
         format.json {render :show, status: :created, location: @post}
       else
         format.html {render :new}

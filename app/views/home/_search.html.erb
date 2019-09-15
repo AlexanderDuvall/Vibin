@@ -1,38 +1,46 @@
+<!---
+  Need url with search parameters
 
-<div class="row">
-  <div class="col" style="overflow-y: auto; height:500px;">
-    <p>Users</p>
-<% @searchUsers.each do |user| %>
-<div class="row">
-  <div class="col-xs-4">
-    <% if user.avatar.attached? %>
-      <%= image_tag (user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
-    <% else %>
-      <img src="/default-avatar.jpg" class="search-ava" >
-    <% end %>
+-->
+<div id="search" class="border border-primary" style="height: 1000px; position: fixed; top:50px; left: 0; width: 100%;">
+  <div class="container-fluid">
+    <div class="row border border-primary">
+      <div class="col">
+      <div class="row">
+        <p>Users</p>
+      </div>
+      <div class="row" style="overflow-y: auto; height:150px; min-width: 100px; max-width: 150px;">
+      <% @searchUsers.each do |user| %>
+        <div class="row">
+        <div class="col">
+          <p>lol</p>
+        </div>
+        <div class="col">
+        <% if user.avatar.attached? %>
+          <%= image_tag (user.avatar), style: "width:100px; height:100px; object-fit:cover;" %>
+        <% else %>
+          <img src="/default-avatar.jpg" style="height: 40px; width: 40px;" >
+        <% end %>
+        </div>
+        <div class="col">
+          <p> lamo</p>
+        </div>
+      </div>
+      <hr>
+      <% end %>
+    </div>
   </div>
-  <div class="col-xs-4">
-      <p><%= user.name %><br>
-      <span  onclick="sendTheAJAX('users','<%= user.id%>')">@<%= user.username %></p></span>
+    <div class="col border border-primary">
+      <p>Songs</p>
+        <% @searchSongs.each do |song| %>
+          <%= render partial: "songs/song", locals: {song: song} %>
+        <% end %>
+    </div>
+    <div class="col border border-primary">
+      <p>Posts</p>
+      <% @searchPosts.each do |post| %>
+        <%= render partial: "posts/#{post.post_type}", locals: {post: post} %>
+      <% end %>
+    </div>
   </div>
-  <div class="col-xs-4">
-    <button >Quick View</button>
-  </div>
-</div>
-<hr>
-<% end %>
-</div>
-<div class="col border border-primary">
-  <p>Songs</p>
-<% @searchSongs.each do |song| %>
-  <%= render partial: "songs/song", locals: {song: song} %>
-<% end %>
-</div>
-<div class="col border border-primary">
-  <p>Posts</p>
-<% @searchPosts.each do |post| %>
-  <%= render partial: "posts/#{post.post_type}", locals: {post: post} %>
-
-<% end %>
-</div>
 </div>

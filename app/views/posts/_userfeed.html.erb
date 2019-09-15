@@ -4,6 +4,8 @@
       <%= render partial: "songs/song", locals: {song: post} %>
     <% elsif post.instance_of? Post %>
       <%= render partial: "posts/#{post.post_type}", locals: {post: post} %>
+    <% elsif post.instance_of? Album %>
+      <%= render partial: "albums/post", locals: {album: post} %>
     <% else %>
       <%= render partial: "broadcasters/post", locals: {broadcaster: post} %>
     <% end %>

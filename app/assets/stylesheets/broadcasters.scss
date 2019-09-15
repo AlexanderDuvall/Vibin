@@ -1,3 +1,68 @@
 // Place all the styles related to the broadcasters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.broadcaster {
+  display: block;
+  overflow: hidden;
+  background-color: #4d7ce3;
+  width: 100%;
+  margin-bottom: 10px;
+  min-height: 150px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #C2D5E3;
+}
+.broadcasterLeft {
+  margin-top: 5px;
+}
+.broadcasterCenter {
+  min-width: calc(100% - 240px);
+}
+.broadcasterRight {
+  min-width: 90px;
+}
+.imageBroadcast{
+  height: 140px;
+  width: 140px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: white;
+  background-color: inherit;
+}
+.broadcaster-ava {
+  display: block;
+  max-height: 90px;
+  max-width: 90px;
+  border-radius: 50px;
+  border-color: white;
+  border-style: solid;
+}
+
+
+.broadcaster-image{
+  height:105%;
+  object-fit:cover;
+  width:105%;
+  display: inline-block;
+  overflow: hidden;
+}
+.img-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  border: solid white 1px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  //position: relative;
+}
+
+.form-content{
+
+  border-radius:5px;
+  width: 100%;
+  overflow:hidden;
+  display:block;
+  font-size: 25px;
+  padding-bottom: 10px;
+}

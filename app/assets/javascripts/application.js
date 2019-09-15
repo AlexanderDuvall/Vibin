@@ -26,7 +26,7 @@
 //= require_tree .
 //=
 
-let Server_Address = "172.25.134.26"; // broadcasting ipv4 remote host address
+let Server_Address = "172.25.61.104"; // broadcasting ipv4 remote host address
 var counter = 0;
 var x = new XMLHttpRequest();
 var audio = new Audio();
@@ -187,11 +187,10 @@ function isBroadcasting(...args) {
 }
 
 function isListening(...args) {
-    if (args.length == 1 && (args[0] == false || args[0] == true)) {
+    if (args.length == 1 && (args[0] == false || args[0] == true))
         listening = args[0];
-        console.log("status");
-        console.log(listening);
-    }
+    console.log("status");
+    console.log(listening);
     return listening;
 }
 
@@ -227,8 +226,8 @@ function nextSong(...args) {
         isListening(false);
         if (counter != songQueue.length) {
             let song = songQueue[counter];
+            set_current_song(songQueue[counter]);
             console.log("getting next song:" + song);
-            console.log(songQueue);
             Rails.ajax({
                 url: "/getsongs?id=" + song,
                 type: "GET",
@@ -493,11 +492,8 @@ function sendData(duration, ...args) {
     }
 }
 
-function setNewPlaylistSong(song_id) {
-    set_current_song(song_id);
-    counter = songQueue.indexOf(song_id);
-    console.log("song_id: " + song_id);
-    console.log("index: " + counter);
+function setNewPlaylistSong(position) {
+    counter = position - 1;
     nextSong();
 }
 

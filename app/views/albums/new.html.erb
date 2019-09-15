@@ -12,7 +12,7 @@
     </div>
 
     <div class="album_view">
-      <%= f.file_field :cover_image, accept: "image/png, image/jpeg", id: "cover_image" %>
+      <%= f.file_field :album_cover, accept: "image/png, image/jpeg", id: "cover_image" %>
     </div>
     <h1>Songs</h1>
     <%= link_to_add_fields 'Add Song to Album', f, :songs %>
@@ -22,11 +22,12 @@
 
 <script>$("[data-form-prepend]").click(function (e) {
     var obj = $($(this).attr("data-form-prepend"));
+    var date = new Date().getTime();
     obj.find("input, select, textarea").each(function () {
         $(this).attr("name", function () {
             return $(this)
                 .attr("name")
-                .replace("new_record", new Date().getTime());
+                .replace("new_record", date);
         });
     });
     obj.insertBefore(this);
