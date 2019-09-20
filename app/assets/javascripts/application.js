@@ -47,11 +47,11 @@ $(function () {
 function buildPlayer(song, username, title, ...args) {
     let buildSong = function () {
         audio.src = "";
-        var songinfo = title + "<br>" + args[1] + "<br>" + args[2];
+        var songinfo = title + "<br>" + args[1]/* genre*/ + "<br>" + args[2] /*subgenre*/;
         console.log(songInfo);
         $('#playerCoverImage').attr("src", args[0]); //
         $('#songInfo').html(songinfo);
-        var artist = "<img class=\"songArtistAvatarImage\" src=\"" + args[3] + "\">" + "<p style=\"display: inline;\">@" + username + "</p>";
+        var artist = "<img class=\"songArtistAvatarImage\" src=\"" + args[3]/* image src*/ + "\">" + "<p style=\"display: inline;\">@" + username + "</p>";
         $('#songArtistAvatar').html(artist);
         console.log("lmapppp");
         console.log(args[3]);
@@ -189,8 +189,6 @@ function isBroadcasting(...args) {
 function isListening(...args) {
     if (args.length == 1 && (args[0] == false || args[0] == true))
         listening = args[0];
-    console.log("status");
-    console.log(listening);
     return listening;
 }
 
@@ -221,6 +219,35 @@ function needsUpdate(...args) {
     return update;
 }
 
+function backSong() {
+    isListening(false);
+    if (counter != 1) {
+        counter -= 2;
+        let song = songQueue[counter];
+        set_current_song(songQueue[counter]);
+        console.log("getting counter " + counter);
+        Rails.ajax({
+            url: "/getsongs?id=" + song,
+            type: "GET",
+            processData: false,
+            success: function (data, textStatus, xhr) {
+                console.log("success");
+                console.log(data);
+                let url = data.song_url;
+                let title = data.title;
+                let username = data.username;
+                if (isBroadcasting())
+                    sendData(0);
+                buildPlayer(url, username, title);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+        counter++;
+    }
+}
+
 function nextSong(...args) {
     if (args.length == 0) {
         isListening(false);
@@ -238,9 +265,13 @@ function nextSong(...args) {
                     let url = data.song_url;
                     let title = data.title;
                     let username = data.username;
+                    let coverimage = data.cover;
+                    let genre = data.genre;
+                    let subgenre = data.subgenre;
+                    let avatar = data.avatar
                     if (isBroadcasting())
                         sendData(0);
-                    buildPlayer(url, username, title);
+                    buildPlayer(url, username, title, coverimage, genre, subgenre, avatar);
                 },
                 error: function (data) {
                     console.log(data);
@@ -425,7 +456,7 @@ function SelectedSong(song, username, title, singleSong, ...args) {
     if (singleSong) {
         console.log("SINGLE SONG");
         set_current_song(args[0]);
-        buildPlayer(args[1], username, title, args[2], args[3], args[4], args[5]);
+        buildPlayer(args[1]/*song*/, username, title, args[2], args[3], args[4], args[5]);
         isPlayList = false;
     } else {
         console.log("NOT SINGLE SONG");

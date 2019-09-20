@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_172045) do
+ActiveRecord::Schema.define(version: 2019_09_17_193045) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,16 +33,11 @@ ActiveRecord::Schema.define(version: 2019_08_28_172045) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "albumlikes", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "list"
-    t.integer "users_id"
-    t.index ["users_id"], name: "index_albumlikes_on_users_id"
-  end
-
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
-    t.string "context"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
@@ -173,6 +168,7 @@ ActiveRecord::Schema.define(version: 2019_08_28_172045) do
     t.string "title"
     t.string "text"
     t.string "genre"
+    t.integer "albums_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "plays", default: 0
@@ -196,8 +192,6 @@ ActiveRecord::Schema.define(version: 2019_08_28_172045) do
 
   create_table "user_song_play_counters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "plays"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "song_id"
     t.integer "user_id"
     t.index ["song_id"], name: "index_user_song_play_counters_on_song_id"
@@ -236,7 +230,6 @@ ActiveRecord::Schema.define(version: 2019_08_28_172045) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "albumlikes", "users", column: "users_id"
   add_foreign_key "albums", "users"
   add_foreign_key "broadcasters", "users"
   add_foreign_key "clout_songs", "songs"

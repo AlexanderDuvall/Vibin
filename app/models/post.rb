@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
 #  accepts_nested_attributes_for :songs, allow_destroy: true #, reject_if: proc{|a| a['song_files'].blank? || a['title'].blank?}
-#has_many :songs, inverse_of: :post
+  has_many :songs, inverse_of: :post
   has_many :posts
   has_many_attached :images
   default_scope -> {order(created_at: :desc)}

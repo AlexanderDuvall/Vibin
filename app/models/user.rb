@@ -134,7 +134,9 @@ class User < ActiveRecord::Base
   end
 
   def likePost?(post)
-    post.likes.where(user_id: id).any?
+    unless post.instance_of? Album
+      post.likes.where(user_id: id).any?
+    end
   end
 
   def likeMusic?(song)

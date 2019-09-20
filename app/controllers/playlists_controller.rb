@@ -48,7 +48,10 @@ class PlaylistsController < ApplicationController
           :song_url => url_for(@song.song_file),
           :username => User.find(@song.user_id).username,
           :title => @song.title,
-          :cover => @song.cover_image
+          :cover => url_for(@song.cover_image),
+          :genre => @song.genre,
+          :subgenre => @song.subGenre,
+          :avatar => url_for(@song.user.avatar)
       }
     end
   end

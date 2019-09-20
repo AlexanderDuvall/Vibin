@@ -8,7 +8,9 @@ let lastTime = 0;
 var playButton = null;
 var update = false;
 var currentBroadcaster = null;
-
+let shuffle = null;
+let backward = null;
+let skipForward = null;
 window.addEventListener("DOMContentLoaded", function (e) {
     //var username = document.querySelector("#usernameSong");
     //username.innerHTML = "";
@@ -18,7 +20,9 @@ window.addEventListener("DOMContentLoaded", function (e) {
     playButton = document.querySelector('.play');
     let playButtonIcon = playButton.querySelector('.ion-play');
     let fillBar = seekBar.querySelector('.fill');
-    let skipForward = document.querySelector('.skip_forward');
+    skipForward = document.querySelector('.skip_forward');
+    shuffle = document.querySelector('.shuffle');
+    backward = document.querySelector(".back");
     let volume = document.querySelector('.volume_bar');
     let volume_fill = volume.querySelector(".volume_fill");
     let modal = document.getElementById("audio-modal");
@@ -47,13 +51,11 @@ window.addEventListener("DOMContentLoaded", function (e) {
     };
     window.onclick = function (event) {
         if (event.target == modal) {
-            modal.style.display = "hidden";
+            modal.style.display = "none";
         }
     };
-    skipForward.addEventListener('click', function () {
-        //skip to next playlist song
-        nextSong();
-    });
+
+
     muteButton.addEventListener('click', function () {
         if (isMute) {
             audio.volume = pastAudio;
@@ -192,6 +194,18 @@ function incrementPlays(id, artist_id) {
         },
         dataType: "script",
     });
+}
+
+function broadcasterPlayer() {
+
+}
+
+function playlistPlayer() {
+
+}
+
+function singleSongPlayer() {
+
 }
 
 function playPause() {

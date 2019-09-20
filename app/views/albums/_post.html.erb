@@ -23,8 +23,7 @@
       <p style="color: white;"><%= album.updated_at.month %>/<%= album.updated_at.day %>/<%= album.updated_at.year %>
         <br><%= age(Time.now, album.updated_at) %></p>
       <% if album.user_id != current_user.id %>
-        <%= link_to "Repost", post_repost_path(album), method: :post %>
-        <div id="post_<%= album.id %>_likes"><%= render partial: "/posts/likes", locals: {post: album} %></div>
+      <%#TODO ADD ALBUM LIKES %>
       <% else %>
         <p><%= link_to "delete", album, method: :delete,
                        data: {confirm: "You sure?"}, remote: true, class: "delete", id: album.id %></p>
