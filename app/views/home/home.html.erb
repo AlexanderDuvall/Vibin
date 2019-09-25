@@ -189,7 +189,7 @@
               </div>
               <div class="topChart-cover-column">
                 <center>
-                  <button class="playButton" onclick="SelectedSong(this,  '<%= User.find(song.user_id).username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>', '<%=url_for(song.cover_image) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
+                  <button class="playButton" onclick="SelectedSong(this,  '<%=song.user.username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>', '<%=url_for(song.cover_image) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
                     <%= image_tag (song.cover_image), class: "playButtonImage" %>
                   </button>
                 </center>
@@ -214,15 +214,15 @@
     });
 
     $(function () {
-      //$('.iphone').on('click', function(){
-      //  var url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyABBVE90zE3SB_kb52KWFSS2Fqumy303do",
-      //  $(this).getJSON( url, {
-      //    format: "json"
-      //  })
-      //  .done(function( data ) {
-    //      console.log(data);
-      //  });
-    //  });
+        //$('.iphone').on('click', function(){
+        //  var url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyABBVE90zE3SB_kb52KWFSS2Fqumy303do",
+        //  $(this).getJSON( url, {
+        //    format: "json"
+        //  })
+        //  .done(function( data ) {
+        //      console.log(data);
+        //  });
+        //  });
         $(".main").on("scroll", function (e) {
             if ($(".main").scrollTop() == -1) {
                 // refresh timeline

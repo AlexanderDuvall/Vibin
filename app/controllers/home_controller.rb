@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 
   # back-end code for pages/home
   def home
-    @TopChart = Song.all
+    @TopChart = Song.where("user_id > 0")
     @user = current_user
     @recommendedSongs = Song.all.where("genre = ?", "NULL")
     if logged_in?

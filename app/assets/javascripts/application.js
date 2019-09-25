@@ -27,6 +27,7 @@
 //=
 
 let Server_Address = "172.25.61.104"; // broadcasting ipv4 remote host address
+let isShuffled = false;
 var counter = 0;
 var x = new XMLHttpRequest();
 var audio = new Audio();
@@ -43,6 +44,23 @@ $(function () {
         }
     });
 });
+
+function shuffleSongs() {
+
+    let songReplica = songQueue.slice();
+    let shuffledArray = new Array();
+    console.log(songQueue);
+    while (shuffledArray.length != songQueue.length) {
+        let pos = Math.floor(Math.random() * songReplica.length);
+        shuffledArray.push(songReplica[pos]);
+        console.log(pos + " : " + songReplica.length);
+        songReplica.splice(pos, 1);
+        console.log("spliced: " + shuffledArray.length + " vs " + songQueue.length);
+    }
+    isShuffled = true;
+    songQueue = shuffledArray;
+
+}
 
 function buildPlayer(song, username, title, ...args) {
     let buildSong = function () {
@@ -459,6 +477,7 @@ function SelectedSong(song, username, title, singleSong, ...args) {
         buildPlayer(args[1]/*song*/, username, title, args[2], args[3], args[4], args[5]);
         isPlayList = false;
     } else {
+        isShuffled = false;
         console.log("NOT SINGLE SONG");
         set_current_song(args[2]);
         let cover_url = args[3];

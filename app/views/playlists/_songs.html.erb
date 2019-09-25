@@ -18,19 +18,20 @@
   </div>
 <% end %>
 <script>
-    $("#playlists").sortable({
-        update: function (a, ui) {
-            console.log($(this).sortable('serialize'));
-            Rails.ajax({
-                url: $(this).data("url"),
-                type: "PATCH",
-                data: $(this).sortable('serialize'),
-                success: function (data) {
-                    ReorderSongs(data.id);
-                }, error: function (data) {
-                    console.log(data);
-                }
-            });
-        }
-    });
+    if (!isShuffled)
+        $("#playlists").sortable({
+            update: function (a, ui) {
+                console.log($(this).sortable('serialize'));
+                Rails.ajax({
+                    url: $(this).data("url"),
+                    type: "PATCH",
+                    data: $(this).sortable('serialize'),
+                    success: function (data) {
+                        ReorderSongs(data.id);
+                    }, error: function (data) {
+                        console.log(data);
+                    }
+                });
+            }
+        });
 </script>
