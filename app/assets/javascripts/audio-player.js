@@ -33,20 +33,18 @@ window.addEventListener("DOMContentLoaded", function (e) {
         console.log(id + " uhuh");
         connect(id);
     };
+
+
     btn.onclick = function () {
-        Rails.ajax({
-            url: '/get_playlist_songs',
-            type: 'GET',
-            processData: false,
-            success: function (data) {
-                console.log("......");
-                console.log(data.id);
-                modal.style.display = "block";
-            },
-            error: function (data) {
-                console.log(data);
+        if (isPlayList) {
+            if (isShuffled) {
+                $('.modal-content-audio').load("/shuffle?shuffle=true&data=" + songQueue + "&playlist=" + get_current_playlist());
+            } else {
+                $('.modal-content-audio').load("/shuffle?shuffle=false&playlist=" + get_current_playlist());
+                console.log("well fuck")
             }
-        });
+            modal.style.display = "block";
+        }
 
     };
     window.onclick = function (event) {

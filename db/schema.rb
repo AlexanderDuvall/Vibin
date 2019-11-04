@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_09_17_193045) do
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
+    t.string "context"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -168,7 +169,6 @@ ActiveRecord::Schema.define(version: 2019_09_17_193045) do
     t.string "title"
     t.string "text"
     t.string "genre"
-    t.integer "albums_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "plays", default: 0
@@ -192,6 +192,8 @@ ActiveRecord::Schema.define(version: 2019_09_17_193045) do
 
   create_table "user_song_play_counters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "plays"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "song_id"
     t.integer "user_id"
     t.index ["song_id"], name: "index_user_song_play_counters_on_song_id"

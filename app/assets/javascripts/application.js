@@ -36,17 +36,7 @@ var SongUsername = null;
 var songQueue = new Array();
 var listening = false;
 
-$(function () {
-    $(window).on("click", function (e) {
-        console.log(e);
-        if (e.target == document.getElementById('myModal')) {
-            $('#myModal').css("display", 'none');
-        }
-    });
-});
-
 function shuffleSongs() {
-
     let songReplica = songQueue.slice();
     let shuffledArray = new Array();
     console.log(songQueue);
@@ -58,8 +48,21 @@ function shuffleSongs() {
         console.log("spliced: " + shuffledArray.length + " vs " + songQueue.length);
     }
     isShuffled = true;
-    songQueue = shuffledArray;
+    ReorderSongs(shuffledArray);
+    console.log(songQueue);
+    /**Rails.ajax({
+        type: "GET",
+        url: "/get_song_positions?shuffle=" + isShuffled + "&data=" + songQueue + "&playlist=" + get_current_playlist(),
+        processData: false,
+        success: function (data, textStatus, xhr) {
+            console.log(data)
+        },
+        error: function (data) {
+            console.log(data);
+        }
 
+    });**/
+    console.log("reloaded!")
 }
 
 function buildPlayer(song, username, title, ...args) {
@@ -481,7 +484,8 @@ function SelectedSong(song, username, title, singleSong, ...args) {
         console.log("NOT SINGLE SONG");
         set_current_song(args[2]);
         let cover_url = args[3];
-        songQueue = args[0];
+        //songQueue = args[0];
+        ReorderSongs(args[0]);
         console.log("\n\nSong Queue" + songQueue + "\n\n");
         set_current_playlist(args[1]);
         isPlayList = true;
@@ -543,7 +547,7 @@ function sendData(duration, ...args) {
 }
 
 function setNewPlaylistSong(position) {
-    counter = position - 1;
+    counter = position;
     nextSong();
 }
 

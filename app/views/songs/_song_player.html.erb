@@ -45,11 +45,10 @@
         <div class="volume_handle"></div>
       </div>
     </div>
-
   </div>
   <div id="audio-modal" class="modal-audio">
     <div class="modal-content-audio">
-      <%= render partial: "playlists/songs" %>
+      <%= render partial: "playlists/songs", locals: {song_pos: nil, ts:"default"} %>
     </div>
   </div>
 </div>

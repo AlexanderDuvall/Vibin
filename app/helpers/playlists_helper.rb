@@ -1,6 +1,7 @@
 module PlaylistsHelper
 
   def Get_Positions
+    #returns song pos
     song_position = Playlist.find_by_id(cookies[:playlist].to_i)
     puts "========="
     puts song_position
@@ -11,7 +12,7 @@ module PlaylistsHelper
       puts song_position.inspect
       return song_position
     else
-      puts "-"
+      puts "dont help me"
     end
   end
 
