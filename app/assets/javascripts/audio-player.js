@@ -26,16 +26,21 @@ window.addEventListener("DOMContentLoaded", function (e) {
     let volume = document.querySelector('.volume_bar');
     let volume_fill = volume.querySelector(".volume_fill");
     let modal = document.getElementById("audio-modal");
-    let btn = document.getElementById("renderPlaylist");
+    let addPlaylistModal = document.getElementById("add-playlist-modal");
+    let renderPlaylist = document.getElementById("renderPlaylist");
+    let renderAddPlaylist = document.getElementById("renderAddPlaylist");
     let broadcast = document.getElementById("broadcast_text");
+
     broadcast.onclick = function () {
         let id = $("#broadcast_text").data("session");
         console.log(id + " uhuh");
         connect(id);
     };
 
-
-    btn.onclick = function () {
+    renderAddPlaylist.onclick = function () {
+        addPlaylistModal.style.display = "block"
+    };
+    renderPlaylist.onclick = function () {
         if (isPlayList) {
             if (isShuffled) {
                 $('.modal-content-audio').load("/shuffle?shuffle=true&data=" + songQueue + "&playlist=" + get_current_playlist());
@@ -50,6 +55,8 @@ window.addEventListener("DOMContentLoaded", function (e) {
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
+        } else if (event.target == addPlaylistModal) {
+            addPlaylistModal.style.display = "none"
         }
     };
 

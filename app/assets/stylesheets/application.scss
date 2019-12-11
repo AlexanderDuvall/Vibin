@@ -48,7 +48,7 @@ body {
 }
 
 a {
-  text-decoration:none;
+  text-decoration: none;
 }
 
 a:hover {
@@ -72,6 +72,7 @@ a:hover {
   width: 100%;
   min-width: 600px;
   height: 50px;
+
   .VibinTab {
     position: fixed;
     top: 0;
@@ -79,6 +80,7 @@ a:hover {
     width: 80px;
     height: 50px;
   }
+
   .ExploreTab {
     position: fixed;
     top: 0;
@@ -86,6 +88,7 @@ a:hover {
     width: 60px;
     height: 50px;
   }
+
   .GroupiesTab {
     position: fixed;
     top: 0;
@@ -93,27 +96,30 @@ a:hover {
     height: 50px;
     width: 60px;
   }
+
   .SearchBar {
     position: fixed;
     top: 5px;
-    left:230px;
+    left: 230px;
     height: 40px;
     width: 250px;
     border-radius: 5px;
   }
+
   .MessagesTab {
     position: relative;
     float: left;
     height: 100%;
     width: 50px;
   }
-  .messages{
+
+  .messages {
     height: 45px;
     width: 45px;
     margin-top: 3px;
   }
 
-  .notification{
+  .notification {
     height: 45px;
     width: 100%;
     margin-top: 3px;
@@ -133,6 +139,7 @@ a:hover {
     width: 50px;
     height: 50px;
   }
+
   .userTabDiv {
     position: relative;
     float: left;
@@ -208,7 +215,6 @@ a:hover {
 }
 
 
-
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   top: 50px;
@@ -248,8 +254,6 @@ a:hover {
   border-color: white;
   border-style: solid;
 }
-
-
 
 
 //
@@ -344,6 +348,68 @@ a:hover {
   animation-duration: 0.4s
 }
 
+.modal-audio {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content-audio {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+
+.modal-add-playlist {
+
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content-add-playlist {
+  margin-top: 150px;
+  position: fixed;
+  right: 0;
+  background-color: white;
+  width: 300px;
+  height: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -418,7 +484,6 @@ a:hover {
     cursor: pointer
   }
 }
-
 
 
 .playerAvatarImage {

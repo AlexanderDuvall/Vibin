@@ -2,12 +2,7 @@ class PlaylistsController < ApplicationController
 
 
   def create
-    @playlists = nil
-    if (current_user.playlists)
-      @playlists = current_user.playlists.new(:title => "Liked Music", :default => true)
-    else
-      @playlists = current_user.playlists.new(:title => "Playlist #{current_user.id}", :default => false)
-    end
+    @playlists = current_user.playlists.new(playlist_params)
     if @playlists.save!
       redirect_to root_path
     end
@@ -77,12 +72,30 @@ class PlaylistsController < ApplicationController
     end
   end
 
+  def addToPlaylist
+    playlist_id = params[:playlist_id]
+    song_id = params[:song_id]
+    playlist = Playlist.find(playlist_id)
+    if (!playlist.nil?)
+      lastPos = playlist.song_positions.exists? ? playlist.song_positions.last.position + 1 : 1
+      songposition = playlist.song_positions.new(song_id: song_id, position: lastPos)
+      songposition.save!
+    end
+  end
+
   def show
-    @playlists = current_user.playlists
+    if current_user.nil? || current_user.playlist.nil?
+      @playlists = ""
+    else
+      @playlists = current_user.playlists
+    end
     #  @song_position = current_user.playlists.first
     # @song_position = @song_position.song_positions.order(:position)
   end
 
+  def playlist_params
+    params.require(:playlist).permit(:title)
+  end
 
   def get_positions
     puts "getting positions with cookies: #{cookies[:playlist]}"

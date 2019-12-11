@@ -1,8 +1,59 @@
 // Place all the styles related to the playlists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.list-item{
-  &:hover{
-    background-color: #5cb85c;
+$blue: #0af;
+$hover-color: #25a805;
+$background: black;
+.list-item {
+  &:hover {
+    background-color: white;
+  }
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.addPlaylist {
+  display: flex;
+  background-color: #730E15;
+
+  h5 {
+    margin-top: 13px;
+    width: 230px;
+    color: white;
+  }
+
+
+  &:hover {
+  }
+
+  &:hover img {
+    filter: blur(2px);
+  }
+
+  &:hover .add_to_playlist {
+    visibility: visible
+  }
+
+}
+
+.add_to_playlist {
+  display: block;
+  width: 0px;
+  height: 0px;
+  margin-left: -292px;
+  margin-top: 13px;
+  border: 0;
+  color: white;
+  font-size: 30px;
+  border-radius: 100000px;
+  cursor: pointer;
+  visibility: hidden;
+
+  &:hover {
+
   }
 }

@@ -3,5 +3,4 @@ class Playlist < ApplicationRecord
   has_many :song_positions
   has_many :songs, through: :song_positions
   validates_presence_of :title
-  validates_presence_of :default
-end
+ end

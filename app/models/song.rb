@@ -5,7 +5,7 @@ class Song < ApplicationRecord
   validates_presence_of :title, presence: true, length: {maximum: 40}
   validates_presence_of :premium, default: false
   validates_presence_of :subGenre, default: ""
-#  validates_presence_of :premium, default: false
+# validates_presence_of :premium, default: false
   has_one_attached :song_file
   has_one_attached :cover_image
   belongs_to :user, inverse_of: :songs, optional: true

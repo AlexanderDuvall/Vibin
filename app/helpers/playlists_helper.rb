@@ -24,7 +24,7 @@ module PlaylistsHelper
 
 
   def playlistToArray(id)
-    @playlist = current_user.playlists.find_by_id(id)
+    @playlist = Playlist.find(id)
     puts "id #{id}"
     puts "playlist #{@playlist}"
     if !@playlist.nil?
@@ -37,6 +37,18 @@ module PlaylistsHelper
       puts @song_ids.inspect
       puts "--------------------------------------------------------------------"
       @song_ids
+    end
+  end
+
+  def getPlaylistImage(id)
+    if (!id.nil?)
+      @playlist = Playlist.find(id)
+      songs = @playlist.song_positions.order(:position)
+      if (songs.nil? || songs.length == 0)
+        return nil
+      end
+      song = Song.find songs[0].song_id
+      url_for(song.cover_image)
     end
   end
 end

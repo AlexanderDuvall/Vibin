@@ -3,10 +3,10 @@
     <div class="songCover">
       <img id="playerCoverImage" src="" class="playerCoverImage">
     </div>
-      <div class="songArtist">
-        <p id="songInfo" style="font-size: 17px; display: block;"></p>
-        <div id="songArtistAvatar" style="display: block; margin-top: -8px;">
-        </div>
+    <div class="songArtist">
+      <p id="songInfo" style="font-size: 17px; display: block;"></p>
+      <div id="songArtistAvatar" style="display: block; margin-top: -8px;">
+      </div>
     </div>
   </div>
   <div>
@@ -16,7 +16,7 @@
       <button class="back border border-dark" onclick="backSong()"><i id="play-icon" class="ion-skip-backward"></i>
       </button>
       <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
-      <button class="skip_forward border border-dark" >
+      <button class="skip_forward border border-dark">
         <i id="play-icon" class="ion-skip-forward"></i>
       </button>
     </div>
@@ -37,6 +37,9 @@
       <button id="renderPlaylist" class="playlist border border-dark">
         <ion-icon name="list"></ion-icon>
       </button>
+      <button id="renderAddPlaylist" class="playlist border border-dark">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
     </div>
     <div class="right_elements">
       <button class="volume"><i class="ion-volume-high"></i></button>
@@ -48,7 +51,12 @@
   </div>
   <div id="audio-modal" class="modal-audio">
     <div class="modal-content-audio">
-      <%= render partial: "playlists/songs", locals: {song_pos: nil, ts:"default"} %>
+      <%= render partial: "playlists/songs", locals: {song_pos: nil, ts: "default"} %>
+    </div>
+  </div>
+  <div id="add-playlist-modal" class="modal-add-playlist">
+    <div class="modal-content-add-playlist">
+      <%= render partial: "playlists/modal_playlists", locals: {song_pos: nil, ts: "default"} %>
     </div>
   </div>
 </div>

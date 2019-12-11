@@ -1,5 +1,6 @@
-<h1>Playlists#new</h1>
-<p>Find me in app/views/playlists/new.html.erb</p>
-<%= form_for @playlists do |f| %>
-<%=f.submit "Create Default Playlist" %>
+<h1> create a new playlist!</h1>
+<%= form_with model: @playlists do |f| %>
+  <%=f.label :title %>
+  <%=f.text_field :title %>
+<%=f.submit "Create" %>
 <%end %>

@@ -36,6 +36,21 @@ var SongUsername = null;
 var songQueue = new Array();
 var listening = false;
 
+
+function addtoPL(song_id, playlist_id) {
+    Rails.ajax({
+        url: "/add_to_playlist?song_id=" + song_id + "&playlist_id=" + playlist_id,
+        type: "POST",
+        processData: false,
+        success: function () {
+            console.log("great job")
+        },
+        error: function () {
+            console.log("Playlist post failed")
+        }
+    })
+}
+
 function shuffleSongs() {
     let songReplica = songQueue.slice();
     let shuffledArray = new Array();

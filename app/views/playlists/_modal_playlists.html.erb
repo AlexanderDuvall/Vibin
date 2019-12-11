@@ -1,0 +1,18 @@
+<% playlists = current_user.playlists if !current_user.nil? %>
+<% if playlists.nil? || playlists.length == 0 %>
+  <h3> You dont have any playlists... Go like some os and make one!</h3>
+<% else %>
+  <h4><%= current_user.username %>'s Playlists </h4>
+  <h1/>
+  <% playlists.each do |f| %>
+    <div class="addPlaylist">
+      <% url = getPlaylistImage(f.id) %>
+      <img class=logo src="<%= url.nil? ? "default-avatar.jpg" : image_url(url) %>"/>
+      <h5 onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>
+        <%= f.title %></h5>
+      <button id="addSongtoPlaylist" class="add_to_playlist" onclick="addtoPL(parseInt(get_current_song()),<%=f.id.to_i %>)">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </div>
+  <% end %>
+<% end %>
