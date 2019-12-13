@@ -19,13 +19,14 @@ class HomeController < ApplicationController
         #append following user's id
         @asss.push(a.followed_id)
       end
+      @inPlaylist = nil
       @userpost = Post.all.where("user_id IN (?) ", @asss)
       @usersongpost = Song.all.where("user_id IN (?) ", @asss)
       @posts = @userpost
       @broadcasters = Broadcaster.all.where("user_id IN (?) AND is_playing IN (?)", @asss, 1)
       @albums = Album.all.where("user_id IN (?)", @asss)
       @combine = (@usersongpost + @posts + @broadcasters + @albums)
-      @combine = @combine.sort_by {|f| f.created_at }.reverse.paginate(page: params[:page], per_page: 10)
+      @combine = @combine.sort_by {|f| f.created_at}.reverse.paginate(page: params[:page], per_page: 10)
       @recommendedUsers = User.last(5) # FIXME get mutual friends.
       # @songs = Array.new
       #following = Array.new

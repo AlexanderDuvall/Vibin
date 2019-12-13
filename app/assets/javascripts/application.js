@@ -37,13 +37,31 @@ var songQueue = new Array();
 var listening = false;
 
 
-function addtoPL(song_id, playlist_id) {
+function addtoPL(song_id, playlist_id, dom_id) {
     Rails.ajax({
         url: "/add_to_playlist?song_id=" + song_id + "&playlist_id=" + playlist_id,
         type: "POST",
         processData: false,
         success: function () {
-            console.log("great job")
+            console.log("success bitc");
+            $('#SongtoPlaylist_' + (dom_id)).attr('onclick', "removeFromPL(" + song_id + "," + playlist_id + ',' + (dom_id) + ')');
+            $('#ion_' + (dom_id)).attr('name', 'remove-circle');
+        },
+        error: function () {
+            console.log("Playlist post failed")
+        }
+    })
+}
+
+function removeFromPL(song_id, playlist_id, dom_id) {
+    Rails.ajax({
+        url: "/remove_from_playlist?song_id=" + song_id + "&playlist_id=" + playlist_id,
+        type: "POST",
+        processData: false,
+        success: function () {
+            console.log("success btich");
+            $('#SongtoPlaylist_' + (dom_id)).attr('onclick', "addtoPL(" + song_id + "," + playlist_id + ',' + (dom_id) + ')');
+            $('#ion_' + (dom_id)).attr('name', 'add-circle');
         },
         error: function () {
             console.log("Playlist post failed")

@@ -10,9 +10,19 @@
       <img class=logo src="<%= url.nil? ? "default-avatar.jpg" : image_url(url) %>"/>
       <h5 onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>
         <%= f.title %></h5>
-      <button id="addSongtoPlaylist" class="add_to_playlist" onclick="addtoPL(parseInt(get_current_song()),<%=f.id.to_i %>)">
-        <ion-icon name="add-circle"></ion-icon>
-      </button>
+      <% if @inPlaylist != nil %>
+        <% if !inPlaylist.include?(f.id) %>
+          <% id = f.id %>
+          <button id="SongtoPlaylist_<%= f.id %>" class="add_to_playlist" onclick="addtoPL(parseInt(get_current_song()),<%=f.id.to_i %>,'<%=f.id %>')">
+            <ion-icon id="ion_<%= f.id %>" name="add-circle"></ion-icon>
+          </button>
+        <% else %>
+          <button id="SongtoPlaylist_<%= f.id %>" class="add_to_playlist" onclick="removeFromPL(parseInt(get_current_song()),<%=f.id.to_i %>,' <%=f.id %>')">
+            <ion-icon id="ion_<%= f.id %>" name="remove-circle"></ion-icon>
+          </button>
+
+        <% end %>
+      <% end %>
     </div>
   <% end %>
 <% end %>

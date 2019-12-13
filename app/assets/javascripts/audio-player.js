@@ -38,7 +38,13 @@ window.addEventListener("DOMContentLoaded", function (e) {
     };
 
     renderAddPlaylist.onclick = function () {
-        addPlaylistModal.style.display = "block"
+        let song = get_current_song();
+        if (audio.src != "") {
+            $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song);
+            addPlaylistModal.style.display = "block";
+         } else {
+            console.log("no song to show")
+        }
     };
     renderPlaylist.onclick = function () {
         if (isPlayList) {
@@ -46,7 +52,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
                 $('.modal-content-audio').load("/shuffle?shuffle=true&data=" + songQueue + "&playlist=" + get_current_playlist());
             } else {
                 $('.modal-content-audio').load("/shuffle?shuffle=false&playlist=" + get_current_playlist());
-                console.log("well fuck")
             }
             modal.style.display = "block";
         }

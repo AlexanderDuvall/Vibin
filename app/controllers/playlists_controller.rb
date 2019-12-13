@@ -72,6 +72,19 @@ class PlaylistsController < ApplicationController
     end
   end
 
+  def existsinPlaylist
+    playlist = current_user.playlists
+    song_id = params[:song_id]
+    inPlaylist = Array.new
+    playlist.each do |f|
+      if f.song_positions.exists?(song_id: song_id)
+        inPlaylist.push f.id
+      end
+      @inPlaylist = inPlaylist
+    end
+    render :partial => "/playlists/modal_playlists", locals: {inPlaylist: inPlaylist}
+  end
+
   def addToPlaylist
     playlist_id = params[:playlist_id]
     song_id = params[:song_id]
@@ -81,6 +94,14 @@ class PlaylistsController < ApplicationController
       songposition = playlist.song_positions.new(song_id: song_id, position: lastPos)
       songposition.save!
     end
+  end
+
+  def removeFromPlaylist
+    playlist_id = params[:playlist_id]
+    song_id = params[:song_id]
+    playlist = Playlist.find(playlist_id)
+    song = playlist.song_positions.find_by(song_id: song_id)
+    song.delete
   end
 
   def show
