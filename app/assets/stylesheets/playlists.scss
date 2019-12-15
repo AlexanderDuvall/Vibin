@@ -10,6 +10,20 @@ $background: black;
   }
 }
 
+#Create_Playlist {
+  border-radius: 10px;
+  background-color: white;
+  height: 38px;
+}
+
+#playlist_text_Field {
+  width: 220px;
+  height: 20px;
+  border-radius: 25px;
+  border: 2px solid #609;
+  padding: 20px;
+}
+
 .logo {
   width: 50px;
   height: 50px;
@@ -45,7 +59,7 @@ $background: black;
   width: 0px;
   height: 0px;
   margin-left: -292px;
-  margin-top: 13px;
+  margin-top: 6px;
   border: 0;
   color: white;
   font-size: 30px;

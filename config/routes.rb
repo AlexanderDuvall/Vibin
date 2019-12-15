@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :playlists do
     collection do
       patch :sort
-      get :get_positions
+      get :get_positions, :existsinPlaylist
     end
     member do
       get :getsongs

@@ -105,7 +105,7 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    if current_user.nil? || current_user.playlist.nil?
+    if current_user.nil? || current_user.playlists.nil?
       @playlists = ""
     else
       @playlists = current_user.playlists

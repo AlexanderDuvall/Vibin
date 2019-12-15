@@ -83,18 +83,6 @@ function shuffleSongs() {
     isShuffled = true;
     ReorderSongs(shuffledArray);
     console.log(songQueue);
-    /**Rails.ajax({
-        type: "GET",
-        url: "/get_song_positions?shuffle=" + isShuffled + "&data=" + songQueue + "&playlist=" + get_current_playlist(),
-        processData: false,
-        success: function (data, textStatus, xhr) {
-            console.log(data)
-        },
-        error: function (data) {
-            console.log(data);
-        }
-
-    });**/
     console.log("reloaded!")
 }
 

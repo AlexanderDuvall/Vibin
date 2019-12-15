@@ -1,9 +1,17 @@
 <% playlists = current_user.playlists if !current_user.nil? %>
 <% if playlists.nil? || playlists.length == 0 %>
-  <h3> You dont have any playlists... Go like some os and make one!</h3>
+  <%= form_for :playlist, :url => {:action => :create, :controller => :playlists, :id => @playlist} do |x| %>
+    <%= x.text_field :title, id: "playlist_text_Field", placeholder: "New Playlist Title" %>
+    <%= x.submit "Create", id: "Playlist_button" %>
+  <% end %>
 <% else %>
   <h4><%= current_user.username %>'s Playlists </h4>
-  <h1/>
+  <div class="addPlaylist">
+    <%= form_for :playlist, :url => {:action => :create, :controller => :playlists, :id => @playlist} do |x| %>
+      <%= x.text_field :title, id: "playlist_text_Field", placeholder: "New Playlist Title" %>
+      <%= x.submit "Create" %>
+    <% end %>
+  </div>
   <% playlists.each do |f| %>
     <div class="addPlaylist">
       <% url = getPlaylistImage(f.id) %>
@@ -12,7 +20,6 @@
         <%= f.title %></h5>
       <% if @inPlaylist != nil %>
         <% if !inPlaylist.include?(f.id) %>
-          <% id = f.id %>
           <button id="SongtoPlaylist_<%= f.id %>" class="add_to_playlist" onclick="addtoPL(parseInt(get_current_song()),<%=f.id.to_i %>,'<%=f.id %>')">
             <ion-icon id="ion_<%= f.id %>" name="add-circle"></ion-icon>
           </button>
@@ -20,7 +27,6 @@
           <button id="SongtoPlaylist_<%= f.id %>" class="add_to_playlist" onclick="removeFromPL(parseInt(get_current_song()),<%=f.id.to_i %>,' <%=f.id %>')">
             <ion-icon id="ion_<%= f.id %>" name="remove-circle"></ion-icon>
           </button>
-
         <% end %>
       <% end %>
     </div>
