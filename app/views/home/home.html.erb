@@ -112,10 +112,34 @@
     </div>
     <%= will_paginate @combine, style: "display: none;" %>
   <% else %>
-    <!-- Welcome to Vibin First Impression -->
+    <div class="LeftSide">
+      <div class="TopBroadcast">
+      </div>
+      <div class="Slideshow">
+      </div>
+    </div>
+    <div class="RightSide">
+      <div class="TopSongs">
+
+      </div>
+      <div class="TopBroadcasts">
+
+      </div>
+      <div class="Trending">
+
+      </div>
+      <div class="GenreList">
+
+      </div>
+    </div>
+
+
+
+    <!-- Welcome to Vibin First Impression --
     <div class="topRow">
+
       <div class="slideshow">
-        <!--Carousel -->
+        <--Carousel --
         <div id="carouselExampleIndicators" class="carousel slide carouselBox" data-ride="carousel" data-interval="12000">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -142,9 +166,9 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-      </div>
-    </div>
-    <!-- Mobile App details, Premium Details -->
+      </div> --
+    </div> -->
+    <!-- Mobile App details, Premium Details --
     <div class="bottomRow">
       <div class="mobileAppColumn">
         <div class="iphone">
@@ -158,7 +182,8 @@
         </div>
       </div>
     </div>
-    <!-- Top broadcast Right Now, Top Songs -->
+    <-- Top broadcast Right Now, Top Songs --
+
     <div class="rightMenu">
       <div class="topBroadcast">
         <div class="BCPlayer">
@@ -178,33 +203,35 @@
         <div class="BCChat">
         </div>
       </div>
+
       <div class="topChart">
         <center><h4> Top Chart </h4></center>
         <div class="topChartFeed">
-          <% @TopChart.each do |song| %>
+          <!% @TopChart.each do |song| %>
             <div class="topChart-row">
               <div class="topChart-info-column">
-                <p><%= song.title %><br>
+                <p><!%= song.title %><br>
                   subgenre, genre </p>
               </div>
               <div class="topChart-cover-column">
                 <center>
-                  <button class="playButton" onclick="SelectedSong(this,  '<%=song.user.username%>' ,'<%= song.title %>', true ,<%=song.id %>,'<%=url_for(song.song_file) %>', '<%=url_for(song.cover_image) %>'); incrementPlays(<%= song.id %>, <%= song.user_id%>)">
-                    <%= image_tag (song.cover_image), class: "playButtonImage" %>
+                  <button class="playButton" onclick="SelectedSong(this,  '<!%=song.user.username%>' ,'<!%= song.title %>', true ,<!%=song.id %>,'<!%=url_for(song.song_file) %>', '<!%=url_for(song.cover_image) %>'); incrementPlays(<!%= song.id %>, <!%= song.user_id%>)">
+                    <!%= image_tag (song.cover_image), class: "playButtonImage" %>
                   </button>
                 </center>
               </div>
               <div class="topChart-artist-column">
-                <p><%= song.user.name %><br>
-                  @<%= song.user.username %><br>
+                <p><!%= song.user.name %><br>
+                  @<!%= song.user.username %><br>
                   Houston, TX</p>
               </div>
             </div>
-          <% end %>
+          <!% end %>
         </div>
       </div>
-  <% end %>
-  </div>
+  <!% end %>
+  </div>-->
+    <%end %>
 </div>
 <script>
     $("#refresh").on("click", function () {

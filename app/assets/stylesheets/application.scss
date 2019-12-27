@@ -25,13 +25,13 @@
 }
 */
 html {
-  min-width: 1200px;
-  overflow-x: hidden;
+ // min-width: 1200px;
+ // overflow-x: hidden;
 }
 
 body {
-  min-width: 1200px;
-  min-height: 1000px;
+ // min-width: 1200px;
+ // min-height: 1000px;
 }
 
 //
@@ -41,10 +41,13 @@ body {
 //
 
 .main {
-  margin-top: 50px;
-  margin-bottom: 105px;
-  min-width: 1200px;
-  min-height: 1000px;
+  border-color: #2E2F30;
+  border-style: dashed;
+  margin: 80px 50px 100px 50px;
+
+  min-width: 400px;
+  min-height: 550px;
+  max-height: 550px;
 }
 
 a {

@@ -13,8 +13,13 @@
   font-weight: bold;
 }
 .home{
-  min-width: 1200px;
-  min-height: 1000px;
+  min-width: 400px;
+ // min-height: 1000px;
+  min-height: 550px;
+  overflow: auto;
+  width: 100%;
+  border-style: dashed;
+  border-color: #00aaff;
 }
 .userHomePage{
   min-width: 1200px;
@@ -211,39 +216,59 @@
   width: 150px;
   border-style: dotted;
 }
-.topRow{
-  height: 500px;
-  min-width: 840px;
-  width: 70%;
-  position: relative;
+.LeftSide{
+  height: 550px;
+  width: 400px;
   float: left;
+  border-style: dashed;
+  border-color: pink;
 }
-.slideshow{
-  height: 450px;
-  position: absolute;
-  top: 30px;
-  left: 3px;
-  width: 98%;
+.RightSide{
+  float: left;
+  height: 550px;
+  margin-left: 15px;
+  min-width: 400px;
+  border-color: purple;
+  border-style: dashed;
+  width: 100%;
+}
+.Slideshow{
+  height: 300px;
+  width: 400px;
+  margin-top: 15px;
+  margin-top: 250px;
+  border-style: dashed;
+  border-color: #cc0000;
   background-color: #c9c8c8;
 }
+.TopSongs{
+
+}
+.TopBroadcasts{
+ margin-left: 15px;
+  float: left;
+  height: 550px;
+  width: 50px;
+  border-style: dashed;
+  border-color: #2E2F30;
+}
+.Trending{
+
+}
+.GenreList{
+
+}
 .carouselBox{
-  height: 450px;
+  height: 310px;
 }
-.rightMenu{
-  height: 1200px;
-  min-width: 360px;
-  width: 30%;
-  position: relative;
-  float: right;
-}
-.topBroadcast{
-  position: relative;
-  top: 30px;
-  left: 1%;
-  height: 450px;
-  width: 98%;
-  min-width: 220px;
-  border-radius: 15px 30px;
+
+.TopBroadcast{
+  //position: relative;
+  height: 235px;
+  width: 400px;
+  float: left;
+  border-color: #25a805;
+  border-style: dashed;
 }
 .BCPlayer{
   position: absolute;

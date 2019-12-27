@@ -16,7 +16,7 @@
     <div class="addPlaylist">
       <% url = getPlaylistImage(f.id) %>
       <img class=logo src="<%= url.nil? ? "default-avatar.jpg" : image_url(url) %>"/>
-      <h5 onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>
+      <h5 onclick=''>
         <%= f.title %></h5>
       <% if @inPlaylist != nil %>
         <% if !inPlaylist.include?(f.id) %>
@@ -29,6 +29,16 @@
           </button>
         <% end %>
       <% end %>
+      <div class="displayOptions">
+        <button onclick="displayDropdown(<%=f.id %>)" class="PlaylistOptions" id="PlaylistOptionsButton">
+          <ion-icon id="ionIcon" name="more"></ion-icon>
+          <div class="options_list" id="option_list_<%= f.id %>">
+            <a href="">Play Album</a>
+            <a href="">Start Radio</a>
+            <a href="">Delete Album</a>
+          </div>
+        </button>
+      </div>
     </div>
   <% end %>
 <% end %>

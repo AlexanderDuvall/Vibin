@@ -2,626 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14d1d3d5-2720-4fb4-8789-5c02e60b908d" name="Default Changelist" comment="Album fixed and displays a post on timeline">
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/-0/-0Ke7xqUXWNMjrc-Gv1HZv4YA_ZCxFcbwMcGEZRbXr0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/-9/-9dGWkiSll1qLn0EFQEqfYjd_T_-X44PbzkJWHUn9jI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/-I/-IpTm2LCd4tmFZDDb47MRnGB-aqdEequA0zfqBoTV6c.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/-K/-KVDdKTB6WsOGYX8bcQsZ3gHhTbbaPZSucb0g1X7S3c.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/-Q/-q42q7pYiNG17yyLO8INAXYBz_n_zZtKQqjA3VpftFk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/-R/-RfDxDv6U6Lgb4koPG6ch-0po7us5ZAQ07So8sdp3Hw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/-_/-_7eRD9pdRNfjN1kqGs2b6kueL7jyf2X06OvuKeBxXE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/-e/-ec22-uKH8LRwKdEVIVI9g7l89iG9a0lFBZTcMPeqBk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/-s/-sQ9XyV_Y5HUow3odY5OYCGJJim03fTHnNDfnIKpf0A.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/01/01tn8nksKTkmO1kUmzd5EoMQTVjiGAezXNhuMYFm_eo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/02/02w0uSBUy1xwMF8nRpbxNa2zHR33a5inO50eK3Sbpiw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/03/03zIcjapWeZMFh7lepuAJaU7e-KudWSO3zFesSi-Irw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/05/05S_59LIdRCKSJwH8ehUrSy5mUWf7SWo4A0AYhJotqM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/0T/0ToJd-UlMlCd8D_RSOZLuu7FRRifkPpSFv9mFotqDrc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/0m/0mB4EmM5sUjeGdM-CL_zRK9hUhP0axna4mn834G1aI8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/0n/0noOq51l5rfW1_cGjVVJYBpglBA7m3mqx4Q-u7JmiTE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/0z/0zTYajIiED7bUZMExxM8FZEPtDcGwt_lTGsLfuw-6QE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/10/10duQ6n7vR2hLHruYguxKF3qyIOe7Pt7aLMgjnC1Oh0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/11/11_qBwgVErGOnoUbzHyZk40-9FKq0vR3D2XzDbaXq1k.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/12/12xyEe3Wp9Ohkiye5tTrwQwxfAD_WZHAbQ2IOsNFyro.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/1E/1E_UlK9Oy_yk9v0s4N-3OpF5o5xqKj_voMOYD2EHmuk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/1E/1e4gSOwjpSpat__J_V8cKxRbmUM4hDTtCgdo357HpZA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/1V/1Vf7byql83mAUsJN-VmP--3IzO3XZQPxalmRe37mpu8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/1b/1bAKWJeWUiLaPA6N_ogF4H-_jf2JzlRcRNMlNKf-mFM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/1s/1S5pK0INPSqNaNJtV-9UFGArs_3VnFMaYzSNTUegfsw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/1s/1sZ7MCUyn_NZ6HO1Ar_8gH5Zjqogcpvk-15cwtW9D18.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/1t/1Tl5Sh7TV8zkbzc10nbi_EnzyIObEijJG_paet9U2b8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/1t/1thjXtHCbf4c2ntjlGuF_x66SghFs8aXYsvcq1anRVY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/1u/1u-dAhQh4FIWOHVbXc_kD1PJ9jkdcPfe3h9CJkC6xLE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/1u/1ua-v9IienY07Z8xmPqf3kxuLsb_XGuRQI-uzC6jHIg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/20/20d-D4k5HhtnFeRHbd7B1KVjybRrBlLNuKpOy4gpVzI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/23/234qTxyE214OJsnfFO9W4qGqM4lGybkSawm2JRuiCPM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/27/27jpqZweWbmlGFkwAgsUR8MGRi5U7sSnA9ZGh01Dpjk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2K/2KaZNsYY0Uz6mCKoN6gg04Bsh75FYLP6ESLAMO2-vVY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2K/2k9oeiE1zIj0hcRs9CWLrSFigYB9cxf9z8ypf9CRbz0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2Y/2Y6AFFv8vdwztwzUgVPkcR-AgXVua95UY-TG6bw7ejw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2Y/2Yvmf33L4blySsrY-X0l3GOMUsaO3uhO7IaXbxk8624.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2Y/2y4iLEqQGOGZYjVtiPsnupnIjo41Lzmv-5qj96s4_PA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2Y/2yMW9KWHvZJorPAClYdiYUX1KOWbAuk1XzLAO0USoDo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2Y/2yjymQL6-dBFaVsz927be7qpp5OI7m9FmK0nXAHBQ6I.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2a/2a9ZHwg-XIxF3RX4d8iDngV74fa_U7W0Q3P7wpf4Co8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2a/2aTFew3pFiko5N1g3zj85z7-9xZu1g4boz1Fe91VYWY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2b/2by8T21G5XLIfeZKgILoe69B91sru724K9v1qSUUU74.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2c/2c2I09AyVOzpEmjoNVRA7QFFlUmRRrW29BK_I6hiaso.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2x/2X-RRiWtwSKqsQJYc6EvMrn-CUDx3OAVWWjkhhgf3MQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/2x/2xxwX5oKuszvrPt3qeOzlRetU7T5B4c5-4sv2FKVyj8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/3-/3-Lus3-QrkjWqRA0S-3_CbIgSLSD4zBKBakUXve4fbg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/31/318MVd-yGhqdB3JDRsJcxWhVgMNKDzKpmqFcdNDAFg4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/33/331KMihdZC2ntf1hRBDgN6ktCOWriB0lRY8kWjO4ZuU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/34/34dkY566OeqJhiKLGrX-JTSsaNRvIODFDLfJMiiOwKk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/34/34ga6y_wJxfLO7rZTLnyw-gWm6tmA9DjhezTkPz5enw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/36/36w6h4NgajOdSuJ3FbE1TogIZZlQ6jnqIMjIzITUvJQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/38/38-dXs8m29douG0YcUUAvcSHxB_UC9ileZ2QQXgSZHA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/3N/3NYLIAO-PV8wA5RJMjGMp_L1E6Yq9RXLlo1GE78l63Q.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/3V/3VoB_cR2e7pG5lPL6Eh2P7QSDk6LW4EZwPCOnD385bM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/3d/3dV9D1f3ZS8mr0Ewbr0T1-Hl2sxLdIxbW6TOPmVF4WE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/3i/3IFPU7MOVc8GlD7cJgdzWqgiD2AmDoWEobFyTMHGNUs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/3p/3pAtvxwoWFlNdbh6Icl8ex5Upr5ejR578L52eX-b2Xg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/3x/3x0sv3X6Ti_rD8vEAuKyB-RSkaiTPS4oomyApswIQnQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/48/48qcyWfvdQxl41MTwDCZ_7R6eZ-MmiQsLp_L2YlOpm4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/4K/4K4A-mDeCIiLQSC69fwegsjHUS_tFPKC3vNx5p_H5ng.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/4Q/4qZGvS1Pwzwu4zPNJPpddgF6El2PUtF6DdLqMbrbzbE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/4a/4aFJr9IV9S5b5tSACSMgvVSk2HYejMXAEUvL2xfXTNc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/4a/4aH5bqwX4GjPL-FgO9P0y5LFa14eJuOBQZwxBQ_Nq2Y.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/4a/4asHVCfjmSOHvwwLlrY1ArF6Bs6clhih-GtSiisGxD4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/4b/4BHnPpIacuA093XLUEGrbLw7_r39Bt_eDlONaSIsS3I.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/4b/4BJtx2l2-WbmVLnFKupj1s1rwZELjfEizNAFAnJb6I0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/4e/4eCf1QkaOA1sUQGHMmOVTG7mpuzHwO_isBI-teZgxwU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/4u/4UgK5c5snkYyzHrv_3aoX5PS55N9ix2JrAFHqRldG0Y.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/53/53g8sVPEcX_nY15Lzm4DF1Zw3kSJoONCSctG2GXn6QI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/5E/5Ek2q9r56-FzaAJX36k6YMLPlNQPOTYzftVf_5PywkE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/5U/5UmVDFdDM89dSmyAXPC9EKqJF5OgYLtGBBVbHrrQzV4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/5V/5Vpo8G7YfEZydjtEyjm2nlZnEiRg3ebwZ8mTAQFmSCc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/5V/5vaQHZuYfx_cWP3xNFaiinzEtLRgU_9H688GNxOeZBs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/5V/5vdWeinU1A_1JFLh4AOKoltodbgEgYnrOncclsIfH8U.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/5Y/5y8hM5Y4L3IHIPe8jk8DTP3KaZYvFHyxAsKJy1Emphk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/5a/5ATn5-_9AzBmmclVEK6GWfvlgKPRtyLxGpQ3GNCBFUQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/5a/5aKTfVku2g4-u1be8u2ofhgl5BpydsNJ-kXqNxy8T24.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/5p/5P0P1SOKYf1_5rZOD5MrIrnmddKdGZI5zDilQd_wFFE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/5t/5TNMRy_lBxHs515rOaoGzSBOA0VeY0tPgOhFySr6aLo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/5x/5xq9oohlkVi4Crue7K82dZOt4Ez00NnmhAVmEWHk6AM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/6E/6EGRac1GK7JQ37TjgdWORFzI2uvvOGvzsAusFdRNZYg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/6K/6kTrJG1hUX-Hf8ZwhWQ0aqy2M5h-aKVR3L1S0LTQ75Y.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/6T/6tongkhmN2Cfn3sTm3ngtC9TFDL_h-Wd2Ma2yY31HqU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/6U/6U8BZi06ADi4GUKJL7yB0yLesqCyWIjuH7RSlFj6v70.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/6b/6bZgj9-EH5PEPAjGAckpXLd18swX-JMOK-yK0FXKzJM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/6b/6bsmCRT4pnHem2gUG7ziIR6AWZQWisAfc942XtwA9JI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/6d/6dbVapSmmYRUDoe35Q0QQK4edQeJbZrJa7v6TwM1OB8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/6f/6fjJ_stw4eg5FcAR1b1zh33EnaavDFxUXrf251TXSdU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/6q/6qtU_nWFi7aEdLc3YI3vXevu7zhObBxC-4fSf8eXrBM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/7-/7-OzIdB6crebulKiVIPJQYtrVryhx_DyUvGI-lmpzxA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/70/706lNQH_SLdCmuRWMf_IKA45qpPLg_Uox2s6oHvIFV8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/7E/7ErT_PGI31AvkNZRnjBzGORGif-lG7wuA9wV8QlIpfM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/7L/7LE00YbeSOnCclBoMNX8AfqPED38xi_OyJ3ilcFiAkQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/7i/7i5wcH3xd-nNKYrTY30VUKDDMDYZFNadMOeVUHi0A5o.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/7i/7iqiB1DhaJh_cp9jFjitVtjrwcIrSs89mIqYaHkOAO8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/7j/7jOlISY3xK8nv21w_nVoYfUBOUiUBtjwi4g6-uz4XsY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/7x/7Xp8KmC9cy5FclkfbHUfL0UC8uwiTKYCfigoylGZg3U.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/7x/7x0QsQRYmyrPYn9gIbdHgq3v07qoFmkU-qVs5R5lA04.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/82/82DXJfNV3_klUjJBhS-6WZ3KZVAhOW5nnwGCeree-Qs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/88/88oMIYod-1pqFVYUdJHbX9zfr4TNE4iLXqQn0AOEy_0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/8Y/8ySk1gj5x89_VuwfyOf2-fqSiEmovE7WwKPVRs13I0I.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/8Z/8Z1kkWdRJ3e8DlOp1P4SzcDwxJhBE2s9WGP5d0bibXw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/8e/8euD0zHuu_Wmu1ZaKA1Wh-DxRBek2phju9vbnV0PWMY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/8m/8MciVSlnHJ0P2yHNZqHmuQSmRlvBss2Ko1y6pUyfs0E.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/8o/8ouSfxWiqziI2CPJLrqanFwN8BqVkgV7YHP5-ZaPOas.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/8v/8vRWjVWhLynzWmmkx-tI7REXOLcgCctBfyZQFjb6JQE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/91/9140DWkgGXfVliwbRD-9BsnctL6KQHTeEVSntBxP4JY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/92/92ULNbqIl1bG7mznZA8jIRTph8fmFSADJXHyHS7_gfM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/9G/9GKpAzWCsxwI7UF8J_UV-Swps5LiK8KayWZgv5mYNqA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/9S/9SGaWSurMq7I3BAkN93HMRxu61Q12lyaYT9F2NYn8U8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/9S/9sytXUSIlT2hncaMgHcPyRv8UWsCGCgOCQEmbldE6Yk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/9X/9Xw7jdVutProIeLR83KWYdJXmk642DysTYmA2_RT20Q.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/9Z/9ZUY09rXEf9S1WLeS-tW1Psu0uBprPoCSSBi-106-Ec.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/9o/9Oi62q9pOUN9isfPslrK7sB3abQMFHVzA-t9x6of7wc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/9r/9rpe3a8uJBy8VMxP2xC8IY5CDyoyfp3f1MecbjA75oU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/9w/9wM-v7Ltgfm_PTeo57DjVjUihuHtwfauwQBRirWdCts.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/AA/AAIY4rQr9VTbEdB_7kmg0ufm4ILLXqhQ1qgXQGNJ2NE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/AA/AaJEIGB7UEJRvweTpkdLEYbkPyNcgVOM1O7Bp4OnShg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/AA/AaWWP9j0X5ja4iyJwsnSK0LtERS5FTVsj00ADOQcpMQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/AA/aa6hU8WVZdTNVnwcnkFYbetMk1MouCWUn1d2ukijuOA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/AG/AG3qa6ATbh7ww_hW5z8Sm_wmKmd551GxfOL4asyLGU8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/AL/ALKPXiHQ8RWq1lLe3ku92wI0cQ4sj8LZLZobiu03hWM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ah/AhuOmcOOFEDkIw0ojFH_uqosrAD8Xa8UbKZqu87BkWo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ap/ApP05HcdKVmfFx_Ylpwn9N60DcQ9zKNhsZDLN9lWoeo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ap/apA5raXvSQprbVM65t8kNK-B-o_t6Y8-7AYBKj12bWQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/B3/B3hqjaoLGBVnSa3gVLgD2PBFhpxoZr9gfQMOICD0fLA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/B3/B3uAu-TMQ_xUpbG1-zNVDluF07OEL3Nc9WluSFYHsHM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/B9/B9ZIaMa3cFwrPyRWyursvyVTKlSPxy5R6WxwiAM4oM4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/BO/BOxTiwtR6YeIrNU5b8Fz26U6HvrPTdj4aYxnHff4rdU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Bp/BpGmfaEsLZYhuu8SdtBYyu2_OgtQWdS73qi1YAG4tms.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Bx/BxAZ7sMeX6Ia6wOQgxvTFXKcbBcvxr0ROVNRgeZq6QU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Bx/BxOOTios6FhONEDsSZzaQvFXpINIwXZRoj9JdV7tiwU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/C9/C93HUu8LBjAOolwSUq4_6tblUouh3tOewKwHTVH93X0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/CD/cD96fMGHs9jVcHElFtrufsrDRtpZMQponXhdBz7-jK4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/CD/cd8k4YMBbFJQIhYh3ctlUCxBjZClQC2EhfbuHKmGkvM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Cc/CcMad8HalBF_qgWGXDcjKDaMhFIJe3MfmC0H-1XOvJY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Cg/Cg4TyJp3YdDGOPzJe3VAUpujhCPmhz12xom7EUBDvvQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Cj/CjGiJpQq5vjIK9r3r6-_VU8oHCG-JVttv07PhmL86z8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Cu/CuAbZiskhtKeH0LrRMzfoh_IS8N7ex0XuXc8UnO5I7Y.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/DK/DKwG_xUBpfeTAC7K5XPizw_WMBGkJaTQ1Gm5QFjR4UU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/DV/DVXrjqLg18cY8WXIfRMG15KN5HK5spI2gA0BAkF1wCs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/DV/Dve32hH-iJBi93nenRShDFei81U3B2RxovBiqMzHcyg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Dh/DhCFwnnJMARK6zSNtRKDHUSIFSsPtV3OLkwUttEraMI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Dh/Dhw5zisPNjAJAtqdEowF14sKzuI_OY1wErce_ap6oH8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Dr/DrK8zaLf3JPZK1PLXNO-6AWNuQbWFQTTaeIrak6Eq-s.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/E7/E75ALTABTmkaRQSWnzFbCfHYVOwUeBluaPRgB_H4ZPc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/EB/eblTS01y96YLtO3y2WKylDae-dW3ApCF9dOQ-MOnKE0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/EC/EC341pKqamkMUuMH6zuJQIfWsZVhwG88E1Sw8yz0904.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/EE/EE5xab5bdRgSD-jFCuJVKH2CmorKkL9cQbERLmucufk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/EE/EETBVs2lY03kW13NSOa-G8HF-oUbgfbVwL2s30dmhOY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/EE/EepvYTZWN8YhFs7TwV3192uMjzWesWn8JkO_XaHHWWo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/EE/eE7Kc3RZm9jz6sX0OQOzzc3ZR2O3Ik_L4AjNwArLK8c.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/E_/E_JGN9VkpU1ZRhI-bwfpSmtsTriw_GOg2xow9zL_G1M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Et/Ety_QNzJFmOsd_Wj3mjNaVLicSP9ZxebF2-JFLmQc2w.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ex/EXSfUIQAL2IxVBGEW6bZUihx6mBoB4ioX7YN7ek2_3Q.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/FC/fCCrdOS0BdsL_F_kXEtoEI023AK3XyZrBDOdERuQLH8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/FM/FMIfxAuI-svy_pHxqnw4v4OTCR6GrMkOG0kOuCXVjj4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/FM/fMZEG4r6AiEw2-pXY3WWgXzp8bn4gyy_ZphG_jtDZrM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/FX/FxnAfn6TAyQQgctg2izXo86OfTiAuBK1Gb8ZAQR9eR0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Fz/Fz8pfQ-Pd4vygbJtOar58oHwp_cIkg439NZy7ueFS0w.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Fz/FzQ7bODy4iMmwQa6jJInGQix9zKq3GNJhR1uOghbZMs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/G2/G2Yr7BlSrjaKKufn-jdcc6K0MV5mbdOIJ6J1qGmq36U.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/G7/G74eFHC5SrK9Ql4jgh71ymMto-uGTtvQ5dCy5-gayAY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/GF/gFSa2BdDI4WxXhUw5DZbWOFiAZRFv9DfZUsagGijOXY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/GN/GNMhFhppIF_gLRZviFVvu6cMMxHICymTXEDe2myP1eM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/GT/GtGYnSM60O5DPF5BMCiekPbt9_CSBdW19mArCNQIijY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/GY/GYle8j5WT6JJTGLH0Qsp9gpEYyl_fNCDX0-qNfpEBoI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/GZ/GZeBHn4CoEEshOJo4a9xHRR57_Ofq7LZSOsHCJRZT8w.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/GZ/gzfjWAMj76w55D1ZijVoDjyQyoC0OXYKv2DzVmudx7E.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Gj/Gjgoah3lhvLCK-DbRHEl3J-bZ-NwbGfNNJ5sv5sLHdg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Gp/GP48yQLZda_oymGrbv7p8lM_vPxr_pn2ZeNLGNH1SVk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/HC/HC36SLsNUuL2AZ12tKwMAulkhqAt-9Y956nlYrLHiLY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Hg/HgFuQwMMxNbkk-RibxEFQV67jJNdK5jyQo5nhRpOh0A.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Hl/HlPsY6UvoX7bsHGxPa1FpPZSeu00e7FimuqHcTv-EAs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Hs/Hsmv9GXXP4b5CXHT0I5tvc_fJVJTYu-qGuH4kKbBtw8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Hs/HsnD2sACNIEs_bZxvwiwrkkCHUqbgR98jcGOpPK_r8E.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ID/IDjyQb4WCkYJ7XV0O79sOtCK7FtkROZMRczGwYMFnP8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ID/iD6IKrYHvmBBusj2xjd1Py6d9RihxdaJ8CeiXbs1kUA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/IH/ihjhB3yWeoBeBoQEY_SbmxwOl4TakurQrvMxVrPJfE4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/II/IIi-N-QDHIlqWJeRFtVDx1g5awOkKo15lMGzW6ejYjg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/II/iI9USfytnn5zF68pA6lHRyslGLWjrxm1va8N4LHfF7s.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/IM/IMWq-6BVWX6vxgWksBxRoIHiEvBKBMGxP2zYu3Z28fs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/IX/IXlIWFfHKvXrK8QBThrvh7diq8cgy5qrKtRcMHKOckA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/IZ/IZ_UL9MrOeYaJl7zbFbEe7woDLD7baPNJyqyOSk2O74.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/IZ/IztTLmKaxeVP8uasmK1TF-DZLyNe8bsx-GDaQJPEHhY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ij/IjjrTcVi1TbLtBhJPQpNiqI8UxoN1XlRJ5hwVEf_BUY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ik/iKche_GBj482NR_zY6E9yt-2m8MB34pjktDGtdCd7_8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Io/IO1JQLZ5511myefPrQY5JZGLK_7Qe2E_Rgwh4vIk2Yc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Io/IoGzF4mNTdW62xFVm4Jlv_zyTkPfv3ZA5JmH-V2rGdA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Io/ioUM4i6ojUM8bVk7UFBp6y62VJ4HJxfnoCzASH5LY3k.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Iw/IwRXABNmRT2M12pt_lsZJ67IYeWKngeJlvznVWoj3B8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/J7/J7KJ7cORlN76thDVSP-4V-eWJS2gc3FwVOuzwtnDW3o.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/JE/JeriW8tgvcjtzgPoSp7xNlBBrQSHKsqDHRSUABftBI4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/JX/JXxlPRIOS7CtPnUWA-xM9sRQW1PmATWYxfHHYmTauC4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/JX/jXVBEv5UEVRozCA4OHRsgH4Y5-vFmu3ZyyuhsLEjLHI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Js/JsL_XZyZlU-zfntsCQ-6VmkqJNLwuJJ64lirYbrcJok.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Js/JsWE44muIbc9BJqzxdStzewUZgGKbOWFMoZyT_z3VUk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Jv/Jv1spSfgjx7o7KdbDunJfq0GYjksjT8rDTVvonBJEN8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/K-/K-vlp6YuHP8tLmlg2a05E3lFHc75Ldl4dwCgOyHVDqU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/K-/k-XUsprLCqX_fHXO3AMmtX9KIGeokrMxNTxSmz5jYYg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/K2/K2GtdNGScy56ho6XcEhZZt0XUYnwlu3QT2kK7TMiuYA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/K2/K2d_T3lQtv0qkwg_7UWqZMp-CQtI_RTkA9EJTLrVGKE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/K4/K4gJfo0y-KUKYfUzRViFSnzcVSEPLXeS8zM0a4tTwuI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/KD/KDSVbW0T6Ui6OWI1fsnbObQCoj3-aiggAbDtai10NJQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/KF/KfPoeAfaietgzE3SIclOTi7KEm7jCMUvxCZxvCogy7Q.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/KT/KTNVeVIpiUEnDUbsIIdWRG51UydfwUPQgis7dRQhLV8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Kg/KgObhe3Rd0byp4-qaFVA-DCAEznj47b_qsqsfnfLOy0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Kg/kgjrcgkWi2vGxrxP7ILWI25IWgauhKyrHPbSPDyECDA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Kh/KhO7-rnYzmF8PFnDmhJziUzAENAMR7MwQv5g1nrMm8o.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Kk/KkEJywFW5-UoNibAhqic5WBp-75g0gu5eW4pSvPGQfQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Kp/kpCnpqpzw_Ia8c4Ywad1ve5SgdhOBOoihp_-GJ21j28.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Kq/kQyOBCU3KXlcHQ9l7xb9Pw7i7moenK8gKHxBHy4_Om8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Kw/KwnnabrgTiXpmBhtEzOha_7CGRoTZSO2QtxhBaM1AtI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/L5/L5nai5_2N0Oj2kB6vFruzvW1lB-K05Yq2eY4W99h6V4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/L9/l9GLsRv1KC7bZVIqXl2S8FDNhwbeX-oHpZGBocBjHbg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/LF/LFMYenpxXn3SfMm4L_rRBaVTU9byw5MrNc5fmbXtRJ0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/LP/LPPGzCU06VzgcN9gnWCVBYPh1zvA2_3qTd9KkIpxSoA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/LW/lwQRbpOv9YjOAfcvSiarELiJBDJcl4fsWy_b7C7LGLU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Li/LIqppkR32QFbtA6In_rhpxUD1cHAktJc8Eba5pXmvCM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Lx/Lx-LZ9uHnWlS5G0it4nZr6nr9napg4XaN6brfy8UjnM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/M-/M-9Q6CufuLG7ha03Nl3hTriZiYGQ7VXh5i59iI7r_qs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/M-/M-gQo28Q0e-PSUqefn41vZ7yYhECgTAazFbNvK826Tw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/MH/MHfqhtGiBcakRMLgBTuMRcRilKfLZaPWe8M65nJKhhY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/MN/MNwU5R4Od5GxN3VnIauL-I8HECG4dfbXoVReXFlD-dw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/MU/MU4PSYG-xGPHoDWD0vtviGZIRuQiUeI3b1lweAh_-TQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/MU/MUOwLOkGM-4Fe_1d8jKAtZ88opsN56xjObPwF2Y3O2U.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/MW/MWf5lIA46rt9sFH-FGfjGzIGCv7L02hOTVEdQ3ADk_0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Mc/MC_fyUfUpiPTbTHJAUZAYzW5HpOskKhS_na05-QQ2oM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Mc/McdeTgeoEjLA9hiOp8rBfucGvwYU2us4Fau1JGIp78s.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Mg/Mg61TjnQXwcurY27eEZlynVpI1Jco7AVkyxLMVf6_Po.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Mg/MgP0ELovi9Dw1dgMwuYsbaW2v3f3yQg3UNXRwbMbj_I.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Mg/mGevb8jLul52HJMAmLBQscG2OtYAu4PdtoDoKFNkmss.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Mg/mgDsv92Mkr3QvGnACSFvm3mjUpBWHP7LEI4aqe7Ax8M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/NA/NA5oqi91bzmHtcKTCUjDAACFFpoctukyRE-Qic1YjIE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/NQ/NQJ2AJGTzcaLMAyoVDSfdDcPmRbnkuC_8E_1KzGKz0g.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ne/neTh9RUDWS95fzWRIj-ZqFjE0293vnTAI_jaMvI-WEQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ng/Ng5pOzH9IVaOh-wqoAvlJ_f2Fej17sBVhCD6kOG08xM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Np/npap0blnit8skjuZQwAVsutsHaI1WnEMT8qK4GB7vT8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ns/nsn7blX24-1N3n_6-qCl75MLzY4v7_pk4xD9QLTzEKc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/O0/O03pAFb8H1cxyO5tn8W2Mc5hqsjRDTotinT1mKY2wSY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/O2/O2zaAOn7oJ_OmkgiQldDcVVCZTXbFpCxtFMs0vNZwB8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/OX/OX7L_00iy9pns9cS6-PUCmIKIletbeUfYkZWNJrbmj8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ob/ObtvAXFem_2E6AWmLLQRsKrj7EtrrbwdFJ70NNYFhxU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Oc/oCo7ZKekj_nPKpFA-tmhLN57_xFFim6P5dujlbOy1QM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Oo/OoDN0nUxbTrjNiPqAF7hPO9BsyhDGrzHUTyrzhyq6PY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Oo/oO7Kiw4QBh7hvdcLJXnO_dNqWMHFIMWSEahnaiE3oT4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Oq/OqMvrW11jbeKWdVoAdGV3AZw5r3q32sQB-qV3BH-1YI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Oz/OZZBJG3-E9_k5DsyHE0Pcw4YG42K80ulPQbwED_vbKM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Oz/OzP3KjGHWlGMqL6yps4fqBnuYQCooTBBH2vfvaXQKNQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/P3/P3PApO_8DNNmE0Jc7sBLlhi29hP5X9HHJsuxH3BZnE8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/P4/P44m5qfF0sNXmCbvXfGd_GE07F1-Xfap8lBDRMrBU7s.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/P5/P5WeBAVmjni74bpdxGxfxNjrY9PevdbK5bp9R1ZzMgg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ph/PHdBTIfA0xNZcMHmMcxUTlMbRiLvxW0-doL6CcMGs0U.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ph/PhAFVXxS2PsfQPWkSHh0xzhdXCHqcPU9YeeIi6ExBQc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Pi/PiG2OP2FG4LjRFIaye4z-iCT8SVAGMX_7_Fyf8oqiFs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Pp/PPObEx3d0ZUiOEJbN7lsS9kItSBrb3mE1YnI0dVyXhs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Pp/PPdi0rEvHFvBB8LKF0oe9I4oXeRCcCTnBobT7lFnU3A.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Pp/PPkIhXW0Av3oqRQi4FDuXrMLVB8Mjczwne9VnzCy214.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Pp/Ppgi401tsr4BSXKqpxLlDUhtgzLZpF37Ru4Z5G8-EXk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ps/PsAYmI5g9wnerAFUyJdk4J8o6C58fXdTRiRxjRFRouo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Pv/PvlDwZU4lpo1E-ANeuHZGRSpL5WW3-mlyczO-Y49BZM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Q3/Q3HmnYdQLlZBP49wk9r2FGosiQiHA03obt3C1mR8zRQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Q4/Q4APJuL_HR4nLbCrLT5ds__8pwKy_lJCCrha3ndjgCY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Q4/q4JpCoQw7oYf9q6M4y7I7ps0dm2TK71sSesHzisu6G8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Q6/Q6HAFlfFugZRfl2nirFXzZj-qH1kz4k6TpzT0NRE2wU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Q7/q7lqGIGML8mEqAl4LfvDCU-J2pkvm1F4NXFyApTgi04.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/QH/QHncsY-mQUeemkGPTNWLlKsabMJjReqvXwi7RtuDVKQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Q_/Q_pwFGmAphafOHXtMLW8-czMd4EHua7m1tl3-a6KWIc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Qa/QaQztcYZT48MYbPDF4T6q7VtjWdHSRbq6Qd3K_78xK4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Qg/QgjuSZVktOt9t9c2S_qzpQGO-NG_78sNlkG0AjBg3tU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Qu/QusYzWj9swzqkiC-WtdrAzH6Gvws9K-Aoweecuhwk1A.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Qz/QZ1Ac9L035MlHaE7vIBcm0l6gsm6Nl-be8ZVIlteDoM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Qz/QzzNBHyBE_Qwx4k3Q5h2WISeK79R7EMfu_2GMUDOimk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Qz/qzhjR-xCzAGEbZfKIpF-v8kt30EjI4gGHX6H77ZiUTs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/R-/R-SBVWjlrPTeuWNSRwYUDSoLLAK3Z42DZQFkqzSnDuQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/R-/r-34HjYyR5vvMEn_PtXbbByegDloq8CBxzyDjH5vv6c.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/RD/RDL6zJ6i73W0Ox-MSPZ7EpCIxl8XZ3dysECpKJk5zV4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/RD/RdPXHlMntKxRfYO40NYOcj4QMipKbYggdyQcxUGckNE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/RR/rRsq5iYIHG16w96t4Au38RR2UBaZReUCZLLBiIVBzMY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/RU/rU5f3kwn67audqRGBeuttOa0xhTsBTBmhXn8NOjtE7M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ra/rAin2gu9HK-4r304Th9zQKxYUPyoMTENOoPi1226Zpw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Re/Rehqcq96YT-RB4ukxvdA4g2YbDlrBAoCQErIZ4oMF_g.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Rm/RmgXUx2OepzXZep73ojW7ZG5Q1HuN6KjGwsM9nBa3AY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Rp/RpfhydCMyJc7MNjqkwnmZAOvunzK0ht10koZOaV1T3E.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Rt/Rti-zDzGXJtEYbuSY3d1ajFT1qN0Uy43kC9SfbgJRdo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/S3/S3u7yNNJakXrVffZc7jp7Hk3IKDi9-2FtlikkPZAJM0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Sr/SrE7s12d9u13d-6T5Mt1znm88Kr3kT4t_EfceeyADqo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/T8/t8xFPUOIDI6X1jVAvTg-IrqFozVHIzDxWz0uJT702ec.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/TE/TEtID2TZX7bkD-xymLWaS9n-ntcYNRICJYNv1on6sto.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/TN/TNfF9t3dHzgWa-lUO2GKvpSlGLsf6pMSLGff7fdv4SI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/TX/TXq3p4Lhyxpv7kKcnmQd3PRaJTJga4Mp2wtufxVDsMs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Tf/Tf6vwh9UHHyS_U_x3BJtzW-btyxAdXM3rGVUXoBWvYE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Tj/TJvcRvnaOw53CWeSPqMdYQ-OLvMXUcKXTpJzZyPfuGQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Tj/TjtZMBtfZFtZQrmEdrovXpOY3qsaJPo9BGZaVOVdqf4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ty/TYsutmJPf79LPiQlpvpNdU9gI3aayVg2tRvbMFtTgTg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/U9/U9DVRr4Yvo158C6vCLniR6EOY87_TUCph0NZQ7KEcq8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/UH/UHAPBZqmBPYBU0didQur-_EfvFsDrc_JH4Xn4PpSWfw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/UU/UUSjcCiKbuEw8GQ8qJS-re0Edz-RCvq8lma1300JKMg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/UU/UUuK09-v-OVcPXOUdm8RC9BTgigJly6Oqj2ytr71ofk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/UZ/UZUBfFNDm31Ne2qUzpC4cWWnz3RT2-8eRKW1yyRYmoE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Uk/ukWTuQgXfvkb4VJ8jxi-rcwQg2AnyLxwXlDTFfR2D1U.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/V7/v7hMrdng4r6ISb_Xmif_cz10K04yVLWqxpFt9OwGdNo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/VC/VCoqgv7ce0Qhj8gM5R8sxVJiJI1avh1ifCyGmWsD9Jo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/VC/vCS4Ji-9Eq8qUjrGGdrPJYeWAgqkxJCYTRQ8uGc6zPY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/VG/vGNLqQCtuxCF1cTUOd9dpbwaTFcq3JmUpWKfhlhdsjU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/VV/Vv-6jbGOHpNfYI3xxF62Blo3vHL-IklqN5UySTPUs_I.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ve/veO950sh6uI6zrmitgQcykIJD6hswNYWwG0jDpW9KU0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Vm/VMq_JKJz5xITBwXuB81Kaq1YT8z4DC-l4RwYpUENPF8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/W0/W08KsIuAfyiluyw_fUXEFKDwxtH9EOZTB8E2xm9LI3I.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/W0/W0N4PTfPrHkMUF_xTVZrUslTYS9D7co2W0JT_YtZbAg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/W1/W1K7xLIEWLWlfcr2fWoQJRR6YmIfrswJWnRiPAC0B7M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/WJ/WJT_xN-lV34IGm7iKh7ZvSOFrjGyN9Z_hljw_wrCy7A.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/WJ/wj0P05LOReFbL-fEzJMG6BreC4Ay78h3LULCZiZ4izc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/WK/WK1yfufy14PZBEXjUlbQ-e3DREbEJ7MBbw18RHhvwdc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/WY/WY5ntTTNqylgtDTQfwQ0-tFycB6czvmPkH6ie6B1mEs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/WY/wyoPxaMSZXJ9l-xvRA7qVZLrVyp-pKtHu-u_oWXcZug.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/WZ/WzyOm1uTkQWIADoMLmYfELdvA9rmvspUBpwKJQMlTaA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/WZ/wZ6mTExJFDi1SP0l4iZPmBcLh2K9oV2NfjMT2QM0exo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Wm/Wm3fynC3zGdzqIiel07lnJEv3p1yRdpdA-vqkwaB-j4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Wm/wMa8Q9b-p2wVku0HRbIP4PldqgrYxsKPQvFeRDZr8Q0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Wo/Wosn2WWRvcKTfBC7JaWAUTHF1cXR-SD0_sw_J32K-ow.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ww/Ww2Zm20U8ouUO4igAbAkQ_rqkRRiXnk3RW8Z8Vb44Qk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ww/WwvpBwU0yHyxHs-cIWXAbUG1WT3HmUfPbBH9k8aDY2I.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/X2/X2_0SiYR_SZV0WJGTclEoLVCf78h7OYAHJbGgtEc2qI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/X2/X2igsycLv8uoYDIhlhKFFlvbLxZiQ-kJ-hKvkRmTHYE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/X5/x5KS1h39HP9qYD8Z7EKJJWMqGK_cy-vIgj3yoJKGZVM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/X6/x6Z0RhfQr6NHOgP6BBILJYikKEzesh7nu8y1_H0lQIo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/XQ/XQmqdqYriKBCEh4MWN0RDTT4HdGTtWdFz-9V2bDC51k.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/XV/XVwymvqzrgx-hHtLV8ZpGjNY-tK4ZPaKo27Aawm3v6w.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/XY/xyIjmrwV9ac8SVPNG0RA0WAuBIvHvhKBozumIPlQ7aE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Xd/Xd1BpbUMVAp7oHrXxIMHkOvFJHjSwfaCdeOfZ9RJj-E.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Y4/Y4zM0e8tVCyQGWBJhBfX9PEE_dKwJfd1lpeaavDA-1U.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Y4/y4eHFIi1u8OJ4lb_j6c-6TAaRGa3SbuTPbFyUr0bUg0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Y5/Y5WN0mMkci9ierKe3cXzarZoWwjNLo6FsrHkCEygUAg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/YB/yBrM1kj3WwbeS2Oom0S158x_LAI2lmer90DEpsPNtws.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/YH/YH5iw8o8cJtjYDdQbeZcxzdx4zXschl8c569JT2lFMM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/YH/yhUoIGxNoQIyRS1IYD0gkdaQ0p09YLQws9OgJg-rDbM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/YI/yI5gcl4CcbnNrZYPKcM8KCeXvX0j9dJtRdQw59OdbyI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ya/YarRJetqbq5Qc_LP_Om2Xc1AvRfVKkVwb72fmBCjNfw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Yw/YwNQEsxeCzTuSzwnG3sCdvH9rnv9_h__NZZASLNoKdw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Z6/Z6uW7SJGFgnPaxCdkCR5aKwRdWhDOsK58ZFaamJWTTo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Z7/Z7piDDorzfkvNf4THC-uPEOlsl2v_3PeXftqxuwyi0U.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Z9/Z9KxpCvYe_lL5FkzWgIx7Zq9_tNfkkHDDWahi8XT5ho.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ZM/ZM2huIMUS547Xt1mozPenyl8iPJwEFEmQDrhL9gJDE4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ZM/ZM9ix77GxFQnPvDsq8sumvK8XlXZUGr71YotL1bAzZU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ZM/zmjBNV2kiVZM5awCE61v8hhPt_JcogkHqVWhNTIXZys.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Zc/ZcKEpHbUwGl3T5vpIDV9JaGmxyW6SuiHGQ5bn3eo1bc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Ze/zEhhWYXQOiXBRbrSo3wr6WLuW0iDtQx1vQ4gNGVY-rw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Zl/ZlHAgw-21jfhCJc_le4UAcvYdRcPSEabkF7BQIS6Xw0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/Zl/zLPTAd995QgYVddB4raZ_F6XBmsWaMvTVPVHXSN6trg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/_3/_3ntRBfCKZBPw6oxykLty6gd5paz2oMR3B18L50ZEGI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/_F/_FW7CBsOXLObfq7eD3EYQrZb86MHdYxtcYVhFQx_Yno.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/_F/_foNT3v5f2HxtTDFiTp_uIavLvTDhGWEXYrmyiEv_ZE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/_K/_KWcOyXc4latyPunFYSG8ISpnJXA9mnGePf2de1Ogh4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/_K/_kLZFFbSxjNrV1pRINxezHR2gbIIOiZoaGmwmQnIqEs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/_M/_M4r5P_-3F89uGZJ_3rmBLkCyQI19JY0HwQnW7IJ2uY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/_U/_UBd4jXifKkisIu3_s2qVFS7hj4LODFLFCF34J-chuY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/_V/_VMymcMQ0S-jbzoz5ldMC0zkSXw7x9nl0IzquUgOIzY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/_W/_wJWZQxFhtpxz3Ge8_QjYd9u2tZ0Mz3Sp31JCq0T6uo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/_Y/_YrS-zWSu-oANP7pBlab-aaN1kMyRFYwqlCmlMr-wgA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/_j/_JzXti9VS2sh0juJUJ53aMZPiigC0BeMAybsf4PKsqA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/a3/a3_Zz8GfaeovqvW0A80uL7Li0Hj5Mh7gRzwJdF6AEOg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/a6/a6vodwxGCRHgcffF-YUVNnvq1Q7faKbqHas-EtnamNY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/a7/a7L8mZGKMOsrocOmGZnAKZPDt-RtoGmq3_k9e7vKUow.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/aD/aDEGEqMiTpnY-EFJHtqP-aufvThLn8xyLimt-kPAdq8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/aR/aRf836m1WLhdlERRTicI3Lse-z8uhD_QTcWMy2cJtsU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/aT/At2JBHq9LjgUwQT18q01DAQUzhixIIDJ-X6FFNMKL6w.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/aT/aTbMDYpjueZJFWmBOw4IiCDsLXuvbPW2_C9AH71OLlI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/aY/aYhSpqH_NSSYmjszhIvLancxe9OOPSi-5uG_8jDFRbk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/a_/a_WBAfi4TCzBsIbEObUeOkoNWD0ltyyea636slSCBOM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/a_/a_fjlDzjdT9GijCnBHEl7kd_VAwXABXpOSPV8A_LJzo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ac/acJ31co1-qVjVAvHASkznp84xOoknyo1sFQsyH3fAM4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ai/aIKn2uJ1vn2RGz4pOrQznM2vAjw1tyA9D6t3nPcL8vw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ao/aomXfQHnoxwtbJr67LNZUCr09zbWMa43KJG1GXbJWoQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/aq/aQcFI8B3NH1VxYcLYJH5klsyTmImDaaBL9I67tdaIHU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/aq/aqTfv_0DW2nMshyr_vIJxCvI2ADQd2Um8jaKlB23va0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ax/ax0CII6Jr-TS8UcQfVf_la9pXDWgQzdG3aUhNc_i7NM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/bM/bMCtsuu0ZOFr_wS_5lLp4voXIyGIsoTccTVja2ATFnk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/bZ/BZyP7X21xFQGNLtmLuYqnQspQfBJKNtfyK0n5fslXkE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/c-/c-v1NrLN6Tla-NzJqokgxEFKhAaO2I2RNKMJGLf9u3E.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/c-/c-ynBHJda5pcZHSgGC4oI58_6_oIMNGjiO3I9xmDcoE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/c1/c1ttEpGTlAIKQe_jnicDotxHuiPPPs9bWBRtNzKF1e0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/c3/c3EUS6Sop6jgaW8W2Tt_8pmw6NH4wYrj3ND8BVj-M6w.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/c3/c3VpsRoMuMYPOSsd340aXmnMySYAJfrPpqntVro7xl0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/cL/cLOgWzCAz_WT9XWmIgwh-TF_RcxdIPRCMxOP64pC_WI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/cL/cLRIMDQTUrP3CYOiQoioPUP-YuSiNZ4rLl-QDeYaEO8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/cL/cLaSiXHmNp_voWdmbWJNRQFVoMkCuZmWzGx_Jszcj7s.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/cL/cllQUx5ZMPUjm0_q8GC5Hww2LnN4RURCDCMWpvgIRIw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/cP/CpM8gs1YRVdcga5dntwMuXEHw_lKgg-f6r-VAKsK_1k.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/cT/CTK7cwHH7Kspnl_6Md-zPH3EkTvQF1UWs-AZakoJ40w.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/cW/CW9l_GX-LHYkxlpt2e6_ndGRLWc7gvN1lu16jdgmWhU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/cW/CwCxzhZ-oi7TavnH1SvRhw0irbUghNSruCZnUvab3YA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/cq/CqQnEsUIKlKTnyUfbBjq8W3Fpg4KDhoTuMOq1mZyow4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/cx/cXXz5AyiO_hVVAZSzIhBwAOJVz8h_BvGLmZMfTWxeNw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/cz/czUzgRkwpzVvGuRCvazDTKKukY50B-P5MI7bUc37YOE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/d4/d42VHDDOugj7l_KOmSjYVcnNgWJAW_4oT_BBfiLwK7s.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/dN/dNKTyhZF1IU6nnnJyAZo7CUawcRvaikfZemVS5kIvJs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/dO/do4nZPlAUnLwi4QoL4CUpkBdqANP3MD-RN5X2AB1t_U.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/dQ/dQMcctHBBv-q2--0bAJ21uqG-kJVn3d-ViAv7CAKrrg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/dU/dUATsSZSrfYtbJbjaTGau3AF-Q3o4pWPVomGal1vbC4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/da/dagO029LSyJyEBxLOfzkiwyQSWyfOER3UJoJJfNi6Qc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/di/DihARwSTkDoV45xPUO6LM3UUyMBREXMV8rA8gbfONtw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/eL/eLN1_cOqPq2g5R46KCzEvlwCaAzD6hIyrxzrt9KZr-I.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/eL/elWcyzf-6-EbgQoelANdcE37KizKHdSJ3jWDTRn1Sio.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/eL/elzjHc0dba7DCAMNwYF0KSCxmCfY7ltc6Oh0win9VME.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/eM/eMYCCj5iumJAAIU1a-BjwluQS7uR4RNqcgUje3ZqFzU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/eN/eNgvJLFjIsFzCwlJXgaq7y6l8ycHrBMLQM1shgbu7GU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/eN/ensVJCwEl4z08_yAVRA3BhqHJATQYMviAVy4f0OyP5M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/eO/eOXGAFj7uhuHOB7rwJqCs_q8srFgAX99c0UhxTZHTBk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/eU/Eud_vc1u8msB9R77XkL82xJjjb6NgHuB7xP8Wqs6_Vg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/eU/euRsWH_Pp5OG9Ht6gdX791Uth_6NaLDnRD6woJEcgyE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/f2/f2lYbQq8D99a3VqQNuhfVm3y0WIjwGJF-ihsGC43NEU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/f3/F3P1CqmMHg0SOwUT7zsONjEYSmXdh57ZGY7H4GEk4os.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/fD/fDGWbCBF0EXSWDscxjLZhBDPlzOas-_3Em5L-94Lxvc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/fE/fET1-oaVLqJyL_wiSfxJ8XSwwlJgI6PjkDrlUQvw3xM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/fW/fWS6gBNkuAjg834i0MBp3SkU0xz3nYLjrwsCpyenZug.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/fb/FBDZDT64PvhVPVU8RwIpFkay4aKRig1C3sCXGvz9cqg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/fb/fbLzzpqKzAsbB-mGGsC10xcezKecUjndYK8HUNStmrA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/fi/fitjdG0r14ewRxHui20j6CBQVEbli__N4EAu6DJvwaE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/g-/g-FetD8SVw9OBJfxYdxT4jGBURwC7kgjLcOgmy5xQSc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/gD/gD97-Mzyb7B4QE8hXhAxs78LSAZ0UxVt2d209n1XGcM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/gH/gHYgnNozT9vubQgAyFX2iuJJfaqsaM1wZ35HXGeM_Zo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/gK/gKPkK-GuAEkL3G8J9ulxU5pYxjIsa67csbk4t51Y-Uw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/gR/GRX1ttJlLnDrQJ95l7mR1_HilzTzRdf60Huo-BV3oEY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/gR/gRCtIpVCQRWZxtuqUe91aLLhmY8GCxmfVvWNrUINHGM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/gV/gVOqbinO19psKSeFhUpQGjZJ5cg6lI8PyNqoS5Dl9R8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/gX/gXisF5c3NMxnvfPNMM7Ug0R_UfY6dicTOHQr1yie2NM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/g_/g_KuVg2wbZbGsPIh-XbtKrex50GaHbbcDh8CHl1me-c.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/gb/gbELI-c9IN-qLKlLuzMih_wDWD4DEAVugUmwtBEQBlc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/gi/gimW9YkboBh3sT9DkM_eeTfKExrWn_YmGoL3FNO-pIE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/go/goDXySaDKBC9nUmN1uSXWsD18HBIVsczUP755PL19MA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/h5/h55F-v-ot8Xom7101JN9Z6WFJGe3lNnlGXWlowHrBtg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/hH/hHXCz40ODOMoyZfHmaZTiNqY6fun9BwODFmP78mf7V0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/hH/hHeFkDUkdZ5LoQr7leubkBwGYXJ7gel7B4X2ciPZ8TE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/hR/hrO1yBhcS_MaM2hJq7qBeEDu0j9ZIMarAefKYDokI_o.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/hX/hX-5BU9bKAFz503D8OTVfOupg9YSer0SsK66OaaABTM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/hd/hdTT7dY85YR7trng2M8LvTZU5qwU1KWXlIadfuuukAM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/hk/hk14yRRWv_aW0eCHQZSKdMaF-N_bWonufhtRxDM-Dcw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/hm/hmdjQO5qxyivTuxsjOXrVoHK3-v9LetkryUke5tNV8M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/hn/hnoR0OSaELZL_5cKoq1SSsp6Net32u72ELERMaDAEhY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/hn/hnuzVGmkYnnAB6cEcm8n-IqPE44-_gzZgoScdknHBVQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/hy/hyJpJ79p8E4Pk26sGOCBF5C9z0F-uznRDGS46REt9cE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/hz/hzJzqm-0oLL8fyiMhSN9EGjHynBs3FMGBDgwutJeSR4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/i-/i-AD1nYt_PBmJs2T09wABBkP2eXWQy3NqhsaiSb7Qa4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/iL/iLsrUfmlObsuPu0AR1QO266RU-YkUiBiPqhWsKubIJo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/iQ/IqIgWb8E160OHqbkGLRhWUOk16fRtZCEtl1U0apmA7s.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/iT/itm0ORT7VNq-8udx8Dmilyss58U6_26eEYpfA9eUNhU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ia/Iak2Y5Y0OuL2UpGQU0Www-BxddngFy4oXNaThsr9Jdk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ia/iaN8d3jN6iTUuaG5dqT3I6FXpZNqfhiEIVqQNDVbmWw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/j0/j0offW9dqvbkkwdEAsu6a3oa5-JxOFmkMw3tWO9zIWU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/jc/JCecM9lW_8RXHWZazKxyCmbTtlo6o8rc2Clymu5Lcb4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/jt/jtL6x7E1eM4pGfq3bLLa-aAsowNbIpXCoZBmo2GGInk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ju/JUexKfJ5AwnDxG8xrM-BROIxI8Rzz0i8w00nhRFaUX0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ju/jUUOWvOU7pAhJUsQ-EZLCUGueKcNYNGZqijjzJlevio.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ju/jUmO4DxMpWxUpitXBLk06zpL6Mn6CeptPkOA7xWnZXM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ju/jugSmzDr-gdM5NPihTUSO52tnn9VTd9HezqmspRGicY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ju/jujjs3RpRvJ4u6CKHDo7MRszOZps54QP1nWcPbj1Abo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/jw/JWtFXs8gTS52-I7iIFoxWL58TB_A_wJXMSuHveKD4Qo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/k1/K1ut9BJjFC3xdMMPYj5ngXzy6tLuW3tId4KTJ-uVgO4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/k1/k1093jsxweSe7L_LsmWSoutt-nd1zFFDMTLQSe4R_8Y.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/kE/KeWgxBRAJMNaxeuk6r_ERV7jwhqAmyswtDkPhiKrW4A.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/kL/kLaR926oFs9kAUBQycOr8Gq1Xm67H6wfbraxh_4rlc0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/kn/knYVJxaVz6oM5xJ4o1770fFE4DRhcIt2cmxk_XN89AQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ku/KuvY1GzV5P8DheCyUBncVoLWqVqMTb9vfXM3ODqkyC4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/l-/l-bYJAJuYur20hPaIPG1r98kSAGTHTmlDLXdvOF0vd8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/l7/l7I-rIEhovrQaLIwONeZroFZPx-qBDqoxpy20V5A8kU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/lD/lDFthC8UGgrZP0u1YpK4d-u7z9bdf8px9hHBMVVdLG4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/lL/lltA7JcECElCpLG4XCeErifj2PzJJaudFU3Iq30Sj-E.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/lN/lNAWloMdwbJLLdNGU3SKiWGtrE18fFV8TSHV042fMfY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/lZ/LZesKIef6DqBf1LGMZ0dN0x4DRBmCU21V6Jhrmrm11I.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/lb/LBtxPKNJe42CzPhN7Ju7HYwUDF2tVzj_5x0rUwfWNQo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/lb/lbQ4xlTsdiGyQ6R5i_7pxENo6nLRruZ31-Q1qQpP-HI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/lh/lhv3tJ387_WYBculBMLcSr_tOJ5M5urJCkwfxoyLLRs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/mA/MaVSSXknqxEpaDAFPCHS3aflSFn0rAFlJZSV7FQCimg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/mM/MM7E04dGgMu5CDjymyO5XrfBPs5yZSOlAvjQDb6ZtEM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/mM/Mm4t6w1C_jfhtWga8n88jrY_11mqI6P9WDxm18NpJFk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/mQ/mQ4YsnCl0illhE7H97UOzVAKlSYNHEfjGqBDN_NV4F0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ml/MLeeg7eZj-BUrZo1W_ZEJSMGOR3o0WpdFIx_1tfwKrU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/mr/mraJC4Idl6FDgzUhMwuv_uvrk15gQmf8Pw51yGVpCqY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ms/mSOkKoY7R6eku7RD_OwKYXgrLuvUvgUUr6AYBDO-YLU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/n-/n-FPs8sxQZgSlWeo0qQFdVmnWaDFtR_vSCi4OEqnqNg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/n1/n1RjLUKOOfGxhkNafnL3B_Kdu0E5_dZIGZb3NHHBwJQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/n1/n1SBwSlWiHLEYZWGm_2EK0dPUiIaaZDKGFq-fy4mLJM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/n1/n1c0Jgv2smBKuv0IBcCnmL7i_eaCmk4Di5fbsWJ9t_Q.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/n5/n5UH-W2h7ub8I7CnZh6AajD63fVSyQ-Bxszoe0th1Ng.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/nI/nI6b43n_ILQw2NAENDIR9fuaHSGNajtXcBrmTWf-uDI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/nM/nM_Zqay1jdQgYHhoMJbVYr2KSmXE-ZHk7Z420S2fBNM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/nM/nmGIOMGww2obaQ1mFIZAusr-ZdW_ddzCNovdoKXYBRE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/nN/NnGUlE-kZjU2k7BKOeipKuFYpD93uJj4ev3UNbvDlfU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/nN/nN5wowWyvWkuVaTPrKvhWxLm_4zccHY8bnRKviA7Xhk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/nd/nd-A-c0yW1FmrpB3nq6Vnb1uXaDW8mJVKDfMZfE4dhM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/nj/njIyR45dKMXYTYrHqjjFiIo9aVXo9jSZtk7rAnzbocI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/nl/NL5pZtd-neFmpEEjfdyqnJ_je-2luRNNtQJZG3GgeGI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/nx/nxmDWtQ4rcOTDp3iQhZz-dvVeB-Kku_Xe14eJ2R_nk8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/o8/o8Iz8qYMPZMfqTBoemI24gTXshm6o-71vBvMaGuaAi0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/oN/oNlKFh3F4GonxAucGyxjXX9pAFnz-2lblxNPQN2HFwo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/oW/oWHtUwBAQvIijsTa_lc8pi3xo8asc9PE5EyVj6VcG0w.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ok/OkutaFPaxuHAwSad1C0X5lfJJ_hQuGsLIZJvhtbrdRA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ok/ok2pv_Sao0n4LhVAckPJhBKa71Z2mxtXOn_Qs8HB_qg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/p7/P7xDBo3bDi95iSSV6AiseM_R8RZaKibSwRxZ_XnPfxM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/p7/p7gR12wPDmDkHXZ7j9V4oZcWLo1gAaAfXFFgFMx7yeI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/pN/pnZ-dN2OVAjTE2cku5hyW_eZcM2CBhfkNc0tkL2pL60.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/pU/puAVQPrU_EkDycbhBgI41ZVa47BW7HXHF1kXmSGHyFc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/pZ/pZ53vS5wsHgnWPKwMDQ7WXJpPefsOgZ7OJ4JXHh-VYM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/pb/pbXORQTE8JVvgMpH9cHWK3jc99_sqXNnwcRaE0-lpmg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/pg/Pgfw5PAei9pHRGKxpKbWErFRLAPW7f6MVxkMxMlFdyE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/pg/pgGRnDeekS_YB_xZdFSyKH8Hu5hhNAeVPKXkcBWVkFA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/qK/qK7N70CJglRwrJQI69K9oaTLSs2MoGv4wpy_BrOoI_M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/qK/qKesaiZZiJVAcYeMR5emzXfERwBqswIX4h1QFhFyPUo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/qY/Qyn5zcGZJc14-Owgp-JBkGq8udILXk9-MsqZseoUbFY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/qj/Qj1dvaXKb_y3khaGInlbnbOTWOcd1_COLd2v7jj-VRo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/qj/qjeaB5-c0CkPDTjpm9JA-lVYZpmTicgrXvukbllFoOQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/qx/QxNS1cfJBfHyMgAmkEwoeNa3OBnYloELiuLdpxsBKgs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/rG/rGoNlup2K5CBfCK98JS6eE0vqdJIM5M8XPhK1aPIZpA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/rO/rO0rOVbFWodnVypgMmIZY-NUGUpVoVUuU8qLbsx6SIc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/rO/rOH9JQ04rB5agWpdWkw19GGwC5K6dFEaDLbzeLbm-nc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/rO/roIQNN6Uo5d2A6fewTY1DdT5xpYCccOWIbx5twFzwEw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/rW/rWoGDMST6_eQT3fjZNeqhI09ADEPZSYVneT8ltwJ7yg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/rn/rNyeIrIR6burSWv3KXP4kSsQXOZdf9wp-4T_iaEYjFk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/s2/s2jlYlBoqLlMlzn5XJnhnzwoun3eArvGk_b2-vyh11o.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/s5/s5koEu_4UANGOTJbBAXxYoUifT4h2M_7d_1cTpm75FY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/sA/SAZn5Q5YvxueYp_p1oSji2wnclBnfeFNyHFVAQF31V8.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/sI/sIorGkgJRBn25MMmtuSWgqusnidL3VLKge-Ub16sHSk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/sT/sTa68-HNwhbOTk0y5n4bgRvpUdKRha8xgcMpliHHxuY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/sZ/szkNrR-AY6wSDl5rItp_UnFEc1VozuYva2sCfYvLiSA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/se/seFQ10mdCxpaAzo2Fnj2SXOXdrseGOf9GHzoV12EhpU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/sm/SMRJ4fO2xhGqsngrZti5aFVTt__4CT9XYz5Wjcdk1gU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ss/ssfzFmml5cZENsP_rYi3VVJ2fxuPU9OZh04IFOgMpfs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/su/SUhEcWmh9MpUfcRi1vAxuwBEyraC1mQsEgV-p7OY5Rk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/t5/t5LQWQnJ94-WahqdCgDI0fdV-LsOMdrUO8kPd3IA-xA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/tI/TiizUB0Su8w3JKmldSBgesHkdscrRDsxJ3btMIKIN7E.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/tI/tIP5vGByu6iF-WvnxX4Qo93q-DAFPSGs_rYdurPzY2s.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/tl/tLfMUPbsw2CgQJO7Rr5XrTRGM7dfH6eHrQIYb0wSX50.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/tl/tLySppgxiUwcyGvDsaSZfEHvxaDpJuHc8DcJNGZifM0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/tl/tlXfJc4BJ5SldBM04OWly8_28zMEfnjmCu_BmNBGwjM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/tl/tlYBDLufxRYRlOizg9F3GlPeegxyentlsqJc6ruF9XI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/tu/TUD34OgtCUJLsE70x52icX0VjcTCpV5EUzz8wY_pG1M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/tu/tu-hKj7HufsCVKby-lo2jwAjfsy6D1pqdfUTij5Z7uA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/u8/u8DzS7X433atvg_tEFTs9CMsp7Vqsy7qdOAGEEWnYAs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/uW/uwm0kmiyLox87x0gGeu3Fvm7cQfLLZgQiloskbakHxc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/uY/uYg9pRCb2GWoyZqyqyBUaSmSI4R8dGoKiIunDnEjkgU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/ue/ueg8b2OUaknMYj9vKFJA4c66klxpgJNShvk1rlC8y6I.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/uj/ujHi12laHEI2wHHJTIy-4jTtkaD-Pi3-JLHK6Ym6h-A.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/um/umTq5Puf46bPUdfdl7UzhgFAjX3YYrvs6RdLus0xIPw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/v6/v6cvCFQ0il-xA3nOWeqRUQbaK1ViC5kgA_fbrC6aNQc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vD/vddpThpYLq92T9bp-HaCEEJ2IXFg3dmLeKE9KYKDoJk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vH/vHuJDlHZFFlVXQgsHsoRF4qyLFo3YFWTZYbrUY_oDqo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vN/vNtzD06PeDR-B5Lr7uDLREak8YVRkJFU8RY98QE6p8M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vO/VO6Cxtb4rotRro7OLpFfEF4NDI9DCFg8M_pkAhrdhCY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vO/vOwlssH1tfAJRz4zxAATPoSuumSuzxGIW9P5n0jvuvM.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vU/vUmhdmwFeapW24smJ6jJRAsEev0IX4eKONg0G9B-u0A.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/va/vavzJOXbHKM05BtnfSyI88UXe2XJ__zeuvbhCdhXvpI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vj/vJoOssAmbNzbaxWz2_S6n07iClGiTdA4Mub16jIPUwY.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vj/vj_9dj11KAJ_cRaut5kqzprIhX5sprgqEMcXkT82UK4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vk/VKI0AbKJm_4ASVN1BMvFE4sMcVQROiTZaA20uGzYVWU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vl/VlEWcRkVL_Hj8cPdbsDpSjDyOTIqA-sphubx3vBnUAc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vt/vtGAaXzyBBsERourtNM9IjOPuosUXhLOhin5cSNwKfc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/vw/vwSa6PQ91sY4IOKj6kMGe2tWdBXDcmwPBD5mpYed_hE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/w5/W5-ms1zR3OGw24zcGtVExAxs4TcO0Fifi8egkeKeZfk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/w5/w51_MzTeuNjq5e1tU_u3xeqhGZmM57BNvd0UQhPr5SI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wD/wD-0VdavvTRXwRELIOhuqfQhSTN4zsf4XOeFnNlcfMA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wL/wL2ABh_HsbFtp4YWxlBSOZVQr7YGOSvzsJLWzuPaibU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wP/wPmeIqgX3a9uKwyjS16edIwa07JF913t4QGJoP7DsN0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wR/wRaVqJsO7iPU_VEiz6AJR0agdlZzqJqvRrIZHQ4V0GA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wS/WsF_wl7ZYX9gttOyd3yMLNZgpAhtBWa106fVe7nMjD0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wS/wSWtpqU5URxqHnt8O7ytdNZV0BcRTbsWuApiuHyv3WI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wT/wTLD7SM4ciRv7WMk2sdOgSvJtC91-OxAU1eykSAIRiA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wT/wTzAA7s783RO9LbDCieWc-YiD13mLPhAxCUsm8tJcIo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wc/wcTCd5aBk7M5nWfP7gKurtQTniIxEF2WQfEdjU9KAF4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wh/whMXUS0BWYwXf01hrFDbiGBvhxICfL37qLYekrCHusI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wn/wnKvSQ3BDyY9u-1JkQAaEUXbAz_UrxYpK_X4VWD1qEk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/wq/wqYenNK_MkBws0Cjz8lyel3IR2hmQimQ8mRyp0k3bzs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/xG/xGyfE-vCkR9auI65Dlx4qHB4lgGDn1Qa3A6YR71OBDw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/xR/XROHj3iN0v6Dagn4cZBfD8D0665L7kguaLIt9P_gr7M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/xR/XrZgTOIrZ8cDEH_fgqvVep8vdzVlWRnz4gyk_ENZoOc.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/xR/xRAPWUGozZjVy5Ow9JfGyfUoaM65aysmj7tQLpG6ayU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/x_/X_5HdPnTNiQZ9Ts2OK-tFcDbOdqfsQwRmg7QkdfTe3M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/xh/xhL3vI2B2Bcf6mV_U7QjYY8pWkJ7Nl-dHWqeF0Q-2Do.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/xm/xm050h2dE-eG0ZzFUPCGtai-uFJUK74bgoonK3MLxZQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/xp/xpg2eX7WedUUkJJLsQpxYu5cWyu_JCsvTs5naU1PMp0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/xz/XzyDfaiZMFqXhGb8VUWYkUFXNlNViAY5_rV91e26vXs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/y1/y1mMLxDJH7iW9Ely-78ub6_qpzBsl9cb98bzRQlQ9LE.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/y3/Y3Jq6hM0p23oi5cXgnE8S5zLmKtuCslVzHNMrWiWPqU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/yc/yc0i39FTBgUBfmEtC19aSaMRA4Kgk_cviTRCRT220Lg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/yj/yjKqZPOI7POYOeP7FN5t8YRifUX7z95n0DCz7_XYLdQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/yl/yLsth2P5YUh75PicP3rKkb1rMTFngmNMVtrpJvFSqk0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/yl/ylugcyUs_mLLC_EdZdObNsGj_r4gTXYVSJygzh4x7ZA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/yq/yqZz_vOGIapz9Smp1Qk1GX5dct6yWuthmRUHpGd2SD4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/yq/yqzndcGRYqxSL6hFaajWbp1Ku0DWrLzCrR0q9Tkijq0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/yr/YrHeCheKYjIC6kQ9dAHoisqmdnXbWc0BVuTnw7TqQX0.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/yr/yrv3_bKBRg0jKulIX2ctm5GoS8AU9tgtJCachyNV9nw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/z1/Z18ZXpahA6zKZrJM--UivxT_BsQz9Ae363Bt6M9-t9Y.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/zB/Zb0jsaJL0df-aSrpW8ATrdnOTG-_IN4rNgBQtzx9Ps4.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/zB/zB3JqeYb43mjAe_cF3s9Y8sx6tSqVGChHy3IXRoiOGk.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/zJ/zJlNllm4P_4rL2TwzvJ8I-m6cJWi9ZOLbOPG7lJLhCU.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/zQ/zQNrHhFm4g0Y0McY8he19qZLUSJgilxnA2_7gXTfo3w.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/zS/zSrmQZnka4yQcHNACvmGdg8LYp2e7k63zD7yfhsue-s.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/zW/zWikFVbgK0BiydWIVj3MdwGuTeOjWHw-5LtYJPdiwxo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/zg/ZglSfZRxPTc_DkOHK9x-P_rJFr80upDHS9Hd5iRprlw.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/zr/zrV2f3i-ru4VVCLOjBVom1ca72WC6JGrRsDVarAG0UI.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/zx/ZxLDPT6hy8QkUKyy7kXsvR_tf3oWEXyyZdv8BBSum_M.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/zx/Zxd_RiKUdVARIgS_xG2k6IvRntuXVqng1s68ALsPKCA.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VibinMusic_Beta/tmp/cache/assets/sprockets/v3.0/zx/zxIs-Izd_LoSqRP9N5sENWl06ztfEnPauWHav-k5e3I.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/add-circle.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/backward.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/forward.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/ios-shuffle.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/list.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/pause.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/play.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/remove-circle.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/volume-high.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/wifi.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/playlists.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/playlists.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/playlists_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/playlists_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/home.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/playlists/_modal_playlists.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/playlists/_modal_playlists.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -636,6 +25,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/VibinMusic_Beta@Development__VibinMusic_Beta.rcov" NAME="Development: VibinMusic_Beta Coverage Results" MODIFIED="1577409959456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -655,41 +47,85 @@
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@duv-laptop" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@duv-laptop" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="vibinmusic_beta_development: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="@localhost-Desktop" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@localhost-Desktop" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost-Desktop" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="vibinmusic_beta_development: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-444088193">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.55" value="1" />
+          <entry key="project.open.time.56" value="1" />
+          <entry key="project.open.time.75" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Gemfile" value="1" />
+          <entry key="erb" value="2" />
+          <entry key="js" value="1" />
+          <entry key="scss" value="4" />
+          <entry key="sql" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JavaScript" value="1" />
+          <entry key="RHTML" value="2" />
+          <entry key="Ruby" value="1" />
+          <entry key="SCSS" value="4" />
+          <entry key="Scratch" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cell" value="60" />
+          <entry key="erb" value="289" />
+          <entry key="js" value="872" />
+          <entry key="scss" value="156" />
+          <entry key="sql" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JavaScript" value="872" />
+          <entry key="RHTML" value="289" />
+          <entry key="SCSS" value="156" />
+          <entry key="Scratch" value="70" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="VibinMusic_Beta" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/playlists/_modal_playlists.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="414">
+              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -697,51 +133,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/audio-player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="43" column="53" lean-forward="true" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
-              <folding>
-                <element signature="n#!!block;n#incrementPlays#0" />
-              </folding>
+            <state relative-caret-position="342">
+              <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/playlists.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/songs/_song_player.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+            <state relative-caret-position="417">
+              <caret line="104" column="18" lean-forward="true" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -757,14 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>renderpl</find>
-      <find>RENDERADDPLAYLIST</find>
-      <find>hover</find>
-      <find>blur</find>
-      <find>song_posit</find>
-      <find>fir</find>
-      <find>like</find>
-      <find>song_pos</find>
       <find>okay..</find>
       <find>ajax</find>
       <find>rails.aj</find>
@@ -787,6 +181,14 @@
       <find>renderaddpla</find>
       <find>post</find>
       <find>renderAddPlaylist</find>
+      <find>b</find>
+      <find>block</find>
+      <find>playlistop</find>
+      <find>modal</find>
+      <find>window</find>
+      <find>boots</find>
+      <find>boot</find>
+      <find>playlisto</find>
     </findStrings>
   </component>
   <component name="GeneratorOptions">
@@ -826,7 +228,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20190820145352_add_time_stamps_to_albums.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190828172045_change_row_subgenre_in_songs.rb" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3339a39e-4e66-46dc-9041-f9a0782e4469/console.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2e9c9b8b-05a3-4b8d-af9d-7a9f6e70b5d8/console.sql" />
         <option value="$PROJECT_DIR$/app/helpers/albums_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/posts/_userfeed.html.erb" />
         <option value="$PROJECT_DIR$/app/models/song.rb" />
@@ -842,7 +243,6 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/song.scss" />
         <option value="$PROJECT_DIR$/app/views/songs/_broadcaster_player.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/home.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/songs_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/playlists/_songs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/songs/_single_song_player.html.erb" />
@@ -853,16 +253,24 @@
         <option value="$PROJECT_DIR$/app/models/playlist.rb" />
         <option value="$PROJECT_DIR$/app/helpers/playlists_helper.rb" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/55575db2-b53d-4713-80f3-d4aa6029137a/console.sql" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" />
         <option value="$PROJECT_DIR$/app/controllers/playlists_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/songs/_song_player.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/playlists.scss" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2e9c9b8b-05a3-4b8d-af9d-7a9f6e70b5d8/console.sql" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/playlists/_modal_playlists.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/playlists.scss" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -871,10 +279,16 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="868" />
-    <option name="width" value="1059" />
-    <option name="height" value="1047" />
+    <option name="x" value="427" />
+    <option name="y" value="54" />
+    <option name="width" value="976" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -884,8 +298,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -944,6 +356,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -952,10 +366,11 @@
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="playlist.s&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/playlists.scss&#10;applicat&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/layouts/application.html.erb&#10;gemf&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/Gemfile&#10;application.htm&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/layouts/application.html.erb&#10;application&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/application.scss&#10;play&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/playlists.scss" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -983,8 +398,8 @@
   </component>
   <component name="RunManager" selected="Rails.Development: VibinMusic_Beta">
     <configuration name="Development: VibinMusic_Beta" type="RailsRunConfigurationType" factoryName="Rails">
+      <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
       <module name="VibinMusic_Beta" />
-      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
@@ -1003,8 +418,8 @@
       <method v="2" />
     </configuration>
     <configuration name="Production: VibinMusic_Beta" type="RailsRunConfigurationType" factoryName="Rails">
+      <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
       <module name="VibinMusic_Beta" />
-      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
@@ -1573,6 +988,15 @@
       <workItem from="1576198810799" duration="239000" />
       <workItem from="1576351339554" duration="14963000" />
       <workItem from="1576384805014" duration="3296000" />
+      <workItem from="1577031268520" duration="300000" />
+      <workItem from="1577031570036" duration="6967000" />
+      <workItem from="1577064095890" duration="115000" />
+      <workItem from="1577064212433" duration="10074000" />
+      <workItem from="1577075302875" duration="386000" />
+      <workItem from="1577212707123" duration="1212000" />
+      <workItem from="1577403484582" duration="279000" />
+      <workItem from="1577405198293" duration="105000" />
+      <workItem from="1577405315744" duration="7851000" />
     </task>
     <task id="LOCAL-00001" summary="Drag and drop playlists">
       <created>1560095000649</created>
@@ -1774,7 +1198,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="896384000" />
+    <option name="totallyTimeSpent" value="923673000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1791,26 +1215,26 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" sideWeight="0.50224215" side_tool="true" weight="0.2468017" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49775785" visible="true" weight="0.24946696" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49775785" visible="true" weight="0.16151386" />
       <window_info id="Repositories" order="3" visible="true" weight="0.23081024" />
-      <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.4978678" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.4978678" weight="0.32899022" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49253732" visible="true" weight="0.27735645" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49253732" visible="true" weight="0.27687296" />
       <window_info anchor="bottom" id="Database Changes" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4968017" weight="0.32719395" />
-      <window_info anchor="bottom" id="Floobits" order="11" sideWeight="0.4946695" weight="0.34669557" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4968017" weight="0.32681867" />
+      <window_info anchor="bottom" id="Floobits" order="11" sideWeight="0.4946695" weight="0.34636265" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.32932165" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5074627" side_tool="true" weight="0.2751896" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" sideWeight="0.49925262" visible="true" weight="0.15138593" />
+      <window_info anchor="right" id="Database" order="3" sideWeight="0.49925262" weight="0.15138593" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="4" sideWeight="0.5007474" side_tool="true" weight="0.15138593" />
     </layout>
   </component>
@@ -1842,20 +1266,9 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Drag and drop playlists" />
@@ -1894,20 +1307,6 @@
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@db_migrate__VibinMusic_Beta.rcov" NAME="db:migrate: VibinMusic_Beta Coverage Results" MODIFIED="1576010844474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/song.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/albums/_post.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/posts/_likes.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1922,13 +1321,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/block.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="248" column="16" selection-start-line="248" selection-start-column="16" selection-end-line="248" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/block.rnc" />
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_foot.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1983,13 +1376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/playlists/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1997,9 +1383,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/pids/server.pid">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/pids/server.pid" />
     <entry file="file://$PROJECT_DIR$/app/views/playlists/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -2011,13 +1395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="274" column="19" lean-forward="true" selection-start-line="274" selection-start-column="19" selection-end-line="274" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="403" column="25" selection-start-line="403" selection-start-column="25" selection-end-line="403" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -2049,13 +1426,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/sectional.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/sectional.rnc" />
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1836">
@@ -2080,13 +1451,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/music_controller.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/55575db2-b53d-4713-80f3-d4aa6029137a/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/55575db2-b53d-4713-80f3-d4aa6029137a/console.sql" />
     <entry file="file://$PROJECT_DIR$/app/controllers/songs/likes_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -2170,6 +1535,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/songs/_song_player.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -2177,52 +1549,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/playlists.scss">
+    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        <state relative-caret-position="374">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2e9c9b8b-05a3-4b8d-af9d-7a9f6e70b5d8/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="403" column="20" lean-forward="true" selection-start-line="403" selection-start-column="20" selection-end-line="403" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/songs/_song_player.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state relative-caret-position="153">
+          <caret line="9" column="101" lean-forward="true" selection-start-line="9" selection-start-column="101" selection-end-line="9" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/audio-player.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="43" column="53" lean-forward="true" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
-          <folding>
-            <element signature="n#!!block;n#incrementPlays#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        <state relative-caret-position="342">
+          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/playlists/_modal_playlists.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        <state relative-caret-position="414">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/playlists.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="104" column="18" lean-forward="true" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="18" />
         </state>
       </provider>
     </entry>

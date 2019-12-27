@@ -69,6 +69,17 @@ function removeFromPL(song_id, playlist_id, dom_id) {
     })
 }
 
+function displayDropdown(id) {
+   let x =  document.querySelector("#option_list_" + id);
+   if(x.style.visibility == "visible"){
+       console.log("killing")
+       x.style.visibility = "hidden";
+   } else {
+       x.style.visibility = "visible";
+   }
+    console.log("options");
+}
+
 function shuffleSongs() {
     let songReplica = songQueue.slice();
     let shuffledArray = new Array();
