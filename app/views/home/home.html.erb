@@ -1,4 +1,4 @@
-<div class="home" id="home">
+
   <% if logged_in? %>
     <% @user = current_user %>
     <div class="userHomePage">
@@ -112,27 +112,28 @@
     </div>
     <%= will_paginate @combine, style: "display: none;" %>
   <% else %>
-    <div class="LeftSide">
-      <div class="TopBroadcast">
+    <div class="Non-UserHomePage" id="home">
+      <div class="LeftSide">
+        <div class="TopBroadcast">
+        </div>
+        <div class="Slideshow">
+        </div>
       </div>
-      <div class="Slideshow">
+      <div class="RightSide">
+        <div class="TopSongs">
+
+        </div>
+        <div class="TopBroadcasts">
+
+        </div>
+        <div class="Trending">
+
+        </div>
+        <div class="GenreList">
+
+        </div>
       </div>
     </div>
-    <div class="RightSide">
-      <div class="TopSongs">
-
-      </div>
-      <div class="TopBroadcasts">
-
-      </div>
-      <div class="Trending">
-
-      </div>
-      <div class="GenreList">
-
-      </div>
-    </div>
-
 
 
     <!-- Welcome to Vibin First Impression --
@@ -241,6 +242,17 @@
     });
 
     $(function () {
+
+        $(window).on('resize', function() {
+            var container = document.getElementsByClassName("Non-UserHomePage");
+            var rightSide = document.getElementsByClassName("RightSide");
+            if(window.innerWidth < 500){
+                rightSide.style.display = "none";
+                console.log("loog");
+            }else{
+                rightSide.style.display = "block";
+            }
+        });
         //$('.iphone').on('click', function(){
         //  var url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyABBVE90zE3SB_kb52KWFSS2Fqumy303do",
         //  $(this).getJSON( url, {

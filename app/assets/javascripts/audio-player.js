@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
         let muteButton = document.querySelector(".volume");
         let muteButtonIcon = muteButton.querySelector(".ion-volume-high");
         playButton = document.querySelector('.play');
-        let playButtonIcon = playButton.querySelector('.ion-play');
+        let playButtonIcon = playButton.querySelector('#play-icon');
         let fillBar = seekBar.querySelector('.fill');
         skipForward = document.querySelector('.skip_forward');
         shuffle = document.querySelector('.shuffle');

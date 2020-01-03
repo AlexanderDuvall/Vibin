@@ -1,54 +1,63 @@
 <div class="musicPlayer">
-  <div class="songDetails">
-    <div class="songCover">
-      <img id="playerCoverImage" src="" class="playerCoverImage">
+  <div class="row">
+    <div class="col">
+      <div class="songDetails">
+        <div class="songCover">
+          <img id="playerCoverImage" src="" class="playerCoverImage">
+        </div>
+        <div class="songArtist">
+          <p id="songInfo" style="font-size: 17px; display: block;"></p>
+          <div id="songArtistAvatar" style="display: block; margin-top: -8px;">
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="songArtist">
-      <p id="songInfo" style="font-size: 17px; display: block;"></p>
-      <div id="songArtistAvatar" style="display: block; margin-top: -8px;">
+    <div class=col>
+      <div class="audio-player">
+        <div class=audio-buttons>
+          <button class="shuffle border border-dark" onclick="shuffleSongs()"><i id="play-icon" class="ion-shuffle"></i>
+          </button>
+          <button class="back border border-dark" id="play-icon" onclick="backSong()">
+            <i id="play-icon" class="ion-skip-backward"></i>
+          </button>
+          <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
+          <button class="skip_forward border border-dark">
+            <i id="play-icon" class="ion-skip-forward"></i>
+          </button>
+        </div>
+      </div>
+      <div class='audio-player'>
+        <div class="seek-bar">
+          <div class="fill"></div>
+          <div class="handle"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="right_footer">
+        <div class="right_elements">
+          <button id="broadcast_text" class="broadcast border border-dark" data-session="<%= current_user.id.to_json if logged_in? %>">
+            <i id="play-icon" class="ion-wifi"></i>
+          </button>
+          <button id="renderPlaylist" class="playlist border border-dark">
+            <ion-icon name="list"></ion-icon>
+          </button>
+          <button id="renderAddPlaylist" class="playlist border border-dark">
+            <ion-icon name="add-circle"></ion-icon>
+          </button>
+        </div>
+        <div class="right_elements">
+          <button class="volume"><i class="ion-volume-high"></i></button>
+          <div class="volume_bar">
+            <div class="volume_fill"></div>
+            <div class="volume_handle"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div>
-    <div class="audio-player">
-      <button class="shuffle border border-dark" onclick="shuffleSongs()"><i id="play-icon" class="ion-shuffle"></i>
-      </button>
-      <button class="back border border-dark" onclick="backSong()"><i id="play-icon" class="ion-skip-backward"></i>
-      </button>
-      <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
-      <button class="skip_forward border border-dark">
-        <i id="play-icon" class="ion-skip-forward"></i>
-      </button>
-    </div>
-    <div class='audio-player'>
-      <div class="seek-bar">
-        <div class="fill"></div>
-        <div class="handle"></div>
-      </div>
-    </div>
-  </div>
-  <div class="songDetails">
-  </div>
-  <div class="right_footer">
-    <div class="right_elements">
-      <button id="broadcast_text" class="broadcast border border-dark" data-session="<%= current_user.id.to_json if logged_in? %>">
-        <i id="play-icon" class="ion-wifi"></i>
-      </button>
-      <button id="renderPlaylist" class="playlist border border-dark">
-        <ion-icon name="list"></ion-icon>
-      </button>
-      <button id="renderAddPlaylist" class="playlist border border-dark">
-        <ion-icon name="add-circle"></ion-icon>
-      </button>
-    </div>
-    <div class="right_elements">
-      <button class="volume"><i class="ion-volume-high"></i></button>
-      <div class="volume_bar">
-        <div class="volume_fill"></div>
-        <div class="volume_handle"></div>
-      </div>
-    </div>
-  </div>
+
+
   <div id="audio-modal" class="modal-audio">
     <div class="modal-content-audio">
       <%= render partial: "playlists/songs", locals: {song_pos: nil, ts: "default"} %>

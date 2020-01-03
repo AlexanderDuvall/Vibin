@@ -1,6 +1,86 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Non-User HomePage
+.Non-UserHomePage{
+  //min-width: 400px;
+  // min-height: 1000px;
+  height: 550px;
+  overflow: hidden;
+  overflow-x: hidden;
+  // width: 100%;
+  border-style: dashed;
+  border-color: #00aaff;
+}
+.LeftSide{
+  height: 550px;
+  width: 450px;
+  float: left;
+  border-style: dashed;
+  border-color: pink;
+}
+.RightSide{
+  float: right;
+  height: 550px;
+  margin-left: 15px;
+  // min-width: 400px;
+  border-color: purple;
+  border-style: dashed;
+  width: 30%;
+  display: block;
+}
+.TopBroadcast{
+  //position: relative;
+  height: 235px;
+  width: 450px;
+  float: left;
+  border-color: #25a805;
+  border-style: dashed;
+}
+.Slideshow{
+  height: 300px;
+  // width: 400px;
+  margin-top: 15px;
+  margin-top: 250px;
+  border-style: dashed;
+  border-color: #cc0000;
+  background-color: #c9c8c8;
+}
+
+.TopBroadcasts{
+  margin-left: 15px;
+  float: left;
+  height: 550px;
+  width: 150px;
+  border-style: dashed;
+  border-color: #2E2F30;
+}
+.TopSongs{
+  margin-left: 15px;
+  float: left;
+  height: 550px;
+  width: 150px;
+  border-style: dashed;
+  border-color: #2E2F30;
+}
+.Trending{
+  margin-left: 15px;
+  float: left;
+  height: 550px;
+  width: 150px;
+  border-style: dashed;
+  border-color: #2E2F30;
+}
+.GenreList{
+  margin-left: 15px;
+  float: left;
+  height: 550px;
+  width: 150px;
+  border-style: dashed;
+  border-color: #2E2F30;
+}
+
+
+// End of Non-User HomePage
+
+
 .infobadge{
   display: block;
   margin-top: 4px;
@@ -12,15 +92,7 @@
   border-radius: 5px;
   font-weight: bold;
 }
-.home{
-  //min-width: 400px;
- // min-height: 1000px;
-  min-height: 550px;
-//  overflow: auto;
- // width: 100%;
-  border-style: dashed;
-  border-color: #00aaff;
-}
+
 .userHomePage{
   min-width: 1200px;
   height: 1000px;
@@ -216,60 +288,7 @@
   width: 150px;
   border-style: dotted;
 }
-.LeftSide{
-  height: 550px;
-  width: 40%;
-  float: left;
-  border-style: dashed;
-  border-color: pink;
-}
-.RightSide{
-  float: left;
-  height: 550px;
-  margin-left: 15px;
- // min-width: 400px;
-  border-color: purple;
-  border-style: dashed;
-  width: calc(60% - 15px);
-}
-.Slideshow{
-  height: 300px;
- // width: 400px;
-  margin-top: 15px;
-  margin-top: 250px;
-  border-style: dashed;
-  border-color: #cc0000;
-  background-color: #c9c8c8;
-}
-.TopSongs{
 
-}
-.TopBroadcasts{
- margin-left: 15px;
-  float: left;
-  height: 550px;
-  width: 50px;
-  border-style: dashed;
-  border-color: #2E2F30;
-}
-.Trending{
-
-}
-.GenreList{
-
-}
-.carouselBox{
-  height: 310px;
-}
-
-.TopBroadcast{
-  //position: relative;
-  height: 235px;
-  width: 400px;
-  float: left;
-  border-color: #25a805;
-  border-style: dashed;
-}
 .BCPlayer{
   position: absolute;
   top: 0;

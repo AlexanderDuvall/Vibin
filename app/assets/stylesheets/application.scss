@@ -24,30 +24,23 @@
   height: 0px;
 }
 */
-html {
- // min-width: 1200px;
- // overflow-x: hidden;
-}
 
-body {
- // min-width: 1200px;
- // min-height: 1000px;
-}
 
 //
 ////
 ////// main
 ////
 //
+body {
+  overflow-x: hidden;
+}
 
 .main {
   border-color: #2E2F30;
   border-style: dashed;
   margin: 80px 50px 100px 50px;
-
-  min-width: 775px;
-  min-height: 550px;
-  max-height: 550px;
+  overflow-x: hidden;
+  min-width: 450px;
 }
 
 a {
@@ -272,7 +265,6 @@ a:hover {
   bottom: 0;
   width: 100%;
   height: 100px;
-  min-width: 1200px;
 }
 
 
@@ -446,6 +438,11 @@ a:hover {
   margin: auto;
   width: 50%;
   padding: 10px;
+}
+
+.center_text {
+  margin: auto;
+  text-align: center;
 }
 
 /* The Close Button */
