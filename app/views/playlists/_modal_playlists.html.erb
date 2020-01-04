@@ -30,12 +30,13 @@
       <h5 onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>
         <%= f.title %></h5>
       <div class="displayOptions">
-        <button onclick="displayDropdown(<%=f.id %>)" class="PlaylistOptions" id="PlaylistOptionsButton">
+        <button class="PlaylistOptions" id="PlaylistOptionsButton">
           <ion-icon id="ionIcon" name="more"></ion-icon>
           <div class="options_list" id="option_list_<%= f.id %>">
-            <a href="">Start Playlist</a>
-            <a href="">Start Radio</a>
-            <a href="">Delete Playlist</a>
+            <a onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>Start
+              Playlist</a>
+            <a>Start Radio</a>
+            <%= link_to 'Delete Playlist', playlist_url(f), method: :delete, data: {confirm: "Are you sure?"}, style: "color: white;" %>
           </div>
         </button>
       </div>

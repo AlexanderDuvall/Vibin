@@ -53,9 +53,7 @@ module PlaylistsHelper
   end
 
   def getPlaylistImageURLforPlaylist(playlist, position)
-    puts "#{playlist.inspect}, #{position.inspect} here ya go2"
     position = playlist.song_positions.find_by(position: position)
-    puts "#{playlist.inspect}, #{position.inspect} here ya go"
     song = Song.find (position.song_id)
     url_for song.cover_image
   end

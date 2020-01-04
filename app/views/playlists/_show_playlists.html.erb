@@ -1,8 +1,12 @@
 <% playlists = current_user.playlists %>
-<% playlists.in_groups_of(5, false).each do |group| %>
+<% playlists.in_groups_of(5, nil).each do |group| %>
   <div class="row">
     <% group.each do |playlist| %>
-      <% if playlist.song_positions.size > 3 %>
+      <% if playlist.nil? %>
+        <div class="col">
+
+        </div>
+      <% elsif playlist.song_positions.size > 3 %>
         <div class="col">
           <div class="playlist_box">
             <img class="image1" src="<%= getPlaylistImageURLforPlaylist(playlist, "1") %>"/>

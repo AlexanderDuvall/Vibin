@@ -244,13 +244,16 @@
     $(function () {
 
         $(window).on('resize', function() {
-            var container = document.getElementsByClassName("Non-UserHomePage");
-            var rightSide = document.getElementsByClassName("RightSide");
-            if(window.innerWidth < 500){
-                rightSide.style.display = "none";
+            var container = document.getElementsByClassName("Non-UserHomePage")[0].offsetWidth;
+            var rightSide = document.getElementsByClassName("RightSide")[0];
+            if(window.innerWidth < 777){
+                rightSide.display = "none";
                 console.log("loog");
             }else{
-                rightSide.style.display = "block";
+                rightSide.display = "block";
+                console.log(container);
+                rightSide.style.width = container - 500 + "px";
+
             }
         });
         //$('.iphone').on('click', function(){

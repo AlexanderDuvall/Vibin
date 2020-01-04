@@ -1,2 +1,9 @@
-<h1 class="center_text playlist_title"><%= current_user.username %>'s playlists</h1>
+<div class="center_text" style="padding: 10px;" id="profileAvatar">
+  <% if current_user.avatar.attached? %>
+    <%= image_tag (current_user.avatar), class: "playlist_avatar" %>
+  <% else %>
+    <img src="http://localhost:3000/default-avatar.jpg" class="avatar">
+  <% end %>
+</div>
+<h1 class="center_text playlist_title">@<%= current_user.username %>'s playlists</h1>
 <%= render "show_playlists" %>

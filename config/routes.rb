@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resource :like, module: :songs
   end
   resources :albums
+
   resources :playlists do
     collection do
       patch :sort
@@ -86,6 +87,7 @@ Rails.application.routes.draw do
   get '/shuffle' => 'playlists#songs'
   post '/add_to_playlist' => 'playlists#addToPlaylist'
   get '/exists_in_playlist' => 'playlists#existsinPlaylist'
-  post 'remove_from_playlist'=>'playlists#removeFromPlaylist'
+  post 'remove_from_playlist' => 'playlists#removeFromPlaylist'
   #  get '/livestream' => 'audio#stream'
+  delete '/playlists', to: 'playlists#destroy'
 end

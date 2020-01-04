@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-
+  before_action :logged_in_user, only: [:create, :destroy]
 
   def create
     @playlists = current_user.playlists.new(playlist_params)
@@ -51,6 +51,11 @@ class PlaylistsController < ApplicationController
 
   def new
     @playlists = Playlist.new
+  end
+
+  def destroy
+    id = params[:id]
+    Playlist.find(id).destroy!
   end
 
   def getsongs
@@ -131,4 +136,13 @@ class PlaylistsController < ApplicationController
     }
     array
   end
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "Please log in"
+      redirect_to login_url
+    end
+  end
+
 end

@@ -17,10 +17,11 @@
         <div class=audio-buttons>
           <button class="shuffle border border-dark" onclick="shuffleSongs()"><i id="play-icon" class="ion-shuffle"></i>
           </button>
-          <button class="back border border-dark" id="play-icon" onclick="backSong()">
+          <button class="back border border-dark"  onclick="backSong()">
             <i id="play-icon" class="ion-skip-backward"></i>
           </button>
-          <button class="play border border-dark" onclick="playPause()"><i id="play-icon" class="ion-play"></i></button>
+          <button class="play border border-dark" id="music_bar_play_button" onclick="playPause()">
+            <i id="play-icon" class="ion-play"></i></button>
           <button class="skip_forward border border-dark">
             <i id="play-icon" class="ion-skip-forward"></i>
           </button>
@@ -56,8 +57,6 @@
       </div>
     </div>
   </div>
-
-
   <div id="audio-modal" class="modal-audio">
     <div class="modal-content-audio">
       <%= render partial: "playlists/songs", locals: {song_pos: nil, ts: "default"} %>

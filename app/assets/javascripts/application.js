@@ -72,7 +72,7 @@ function removeFromPL(song_id, playlist_id, dom_id) {
 function displayDropdown(id) {
    let x =  document.querySelector("#option_list_" + id);
    if(x.style.visibility == "visible"){
-       console.log("killing")
+       console.log("killing");
        x.style.visibility = "hidden";
    } else {
        x.style.visibility = "visible";
