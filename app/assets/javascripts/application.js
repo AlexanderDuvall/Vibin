@@ -24,6 +24,7 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require_tree .
+//= require croppie
 //=
 
 let Server_Address = "172.25.61.104"; // broadcasting ipv4 remote host address
@@ -45,7 +46,7 @@ function addtoPL(song_id, playlist_id, dom_id) {
         success: function () {
             console.log("success bitc");
             $('#SongtoPlaylist_' + (dom_id)).attr('onclick', "removeFromPL(" + song_id + "," + playlist_id + ',' + (dom_id) + ')');
-            $('#ion_' + (dom_id)).attr('name', 'remove-circle');
+            $('#SongtoPlaylist_' + (dom_id)).html("Remove From Playlist");
         },
         error: function () {
             console.log("Playlist post failed")
@@ -61,7 +62,7 @@ function removeFromPL(song_id, playlist_id, dom_id) {
         success: function () {
             console.log("success btich");
             $('#SongtoPlaylist_' + (dom_id)).attr('onclick', "addtoPL(" + song_id + "," + playlist_id + ',' + (dom_id) + ')');
-            $('#ion_' + (dom_id)).attr('name', 'add-circle');
+            $('#SongtoPlaylist_' + (dom_id)).html("Add to Playlist");
         },
         error: function () {
             console.log("Playlist post failed")
@@ -70,13 +71,13 @@ function removeFromPL(song_id, playlist_id, dom_id) {
 }
 
 function displayDropdown(id) {
-   let x =  document.querySelector("#option_list_" + id);
-   if(x.style.visibility == "visible"){
-       console.log("killing");
-       x.style.visibility = "hidden";
-   } else {
-       x.style.visibility = "visible";
-   }
+    let x = document.querySelector("#option_list_" + id);
+    if (x.style.visibility == "visible") {
+        console.log("killing");
+        x.style.visibility = "hidden";
+    } else {
+        x.style.visibility = "visible";
+    }
     console.log("options");
 }
 
@@ -100,10 +101,15 @@ function shuffleSongs() {
 function buildPlayer(song, username, title, ...args) {
     let buildSong = function () {
         audio.src = "";
-        var songinfo = title + "<br>" + args[1]/* genre*/ + "<br>" + args[2] /*subgenre*/;
-        console.log(songInfo);
+        var songinfo = title;
         $('#playerCoverImage').attr("src", args[0]); //
         $('#songInfo').html(songinfo);
+        if (args[1] == "") {
+            $('#songGenre').html(args[2]);
+        } else {
+            $('#songGenre').html(args[1] + ", " + args[2]);
+        }
+
         var artist = "<img class=\"songArtistAvatarImage\" src=\"" + args[3]/* image src*/ + "\">" + "<p style=\"display: inline;\">@" + username + "</p>";
         $('#songArtistAvatar').html(artist);
         console.log("lmapppp");

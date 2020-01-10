@@ -84,7 +84,6 @@ Rails.application.routes.draw do
   get '/playlists' => 'playlists#index'
   get '/new_playlist' => 'playlists#new'
   get '/get_song_positions' => 'playlists#songs'
-  get '/shuffle' => 'playlists#songs'
   post '/add_to_playlist' => 'playlists#addToPlaylist'
   get '/exists_in_playlist' => 'playlists#existsinPlaylist'
   post 'remove_from_playlist' => 'playlists#removeFromPlaylist'

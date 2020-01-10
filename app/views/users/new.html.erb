@@ -1,166 +1,252 @@
 <div id="SignUp">
-  <div class="LeftMenu">
-    <center>
-      <span class="badge badge-primary user-benefits-badge" style="height: 100%;">
-        <p> Users benefits </p>
-      </span>
-    </center>
-  </div>
-  <div class="RightSide">
-    <center>
-      <div class="badge signup-form-badge">
-        <%= form_with(model:@user, multipart: true) do |f| %>
-          <div class="images">
-            <div class="left-header">
-              <%= image_tag "insert.png", :class => "left-header-image" %>
-            </div>
-            <div class="right-header">
-              <%= image_tag "insert.png", :class => "right-header-image" %>
-            </div>
-            <%= f.text_field :name, placeholder: "name", class: "name-box" %>
-            <%= f.text_field :username, placeholder: "username", class: "username-box" %>
-            <div class="upload-preview">
-              <center>
-                <img src="/default-avatar.jpg" style="width:100%; height:100%; object-fit:cover;">
-              </center>
-            </div>
-            <%= f.text_area :bio, placeholder: "bio", class: "bio-box" %>
-            <input hidden class="photo_upload" type="file" name="user[avatar]" id="avatar">
-            <input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader">
-            <input hidden class="photo_upload" type="file" name="user[secondHeader]" id="secondHeader">
-            <input hidden type="text" name="user[longitude]" id="user_longitude" value="30">
-            <input hidden type="text" name="user[latitude]" id="user_latitude" value="30">
-          </div>
-          <br>
-          <center>
-            <div class="rowcss">
-              <%= f.email_field :email, class: "email-box", placeholder: "example@example.com" %>
-              <input type="date" class="birthday" name="user[birthday]" id="user_birthday" placeholder="Date of Birth" value="2019-07-27">
-              <%= f.select "gender", options_for_select(["Agender", "Androgyne", "Androgynous", "Bigender",
-                                                         "Cis", "Cisgender", "Cis Female", "Cis Male", "Cis Man", "Cis Woman",
-                                                         "Cisgender Female", "Cisgender Male", "Cisgender Man", "Cisgender Woman",
-                                                         "Female to Male", "FTM", "Gender Fluid", "Gender Nonconforming",
-                                                         "Gender Questioning", "Gender Variant", "Genderqueer", "Intersex",
-                                                         "Male to Female", "MTF", "Neither", "Neutrois", "Non-binary", "Other",
-                                                         "Pangender", "Trans", "Trans*", "Trans Female", "Trans* Female",
-                                                         "Trans Male", "Trans* Male", "Trans Man", "Trans* Man", "Trans Person",
-                                                         "Trans* Person", "Trans Woman", "Trans* Woman", "Transfeminine", "Transgender",
-                                                         "Transgender Female", "Transgender Male", "Transgender Man", "Transgender Person",
-                                                         "Transgender Woman", "Transmasculine", "Transsexual", "Transsexual Female", "Transsexual Male",
-                                                         "Transsexual Man", "Transsexual Person", "Transsexual Woman",
-                                                         "Two-Spirit"]), class: "gender" %>
 
-            </div>
-            <div class="rowcss border border-primary">
-              <%= f.text_field :country, placeholder: "country", class: "country-box" %>
-              <%= f.text_field :city, placeholder: "city", class: "city-box" %>
-              <%= f.text_field :state, placeholder: "state", class: "state-box" %>
-            </div>
-            <div class="rowcss">
-              <p style="float: left;">Badge Color</p>
-              <div style="float: left; margin-left: 10px;">
-                <%= f.text_field :badgeColor %>
-              </div>
-              <%= f.password_field :password, class: "password", placeholder: "password" %>
-            </div>
-            <div class="rowcss">
-              <p style="float: left;">Text Color </p>
-              <div style="float: left; margin-left: 10px;">
-                <%= f.text_field :badgeTextColor %>
-              </div>
-              <%= f.password_field :password_confirmation, class: "password", placeholder: "comfirm password" %>
-            </div>
-            <div class="rowcss2">
-              <div class="TermsOfAgreement-box">
-                <div class="TermsOfAgreement-textbox">
-                  <p style="color: black;"> This is Terms of Agreement. <br>
-                    Rules of Vibin <br>
-                    Try not to get sue by anyone </p>
-                </div>
-                <br>
-                <%= f.check_box :Terms_of_Agreement, style: "height: 10px; width: 10px; float: left; margin-left: 10px;" %>
-                <%= f.label :Terms_of_Agreement, "I agree.".html_safe, style: "margin-left: 5px; float: left;" %>
-              </div>
-            </div>
-            <%= f.submit "Submit", style: "width: 30px;" %>
-            <button id="coordinates">Coordinates</button>
-            <p id="longandlat"></p>
-          </center>
-        <% end %>
-      </div>
-    </center>
+  <!--
+  <div class="demo" id="demoo" style="height: 200px; width: 200px"> </div>
+ <br>
+  <br><div id="fin" style="height: 50px; width: 180px; border-style: dashed; overflow: hidden">  </div>
+  <script>
+      var basic = $('#fin').croppie({
+          viewport: {
+              width: 180,
+              height: 50,
+              enableZoom: false,
+              mouseWheelZoom: false
+          }
+      });
+
+    var imagee = document.getElementById("demoo");
+    var cropbox = new Croppie(imagee, {
+          viewport: {
+              width: 180,
+              height: 50,
+              showZoomer: false
+          },
+          url: 'default-avatar.jpg',
+      });
+      $(".demo").mouseup(function () {
+          console.log(cropbox.get().points);
+          console.log(cropbox.get().zoom);
+          basic.croppie('bind', {
+              url: 'default-avatar.jpg',
+              points: cropbox.get().points,
+              zoom: cropbox.get().zoom
+          });
+      });
+  </script>
+  -->
+
+  <div class="images" id="header">
+    <div class="left-header">
+      <%= image_tag "insert.png", :class => "left-header-image", :id => "leftHeaderImage" %>
+    </div>
+    <div class="avatar">
+      <img src="/default-avatar.jpg" style="width:100%; height:100%; object-fit:cover;" id="avatarImage">
+    </div>
+    <div class="right-header">
+      <%= image_tag "insert.png", :class => "right-header-image", :id => "rightHeaderImage" %>
+    </div>
   </div>
+  <div class="row">
+  </div>
+  <input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader" onchange=
+      "document.getElementById('leftHeaderImage').src = window.URL.createObjectURL(this.files[0]);
+          oneTimeImageSelection('firstHeader');
+          $('#leftHeaderImage').height = $('.images').height;">
+  <input hidden class="photo_upload" type="file" name="user[secondHeader]" id="secondHeader" onchange=
+      "document.getElementById('rightHeaderImage').src = window.URL.createObjectURL(this.files[0]);
+          oneTimeImageSelection('secondHeader');
+          $('#rightHeaderImage').height = $('.images').height;">
+  <script>
+      function oneTimeImageSelection(imageDiv) {
+          console.log(imageDiv);
+          document.getElementById(imageDiv).disabled = true;
+      }
+
+      $(function () {
+          $(".upload-preview").on("click", function () {
+              $("#avatar").trigger("click");
+          });
+          $(".left-header").on("click", function () {
+              $("#firstHeader").trigger("click");
+
+          });
+          $(".right-header").on("click", function () {
+              $("#secondHeader").trigger("click");
+          });
+
+
+          var widthOfMain = document.getElementById('main').offsetWidth;
+          var heightOfImages = (widthOfMain / 4.47666667);
+          $('#header').css("height", (widthOfMain / 4.47666667));
+          $('.left-header').css("height", heightOfImages);
+          $('.right-header').css("height", heightOfImages);
+          $('.avatar').css("top",  heightOfImages-30);
+
+          $(window).resize(function () {
+              widthOfMain = document.getElementById('main').offsetWidth;
+              // console.log(widthOfMain);
+              heightOfImages = (widthOfMain / 4.47666667);
+              $('#header').css("height", heightOfImages);
+              $('.left-header').css("height", heightOfImages);
+              $('.right-header').css("height", heightOfImages);
+          });
+
+          var headerboxWidth = document.getElementById("header");
+          var previewHeader = document.getElementById("cropHeader");
+
+
+          $("#firstHeader").change(function (imgg) {
+              //$('#mod').click(); //click hidden modal button
+              //  modalBackdrop(); //remove overshadow error
+
+              var cropbox = $("#leftHeaderImage").croppie({
+                  viewport: {
+                      width: $('#main').width/2,
+                      height: $('.images').height
+                  },
+                  boundary: {
+                      width: $('#main').width/2,
+                      height: $('.images').height
+                  },
+                  showZoomer: false,
+                  update: function (data) {
+                      console.log(data);
+                  }
+              });
+          });
+          $("#secondHeader").change(function (imgg) {
+              //$('#mod').click(); //click hidden modal button
+              //  modalBackdrop(); //remove overshadow error
+
+              var cropbox = $("#rightHeaderImage").croppie({
+                  viewport: {
+                      width: $('#main').width/2,
+                      height: $('.images').height
+                  },
+                  boundary: {
+                      width: $('#main').width/2,
+                      height: $('.images').height
+                  },
+                  showZoomer: false,
+                  update: function (data) {
+                      console.log(data);
+                  }
+              });
+          });
+          $("#avatar").change(function (imgg) {
+              //$('#mod').click(); //click hidden modal button
+              //  modalBackdrop(); //remove overshadow error
+
+              var cropbox = $("#leftHeaderImage").croppie({
+                  viewport: {
+                      width: $('#main').width/2,
+                      height: $('.images').height
+                  },
+                  boundary: {
+                      width: $('#main').width/2,
+                      height: $('.images').height
+                  },
+                  showZoomer: false,
+                  update: function (data) {
+                      console.log(data);
+                  }
+              });
+          });
+      });
+
+  </script>
+
+  <!---
+   <div class="LeftMenu">
+     <center>
+       <span class="badge badge-primary user-benefits-badge" style="height: 100%;">
+         <p> Users benefits </p>
+       </span>
+     </center>
+   </div>
+   <div class="RightSide">
+     <center>
+       <div class="badge signup-form-badge">
+         <!%= form_with(model:@user, multipart: true) do |f| %>
+           <div class="images">
+             <div class="left-header">
+               <!%= image_tag "insert.png", :class => "left-header-image" %>
+             </div>
+             <div class="right-header">
+               <!%= image_tag "insert.png", :class => "right-header-image" %>
+             </div>
+             <!%= f.text_field :name, placeholder: "name", class: "name-box" %>
+             <!%= f.text_field :username, placeholder: "username", class: "username-box" %>
+             <div class="upload-preview">
+               <center>
+                 <img src="/default-avatar.jpg" style="width:100%; height:100%; object-fit:cover;">
+               </center>
+             </div>
+             <!%= f.text_area :bio, placeholder: "bio", class: "bio-box" %>
+             <input hidden class="photo_upload" type="file" name="user[avatar]" id="avatar">
+             <input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader">
+             <input hidden class="photo_upload" type="file" name="user[secondHeader]" id="secondHeader">
+             <input hidden type="text" name="user[longitude]" id="user_longitude" value="30">
+             <input hidden type="text" name="user[latitude]" id="user_latitude" value="30">
+           </div>
+           <br>
+           <center>
+             <div class="rowcss">
+               <!%= f.email_field :email, class: "email-box", placeholder: "example@example.com" %>
+               <input type="date" class="birthday" name="user[birthday]" id="user_birthday" placeholder="Date of Birth" value="2019-07-27">
+               <!%= f.select "gender", options_for_select(["Agender", "Androgyne", "Androgynous", "Bigender",
+                                                          "Cis", "Cisgender", "Cis Female", "Cis Male", "Cis Man", "Cis Woman",
+                                                          "Cisgender Female", "Cisgender Male", "Cisgender Man", "Cisgender Woman",
+                                                          "Female to Male", "FTM", "Gender Fluid", "Gender Nonconforming",
+                                                          "Gender Questioning", "Gender Variant", "Genderqueer", "Intersex",
+                                                          "Male to Female", "MTF", "Neither", "Neutrois", "Non-binary", "Other",
+                                                          "Pangender", "Trans", "Trans*", "Trans Female", "Trans* Female",
+                                                          "Trans Male", "Trans* Male", "Trans Man", "Trans* Man", "Trans Person",
+                                                          "Trans* Person", "Trans Woman", "Trans* Woman", "Transfeminine", "Transgender",
+                                                          "Transgender Female", "Transgender Male", "Transgender Man", "Transgender Person",
+                                                          "Transgender Woman", "Transmasculine", "Transsexual", "Transsexual Female", "Transsexual Male",
+                                                          "Transsexual Man", "Transsexual Person", "Transsexual Woman",
+                                                          "Two-Spirit"]), class: "gender" %>
+             </div>
+             <div class="rowcss border border-primary">
+               <!%= f.text_field :country, placeholder: "country", class: "country-box" %>
+               <!%= f.text_field :city, placeholder: "city", class: "city-box" %>
+               <!%= f.text_field :state, placeholder: "state", class: "state-box" %>
+             </div>
+             <div class="rowcss">
+               <p style="float: left;">Badge Color</p>
+               <div style="float: left; margin-left: 10px;">
+                 <!%= f.text_field :badgeColor %>
+               </div>
+               <!%= f.password_field :password, class: "password", placeholder: "password" %>
+             </div>
+             <div class="rowcss">
+               <p style="float: left;">Text Color </p>
+               <div style="float: left; margin-left: 10px;">
+                 <!%= f.text_field :badgeTextColor %>
+               </div>
+               <!%= f.password_field :password_confirmation, class: "password", placeholder: "comfirm password" %>
+             </div>
+             <div class="rowcss2">
+               <div class="TermsOfAgreement-box">
+                 <div class="TermsOfAgreement-textbox">
+                   <p style="color: black;"> This is Terms of Agreement. <br>
+                     Rules of Vibin <br>
+                     Try not to get sue by anyone </p>
+                 </div>
+                 <br>
+                 <!%= f.check_box :Terms_of_Agreement, style: "height: 10px; width: 10px; float: left; margin-left: 10px;" %>
+                 <!%= f.label :Terms_of_Agreement, "I agree.".html_safe, style: "margin-left: 5px; float: left;" %>
+               </div>
+             </div>
+             <!%= f.submit "Submit", style: "width: 30px;" %>
+             <button id="coordinates">Coordinates</button>
+             <p id="longandlat"></p>
+           </center>
+         <!% end %>
+       </div>
+     </center>
+   </div>
+   -->
 </div>
 
-
-<script>
-    $(function () {
-        $(".upload-preview").on("click", function () {
-            $("#avatar").trigger("click");
-        });
-        $(".left-header").on("click", function () {
-            $("#firstHeader").trigger("click");
-        });
-        $(".right-header").on("click", function () {
-            $("#secondHeader").trigger("click");
-        });
-        var previewAvatar = $(".upload-preview img");
-        var previewFirstHeader = $(".left-header img");
-        var previewSecondHeader = $(".right-header img");
-        $("#avatar").change(function (event) {
-            var input = $(event.currentTarget);
-            var file = input[0].files[0];
-            var reader = new FileReader();
-            reader.onload = function (e) {
-
-                image_base64 = e.target.result;
-                previewAvatar.attr("src", image_base64);
-            };
-            reader.readAsDataURL(file);
-        });
-        $("#firstHeader").change(function (event) {
-            var input = $(event.currentTarget);
-            var file = input[0].files[0];
-            var reader = new FileReader();
-            reader.onload = function (e) {
-
-                image_base64 = e.target.result;
-                previewFirstHeader.attr("src", image_base64);
-            };
-            reader.readAsDataURL(file);
-        });
-        $("#secondHeader").change(function (event) {
-            var input = $(event.currentTarget);
-            var file = input[0].files[0];
-            var reader = new FileReader();
-            reader.onload = function (e) {
-
-                image_base64 = e.target.result;
-                previewSecondHeader.attr("src", image_base64);
-            };
-            reader.readAsDataURL(file);
-        });
-
-        $("#user_badgeColor").minicolors();
-        $('#user_badgeColor').on("change", function () {
-            var badgeColor = $(".minicolors-swatch-color").eq(0).css("background-color");
-            $('.name-box').css("background-color", badgeColor);
-            $('.username-box').css("background-color", badgeColor);
-            $('.bio-box').css("background-color", badgeColor);
-        });
-        $("#user_badgeTextColor").minicolors();
-        $('#user_badgeTextColor').on("change", function () {
-            var Color = $(".minicolors-swatch-color").eq(1).css("background-color");
-            $('.name-box').css("color", Color);
-            $('.username-box').css("color", Color);
-            $('.bio-box').css("color", Color);
-        });
-    });
-    $('#coordinates').on('click', function (e) {
-        e.preventDefault();
-        console.log("preventDefault");
-        results = Geocoder.search("Paris")
-        $("#longandlat").text(results.first.coordinates);
-    });
-
-</script>

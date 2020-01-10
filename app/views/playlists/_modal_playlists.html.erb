@@ -16,23 +16,26 @@
     <div class="addPlaylist">
       <% url = getPlaylistImage(f.id) %>
       <img class=logo src="<%= url.nil? ? "default-avatar.jpg" : image_url(url) %>"/>
-      <% if @inPlaylist != nil %>
-        <% if !inPlaylist.include?(f.id) %>
-          <button id="SongtoPlaylist_<%= f.id %>" class="add_to_playlist" onclick="addtoPL(parseInt(get_current_song()),<%=f.id.to_i %>,'<%=f.id %>')">
-            <ion-icon id="ion_<%= f.id %>" name="add-circle"></ion-icon>
-          </button>
-        <% else %>
-          <button id="SongtoPlaylist_<%= f.id %>" class="add_to_playlist" onclick="removeFromPL(parseInt(get_current_song()),<%=f.id.to_i %>,' <%=f.id %>')">
-            <ion-icon id="ion_<%= f.id %>" name="remove-circle"></ion-icon>
-          </button>
-        <% end %>
-      <% end %>
+      <button class="PlayOnPlaylist" onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>
+        <i id="play-icon" class="ion-play"></i>
+      </button>
       <h5 onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>
         <%= f.title %></h5>
       <div class="displayOptions">
         <button class="PlaylistOptions" id="PlaylistOptionsButton">
           <ion-icon id="ionIcon" name="more"></ion-icon>
           <div class="options_list" id="option_list_<%= f.id %>">
+            <% if @inPlaylist != nil %>
+              <% if !inPlaylist.include?(f.id) %>
+                <a id="SongtoPlaylist_<%= f.id %>" onclick="addtoPL(parseInt(get_current_song()),<%=f.id.to_i %>,'<%=f.id %>')">
+                  Add to Playlist
+                </a>
+              <% else %>
+                <a id="SongtoPlaylist_<%= f.id %>" onclick="removeFromPL(parseInt(get_current_song()),<%=f.id.to_i %>,' <%=f.id %>')">
+                  Remove From Playlist
+                </a>
+              <% end %>
+            <% end %>
             <a onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>Start
               Playlist</a>
             <a>Start Radio</a>
@@ -42,4 +45,7 @@
       </div>
     </div>
   <% end %>
+  <div class="PlaylistSongs">
+    <%= render partial: "playlists/songs", locals: {song_pos: song_pos, ts: ts} %>
+  </div>
 <% end %>

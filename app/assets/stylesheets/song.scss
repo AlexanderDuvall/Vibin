@@ -3,7 +3,7 @@ $hover-color: #25a805;
 $fontSize: 28px;
 $buttonColor: transparent;
 .musicPlayer {
-  height: 100px;
+  height: 80px;
   width: 100%;
   background-color: #5d7ca6;
   align-items: center;
@@ -107,7 +107,7 @@ $buttonColor: transparent;
   align-items: center;
   background-color: #5d7ca6;
   margin: auto;
-  top: 10px;
+  top: 4px;
   position: relative;
 
 
@@ -194,6 +194,23 @@ $buttonColor: transparent;
     border-radius: 100000px;
     cursor: pointer;
     border-style: none;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  button.repeat {
+    margin-left: 10px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background-color: $blue;
+    color: white;
+    font-size: 30px;
+    border-radius: 100000px;
+    cursor: pointer;
 
     &:hover {
       background-color: $hover-color;

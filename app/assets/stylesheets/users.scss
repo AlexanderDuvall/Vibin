@@ -1,7 +1,3 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 //
 ////
 ////// Profile
@@ -11,6 +7,10 @@
   background-color: red;
   display: flex;
 }
+.images {
+  //height: 300px;
+  position: relative;
+}
 
 .header {
   width: 75%;
@@ -19,9 +19,39 @@
   display: flex;
   position: relative;
 }
+.left-header {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  left: 0;
+//  height: 100%;
+  overflow: hidden;
+}
+
+.left-header-image {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+
+.right-header {
+  position: absolute;
+  width: 50%;
+  right: 0;
+  top: 0;
+
+}
+
+.right-header-image {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
 
 .avatar{
   height: 100px;
+  position: absolute;
+
   width: 100px;
   border-radius: 50%;
   border-color: white;
@@ -153,7 +183,7 @@
   z-index: 1;
   //display: flex;
   //align-items: center;
-//  margin-left: auto;
+  //  margin-left: auto;
   position: absolute;
 }
 
@@ -224,199 +254,101 @@
 
 .editRightSide {
   width: 90%;
-
-  .signup-form-badge {
-    margin-top: 70px;
-    width: 80%;
-    min-width: 500px;
-    background-color: #0392CF;
-
-    .images {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding-top: 35%;
-
-      .upload-preview {
-        width: 15%;
-        height: 15%;
-        max-height: 130px;
-        position: absolute;
-        left: 43%;
-        top: 70px;
-      }
-
-      .name-box {
-        height: 20px;
-        background-color: #9AD3EB;
-        border-radius: 0;
-        border-style: none;
-        color: white;
-        font-size: 17px;
-        position: absolute;
-        top: 10px;
-        left: 41%;
-        width: 18%;
-      }
-
-      .name-box::placeholder {
-        color: white;
-      }
-
-      .username-box {
-        width: 18%;
-        height: 20px;
-        border-radius: 0;
-        font-size: 20px;
-        border-style: none;
-        background-color: #9AD3EB;
-        position: absolute;
-        top: 40px;
-        left: 41%;
-        color: white;
-      }
-
-      .username-box::placeholder {
-        color: white;
-      }
-
-      .bio-box {
-        height: 22%;
-        width: 50%;
-        position: absolute;
-        bottom: 5px;
-        background-color: #9AD3EB;
-        left: 25%;
-        font-size: 20px;
-        border-radius: 0;
-        border-style: none;
-        color: white;
-      }
-
-      .bio-box::placeholder {
-        color: white;
-      }
-
-      .left-header {
-        position: absolute;
-        width: 50%;
-        top: 0;
-        left: 0;
-        height: 100%;
-        overflow: hidden;
-
-        .left-header-image {
-          object-fit: fill;
-          width: 100%;
-        }
-      }
-
-      .right-header {
-        position: absolute;
-        width: 50%;
-        right: 0;
-        top: 0;
-        height: 100%;
-        overflow-y: scroll;
-
-        .right-header-image {
-          object-fit: fill;
-          width: 100%;
-        }
-      }
-    }
-
-    .rowcss {
-      position: relative;
-      width: 90%;
-      height: 30px;
-
-      .email-box {
-        position: absolute;
-        width: 30%;
-        height: 100%;
-        left: 0;
-        top: 0;
-      }
-
-      .birthday {
-        position: absolute;
-        width: 85px;
-        left: 35%;
-        top: 0;
-      }
-
-      .birthday::placeholder {
-      }
-
-      .gender {
-        position: absolute;
-        top: 0;
-        left: 400px;
-        width: 30%;
-      }
-
-      .country-box {
-        width: 25%;
-        float: left;
-
-      }
-
-      .city-box {
-        margin-left: 10px;
-        width: 20%;
-        float: left;
-      }
-
-      .state-box {
-        margin-left: 10px;
-        width: 15%;
-        float: left;
-      }
-
-      .badgeColor {
-        width: 20px;
-        position: absolute;
-        left: 95px;
-        background-color: red;
-      }
-
-      .badgeColor2 {
-        width: 20px;
-        position: absolute;
-        left: 90px;
-        background-color: red;
-      }
-
-      .password {
-        position: absolute;
-        width: 30%;
-        right: 0;
-      }
-    }
-
-    .rowcss2 {
-      width: 100%;
-      height: auto;
-
-      .TermsOfAgreement-box {
-        height: 220px;
-        width: 70%;
-        background-color: gray;
-      }
-
-      .TermsOfAgreement-textbox {
-        position: relative;
-        top: 5px;
-        height: 190px;
-        width: 95%;
-        overflow-y: scroll;
-        background-color: white;
-      }
-    }
-  }
 }
+
+.signup-form-badge {
+  margin-top: 70px;
+  width: 80%;
+  min-width: 500px;
+  background-color: #0392CF;
+}
+
+
+
+.upload-preview {
+  width: 15%;
+  height: 15%;
+  max-height: 130px;
+  position: absolute;
+  left: 43%;
+  top: 70px;
+}
+
+.name-box {
+  height: 20px;
+  background-color: #9AD3EB;
+  border-radius: 0;
+  border-style: none;
+  color: white;
+  font-size: 17px;
+  position: absolute;
+  top: 10px;
+  left: 41%;
+  width: 18%;
+}
+
+.name-box::placeholder {
+  color: white;
+}
+
+.username-box {
+  width: 18%;
+  height: 20px;
+  border-radius: 0;
+  font-size: 20px;
+  border-style: none;
+  background-color: #9AD3EB;
+  position: absolute;
+  top: 40px;
+  left: 41%;
+  color: white;
+}
+
+.username-box::placeholder {
+  color: white;
+}
+
+.bio-box {
+  height: 22%;
+  width: 50%;
+  position: absolute;
+  bottom: 5px;
+  background-color: #9AD3EB;
+  left: 25%;
+  font-size: 20px;
+  border-radius: 0;
+  border-style: none;
+  color: white;
+}
+
+.bio-box::placeholder {
+  color: white;
+}
+
+
+
+.rowcss {
+  position: relative;
+  width: 90%;
+  height: 30px;
+}
+
+.email-box {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.birthday {
+  position: absolute;
+  width: 85px;
+  left: 35%;
+  top: 0;
+}
+
+
 
 .settings_center {
   width: auto;
@@ -429,216 +361,161 @@
 
 // Sign Up page
 // new.html.erb
-#SignUp {
-  height: 1100px;
-  width: 100%;
+.SignUp {
+
+  min-width: 400px;
 }
 
-.LeftMenu {
 
-  background-color: #0392CF;
-  float: left;
-  width: 20%;
-  height: 100%;
-
-  .user-benefits-badge {
-    margin-top: 70px;
-    height: 80%;
-    width: 70%;
-  }
-}
-
-.RightSideP {
-  background-color: #9AD3EB;
-  float: right;
+.signup-form-badge {
+  margin-top: 70px;
   width: 80%;
+  background-color: #0392CF;
+}
+
+
+.upload-preview {
+  width: 15%;
+  height: 15%;
+  max-height: 130px;
+  position: absolute;
+  left: 43%;
+  top: 70px;
+}
+
+.name-box {
+  height: 20px;
+  background-color: #9AD3EB;
+  border-radius: 0;
+  border-style: none;
+  color: white;
+  position: absolute;
+  top: 10px;
+  left: 41%;
+  width: 18%;
+}
+
+.name-box::placeholder {
+  color: white;
+}
+
+.username-box {
+  width: 18%;
+  height: 20px;
+  border-radius: 0;
+  border-style: none;
+  background-color: #9AD3EB;
+  position: absolute;
+  top: 40px;
+  left: 41%;
+  color: white;
+}
+
+.username-box::placeholder {
+  color: white;
+}
+
+.bio-box {
+  height: 22%;
+  width: 50%;
+  position: absolute;
+  bottom: 5px;
+  background-color: #9AD3EB;
+  left: 25%;
+  border-radius: 0;
+  border-style: none;
+  color: white;
+}
+
+.bio-box::placeholder {
+  color: white;
+}
+
+
+
+.rowcss {
+  position: relative;
+  width: 90%;
+  height: 30px;
+}
+
+.email-box {
+  position: absolute;
+  width: 30%;
   height: 100%;
+  left: 0;
+  top: 0;
+}
 
-  .signup-form-badge {
-    margin-top: 70px;
-    width: 80%;
-    background-color: #0392CF;
+.birthday {
+  position: absolute;
+  width: 85px;
+  left: 35%;
+  top: 0;
+}
 
-    .images {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding-top: 35%;
 
-      .upload-preview {
-        width: 15%;
-        height: 15%;
-        max-height: 130px;
-        position: absolute;
-        left: 43%;
-        top: 70px;
-      }
 
-      .name-box {
-        height: 20px;
-        background-color: #9AD3EB;
-        border-radius: 0;
-        border-style: none;
-        color: white;
-        position: absolute;
-        top: 10px;
-        left: 41%;
-        width: 18%;
-      }
+#user_gender {
+  position: absolute;
+  top: 0;
+  left: 55%;
+  width: 30%;
+}
 
-      .name-box::placeholder {
-        color: white;
-      }
+.country-box {
+  width: 25%;
+  float: left;
+}
 
-      .username-box {
-        width: 18%;
-        height: 20px;
-        border-radius: 0;
-        border-style: none;
-        background-color: #9AD3EB;
-        position: absolute;
-        top: 40px;
-        left: 41%;
-        color: white;
-      }
+.city-box {
+  margin-left: 10px;
+  width: 20%;
+  float: left;
+}
 
-      .username-box::placeholder {
-        color: white;
-      }
+.state-box {
+  margin-left: 10px;
+  width: 15%;
+  float: left;
+}
 
-      .bio-box {
-        height: 22%;
-        width: 50%;
-        position: absolute;
-        bottom: 5px;
-        background-color: #9AD3EB;
-        left: 25%;
-        border-radius: 0;
-        border-style: none;
-        color: white;
-      }
+.badgeColor {
+  width: 20px;
+  position: absolute;
+  left: 95px;
+  background-color: red;
+}
 
-      .bio-box::placeholder {
-        color: white;
-      }
+.badgeColor2 {
+  width: 20px;
+  position: absolute;
+  left: 90px;
+  background-color: red;
+}
 
-      .left-header {
-        position: absolute;
-        width: 50%;
-        top: 0;
-        left: 0;
-        height: 100%;
-        overflow: hidden;
+.password {
+  position: absolute;
+  width: 30%;
+  right: 0;
+}
 
-        .left-header-image {
-          object-fit: fill;
-          width: 100%;
-        }
-      }
+.rowcss2 {
+  width: 100%;
+  height: auto;
+}
 
-      .right-header {
-        position: absolute;
-        width: 50%;
-        right: 0;
-        top: 0;
-        height: 100%;
-        overflow-y: scroll;
+.TermsOfAgreement-box {
+  height: 220px;
+  width: 70%;
+  background-color: gray;
+}
 
-        .right-header-image {
-          object-fit: fill;
-          width: 100%;
-        }
-      }
-    }
-
-    .rowcss {
-      position: relative;
-      width: 90%;
-      height: 30px;
-
-      .email-box {
-        position: absolute;
-        width: 30%;
-        height: 100%;
-        left: 0;
-        top: 0;
-      }
-
-      .birthday {
-        position: absolute;
-        width: 85px;
-        left: 35%;
-        top: 0;
-      }
-
-      .birthday::placeholder {
-      }
-
-      #user_gender {
-        position: absolute;
-        top: 0;
-        left: 55%;
-        width: 30%;
-      }
-
-      .country-box {
-        width: 25%;
-        float: left;
-
-      }
-
-      .city-box {
-        margin-left: 10px;
-        width: 20%;
-        float: left;
-      }
-
-      .state-box {
-        margin-left: 10px;
-        width: 15%;
-        float: left;
-      }
-
-      .badgeColor {
-        width: 20px;
-        position: absolute;
-        left: 95px;
-        background-color: red;
-      }
-
-      .badgeColor2 {
-        width: 20px;
-        position: absolute;
-        left: 90px;
-        background-color: red;
-      }
-
-      .password {
-        position: absolute;
-        width: 30%;
-        right: 0;
-      }
-    }
-
-    .rowcss2 {
-      width: 100%;
-      height: auto;
-
-      .TermsOfAgreement-box {
-        height: 220px;
-        width: 70%;
-        background-color: gray;
-      }
-
-      .TermsOfAgreement-textbox {
-        position: relative;
-        top: 5px;
-        height: 190px;
-        width: 95%;
-        overflow-y: scroll;
-        background-color: white;
-      }
-    }
-  }
+.TermsOfAgreement-textbox {
+  position: relative;
+  top: 5px;
+  height: 190px;
+  width: 95%;
+  overflow-y: scroll;
+  background-color: white;
 }

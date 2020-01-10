@@ -20,30 +20,6 @@ class PlaylistsController < ApplicationController
     get_positions
   end
 
-  def songs
-
-    puts "params of shuffle: #{params[:shuffle]}"
-    @shuffled = params[:shuffle] if (!params[:shuffle].nil? && @shuffled.nil?) || (@shuffled != params[:shuffle] && !params[:shuffle].nil?)
-    if @shuffled.eql?("true")
-      @pos = params[:data].split(",")
-      positions = @pos.map(&:to_i)
-      pos = Playlist.find(params[:playlist])
-      puts positions.inspect
-      song_pos = pos.song_positions
-      song_pos = song_pos.sort_by {|s| positions.index(s.song_id)}
-      puts song_pos.inspect
-      test = "made it this far"
-      render :partial => "playlists/songs", locals: {song_pos: song_pos, ts: test}
-    else
-      pos = Playlist.find(params[:playlist])
-      song_pos = pos.song_positions
-      puts song_pos.inspect
-      test = "nenenen"
-      render :partial => "playlists/songs", locals: {song_pos: song_pos, ts: test}
-    end
-
-
-  end
 
   def index
     @song_position = current_user.playlists.first.song_positions.order(:position)
@@ -78,6 +54,8 @@ class PlaylistsController < ApplicationController
   end
 
   def existsinPlaylist
+    @shuffled = params[:shuffle] if (!params[:shuffle].nil? && @shuffled.nil?) || (@shuffled != params[:shuffle] && !params[:shuffle].nil?)
+
     playlist = current_user.playlists
     song_id = params[:song_id]
     inPlaylist = Array.new
@@ -87,7 +65,28 @@ class PlaylistsController < ApplicationController
       end
       @inPlaylist = inPlaylist
     end
-    render :partial => "/playlists/modal_playlists", locals: {inPlaylist: inPlaylist}
+    playlist = params[:playlist]
+    if playlist == "0"
+      @inPlaylist = nil
+      render :partial => "/playlists/modal_playlists", locals: {inPlaylist: inPlaylist, song_pos: nil, ts: "..."}
+    elsif @shuffled.eql?("true")
+      @pos = params[:data].split(",")
+      positions = @pos.map(&:to_i)
+      pos = Playlist.find(playlist)
+      puts positions.inspect
+      song_pos = pos.song_positions
+      song_pos = song_pos.sort_by {|s| positions.index(s.song_id)}
+      puts song_pos.inspect
+      test = "made it this far"
+      render :partial => "/playlists/modal_playlists", locals: {inPlaylist: inPlaylist, song_pos: song_pos, ts: test}
+    else
+      puts "alex its here"
+      pos = Playlist.find(playlist)
+      song_pos = pos.song_positions
+      puts song_pos.inspect
+      test = "nenenen"
+      render :partial => "/playlists/modal_playlists", locals: {inPlaylist: inPlaylist, song_pos: song_pos, ts: test}
+    end
   end
 
   def addToPlaylist

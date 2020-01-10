@@ -27,7 +27,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
     let volume_fill = volume.querySelector(".volume_fill");
     let modal = document.getElementById("audio-modal");
     let addPlaylistModal = document.getElementById("add-playlist-modal");
-    let renderPlaylist = document.getElementById("renderPlaylist");
     let renderAddPlaylist = document.getElementById("renderAddPlaylist");
     let broadcast = document.getElementById("broadcast_text");
     let optionslistbutton = document.querySelector(".options_list");
@@ -39,29 +38,21 @@ window.addEventListener("DOMContentLoaded", function (e) {
 
     renderAddPlaylist.onclick = function () {
         let song = get_current_song();
-        if (audio.src != "") {
-            $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song);
-            addPlaylistModal.style.display = "block";
-        } else {
-            console.log("no song to show")
-        }
-    };
-    renderPlaylist.onclick = function () {
+        //loadPlaylistSongs();
         if (isPlayList) {
             if (isShuffled) {
-                $('.modal-content-audio').load("/shuffle?shuffle=true&data=" + songQueue + "&playlist=" + get_current_playlist());
+                $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=true&data=" + songQueue + "&playlist=" + get_current_playlist());
             } else {
-                $('.modal-content-audio').load("/shuffle?shuffle=false&playlist=" + get_current_playlist());
+                $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=false&data=" + songQueue + "&playlist=" + get_current_playlist());
             }
-            modal.style.display = "block";
+        } else {
+            $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=0&playlist=0");
         }
+
+        addPlaylistModal.style.display = "block";
 
     };
     window.onclick = function (event) {
-        console.log(event.target);
-        console.log(event.target != optionslistbutton);
-        console.log($(".options_list").is(":visible"));
-        console.log(event.target != document.querySelector("#ionIcon"));
         if (event.target == modal) {
             modal.style.display = "none";
             console.log("ffacs");
@@ -212,16 +203,16 @@ function incrementPlays(id, artist_id) {
     });
 }
 
-function broadcasterPlayer() {
-
-}
-
-function playlistPlayer() {
-
-}
-
-function singleSongPlayer() {
-
+function loadPlaylistSongs() {
+    if (isPlayList) {
+        if (isShuffled) {
+            $('#nextSongs').load("/shuffle?shuffle=true&data=" + songQueue + "&playlist=" + get_current_playlist());
+            console.log("finished up1");
+        } else {
+            $('#nextSongs').load("/shuffle?shuffle=false&playlist=" + get_current_playlist());
+            console.log("finished up2");
+        }
+    }
 }
 
 function playPause() {

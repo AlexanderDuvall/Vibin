@@ -4,10 +4,27 @@
 
 <%= form_tag search_path, method: :get, remote: true do %>
   <%= text_field_tag :term, nil, placeholder: "Search", class: "SearchBar" %>
-
 <% end %>
 
-<div style="float: right;">
+<script>
+    $(window).resize(function () {
+        var groupies = $(".GroupiesTab");
+        var groupiesPosition = groupies.position();
+        var login = $(".login");
+        var loginPosition = login.position();
+        var l = parseInt(loginPosition.left) - parseInt(groupiesPosition.left) - 60 ;
+        var lpx = l + " px";
+       // console.log(lpx);
+        if(loginPosition.left - groupiesPosition.left < 290){
+            $(".SearchBar").css("width", l);
+        } else{
+          $(".SearchBar").css("width", 220);
+        }
+
+    });
+</script>
+
+
 <div class="login">Login
   <div class="dropdown-content-login">
     <%= render 'sessions/form'%>
@@ -15,6 +32,7 @@
 </div>
 
 <% if logged_in? %>
-  <div id="current-user"></div>
+  <div id="current-user">
+
+  </div>
 <% end %>
-</div>
