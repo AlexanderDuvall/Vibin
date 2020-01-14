@@ -1,14 +1,14 @@
 <% playlists = current_user.playlists if !current_user.nil? %>
 <% if playlists.nil? || playlists.length == 0 %>
   <%= form_for :playlist, :url => {:action => :create, :controller => :playlists, :id => @playlist} do |x| %>
-    <%= x.text_field :title, id: "playlist_text_Field", placeholder: "New Playlist Title" %>
+    <%= x.text_field :title, id: "playlist_text_Field", placeholder: "Create New Playlist " %>
     <%= x.submit "Create", id: "Playlist_button" %>
   <% end %>
 <% else %>
   <h4><%= current_user.username %>'s Playlists </h4>
   <div class="addPlaylist">
     <%= form_for :playlist, :url => {:action => :create, :controller => :playlists, :id => @playlist} do |x| %>
-      <%= x.text_field :title, id: "playlist_text_Field", placeholder: "New Playlist Title", maxlength: 20 %>
+      <%= x.text_field :title, id: "playlist_text_Field", placeholder: "Create New Playlist", maxlength: 20 %>
       <%= x.submit "Create" %>
     <% end %>
   </div>
@@ -21,6 +21,10 @@
       </button>
       <h5 onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>
         <%= f.title %></h5>
+
+      <button class="arrowDropdown" onclick="showList('list_<%=f.id %>')" data-playlist="<%= f.id %>">
+        <ion-icon name="arrow-dropdown"></ion-icon>
+      </button>
       <div class="displayOptions">
         <button class="PlaylistOptions" id="PlaylistOptionsButton">
           <ion-icon id="ionIcon" name="more"></ion-icon>
@@ -44,8 +48,10 @@
         </button>
       </div>
     </div>
+    <div class="PlaylistSongs" style="display: none;" id="list_<%= f.id %>">
+      <%= render partial: "playlists/songs", locals: {song_pos: Get_Specific_Positions(f.id)} %>
+    </div>
   <% end %>
-  <div class="PlaylistSongs">
-    <%= render partial: "playlists/songs", locals: {song_pos: song_pos, ts: ts} %>
-  </div>
+
+
 <% end %>

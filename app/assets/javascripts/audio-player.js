@@ -48,7 +48,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
         } else {
             $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=0&playlist=0");
         }
-
         addPlaylistModal.style.display = "block";
 
     };
@@ -203,17 +202,6 @@ function incrementPlays(id, artist_id) {
     });
 }
 
-function loadPlaylistSongs() {
-    if (isPlayList) {
-        if (isShuffled) {
-            $('#nextSongs').load("/shuffle?shuffle=true&data=" + songQueue + "&playlist=" + get_current_playlist());
-            console.log("finished up1");
-        } else {
-            $('#nextSongs').load("/shuffle?shuffle=false&playlist=" + get_current_playlist());
-            console.log("finished up2");
-        }
-    }
-}
 
 function playPause() {
     console.log("play button clicked");

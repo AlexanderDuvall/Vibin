@@ -398,7 +398,7 @@ a:hover {
 
 /* Modal Content */
 .modal-content-add-playlist {
-  margin-top: 150px;
+  top: 145px;
   position: fixed;
   right: 0;
   background-color: white;
@@ -407,7 +407,9 @@ a:hover {
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
+  z-index: 2;
+  overflow-y: auto;
 }
 
 .modal {

@@ -23,6 +23,21 @@ $imageSize: 140px;
   border-radius: 100000px;
 }
 
+.arrowDropdown {
+  display: block;
+  width: 0px;
+  height: 0px;
+  margin-top: 6px;
+  border: 0;
+  color: white;
+  font-size: 30px;
+  border-radius: 100000px;
+  cursor: pointer;
+  margin-left: 280px;
+
+}
+
+
 .PlaylistOptions {
   display: block;
   width: 0px;
@@ -43,8 +58,8 @@ $imageSize: 140px;
 .displayOptions {
   background-color: #00aaff;
   width: 0px;
-  margin-left: 240px;
-
+  position: absolute;
+  right: 123px;
 }
 
 #Create_Playlist {
@@ -72,13 +87,15 @@ $imageSize: 140px;
   background-color: #730E15;
 
   h5 {
-    width: 290px;
+    width: 240px;
     color: white;
     margin-left: 56px;
     position: absolute;
     height: 33px;
     max-lines: 1;
     margin-top: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   &:hover {
