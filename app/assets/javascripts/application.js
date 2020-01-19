@@ -521,7 +521,6 @@ function SelectedSong(song, username, title, singleSong, ...args) {
         isShuffled = false;
         console.log("NOT SINGLE SONG");
         set_current_song(args[2]);
-        let cover_url = args[3];
         //songQueue = args[0];
         ReorderSongs(args[0]);
         console.log("\n\nSong Queue" + songQueue + "\n\n");
@@ -584,9 +583,13 @@ function sendData(duration, ...args) {
     }
 }
 
-function setNewPlaylistSong(position) {
-    counter = position;
-    nextSong();
+function setNewPlaylistSong(position, song_id) {
+    if (isPlayList) {
+        counter = position;
+        nextSong();
+    } else {
+
+    }
 }
 
 function set_current_song(id) {

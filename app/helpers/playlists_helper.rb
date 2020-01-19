@@ -69,6 +69,15 @@ module PlaylistsHelper
     end
   end
 
+  def showPlaylistSongs?(currentPlaylist, id)
+    puts "--------------------------------------playlistcomp"
+    puts "#{currentPlaylist},#{id}"
+    if currentPlaylist.to_i == id.to_i
+      return "block"
+    end
+    return "none"
+  end
+
   def getPlaylistImageURLforPlaylist(playlist, position)
     position = playlist.song_positions.find_by(position: position)
     song = Song.find (position.song_id)

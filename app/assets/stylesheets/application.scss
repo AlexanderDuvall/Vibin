@@ -26,12 +26,12 @@
 }
 */
 
-g
   //
   ////
   ////// main
   ////
   //
+$theme: #eaa766;
 html {
 
 }
@@ -66,7 +66,7 @@ a:hover {
 .navbar {
   position: fixed;
   z-index: 999;
-  background-color: #eaa766;
+  background-color: $theme;
   top: 0;
   width: 100%;
   min-width: 400px;

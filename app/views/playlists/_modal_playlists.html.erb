@@ -16,13 +16,14 @@
     <div class="addPlaylist">
       <% url = getPlaylistImage(f.id) %>
       <img class=logo src="<%= url.nil? ? "default-avatar.jpg" : image_url(url) %>"/>
+
       <button class="PlayOnPlaylist" onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>
         <i id="play-icon" class="ion-play"></i>
       </button>
       <h5 onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>
         <%= f.title %></h5>
 
-      <button class="arrowDropdown" onclick="showList('list_<%=f.id %>')" data-playlist="<%= f.id %>">
+      <button class="arrowDropdown" id='list_<%= f.id %>' onclick=showList("song_list_<%= f.id %>"); data-playlist="<%= f.id %>">
         <ion-icon name="arrow-dropdown"></ion-icon>
       </button>
       <div class="displayOptions">
@@ -48,7 +49,7 @@
         </button>
       </div>
     </div>
-    <div class="PlaylistSongs" style="display: none;" id="list_<%= f.id %>">
+    <div class="PlaylistSongs" id="song_list_<%= f.id %>" style="display: <%= showPlaylistSongs?(currentplaylist, f.id) %>">
       <%= render partial: "playlists/songs", locals: {song_pos: Get_Specific_Positions(f.id)} %>
     </div>
   <% end %>

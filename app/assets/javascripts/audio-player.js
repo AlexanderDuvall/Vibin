@@ -29,7 +29,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
     let addPlaylistModal = document.getElementById("add-playlist-modal");
     let renderAddPlaylist = document.getElementById("renderAddPlaylist");
     let broadcast = document.getElementById("broadcast_text");
-    let optionslistbutton = document.querySelector(".options_list");
     broadcast.onclick = function () {
         let id = $("#broadcast_text").data("session");
         console.log(id + " uhuh");
@@ -37,17 +36,22 @@ window.addEventListener("DOMContentLoaded", function (e) {
     };
 
     renderAddPlaylist.onclick = function () {
+
         let song = get_current_song();
         //loadPlaylistSongs();
         if (isPlayList) {
             if (isShuffled) {
                 $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=true&data=" + songQueue + "&playlist=" + get_current_playlist());
+                console.log("shuffled showing");
             } else {
                 $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=false&data=" + songQueue + "&playlist=" + get_current_playlist());
+                console.log("not shuffled showing");
             }
         } else {
-            $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=0&playlist=0");
+            $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=0&playlist=0&currentPlaylist=0");
+            console.log("no playlist");
         }
+
         addPlaylistModal.style.display = "block";
 
     };
