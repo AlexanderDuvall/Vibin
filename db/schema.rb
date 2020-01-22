@@ -2,15 +2,15 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `rails
+# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_194759) do
+ActiveRecord::Schema.define(version: 2020_01_19_045729) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,11 +33,17 @@ ActiveRecord::Schema.define(version: 2019_12_10_194759) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "albumlikes", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "list"
+    t.integer "users_id"
+    t.index ["users_id"], name: "index_albumlikes_on_users_id"
+  end
+
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "musiclist"
     t.string "title"
+    t.string "message"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
@@ -158,8 +164,8 @@ ActiveRecord::Schema.define(version: 2019_12_10_194759) do
   create_table "songlikes", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "song_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["song_id"], name: "index_songlikes_on_song_id"
     t.index ["user_id"], name: "index_songlikes_on_user_id"
   end
@@ -192,6 +198,8 @@ ActiveRecord::Schema.define(version: 2019_12_10_194759) do
 
   create_table "user_song_play_counters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "plays"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "song_id"
     t.integer "user_id"
     t.index ["song_id"], name: "index_user_song_play_counters_on_song_id"
@@ -203,7 +211,6 @@ ActiveRecord::Schema.define(version: 2019_12_10_194759) do
     t.string "username", limit: 30
     t.string "password_digest"
     t.string "name", limit: 40
-    t.integer "zipcode"
     t.boolean "public", default: true
     t.string "gender"
     t.string "bio", limit: 150
@@ -212,24 +219,25 @@ ActiveRecord::Schema.define(version: 2019_12_10_194759) do
     t.datetime "updated_at", null: false
     t.boolean "Terms_of_Agreement", default: true
     t.string "remember_digest"
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.boolean "Verified", default: false
-    t.string "city"
-    t.string "state"
-    t.string "country", null: false
     t.string "longitude", null: false
     t.string "latitude", null: false
     t.string "badgeColor", default: "#8ff478"
     t.string "badgeTextColor", default: "#ffffff"
+    t.string "hometown"
+    t.string "location"
+    t.string "imagesProperties"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "albumlikes", "users", column: "users_id"
   add_foreign_key "albums", "users"
   add_foreign_key "broadcasters", "users"
   add_foreign_key "clout_songs", "songs"

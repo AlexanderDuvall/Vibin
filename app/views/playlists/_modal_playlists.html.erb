@@ -17,10 +17,10 @@
       <% url = getPlaylistImage(f.id) %>
       <img class=logo src="<%= url.nil? ? "default-avatar.jpg" : image_url(url) %>"/>
 
-      <button class="PlayOnPlaylist" onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>
+      <button class="PlayOnPlaylist" onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>)'>
         <i id="play-icon" class="ion-play"></i>
       </button>
-      <h5 onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>
+      <h5 onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>)'>
         <%= f.title %></h5>
 
       <button class="arrowDropdown" id='list_<%= f.id %>' onclick=showList("song_list_<%= f.id %>"); data-playlist="<%= f.id %>">
@@ -41,7 +41,7 @@
                 </a>
               <% end %>
             <% end %>
-            <a onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %>,<%=f.id %>)'>Start
+            <a onclick='SelectedSong(null, null,null,false,<%=playlistToArray(f.id).to_json%>, <%= f.id.to_json %> )'>Start
               Playlist</a>
             <a>Start Radio</a>
             <%= link_to 'Delete Playlist', playlist_url(f), method: :delete, data: {confirm: "Are you sure?"}, style: "color: white;" %>

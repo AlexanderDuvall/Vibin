@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  searchkick text_start: [:username, :name]
+  #searchkick text_start: [:username, :name]
   genderList = ["male", "female"]
 
   attr_accessor :remember_token, :reset_token, :activation_token
@@ -19,16 +19,16 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :username, presence: true, uniqueness: true
   validates :Terms_of_Agreement, presence: true
-  validates :country, presence: false
-  validates :city, presence: false
-  validates :state, presence: false
   validates :longitude, presence: true
   validates :latitude, presence: true
+  validates :hometown, presence: true
+  validates :location, presence: true
   validates :gender, presence: true
   validates :birthday, presence: true
   validates :bio, length: {maximum: 250}
   validates :badgeColor, presence: true
   validates :badgeTextColor, presence: true
+  validates :imagesProperties, presence: true
   has_secure_password
   validates :password_digest, presence: true, length: {minimum: 6}, allow_nil: true
   has_many :albumlikes

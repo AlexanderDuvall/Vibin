@@ -77,7 +77,7 @@ Rails.application.configure do
       #IN THE FUTURE.... THIS WILL BE STORED AS AN ENVIRONMENT VARIABLE
       #----------------------------------
       user_name: '2018vibin@gmail.com',
-      password: 'VibinMusic2019',
+      password: 'vibinmusic2020',
       domain:  'gmail.com',
       address: 'smtp.gmail.com',
       port:  587,

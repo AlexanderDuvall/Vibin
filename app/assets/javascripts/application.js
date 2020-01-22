@@ -15,8 +15,6 @@
 //= require activestorage
 // require cable
 //= require jquery
-//= require jquery_ujs
-//= require jquery-ui
 //= require jquery-ui/widget
 //= require jquery-ui/widgets/sortable
 //= require turbolinks
@@ -520,7 +518,6 @@ function SelectedSong(song, username, title, singleSong, ...args) {
     } else {
         isShuffled = false;
         console.log("NOT SINGLE SONG");
-        set_current_song(args[2]);
         //songQueue = args[0];
         ReorderSongs(args[0]);
         console.log("\n\nSong Queue" + songQueue + "\n\n");
@@ -583,12 +580,12 @@ function sendData(duration, ...args) {
     }
 }
 
-function setNewPlaylistSong(position, song_id) {
+function setNewPlaylistSong(position, playlistArray, playlist) {
     if (isPlayList) {
         counter = position;
         nextSong();
     } else {
-
+        SelectedSong(null, null, null, false, playlistArray, playlist);
     }
 }
 

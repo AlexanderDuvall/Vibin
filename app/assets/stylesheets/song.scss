@@ -1,11 +1,13 @@
 $blue: #0af;
-$hover-color: #25a805;
+$hover-color: #730E15;
+$theme: #595453;
+$sideColor: #730E15;
 $fontSize: 28px;
-$buttonColor: transparent;
+$buttonColor: #eaa766;
 .musicPlayer {
-  height: 80px;
+  height: 81px;
   width: 100%;
-  background-color: #5d7ca6;
+  background-color: $theme;
   align-items: center;
 }
 
@@ -20,13 +22,23 @@ $buttonColor: transparent;
   position: relative;
   float: left;
   height: 100%;
-  width: 100px;
-  margin-right: 5px;
+  width: 74px;
 }
 
 .songArtist {
   position: relative;
   float: left;
+  margin-left: 10px;
+  p {
+    margin-left: 5px;
+  }
+}
+
+.songInfo {
+  font-size: 15px;
+  display: block;
+  margin-bottom: 2px;
+  color: white;
 }
 
 .songArtistAvatarImage {
@@ -46,13 +58,11 @@ $buttonColor: transparent;
 }
 
 .playerCoverImage {
-  margin-left: 5px;
-  margin-top: 5px;
-  width: 90px;
-  height: 90px;
+  margin-left: 0px;
+  width: 79px;
+  height: 79px;
   border: none;
 }
-
 
 .postLeft {
   margin-top: 5px;
@@ -100,16 +110,14 @@ $buttonColor: transparent;
   background-color: inherit;
 }
 
-
 .audio-player {
 
   display: flex;
   align-items: center;
-  background-color: #5d7ca6;
+  background-color: $theme;
   margin: auto;
   top: 4px;
   position: relative;
-
 
   .audio-buttons {
     display: flex;
@@ -131,7 +139,7 @@ $buttonColor: transparent;
     width: 50px;
     height: 50px;
     border: 0;
-    background-color: $blue;
+    background-color: $buttonColor;
     color: white;
     font-size: 30px;
     border-radius: 100000px;
@@ -153,7 +161,7 @@ $buttonColor: transparent;
   .seek-bar {
     min-width: 100%;
     top: 10px;
-    background-color: #730E15;
+    background-color: $buttonColor;
     display: flex;
     border-radius: 100000px;
     cursor: pointer;
@@ -169,8 +177,8 @@ $buttonColor: transparent;
     }
 
     .handle {
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       background-color: $blue;
       border-radius: 100000px;
       margin-left: -5px;
@@ -206,7 +214,7 @@ $buttonColor: transparent;
     width: 50px;
     height: 50px;
     border: 0;
-    background-color: $blue;
+    background-color: $buttonColor;
     color: white;
     font-size: 30px;
     border-radius: 100000px;
@@ -223,7 +231,7 @@ $buttonColor: transparent;
     width: 50px;
     height: 50px;
     border: 0;
-    background-color: $blue;
+    background-color: $buttonColor;
     color: white;
     font-size: 30px;
     border-radius: 100000px;
@@ -240,7 +248,7 @@ $buttonColor: transparent;
     width: 50px;
     height: 50px;
     border: 0;
-    background-color: $blue;
+    background-color: $buttonColor;
     color: white;
     font-size: 30px;
     border-radius: 100000px;
@@ -256,7 +264,7 @@ $buttonColor: transparent;
     width: 50px;
     height: 50px;
     border: 0;
-    background-color: $blue;
+    background-color: $buttonColor;
     color: white;
     font-size: 30px;
     border-radius: 100000px;
@@ -271,16 +279,13 @@ $buttonColor: transparent;
 button.volume {
   width: 40px;
   height: 43px;
-  background-color: $buttonColor;
+  background-color: transparent;
   color: white;
   border: 0;
-  font-size: 30px;
+  font-size: 27px;
   border-radius: 100000px;
   cursor: pointer;
 
-  &:hover {
-    background-color: $hover-color;
-  }
 }
 
 .right_footer {
@@ -290,10 +295,10 @@ button.volume {
   position: relative;
   top: 3px;
 
-
   .right_elements {
     display: flex;
     align-items: center;
+    height: 39px;
 
     button {
       i {
@@ -341,7 +346,7 @@ button.volume {
     .volume_bar {
       margin-left: 15px;
       width: 150px;
-      background-color: #730E15;
+      background-color: $buttonColor;
       display: flex;
       align-items: center;
       border-radius: 100000px;
@@ -355,14 +360,14 @@ button.volume {
       }
 
       .volume_handle {
-        width: 10px;
-        height: 10px;
+        width: 7px;
+        height: 7px;
         background-color: $blue;
         border-radius: 100000px;
         margin-left: -5px;
         transform: scale(2);
         transition: all 0.1s;
-
+        margin-bottom: 3px;
         &:hover {
           background-color: $hover-color;
           transform: scale(3);

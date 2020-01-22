@@ -1,252 +1,657 @@
-<div id="SignUp">
-
-  <!--
-  <div class="demo" id="demoo" style="height: 200px; width: 200px"> </div>
- <br>
-  <br><div id="fin" style="height: 50px; width: 180px; border-style: dashed; overflow: hidden">  </div>
-  <script>
-      var basic = $('#fin').croppie({
-          viewport: {
-              width: 180,
-              height: 50,
-              enableZoom: false,
-              mouseWheelZoom: false
-          }
-      });
-
-    var imagee = document.getElementById("demoo");
-    var cropbox = new Croppie(imagee, {
-          viewport: {
-              width: 180,
-              height: 50,
-              showZoomer: false
-          },
-          url: 'default-avatar.jpg',
-      });
-      $(".demo").mouseup(function () {
-          console.log(cropbox.get().points);
-          console.log(cropbox.get().zoom);
-          basic.croppie('bind', {
-              url: 'default-avatar.jpg',
-              points: cropbox.get().points,
-              zoom: cropbox.get().zoom
-          });
-      });
-  </script>
-  -->
-
-  <div class="images" id="header">
-    <div class="left-header">
-      <%= image_tag "insert.png", :class => "left-header-image", :id => "leftHeaderImage" %>
+<%= form_with(model:@user, multipart: true) do |f| %>
+  <div id="SignUp" class="SignUp">
+    <div class="Images" id="header">
+      <div class="LeftHeader" id="leftHeader">
+        <%= image_tag "insert.png", :class => "LeftHeaderImage", :id => "leftHeaderImage" %>
+      </div>
+      <div class="Badge" id="badge1">
+        Banner Color
+      <input hidden type="text" name="user[badgeColor]" id="user_badgeColor" value="rgb(234,167,102)">
+      <input hidden type="text" name="user[badgeTextColor]" id="user_badgeTextColor" value="rgb(0,0,0)">
     </div>
-    <div class="avatar">
+    <script src="https://unpkg.com/vanilla-picker@2"></script>
+    <script>
+        var rgbColor1;
+        var rgbColor2;
+      $(function () {
+          var badge1 = document.querySelector('#badge1');
+          var badge2 = document.querySelector('#badge2');
+          var badgePicker1 = new Picker({
+              parent: badge1,
+              color: "#eaa766",
+              popup: 'bottom',
+              onOpen: function(){
+                  $('.popup.popup_right').css('left', "75%");
+              },
+              onChange: function(color) {
+                  badge1.style.background = color.rgbaString;
+                  badge2.style.background = color.rgbaString;
+
+                  rgbColor1 = color.rgbaString;
+                  rgbColor1 = rgbColor1.replace('a', '');
+                  rgbColor1 = rgbColor1.substring(0, rgbColor1.length - 3) + ')';
+                  $('#avatar').css('border-color', rgbColor1);
+                  $("#user_badgeColor").val(rgbColor1);
+              }
+          });
+          var badge2 = document.querySelector('#badge2');
+          var badgePicker2 = new Picker({
+              popup: 'bottom',
+              parent: badge2,
+              color: "black"
+          });
+          badgePicker2.onChange = function(color) {
+              badge1.style.color = color.rgbaString;
+              badge2.style.color = color.rgbaString;
+              rgbColor2 = color.rgbaString;
+              rgbColor2 = rgbColor2.replace('a', '');
+              rgbColor2 = rgbColor2.substring(0, rgbColor2.length - 3) + ')';
+              $('#user_badgeTextColor').val(rgbColor2);
+          };
+      });
+    </script>
+    <div class="Avatar" id="avatar">
       <img src="/default-avatar.jpg" style="width:100%; height:100%; object-fit:cover;" id="avatarImage">
     </div>
-    <div class="right-header">
-      <%= image_tag "insert.png", :class => "right-header-image", :id => "rightHeaderImage" %>
+    <div class="RightHeader" id="rightHeader">
+      <%= image_tag "insert.png", :class => "RightHeaderImage", :id => "rightHeaderImage" %>
+    </div>
+    <div class="Badge" id="badge2">
+      Banner Text Color
     </div>
   </div>
-  <div class="row">
+  <div class="Form">
+    <label class="nameLabel">
+      Name
+    </label>
+    <input type="text" class="nameInput" name="user[name]" id="user_name" placeholder="name">
+    <br>
+    <label class="usernameLabel">
+      @
+    </label>
+    <input type="text" class="UsernameInput" name="user[username]" id="user_username" placeholder="username">
+    <br>
+    <label class="EmailLabel">
+      email
+    </label>
+    <input type="text" id="user_email" name="user[email]" class="EmailInput" placeholder="email">
+    <br>
+    <label class="PasswordLabel">
+      Password
+    </label>
+    <input type="password" id='user_password' name="user[password]" class="PasswordInput" placeholder="password">
+    <br>
+    <label class="PasswordLabel">
+      Password Confirm
+    </label>
+    <input type="password" name="user[password_confirmation]" id='user_password_confirmation' class="PasswordInput">
+    <br>
+    <label class="BirthdayLabel">
+      Birthday
+    </label>
+    <input type="date" class="BirthdayInput" name="user[birthday]" id="user_birthday" >
+    <br>
+    <label class="GenderLabel">
+      Gender
+    </label>
+    <select class="GenderInput" name="user[gender]" id="user_gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="TransMale">Transgender Male</option>
+      <option value="TransFemale">Transgender Female</option>
+    </select>
+    <br>
+    <label class="HomeTownLabel">
+      Hometown
+    </label>
+      <input id="user_hometown" name="user[hometown]" placeholder="Enter a city" type="text" />
+    <br>
+    <label class="ResideLabel">
+      Reside In
+    </label>
+    <input id="user_location" name="user[location]"  placeholder="Enter a city" type="text" onclick="getLocation()">
+  </div>
+  <div class="NonMemberBenefits">
+    <p>Free Account Benefits</p>
+     <p>    Earn ad-free days.</p>
+    <p>    Upload Music.</p>
+    <p>    listen to Broadcasts.</p>
+  </div>
+  <div class="TermsOfAgreement">
+    <em>Please Read the Terms of Agreements.</em>
+    <br>
+    <input type="checkbox" id="user_Terms_of_Agreement" value="1">  I have read and do agree to the Terms of Agreements.
   </div>
   <input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader" onchange=
-      "document.getElementById('leftHeaderImage').src = window.URL.createObjectURL(this.files[0]);
-          oneTimeImageSelection('firstHeader');
-          $('#leftHeaderImage').height = $('.images').height;">
+              "document.getElementById('leftHeaderImage').src = window.URL.createObjectURL(this.files[0]);
+              oneTimeImageSelection('firstHeader');
+              $('#leftHeaderImage').height = $('.Images').height;">
   <input hidden class="photo_upload" type="file" name="user[secondHeader]" id="secondHeader" onchange=
-      "document.getElementById('rightHeaderImage').src = window.URL.createObjectURL(this.files[0]);
-          oneTimeImageSelection('secondHeader');
-          $('#rightHeaderImage').height = $('.images').height;">
+              "document.getElementById('rightHeaderImage').src = window.URL.createObjectURL(this.files[0]);
+              oneTimeImageSelection('secondHeader');
+              $('#rightHeaderImage').height = $('.Images').height;">
+  <input hidden class="photo_upload" type="file" name="user[avatar]" id="avatarUpload" onchange=
+             "document.getElementById('avatarImage').src = window.URL.createObjectURL(this.files[0]);
+              oneTimeImageSelection('avatarUpload');
+              $('#avatarImage').height = $('.images').height * .33;">
+    <input hidden type="text" id="user_imagesProperties" name="user[imagesProperties]">
+    <input hidden type="text" id="user_longitude" name="user[longitude]">
+    <input hidden type="text" id="user_latitude" name="user[latitude]">
+
+    <input  type="submit" name="commit" id="submit" class="submit" value="Create Account" data-disable-with="Create" />
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABBVE90zE3SB_kb52KWFSS2Fqumy303do&libraries=places"></script>
+  <style>
+      .iw_table_row {
+        height: 18px;
+      }
+      .iw_attribute_name {
+        font-weight: bold;
+        text-align: right;
+      }
+      .iw_table_icon {
+        text-align: right;
+      }
+  </style>
+  <script>
+      $(document).ready(function() {
+          $(window).keydown(function(event){
+              if(event.keyCode == 13) {
+                  event.preventDefault();
+                  return false;
+              }
+          });
+      });
+      function isValidDate(dateString)
+      {
+          // First check for the pattern
+          if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
+              return false;
+
+          // Parse the date parts to integers
+          var parts = dateString.split("/");
+          var day = parseInt(parts[1], 10);
+          var month = parseInt(parts[0], 10);
+          var year = parseInt(parts[2], 10);
+          // Check the ranges of month and year
+          if(year < 1000 || year > 3000 || month == 0 || month > 12)
+              return false;
+
+          var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+          // Adjust for leap years
+          if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+              monthLength[1] = 29;
+
+          // Check the range of the day
+          return day > 0 && day <= monthLength[month - 1];
+      }
+    var latitude;
+    var longitude;
+      function getLocation() {
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+          } else {
+             console.log("Geolocation is not supported by this browser.");
+          }
+      }
+      var geocoder = new google.maps.Geocoder;
+      var infowindow = new google.maps.InfoWindow;
+      function showPosition(position) {
+          longitude = String(position.coords.longitude);
+          latitude = String(position.coords.latitude);
+          console.log("Latitude: " + position.coords.latitude +
+              "Longitude: " + position.coords.longitude);
+          geocodeLatLng(geocoder, infowindow, position.coords.latitude, position.coords.longitude);
+      }
+      function geocodeLatLng(geocoder, infowindow, latitude, longitude) {
+
+          var latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
+          geocoder.geocode({'location': latlng}, function(results, status) {
+              if (status === 'OK') {
+                  if (results[0]) {
+                      console.log(results[6].formatted_address);
+                      $('#user_location').val(results[6].formatted_address);
+                  } else {
+                      window.alert('No results found');
+                  }
+              } else {
+                  window.alert('Geocoder failed due to: ' + status);
+              }
+          });
+      }
+      var autocomplete;
+      var autocomplete2;
+      var country = 'all';
+      var countryRestrict = {'country': 'us'};
+      autocomplete = new google.maps.places.Autocomplete(
+          /** @type {!HTMLInputElement} */ (
+              document.getElementById('user_hometown')), {
+              types: ['(cities)'],
+              componentRestrictions: countryRestrict
+          });
+      autocomplete2 = new google.maps.places.Autocomplete(
+          /** @type {!HTMLInputElement} */ (
+              document.getElementById('user_location')), {
+              types: ['(cities)'],
+              componentRestrictions: countryRestrict
+          });
+      if (country == 'all') {
+          autocomplete.setComponentRestrictions({'country': []});
+          autocomplete2.setComponentRestrictions({'country': []});
+
+      }
+      infoWindow = new google.maps.InfoWindow({
+          content: document.getElementById('info-content')
+      });
+      function search() {
+          var search = {
+              types: ['lodging']
+          };
+          places.nearbySearch(search, function(results, status) {
+              if (status === google.maps.places.PlacesServiceStatus.OK) {
+                  clearResults();
+                  clearMarkers();
+                  // Create a marker for each hotel found, and
+                  // assign a letter of the alphabetic to each marker icon.
+                  for (var i = 0; i < results.length; i++) {
+                      var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+                      var markerIcon = MARKER_PATH + markerLetter + '.png';
+                      // Use marker animation to drop the icons incrementally on the map.
+                      markers[i] = new google.maps.Marker({
+                          position: results[i].geometry.location,
+                          animation: google.maps.Animation.DROP,
+                          icon: markerIcon
+                      });
+                      // If the user clicks a hotel marker, show the details of that hotel
+                      // in an info window.
+                      markers[i].placeResult = results[i];
+                      google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+                      setTimeout(dropMarker(i), i * 100);
+                      addResult(results[i], i);
+                  }
+              }
+          });
+      }
+      function showInfoWindow() {
+          var marker = this;
+          places.getDetails({placeId: marker.placeResult.place_id},
+              function(place, status) {
+                  if (status !== google.maps.places.PlacesServiceStatus.OK) {
+                      return;
+                  }
+                  infoWindow.open(map, marker);
+                  buildIWContent(place);
+              });
+          }
+      // Load the place information into the HTML elements used by the info window.
+      function buildIWContent(place) {
+          document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
+              'src="' + place.icon + '"/>';
+          document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url +
+              '">' + place.name + '</a></b>';
+          document.getElementById('iw-address').textContent = place.vicinity;
+          if (place.formatted_phone_number) {
+              document.getElementById('iw-phone-row').style.display = '';
+              document.getElementById('iw-phone').textContent =
+                  place.formatted_phone_number;
+          } else {
+              document.getElementById('iw-phone-row').style.display = 'none';
+          }
+          // Assign a five-star rating to the hotel, using a black star ('&#10029;')
+          // to indicate the rating the hotel has earned, and a white star ('&#10025;')
+          // for the rating points not achieved.
+          if (place.rating) {
+              var ratingHtml = '';
+              for (var i = 0; i < 5; i++) {
+                  if (place.rating < (i + 0.5)) {
+                      ratingHtml += '&#10025;';
+                  } else {
+                      ratingHtml += '&#10029;';
+                  }
+                  document.getElementById('iw-rating-row').style.display = '';
+                  document.getElementById('iw-rating').innerHTML = ratingHtml;
+              }
+          } else {
+              document.getElementById('iw-rating-row').style.display = 'none';
+          }
+          // The regexp isolates the first part of the URL (domain plus subdomain)
+          // to give a short URL for displaying in the info window.
+          if (place.website) {
+              var fullUrl = place.website;
+              var website = hostnameRegexp.exec(place.website);
+              if (website === null) {
+                  website = 'http://' + place.website + '/';
+                  fullUrl = website;
+              }
+              document.getElementById('iw-website-row').style.display = '';
+              document.getElementById('iw-website').textContent = website;
+          } else {
+              document.getElementById('iw-website-row').style.display = 'none';
+          }
+      }
+  </script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
       function oneTimeImageSelection(imageDiv) {
           console.log(imageDiv);
           document.getElementById(imageDiv).disabled = true;
       }
+      function validateEmail(email) {
+          var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(email);
+      }
+      function validate(email) {
+          if (validateEmail(email)) {
+              console.log("valid");
+          } else {
+              console.log("non");
+          }
+      }
+      var imagesProperties =  [-1,-1,-1,-1,-1, -1,-1,-1,-1,-1, -1,-1,-1,-1,-1];
 
       $(function () {
-          $(".upload-preview").on("click", function () {
-              $("#avatar").trigger("click");
+          var $username = $('#user_name');
+          var $userusername = $('#user_username');
+          var $useremail = $('#user_email');
+          var $userPassword = $('#user_password');
+          var $userPasswordConfirm = $('#user_password_confirmation');
+          $username.bind('keyup','keydown', function(e) {
+              if($username.val().length > 30 || $username.val().length < 4) {
+                console.log('Invalid Name');
+                $username.css('background-color', '#FF5353');
+              }else{
+                  $username.css('background-color', 'white');
+              }
+              readyToSubmit();
           });
-          $(".left-header").on("click", function () {
-              $("#firstHeader").trigger("click");
+          $userusername.bind('keyup','keydown', function(e) {
+              if($userusername.val().length > 30 || $userusername.val().length < 4) {
+                  console.log('Invalid UserName');
+                  $userusername.css('background-color', '#FF5353');
+              }else{
+                  $userusername.css('background-color', 'white');
+              }
+              readyToSubmit();
+          });
+          $useremail.bind('keyup','keydown', function(e) {
+              if(validateEmail($useremail.val())) {
+                  $useremail.css('background-color', 'white');
+              }else{
+                  console.log('Invalid email');
+                  $useremail.css('background-color', '#FF5353');
+              }
+              readyToSubmit();
+          });
+          $userPassword.bind('keyup','keydown', function(e) {
+              if($userPassword.val().length > 30 || $userPassword.val().length < 4) {
+                  console.log('Invalid Password');
+                  $userPassword.css('background-color', '#FF5353');
+                  $userPasswordConfirm.css('background-color', '#FF5353');
+              }else{
+                  if($userPassword.val() != $userPasswordConfirm.val()) {
+                      console.log('passwords are not the same');
+                      $userPassword.css('background-color', '#FF5353');
+                      $userPasswordConfirm.css('background-color', '#FF5353');
+                  } else{
+                      $userPassword.css('background-color', 'white');
+                      $userPasswordConfirm.css('background-color', 'white');
+                  }
+              }
+              readyToSubmit();
+          });
+          $userPasswordConfirm.bind('keyup','keydown', function(e) {
+              if($userPassword.val() != $userPasswordConfirm.val()) {
+                  console.log('passwords are not the same');
+                  $userPassword.css('background-color', '#FF5353');
+                  $userPasswordConfirm.css('background-color', '#FF5353');
+              }else{
+                  $userPasswordConfirm.css('background-color', 'white');
+                  $userPassword.css('background-color', 'white');
+              }
+              readyToSubmit();
+          });
+          $('#user_hometown').change(function(){
+              console.log('select home');
+              readyToSubmit();
+          });
+          $('#user_location').change(function() {
+              readyToSubmit();
+          });
+          $('#user_Terms_of_Agreement').click(function() {
+              console.log("clicked");
+              readyToSubmit();
+          });
 
+       //   $("#user_birthday").datepicker({
+         //     defaultDate: +7
+          //});
+          document.getElementById("user_birthday").defaultValue = "2010-01-01";
+          //  $('#user_birthday').on('click', function () {
+          //    $('#ui-datepicker-div').css('z-index', '100');
+          //});
+          $(".Avatar").on("click", function () {
+              $("#avatarUpload").trigger("click");
           });
-          $(".right-header").on("click", function () {
+          $(".LeftHeader").on("click", function () {
+              $("#firstHeader").trigger("click");
+          });
+          $(".RightHeader").on("click", function () {
               $("#secondHeader").trigger("click");
           });
-
-
-          var widthOfMain = document.getElementById('main').offsetWidth;
-          var heightOfImages = (widthOfMain / 4.47666667);
-          $('#header').css("height", (widthOfMain / 4.47666667));
-          $('.left-header').css("height", heightOfImages);
-          $('.right-header').css("height", heightOfImages);
-          $('.avatar').css("top",  heightOfImages-30);
-
-          $(window).resize(function () {
-              widthOfMain = document.getElementById('main').offsetWidth;
-              // console.log(widthOfMain);
-              heightOfImages = (widthOfMain / 4.47666667);
+          var widthOfOneHeader = document.getElementById('leftHeader').offsetWidth;
+          var widthOfAvatar = document.getElementById('avatar');
+          var heightOfImages = (widthOfOneHeader / 4.47666667)*2;
+          $('#header').css("height", heightOfImages);
+          $('.LeftHeader').css("height", heightOfImages-6);
+          $('.RightHeader').css("height", heightOfImages-6);
+          if(widthOfOneHeader*2 > 700){
               $('#header').css("height", heightOfImages);
-              $('.left-header').css("height", heightOfImages);
-              $('.right-header').css("height", heightOfImages);
+              $('.LeftHeader').css("height", heightOfImages-6);
+              $('.RightHeader').css("height", heightOfImages-6);
+              $('.Avatar').css("height",  heightOfImages*0.55);
+              $('.Avatar').css("width",  heightOfImages*0.55);
+              $('.Avatar').css("left",  widthOfOneHeader-widthOfAvatar.offsetWidth/2);
+              $('.Avatar').css('top', (heightOfImages*0.15));
+              $("#badge1").css('top', (heightOfImages*0.2));
+              $('#badge1').css('width', widthOfOneHeader*0.5);
+              $("#badge1").css('left', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+              $("#badge2").css('top', (heightOfImages*0.2));
+              $('#badge2').css('width', widthOfOneHeader*0.5);
+              $("#badge2").css('right', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+          }else if (widthOfOneHeader > 267){
+              $('#header').css("height", heightOfImages);
+              $('.LeftHeader').css("height", heightOfImages-6);
+              $('.RightHeader').css("height", heightOfImages-6);
+              $('.Avatar').css("height",  heightOfImages*0.5);
+              $('.Avatar').css("width",  heightOfImages*0.5);
+              $('.Avatar').css("left",  widthOfOneHeader-widthOfAvatar.offsetWidth/2);
+              $('.Avatar').css('top', (heightOfImages*0.15));
+              $("#badge1").css('top', (heightOfImages*0.2));
+              $('#badge1').css('width', widthOfOneHeader*0.5);
+              $("#badge1").css('left', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+              $("#badge2").css('top', (heightOfImages*0.2));
+              $('#badge2').css('width', widthOfOneHeader*0.5);
+              $("#badge2").css('right', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+          }else{
+              $('.Avatar').css("height",  heightOfImages*0.6);
+              $('.Avatar').css("width",  heightOfImages*0.6);
+              $('.Avatar').css("left",  widthOfOneHeader-widthOfAvatar.offsetWidth/2);
+              $('.Avatar').css('top', (heightOfImages*0.15));
+              $("#badge1").css('top', (heightOfImages*0.2));
+              $('#badge1').css('width', widthOfOneHeader*0.5);
+              $("#badge1").css('left', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+              $("#badge2").css('top', (heightOfImages*0.2));
+              $('#badge2').css('width', widthOfOneHeader*0.5);
+              $("#badge2").css('right', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+          }
+          $(window).resize(function () {
+              widthOfOneHeader = document.getElementById('leftHeader').offsetWidth;
+              widthOfAvatar = document.getElementById('avatar');
+              heightOfImages = (widthOfOneHeader / 4.47666667)*2;
+              $('#header').css("height", heightOfImages);
+              $('.LeftHeader').css("height", heightOfImages);
+              $('.RightHeader').css("height", heightOfImages);
+              if(widthOfOneHeader*2 > 700) {
+                  $('#header').css("height", heightOfImages);
+                  $('.LeftHeader').css("height", heightOfImages-6);
+                  $('.RightHeader').css("height", heightOfImages-6);
+                  $('.Avatar').css("height",  heightOfImages*0.55);
+                  $('.Avatar').css("width",  heightOfImages*0.55);
+                  $('.Avatar').css("left", widthOfOneHeader-widthOfAvatar.offsetWidth/2);
+                  $('.Avatar').css('top', heightOfImages*0.2);
+                  $("#badge1").css('top', (heightOfImages*0.2));
+                  $('#badge1').css('width', widthOfOneHeader*0.5);
+                  $("#badge1").css('left', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+                  $("#badge2").css('top', (heightOfImages*0.2));
+                  $('#badge2').css('width', widthOfOneHeader*0.5);
+                  $("#badge2").css('right', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+               }else if (widthOfOneHeader > 267){
+                  $('#header').css("height", heightOfImages);
+                  $('.LeftHeader').css("height", heightOfImages-6);
+                  $('.RightHeader').css("height", heightOfImages-6);
+                  $('.Avatar').css("height",  heightOfImages*0.5);
+                  $('.Avatar').css("width",  heightOfImages*0.5);
+                  $('.Avatar').css("left",  widthOfOneHeader-widthOfAvatar.offsetWidth/2);
+                  $('.Avatar').css('top', (heightOfImages*0.15));
+                  $("#badge1").css('top', (heightOfImages*0.2));
+                  $('#badge1').css('width', widthOfOneHeader*0.5);
+                  $("#badge1").css('left', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+                  $("#badge2").css('top', (heightOfImages*0.2));
+                  $('#badge2').css('width', widthOfOneHeader*0.5);
+                  $("#badge2").css('right', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+               }else{
+                  $('.Avatar').css("height",  heightOfImages*0.6);
+                  $('.Avatar').css("width",  heightOfImages*0.6);
+                  $('.Avatar').css("left",  widthOfOneHeader-widthOfAvatar.offsetWidth/2);
+                  $('.Avatar').css('top', (heightOfImages*0.15));
+                  $("#badge1").css('top', (heightOfImages*0.2));
+                  $('#badge1').css('width', widthOfOneHeader*0.5);
+                  $("#badge1").css('left', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+                  $("#badge2").css('top', (heightOfImages*0.2));
+                  $('#badge2').css('width', widthOfOneHeader*0.5);
+                  $("#badge2").css('right', (widthOfOneHeader/2)-(widthOfOneHeader*0.5)/2);
+              }
           });
-
-          var headerboxWidth = document.getElementById("header");
-          var previewHeader = document.getElementById("cropHeader");
-
-
-          $("#firstHeader").change(function (imgg) {
-              //$('#mod').click(); //click hidden modal button
-              //  modalBackdrop(); //remove overshadow error
-
-              var cropbox = $("#leftHeaderImage").croppie({
+          $("#firstHeader").change(function () {
+              var info;
+             var firstHeaderPic = document.getElementById("leftHeaderImage");
+              var firstHeaderCrop = new Croppie(firstHeaderPic, {
                   viewport: {
-                      width: $('#main').width/2,
-                      height: $('.images').height
+                      width: $('#main').width / 2,
+                      height: $('.Images').height,
+                      type: 'square'
                   },
                   boundary: {
-                      width: $('#main').width/2,
-                      height: $('.images').height
+                      width: $('#main').width / 2,
+                      height: $('.Images').height,
+                      type: 'square'
                   },
                   showZoomer: false,
                   update: function (data) {
-                      console.log(data);
+                     for(var i= 0; i < 4; i++){
+                          imagesProperties[i] = data.points[i];
+                      }
+                      imagesProperties[4] = String(data.zoom);
+                      console.log(imagesProperties);
                   }
               });
           });
-          $("#secondHeader").change(function (imgg) {
-              //$('#mod').click(); //click hidden modal button
-              //  modalBackdrop(); //remove overshadow error
-
-              var cropbox = $("#rightHeaderImage").croppie({
+          $("#secondHeader").change(function () {
+              var secondHeaderPic = document.getElementById("rightHeaderImage");
+              var secondHeaderCrop = new Croppie(secondHeaderPic, {
                   viewport: {
-                      width: $('#main').width/2,
-                      height: $('.images').height
+                      width: $('#main').width / 2,
+                      height: $('.Images').height,
+                      type: 'square'
                   },
                   boundary: {
-                      width: $('#main').width/2,
-                      height: $('.images').height
+                      width: $('#main').width / 2,
+                      height: $('.Images').height
                   },
                   showZoomer: false,
                   update: function (data) {
-                      console.log(data);
+                      for(var i= 5; i < 9; i++){
+                          imagesProperties[i] = data.points[i-5];
+                      }
+                      imagesProperties[9] = String(data.zoom);
+                      console.log(imagesProperties);
                   }
               });
           });
-          $("#avatar").change(function (imgg) {
-              //$('#mod').click(); //click hidden modal button
-              //  modalBackdrop(); //remove overshadow error
-
-              var cropbox = $("#leftHeaderImage").croppie({
+          $("#avatarUpload").change(function () {
+              var avatarPic = document.getElementById("avatarImage");
+              var avatarCrop = new Croppie(avatarPic, {
                   viewport: {
-                      width: $('#main').width/2,
-                      height: $('.images').height
+                      width: $('#avatar').width,
+                      height: $('#avatar').height,
+                      type: 'circle'
                   },
                   boundary: {
-                      width: $('#main').width/2,
-                      height: $('.images').height
+                      width: $('#avatar').width,
+                      height: $('#avatar').height,
+
                   },
+
                   showZoomer: false,
                   update: function (data) {
-                      console.log(data);
+                      for(var i= 10; i < 14; i++){
+                          imagesProperties[i] = data.points[i-10];
+                      }
+                      imagesProperties[14] = String(data.zoom);
                   }
               });
+              $('#avatar .cr-boundary').css('border-radius', '50%');
           });
       });
 
+      function readyToSubmit() {
+          if($('#user_name').css('background-color') != 'rgb(255, 83, 83)' && $('#user_name').val().length > 3){
+              console.log("name");
+              if($('#user_username').css('background-color') != 'rgb(255, 83, 83)' && $('#user_username').val().length > 3){
+                  console.log("username");
+                  if($('#user_email').css('background-color') != 'rgb(255, 83, 83)' && $('#user_email').val().length > 3){
+                      console.log("email");
+                      if($('#user_password').css('background-color') != 'rgb(255, 83, 83)' && $('#user_password').val().length > 3){
+                          console.log("passwor");
+                          if($('#user_password_confirmation').css('background-color') != 'rgb(255, 83, 83)' && $('#user_password_confirmation').val().length > 3) {
+                              console.log("con password");
+                              if ($('#user_birthday').css('background-color') != 'rgb(255, 83, 83)') {
+                                  console.log("birth");
+                                  if ($('#user_hometown').css('background-color') != 'rgb(255, 83, 83)' && $('#user_hometown').val().length > 3) {
+                                      console.log("home");
+                                      if ($('#user_location').css('background-color') != 'rgb(255, 83, 83)' && $('#user_location').val().length > 3) {
+                                          console.log("lcoa");
+                                          if (document.getElementById("user_Terms_of_Agreement").checked) {
+                                              $('#submit').css('display', 'block');
+                                              $('#user_imagesProperties').val(imagesProperties.toString());
+                                              $("#user_longitude").val(longitude);
+                                              $("#user_latitude").val(latitude);
+                                              $("#user_badgeColor").val(rgbColor1);
+                                              $("#user_badgeTextColor").val(rgbColor2);
+                                              console.log("user_imagesProperties " + $('#user_imagesProperties').val());
+                                              console.log("user_longitude " + $("#user_longitude").val());
+                                              console.log("user_latitude" + $("#user_latitude").val());
+                                              console.log("user_badgeColor" + $("#user_badgeColor").val());
+                                              console.log("user_badgeTextColor" + $("#user_badgeTextColor").val());
+                                              console.log("user_location " + $("#user_location").val());
+                                              console.log("user_hometown " + $("#user_hometown").val());
+                                              return;
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+          $('#submit').css('display', 'none');
+      }
   </script>
-
-  <!---
-   <div class="LeftMenu">
-     <center>
-       <span class="badge badge-primary user-benefits-badge" style="height: 100%;">
-         <p> Users benefits </p>
-       </span>
-     </center>
-   </div>
-   <div class="RightSide">
-     <center>
-       <div class="badge signup-form-badge">
-         <!%= form_with(model:@user, multipart: true) do |f| %>
-           <div class="images">
-             <div class="left-header">
-               <!%= image_tag "insert.png", :class => "left-header-image" %>
-             </div>
-             <div class="right-header">
-               <!%= image_tag "insert.png", :class => "right-header-image" %>
-             </div>
-             <!%= f.text_field :name, placeholder: "name", class: "name-box" %>
-             <!%= f.text_field :username, placeholder: "username", class: "username-box" %>
-             <div class="upload-preview">
-               <center>
-                 <img src="/default-avatar.jpg" style="width:100%; height:100%; object-fit:cover;">
-               </center>
-             </div>
-             <!%= f.text_area :bio, placeholder: "bio", class: "bio-box" %>
-             <input hidden class="photo_upload" type="file" name="user[avatar]" id="avatar">
-             <input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader">
-             <input hidden class="photo_upload" type="file" name="user[secondHeader]" id="secondHeader">
-             <input hidden type="text" name="user[longitude]" id="user_longitude" value="30">
-             <input hidden type="text" name="user[latitude]" id="user_latitude" value="30">
-           </div>
-           <br>
-           <center>
-             <div class="rowcss">
-               <!%= f.email_field :email, class: "email-box", placeholder: "example@example.com" %>
-               <input type="date" class="birthday" name="user[birthday]" id="user_birthday" placeholder="Date of Birth" value="2019-07-27">
-               <!%= f.select "gender", options_for_select(["Agender", "Androgyne", "Androgynous", "Bigender",
-                                                          "Cis", "Cisgender", "Cis Female", "Cis Male", "Cis Man", "Cis Woman",
-                                                          "Cisgender Female", "Cisgender Male", "Cisgender Man", "Cisgender Woman",
-                                                          "Female to Male", "FTM", "Gender Fluid", "Gender Nonconforming",
-                                                          "Gender Questioning", "Gender Variant", "Genderqueer", "Intersex",
-                                                          "Male to Female", "MTF", "Neither", "Neutrois", "Non-binary", "Other",
-                                                          "Pangender", "Trans", "Trans*", "Trans Female", "Trans* Female",
-                                                          "Trans Male", "Trans* Male", "Trans Man", "Trans* Man", "Trans Person",
-                                                          "Trans* Person", "Trans Woman", "Trans* Woman", "Transfeminine", "Transgender",
-                                                          "Transgender Female", "Transgender Male", "Transgender Man", "Transgender Person",
-                                                          "Transgender Woman", "Transmasculine", "Transsexual", "Transsexual Female", "Transsexual Male",
-                                                          "Transsexual Man", "Transsexual Person", "Transsexual Woman",
-                                                          "Two-Spirit"]), class: "gender" %>
-             </div>
-             <div class="rowcss border border-primary">
-               <!%= f.text_field :country, placeholder: "country", class: "country-box" %>
-               <!%= f.text_field :city, placeholder: "city", class: "city-box" %>
-               <!%= f.text_field :state, placeholder: "state", class: "state-box" %>
-             </div>
-             <div class="rowcss">
-               <p style="float: left;">Badge Color</p>
-               <div style="float: left; margin-left: 10px;">
-                 <!%= f.text_field :badgeColor %>
-               </div>
-               <!%= f.password_field :password, class: "password", placeholder: "password" %>
-             </div>
-             <div class="rowcss">
-               <p style="float: left;">Text Color </p>
-               <div style="float: left; margin-left: 10px;">
-                 <!%= f.text_field :badgeTextColor %>
-               </div>
-               <!%= f.password_field :password_confirmation, class: "password", placeholder: "comfirm password" %>
-             </div>
-             <div class="rowcss2">
-               <div class="TermsOfAgreement-box">
-                 <div class="TermsOfAgreement-textbox">
-                   <p style="color: black;"> This is Terms of Agreement. <br>
-                     Rules of Vibin <br>
-                     Try not to get sue by anyone </p>
-                 </div>
-                 <br>
-                 <!%= f.check_box :Terms_of_Agreement, style: "height: 10px; width: 10px; float: left; margin-left: 10px;" %>
-                 <!%= f.label :Terms_of_Agreement, "I agree.".html_safe, style: "margin-left: 5px; float: left;" %>
-               </div>
-             </div>
-             <!%= f.submit "Submit", style: "width: 30px;" %>
-             <button id="coordinates">Coordinates</button>
-             <p id="longandlat"></p>
-           </center>
-         <!% end %>
-       </div>
-     </center>
-   </div>
-   -->
 </div>
 
+  <% end %>

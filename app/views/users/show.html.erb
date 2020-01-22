@@ -1,4 +1,242 @@
 <div id="users" class="users">
+
+  <!--
+  <div class="Images" id="header">
+    <div class="LeftHeader">
+      <!%= image_tag "insert.png", :class => "LeftHeaderImage", :id => "leftHeaderImage" %>
+      <div class="Badge" id="favoriteArtistBadge">
+        Favorite Artist
+      </div>
+      <div class="Badge" id="favoriteArtistArtistBadge">
+        @Artist
+      </div>
+      <div class="Badge" id="followersBadge">
+        Followers
+      </div>
+      <div class="Badge" id="followersCountBadge">
+          100
+      </div>
+      <div class="Badge" id="followingBadge">
+        Following
+      </div>
+      <div class="Badge" id="followingCountBadge">
+      1000
+      </div>
+    </div>
+
+
+    <div class="Badge" id="nameBadge">
+    <input id="datepicker" type="text" style="height: 20px; width: 20px;">
+    </div>
+    <div class="Badge" id="usernameBadge">
+
+    </div>
+    <div class="Badge" id="birthPlaceBadge">
+
+    </div>
+    <div class="Badge" id="ageBadge">
+
+    </div>
+    <div class="Badge" id="verifiedBadge">
+
+    </div>
+
+    <div class="Avatar">
+      <img src="/default-avatar.jpg" style="width:100%; height:100%; object-fit:cover;" id="avatarImage">
+    </div>
+    <!--
+    <div class="Badge" id="BioBadge">
+
+    </div>--
+  <div class="RightHeader">
+    <!%= image_tag "insert.png", :class => "RightHeaderImage", :id => "rightHeaderImage" %>
+  </div>
+  <--
+  <div class="Badge" id="FavoriteSongBadge">
+        Favorite Song
+  </div>
+  <div class="Badge" id="FavoriteSongSongBadge">
+
+  </div>
+  <div class="Badge" id="BroadcastTotalViewCountBadge">
+        Broadcast Views
+  </div>
+  <div class="Badge" id="BroadcastTotalViewCountCountBadge">
+
+  </div>
+  <div class="Badge" id="TotalLikedSongsBadge">
+      Liked Songs
+  </div>
+  <div class="Badge" id="TotalLikedSongsCountBadge">
+
+  </div>--
+</div>
+<div class="row">
+</div>
+<input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader" onchange=
+    "document.getElementById('leftHeaderImage').src = window.URL.createObjectURL(this.files[0]);
+        oneTimeImageSelection('firstHeader');
+        $('#leftHeaderImage').height = $('.images').height;">
+<input hidden class="photo_upload" type="file" name="user[secondHeader]" id="secondHeader" onchange=
+    "document.getElementById('rightHeaderImage').src = window.URL.createObjectURL(this.files[0]);
+        oneTimeImageSelection('secondHeader');
+        $('#rightHeaderImage').height = $('.images').height;">
+<input hidden class="photo_upload" type="file" name="user[avatar]" id="avatarUpload" onchange=
+    "document.getElementById('avatarImage').src = window.URL.createObjectURL(this.files[0]);
+        oneTimeImageSelection('avatarUpload');
+        $('#avatarImage').height = $('.images').height * .33;">
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    function oneTimeImageSelection(imageDiv) {
+        console.log(imageDiv);
+        document.getElementById(imageDiv).disabled = true;
+    }
+
+    $(function () {
+        $( "#datepicker" ).datepicker();
+
+        $(".Avatar").on("click", function () {
+            $("#avatarUpload").trigger("click");
+        });
+        $(".LeftHeader").on("click", function () {
+            $("#firstHeader").trigger("click");
+
+        });
+        $(".RightHeader").on("click", function () {
+            $("#secondHeader").trigger("click");
+        });
+
+        var widthOfMain = document.getElementById('main').offsetWidth;
+        var heightOfImages = (widthOfMain / 4.47666667);
+        var widthOfFavoriteArtist = document.getElementById('favoriteArtistBadge').offsetWidth;
+
+        $('#header').css("height", (widthOfMain / 4.47666667));
+        $('.LeftHeader').css("height", heightOfImages);
+        $('.RightHeader').css("height", heightOfImages);
+        if(widthOfMain > 700){
+            $('#nameBadge').css('top', 2);
+            $('#nameBadge').css('width', 100);
+            $('#nameBadge').css('left', widthOfMain/2-50);
+            $('#usernameBadge').css('top', 22);
+            $('#usernameBadge').css('width', 100);
+            $('#usernameBadge').css('left', widthOfMain/2-50);
+            $('.Avatar').css("height",  heightOfImages*0.4);
+            $('.Avatar').css("width",  heightOfImages*0.4);
+            $('.Avatar').css("left",  (widthOfMain/2)-41);
+            $('.Avatar').css('top', heightOfImages*0.2);
+            $('#birthPlaceBadge').css('top', (heightOfImages*0.4)+50);
+            $('#birthPlaceBadge').css('width', 100);
+            $('#birthPlaceBadge').css('left', (widthOfMain/2)-50);
+            $('.Badge').css('height', 18.73);
+            $('#favoriteArtistBadge').css('width', 140);
+            $('#favoriteArtistBadge').css('top', heightOfImages*0.1);
+            $('#favoriteArtistBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)-30);
+            $('#favoriteArtistArtistBadge').css('width', 140);
+            $('#favoriteArtistArtistBadge').css('top', (heightOfImages*0.1)+20);
+            $('#favoriteArtistArtistBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)-30);
+            $('#followersBadge').css('width', 90);
+            $('#followersBadge').css('top', (heightOfImages*0.1)+43);
+            $('#followersBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)-35);
+            $('#followersCountBadge').css('width', 50);
+            $('#followersCountBadge').css('top', (heightOfImages*0.1)+65);
+            $('#followersCountBadge').css('left',(widthOfMain/4)-(widthOfFavoriteArtist/2)-25 );
+            $('#followingBadge').css('width', 90);
+            $('#followingBadge').css('top', (heightOfImages*0.1)+43);
+            $('#followingBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)+62);
+            $('#followingCountBadge').css('width', 50);
+            $('#followingCountBadge').css('top', (heightOfImages*0.1)+65);
+            $('#followingCountBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)+75);
+
+        }else{
+            console.log('sd');
+            $('.Avatar').css("height",  51.5);
+            $('.Avatar').css("width",  83.8);
+            $('.Avatar').css("left",  (widthOfMain/2)-41);
+            $('.Avatar').css('top', 25);
+            $('.Badge').css('height', 18.73);
+            $('#favoriteArtistBadge').css('width', 140);
+            $('#favoriteArtistBadge').css('top', heightOfImages*0.1);
+            $('#favoriteArtistBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)-30);
+            $('#favoriteArtistArtistBadge').css('width', 140);
+            $('#favoriteArtistArtistBadge').css('top', (heightOfImages*0.1)+20);
+            $('#favoriteArtistArtistBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)-30);
+            $('#followersBadge').css('width', 90);
+            $('#followersBadge').css('top', (heightOfImages*0.1)+43);
+            $('#followersBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)-35);
+            $('#followersCountBadge').css('width', 50);
+            $('#followersCountBadge').css('top', (heightOfImages*0.1)+65);
+            $('#followersCountBadge').css('left',(widthOfMain/4)-(widthOfFavoriteArtist/2)-25 );
+            $('#followingBadge').css('width', 90);
+            $('#followingBadge').css('top', (heightOfImages*0.1)+43);
+            $('#followingBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)+62);
+            $('#followingCountBadge').css('width', 50);
+            $('#followingCountBadge').css('top', (heightOfImages*0.1)+65);
+            $('#followingCountBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)+75);
+
+        }
+        $(window).resize(function () {
+            widthOfMain = document.getElementById('main').offsetWidth;
+            widthOfFavoriteArtist = document.getElementById('favoriteArtistBadge').offsetWidth;
+            // console.log(widthOfMain);
+            heightOfImages = (widthOfMain / 4.47666667);
+            if($('#main').css('width') > 700) {
+                $('#header').css("height", heightOfImages);
+                $('.LeftHeader').css("height", heightOfImages);
+                $('.RightHeader').css("height", heightOfImages);
+                $('.Avatar').css("height", heightOfImages * .33);
+                $('.Avatar').css("width", widthOfMain * .12);
+                $('.Avatar').css("left", (widthOfMain / 2) - (widthOfMain * .12 / 2) - 10);
+                $('.Avatar').css('top', -50);
+                $('.Badge').css('height', heightOfImages * 0.12);
+                $('#favoriteArtistBadge').css('width', (widthOfMain / 2) * .48);
+                $('#favoriteArtistBadge').css('top', heightOfImages * .27);
+                $('#favoriteArtistBadge').css('left', 1 + (widthOfMain * .1));
+                $('#favoriteArtistArtistBadge').css('width', (widthOfMain / 2) * .5);
+                $('#favoriteArtistArtistBadge').css('top', heightOfImages * .30);
+                $('#favoriteArtistArtistBadge').css('left', 1 + (widthOfMain * .1));
+                $('#followersBadge').css('width', (widthOfMain / 2) * .3);
+                $('#followersBadge').css('top', heightOfImages * .33);
+                $('#followersBadge').css('left', 1 + (widthOfMain * .1));
+                $('#followersCountBadge').css('width', (widthOfMain / 2) * .3);
+                $('#followersCountBadge').css('top', heightOfImages * .36);
+                $('#followersCountBadge').css('left', 1 + (widthOfMain * .1));
+            }else{
+                $('#header').css("height", heightOfImages);
+                $('.LeftHeader').css("height", heightOfImages);
+                $('.RightHeader').css("height", heightOfImages);
+                $('.Avatar').css("height",  51.5);
+                $('.Avatar').css("width",  83.8);
+                $('.Avatar').css("left",  (widthOfMain/2)-41);
+                $('.Avatar').css('top', 25);
+                $('.Badge').css('height', 18.73);
+                $('#favoriteArtistBadge').css('width', 140);
+                $('#favoriteArtistBadge').css('top', heightOfImages*0.1);
+                $('#favoriteArtistBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)-30);
+                $('#favoriteArtistArtistBadge').css('width', 140);
+                $('#favoriteArtistArtistBadge').css('top', (heightOfImages*0.1)+20);
+                $('#favoriteArtistArtistBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)-30);
+                $('#followersBadge').css('width', 90);
+                $('#followersBadge').css('top', (heightOfImages*0.1)+43);
+                $('#followersBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)-35);
+                $('#followersCountBadge').css('width', 50);
+                $('#followersCountBadge').css('top', (heightOfImages*0.1)+65);
+                $('#followersCountBadge').css('left',(widthOfMain/4)-(widthOfFavoriteArtist/2)-25 );
+                $('#followingBadge').css('width', 90);
+                $('#followingBadge').css('top', (heightOfImages*0.1)+43);
+                $('#followingBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)+62);
+                $('#followingCountBadge').css('width', 50);
+                $('#followingCountBadge').css('top', (heightOfImages*0.1)+65);
+                $('#followingCountBadge').css('left', (widthOfMain/4)-(widthOfFavoriteArtist/2)+75);
+
+            }
+        });
+
+  -->
   <div class="header">
     <div class="profileName" id="profileName">
       <span class="badge badge-primary text-white"><%= @user.name %></span>

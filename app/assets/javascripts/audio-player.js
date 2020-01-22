@@ -27,8 +27,10 @@ window.addEventListener("DOMContentLoaded", function (e) {
     let volume_fill = volume.querySelector(".volume_fill");
     let modal = document.getElementById("audio-modal");
     let addPlaylistModal = document.getElementById("add-playlist-modal");
+    let renderPlaylist = document.getElementById("renderPlaylist");
     let renderAddPlaylist = document.getElementById("renderAddPlaylist");
     let broadcast = document.getElementById("broadcast_text");
+    let optionslistbutton = document.querySelector(".options_list");
     broadcast.onclick = function () {
         let id = $("#broadcast_text").data("session");
         console.log(id + " uhuh");

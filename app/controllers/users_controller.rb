@@ -132,9 +132,10 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :username, :name, :longitude, :latitude, :country, :city, :state, :bio,
+    params.require(:user).permit(:email, :username, :name, :longitude, :latitude, :bio,
                                  :gender, :password, :password_confirmation,
                                  :birthday, :Terms_of_Agreement, :avatar, :firstHeader,
-                                 :secondHeader, :badgeColor, :badgeTextColor)
+                                 :secondHeader, :badgeColor, :badgeTextColor, :location, :hometown,
+                                 :imagesProperties)
   end
 end

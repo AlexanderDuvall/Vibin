@@ -1,0 +1,87 @@
+<div id="yourTaste" class="YourTaste">
+  <div class="HorizontalSongsDisplay" id="horizontalSongsDisplay">
+    <div id="coverflo">
+      <img src="/default-avatar.jpg" id="img1" class="Cover"/>
+      <img src="/default-avatar.jpg" id="img2" class="Cover"/>
+      <img src="/default-avatar.jpg" id="img3" class="Cover"/>
+      <img src="/default-avatar.jpg" id="img4" class="Cover"/>
+      <img src="/default-avatar.jpg" id="img5" class="Cover"/>
+      <img src="/default-avatar.jpg" id="img6" class="Cover"/>
+      <img src="/default-avatar.jpg" id="img7" class="Cover"/>
+      <img src="/default-avatar.jpg" id="img8" class="Cover"/>
+      <img src="/default-avatar.jpg" id="img9" class="Cover"/>
+    </div>
+  </div>
+  <style>
+    .slidecontainer {
+      width: 100%; /* Width of the outside container */
+    }
+
+    /* The slider itself */
+    .slider {
+      -webkit-appearance: none;  /* Override default CSS styles */
+      appearance: none;
+      width: 100%; /* Full-width */
+      height: 25px; /* Specified height */
+      background: #d3d3d3; /* Grey background */
+      outline: none; /* Remove outline */
+      opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+      -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+      transition: opacity .2s;
+    }
+
+    /* Mouse-over effects */
+    .slider:hover {
+      opacity: 1; /* Fully shown on mouse-over */
+    }
+
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none; /* Override default look */
+      appearance: none;
+      width: 25px; /* Set a specific slider handle width */
+      height: 25px; /* Slider handle height */
+      background: #4CAF50; /* Green background */
+      cursor: pointer; /* Cursor on hover */
+    }
+
+    .slider::-moz-range-thumb {
+      width: 25px; /* Set a specific slider handle width */
+      height: 25px; /* Slider handle height */
+      background: #4CAF50; /* Green background */
+      cursor: pointer; /* Cursor on hover */
+    }
+  </style>
+  <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
+  </div>
+</div>
+  <script>
+      $start = $("#yourTaste").width();
+      $display = $('#horizontalSongsDisplay').width();
+      $('#horizontalSongsDisplay').css('width', $display+1000);
+      $('#horizontalSongsDisplay').css('left', -($start/2)-300);
+      $(window).resize(function () {
+          console.log('lols');
+          start = $("#yourTaste").width();
+          display = $('#horizontalSongsDisplay').width();
+          $('#horizontalSongsDisplay').css('width', $display+1000);
+          $('#horizontalSongsDisplay').css('left', -($start/2)-300);
+      });
+      $(function() {
+          console.log($start);
+      //    $('#horizontalSongsDisplay').css();
+          // and kick off
+          $('#coverflo').coverflow({
+              active:0
+          });
+      });
+      var slider = document.getElementById("myRange");
+
+      // Update the current slider value (each time you drag the slider handle)
+      slider.oninput = function() {
+          $('#img'+this.value).click();
+          console.log(this.value);
+      }
+  </script>
+
