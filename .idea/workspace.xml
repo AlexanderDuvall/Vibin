@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14d1d3d5-2720-4fb4-8789-5c02e60b908d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/coverflow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/renderer.3d.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/renderer.classic.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/support.core.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/support.transform3d.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/new2.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/playlists.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/playlists.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/song.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/song.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/users.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/users.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/playlists/_modal_playlists.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/playlists/_modal_playlists.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/playlists/_show_playlists.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/playlists/_show_playlists.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/playlists/_songs.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/playlists/_songs.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/songs/_song_player.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/songs/_song_player.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -84,30 +56,34 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="erb" value="3" />
-          <entry key="js" value="1" />
+          <entry key="js" value="2" />
           <entry key="scss" value="1" />
           <entry key="sql" value="1" />
+          <entry key="ts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="1" />
+          <entry key="JavaScript" value="2" />
           <entry key="RHTML" value="3" />
           <entry key="SCSS" value="1" />
           <entry key="Scratch" value="1" />
+          <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="erb" value="64" />
-          <entry key="js" value="104" />
+          <entry key="js" value="146" />
           <entry key="scss" value="154" />
           <entry key="sql" value="32" />
+          <entry key="txt" value="113" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="104" />
+          <entry key="JavaScript" value="146" />
+          <entry key="PLAIN_TEXT" value="113" />
           <entry key="RHTML" value="64" />
           <entry key="SCSS" value="154" />
           <entry key="Scratch" value="32" />
@@ -120,59 +96,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/playlists/_modal_playlists.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/playlists/_songs.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="84" selection-start-line="5" selection-start-column="84" selection-end-line="5" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="587" column="17" lean-forward="true" selection-start-line="587" selection-start-column="17" selection-end-line="587" selection-end-column="17" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/playlists/_show_playlists.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="67" lean-forward="true" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/playlists_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/audio-player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="167" selection-start-line="45" selection-start-column="167" selection-end-line="45" selection-end-column="167" />
+            <state relative-caret-position="358">
+              <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -282,7 +210,6 @@
         <option value="$PROJECT_DIR$/tmp/pids/server.pid" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/playlists.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/playlists.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" />
         <option value="$PROJECT_DIR$/app/controllers/playlists_controller.rb" />
         <option value="$PROJECT_DIR$/app/helpers/playlists_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/songs/_song_player.html.erb" />
@@ -292,6 +219,7 @@
         <option value="$PROJECT_DIR$/app/views/playlists/_modal_playlists.html.erb" />
         <option value="$PROJECT_DIR$/app/views/playlists/_songs.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" />
       </list>
     </option>
   </component>
@@ -409,9 +337,9 @@
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="songp&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/songs/_song_player.html.erb&#10;audi&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/javascripts/audio-player.js&#10;playlisthelper&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/helpers/playlists_helper.rb&#10;playlist&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/controllers/playlists_controller.rb&#10;routes&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/config/routes.rb&#10;songpl&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/songs/_song_player.html.erb&#10;playlists.js&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/javascripts/playlists.js&#10;playlistshe&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/helpers/playlists_helper.rb&#10;playlist.scs&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/playlists.scss&#10;homepage&#9;null&#9;null&#10;applica&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/application.scss&#10;route&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/config/routes.rb&#10;application.js&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/javascripts/application.js&#10;playlistc&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/controllers/playlists_controller.rb&#10;modal-con&#9;null&#9;null&#10;appl&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/javascripts/application.js&#10;audio&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/javascripts/audio-player.js&#10;playlists.sc&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/playlists.scss&#10;show pla&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/playlists/_show_playlists.html.erb&#10;song.scss&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/song.scss&#10;playlist.s&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/playlists.scss&#10;songpo&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/models/song_position.rb&#10;playlistco&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/controllers/playlists_controller.rb&#10;applicat&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/layouts/application.html.erb&#10;gemf&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/Gemfile&#10;application.htm&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/layouts/application.html.erb&#10;application&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/application.scss&#10;play&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/playlists.scss" />
+    <property name="SearchEverywhereHistoryKey" value="aud&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/javascripts/audio-player.js&#10;songp&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/songs/_song_player.html.erb&#10;audi&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/javascripts/audio-player.js&#10;playlisthelper&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/helpers/playlists_helper.rb&#10;playlist&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/controllers/playlists_controller.rb&#10;routes&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/config/routes.rb&#10;songpl&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/songs/_song_player.html.erb&#10;playlists.js&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/javascripts/playlists.js&#10;playlistshe&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/helpers/playlists_helper.rb&#10;playlist.scs&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/playlists.scss&#10;homepage&#9;null&#9;null&#10;applica&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/application.scss&#10;route&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/config/routes.rb&#10;application.js&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/javascripts/application.js&#10;playlistc&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/controllers/playlists_controller.rb&#10;modal-con&#9;null&#9;null&#10;appl&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/javascripts/application.js&#10;audio&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/javascripts/audio-player.js&#10;playlists.sc&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/playlists.scss&#10;show pla&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/playlists/_show_playlists.html.erb&#10;song.scss&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/song.scss&#10;playlist.s&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/playlists.scss&#10;songpo&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/models/song_position.rb&#10;playlistco&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/controllers/playlists_controller.rb&#10;applicat&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/layouts/application.html.erb&#10;gemf&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/Gemfile&#10;application.htm&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/views/layouts/application.html.erb&#10;application&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/application.scss&#10;play&#9;FILE&#9;file://C:/Users/Alex/floobits/share/edwardsotelojr/VibinMusic_Beta/app/assets/stylesheets/playlists.scss" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="jsx.switch.disabled" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -1098,7 +1026,7 @@
       <workItem from="1579701066231" duration="65000" />
       <workItem from="1579701149623" duration="6332000" />
       <workItem from="1579731844899" duration="79000" />
-      <workItem from="1579731925677" duration="2017000" />
+      <workItem from="1579731925677" duration="3063000" />
     </task>
     <task id="LOCAL-00001" summary="Drag and drop playlists">
       <created>1560095000649</created>
@@ -1317,11 +1245,18 @@
       <option name="project" value="LOCAL" />
       <updated>1578694225258</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="When playing song from playlist modal without starting playlist, will start playlist from that position.">
+      <created>1579734064017</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1579734064017</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1082391000" />
+    <option name="totallyTimeSpent" value="1083437000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1340,18 +1275,18 @@
       <window_info id="Favorites" order="1" sideWeight="0.50224215" side_tool="true" weight="0.2468017" />
       <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49775785" visible="true" weight="0.25273523" />
       <window_info id="Repositories" order="3" visible="true" weight="0.23081024" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="0" sideWeight="0.4978678" visible="true" weight="0.32785088" />
+      <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.4978678" weight="0.32785088" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49253732" weight="0.27631578" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49253732" weight="0.2752193" />
       <window_info anchor="bottom" id="Database Changes" order="7" weight="0.32790446" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4968017" weight="0.3391116" />
-      <window_info anchor="bottom" id="Floobits" order="11" sideWeight="0.4946695" weight="0.34527686" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" sideWeight="0.4968017" visible="true" weight="0.33881578" />
+      <window_info anchor="bottom" id="Floobits" order="11" sideWeight="0.4946695" weight="0.34429824" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.32932165" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5074627" side_tool="true" weight="0.2751896" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32790446" />
@@ -1395,7 +1330,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Able to push data to the Broadcasting Server. &#10;Able to pull data from the dedicated server for Broadcaster Id." />
     <MESSAGE value="Reposting works. Same format as posting." />
     <MESSAGE value="Broadcasting works as intended with kinks. Stable on one song" />
     <MESSAGE value="Modal playlist updates list upon rearrangement, but it doesnt update view." />
@@ -1420,7 +1354,8 @@
     <MESSAGE value="Pop up options for song playlist. No functions" />
     <MESSAGE value="Play Bar will reformat with window size" />
     <MESSAGE value="Merged Playlist functions. Can now see Playlist songs in add section. Add icon changed to list icon. &#10;&#10;Add icon changed to play icon in modal&#10;Option list changes.&#10;Removed song list button on right side." />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged Playlist functions. Can now see Playlist songs in add section. Add icon changed to list icon. &#10;&#10;Add icon changed to play icon in modal&#10;Option list changes.&#10;Removed song list button on right side." />
+    <MESSAGE value="When playing song from playlist modal without starting playlist, will start playlist from that position." />
+    <option name="LAST_COMMIT_MESSAGE" value="When playing song from playlist modal without starting playlist, will start playlist from that position." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@db_create__VibinMusic_Beta.rcov" NAME="db:create: VibinMusic_Beta Coverage Results" MODIFIED="1558118844575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
@@ -1593,13 +1528,6 @@
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/song_positions.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="17110" column="17" selection-start-line="17110" selection-start-column="17" selection-end-line="17110" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
@@ -1667,13 +1595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/audio-player.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="167" selection-start-line="45" selection-start-column="167" selection-end-line="45" selection-end-column="167" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/playlists.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1716,10 +1637,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/playlists/_show_playlists.html.erb">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="67" lean-forward="true" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+        <state relative-caret-position="206">
+          <caret line="6154" column="13" selection-start-line="6154" selection-start-column="13" selection-end-line="6154" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1737,13 +1658,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/playlists/_show_playlists.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="67" lean-forward="true" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="587" column="17" lean-forward="true" selection-start-line="587" selection-start-column="17" selection-end-line="587" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="260">
+          <caret line="585" column="19" selection-start-line="585" selection-start-column="19" selection-end-line="585" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/audio-player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
         </state>
       </provider>
     </entry>

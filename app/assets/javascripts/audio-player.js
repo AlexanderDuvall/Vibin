@@ -134,10 +134,10 @@ window.addEventListener("DOMContentLoaded", function (e) {
     function getP(e) {
         let p;
         if (mouseDownSeek) {
-            p = (e.clientX - seekBar.offsetLeft) / seekBar.clientWidth;
+            p = (e.clientX - seekBar.getBoundingClientRect().left) / seekBar.clientWidth;
             p = clamp(0, p, 1);
         } else {
-            p = (e.clientX - volume.offsetLeft) / volume.clientWidth;
+            p = (e.clientX - volume.getBoundingClientRect().left) / volume.clientWidth;
             p = clamp(0, p, 1);
         }
         return p;
