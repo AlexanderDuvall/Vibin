@@ -12,22 +12,27 @@
           </div>
         </div>
       </div>
+      <button class="like_button">
+        <i class="ion-flame"></i>
+        <p class="like_text">Like</p>
+      </button>
+
     </div>
     <div class=col>
       <div class="audio-player">
         <div class=audio-buttons>
-          <button class="shuffle border border-dark" onclick="shuffleSongs()"><i id="play-icon" class="ion-shuffle"></i>
+          <button class="shuffle button_layout" onclick="shuffleSongs()"><i id="play-icon" class="ion-shuffle"></i>
           </button>
-          <button class="back border border-dark" onclick="backSong()">
+          <button class="back button_layout" onclick="backSong()">
             <i id="play-icon" class="ion-skip-backward"></i>
           </button>
-          <button class="play border border-dark" id="music_bar_play_button" onclick="playPause()">
+          <button class="play button_layout" id="music_bar_play_button" onclick="playPause()">
             <i id="play-icon" class="ion-play"></i></button>
 
-          <button class="skip_forward border border-dark">
+          <button class="skip_forward button_layout">
             <i id="play-icon" class="ion-skip-forward"></i>
           </button>
-          <button class="repeat border border-dark">
+          <button class="repeat button_layout">
             <ion-icon style="margin-top: 10px;" name="repeat"></ion-icon>
           </button>
         </div>
@@ -42,15 +47,15 @@
     <div class="col">
       <div class="right_footer">
         <div class="right_elements">
-          <button id="broadcast_text" class="broadcast border border-dark" data-session="<%= current_user.id.to_json if logged_in? %>">
+          <button id="broadcast_text" class="broadcast button_layout" data-session="<%= current_user.id.to_json if logged_in? %>">
             <i id="play-icon" class="ion-wifi"></i>
           </button>
-          <button id="renderAddPlaylist" class="playlist border border-dark">
+          <button id="renderAddPlaylist" class="playlist button_layout">
             <ion-icon name="list"></ion-icon>
           </button>
         </div>
         <div class="right_elements">
-          <button class="volume"><i class="ion-volume-high"></i></button>
+          <button class="volume button_layout"><i class="ion-volume-high"></i></button>
           <div class="volume_bar">
             <div class="volume_fill"></div>
             <div class="volume_handle"></div>
