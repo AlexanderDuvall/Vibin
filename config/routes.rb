@@ -88,6 +88,7 @@ Rails.application.routes.draw do
   get '/shuffle' => 'playlists#songs'
   post '/add_to_playlist' => 'playlists#addToPlaylist'
   get '/exists_in_playlist' => 'playlists#existsinPlaylist'
+  get '/isLikedSong' => 'songs#isLikedSong'
   post 'remove_from_playlist' => 'playlists#removeFromPlaylist'
   #  get '/livestream' => 'audio#stream'
   delete '/playlists', to: 'playlists#destroy'

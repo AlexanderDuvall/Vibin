@@ -97,7 +97,9 @@ function shuffleSongs() {
 }
 
 function buildPlayer(song, username, title, ...args) {
+    //build song player
     let buildSong = function () {
+        isLikedSong();
         audio.src = "";
         var songinfo = title;
         $('#playerCoverImage').attr("src", args[0]); //
@@ -115,12 +117,14 @@ function buildPlayer(song, username, title, ...args) {
         audio.src = song;
         console.log(audio);
     };
+    //for live streaming... update song
     let updateSong = function () {
         let duration = args[0];
         console.log("duration" + duration);
         audio.currentTime = duration;
         lastTime = duration;
     };
+    ///for live streaming
     if (args.length != 0) {
         if (args.length == 2 && args[1] == true) {
             //just updating time...
@@ -293,9 +297,13 @@ function backSong() {
                 let url = data.song_url;
                 let title = data.title;
                 let username = data.username;
+                let avatar = data.avatar;
+                let cover = data.cover;
+                let genre = data.genre;
+                let subgenre = data.subgenre;
                 if (isBroadcasting())
                     sendData(0);
-                buildPlayer(url, username, title);
+                buildPlayer(url, username, title, cover, genre, subgenre, avatar);
             },
             error: function (data) {
                 console.log(data);
@@ -348,26 +356,90 @@ function nextSong(...args) {
         } else if (song_id === "-1" && isListening()) {
             alert("Stream stopped...");
             isListening(false);
-        } else
-            Rails.ajax({
-                url: "/getsongs?id=" + song_id,
-                type: "GET",
-                processData: false,
-                success: function (data, textStatus, xhr) {
-                    console.log("success");
-                    console.log(data);
-                    let url = data.song_url;
-                    let title = data.title;
-                    let username = data.username;
-                    set_current_song(song_id);
-                    isListening(true);
-                    buildPlayer(url, username, title, duration, args[2]);
-                },
-                error: function (data) {
-                    console.log(data);
-                }
-            });
+        } else Rails.ajax({
+            url: "/getsongs?id=" + song,
+            type: "GET",
+            processData: false,
+            success: function (data, textStatus, xhr) {
+                console.log("success");
+                console.log(data);
+                let url = data.song_url;
+                let title = data.title;
+                let username = data.username;
+                let avatar = data.avatar;
+                let cover = data.cover;
+                let genre = data.genre;
+                let subgenre = data.subgenre;
+                if (isBroadcasting())
+                    sendData(0);
+                buildPlayer(url, username, title, cover, genre, subgenre, avatar);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
     }
+}
+
+// if the song isn't liked, light the fire (like it)
+function setUpLikedSong() {
+    likeButton = document.querySelector(".like_button");
+    likeButton.className = "like_button_liked";
+    likeButton.onclick = function () {
+        Rails.ajax({
+            type: "DELETE",
+            url: "songs/" + get_current_song() + "/like",
+            processData: false,
+            success: function (data) {
+                setUpUnlikedSong();
+            }, error: function (data) {
+                console.log(data);
+            }
+        });
+    }
+}
+
+/// if the song is liked, put the fire out(unlike it)
+function setUpUnlikedSong() {
+    console.log("setting up unliked song");
+    likeButton = document.querySelector("#like_button");
+    likeButton.className = "like_button";
+    likeButton.onclick = function () {
+        console.log("nagato");
+        Rails.ajax({
+            type: "POST",
+            url: "songs/" + get_current_song() + "/like",
+            processData: false,
+            success: function (data) {
+                setUpLikedSong();
+            },
+            error: function (data) {
+                prompt("cant like posts rn.....")
+            }
+        });
+    }
+}
+
+function isLikedSong() {
+    likeButton = document.querySelector("#like_button");
+    likeButton.className = "like_button";
+    Rails.ajax({
+        type: "GET",
+        url: "/isLikedSong?song_id=" + get_current_song(),
+        processData: false,
+        success: function (data, textStatus, xhr) {
+            result = data.class;
+            console.log("result: " + result);
+            if (result == "1") {
+                setUpLikedSong();
+            } else {
+                console.log("first timer...")
+                setUpUnlikedSong(true);
+            }
+        }, error: function (data) {
+            console.log(data)
+        }
+    })
 }
 
 function previewFile() {

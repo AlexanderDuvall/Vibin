@@ -1,13 +1,13 @@
 <center>
   <div class="song" id="<%= song.id %>">
     <div class="postLeft">
-        <% if song.user.avatar.attached? %>
-          <%= image_tag (song.user.avatar), class: "post-ava" %>
-        <% else %>
-          <img src="http://localhost:3000/default-avatar.jpg" class="post-ava">
-        <% end %>
-        <span style="color: white; display: block; font-size: 15px;"><%= (song.user).name %></span>
-        <%= link_to "@" + song.user.username, user_path(song.user_id), onclick: "sendTheAJAX('users', #{song.user_id})", style: "color: white;"%>
+      <% if song.user.avatar.attached? %>
+        <%= image_tag (song.user.avatar), class: "post-ava" %>
+      <% else %>
+        <img src="http://localhost:3000/default-avatar.jpg" class="post-ava">
+      <% end %>
+      <span style="color: white; display: block; font-size: 15px;"><%= (song.user).name %></span>
+      <%= link_to "@" + song.user.username, user_path(song.user_id), onclick: "sendTheAJAX('users', #{song.user_id})", style: "color: white;" %>
     </div>
     <div class="postCenter">
       <div style="margin-left: 4px; display: block; overflow: hidden;" id="content">
@@ -22,10 +22,11 @@
       </div>
     </div>
     <div class="postRight">
-      <p style="color: white;"><%= song.updated_at.month %>/<%= song.updated_at.day %>/<%= song.updated_at.year %><br><%= age(Time.now, song.updated_at) %></p>
+      <p style="color: white;"><%= song.updated_at.month %>/<%= song.updated_at.day %>/<%= song.updated_at.year %>
+        <br><%= age(Time.now, song.updated_at) %></p>
       <% if song.user_id == current_user.id %>
         <p><%= link_to "delete", song, method: :delete,
-                         data: {confirm: "You sure?"}, remote: true, class: "delete", id: song.id %></p>
+                       data: {confirm: "You sure?"}, remote: true, class: "delete", id: song.id %></p>
       <% else %>
         <div id="song_<%= song.id %>_likes"><%= render partial: "/songs/likes", locals: {song: song} %></div>
       <% end %>

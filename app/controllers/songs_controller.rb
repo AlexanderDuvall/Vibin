@@ -2,7 +2,6 @@ class SongsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   # before_action :correct_user, only: [:create, :destroy]
   #before_action :set_song, only: [:show]
-  #  respond_to :js, :json, :html
 
 
   def create
@@ -17,6 +16,14 @@ class SongsController < ApplicationController
         format.json {render json: @song.errors, status: :unprocessable_entity}
       end
     end
+  end
+
+  def isLikedSong
+    song_id = params[:song_id]
+    result = helpers.LikeButtonSet?(song_id, current_user)
+    render :json => {
+        class: result
+    }
   end
 
   def getTopSong
@@ -110,6 +117,7 @@ class SongsController < ApplicationController
     end
   end
 
+
   private
 
   def song_params
@@ -131,6 +139,5 @@ class SongsController < ApplicationController
       redirect_to login_url
     end
   end
-
 
 end

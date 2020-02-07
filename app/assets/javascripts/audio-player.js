@@ -11,6 +11,7 @@ var currentBroadcaster = null;
 let shuffle = null;
 let backward = null;
 let skipForward = null;
+let repeat = false;
 window.addEventListener("DOMContentLoaded", function (e) {
     //var username = document.querySelector("#usernameSong");
     //username.innerHTML = "";
@@ -31,12 +32,26 @@ window.addEventListener("DOMContentLoaded", function (e) {
     let renderAddPlaylist = document.getElementById("renderAddPlaylist");
     let broadcast = document.getElementById("broadcast_text");
     let optionslistbutton = document.querySelector(".options_list");
+    let repeatButton = document.querySelector(".repeat");
+    let likeButton = document.querySelector("#like_button");
+
+    repeatButton.onclick = function () {
+        if (repeat) {
+            repeat = false;
+        } else {
+            repeat = true
+        }
+    };
     broadcast.onclick = function () {
         let id = $("#broadcast_text").data("session");
         console.log(id + " uhuh");
         connect(id);
     };
-
+    skipForward.addEventListener('click', function () {
+        if (isPlayList) {
+            nextSong();
+        }
+    });
     renderAddPlaylist.onclick = function () {
 
         let song = get_current_song();
@@ -67,7 +82,13 @@ window.addEventListener("DOMContentLoaded", function (e) {
         }
     };
 
-
+    backward.addEventListener('click', function () {
+        if (audio.currentTime < 5 && isPlayList) {
+            backSong();
+        } else {
+            audio.currentTime = 0;
+        }
+    });
     muteButton.addEventListener('click', function () {
         if (isMute) {
             audio.volume = pastAudio;
@@ -96,7 +117,10 @@ window.addEventListener("DOMContentLoaded", function (e) {
         playButtonIcon.className = 'ion-play';
     });
     audio.addEventListener("ended", function () {
-        if (isListening()) {
+        if (repeat) {
+            audio.play();
+            console.log("repeating");
+        } else if (isListening()) {
             needsUpdate(true);
             setTimeout(requestData(null, currentBroadcaster, false), 1300);
             //needsUpdate(false)

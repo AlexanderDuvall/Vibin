@@ -12,10 +12,7 @@
           </div>
         </div>
       </div>
-      <button class="like_button">
-        <i class="ion-flame"></i>
-        <p class="like_text">Like</p>
-      </button>
+
 
     </div>
     <div class=col>
@@ -23,7 +20,7 @@
         <div class=audio-buttons>
           <button class="shuffle button_layout" onclick="shuffleSongs()"><i id="play-icon" class="ion-shuffle"></i>
           </button>
-          <button class="back button_layout" onclick="backSong()">
+          <button class="back button_layout">
             <i id="play-icon" class="ion-skip-backward"></i>
           </button>
           <button class="play button_layout" id="music_bar_play_button" onclick="playPause()">
@@ -47,6 +44,9 @@
     <div class="col">
       <div class="right_footer">
         <div class="right_elements">
+          <button id="like_button" class="like_button">
+            <ion-icon name="flame"></ion-icon>
+          </button>
           <button id="broadcast_text" class="broadcast button_layout" data-session="<%= current_user.id.to_json if logged_in? %>">
             <i id="play-icon" class="ion-wifi"></i>
           </button>

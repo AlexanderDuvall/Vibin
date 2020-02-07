@@ -25,32 +25,67 @@ $buttonColor: #eaa766;
   width: 74px;
 }
 
-.like_button {
-  right: 100px;
-  position: absolute;
-  margin-top: 7px;
+.like_button_liked {
 
   display: block;
   width: 50px;
   height: 50px;
-  background-color: $buttonColor;
+  background-color: transparent;
+  font-size: 30px;
+  border-radius: 100000px;
+  cursor: pointer;
+  border-style: none;
+  margin-left: 52px;
+  padding-right: 0px;
+  display: block;
+  margin-top: 20px;
+  -webkit-animation: bgcolor 3s infinite;
+  animation: bgcolor 1s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+.like_button {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
   color: white;
   font-size: 30px;
   border-radius: 100000px;
   cursor: pointer;
   border-style: none;
+  margin-left: 52px;
+  padding-right: 0px;
+  display: block;
+  margin-top: 20px;
 
   &:hover {
-    color: darkred;
+    -webkit-animation: bgcolor 3s infinite;
+    animation: bgcolor 1s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
   }
 
-  .like_text {
-    margin-top: 5px;
-    color: white;
+}
 
-    &:hover {
-      color: white;
-    }
+@keyframes bgcolor {
+  0% {
+    color: #fc030f
+  }
+
+  30% {
+    color: #fc7303
+  }
+
+  60% {
+    color: #fca903
+  }
+  80% {
+    color: #fc6203
+  }
+  100% {
+    color: #fc033d
   }
 }
 
@@ -170,7 +205,7 @@ $buttonColor: #eaa766;
     height: 50px;
     background-color: transparent;
     color: white;
-    font-size: 30px;
+    font-size: 31px;
     border-radius: 100000px;
     cursor: pointer;
 
@@ -227,7 +262,7 @@ $buttonColor: #eaa766;
     height: 50px;
     background-color: transparent;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     border-radius: 100000px;
     cursor: pointer;
 
@@ -241,7 +276,7 @@ $buttonColor: #eaa766;
     height: 50px;
     background-color: transparent;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     border-radius: 100000px;
     cursor: pointer;
 
@@ -254,7 +289,7 @@ $buttonColor: #eaa766;
     height: 50px;
     background-color: transparent;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     border-radius: 100000px;
     cursor: pointer;
 
@@ -267,7 +302,7 @@ $buttonColor: #eaa766;
     height: 50px;
     background-color: transparent;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     border-radius: 100000px;
     cursor: pointer;
 
@@ -322,12 +357,12 @@ button.volume {
       display: block;
       width: 43px;
       height: 43px;
-      margin-left: 73px;
+      margin-left: 25px;
       background-color: transparent;
       color: white;
       border-radius: 100000px;
       cursor: pointer;
-      margin-bottom: 7px;
+      margin-top: 16px;
     }
 
     button.playlist {
@@ -336,9 +371,11 @@ button.volume {
       height: 43px;
       margin-left: 10px;
       background-color: transparent;
-      color: $buttonColor;
+      color: white;
       border-radius: 100000px;
       cursor: pointer;
+      margin-top: 22px;
+
     }
 
     .volume_bar {
