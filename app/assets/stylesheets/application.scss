@@ -77,14 +77,14 @@ a:hover {
     position: fixed;
     top: 0;
     left: 1px;
-    width: 45px;
+    width: 55px;
     height: 45px;
   }
 
   .ExploreTab {
     position: fixed;
     top: 0;
-    left: 46px;
+    left: 50px;
     width: 45px;
     height: 45px;
   }
@@ -92,7 +92,7 @@ a:hover {
   .GroupiesTab {
     position: fixed;
     top: 0;
-    left: 91px;
+    left: 95px;
     height: 45px;
     width: 45px;
   }
@@ -100,7 +100,7 @@ a:hover {
   .SearchBar {
     position: fixed;
     top: 5px;
-    left: 142px;
+    left: 148px;
     height: 35px;
     width: 220px;
     border-radius: 5px;
@@ -177,13 +177,6 @@ a:hover {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.login:hover .dropdown-content-login {
-  display: block;
-}
-
-.dropdown-content-login:hover {
-  display: block;
-}
 
 /*
 .RootPage {
@@ -501,3 +494,5 @@ a:hover {
   border-radius: 20px;
   border-color: white;
 }
+
+

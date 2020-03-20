@@ -169,21 +169,9 @@ function connect(user_id) {
             let results = x.response;
             console.log(x.response);
             if (results.length > 0) {
-                let lines = results.split("\n");
-                results = {};
-                for (let i = 0; i < lines.length; i++) {
-                    var content = lines[i].split(/:(.+)/);
-                    if (content.length == 3)
-                        content.pop();
-                    console.log(content);
-                    console.log(content.length);
-                    if (content.length == 2) {
-                        console.log("hashing");
-                        results[content[0]] = content[1];
-                    }
-                }
-                console.log(results);
-                if (results.hasOwnProperty("Machine-Reached-Status") && results['Machine-Reached-Status'] == "True") {
+                var array = JSON.parse(results);
+                console.log(array);
+                if (array.hasOwnProperty("MachineReachedStatus") && array['MachineReachedStatus'] == true) {
                     console.log("MACHINE REACHED");
                     isBroadcasting(true);
                     Rails.ajax({
@@ -205,10 +193,9 @@ function connect(user_id) {
             }
         }
     };
-    x.open("POST", "http://localhost:4444", true);
-    let data = new FormData();
-    data.append("User_id", user_id);
-    x.send(data);
+
+    x.open("POST", "http://localhost:4447/establish?Action=1001", true);
+    x.send();
 }
 
 function decrement(id) {

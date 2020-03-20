@@ -59,15 +59,14 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
 
-
-   config.action_mailer.perform_deliveries = true
-   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
   # Don't use this literally; use your local dev host instead
   # Use this on the cloud IDE.
   config.action_mailer.delivery_method = :smtp
   # Use this on the cloud IDE.
   # Use this if developing on localhost.
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options = {host: host}
   # Use this if developing on localhost.
   # config.action_mailer.default_url_options = { host: host, protocol: 'http' }
   config.action_mailer.perform_caching = false
@@ -76,11 +75,10 @@ Rails.application.configure do
       #----------------------------------
       #IN THE FUTURE.... THIS WILL BE STORED AS AN ENVIRONMENT VARIABLE
       #----------------------------------
-      user_name: '2018vibin@gmail.com',
-      password: 'vibinmusic2020',
-      domain:  'gmail.com',
       address: 'smtp.gmail.com',
-      port:  587,
+      port: 587,
+      user_name: 'vibinmusic2020@gmail.com',
+      password: 'drawdexela528',
       authentication: 'plain',
       enable_starttls_auto: true
   }

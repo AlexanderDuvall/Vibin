@@ -1,59 +1,212 @@
+<style>
+  .HorizontalArtistRow{
+    height: 150px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    border: pink;
+    border-style: solid;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  }
+  .HorizontalSongRow{
+    height: 200px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    border: pink;
+    border-style: solid;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  }
+  .YourTaste_SongBox{
+    height: 200px;
+    width: 300px;
+    margin-right: 10px;
+    background-color: #b2b0ae;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  .YourTaste_SongInfoColumn{
+    height: 120px;
+    width: 220px;
+    background-color: #57ff59;
+    float: left;
+  }
+  .YourTaste_SongCoverColumn{
+    height: 150px;
+    width: 150px;
+    background-color: #9AD3EB;
+    border-radius: 10px;
+    float: left;
+  }
+
+  .YourTaste_ArtistBox{
+    height: 175px;
+    width: 350px;
+    margin-right: 10px;
+    background-color: #b2b0ae;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  .YourTaste_ArtistImageColumn{
+    height: 150px;
+    width: 130px;
+    background-color: #9AD3EB;
+    border-radius: 10px;
+    float: left;
+  }
+  .YourTaste_ArtistInfoColumn{
+    height: 120px;
+    width: 220px;
+    background-color: #57ff59;
+    float: left;
+  }
+  .YourTaste_ArtistInfoColumn2{
+    height: 30px;
+    width: 220px;
+    background-color: #ff4b23;
+    float: left;
+  }
+  .YourTaste_ArtistAvaImage {
+    display: block;
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    border-color: white;
+    border-style: solid;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+  .YourTaste_ArtistGenre {
+    height: 20px;
+    width: min-content;
+    background-color: #eb5c30;
+    border-radius: 6px;
+    float: left;
+    margin-right: 5px;
+    padding: -5px;
+  }
+  .YourTaste_ArtistTags{
+    height: 20px;
+    width: min-content;
+    background-color: #c3c0c1;
+    border-radius: 6px;
+    float: left;
+    margin-right: 5px;
+    padding: -5px;
+  }
+    .YourTaste_Ar
+</style>
 <div id="yourTaste" class="YourTaste">
-  <div class="HorizontalSongsDisplay" id="horizontalSongsDisplay">
-    <div id="coverflo">
-
-      <img src="/default-avatar.jpg" id="img1" class="Cover"/>
-      <p id="img1text">Lmaosfdsf<br>dvdsvsdvdsv</p>
-      <img src="/default-avatar.jpg" id="img2" class="Cover"/>
-
-      <img src="/default-avatar.jpg" id="img3" class="Cover"/>
-      <img src="/default-avatar.jpg" id="img4" class="Cover"/>
-      <img src="/default-avatar.jpg" id="img5" class="Cover"/>
-      <img src="/default-avatar.jpg" id="img6" class="Cover"/>
-      <img src="/default-avatar.jpg" id="img7" class="Cover"/>
-      <img src="/default-avatar.jpg" id="img8" class="Cover"/>
-      <img src="/default-avatar.jpg" id="img9" class="Cover"/>
-    </div>
+  <!-- Favorite Genres -->
+  <h2 style="text-align: center;
+      font-family: 'Gill Sans', sans-serif">Your Music Taste
+  </h2>
+  <div class="HorizontalArtistRow" id="horizontalArtistRow">
+    <% @topArtists.each do |artist| %>
+      <div class="YourTaste_ArtistBox">
+        <div class="YourTaste_ArtistImageColumn">
+          <% if User.find(artist.artist_id).avatar.attached? %>
+            <%= image_tag (User.find(artist.artist_id).avatar), class: "YourTaste_ArtistAvaImage" %>
+          <% else %>
+            <img src="http://localhost:3000/default-avatar.jpg" class="YourTaste_ArtistAvaImage">
+          <% end %>
+        </div>
+        <div class="YourTaste_ArtistInfoColumn">
+          <p style="font-size: x-large; word-break: normal; white-space: normal"><%= User.find(artist.artist_id).name %></p>
+          <div class="YourTaste_ArtistGenre">
+            Pop
+          </div>
+          <div class="YourTaste_ArtistGenre">
+            Rap
+          </div>
+          <div class="YourTaste_ArtistGenre">
+            Alternative
+          </div>
+          <br>
+          <div class="YourTaste_ArtistTags">
+            tags
+          </div>
+          <div class="YourTaste_ArtistTags">
+            tagtag
+          </div>
+          <div class="YourTaste_ArtistTags">
+            tagtagtag
+          </div>
+        </div>
+        <div class="YourTaste_ArtistInfoColumn2">
+        @TameImpala
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="slidecontainer">
-    <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
+  <div class="HorizontalSongRow" id="horizontalSongRow">
+    <% @topSongs.each do |song| %>
+      <div class="YourTaste_SongBox">
+        <div class="YourTaste_SongCoverColumn">
+          <% if Song.find(song.song_id).cover_image.attached? %>
+            <%= image_tag (Song.find(song.song_id).cover_image), class: "YourTaste_SongCover" %>
+          <% else %>
+            <img src="http://localhost:3000/default-avatar.jpg" class="YourTaste_SongCover">
+          <% end %>
+        </div>
+        <div class="YourTaste_SongInfoColumn">
+          <%= Song.find(song.song_id).title %>
+          <p style="font-size: x-large; word-break: normal; white-space: normal"><%= User.find(song.artist_id).name %></p>
+          <div class="YourTaste_ArtistGenre">
+            Pop
+          </div>
+          <div class="YourTaste_ArtistGenre">
+            Rap
+          </div>
+          <div class="YourTaste_ArtistGenre">
+            Alternative
+          </div>
+          <br>
+          <div class="YourTaste_ArtistTags">
+            tags
+          </div>
+          <div class="YourTaste_ArtistTags">
+            tagtag
+          </div>
+          <div class="YourTaste_ArtistTags">
+            tagtagtag
+          </div>
+        </div>
+        <div class="YourTaste_ArtistInfoColumn2">
+          @TameImpala
+        </div>
+      </div>
+    <% end %>
   </div>
-</div>
+  </div>
   <script>
       $start = $("#yourTaste").width();
       $("#img1text").addClass("ui-coverflow-item");
       $("#img1text").addClass("ui-state-active");
 
       $display = $('#horizontalSongsDisplay').width();
-      $('#horizontalSongsDisplay').css('width', $display+1000);
-      $('#horizontalSongsDisplay').css('left', -($start/2)-300);
+      //$('#horizontalSongsDisplay').css('width', $display+1000);
+      //$('#horizontalSongsDisplay').css('left', -($start/2)-300);
       $(window).resize(function () {
-          $("#img1text").css("transform", "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)");
-          $("#img1text").css("transform-origin", "left center 0");
-          $("#img1text").css("z-index", "20");
+       //   $("#img1text").css("transform", "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)");
+         // $("#img1text").css("transform-origin", "left center 0");
+          //$("#img1text").css("z-index", "20");
           console.log('lols');
           start = $("#yourTaste").width();
           display = $('#horizontalSongsDisplay').width();
-          $('#horizontalSongsDisplay').css('width', $display+1000);
-          $('#horizontalSongsDisplay').css('left', -($start/2)-300);
+        //  $('#horizontalSongsDisplay').css('width', $display+1000);
+         // $('#horizontalSongsDisplay').css('left', -($start/2)-300);
       });
       $(function() {
-          $("#img1text").css("transform", "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)");
-          $("#img1text").css("transform-origin", "left center 0");
-          $("#img1text").css("z-index", "20");
-          console.log($start);
-      //    $('#horizontalSongsDisplay').css();
+          //  $("#img1text").css("transform", "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)");
+          //$("#img1text").css("transform-origin", "left center 0");
+          //$("#img1text").css("z-index", "20");
+          //    $('#horizontalSongsDisplay').css();
           // and kick off
-          $('#coverflo').coverflow({
-              active:0
-          });
       });
-      var slider = document.getElementById("myRange");
-
-      // Update the current slider value (each time you drag the slider handle)
-      slider.oninput = function() {
-          $('#img'+this.value).click();
-          console.log(this.value);
-      }
   </script>
 

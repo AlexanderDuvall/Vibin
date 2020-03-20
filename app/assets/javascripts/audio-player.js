@@ -34,7 +34,11 @@ window.addEventListener("DOMContentLoaded", function (e) {
     let optionslistbutton = document.querySelector(".options_list");
     let repeatButton = document.querySelector(".repeat");
     let likeButton = document.querySelector("#like_button");
-
+    $('.exploreTopStreamerBox').hover(function () {
+        $("#Top_Streamer").css("filter", "blur(2px)");
+    }, function () {
+        $("#Top_Streamer").css("filter", "blur(0px)");
+    });
     repeatButton.onclick = function () {
         if (repeat) {
             repeat = false;
@@ -53,7 +57,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
         }
     });
     renderAddPlaylist.onclick = function () {
-
         let song = get_current_song();
         //loadPlaylistSongs();
         if (isPlayList) {
@@ -134,16 +137,10 @@ window.addEventListener("DOMContentLoaded", function (e) {
         let p = currentTime / audio.duration;
         fillBar.style.width = p * 100 + '%';
         if (isBroadcasting() && currentTime > (lastTime + 2)) {
-            lastTime = currentTime;
-            console.log(currentTime);
             sendData(currentTime);
             console.log("broadcasting update...")
         } else if (isListening() && (currentTime - lastTime) > 3) {
-            console.log(typeof (currentTime - lastTime));
-            console.log(currentTime - lastTime > 3);
-            console.log("TIME UPDATE: " + currentTime + " vs " + lastTime);
             lastTime = currentTime;
-
             requestData(
                 function (results) {
                     listenerCallback(results);

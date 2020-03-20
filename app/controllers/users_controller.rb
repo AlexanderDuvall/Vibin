@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:email])
   end
 
+
+
   def confirm_email
     user = User.find_by_confirm_token(params[:token])
     if user
@@ -106,6 +108,11 @@ class UsersController < ApplicationController
       puts "FAILED TO UPDATE"
       render "/settings"
     end
+  end
+  def new2
+    @topArtists = UserArtistPlayCounter.order(plays: :desc)
+    @topSongs = SongLike.group(:song_id).order('count(*) DESC')
+
   end
 
   private

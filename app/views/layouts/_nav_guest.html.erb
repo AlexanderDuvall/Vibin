@@ -7,11 +7,13 @@
 <% end %>
 
 <script>
+    var login = $(".login");
+
     $(window).resize(function () {
         var groupies = $(".GroupiesTab");
         var groupiesPosition = groupies.position();
-        var login = $(".login");
         var loginPosition = login.position();
+        login =  $(".login");
         var l = parseInt(loginPosition.left) - parseInt(groupiesPosition.left) - 60 ;
         var lpx = l + " px";
        // console.log(lpx);
@@ -22,10 +24,25 @@
         }
 
     });
+    function openLogin(){
+        $('.dropdown-content-login').css('display', 'block');
+    };
+    $(function(){
+        $(window).click(function (e) {
+            if($('.dropdown-content-login').css('display') == 'block' &&
+                (e.target.className == "emailBox" || e.target.className == "loginButton")){
+                console.log();
+            }
+            else if ($('.dropdown-content-login').css('display') == 'block' ){
+                $('.dropdown-content-login').css('display', 'none');
+                console.log(e.target.className);
+            }
+        });
+    });
 </script>
 
 
-<div class="login">Login
+<div class="login" onmouseover="openLogin()">Login
   <div class="dropdown-content-login">
     <%= render 'sessions/form'%>
   </div>

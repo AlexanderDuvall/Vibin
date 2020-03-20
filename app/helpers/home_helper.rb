@@ -42,7 +42,7 @@ module HomeHelper
   def getUserFavArtist(user_id)
     puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!lol"
 #    favArtist = User_artist_play_counter.find_by("user_id": 97).order("plays": :desc)
-    #puts favArtist
+#puts favArtist
     puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
   end
 
@@ -58,13 +58,24 @@ module HomeHelper
     elsif (!song.playlist_id.nil?)
       song.playlist.user
     else
-      puts"bad record...."
+      puts "bad record...."
       nil
     end
   end
 
   def log_in(user)
     session[:user_id] = user.id
+  end
+
+  def get_favorite_song(user)
+    a = user.user_song_play_counters.order("plays desc")[0]
+    song = Song.find(a.song_id)
+    title = song.title
+    return title
+  end
+
+  def get_favorite_artist(user)
+
   end
 
   def month(x)

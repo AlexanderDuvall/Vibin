@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   #include Elasticsearch::Model
   #include Elasticsearch::Model::Callbacks
-  searchkick
+ # searchkick
 
   belongs_to :user
 #  accepts_nested_attributes_for :songs, allow_destroy: true #, reject_if: proc{|a| a['song_files'].blank? || a['title'].blank?}

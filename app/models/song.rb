@@ -1,9 +1,9 @@
 class Song < ApplicationRecord
   #include Elasticsearch::Model
   #include Elasticsearch::Model::Callbacks
-  searchkick
+ # searchkick
   validates_presence_of :title, presence: true, length: {maximum: 40}
-  validates_presence_of :premium, default: false
+  validates_presence_of :premium, default: false, presence: false
   validates_presence_of :subGenre, default: ""
 # validates_presence_of :premium, default: false
   has_one_attached :song_file
