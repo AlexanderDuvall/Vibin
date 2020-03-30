@@ -17,11 +17,9 @@ $buttonColor: #eaa766;
   position: relative;
   float: left;
   height: 100%;
-  max-width: 400px;
-  width: 200px;
-  left: 16px;
+  min-width: 212px;
   @media only screen and (max-width: 500px) {
-    width: 90px;
+    min-width: 96px;
   }
 }
 
@@ -97,6 +95,9 @@ $buttonColor: #eaa766;
   position: relative;
   float: left;
   margin-left: 10px;
+  @media only screen and (max-width: 500px) {
+    display: none
+  }
   p {
     margin-left: 5px;
   }
@@ -181,7 +182,7 @@ $buttonColor: #eaa766;
 .Center-Audio {
   margin: auto;
   text-align: center;
-  width: 85%;
+  width: 75%;
 }
 
 .audio-player {
@@ -195,8 +196,12 @@ $buttonColor: #eaa766;
     display: flex;
     margin: auto;
     position: relative;
+
+    #like_button {
+      display: none;
+    }
     @media only screen and (max-width: 600px) {
-      margin-top: 22px;
+      top: 8px;
     }
   }
 
@@ -241,8 +246,8 @@ $buttonColor: #eaa766;
     padding-right: 5px;
     position: relative;
     @media only screen and (max-width: 600px) {
-      visibility: hidden;
-    }
+      display: none
+     }
     .fill {
       height: 7px;
       background-color: $blue;
@@ -349,7 +354,7 @@ button.volume {
 .right_footer {
   width: 200px;
   float: right;
-  right: 23px;
+  right: 6px;
   position: relative;
   top: 3px;
   @media only screen and (max-width: 760px) {
