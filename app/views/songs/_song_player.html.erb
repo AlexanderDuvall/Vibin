@@ -1,6 +1,4 @@
 <div class="musicPlayer">
-  <div class="row">
-    <div class="col">
       <div class="songDetails">
         <div class="songCover">
           <img id="playerCoverImage" src="" class="playerCoverImage">
@@ -12,10 +10,7 @@
           </div>
         </div>
       </div>
-
-
-    </div>
-    <div class=col>
+    <div class = "Center-Audio">
       <div class="audio-player">
         <div class=audio-buttons>
           <button class="shuffle button_layout" onclick="shuffleSongs()"><i id="play-icon" class="ion-shuffle"></i>
@@ -41,8 +36,7 @@
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="right_footer">
+       <div class="right_footer">
         <div class="right_elements">
           <button id="like_button" class="like_button">
             <ion-icon name="flame"></ion-icon>
@@ -62,7 +56,6 @@
           </div>
         </div>
       </div>
-    </div>
   </div>
 
   <div id="add-playlist-modal" class="modal-add-playlist">
@@ -70,4 +63,4 @@
       <%= render partial: "playlists/modal_playlists", locals: {song_pos: nil, ts: "default", currentplaylist: 0} %>
     </div>
   </div>
-</div>
+

@@ -2,74 +2,54 @@
   <% if logged_in? %>
     <% @user = current_user %>
     <div class="userHomePage">
-      <div class="userBanner">
-        <div class="home-header-column-avatar ">
-          <% if @user.avatar.attached? %>
-            <%= image_tag (@user.avatar), class: "avatar-home" %>
-          <% else %>
-            <img src="http://localhost:3000/default-avatar.jpg" class="avatar-home">
-          <% end %>
-        </div>
-        <div class="home-header-column-user">
-          <h7>
-            <span class="userbadge"><%= @user.name %></span>
-            <span class="userbadge"><%= link_to "@" + @user.username, user_path(@user.id), class: "links", style: "color: #425173;" %></span>
-            <span class="userbadge"> </span>
-          </h7>
-        </div>
-        <div class="home-header-column-posts">
-          <center>
-            <div class="postBadge">
-              <h5>
-                <span class="infobadge">Posts</span>
-              </h5>
-            </div>
-            <div class="songBadge">
-              <h5>
-                <span class="infobadge">Songs</span>
-              </h5>
-            </div>
-            <div class="postsTotal">
-              <h5>
-                <span class="infobadge"> <%= @user.posts.count %> </span>
-              </h5>
-            </div>
-            <div class="songsTotal">
-              <h5>
-                <span class="infobadge"> <%= @user.songs.count %> </span>
-              </h5>
-            </div>
-            <div class="followersBadge">
-              <h5>
-                <span class="infobadge">Followers</span>
-              </h5>
-            </div>
-            <div class="followingBadge">
-              <h5>
-                <span class="infobadge">Followings</span>
-              </h5>
-            </div>
-            <div class="followersTotal">
-              <h5>
-                <span class="infobadge" onclick="sendTheAJAX('<%= followers_user_path(@user)%>', '')"><%= @user.followers.count %></span>
-              </h5>
-            </div>
-            <div class="followingTotal">
-              <h5>
-                <span class="infobadge" onclick="sendTheAJAX('<%= following_user_path(@user) %>', '')"><%= @user.following.count %></span>
-              </h5>
-            </div>
-          </center>
-        </div>
-        <div class="postColumn">
-          <a class="btn-post" data-remote="true" href="/posts/new" id='butt'>Post</a>
-          <a class="btn-post" data-remote="true" href="/songs/new" id='butt1'>Song</a>
-        </div>
-      </div>
-      <div class="userfeed">
+      <div class="homeUserFeed">
         <%= render "/posts/userfeed" %>
       </div>
-      <div class="recommended">
+      <div class="homeRecommended">
+          <h3>Music Library</h3>
+        <div class="homeLibrary">
+          <div class="container">
+            <div class="row">
+              <h4>Playlists</h4>
+            </div>
+            <div class="row">
+              <div class="homeLibraryPlaylist">
+                <img src="default-avatar.jpg" class="homeLibraryPlaylistCover">
+                <p style="margin-bottom: 3px;">Playlist Name Name</p>
+              </div>
+              <div class="homeLibraryPlaylist">
+                <img src="default-avatar.jpg" class="homeLibraryPlaylistCover">
+                <p style="margin-bottom: 3px;">Playlist Name</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="homeLibrarySong">
+                <div class="row">
+                  <div class="col-3">
+                    <img src="default-avatar.jpg" class="homeLibrarySongArtistAva">
+                  </div>
+                  <div class="col-9">
+                    <p style="font-size: 14px; margin: 10px 0 0 -10px;">@TameImpala</p>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <img src="default-avatar.jpg" class="homeLibrarySongCover">
+                </div>
+                <div class="row">
+                  <p style="margin-bottom: 3px; margin-top: 6px; font-size: 14px;"> Song Title</p>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <img src="default-avatar.jpg" class="homeLibrarySongFeaturedArtistAva">
+                    <img src="default-avatar.jpg" class="homeLibrarySongFeaturedArtistAva">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <center>
           <div class="recommended-column">
             <h4 style="float:left; margin-left: 30px;">Users Recommended</h4>

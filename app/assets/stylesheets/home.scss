@@ -86,6 +86,8 @@
 
 // End of Non-User HomePage
 
+// User Home Page
+
 .infobadge {
   display: block;
   margin-top: 4px;
@@ -235,18 +237,70 @@
   font-weight: bold;
 }
 
-.userfeed {
+.homeUserFeed{
   position: relative;
   float: left;
   width: 50%;
-  margin-top: 110px;
+  margin-top: 70px;
 }
 
-.recommended {
+.homeLibrary{
+  height: inherit;
+  background-color: #4CAF50;
+}
+
+.homeLibraryPlaylistCover{
+  width: 70px;
+  height: 70px;
+  margin-top: 10px;
+}
+
+.homeLibraryPlaylist{
+  height: inherit;
+  background-color: #00aaff;
+  width: 100px;
+  margin-left: 9px;
+  text-align: center;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.homeLibrarySong{
+  height: 175px;
+  width: inherit;
+  background-color: #4d7ce3;
+  margin-left: 9px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.homeLibrarySongCover{
+  height: 90px;
+  width: 90px;
+  margin-top: 5px;
+}
+
+.homeLibrarySongArtistAva{
+  margin-left: 7px;
+  margin-top: 7px;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+}
+
+.homeLibrarySongFeaturedArtistAva{
+  margin-left: 6px;
+  height: 25px;
+  width: 25px;
+  border-radius: 13px;
+}
+.homeRecommended {
   position: relative;
-  top: 110px;
+  top: 40px;
   float: left;
   width: 50%;
+  text-align: -moz-center;
 }
 
 .recommended-column {
@@ -520,8 +574,16 @@
 
 */
 .exploreRow {
-  height: 100%;
-  width: 100%;
+  min-width: 900px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+
+.exploreRow::-webkit-scrollbar {
+  height: 0;
+  width: 0;
 }
 
 .exploreTopSongColumn {
@@ -532,23 +594,46 @@
 }
 
 .exploreTopSongBox {
-  height: 400px;
-  border-style: dotted;
+  height: inherit;
+  width: 200px;
+  border-radius: 20px;
+  border-style: solid;
   border-color: #00aaff;
 }
 
-.exploreTopSongCover {
+.exploreStreamerCover {
   position: relative;
   float: left;
-  margin-left: 9px;
-  height: 140px;
-  width: 140px;
+  height: 95px;
+  width: 95px;
 }
 
-.exploreTopSongAva {
+.exploreTopSongCover{
+  margin-top: 5px;
+  margin-left: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.exploreTopStreamerAva {
+  margin-bottom: 13px;
+  float: right;
+  height: 73%;
+  width: 61%;
+  border-radius: 13px;
+}
+
+.exploreTopSongArtistAva {
+  margin-left: 6px;
+  height: 35px;
+  width: 35px;
+  border-radius: 13px;
+}
+
+.exploreTopSongFeaturedAva {
   margin-left: 1px;
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   border-radius: 13px;
 }
 
@@ -563,21 +648,22 @@
   width: 260px;
   border-style: dotted;
   margin-right: 5px;
-  .explore-avatar {
-    height: 45px;
-    width: 45px;
-    border-radius: 50px;
-    border-color: white;
-    border-style: solid;
-  }
+}
+
+.tag{
+  margin-bottom: 2px;
+  margin-left: 2px;
 }
 
 .exploreTopStreamerBox {
-  z-index: 2;
-  border-style: dotted;
-  border-color: #00aaff;
-  position: absolute;
-  width: inherit;
+  margin-right: 15px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #c49544;
+  display: inline-block;
+  width: 300px;
+  height: inherit;
+
   button.play {
     position: absolute;
     margin-top: 86px;
@@ -638,14 +724,38 @@
   float: left;
 }
 
-.exploreTopStreamerAva {
-  position: relative;
-  float: left;
-  margin-left: 2px;
-  margin-top: 10px;
-  height: 80px;
-  width: 80px;
-  border-radius: 40px;
+.exploreUserBox{
+   margin-right: 15px;
+   border-radius: 10px;
+   border-style: solid;
+   border-color: #c49544;
+   display: inline-block;
+   width: 260px;
+   height: inherit;
+ }
+.exploreEventBox{
+  margin-right: 15px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #c49544;
+  display: inline-block;
+  width: 300px;
+  height: inherit;
+}
+.exploreTopArtistAva{
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+}
+.exploreEventFlyer{
+  height: 100px;
+  width: 100px;
+}
+.exploreEventHostAva{
+  margin-left: 7px;
+  height: 45px;
+  width: 45px;
+  border-radius: 23px;
 }
 
 //

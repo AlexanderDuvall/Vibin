@@ -1,98 +1,565 @@
-<div id="explore">
-  <div class="exploreRow">
-    <div class="exploreTopStreamerColumn">
-      <h5> Top Streamers</h5>
-      <% @topDJ.each_with_index do |a, index| %>
-        <% user = User.find(a.user_id) %>
-        <%= image_tag url_for(a.broadcast_cover), id: "Top_Streamer", style: "width:255px; height:255px" %>
-        <div class="exploreTopStreamerBox" style="margin-top: -254px;">
-          <button class="play " data-broadcaster="<%= a.id %>">
-            <i id="play-icon" class="ion-play"></i>
-          </button>
-          <button class = "follow">
-            Follow
-          </button>
-          <div class="top" style="display: flex">
-            <% if user.avatar.attached? %>
-              <%= image_tag (user.avatar), class: "explore-avatar" %>
-            <% else %>
-              <img src="http://localhost:3000/default-avatar.jpg" class="explore-avatar">
-            <% end %><div>
-            <h5 id="Top_Streamer_Text" style="margin-left: 5px; margin-top:11px">Lo-fi Hip-Hop Beats </h5>
-            <p id="Top_Streamer_Text" style="margin-left: 5px; margin-top:20px">@<%= user.username %></p>
+<div id="explore" style="min-width: 1100px;">
+  <!-- Boxes Row -->
+  <div class="row justify-content-center" style="overflow: hidden; min-width: 1000px; height: 300px; margin-left: 12px; margin-right: 12px;">
+    <div id="slid" class="carousel slide" style="width: 100%" data-wrap=false data-interval=false>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container-fluid" style="width: 95%">
+            <div class="row justify-content-center" style="height: 300px; flex-wrap: nowrap" >
+             <div class="col-sm-2" style="background-color: #730E15; max-width: 170px;">
+                <div class="align-text-bottom" style="background-color: #9AD3EB; height: 130px; width: 130px; position: relative">
+                  <p style="position: absolute; font-size: 15px; line-height: 20px; bottom: 0; margin-bottom: 3px;"> @TameImpala</p>
+                </div>
+               <br>
+               <div class="align-text-bottom" style="background-color: #9AD3EB; height: 130px; width: 130px; position: relative">
+                 <p style="position: absolute; font-size: 15px; line-height: 20px; bottom: 0; margin-bottom: 3px;"> @TameImpala</p>
+               </div>
+              </div>
+             <div class="col-sm-4" style="min-width: 300px; background-color: #4CAF50;">
+                <div style=" height: 280px; min-width: 280px; background-color: #660099">
 
+                </div>
+            </div>
+            <div class="col-sm-2" style="background-color: #730E15;">
+
+            </div>
+            <div class="col-sm-2" style="background-color: #4CAF50;">
+
+            </div>
+            <div class="col-sm-2" style="background-color: #4d7ce3;">
+
+            </div>
           </div>
-          </div>
-          <div class="bottom">
-            <p>Current Song: 7 Rings by Ariana Grande</p>
           </div>
         </div>
-
-      <% end %>
-    </div>
-    <div class="exploreTopSongColumn">
-      <h5> Top DJ's</h5>
-      <% @topDJ.each_with_index do |a, index| %>
-        <div class="exploreTopSongBox">
-          <p>Title</p>
-          <img src="default-avatar.jpg" class="exploreTopSongCover">
-          <img src="default-avatar.jpg" class="exploreTopSongAva" name="@Artist">
-          <img src="default-avatar.jpg" class="exploreTopSongAva" name="@FeaturedArtist1">
-          <img src="default-avatar.jpg" class="exploreTopSongAva" name="@FeaturedArtist2">
-          <br>
-          <img src="default-avatar.jpg" class="exploreTopSongAlbumCover">
-          <p>Album/Playlist Name</p>
-          <!%= image_tag url_for(a.broadcast_cover), style: "width:130px; height:130px" %>
-
+        <div class="carousel-item">
+          <p>dfasdfa</p>
         </div>
-      <% end %>
-    </div>
-    <div class="exploreTopSongColumn">
-      <h5> Top Song </h5>
-      <% @topDJ.each_with_index do |a, index| %>
-        <div class="exploreTopSongBox">
-          <div class="exploreTopSongColumnColumn">
-
-          </div>
-          <div class="exploreTopSongColumnColumn">
-            <h1><%= index +1 %></h1>
-          </div>
-          <!%= image_tag url_for(a.broadcast_cover), style: "width:130px; height:130px" %>
-
-        </div>
-      <% end %>
-    </div>
-    <div class="exploreTopSongColumn">
-      <h5> Top DJ's</h5>
-      <% @topDJ.each_with_index do |a, index| %>
-        <div class="exploreTopSongBox">
-          <div class="exploreTopSongColumnColumn">
-
-          </div>
-          <div class="exploreTopSongColumnColumn">
-            <h1><%= index +1 %></h1>
-          </div>
-          <!%= image_tag url_for(a.broadcast_cover), style: "width:130px; height:130px" %>
-
-        </div>
-      <% end %>
-    </div>
-    <div class="exploreTopSongColumn">
-      <h5> Top DJ's</h5>
-      <% @topDJ.each_with_index do |a, index| %>
-        <div class="exploreTopSongBox">
-          <div class="exploreTopSongColumnColumn">
-
-          </div>
-          <div class="exploreTopSongColumnColumn">
-            <h1><%= index +1 %></h1>
-          </div>
-          <!%= image_tag url_for(a.broadcast_cover), style: "width:130px; height:130px" %>
-
-        </div>
-      <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#slid" role="button" data-slide="prev" style="width: 30px;">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#slid" role="button" data-slide="next" style="width: 30px;">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
+
+  <h5 style="margin-left: 9px; margin-top: 15px;">Top Streamers</h5>
+  <div class="exploreRow">
+    <div class="exploreTopStreamerBox">
+      <div class="row justify-content-end" style="margin-top: 8px;">
+        <div class="col-6">
+          <p style="float: right; margin-right: 15px; margin-bottom: 0;">listeners</p>
+        </div>
+      </div>
+      <div class="row justify-content-center" style="margin-bottom: 10px; margin-top: 7px;">
+        <div class="col-4">
+          <img src="Vibin.png" class="exploreTopSongCover">
+        </div>
+        <div class="col-6">
+          <p style="margin-bottom: 0; font: 1.15em 'Fira Sans', sans-serif;">One More Hour</p>
+          <p style="margin-bottom: 2px; font: 0.90em 'Fira Sans', sans-serif;">@TameImpala</p>
+          <p style="margin-bottom: 2px; margin-left: 6px; font: 0.75em 'Fira Sans', sans-serif; color: gray;">Hometown</p>
+          <p style="margin-bottom: 3px; font: 0.80em 'Fira Sans', sans-serif">Sydney, Australia</p>
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <span class="badge badge-secondary tag">Alternative</span>
+        <span class="badge badge-secondary tag">#Alternative</span>
+        <span class="badge badge-secondary tag">#TameImpala</span>
+        <span class="badge badge-secondary tag">#SlowRush</span>
+      </div>
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-3">
+          <img src="default-avatar.jpg" class="exploreTopStreamerAva">
+        </div>
+        <div class="col-9">
+          <div class="row">
+            <div class="col">
+              <p style="margin-bottom: 0; margin-left: -15px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+              font-size: 16px;
+              letter-spacing: -0.4px;
+              word-spacing: -0.6px;
+              font-weight: 400;">Edward Sotelo Jr's Live Session</p>
+            </div>
+          </div>
+         <div class="row">
+           <div class="col-7">
+             <p style="margin-bottom: 0; margin-left: -15px;">@edwardsotelojr</p>
+             <p style="margin-bottom: 10px; margin-left: -15px;">Houston, TX</p>
+           </div>
+           <div class="col-5">
+             <button type="button" class="btn  btn-sm" style="margin-bottom:3px; margin-top: 5px; color: #ffb061; border-color: #ffb061; border-width: revert; background-color: rgba(255,255,255,0.5);">Follow</button>
+           </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    <div class="exploreTopStreamerBox">
+      <div class="row justify-content-end" style="margin-top: 8px;">
+        <div class="col-6">
+          <p style="float: right; margin-right: 15px; margin-bottom: 0;">listeners</p>
+        </div>
+      </div>
+      <div class="row justify-content-center" style="margin-bottom: 10px; margin-top: 7px;">
+        <div class="col-4">
+          <img src="Vibin.png" class="exploreTopSongCover">
+        </div>
+        <div class="col-6">
+          <p style="margin-bottom: 0; font: 1.15em 'Fira Sans', sans-serif;">One More Hour</p>
+          <p style="margin-bottom: 2px; font: 0.90em 'Fira Sans', sans-serif;">@TameImpala</p>
+          <p style="margin-bottom: 2px; margin-left: 6px; font: 0.75em 'Fira Sans', sans-serif; color: gray;">Hometown</p>
+          <p style="margin-bottom: 3px; font: 0.80em 'Fira Sans', sans-serif">Sydney, Australia</p>
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <span class="badge badge-secondary tag">Alternative</span>
+        <span class="badge badge-secondary tag">#Alternative</span>
+        <span class="badge badge-secondary tag">#TameImpala</span>
+        <span class="badge badge-secondary tag">#SlowRush</span>
+      </div>
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-3">
+          <img src="default-avatar.jpg" class="exploreTopStreamerAva">
+        </div>
+        <div class="col-9">
+          <div class="row">
+            <div class="col">
+              <p style="margin-bottom: 0; margin-left: -15px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+                  font-size: 16px;
+                  letter-spacing: -0.4px;
+                  word-spacing: -0.6px;
+                  font-weight: 400;">Edward Sotelo Jr's Live Session</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <p style="margin-bottom: 0; margin-left: -15px;">@edwardsotelojr</p>
+              <p style="margin-bottom: 10px; margin-left: -15px;">Houston, TX</p>
+            </div>
+            <div class="col-5">
+              <button type="button" class="btn  btn-sm" style="margin-top: 5px; color: #ffb061; border-color: #ffb061; border-width: revert; background-color: rgba(255,255,255,0.5);">Follow</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="exploreTopStreamerBox">
+      <div class="row justify-content-end" style="margin-top: 8px;">
+        <div class="col-6">
+          <p style="float: right; margin-right: 15px; margin-bottom: 0;">listeners</p>
+        </div>
+      </div>
+      <div class="row justify-content-center" style="margin-bottom: 10px; margin-top: 7px;">
+        <div class="col-4">
+          <img src="Vibin.png" class="exploreTopSongCover">
+        </div>
+        <div class="col-6">
+          <p style="margin-bottom: 0; font: 1.15em 'Fira Sans', sans-serif;">One More Hour</p>
+          <p style="margin-bottom: 2px; font: 0.90em 'Fira Sans', sans-serif;">@TameImpala</p>
+          <p style="margin-bottom: 2px; margin-left: 6px; font: 0.75em 'Fira Sans', sans-serif; color: gray;">Hometown</p>
+          <p style="margin-bottom: 3px; font: 0.80em 'Fira Sans', sans-serif">Sydney, Australia</p>
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <span class="badge badge-secondary tag">Alternative</span>
+        <span class="badge badge-secondary tag">#Alternative</span>
+        <span class="badge badge-secondary tag">#TameImpala</span>
+        <span class="badge badge-secondary tag">#SlowRush</span>
+      </div>
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-3">
+          <img src="default-avatar.jpg" class="exploreTopStreamerAva">
+        </div>
+        <div class="col-9">
+          <div class="row">
+            <div class="col">
+              <p style="margin-bottom: 0; margin-left: -15px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+                  font-size: 16px;
+                  letter-spacing: -0.4px;
+                  word-spacing: -0.6px;
+                  font-weight: 400;">Edward Sotelo Jr's Live Session</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <p style="margin-bottom: 0; margin-left: -15px;">@edwardsotelojr</p>
+              <p style="margin-bottom: 10px; margin-left: -15px;">Houston, TX</p>
+            </div>
+            <div class="col-5">
+              <button type="button" class="btn  btn-sm" style="margin-top: 5px; color: #ffb061; border-color: #ffb061; border-width: revert; background-color: rgba(255,255,255,0.5);">Follow</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="exploreTopStreamerBox">
+      <div class="row justify-content-end" style="margin-top: 8px;">
+        <div class="col-6">
+          <p style="float: right; margin-right: 15px; margin-bottom: 0;">listeners</p>
+        </div>
+      </div>
+      <div class="row justify-content-center" style="margin-bottom: 10px; margin-top: 7px;">
+        <div class="col-4">
+          <img src="Vibin.png" class="exploreTopSongCover">
+        </div>
+        <div class="col-6">
+          <p style="margin-bottom: 0; font: 1.15em 'Fira Sans', sans-serif;">One More Hour</p>
+          <p style="margin-bottom: 2px; font: 0.90em 'Fira Sans', sans-serif;">@TameImpala</p>
+          <p style="margin-bottom: 2px; margin-left: 6px; font: 0.75em 'Fira Sans', sans-serif; color: gray;">Hometown</p>
+          <p style="margin-bottom: 3px; font: 0.80em 'Fira Sans', sans-serif">Sydney, Australia</p>
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <span class="badge badge-secondary tag">Alternative</span>
+        <span class="badge badge-secondary tag">#Alternative</span>
+        <span class="badge badge-secondary tag">#TameImpala</span>
+        <span class="badge badge-secondary tag">#SlowRush</span>
+      </div>
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-3">
+          <img src="default-avatar.jpg" class="exploreTopStreamerAva">
+        </div>
+        <div class="col-9">
+          <div class="row">
+            <div class="col">
+              <p style="margin-bottom: 0; margin-left: -15px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+                  font-size: 16px;
+                  letter-spacing: -0.4px;
+                  word-spacing: -0.6px;
+                  font-weight: 400;">Edward Sotelo Jr's Live Session</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <p style="margin-bottom: 0; margin-left: -15px;">@edwardsotelojr</p>
+              <p style="margin-bottom: 10px; margin-left: -15px;">Houston, TX</p>
+            </div>
+            <div class="col-5">
+              <button type="button" class="btn  btn-sm" style="margin-top: 5px; color: #ffb061; border-color: #ffb061; border-width: revert; background-color: rgba(255,255,255,0.5);">Follow</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="exploreTopStreamerBox">
+      <div class="row justify-content-end" style="margin-top: 8px;">
+        <div class="col-6">
+          <p style="float: right; margin-right: 15px; margin-bottom: 0;">listeners</p>
+        </div>
+      </div>
+      <div class="row justify-content-center" style="margin-bottom: 10px; margin-top: 7px;">
+        <div class="col-4">
+          <img src="Vibin.png" class="exploreTopSongCover">
+        </div>
+        <div class="col-6">
+          <p style="margin-bottom: 0; font: 1.15em 'Fira Sans', sans-serif;">One More Hour</p>
+          <p style="margin-bottom: 2px; font: 0.90em 'Fira Sans', sans-serif;">@TameImpala</p>
+          <p style="margin-bottom: 2px; margin-left: 6px; font: 0.75em 'Fira Sans', sans-serif; color: gray;">Hometown</p>
+          <p style="margin-bottom: 3px; font: 0.80em 'Fira Sans', sans-serif">Sydney, Australia</p>
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <span class="badge badge-secondary tag">Alternative</span>
+        <span class="badge badge-secondary tag">#Alternative</span>
+        <span class="badge badge-secondary tag">#TameImpala</span>
+        <span class="badge badge-secondary tag">#SlowRush</span>
+      </div>
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-3">
+          <img src="default-avatar.jpg" class="exploreTopStreamerAva">
+        </div>
+        <div class="col-9">
+          <div class="row">
+            <div class="col">
+              <p style="margin-bottom: 0; margin-left: -15px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+                  font-size: 16px;
+                  letter-spacing: -0.4px;
+                  word-spacing: -0.6px;
+                  font-weight: 400;">Edward Sotelo Jr's Live Session</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <p style="margin-bottom: 0; margin-left: -15px;">@edwardsotelojr</p>
+              <p style="margin-bottom: 10px; margin-left: -15px;">Houston, TX</p>
+            </div>
+            <div class="col-5">
+              <button type="button" class="btn  btn-sm" style="margin-top: 5px; color: #ffb061; border-color: #ffb061; border-width: revert; background-color: rgba(255,255,255,0.5);">Follow</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="exploreTopStreamerBox">
+      <div class="row justify-content-end" style="margin-top: 8px;">
+        <div class="col-6">
+          <p style="float: right; margin-right: 15px; margin-bottom: 0;">listeners</p>
+        </div>
+      </div>
+      <div class="row justify-content-center" style="margin-bottom: 10px; margin-top: 7px;">
+        <div class="col-4">
+          <img src="Vibin.png" class="exploreTopSongCover">
+        </div>
+        <div class="col-6">
+          <p style="margin-bottom: 0; font: 1.15em 'Fira Sans', sans-serif;">One More Hour</p>
+          <p style="margin-bottom: 2px; font: 0.90em 'Fira Sans', sans-serif;">@TameImpala</p>
+          <p style="margin-bottom: 2px; margin-left: 6px; font: 0.75em 'Fira Sans', sans-serif; color: gray;">Hometown</p>
+          <p style="margin-bottom: 3px; font: 0.80em 'Fira Sans', sans-serif">Sydney, Australia</p>
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <span class="badge badge-secondary tag">Alternative</span>
+        <span class="badge badge-secondary tag">#Alternative</span>
+        <span class="badge badge-secondary tag">#TameImpala</span>
+        <span class="badge badge-secondary tag">#SlowRush</span>
+      </div>
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-3">
+          <img src="default-avatar.jpg" class="exploreTopStreamerAva">
+        </div>
+        <div class="col-9">
+          <div class="row">
+            <div class="col">
+              <p style="margin-bottom: 0; margin-left: -15px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+                  font-size: 16px;
+                  letter-spacing: -0.4px;
+                  word-spacing: -0.6px;
+                  font-weight: 400;">Edward Sotelo Jr's Live Session</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <p style="margin-bottom: 0; margin-left: -15px;">@edwardsotelojr</p>
+              <p style="margin-bottom: 10px; margin-left: -15px;">Houston, TX</p>
+            </div>
+            <div class="col-5">
+              <button type="button" class="btn  btn-sm" style="margin-top: 5px; color: #ffb061; border-color: #ffb061; border-width: revert; background-color: rgba(255,255,255,0.5);">Follow</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="row" style="margin-top: 18px; margin-bottom: 5px;">
+    <h5 style="margin-left: 9px;">Top Songs</h5>
+    <div class="input-append btn-group" style="height: 25px;">
+      <input class="span2" id="appendedInputButton" size="16" type="text" style="background-color: #696969; width: 200px; margin-left: 10px;" placeholder="Search by Genre or Tags">
+    </div>
+  </div>
+  <div class="exploreRow">
+    <div class="exploreTopSongBox">
+      <div class="row align-content-left">
+        <div class="col-1" style="margin-top: 3px; margin-left: 8px;">
+          1
+        </div>
+        <div class="col-8" style="margin-top: 10px;">
+          <p class="text-center" style="margin-bottom:1px; white-space: normal;
+            font-size: 17px; font-family: Arial, Helvetica, sans-serif; letter-spacing: 0.2px;">One Morsdfsd fsdf dsdfse Hour</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <img src="default-avatar.jpg" class="exploreTopSongCover">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <img src="default-avatar.jpg" class="exploreTopSongArtistAva">
+        </div>
+        <div class="col-10">
+          <p style="margin-bottom: 0; margin-left: 12px;">@TameImpala</p>
+          <p style="margin-bottom: 0; font-size: 10px; margin-left: 17px;">Hometown:</p>
+          <p style="margin-bottom: 5px; font-size: 12px; margin-left: 10px;">Sydney, Australia</p>
+        </div>
+      </div>
+      <div class="row" style="margin-left: 10px; font-size: 12px; margin-bottom: 3px;">
+        Featured:
+        <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+        <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="row" style="margin-bottom: 5px; margin-top: 18px;">
+    <h5 style="margin-left: 9px;">Top Artists</h5>
+    <div class="input-append btn-group" style="height: 25px;">
+      <input class="span2" id="appendedInputButton" size="16" type="text" style="background-color: #696969; width: 200px; margin-left: 10px; " placeholder="Search by Genre or Tags">
+    </div>
+  </div>
+
+  <div class="exploreRow">
+    <div class="exploreUserBox">
+      <div class="container">
+        <div class="row justify-content-center">
+          Edward Sotelo Jr
+        </div>
+        <div class="row justify-content-center" style="font-size: 14px; margin-top: -5px;">
+          @edwardsotelojr
+        </div>
+        <div class="row justify-content-center" style="font-size: 12px; margin-top: -5px;">
+          Houston, TX
+        </div>
+        <div class="row" style="margin-top: 18px;">
+          <div class="col" style="max-width: 33%; font-size: 11px; white-space: initial;">
+            Rap Alternative Chopped & Screwed
+          </div>
+          <div class="col" style="max-width: 33%;">
+            <img src="default-avatar.jpg" class="exploreTopArtistAva">
+          </div>
+          <div class="col" style="max-width: 33%;">
+            <h4> <span class="badge badge-light"> Live</span> </h4>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-6" style="font-size: 14px;">
+            Favorite Artist
+          </div>
+          <div class="col-6" style="font-size: 14px; text-align: end;">
+            Favorite Song
+          </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top: 5px;">
+          <div class="col-10">
+            <img src="default-avatar.jpg" class="exploreTopSongArtistAva" style="margin-right: 15px;">
+            <button class="btn-primary btn-sm" style="margin-top: 5px; margin-right: 5px;">Follow</button>
+            <img src="default-avatar.jpg" class="exploreTopSongCover" style="width: 35px; height: 35px;">
+          </div>
+        </div>
+        <div class="row" style="margin-bottom: 5px;">
+          <div class="col-6" style="font-size: 13px; text-align: center;">
+            @TameImpala
+          </div>
+          <div class="col-6" style="font-size: 13px; white-space: normal; text-align: center;">
+            One More Hour
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
+    <h5 style="margin-left: 9px;">Promoted Music</h5>
+  </div>
+  <div class="exploreRow">
+    <div class="exploreTopSongBox">
+      <div class="row align-content-left">
+        <div class="col-1" style="margin-top: 3px; margin-left: 8px;">
+          1
+        </div>
+        <div class="col-8" style="margin-top: 10px;">
+          <p class="text-center" style="margin-bottom:1px; white-space: normal;
+              font-size: 17px; font-family: Arial, Helvetica, sans-serif; letter-spacing: 0.2px;">One Morsdfsd fsdf dsdfse Hour</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <img src="default-avatar.jpg" class="exploreTopSongCover">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <img src="default-avatar.jpg" class="exploreTopSongArtistAva">
+        </div>
+        <div class="col-10">
+          <p style="margin-bottom: 0; margin-left: 12px;">@TameImpala</p>
+          <p style="margin-bottom: 0; font-size: 10px; margin-left: 17px;">Hometown:</p>
+          <p style="margin-bottom: 5px; font-size: 12px; margin-left: 10px;">Sydney, Australia</p>
+        </div>
+      </div>
+      <div class="row" style="margin-left: 10px; font-size: 12px; margin-bottom: 3px;">
+        Featured:
+        <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+        <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
+    <h5 style="margin-left: 9px;">Events Happening</h5>
+  </div>
+  <div class="exploreRow">
+    <div class="exploreEventBox">
+      <div class="row justify-content-between">
+        <div class="col-7" style="margin-top: 7px; margin-left: 8px;">
+          Tame Impala's Concert
+        </div>
+        <div class="col-4" style="margin-top: 7px; margin-right: 8px;">4/20/2020
+        </div>
+      </div>
+      <div class="row justify-content-center" style="margin-top: 5px;">
+        <div class="col-4">
+          <img src="default-avatar.jpg" class="exploreEventFlyer" style="margin-left: 9px;">
+        </div>
+        <div class="col-8" style="display: flex; flex-wrap: wrap">
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva" style="">
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva" style="">
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva" style="display: block;">
+          <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva" style="display: block;">
+          <br>
+          <span class="badge badge-secondary tag" style="display: inline-block; width: max-content; height: min-content;">Rap</span>
+          <span class="badge badge-secondary tag" style="display: inline-block; width: max-content; height: min-content;">Trap Music</span>
+          <span class="badge badge-secondary tag" style="display: inline-block; width: max-content; height: min-content;">#YoungDolph</span>
+          <span class="badge badge-secondary tag" style="display: inline-block; width: max-content; height: min-content;">#HellofALife</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-7" style="margin-left: 8px;ß">
+          Venue Name <br>Location
+          <p style="font-size: 12px; white-space: normal;">Event Post (info) goes right here.</p>
+        </div>
+        <div class="col-4 justify-content-center" style="border-color: black; border-style: solid;">
+          <p style="margin-bottom: 0; font-size: 15px;">GA: $10</p>
+          <p style="margin-bottom: 0; font-size: 15px;">VIP: $20</p>
+          <p style="margin-bottom: 5px; font-size: 15px;">M&G: $40</p>
+          <a href="">Parking</a>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 5px; font-size: 12px; margin-bottom: 3px;">
+        <div class="col-2">
+          <img src="default-avatar.jpg" class="exploreEventHostAva">
+        </div>
+        <div class="col-5">
+          <p style="margin-left: 5px;">@TameImpala<br>
+            Houston, TX</p>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-light btn-sm" style="margin-top: 7px;"> Follow</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
 </div>
 <script>
     $(".exploreTopSongAva").tooltip({

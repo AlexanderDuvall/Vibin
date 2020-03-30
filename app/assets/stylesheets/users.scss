@@ -115,20 +115,23 @@
 
 .Form{
   position: relative;
-  width: 49%;
+  width: 320px;
   border-color: #b2b0ae;
   border-style: solid;
   margin-top: 20px;
-  float: left;
   border-radius: 10px;
   padding: 10px 10px 10px 10px;
   background-color: #ffb061;
 }
 
+.Input{
+  border-radius: 5px;
+  margin-left: 5px;
+  min-width: 280px;
+  max-width: 350px;
+}
+
 .NonMemberBenefits{
-  position: relative;
-  width: 49%;
-  float: right;
   border-color: #b2b0ae;
   margin-top: 20px;
   border-style: solid;
@@ -136,6 +139,7 @@
   padding: 10px 10px 10px 10px;
   background-color: #ffb061;
 }
+
 //
 ////
 //////
@@ -283,7 +287,7 @@
 // new.html.erb
 .SignUp {
   position: relative;
-  min-width: 400px;
+  min-width: 1000px;
 }
 
 
@@ -375,9 +379,6 @@
 }
 
 
-
-
-
 .country-box {
   width: 25%;
   float: left;
@@ -415,15 +416,17 @@
   right: 0;
 }
 
+.Label{
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
 .rowcss2 {
   width: 100%;
   height: auto;
 }
 
 .TermsOfAgreement{
-  position: relative;
-  width: 49%;
-  float: right;
   border-color: #b2b0ae;
   margin-top: 20px;
   border-style: solid;
@@ -432,14 +435,16 @@
   background-color: #ffb061;
 }
 
-.submit{
-  isplay: none;
+.Submit{
+  display: none;
   width: 140px;
   height: 30px;
   position: relative;
   top: 10px;
-  left: 25px;
+  left: 15px;
   background: #ffb061;
+  color: white;
+  border-radius: 5px;
 }
 
 .YourTaste{

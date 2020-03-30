@@ -4,18 +4,25 @@ $theme: #595453;
 $sideColor: #730E15;
 $fontSize: 28px;
 $buttonColor: #eaa766;
+//hello
 .musicPlayer {
   height: 81px;
   width: 100%;
   background-color: $theme;
   align-items: center;
+  display: flex;
 }
 
 .songDetails {
   position: relative;
   float: left;
   height: 100%;
-  min-width: 300px;
+  max-width: 400px;
+  width: 200px;
+  left: 16px;
+  @media only screen and (max-width: 500px) {
+    width: 90px;
+  }
 }
 
 .songCover {
@@ -26,7 +33,6 @@ $buttonColor: #eaa766;
 }
 
 .like_button_liked {
-
   display: block;
   width: 50px;
   height: 50px;
@@ -37,7 +43,6 @@ $buttonColor: #eaa766;
   border-style: none;
   margin-left: 52px;
   padding-right: 0px;
-  display: block;
   margin-top: 20px;
   -webkit-animation: bgcolor 3s infinite;
   animation: bgcolor 1s infinite;
@@ -77,7 +82,6 @@ $buttonColor: #eaa766;
   30% {
     color: #fc7303
   }
-
   60% {
     color: #fca903
   }
@@ -93,7 +97,6 @@ $buttonColor: #eaa766;
   position: relative;
   float: left;
   margin-left: 10px;
-
   p {
     margin-left: 5px;
   }
@@ -175,19 +178,26 @@ $buttonColor: #eaa766;
   background-color: inherit;
 }
 
-.audio-player {
+.Center-Audio {
+  margin: auto;
+  text-align: center;
+  width: 85%;
+}
 
+.audio-player {
   display: flex;
   align-items: center;
   background-color: $theme;
   margin: auto;
-  top: 4px;
+  top: -6px;
   position: relative;
-
   .audio-buttons {
     display: flex;
     margin: auto;
     position: relative;
+    @media only screen and (max-width: 600px) {
+      margin-top: 22px;
+    }
   }
 
   button.playlist-modal {
@@ -209,7 +219,6 @@ $buttonColor: #eaa766;
     border-radius: 100000px;
     cursor: pointer;
 
-
   }
 
   .center {
@@ -221,7 +230,7 @@ $buttonColor: #eaa766;
   }
 
   .seek-bar {
-    min-width: 100%;
+    min-width: 75%;
     top: 10px;
     background-color: $buttonColor;
     display: flex;
@@ -229,9 +238,11 @@ $buttonColor: #eaa766;
     cursor: pointer;
     margin: auto;
     height: 7px;
-    paddinng-right: 5px;
+    padding-right: 5px;
     position: relative;
-
+    @media only screen and (max-width: 600px) {
+      visibility: hidden;
+    }
     .fill {
       height: 7px;
       background-color: $blue;
@@ -266,7 +277,6 @@ $buttonColor: #eaa766;
     border-radius: 100000px;
     cursor: pointer;
 
-
   }
 
   button.skip_forward {
@@ -293,7 +303,6 @@ $buttonColor: #eaa766;
     border-radius: 100000px;
     cursor: pointer;
 
-
   }
 
   button.shuffle {
@@ -305,7 +314,6 @@ $buttonColor: #eaa766;
     font-size: 24px;
     border-radius: 100000px;
     cursor: pointer;
-
 
   }
 }
@@ -331,13 +339,23 @@ button.volume {
 
 }
 
+.musicPlayer {
+  height: 81px;
+  max-width: 100%;
+  background-color: $theme;
+  align-items: center;
+}
+
 .right_footer {
   width: 200px;
   float: right;
-  margin-right: 10px;
+  right: 23px;
   position: relative;
   top: 3px;
-
+  @media only screen and (max-width: 760px) {
+    visibility: hidden;
+    width: 0px;
+  }
   .right_elements {
     display: flex;
     align-items: center;
@@ -363,6 +381,7 @@ button.volume {
       border-radius: 100000px;
       cursor: pointer;
       margin-top: 16px;
+
     }
 
     button.playlist {

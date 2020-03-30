@@ -6,13 +6,13 @@
         <div class="col">
 
         </div>
-      <% elsif playlist.song_positions.size > 3 %>
+      <% elsif playlist.song_positions.size >= 4 %>
         <div class="col">
           <div class="playlist_box">
-            <img class="image1" src="<%= getPlaylistImageURLforPlaylist(playlist, "1") %>"/>
-            <img class="image2" src="<%= getPlaylistImageURLforPlaylist(playlist, "2") %>"/>
-            <img class="image3" src="<%= getPlaylistImageURLforPlaylist(playlist, "3") %>"/>
-            <img class="image4" src="<%= getPlaylistImageURLforPlaylist(playlist, "4") %>"/>
+            <img class="image1" src="<%= getPlaylistImageURLforPlaylist(playlist, 1) %>"/>
+            <img class="image2" src="<%= getPlaylistImageURLforPlaylist(playlist, 2) %>"/>
+            <img class="image3" src="<%= getPlaylistImageURLforPlaylist(playlist, 3) %>"/>
+            <img class="image4" src="<%= getPlaylistImageURLforPlaylist(playlist, 4) %>"/>
             <button class="play border border-dark" onclick='SelectedSong(null, null,null,false,<%=playlistToArray(playlist.id).to_json%>, <%= playlist.id.to_json %>)'>
               <i id="play-icon" class="ion-play"></i>
             </button>

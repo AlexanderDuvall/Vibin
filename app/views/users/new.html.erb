@@ -1,5 +1,5 @@
 <%= form_with(model:@user, multipart: true) do |f| %>
-  <div id="SignUp" class="SignUp">
+  <div id="signUp" class="SignUp">
     <div class="Images" id="header">
       <div class="LeftHeader" id="leftHeader">
         <%= image_tag "insert.png", :class => "LeftHeaderImage", :id => "leftHeaderImage" %>
@@ -60,68 +60,85 @@
       Banner Text Color
     </div>
   </div>
-  <div class="Form">
-    <label class="nameLabel">
-      Name
-    </label>
-    <input type="text" class="nameInput" name="user[name]" id="user_name" placeholder="name">
-    <br>
-    <label class="usernameLabel">
-      @
-    </label>
-    <input type="text" class="UsernameInput" name="user[username]" id="user_username" placeholder="username">
-    <br>
-    <label class="EmailLabel">
-      email
-    </label>
-    <input type="text" id="user_email" name="user[email]" class="EmailInput" placeholder="email">
-    <br>
-    <label class="PasswordLabel">
-      Password
-    </label>
-    <input type="password" id='user_password' name="user[password]" class="PasswordInput" placeholder="password">
-    <br>
-    <label class="PasswordLabel">
-      Password Confirm
-    </label>
-    <input type="password" name="user[password_confirmation]" id='user_password_confirmation' class="PasswordInput">
-    <br>
-    <label class="BirthdayLabel">
-      Birthday
-    </label>
-    <input type="date" class="BirthdayInput" name="user[birthday]" id="user_birthday" >
-    <br>
-    <label class="GenderLabel">
-      Gender
-    </label>
-    <select class="GenderInput" name="user[gender]" id="user_gender">
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-      <option value="TransMale">Transgender Male</option>
-      <option value="TransFemale">Transgender Female</option>
-    </select>
-    <br>
-    <label class="HomeTownLabel">
-      Hometown
-    </label>
-      <input id="user_hometown" name="user[hometown]" placeholder="Enter a city" type="text" />
-    <br>
-    <label class="ResideLabel">
-      Reside In
-    </label>
-    <input id="user_location" name="user[location]"  placeholder="Enter a city" type="text" onclick="getLocation()">
+    <div class="row justify-content-center">
+      <div class="col-3" style="max-width: 320px; margin-right: 15px;">
+        <div class="Form" style="margin-bottom: 100px;">
+          <label class="Label">
+            Name
+          </label><br>
+          <input type="text" class="Input" name="user[name]" id="user_name" placeholder="name" style="border-radius: 3px;">
+          <br>
+          <label class="Label">
+            Username
+          </label><br>
+          <input type="text" class="Input" name="user[username]" id="user_username" placeholder="username">
+          <br>
+          <label class="Label">
+            Email
+          </label><br>
+          <input type="text" id="user_email" name="user[email]" class="Input" placeholder="email">
+          <br>
+          <label class="Label">
+            Password
+          </label><br>
+          <input type="password" id='user_password' name="user[password]" class="Input" placeholder="password">
+          <br>
+          <label class="Label">
+            Confirm Password
+          </label><br>
+          <input type="password" name="user[password_confirmation]" id='user_password_confirmation' class="Input">
+          <br>
+          <label class="Label">
+            Birthday
+          </label><br>
+          <input type="date" class="Input" name="user[birthday]" id="user_birthday" >
+          <br>
+          <label class="Label">
+            Gender
+          </label><br>
+          <select class="Input" name="user[gender]" id="user_gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="TransMale">Transgender Male</option>
+            <option value="TransFemale">Transgender Female</option>
+          </select>
+          <br>
+          <label class="Label">
+            Hometown
+          </label><br>
+          <input class="Input" id="user_hometown" name="user[hometown]" placeholder="Enter a city" type="text" />
+          <br>
+          <label class="Label">
+            Reside In
+          </label><br>
+          <input class="Input" id="user_location" name="user[location]"  placeholder="Enter a city" type="text"  oninput="getCoords(this.value)">
+        </div>
+      </div>
+      <div class="col-4" style="margin-left: 15px;">
+        <div class="row">
+          <div class="col NonMemberBenefits">
+            <p>Free Account Benefits</p>
+            <p>    Earn ad-free days.</p>
+            <p>    Upload Music.</p>
+            <p>    listen to Broadcasts.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col TermsOfAgreement">
+            <em>Please Read the Terms of Agreements.</em>
+            <br>
+            <input type="checkbox" id="user_Terms_of_Agreement" value="1">  I have read and do agree to the Terms of Agreements.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input  type="submit" name="commit" id="submit" class="Submit" value="Create Account" data-disable-with="Create" />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="NonMemberBenefits">
-    <p>Free Account Benefits</p>
-     <p>    Earn ad-free days.</p>
-    <p>    Upload Music.</p>
-    <p>    listen to Broadcasts.</p>
-  </div>
-  <div class="TermsOfAgreement">
-    <em>Please Read the Terms of Agreements.</em>
-    <br>
-    <input type="checkbox" id="user_Terms_of_Agreement" value="1">  I have read and do agree to the Terms of Agreements.
-  </div>
+<% end %>
   <input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader" onchange=
               "document.getElementById('leftHeaderImage').src = window.URL.createObjectURL(this.files[0]);
               oneTimeImageSelection('firstHeader');
@@ -138,7 +155,6 @@
     <input hidden type="text" id="user_longitude" name="user[longitude]">
     <input hidden type="text" id="user_latitude" name="user[latitude]">
 
-    <input  type="submit" name="commit" id="submit" class="submit" value="Create Account" data-disable-with="Create" />
 
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABBVE90zE3SB_kb52KWFSS2Fqumy303do&libraries=places"></script>
   <style>
@@ -194,6 +210,15 @@
           } else {
              console.log("Geolocation is not supported by this browser.");
           }
+      }
+      function success(position) {
+          const latitude  = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          console.log("latitude: " + latitude + " longitude: " + longitude);
+      }
+      function getCoords(val){
+          navigator.geolocation.getCurrentPosition(success);
+          console.log("val " + val);
       }
       var geocoder = new google.maps.Geocoder;
       var infowindow = new google.maps.InfoWindow;
@@ -416,9 +441,6 @@
           });
           $('#user_hometown').change(function(){
               console.log('select home');
-              readyToSubmit();
-          });
-          $('#user_location').change(function() {
               readyToSubmit();
           });
           $('#user_Terms_of_Agreement').click(function() {
@@ -652,6 +674,3 @@
           $('#submit').css('display', 'none');
       }
   </script>
-</div>
-
-  <% end %>
