@@ -44,7 +44,7 @@
     <div class="Avatar">
       <img src="/default-avatar.jpg" style="width:100%; height:100%; object-fit:cover;" id="avatarImage">
     </div>
-    <!--
+
     <div class="Badge" id="BioBadge">
 
     </div>--
@@ -245,7 +245,7 @@
       <p><span class="badge badge-primary text-white">@<%= @user.username %></span></p>
     </div>
     <div class="profileLocation" id="profileLocation">
-      <p><span class="badge badge-primary text-white"><%= @user.zipcode %></span></p>
+      <p><span class="badge badge-primary text-white"><%= @user.hometown %></span></p>
     </div>
     <div class="profileAvatar" id="profileAvatar">
       <% if @user.avatar.attached? %>

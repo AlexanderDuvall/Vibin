@@ -7,11 +7,13 @@
   background-color: red;
   display: flex;
 }
-.Images {
-  //height: 300px;
+.Header {
   position: relative;
   border-style: solid;
   border-color: #b2b0ae;
+  height: 240px;
+  display: flex;
+  justify-content: center;
 }
 
 .Badge{
@@ -20,23 +22,29 @@
   z-index: 3;
   text-align: center;
   color: black;
-  height: 18px;
+  height: min-content;
+  border-radius: 4px;
+  margin-top: 90px;
 }
-.header {
-  width: 75%;
-  min-height: 400px;
-  background-color: white;
-  display: flex;
-  position: relative;
+
+.LeftBadge{
+  width: 160px;
 }
+
+.RightBadge{
+  width: 165px;
+}
+
 .LeftHeader {
   position: absolute;
+  display: flex;
   width: 50%;
   top: 0;
   left: 0;
   z-index: 2;
-//  height: 100%;
+  height: inherit;
   overflow: hidden;
+  justify-content: center;
 }
 
 .LeftHeaderImage {
@@ -47,11 +55,13 @@
 
 .RightHeader {
   position: absolute;
+  display: flex;
   width: 50%;
   right: 0;
   top: 0;
   z-index: 2;
-
+  height: inherit;
+  justify-content: center;
 }
 
 .RightHeaderImage {
@@ -67,6 +77,9 @@
   border-width: thick;
   border-style: solid;
   z-index: 3;
+  height: 115px;
+  width: 115px;
+  margin-top: 60px;
 }
 
 #avatarImage{
@@ -94,23 +107,6 @@
   width: 25%;
   height: 100%;
   background-color: green;
-}
-
-.LeftHeader {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  background-size: 100% 100%;
-}
-
-
-.RightHeader {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  background-size: 100% 100%;
 }
 
 .Form{

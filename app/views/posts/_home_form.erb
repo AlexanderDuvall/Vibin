@@ -1,0 +1,54 @@
+<%= form_with(model: @newPost, multipart: true) do |f| %>
+  <%= f.text_area :content, class: "form-content", rows: 1, placeholder: "Text" %>
+  <!-- photo button -->
+  <label class="btn btn-primary btn-sm">
+    <%= image_tag "PictureUploadButton.png", style: "height:30px; width:30px;", id: "imagesUploader" %>
+  </label>
+  <input hidden class="photo_upload" name="post[images][]" id="images" type="file" multiple="true" accept="image/jpeg, image/tiff, image/png">
+  <img src="" id="previewPostImage" height="80px" width="80px">
+  <label class="btn btn-success" style="float:right; margin-top: 7px;">
+    <h5 style="margin-top: 6px">Vibe</h5>
+    <%= f.submit "", style: "display:none" %>
+  </label>
+
+<% end %>
+
+<script>
+    $(function () {
+        $("#imagesUploader").on("click", function () {
+            $("#images").trigger("click");
+            console.log("lmaooo");
+        });
+        var preview = $("#previewPostImage");
+        console.log(preview);
+        $("#images").change(function (event) {
+            var input = $(event.currentTarget);
+            var file = input[0].files[0];
+            var reader = new FileReader();
+            console.log("lmaooo");
+            reader.onload = function (e) {
+                console.log("lmaooo");
+                image_base64 = e.target.result;
+                preview.attr("src", image_base64);
+            };
+            reader.readAsDataURL(file);
+        });
+
+        var textarea = document.querySelector('textarea');
+
+        textarea.addEventListener('keydown', autosize);
+
+        function autosize() {
+            var el = this;
+            setTimeout(function () {
+                el.style.cssText = 'height:auto;';
+                // for box-sizing other than "content-box" use:
+                // el.style.cssText = '-moz-box-sizing:content-box';
+                el.style.cssText = 'height:' + (el.scrollHeight + 10) + 'px';
+            }, 0);
+        }
+
+    });
+
+
+</script>

@@ -1,5 +1,9 @@
-Hi <%= @user.name %>,
+Welcome to Vibin Music, <%= @user.name %>!
+============================================
 
-Thanks for registering! To confirm your registration click the URL below.
+Enjoy your 1 month premium membership trial!
+  No ads, live stream abilities and more songs than spotify.
+
+  Thanks for registering! To confirm your registration click the URL below.
 
 <%= link_to "Activate", confirm_email_url(@user.confirm_token, host: "localhost:3000") %>

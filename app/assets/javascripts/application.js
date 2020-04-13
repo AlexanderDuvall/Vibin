@@ -586,7 +586,7 @@ function SelectedSong(song, username, title, singleSong, ...args) {
         nextSong();
     }
 }
-
+/*
 function sendTheAJAX(controller, ...id) {
     var x = new XMLHttpRequest;
     x.onreadystatechange = function () {
@@ -616,7 +616,7 @@ function sendTheAJAX(controller, ...id) {
     x.send();
     history.pushState(null, null, url);
 }
-
+*/
 function sendData(duration, ...args) {
     try {
         if (args.length == 0) {
@@ -687,3 +687,4 @@ function validateFiles(inputFile) {
         $(inputFile).val('');
     }
 }
+

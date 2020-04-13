@@ -1,3 +1,8 @@
+console.log("in home.js btich");
+$('#bitch').click(function () {
+    console.log('bitch');
+})
+
 $('#DJ').click(function () {
     Rails.ajax({
         url: $(this).data("url"),

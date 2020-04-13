@@ -1,15 +1,16 @@
-<%= image_tag "Vibin", class: "VibinTab", onclick: "sendTheAJAX('', '')"%>
-<%= image_tag "explore", class: "ExploreTab", onclick: "sendTheAJAX('explore', '')"%>
-<%= image_tag "groupies", class: "GroupiesTab", onclick: "sendTheAJAX('groupies', '')"%>
+<%= image_tag "Vibin", class: "VibinTab", onclick: "ajaxToPage('')"%>
+<%= image_tag "explore", class: "ExploreTab", onclick: "ajaxToPage('explore')"%>
+<%= image_tag "groupies", class: "GroupiesTab", onclick: "ajaxToPage('groupies')"%>
 
 <%= form_tag search_path, method: :get, remote: true do %>
   <%= text_field_tag :term, nil, placeholder: "Search", class: "SearchBar" %>
 <% end %>
 
-<div style="float: right;">
-    <%= image_tag "messages", class: "MessagesTab", onclick: "sendTheAJAX('conversations', '')"%>
+<div style="float: right; margin-top: 2px;">
+  <%= image_tag "PostButton", class: "Tab", onclick: "openPostModal()" %>
+    <%= image_tag "messages", class: "Tab", onclick: "sendTheAJAX('conversations', '')"%>
   <div class="NotificationTabDiv">
-    <%= image_tag "notification", class: "notification" %>
+    <%= image_tag "notification", class: "Tab" %>
     <div class="dropdown-content-notification">
       <h6><%= current_user.name %></h6>
     </div>
@@ -35,3 +36,52 @@
     <div id="current-user"></div>
   <% end %>
 </div>
+
+
+<script>
+
+    function ajaxToPage(page) {
+        $.ajax({
+            type: 'GET',
+            url: '/'+page,
+            data: {
+            },
+            success: function(result) {
+                document.getElementById('main').innerHTML = result;
+                console.log('it worked');
+                $.ajax({
+                    method: "GET",
+                    url: "home.js",
+                    dataType: "script",
+                    success: function (e) {
+                        console.log("success");
+                    },
+                     error: function (e) {
+                        console.log(e);
+                     }
+                });
+            },
+            error: function (error) {
+                console.log("error ", error);
+            }
+        });
+        window.history.pushState("object or string", "Sign up", "/" + page);
+    }
+    function openPostModal(){
+      $('#modal').css('display', 'flex');
+      $.ajax({
+          type: 'GET',
+          url: '/songs/new',
+          data: {
+          },
+          success: function(result) {
+              $('#modal').innerHTML = result;
+              },
+          error: function (error) {
+              console.log("error ", error);
+          }
+      });
+  }
+
+
+</script>

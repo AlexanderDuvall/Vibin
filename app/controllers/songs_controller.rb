@@ -91,6 +91,7 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new(params[:id])
+    puts "\n\n\n\n\n\n------- Song object instance created. ----------\n\n\n\n\n\n"
   end
 
   def destroy

@@ -7,11 +7,12 @@ class HomeController < ApplicationController
 
   # back-end code for pages/home
   def home
+    puts "\n\n\n\n\n\n\n\n\n\n\n\n"
     @TopChart = Song.where("user_id > 0")
     @user = current_user
-    @recommendedSongs = Song.all.where("genre = ?", "NULL")
     if logged_in?
       # array with current_user id
+      @recommendedSongs = Song.all.limit 5
       @asss = [current_user]
       # array of following row ids the current user is in
       @followingRows = Relationship.all.where("follower_id = ?", current_user)
@@ -23,11 +24,12 @@ class HomeController < ApplicationController
       @userpost = Post.all.where("user_id IN (?) ", @asss)
       @usersongpost = Song.all.where("user_id IN (?) ", @asss)
       @posts = @userpost
+      @newPost = Post.new
       @broadcasters = Broadcaster.all.where("user_id IN (?) AND is_playing IN (?)", @asss, 1)
       @albums = Album.all.where("user_id IN (?)", @asss)
       @combine = (@usersongpost + @posts + @broadcasters + @albums)
-      @combine = @combine.sort_by {|f| f.created_at}.reverse.paginate(page: params[:page], per_page: 10)
-      @recommendedUsers = User.last(5) # FIXME get mutual friends.
+      @combine = @combine.sort_by { |f| f.created_at }.reverse.paginate(page: params[:page], per_page: 10)
+      @recommendedUsers = User.last(3) #TODO FIXME get mutual friends.
       # @songs = Array.new
       #following = Array.new
       #following.push(current_user.id)

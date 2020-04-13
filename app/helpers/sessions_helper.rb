@@ -33,14 +33,13 @@ module SessionsHelper
   def current_user
   #@current_user = User.find_by(2)
     if (user_id = session[:user_id])
-      puts "session[:user_id] = #{user_id}"
       @current_user ||= User.find_by(id: user_id)
     elsif (user_id = cookies.signed[:user_id])
       user = User.find_by(id: user_id)
       puts "user equals User.find_by"
       puts user.methods
       if user && user.authenticated?(:remember, cookies[:remember_token])
-        log_in(user)
+        #log_in(user)
         puts "user && user.auth. current_user: #{user}"
         @current_user = user
       end

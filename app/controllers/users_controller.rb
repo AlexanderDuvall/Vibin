@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end
 
 
-
   def confirm_email
     user = User.find_by_confirm_token(params[:token])
     if user
@@ -109,6 +108,7 @@ class UsersController < ApplicationController
       render "/settings"
     end
   end
+
   def new2
     @topArtists = UserArtistPlayCounter.order(plays: :desc)
     @topSongs = SongLike.group(:song_id).order('count(*) DESC')
@@ -142,7 +142,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :username, :name, :longitude, :latitude, :bio,
                                  :gender, :password, :password_confirmation,
                                  :birthday, :Terms_of_Agreement, :avatar, :firstHeader,
-                                 :secondHeader, :badgeColor, :badgeTextColor, :location, :hometown,
-                                 :imagesProperties)
+                                 :secondHeader, :badgeColor, :badgeTextColor, :location, :hometown)
   end
 end

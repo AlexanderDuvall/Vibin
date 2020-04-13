@@ -100,8 +100,8 @@
   font-weight: bold;
 }
 
-.userHomePage {
-  min-width: 1200px;
+.UserHomePage {
+  min-width: 1000px;
   height: 1000px;
 }
 
@@ -237,47 +237,58 @@
   font-weight: bold;
 }
 
-.homeUserFeed{
+.HomeUserFeed{
   position: relative;
   float: left;
   width: 50%;
-  margin-top: 70px;
+  margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 .homeLibrary{
   height: inherit;
-  background-color: #4CAF50;
+  background-color: rgb(129, 129, 129);
+  width: 90%;
+  display: inline-block;
+  border-radius: 15px;
+  margin-bottom: 6px;
 }
 
 .homeLibraryPlaylistCover{
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   margin-top: 10px;
 }
 
 .homeLibraryPlaylist{
   height: inherit;
-  background-color: #00aaff;
+  background-color: #696969;
   width: 100px;
   margin-left: 9px;
   text-align: center;
   margin-bottom: 5px;
   border-radius: 5px;
+  border-width: thin;
+  border-style: solid;
+  border-color: #dbdbdb;
 }
 
 .homeLibrarySong{
-  height: 175px;
+  height: inherit;
   width: inherit;
-  background-color: #4d7ce3;
+  background-color: #696969;
   margin-left: 9px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 15px;
   margin-bottom: 10px;
+  border-width: thin;
+  border-style: solid;
+  border-color: #dbdbdb;
 }
 
 .homeLibrarySongCover{
-  height: 90px;
-  width: 90px;
+  height: 80px;
+  width: 80px;
   margin-top: 5px;
 }
 
@@ -296,45 +307,49 @@
   border-radius: 13px;
 }
 .homeRecommended {
-  position: relative;
-  top: 40px;
   float: left;
   width: 50%;
   text-align: -moz-center;
+  margin-bottom: 100px;
 }
 
-.recommended-column {
-  border-radius: 50px;
+.RecommendedContainer {
+  border-radius: 15px;
   width: 90%;
-  background-color: #3ca4e3;
+  height: inherit;
+  background-color: rgb(129, 129, 129);
+  margin-top: 15px;
 }
 
-.recommendedUsers {
-  height: 200px;
+.RecommendedRow {
+  height: inherit;
   width: 100%;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.recommendedUser {
+.RecommendedUser {
   display: inline-block;
   height: 180px;
   width: 250px;
+  background-color: #696969;
   border-style: dotted;
 }
 
-.recommendedUserTop {
+.RecommendedUserTop {
   height: 40px;
   width: 100%;
 }
 
-.recommendedUserMiddle {
+.RecommendedUserMiddle {
   height: 80px;
   width: 100%;
 }
 
-.recommendedUserFav {
+.RecommendedUserFav {
   height: 60%;
   width: 60px;
   border-radius: 100px;
@@ -343,7 +358,7 @@
   border-color: white;
 }
 
-.recommendedUserAvatar {
+.RecommendedUserAvatar {
   height: 100%;
   width: 90px;
   border-radius: 100px;
@@ -352,28 +367,28 @@
   border-color: white;
 }
 
-.recommendedUserInfo {
+.RecommendedUserInfo {
 
 }
 
-.recommendedUsers::-webkit-scrollbar {
+.RecommendedUsers::-webkit-scrollbar {
   width: 0px;
   height: 0px;
 }
 
-.recommendedSongs::-webkit-scrollbar {
+.RecommendedSongs::-webkit-scrollbar {
   width: 0px;
   height: 0px;
 }
 
-.recommendedSongs {
+.RecommendedSongs {
   height: 200px;
   width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
-.recommendedSong {
+.RecommendedSong {
   height: 200px;
   width: 150px;
   border-style: dotted;
@@ -579,12 +594,16 @@
   overflow-y: hidden;
   white-space: nowrap;
   margin-bottom: 10px;
+  -ms-overflow-style: none;
+
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
 .exploreRow::-webkit-scrollbar {
-  height: 0;
-  width: 0;
+  display: none;
 }
+
+
 
 .exploreTopSongColumn {
   float: left;
@@ -599,6 +618,8 @@
   border-radius: 20px;
   border-style: solid;
   border-color: #00aaff;
+  background-color: #696969;
+  display: inline-block;
 }
 
 .exploreStreamerCover {
@@ -732,6 +753,7 @@
    display: inline-block;
    width: 260px;
    height: inherit;
+  background-color: #696969;
  }
 .exploreEventBox{
   margin-right: 15px;
@@ -741,6 +763,7 @@
   display: inline-block;
   width: 300px;
   height: inherit;
+  background-color: #696969;
 }
 .exploreTopArtistAva{
   height: 60px;

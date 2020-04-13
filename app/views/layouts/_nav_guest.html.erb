@@ -7,42 +7,20 @@
 <% end %>
 
 <script>
-    var login = $(".login");
 
-    $(window).resize(function () {
-        var groupies = $(".GroupiesTab");
-        var groupiesPosition = groupies.position();
-        var loginPosition = login.position();
-        login =  $(".login");
-        var l = parseInt(loginPosition.left) - parseInt(groupiesPosition.left) - 60 ;
-        var lpx = l + " px";
-       // console.log(lpx);
-        if(loginPosition.left - groupiesPosition.left < 290){
-            $(".SearchBar").css("width", l);
-        } else{
-          $(".SearchBar").css("width", 220);
-        }
-
-    });
     function openLogin(){
         $('.dropdown-content-login').css('display', 'block');
-    };
-    $(function(){
-        $(window).click(function (e) {
-            if($('.dropdown-content-login').css('display') == 'block' &&
-                (e.target.className == "emailBox" || e.target.className == "loginButton")){
-                console.log();
-            }
-            else if ($('.dropdown-content-login').css('display') == 'block' ){
-                $('.dropdown-content-login').css('display', 'none');
-                console.log(e.target.className);
-            }
-        });
+    }
+    $("body").click(function(e) {
+        if (!e.target.id == "login" || !$(e.target).parents("#login").length) {
+            $('.dropdown-content-login').css('display', 'none');
+        }
     });
+
 </script>
 
 
-<div class="login" onmouseover="openLogin()">Login
+<div class="login" onmouseover="openLogin()" id="login">Login
   <div class="dropdown-content-login">
     <%= render 'sessions/form'%>
   </div>
