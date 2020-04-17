@@ -151,7 +151,7 @@ function buildPlayer(song, username, title, ...args) {
     }
 }
 
-function connect(user_id) {
+function connect(user_id,key) {
     console.log(user_id);
     x.keepalive = true;
     x.onreadystatechange = function () {
@@ -194,7 +194,7 @@ function connect(user_id) {
         }
     };
 
-    x.open("POST", "http://localhost:4447/establish?Action=1001", true);
+    x.open("POST", "http://localhost:4447/establish?Action=1001&key="+key, true);
     x.send();
 }
 

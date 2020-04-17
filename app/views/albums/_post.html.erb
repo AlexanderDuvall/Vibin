@@ -1,33 +1,28 @@
-<center>
-  <div class="post" id="<%= album.id %>">
-    <div class="postLeft">
-      <% if album.user.avatar.attached? %>
-        <%= image_tag (album.user.avatar), class: "post-ava" %>
-      <% else %>
-        <img src="http://localhost:3000/default-avatar.jpg" class='post-ava'>
-      <% end %>
-      <span style="color: white; display: block; font-size: 15px;"><%= album.user.name %></span>
-      <%= link_to "@" + album.user.username, user_path(album.user_id), onclick: "sendTheAJAX('users', #{album.user_id})", style: "color: white;" %>
+<div class="post" id="<%= album.id %>">
+  <% user = User.find(album.user_id) %>
+  <div class="postLeft">
+    <% if user.avatar.attached? %>
+      <%= image_tag (user.avatar), class: "post-ava" %>
+    <% else %>
+      <img src="http://localhost:3000/default-avatar.jpg" class='post-ava'>
+    <% end %>
+    <div class="UserPostInfo">
+      <%= link_to "#{user.name}  @#{user.username.downcase}", user_path(user.id), onclick: "sendTheAJAX('users', #{user.id})", style: "color: white;" %>
+      <p style="font-size: 12px;margin-left: 1px;margin-top: 1px;color: lightgray"> <%= age(Time.now, album.updated_at) %>
+        ago</p>
     </div>
-    <div class="postCenter">
-      <div style="margin-left: 4px; display: block; overflow: hidden;" id="content">
-        <p style="font-size:18px; text-align: left;"><%= album.title %></p>
-      </div>
-      <div style="display: block; overflow: hidden;">
-        <% if album.album_cover.attached? %>
-          <%= image_tag (album.album_cover), class: "imagePost" %>
-        <% end %>
-      </div>
+  </div>
+  <div class="postCenter">
+    <div style="margin-left: 4px; display: block; overflow: hidden;" id="content">
+      <p style="font-size:18px; text-align: left;"><%= album.title %></p>
     </div>
-    <div class="postRight">
-      <p style="color: white;"><%= album.updated_at.month %>/<%= album.updated_at.day %>/<%= album.updated_at.year %>
-        <br><%= age(Time.now, album.updated_at) %></p>
-      <% if album.user_id != current_user.id %>
-        <%#TODO ADD ALBUM LIKES %>
-      <% else %>
-        <p><%= link_to "delete", album, method: :delete,
-                       data: {confirm: "You sure?"}, remote: true, class: "delete", id: album.id %></p>
+    <div style="display: block; overflow: hidden;">
+      <% if album.album_cover.attached? %>
+        <%= image_tag  (album.album_cover), class: "imagePost" %>
+        <p>picture...</p>
+        <%else %>
+      <p>No Picture...</p>
       <% end %>
     </div>
   </div>
-</center>
+</div>

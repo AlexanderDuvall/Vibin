@@ -4,17 +4,47 @@
 
 .postLeft {
   margin-top: 5px;
-  max-width: 150px;
+  max-width: inherit;
   position: relative;
-  float: left;
+  float: top;
+  display: flex;
 
+  p {
+    color: white;
+    margin-top: 4px;
+    margin-left: 10px;
+    font-size: 15px;
+    margin-bottom: 0px;
+  }
+
+  a {
+    height: 23px;
+  }
+  #delete{
+    float: right;
+    position: absolute;
+    right:10px;
+    color: gray;
+    a{
+      color: gray;
+      &:hover{
+        color:lightgrey;
+      }
+    }
+  }
+}
+
+.UserPostInfo {
+  display: block;
+  height: 10px;
 }
 
 .postCenter {
   min-width: 150px;
-  max-width: calc(100% - 240px);
-  position: relative;
-  float: left;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7px;
 }
 
 .postForm {
@@ -33,14 +63,17 @@
 .postRight {
   max-width: 90px;
   position: relative;
-  float: left;
+  float: right;
+  margin-top: -41px;
+
+
 }
 
 
 .post-ava {
   display: block;
-  height: 90px;
-  width: 90px;
+  height: 45px;
+  width: 45px;
   border-radius: 50px;
   border-color: white;
   border-style: solid;
@@ -50,8 +83,10 @@
   display: block;
   overflow: hidden;
   background-color: #4d7ce3;
-  width: 100%;
+  width: 70%;
   margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
   min-height: 150px;
   border-radius: 10px;
   border-style: solid;
@@ -61,9 +96,11 @@
 .post-image {
   height: 105%;
   object-fit: cover;
-  width: 105%;
+  width: 70%;
   display: inline-block;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .img-wrapper {
@@ -76,12 +113,46 @@
   //position: relative;
 }
 
-.form-content {
-
+.PostFormText {
+  background-color: #ffc17a;
   border-radius: 5px;
   width: 100%;
   overflow: hidden;
   display: block;
-  font-size: 25px;
+  font-size: 17px;
   padding-bottom: 10px;
+  margin-left: -15px;
+}
+
+
+.PostFormContainer {
+  height: inherit;
+  width: inherit;
+
+}
+
+.PostFormUserAva {
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #ffa06c;
+  margin-left: -2px;
+  margin-top: -8px;
+}
+
+.PostFormButton {
+  height: 35px;
+  width: 60px;
+}
+
+.PostFormSubmitButton {
+  height: 35px;
+  width: 70px;
+}
+
+.CancelPostModal {
+  border: none;
+  border-radius: 15px;
+  background-color: rgba(87, 174, 255, 0.66);
 }

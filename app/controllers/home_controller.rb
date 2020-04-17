@@ -10,6 +10,7 @@ class HomeController < ApplicationController
     puts "\n\n\n\n\n\n\n\n\n\n\n\n"
     @TopChart = Song.where("user_id > 0")
     @user = current_user
+    @newPost = Post.new
     if logged_in?
       # array with current_user id
       @recommendedSongs = Song.all.limit 5
@@ -24,7 +25,6 @@ class HomeController < ApplicationController
       @userpost = Post.all.where("user_id IN (?) ", @asss)
       @usersongpost = Song.all.where("user_id IN (?) ", @asss)
       @posts = @userpost
-      @newPost = Post.new
       @broadcasters = Broadcaster.all.where("user_id IN (?) AND is_playing IN (?)", @asss, 1)
       @albums = Album.all.where("user_id IN (?)", @asss)
       @combine = (@usersongpost + @posts + @broadcasters + @albums)

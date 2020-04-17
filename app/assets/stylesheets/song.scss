@@ -13,11 +13,6 @@ $buttonColor: #eaa766;
   display: flex;
 }
 
-.CancelPostModal{
-  display: flex;
-  height: min-content;
-}
-
 .songDetails {
   position: relative;
   float: left;
@@ -137,9 +132,7 @@ $buttonColor: #eaa766;
   height: 79px;
   border: none;
 }
-.postRight {
-  min-width: 90px;
-}
+
 .broadcaster-ava {
 
   display: inline-block;
@@ -423,17 +416,6 @@ button.volume {
   }
 }
 
-.song {
-  background-color: #7096e8;
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  margin-bottom: 10px;
-  min-height: 150px;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: #C2D5E3;
-}
 
 .genres {
   //position: absolute;

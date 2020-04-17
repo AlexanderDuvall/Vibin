@@ -2,61 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14d1d3d5-2720-4fb4-8789-5c02e60b908d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/posts/_home_form.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.bash_profile" beforeDir="false" afterPath="$PROJECT_DIR$/.bash_profile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.floo" beforeDir="false" afterPath="$PROJECT_DIR$/.floo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ruby-version" beforeDir="false" afterPath="$PROJECT_DIR$/.ruby-version" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/posts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/posts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/sessions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/sessions.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/song.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/song.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/users.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/users.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/broadcasters_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/broadcasters_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/songs_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/songs_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mailers/user_mailer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/mailers/user_mailer.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/explore.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/explore.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/broadcasters_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/broadcasters_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/albums/_post.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/albums/_post.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/broadcasters/_post.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/broadcasters/_post.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/home/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/home.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_nav_guest.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_nav_guest.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/_nav_user.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_nav_user.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/sessions/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/songs/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/songs/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_mailer/account_activation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_mailer/account_activation.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_mailer/account_activation.text.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_mailer/account_activation.text.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/rails" beforeDir="false" afterPath="$PROJECT_DIR$/bin/rails" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/rake" beforeDir="false" afterPath="$PROJECT_DIR$/bin/rake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/setup" beforeDir="false" afterPath="$PROJECT_DIR$/bin/setup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/boot.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/boot.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cable.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/cable.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/production.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/production.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/content_security_policy.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/content_security_policy.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/locales/en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/en.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/puma.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/puma.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/spring.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/spring.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/storage.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/storage.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190727222620_rename_table_user_song_play_counter.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190727222620_rename_table_user_song_play_counter.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/posts/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/posts/_post.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/_post.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/posts/_repost.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/_repost.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/songs/_song.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/songs/_song.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/songs/_song_player.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/songs/_song_player.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +56,19 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@localhost-Desktop" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost-Desktop" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="vibinmusic_beta_development: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost-Desktop" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="vibinmusic_beta_development: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="broadcasters: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -358,7 +337,33 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="@localhost-Desktop: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="@localhost-Desktop: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@4a17f937" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="false" RAILS_SPRING_PRE_LOADER_OPTION="false" />
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+    <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -876,7 +881,17 @@
       <workItem from="1586803496398" duration="4293000" />
       <workItem from="1586813889987" duration="14000" />
       <workItem from="1586813905742" duration="668000" />
-      <workItem from="1586814585275" duration="5383000" />
+      <workItem from="1586814585275" duration="5568000" />
+      <workItem from="1586901717432" duration="486000" />
+      <workItem from="1586902205647" duration="9270000" />
+      <workItem from="1587011670291" duration="279000" />
+      <workItem from="1587011955744" duration="609000" />
+      <workItem from="1587056398497" duration="1148000" />
+      <workItem from="1587057561187" duration="2499000" />
+      <workItem from="1587080103134" duration="536000" />
+      <workItem from="1587080644309" duration="5495000" />
+      <workItem from="1587154006988" duration="18000" />
+      <workItem from="1587154037917" duration="5788000" />
     </task>
     <task id="LOCAL-00001" summary="Drag and drop playlists">
       <created>1560095000649</created>
@@ -1123,7 +1138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585595109255</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Added Post submission form on the timeline.">
+      <created>1586820633127</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1586820633127</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1144,17 +1166,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="text">
-                    <value>
-                      <list>
-                        <option value="post" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -1163,7 +1174,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Nested Att works for only one song." />
     <MESSAGE value="VERSION BEFORE MAJOR DB CHANGE" />
     <MESSAGE value="Version after db change" />
     <MESSAGE value="Nested Att works for Albums" />
@@ -1188,53 +1198,71 @@
     <MESSAGE value="AudioBar format change. Black background with orange accent" />
     <MESSAGE value="Able to establish first connection in live streaming." />
     <MESSAGE value="Able to resize audio bar to really small window" />
-    <option name="LAST_COMMIT_MESSAGE" value="Able to resize audio bar to really small window" />
+    <MESSAGE value="Added Post submission form on the timeline." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Post submission form on the timeline." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1032" y="178" key="#Notifications" timestamp="1587080506466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1032" y="178" key="#Notifications/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587080506466" />
+    <state x="1047" y="31" key="CommitChangelistDialog2" timestamp="1586820628688">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1047" y="31" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586820628688" />
     <state x="136" y="94" width="1736" height="856" key="DiffContextDialog" timestamp="1586805923424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="136" y="94" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586805923424" />
-    <state width="914" height="202" key="GridCell.Tab.0.bottom" timestamp="1586820555193">
+    <state width="1122" height="202" key="GridCell.Tab.0.bottom" timestamp="1587160384336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="202" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586820555193" />
-    <state width="914" height="202" key="GridCell.Tab.0.center" timestamp="1586820555193">
+    <state width="1122" height="202" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587160384336" />
+    <state width="914" height="202" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
+    <state width="1122" height="202" key="GridCell.Tab.0.center" timestamp="1587160384336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="202" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586820555193" />
-    <state width="914" height="202" key="GridCell.Tab.0.left" timestamp="1586820555193">
+    <state width="1122" height="202" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587160384336" />
+    <state width="914" height="202" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
+    <state width="1122" height="202" key="GridCell.Tab.0.left" timestamp="1587160384336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="202" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586820555193" />
-    <state width="914" height="202" key="GridCell.Tab.0.right" timestamp="1586820555193">
+    <state width="1122" height="202" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587160384336" />
+    <state width="914" height="202" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
+    <state width="1122" height="202" key="GridCell.Tab.0.right" timestamp="1587160384336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="202" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586820555193" />
-    <state width="914" height="202" key="GridCell.Tab.1.bottom" timestamp="1586820555193">
+    <state width="1122" height="202" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587160384336" />
+    <state width="914" height="202" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
+    <state width="1122" height="202" key="GridCell.Tab.1.bottom" timestamp="1587160384337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="202" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586820555193" />
-    <state width="914" height="202" key="GridCell.Tab.1.center" timestamp="1586820555193">
+    <state width="1122" height="202" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587160384337" />
+    <state width="914" height="202" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
+    <state width="1122" height="202" key="GridCell.Tab.1.center" timestamp="1587160384337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="202" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586820555193" />
-    <state width="914" height="202" key="GridCell.Tab.1.left" timestamp="1586820555193">
+    <state width="1122" height="202" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587160384337" />
+    <state width="914" height="202" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
+    <state width="1122" height="202" key="GridCell.Tab.1.left" timestamp="1587160384337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="202" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586820555193" />
-    <state width="914" height="202" key="GridCell.Tab.1.right" timestamp="1586820555193">
+    <state width="1122" height="202" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587160384337" />
+    <state width="914" height="202" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
+    <state width="1122" height="202" key="GridCell.Tab.1.right" timestamp="1587160384337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="202" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586820555193" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1586803645799">
+    <state width="1122" height="202" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587160384337" />
+    <state width="914" height="202" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1587154137930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586803645799" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1586804114589">
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587154137930" />
+    <state x="922" y="209" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587056892518" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587158095010">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586804114589" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587158095010" />
     <state x="623" y="171" key="VcsDiffUtil.ChangesDialog" timestamp="1586805691399">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -1243,16 +1271,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586814453852" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586820329374">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1587160511925">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586820329374" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587160511925" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587057713627" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@db_migrate__VibinMusic_Beta.rcov" NAME="db:migrate: VibinMusic_Beta Coverage Results" MODIFIED="1576010844474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@db_rollback__VibinMusic_Beta.rcov" NAME="db:rollback: VibinMusic_Beta Coverage Results" MODIFIED="1562611363922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@routes__VibinMusic_Beta.rcov" NAME="routes: VibinMusic_Beta Coverage Results" MODIFIED="1562014189333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
-    <SUITE FILE_PATH="coverage/VibinMusic_Beta@Development__VibinMusic_Beta.rcov" NAME="Development: VibinMusic_Beta Coverage Results" MODIFIED="1586820382291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
+    <SUITE FILE_PATH="coverage/VibinMusic_Beta@Development__VibinMusic_Beta.rcov" NAME="Development: VibinMusic_Beta Coverage Results" MODIFIED="1587160384325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@Rails_console__VibinMusic_Beta.rcov" NAME="Rails console: VibinMusic_Beta Coverage Results" MODIFIED="1577993749853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@db_create__VibinMusic_Beta.rcov" NAME="db:create: VibinMusic_Beta Coverage Results" MODIFIED="1558118844575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
   </component>

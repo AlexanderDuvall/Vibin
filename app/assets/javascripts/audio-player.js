@@ -48,8 +48,9 @@ window.addEventListener("DOMContentLoaded", function (e) {
     };
     broadcast.onclick = function () {
         let id = $("#broadcast_text").data("session");
+        let key = $("#broadcast_text").data("key");
         console.log(id + " uhuh");
-        connect(id);
+        connect(id,key);
     };
     skipForward.addEventListener('click', function () {
         if (isPlayList) {

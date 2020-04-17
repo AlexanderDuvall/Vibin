@@ -1,9 +1,9 @@
-<%= form_with(model: @post, multipart: true) do |f| %>
-  <div class="modal-header">
+<%= form_with(model: @newPost, multipart: true, :html => { :style => 'width: 100%;' }) do |f| %>
+  <div hidden class="modal-header">
     <h5 class="modal-title" id="exampleModalLabel">Post</h5>
-    <% if @post.errors.any? %>
+    <% if @newPost.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+        <h2><%= pluralize(@newPost.errors.count, "error") %> prohibited this post from being saved:</h2>
         <ul>
           <% post.errors.full_messages.each do |message| %>
             <% puts message %>
@@ -13,27 +13,49 @@
       </div>
     <% end %>
   </div>
-  <div class="modal-body">
-    <%= f.text_area :content, class: "form-content", rows: 1, placeholder: "Text" %>
-    <!-- photo button -->
-    <label class="btn btn-primary btn-sm">
-      <%= image_tag "PictureUploadButton.png", style: "height:30px; width:30px;", id: "imagesUploader" %>
-    </label>
-    <input hidden class="photo_upload" name="post[images][]" id="images" type="file" multiple="true" accept="image/jpeg, image/tiff, image/png">
-    <img src="" id="previewPostImage" height="80px" width="80px">
+  <div class="row" style="justify-content: end;">
+    <div class="col-1"  style="margin-right: 20px; margin-top: 2px;">
+      <button class="CancelPostModal" id="cancelPostModal"> X</button>
+    </div>
   </div>
-  <div class="modal-footer">
-    <label class="btn btn-success">
-      <%= image_tag "PostButton.png", style: "height:20px; width:20px;" %>
-      <span style="display:none;" class="">
-          <%= f.submit "", style: "width: 20px; height:20px;" %>
-        </span>
-    </label>
-  </div>
+    <div class="row justify-content-center">
+      <div class="col-2" style="text-align: center;">
+        <img src="default-avatar.jpg" class="PostFormUserAva">
+      </div>
+      <div class="col-9" style="margin-top: 8px;">
+        <%= f.text_area :content, class: "PostFormText", rows: 1, placeholder: "Text" %>
+      </div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row justify-content-end" style="margin-top: 9px;">
+      <div class="col-2">
+        <button class="PostFormButton">
+          <img src="PictureUploadButton.png">
+        </button>
+    </div>
+      <div class="col-2">
+        <button class="PostFormButton">
+          <img src="MusicButton.png">
+        </button>
+      </div>
+      <div class="col-3">
+        <button class="PostFormSubmitButton">
+          Submit
+        </button>
+      </div>
+    </div>
 <% end %>
 
 <script>
+    $(document).ready(function() {
+        $('#cancelPostModal').click(function (event) {
+            event.preventDefault();
+        });
+    });
     $(function () {
+
+        /*
         $("#imagesUploader").on("click", function () {
             $("#images").trigger("click");
             console.log("lmaooo");
@@ -52,7 +74,7 @@
             };
             reader.readAsDataURL(file);
         });
-
+      */
         var textarea = document.querySelector('textarea');
 
         textarea.addEventListener('keydown', autosize);
@@ -66,6 +88,7 @@
                 el.style.cssText = 'height:' + (el.scrollHeight + 10) + 'px';
             }, 0);
         }
+
 
     });
 

@@ -1,24 +1,22 @@
-<center>
 <div class="broadcaster" id="<%= broadcaster.id %>">
   <div class="broadcasterLeft">
-      <% if broadcaster.user.avatar.attached? %>
-        <%= image_tag (broadcaster.user.avatar), class: "broadcaster-ava" %>
-      <% else %>
-        <img src="http://localhost:3000/default-avatar.jpg" class="broadcaster-ava">
-      <% end %>
-      <span style="color: white; display: block; font-size: 15px;"><%= User.find(broadcaster.user_id).name %></span>
-      <%= link_to "@" + User.find(broadcaster.user_id).username, user_path(broadcaster.user_id), onclick: "sendTheAJAX('users', #{broadcaster.user_id})", style: "color: white;"%>
+    <% if broadcaster.user.avatar.attached? %>
+      <%= image_tag (broadcaster.user.avatar), class: "broadcaster-ava" %>
+    <% else %>
+      <img src="http://localhost:3000/default-avatar.jpg" class="broadcaster-ava">
+    <% end %>
+    <span style="color: white; display: block; font-size: 15px;"><%= User.find(broadcaster.user_id).name %></span>
+    <%= link_to "@" + User.find(broadcaster.user_id).username, user_path(broadcaster.user_id), onclick: "sendTheAJAX('users', #{broadcaster.user_id})", style: "color: white;" %>
   </div>
   <div class="broadcasterCenter">
     <%= image_tag (broadcaster.broadcast_cover), class: "imageBroadcast", onclick: "newBroadcaster(#{broadcaster.id})" %>
     <h3 style="color:white" onclick="newBroadcaster(1)">Join my Stream!</h3>
   </div>
   <div class="broadcasterRight">
-      <p><%= month(broadcaster.updated_at) %><br><%= dayYear(broadcaster.updated_at) %>
-        <br><%= age(Time.now, broadcaster.updated_at) %></p>
+    <p><%= month(broadcaster.updated_at) %><br><%= dayYear(broadcaster.updated_at) %>
+      <br><%= age(Time.now, broadcaster.updated_at) %></p>
   </div>
 </div>
-</center>
 <script>
     function newBroadcaster(id) {
         console.log("We've been clicked... going to stream..." + id);

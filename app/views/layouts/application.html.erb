@@ -29,31 +29,30 @@
 </div>
 <div class="Modal" id="modal">
   <div class="ModalContainer" role="document" id="modalDialog">
-    <button class="CancelPostModal" id ="cancelPostModal"> X</button>
-     <div class="modal-content" style="height: 200px; width: 700px;">
-    </div>
+      <%= render 'posts/form', post: @newPost %>
   </div>
 </div>
-<div class="musicbar">
-  <%= render "songs/song_player" %>
+<% if logged_in? %>
+  <div class="musicbar">
+    <%= render "songs/song_player" %>
+<% end %>
 </div>
 </body>
 </html>
 
 <script>
 
-     $('#cancelPostModal').click(function () {
+    $('#cancelPostModal').click(function () {
         console.log("d");
         modal = document.querySelector("#modal");
         modal.style.display = "none";
     });
 
-     var modal = document.getElementById('modal');
-     $(window).click(function (event)
-     {
-         if(event.target.id == 'modal') {
-             $("#modal").css('display', 'none');
-         }
-     });
+    var modal = document.getElementById('modal');
+    $(window).click(function (event) {
+        if (event.target.id == 'modal') {
+            $("#modal").css('display', 'none');
+        }
+    });
 
 </script>

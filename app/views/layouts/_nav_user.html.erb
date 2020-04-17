@@ -8,7 +8,7 @@
 
 <div style="float: right; margin-top: 2px;">
   <%= image_tag "PostButton", class: "Tab", onclick: "openPostModal()" %>
-    <%= image_tag "messages", class: "Tab", onclick: "sendTheAJAX('conversations', '')"%>
+  <%= image_tag "messages", class: "Tab", onclick: "sendTheAJAX('conversations', '')"%>
   <div class="NotificationTabDiv">
     <%= image_tag "notification", class: "Tab" %>
     <div class="dropdown-content-notification">
@@ -48,8 +48,7 @@
             },
             success: function(result) {
                 document.getElementById('main').innerHTML = result;
-                console.log('it worked');
-                $.ajax({
+                 $.ajax({
                     method: "GET",
                     url: "home.js",
                     dataType: "script",
@@ -69,19 +68,6 @@
     }
     function openPostModal(){
       $('#modal').css('display', 'flex');
-      $.ajax({
-          type: 'GET',
-          url: '/songs/new',
-          data: {
-          },
-          success: function(result) {
-              $('#modal').innerHTML = result;
-              },
-          error: function (error) {
-              console.log("error ", error);
-          }
-      });
-  }
-
+      }
 
 </script>

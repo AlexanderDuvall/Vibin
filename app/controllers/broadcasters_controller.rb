@@ -47,6 +47,5 @@ class BroadcastersController < ApplicationController
 
   def update_params
     params.permit(:id, :is_playing)
-
   end
 end

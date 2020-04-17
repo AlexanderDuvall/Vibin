@@ -1,33 +1,36 @@
-<center>
-  <div class="post" id="<%= post.id %>">
-    <div class="postLeft">
-      <% if @user.avatar.attached? %>
-        <%= image_tag (@user.avatar), class: "post-ava" %>
-      <% else %>
-        <img src="http://localhost:3000/default-avatar.jpg" class= 'post-ava'>
-      <% end %>
-      <span style="color: white; display: block; font-size: 15px;"><%= User.find(post.user_id).name %></span>
-      <%= link_to "@" + User.find(post.user_id).username, user_path(post.user_id), onclick: "sendTheAJAX('users', #{post.user_id})", style: "color: white;"%>
+<div class="post" id="<%= post.id %>">
+  <div class="postLeft">
+    <% if @user.avatar.attached? %>
+      <%= image_tag (@user.avatar), class: "post-ava" %>
+    <% else %>
+      <img src="http://localhost:3000/default-avatar.jpg" class='post-ava'>
+    <% end %>
+    <div class="UserPostInfo">
+      <% user = User.find(post.user_id) %>
+      <%= link_to "#{user.name}  @#{user.username.downcase}", user_path(user.id), onclick: "sendTheAJAX('users', #{user.id})", style: "color: white;" %>
+      <p style="font-size: 12px;margin-left: 1px;margin-top: 1px;color: lightgray"> <%= age(Time.now, post.updated_at) %>
+        ago</p>
     </div>
+    <div id="delete">
+      <% if post.user_id != current_user.id %>
+        <%= link_to "Repost", post_repost_path(post), method: :post %>
+        <div id="post_<%= post.id %>_likes"><%= render partial: "/posts/likes", locals: {post: post} %></div>
+      <% else %>
+        <%= link_to "delete", post, method: :delete, data: {confirm: "You sure?"}, remote: true, class: "delete", id: post.id %>
+      <% end %>
+    </div>
+  </div>
+  <div style=display:flex>
     <div class="postCenter">
       <div style="margin-left: 4px; display: block; overflow: hidden;" id="content">
-        <p style="font-size:18px; text-align: left;"><%= post.content %></p>
+        <p class="ss" style="width: 100%; font-size:18px; text-align: left;"><%= post.content %></p>
       </div>
       <div style="display: block; overflow: hidden;">
         <% post.images.each do |image| %>
           <%= image_tag (image), class: "imagePost" %>
-       <% end %>
-     </div>
-   </div>
-    <div class="postRight">
-          <p style="color: white;"><%= post.updated_at.month %>/<%= post.updated_at.day %>/<%= post.updated_at.year %><br><%= age(Time.now, post.updated_at) %></p>
-        <% if post.user_id != current_user.id %>
-          <%= link_to "Repost", post_repost_path(post), method: :post %>
-          <div id="post_<%= post.id %>_likes"><%= render partial: "/posts/likes", locals: {post: post} %></div>
-        <% else %>
-          <p><%= link_to "delete", post, method: :delete,
-                         data: {confirm: "You sure?"}, remote: true, class: "delete", id: post.id %></p>
         <% end %>
+      </div>
     </div>
+
   </div>
-</center>
+</div>

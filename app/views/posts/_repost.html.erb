@@ -1,5 +1,4 @@
-<center>
-  <% repost = Post.find(post.post_id) %>
+   <% repost = Post.find(post.post_id) %>
   <div class="row post" id="<%= post.id %>">
     <div class="postLeft justify-content-center text-center">
       <div style="position: absolute; top:0">   <p> repost by <%= User.find(post.user_id).name %> </p></div>
@@ -36,4 +35,3 @@
       </div>
     </div>
   </div>
-</center>

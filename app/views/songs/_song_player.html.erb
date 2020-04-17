@@ -40,7 +40,7 @@
           <button id="like_button" class="like_button">
             <ion-icon name="flame"></ion-icon>
           </button>
-          <button id="broadcast_text" class="broadcast button_layout" data-session="<%= current_user.id.to_json if logged_in? %>">
+          <button id="broadcast_text" class="broadcast button_layout" data-session="<%= current_user.id.to_json if logged_in? %>" data-key="<%=getKey %>">
             <i id="play-icon" class="ion-wifi"></i>
           </button>
           <button id="renderAddPlaylist" class="playlist button_layout">
