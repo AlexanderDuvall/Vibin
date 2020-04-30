@@ -1,80 +1,185 @@
-<%= form_with(model: @newPost, multipart: true, :html => { :style => 'width: 100%;' }) do |f| %>
+<%= form_with(model: @newPost, multipart: true, :html => {:style => 'width: 100%;'}) do |f| %>
   <div hidden class="modal-header">
     <h5 class="modal-title" id="exampleModalLabel">Post</h5>
-    <% if @newPost.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@newPost.errors.count, "error") %> prohibited this post from being saved:</h2>
-        <ul>
-          <% post.errors.full_messages.each do |message| %>
-            <% puts message %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
   </div>
   <div class="row" style="justify-content: end;">
-    <div class="col-1"  style="margin-right: 20px; margin-top: 2px;">
-      <button class="CancelPostModal" id="cancelPostModal"> X</button>
+    <div class="col-1" style="margin-right: 20px; margin-top: 2px;">
+      <span class="CancelPostModal" id="cancelPostModal"> X</span>
     </div>
   </div>
-    <div class="row justify-content-center">
-      <div class="col-2" style="text-align: center;">
-        <img src="default-avatar.jpg" class="PostFormUserAva">
-      </div>
-      <div class="col-9" style="margin-top: 8px;">
-        <%= f.text_area :content, class: "PostFormText", rows: 1, placeholder: "Text" %>
-      </div>
+  <div class="row justify-content-center" style="margin: 10px 10px 10px 10px;">
+    <div class="" style=" width:min-content; display: flex;">
+      <img src="default-avatar.jpg" class="PostFormUserAva">
     </div>
-    <div class="row">
+    <div class="col-9" style="margin-top: 8px;">
+      <%= f.text_area :content, class: "PostFormText", rows: 1, placeholder: "Text", id: "post_content" %>
     </div>
-    <div class="row justify-content-end" style="margin-top: 9px;">
-      <div class="col-2">
-        <button class="PostFormButton">
-          <img src="PictureUploadButton.png">
-        </button>
+  </div>
+  <div class="row justify-content-center" id="previewImages">
+  </div>
+  <div class="row justify-content-center" id="previewSongs">
+  </div>
+  <input hidden class="photo_upload" id="images" type="file" multiple="true" accept="image/jpeg, image/tiff, image/png">
+  <div class="row justify-content-end" style="margin-top: 9px;">
+    <div class="col-2">
+      <button class="PostFormButton" id="imageUploader">
+        <%= image_tag "PictureUploadButton.png", style: "height:30px; width:30px;" %>
+      </button>
     </div>
-      <div class="col-2">
-        <button class="PostFormButton">
-          <img src="MusicButton.png">
-        </button>
-      </div>
-      <div class="col-3">
-        <button class="PostFormSubmitButton">
-          Submit
-        </button>
-      </div>
+    <div class="col-2">
+      <button class="PostFormButton" id='songUploader'>
+        <%= image_tag "MusicButton.png", style: "height:30px; width:30px;" %>
+      </button>
     </div>
+    <input hidden class="" name="post[songs][]" id="songs" type="file" multiple="true" accept="mp3 wav">
+    <div class="col-3">
+      <button class="PostFormSubmitButton" id="submitt" onclick=submitPost("FFFFFFF")>
+        Submish
+      </button>
+    </div>
+  </div>
 <% end %>
 
 <script>
-    $(document).ready(function() {
-        $('#cancelPostModal').click(function (event) {
+    function submitPost(content) {
+        var form = new FormData();
+        form.append("content", "hoes kinda mad");
+        console.log("content:" + content.toString());
+        console.log("helios" + typeof tmp_files);
+        for(var i = 0; i < imagesCount; i++){
+            form.append("images[]", tmp_files[i]);
+        }
+
+        Rails.ajax({
+            type: "POST",
+            url: "/newPost?",
+            data: form,
+            processData: false,
+            contentType: false,
+            success: function (data, textStatus, xhr) {
+                console.log("supposedly worked");
+            },
+            error: function (data) {
+                console.log("error " + data);
+            }
+        });
+    }
+
+    var imagesCount = 0;
+    var tmp_files = new Array();
+    window.addEventListener('DOMContentLoaded', function () {
+        document.getElementById("cancelPostModal").addEventListener("click", function () {
+            document.getElementById("post_content").value = "";
+            if (document.getElementById("previewImages").contains(document.getElementById('images1'))) {
+                document.getElementById("previewImages").removeChild(document.getElementById("images1"));
+            }
+            console.log("closed");
+        });
+        document.getElementById("post_content").addEventListener("onkeypress", function (event) {
+            console.log("ds");
+        });
+        document.getElementById("imageUploader").addEventListener("click", function (event) {
+            event.preventDefault();
+            $("#images").trigger("click");
             event.preventDefault();
         });
-    });
-    $(function () {
-
-        /*
-        $("#imagesUploader").on("click", function () {
-            $("#images").trigger("click");
-            console.log("lmaooo");
+        document.getElementById("songUploader").addEventListener("click", function (event) {
+            event.preventDefault();
+            $("#songs").trigger("click");
+            event.preventDefault();
         });
-        var preview = $("#previewPostImage");
-        console.log(preview);
+        document.getElementById("submitt").addEventListener("click", function (event) {
+            event.preventDefault();
+        });
+        var _URL = window.URL || window.webkitURL;
+        var height;
+        var width;
+        var reader;
+        var img;
+        var resolution;
+        var objectUrl;
+        var x;
+        var style;
         $("#images").change(function (event) {
-            var input = $(event.currentTarget);
-            var file = input[0].files[0];
-            var reader = new FileReader();
-            console.log("lmaooo");
-            reader.onload = function (e) {
-                console.log("lmaooo");
-                image_base64 = e.target.result;
-                preview.attr("src", image_base64);
-            };
-            reader.readAsDataURL(file);
+            var files = document.getElementById("images").files;
+            for (var i = 0; i < files.length; i++) {
+                tmp_files.push(files[i]);
+                img = new Image();
+                reader = new FileReader();
+                imagesCount +=1;
+                console.log("tmp_files length: " + tmp_files.length);
+                console.log("files length: " + files.length);
+                console.log(files[i].name);
+                console.log(files[i]);
+                objectUrl = _URL.createObjectURL(files[i]);
+                reader.readAsDataURL(files[i]); // convert to base64 string
+                reader.onload = function (e) {
+                    console.log(e);
+                    img.src = e.target.result;
+                    var col = document.createElement('div');
+                    col.setAttribute('style', "flex-basis: 0; margin: 5px 8px 8px 5px;");
+                    document.getElementById("previewImages").appendChild(col);
+                    x = document.createElement("IMG");
+                    img.onload = function () {
+                        width = this.width;
+                        height = this.height;
+                        console.log("width: " + width);
+                        console.log("height: " + height);
+                        resolution = width / height;
+                        console.log("resolution: ", resolution);
+                        if (resolution > 1) {
+                            if (width > 500) {
+                                width = 250;
+                                height = width / resolution;
+                            }
+                        } else {
+                            if (height > 500) {
+                                height = 250;
+                                width = height * resolution;
+                            }
+                        }
+                        style = "height:" + height + "px; width: " + width + "px; display: inline-block;";
+                        x.setAttribute('src', e.target.result);
+                        x.setAttribute("style", style);
+                        console.log("pushedssss" + e.target.result)
+                        var cancel = document.createElement("span");
+                        cancel.setAttribute('style', "background-color: red; height: 30px; width: 30px; position: absolute;");
+                        cancel.setAttribute("onclick", "removeImage(this)");
+                        document.getElementById("previewImages").lastChild.appendChild(cancel);
+                        document.getElementById("previewImages").lastChild.appendChild(x);
+                    };
+                }
+            }
         });
-      */
+        $("#songs").change(function (event) {
+            var files = document.getElementById("songs").files;
+            var audioTag;
+            var progressBar;
+            var coverDiv;
+            var titleTextBox;
+            var addFeaturedArtistButton;
+            var rowDiv;
+            for (var i = 0; i < files.length; i++) {
+                rowDiv = document.createElement("div");
+                rowDiv.setAttribute('class', 'row justify-content-center');
+                document.getElementById("previewSongs").appendChild(rowDiv);
+                reader = new FileReader();
+                audioTag = document.createElement("audio");
+                audioTag.src = URL.createObjectURL(this.files[0]);
+                audioTag.id = "player";
+                progressBar = document.createElement("progress");
+                progressBar.setAttribute('id', 'progressBar');
+                progressBar.setAttribute("value", "0");
+                progressBar.setAttribute("max", "1");
+                document.getElementById("previewSongs").firstChild.appendChild(progressBar);
+                audioTag.setAttribute("ontimeupdate", "initProgressBar()");
+                document.getElementById("previewSongs").appendChild(audioTag);
+                audioTag.setAttribute("ontimeupdate", "initProgressBar()");
+                //do
+                document.getElementById("previewSongs").appendChild(audioTag);
+            }
+        });
+
         var textarea = document.querySelector('textarea');
 
         textarea.addEventListener('keydown', autosize);
@@ -88,9 +193,60 @@
                 el.style.cssText = 'height:' + (el.scrollHeight + 10) + 'px';
             }, 0);
         }
+    })
+    ;
+
+    function removeImage(i) {
+        var col = i.parentNode;
+        var colParent = col.parentNode;
+        console.log(colParent);
+        var colIndex = Array.prototype.indexOf.call(colParent.children, col);
+        console.log(colIndex);
+        imagesCount -= 1;
+        tmp_files.splice(colIndex, 1);
+        document.getElementById("previewImages").removeChild(col);
+    }
+
+    function initProgressBar(song) {
+        var player = document.getElementById('player');
+        var length = player.duration;
+        var current_time = player.currentTime;
+
+        // calculate total length of value
+        var totalLength = calculateTotalValue(length);
+
+        // calculate current value time
+        var currentTime = calculateCurrentValue(current_time);
+
+        var progressbar = document.getElementById('progressBar');
+        progressbar.value = (player.currentTime / player.duration);
+        progressbar.addEventListener("click", seek);
 
 
-    });
+        function seek(event) {
+            var percent = event.offsetX / this.offsetWidth;
+            player.currentTime = percent * player.duration;
+            progressbar.value = percent / 100;
+        }
+    };
 
+    function calculateTotalValue(length) {
+        var minutes = Math.floor(length / 60);
+        var seconds_int = length - minutes * 60;
+        var seconds_str = seconds_int.toString();
+        var seconds = seconds_str.substr(0, 2);
+        var time = minutes + ':' + seconds;
 
+        return time;
+    }
+
+    function calculateCurrentValue(currentTime) {
+        var current_hour = parseInt(currentTime / 3600) % 24;
+        var current_minute = parseInt(currentTime / 60) % 60;
+        var current_seconds_long = currentTime % 60;
+        var current_seconds = current_seconds_long.toFixed();
+        var current_time = (current_minute < 10 ? "0" + current_minute : current_minute) + ":" + (current_seconds < 10 ? "0" + current_seconds : current_seconds);
+
+        return current_time;
+    }
 </script>

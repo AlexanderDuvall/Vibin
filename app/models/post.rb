@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   has_many_attached :images
   default_scope -> {order(created_at: :desc)}
   validates :user_id, presence: true
-  validates :content, presence: false
+  validates :content, presence: true, length: {minimum: 3, maximum: 140}
   has_many :likes
 # has_many :songs
   has_many :comments, dependent: :destroy

@@ -6,17 +6,17 @@
       <img src="http://localhost:3000/default-avatar.jpg" class="post-ava">
     <% end %>
     <div class="UserPostInfo">
-      <% user = User.find(post.user_id) %>
+      <% user = User.find(song.user_id) %>
       <%= link_to "#{user.name}  @#{user.username.downcase}", user_path(user.id), onclick: "sendTheAJAX('users', #{user.id})", style: "color: white;" %>
-      <p style="font-size: 12px;margin-left: 1px;margin-top: 1px;color: lightgray"> <%= age(Time.now, post.updated_at) %>
+      <p style="font-size: 12px;margin-left: 1px;margin-top: 1px;color: lightgray"> <%= age(Time.now, song.updated_at) %>
         ago</p>
     </div>
     <div id="delete">
-      <% if post.user_id != current_user.id %>
-        <%= link_to "Repost", post_repost_path(post), method: :post %>
-        <div id="post_<%= post.id %>_likes"><%= render partial: "/posts/likes", locals: {post: post} %></div>
+      <% if song.user_id != current_user.id %>
+        <%= link_to "Repost", post_repost_path(song), method: :post %>
+        <div id="post_<%= song.id %>_likes"><%= render partial: "/posts/likes", locals: {post: song} %></div>
       <% else %>
-        <%= link_to "delete", post, method: :delete, data: {confirm: "You sure?"}, remote: true, class: "delete", id: post.id %>
+        <%= link_to "delete", song, method: :delete, data: {confirm: "You sure?"}, remote: true, class: "delete", id: song.id %>
       <% end %>
     </div>
   </div>

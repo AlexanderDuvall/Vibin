@@ -25,7 +25,7 @@ class PostsController < ApplicationController
       @usersongpost = Song.all.where("user_id IN (?) ", @getUsers)
       puts "IN BROADCASTERS #{@broadcasters}"
       @posts = @userpost
-      @combine = (@usersongpost + @posts).sort_by {|post| post.created_at}.reverse.paginate(page: params[:page], per_page: 10)
+      @combine = (@usersongpost + @posts).sort_by { |post| post.created_at }.reverse.paginate(page: params[:page], per_page: 10)
       respond_to do |format|
         format.js
       end
@@ -34,27 +34,28 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
+    puts " this is whats up rn#{post_params }"
     respond_to do |format|
-      if @post.save!
-        format.js #FIX ME not rendering 
-        puts "skipping js?"
-        format.html {redirect_to root_url, notice: 'Post was successfully created.'}
-        format.json {render :show, status: :created, location: @post}
-      else
-        format.html {render :new}
-        format.json {render json: @post.errors, status: :unprocessable_entity}
-      end
+    if @post.save!
+      format.html { redirect_to root_url, notice: 'Post was successfully created.' }
+      format.json { render :show, status: :created, location: @post }
+
+    else
+      puts "failure post"
+      #format.html { render :new }
+      #format.json { render json: @post.errors, status: :unprocessable_entity }
+    end
     end
   end
 
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html {redirect_to @post, notice: 'Tweet was successfully updated.'}
-        format.json {render :show, status: :ok, location: @post}
+        format.html { redirect_to @post, notice: 'Tweet was successfully updated.' }
+        format.json { render :show, status: :ok, location: @post }
       else
-        format.html {render :edit}
-        format.json {render json: @post.errors, status: :unprocessable_entity}
+        format.html { render :edit }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -64,11 +65,11 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save!
         format.js
-        format.html {redirect_to @post, notice: 'Post was successfully created.'}
-        format.json {render :show, status: :created, location: @post}
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.json { render :show, status: :created, location: @post }
       else
-        format.html {render :new}
-        format.json {render json: @post.errors, status: :unprocessable_entity}
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -92,7 +93,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:user_id, :content, :post_id, images: [])
+    params.permit(:user_id, :content, :post_id, {images: []})
   end
 
   def repost_params

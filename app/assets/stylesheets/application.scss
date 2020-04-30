@@ -409,10 +409,12 @@ a:hover {
 }
 
 .ModalContainer {
+  margin-top: -20px;
   justify-content: center;
   display: flex;
   height: min-content;
-  width: 475px;
+  width: 65%;
+  min-width: 600px;
   background-color: #57aeff;
   border-color: #ffc17a;
   border-radius: 20px;
