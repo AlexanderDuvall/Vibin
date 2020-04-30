@@ -33,7 +33,7 @@
     </div>
     <input hidden class="" name="post[songs][]" id="songs" type="file" multiple="true" accept="mp3 wav">
     <div class="col-3">
-      <button class="PostFormSubmitButton" id="submitt" onclick=submitPost("FFFFFFF")>
+      <button class="PostFormSubmitButton" id="submitt" onclick=submitPost($(".PostFormText").val())>
         Submish
       </button>
     </div>
@@ -43,7 +43,7 @@
 <script>
     function submitPost(content) {
         var form = new FormData();
-        form.append("content", "hoes kinda mad");
+        form.append("content",content);
         console.log("content:" + content.toString());
         console.log("helios" + typeof tmp_files);
         for(var i = 0; i < imagesCount; i++){

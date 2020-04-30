@@ -20,20 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14d1d3d5-2720-4fb4-8789-5c02e60b908d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/posts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/posts/_newImage.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/posts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/posts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/posts_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/posts_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/albums_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/albums_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/posts_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/posts_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/post.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/post.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/posts/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts/_post.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/_post.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/songs/_song.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/songs/_song.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -844,7 +832,7 @@
       <workItem from="1588122152258" duration="2562000" />
       <workItem from="1588124740425" duration="1842000" />
       <workItem from="1588208161702" duration="86000" />
-      <workItem from="1588208252630" duration="9048000" />
+      <workItem from="1588208252630" duration="9488000" />
     </task>
     <task id="LOCAL-00001" summary="Drag and drop playlists">
       <created>1560095000649</created>
@@ -1105,7 +1093,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587160723272</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Posting with multiple images">
+      <created>1588219744945</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1588219744945</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1133,7 +1128,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version after db change" />
     <MESSAGE value="Nested Att works for Albums" />
     <MESSAGE value="Playlists keeps changes made in view and makes changes in database. Last commit: adds liked songs to default playlists." />
     <MESSAGE value="removed song reload problem in broadcasters" />
@@ -1158,7 +1152,8 @@
     <MESSAGE value="Able to resize audio bar to really small window" />
     <MESSAGE value="Added Post submission form on the timeline." />
     <MESSAGE value="Formatted userfeed posts. Optimized user search in userfeed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Formatted userfeed posts. Optimized user search in userfeed." />
+    <MESSAGE value="Posting with multiple images" />
+    <option name="LAST_COMMIT_MESSAGE" value="Posting with multiple images" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1032" y="178" key="#Notifications" timestamp="1587080506466">
@@ -1169,10 +1164,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1120" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587843035573" />
-    <state x="1047" y="31" key="CommitChangelistDialog2" timestamp="1587160718113">
+    <state x="1047" y="2" key="CommitChangelistDialog2" timestamp="1588219743175">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1047" y="31" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587160718113" />
+    <state x="1047" y="2" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588219743175" />
     <state x="136" y="94" width="1736" height="856" key="DiffContextDialog" timestamp="1588095906281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -1222,10 +1217,10 @@
     </state>
     <state x="922" y="209" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588208334210" />
     <state x="922" y="209" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587843643493" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587160729880">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1588219747335">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587160729880" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588219747335" />
     <state x="623" y="171" key="VcsDiffUtil.ChangesDialog" timestamp="1586805691399">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
