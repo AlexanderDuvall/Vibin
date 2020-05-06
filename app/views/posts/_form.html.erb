@@ -42,16 +42,20 @@
 <% end %>
 
 <script>
-    var genre = new Array;
-    var tags = new Array;
-    var featuredArtist = new Array;
+    var featuredArtistCount = new Array();
+    var featuredArtist = new Array();
+    var imagesCount = 0;
+    var imagefiles = new Array();
+    var songCount = 0;
+    var songfiles;
+    var totalGenreTags = 0;
+    var genre = new Array();
+    var tags = new Array();
     function submitPost(content) {
         var form = new FormData();
         form.append("content",content);
-        console.log("content:" + content.toString());
-        console.log("helios" + typeof tmp_files);
         for(var i = 0; i < imagesCount; i++){
-            form.append("images[]", tmp_files[i]);
+            form.append("images[]", imagefiles[i]);
         }
         Rails.ajax({
             type: "POST",
@@ -67,9 +71,6 @@
             }
         });
     }
-
-    var imagesCount = 0;
-    var tmp_files = new Array();
     window.addEventListener('DOMContentLoaded', function () {
         document.getElementById("cancelPostModal").addEventListener("click", function () {
             document.getElementById("post_content").value = "";
@@ -103,11 +104,11 @@
         $("#images").change(function (event) {
             var files = document.getElementById("images").files;
             for (var i = 0; i < files.length; i++) {
-                tmp_files.push(files[i]);
+                imagefiles.push(files[i]);
                 img = new Image();
                 reader = new FileReader();
                 imagesCount +=1;
-                console.log("tmp_files length: " + tmp_files.length);
+                console.log("imagefiles length: " + imagefiles.length);
                 console.log("files length: " + files.length);
                 console.log(files[i].name);
                 console.log(files[i]);
@@ -149,9 +150,7 @@
             }
         });
         var audio;
-        var songfiles = new Array();
-        var songfile;
-        var songCount = 0;
+
         var audioTag;
         var progressBar;
         var coverImage;
@@ -159,7 +158,6 @@
         var featuredArtistTextBox;
         var genreTagsTextBox;
         var titleTextBox;
-        var addFeaturedArtistButton;
         var rowDiv;
         var col2;
         var col9;
@@ -171,7 +169,6 @@
         var earnMoneyHyperLink;
         var linkText = document.createTextNode("Learn More");
         var audioplayer;
-
         $("#songs").change(function (event) {
             var files = event.target.files;
             for(var i = 0; i < files.length; i++){
@@ -184,20 +181,27 @@
                 coverImage.setAttribute('style', 'height: 100px; width: 100px;');
                 coverImage.setAttribute("src", 'default-avatar.jpg');
                 col2 = document.createElement('div');
-               // col2.setAttribute('class', 'col-2');
                 col2.setAttribute('style', 'width: 100px; flex: initial;');
                 col2.appendChild(coverImage);
                 rowDiv.appendChild(col2);
                 titleTextBox = document.createElement('input');
-                titleTextBox.setAttribute('style', 'height: 30px; width: 65%;');
+                titleTextBox.setAttribute('style', 'height: 30px; width: 62%;');
                 titleTextBox.setAttribute('placeholder', 'Title of Song');
+                featuredArtistTextBox = document.createElement('input');
+                featuredArtistTextBox.setAttribute('type', 'text');
+                featuredArtistTextBox.setAttribute('style', 'width: 200px; height: 25px; display: block;');
+                featuredArtistTextBox.setAttribute('placeholder', 'Featured Artist');
+                featuredArtistTextBox.setAttribute('id', 'featuredArtist');
+                featuredArtistTextBox.setAttribute('onkeyup', 'addFeaturedArtist(event, this)');
+                featuredArtistTextBox.setAttribute('onfocus', 'addAtSign(this)');
                 genreTagsTextBox = document.createElement('input');
-                genreTagsTextBox.setAttribute('style', 'width: 200px; height: 30px;');
+                genreTagsTextBox.setAttribute('style', 'width: 200px; height: 30px; display: block;');
                 genreTagsTextBox.setAttribute('type', 'text');
                 genreTagsTextBox.setAttribute('placeholder', 'Genres/#Tags');
                 genreTagsTextBox.setAttribute('id', 'genreTags');
                 genreTagsTextBox.setAttribute('onkeypress', 'addGenreTag(event, this)');
                 col9 = document.createElement('div');
+                col9.setAttribute('id', 'test');
                 col9.setAttribute('style', 'height: 200px; margin-left: 5px; flex: 1; ');
                 col9.appendChild(titleTextBox);
                 rowDiv.appendChild(col9);
@@ -209,8 +213,9 @@
                 earnMoneyHyperLink = document.createElement('a');
                 earnMoneyHyperLink.appendChild(linkText);
                 earnMoneyHyperLink.setAttribute('href', '');
-                earnMoneyHyperLink.setAttribute("style", 'font-size: 13px;');
+                earnMoneyHyperLink.setAttribute("style", 'font-size: 13px; word-break: break-all');
                 col9.appendChild(earnMoneyHyperLink);
+                col9.appendChild(featuredArtistTextBox);
                 col9.appendChild(genreTagsTextBox);
 
                /*
@@ -282,9 +287,44 @@
         }, 0);
     }
 
+    function addAtSign(box){
+        box.value = "@";
+    }
+    function addFeaturedArtist(key, str){
+        var keynum;
+        var s = str.value;
+        if(window.event){
+            keynum = key.keyCode;
+        }else if(key.which){
+            keynum = key.which;
+        }
+        if(keynum == 8 && s.length == 1){
+            console.log('sdf');
+            str.value = "@";
+        }
+        if(keynum == 13) {
+            window.event.preventDefault();
+            console.log(s);
+            addFeaturedArtistElement(s);
+            str.value = "";
+        }
+    }
+
+    function addFeaturedArtistElement(str){
+        var span;
+        span = document.createElement('span');
+        span.setAttribute('style', ' margin-left: 3px; margin-right:3px; width: min-content; height: 25px; background-color: pink; display: inline;');
+        var textNode = document.createTextNode(str);
+        span.appendChild(textNode);
+        var colDiv = document.getElementById('test');
+        var featuredArtistBox = document.getElementById('featuredArtist');
+        colDiv.insertBefore(span, featuredArtistBox);
+       // totalGenreTags += 1;
+    }
     function addGenreTag(key, str){
         var keynum;
-        var strr;
+        var s = str.value;
+        var typpe;
         if(window.event){
             keynum = key.keyCode;
         }else if(key.which){
@@ -293,16 +333,33 @@
         if(keynum == 13){
             window.event.preventDefault();
             if(str.value[0] == '#'){ // tag
-                strr = str.value.substring(1, str.length);
+                var strr = s.substring(1, s.length);
                 tags.push(strr);
+                typpe = 0;
             }else{
-                genre.push(str);
+                genre.push(s);
+                typpe = 1;
             }
-
+            console.log(s);
+            addGenreTagElement(s, typpe);
+            str.value = "";
         }
     }
-    function addGenreTagElement(){
 
+    function addGenreTagElement(str, genreOrTag){
+        var span;
+        span = document.createElement('span');
+        if(genreOrTag == 0){
+            span.setAttribute('style', ' margin-left: 3px; margin-right:3px; width: min-content; height: 25px; background-color: pink; display: inline;');
+        }else{
+            span.setAttribute('style', ' margin-left: 3px; margin-right:3px; width: min-content; height: 25px; background-color: purple; display: inline;');
+        }
+        var textNode = document.createTextNode(str);
+        span.appendChild(textNode);
+        var colDiv = document.getElementById('test');
+        var genreTagBox = document.getElementById('genreTags');
+        colDiv.insertBefore(span, genreTagBox);
+        totalGenreTags += 1;
     }
 
     function removeImage(i) {
@@ -312,7 +369,7 @@
         var colIndex = Array.prototype.indexOf.call(colParent.children, col);
         console.log(colIndex);
         imagesCount -= 1;
-        tmp_files.splice(colIndex, 1);
+        imagefiles.splice(colIndex, 1);
         document.getElementById("previewImages").removeChild(col);
     }
 

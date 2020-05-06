@@ -1,0 +1,23 @@
+<div class="row">
+  <% html = image_tag (images[0]), class: "expandedImage" %>
+  <% html2 = image_tag (images[1]), class: "expandedImage" %>
+  <% html3 = image_tag (images[2]), class: "expandedImage" %>
+
+  <div class="column">
+    <button class=imageExpanderLong onclick='expand("<%=escape_javascript html %>")'>
+      <div style="width:200px;height:250px;overflow: hidden">
+        <%= image_tag (images[0]), class: "imagePost3", id: "postImage" %>
+      </div>
+    </button>
+  </div>
+
+  <div class="column">
+    <button class=imageExpanderDual onclick='expand("<%= escape_javascript html2 %>")'>
+      <%= image_tag (images[1]), class: "imagePost2", id: "postImage" %>
+    </button>
+
+    <button class=imageExpanderDual onclick='expand("<%= escape_javascript html3 %>")'>
+      <%= image_tag (images[2]), class: "imagePost2", id: "postImage" %>
+    </button>
+  </div>
+</div>

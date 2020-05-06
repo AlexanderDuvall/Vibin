@@ -26,25 +26,19 @@
   <div style="display: block; overflow: hidden;">
     <% if post.images.length == 1 %>
       <div style="margin:auto">
-        <%= render 'posts/OneImage', locals = {images: post.images} %>
+        <%= render partial: 'posts/OneImage', locals: {images: post.images} %>
       </div>
     <% elsif post.images.length == 2 %>
-      <div style="margin:auto">
-        <%= render 'posts/TwoImages', locals = {images: post.images} %>
+      <div style="margin:auto;">
+        <%= render partial: 'posts/TwoImages', locals: {images: post.images} %>
       </div>
     <% elsif post.images.length == 3 %>
-      <div style="margin:auto">
-        <%= render 'posts/ThreeImages', locals = {images: post.images} %>
-      </div>
+      <%= render partial: 'posts/ThreeImages', locals: {images: post.images} %>
     <% elsif post.images.length == 4 %>
       <div style="margin:auto">
-        <%= render 'posts/FourImages', locals = {images: post.images} %>
+        <%= render partial: 'posts/FourImages', locals: {images: post.images} %>
       </div>
     <% end %>
 
   </div>
 </div>
-
-<script>
-
-</script>

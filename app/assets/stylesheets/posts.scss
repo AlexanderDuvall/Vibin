@@ -20,15 +20,18 @@
   a {
     height: 23px;
   }
-  #delete{
+
+  #delete {
     float: right;
     position: absolute;
-    right:10px;
+    right: 10px;
     color: gray;
-    a{
+
+    a {
       color: gray;
-      &:hover{
-        color:lightgrey;
+
+      &:hover {
+        color: lightgrey;
       }
     }
   }
@@ -157,3 +160,71 @@
   background-color: rgba(87, 174, 255, 0.66);
   cursor: grab;
 }
+
+.expandedImage {
+  max-width: 75%;
+  height: auto;
+  width: auto;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 50px;
+}
+
+.imageExpander {
+  max-width: 75%;
+  margin: auto;
+  display: block;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.imageExpanderDual {
+  max-width: 50%;
+  display: block;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.imagePost1 {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+  margin: auto;
+  padding-bottom: 10px;
+  border-radius: 15px;
+}
+.imagePost2 {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+  margin: auto;
+  padding-bottom: 10px;
+  border-radius: 15px;
+}
+.imagePost3 {
+   max-width: 700px;
+   height: auto;
+   width: auto;
+   padding-bottom: 10px;
+   border-radius: 15px;
+   margin-left: -75%;
+ }
+.imageExpanderLong {
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+
+
+
+
