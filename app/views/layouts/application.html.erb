@@ -29,8 +29,12 @@
 </div>
 <div class="Modal" id="modal">
   <div class="ModalContainer" role="document" id="modalDialog">
-      <%= render 'posts/form', post: @newPost %>
+    <%= render 'posts/form', post: @newPost %>
   </div>
+</div>
+
+<div class=Modal id=imageExpander>
+
 </div>
 <% if logged_in? %>
   <div class="musicbar">
@@ -41,7 +45,13 @@
 </html>
 
 <script>
-
+    $('#postImage').click(function () {
+        console.log("oiinkk")
+    })
+    $('#imageExpander').click(function () {
+        this.innerHTML = "";
+        $('#imageExpander').css("display", "none");
+    })
     $('#cancelPostModal').click(function () {
         console.log("d");
         modal = document.querySelector("#modal");

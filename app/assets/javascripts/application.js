@@ -151,7 +151,7 @@ function buildPlayer(song, username, title, ...args) {
     }
 }
 
-function connect(user_id,key) {
+function connect(user_id, key) {
     console.log(user_id);
     x.keepalive = true;
     x.onreadystatechange = function () {
@@ -194,7 +194,7 @@ function connect(user_id,key) {
         }
     };
 
-    x.open("POST", "http://localhost:4447/establish?Action=1001&key="+key, true);
+    x.open("POST", "http://localhost:4447/establish?Action=1001&key=" + key, true);
     x.send();
 }
 
@@ -586,6 +586,7 @@ function SelectedSong(song, username, title, singleSong, ...args) {
         nextSong();
     }
 }
+
 /*
 function sendTheAJAX(controller, ...id) {
     var x = new XMLHttpRequest;
@@ -688,3 +689,8 @@ function validateFiles(inputFile) {
     }
 }
 
+function expand(html) {
+    let modalBackground = document.getElementById("imageExpander");
+    modalBackground.style.display = "block"
+    modalBackground.innerHTML = html;
+}

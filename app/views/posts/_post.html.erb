@@ -24,9 +24,27 @@
     <p class="ss" style="width: 100%; font-size:18px; text-align: left;margin-left:18px; margin-top: 10px"><%= post.content %></p>
   </div>
   <div style="display: block; overflow: hidden;">
-    <% post.images.each do |image| %>
-      <%= image_tag (image), class: "imagePost" %>
+    <% if post.images.length == 1 %>
+      <div style="margin:auto">
+        <%= render 'posts/OneImage', locals = {images: post.images} %>
+      </div>
+    <% elsif post.images.length == 2 %>
+      <div style="margin:auto">
+        <%= render 'posts/TwoImages', locals = {images: post.images} %>
+      </div>
+    <% elsif post.images.length == 3 %>
+      <div style="margin:auto">
+        <%= render 'posts/ThreeImages', locals = {images: post.images} %>
+      </div>
+    <% elsif post.images.length == 4 %>
+      <div style="margin:auto">
+        <%= render 'posts/FourImages', locals = {images: post.images} %>
+      </div>
     <% end %>
-  </div>
 
+  </div>
 </div>
+
+<script>
+
+</script>

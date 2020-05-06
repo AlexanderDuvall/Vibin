@@ -17,7 +17,8 @@
   </div>
   <div class="row justify-content-center" id="previewImages">
   </div>
-  <div class="row justify-content-center" id="previewSongs">
+  <div class="container justify-content-center" style="display: flex;" id="previewSongs">
+
   </div>
   <input hidden class="photo_upload" id="images" type="file" multiple="true" accept="image/jpeg, image/tiff, image/png">
   <div class="row justify-content-end" style="margin-top: 9px;">
@@ -31,7 +32,7 @@
         <%= image_tag "MusicButton.png", style: "height:30px; width:30px;" %>
       </button>
     </div>
-    <input hidden class="" name="post[songs][]" id="songs" type="file" multiple="true" accept="mp3 wav">
+    <input hidden class="" name="post[songs][]" id="songs" type="file" multiple="true" accept="audio/*">
     <div class="col-3">
       <button class="PostFormSubmitButton" id="submitt" onclick=submitPost($(".PostFormText").val())>
         Submish
@@ -41,6 +42,9 @@
 <% end %>
 
 <script>
+    var genre = new Array;
+    var tags = new Array;
+    var featuredArtist = new Array;
     function submitPost(content) {
         var form = new FormData();
         form.append("content",content);
@@ -49,7 +53,6 @@
         for(var i = 0; i < imagesCount; i++){
             form.append("images[]", tmp_files[i]);
         }
-
         Rails.ajax({
             type: "POST",
             url: "/newPost?",
@@ -91,14 +94,11 @@
         document.getElementById("submitt").addEventListener("click", function (event) {
             event.preventDefault();
         });
-        var _URL = window.URL || window.webkitURL;
         var height;
         var width;
         var reader;
         var img;
         var resolution;
-        var objectUrl;
-        var x;
         var style;
         $("#images").change(function (event) {
             var files = document.getElementById("images").files;
@@ -111,7 +111,6 @@
                 console.log("files length: " + files.length);
                 console.log(files[i].name);
                 console.log(files[i]);
-                objectUrl = _URL.createObjectURL(files[i]);
                 reader.readAsDataURL(files[i]); // convert to base64 string
                 reader.onload = function (e) {
                     console.log(e);
@@ -119,7 +118,6 @@
                     var col = document.createElement('div');
                     col.setAttribute('style', "flex-basis: 0; margin: 5px 8px 8px 5px;");
                     document.getElementById("previewImages").appendChild(col);
-                    x = document.createElement("IMG");
                     img.onload = function () {
                         width = this.width;
                         height = this.height;
@@ -139,62 +137,173 @@
                             }
                         }
                         style = "height:" + height + "px; width: " + width + "px; display: inline-block;";
-                        x.setAttribute('src', e.target.result);
-                        x.setAttribute("style", style);
+                        img.setAttribute("style", style);
                         console.log("pushedssss" + e.target.result)
                         var cancel = document.createElement("span");
                         cancel.setAttribute('style', "background-color: red; height: 30px; width: 30px; position: absolute;");
                         cancel.setAttribute("onclick", "removeImage(this)");
                         document.getElementById("previewImages").lastChild.appendChild(cancel);
-                        document.getElementById("previewImages").lastChild.appendChild(x);
+                        document.getElementById("previewImages").lastChild.appendChild(img);
                     };
                 }
             }
         });
+        var audio;
+        var songfiles = new Array();
+        var songfile;
+        var songCount = 0;
+        var audioTag;
+        var progressBar;
+        var coverImage;
+        var premiumCheckBox;
+        var featuredArtistTextBox;
+        var genreTagsTextBox;
+        var titleTextBox;
+        var addFeaturedArtistButton;
+        var rowDiv;
+        var col2;
+        var col9;
+        var col4;
+        var earnMoney = document.createElement('p');
+        earnMoney.setAttribute('style', 'font-size: 14px; display: inline;');
+        var earnMoneyText = document.createTextNode("Earn Money ");
+        earnMoney.appendChild(earnMoneyText);
+        var earnMoneyHyperLink;
+        var linkText = document.createTextNode("Learn More");
+        var audioplayer;
+
         $("#songs").change(function (event) {
-            var files = document.getElementById("songs").files;
-            var audioTag;
-            var progressBar;
-            var coverDiv;
-            var titleTextBox;
-            var addFeaturedArtistButton;
-            var rowDiv;
-            for (var i = 0; i < files.length; i++) {
-                rowDiv = document.createElement("div");
-                rowDiv.setAttribute('class', 'row justify-content-center');
-                document.getElementById("previewSongs").appendChild(rowDiv);
-                reader = new FileReader();
-                audioTag = document.createElement("audio");
-                audioTag.src = URL.createObjectURL(this.files[0]);
-                audioTag.id = "player";
-                progressBar = document.createElement("progress");
-                progressBar.setAttribute('id', 'progressBar');
-                progressBar.setAttribute("value", "0");
-                progressBar.setAttribute("max", "1");
-                document.getElementById("previewSongs").firstChild.appendChild(progressBar);
-                audioTag.setAttribute("ontimeupdate", "initProgressBar()");
-                document.getElementById("previewSongs").appendChild(audioTag);
-                audioTag.setAttribute("ontimeupdate", "initProgressBar()");
-                //do
-                document.getElementById("previewSongs").appendChild(audioTag);
+            var files = event.target.files;
+            for(var i = 0; i < files.length; i++){
+                songCount += 1;
+                rowDiv = document.createElement('div');
+                rowDiv.setAttribute('class', 'row');
+                rowDiv.setAttribute('style', 'margin-left: -10px; width: 95%;');
+                document.getElementById('previewSongs').appendChild(rowDiv);
+                coverImage = document.createElement("img");
+                coverImage.setAttribute('style', 'height: 100px; width: 100px;');
+                coverImage.setAttribute("src", 'default-avatar.jpg');
+                col2 = document.createElement('div');
+               // col2.setAttribute('class', 'col-2');
+                col2.setAttribute('style', 'width: 100px; flex: initial;');
+                col2.appendChild(coverImage);
+                rowDiv.appendChild(col2);
+                titleTextBox = document.createElement('input');
+                titleTextBox.setAttribute('style', 'height: 30px; width: 65%;');
+                titleTextBox.setAttribute('placeholder', 'Title of Song');
+                genreTagsTextBox = document.createElement('input');
+                genreTagsTextBox.setAttribute('style', 'width: 200px; height: 30px;');
+                genreTagsTextBox.setAttribute('type', 'text');
+                genreTagsTextBox.setAttribute('placeholder', 'Genres/#Tags');
+                genreTagsTextBox.setAttribute('id', 'genreTags');
+                genreTagsTextBox.setAttribute('onkeypress', 'addGenreTag(event, this)');
+                col9 = document.createElement('div');
+                col9.setAttribute('style', 'height: 200px; margin-left: 5px; flex: 1; ');
+                col9.appendChild(titleTextBox);
+                rowDiv.appendChild(col9);
+                premiumCheckBox = document.createElement('input');
+                premiumCheckBox.setAttribute('type', 'checkbox');
+                premiumCheckBox.setAttribute('style', 'margin-left: 5px; margin-right: 1px;');
+                col9.appendChild(premiumCheckBox);
+                col9.appendChild(earnMoney);
+                earnMoneyHyperLink = document.createElement('a');
+                earnMoneyHyperLink.appendChild(linkText);
+                earnMoneyHyperLink.setAttribute('href', '');
+                earnMoneyHyperLink.setAttribute("style", 'font-size: 13px;');
+                col9.appendChild(earnMoneyHyperLink);
+                col9.appendChild(genreTagsTextBox);
+
+               /*
+                audioplayer = document.createElement("audio");
+                audioplayer.setAttribute("id", "player");
+                audioplayer.setAttribute("style", "height: 20px; width: 100px;");
+                titleTextBox = document.createElement("div");
+                titleTextBox.setAttribute('class', 'row');
+                titleTextBox.appendChild(coverDiv);
+                document.getElementById('previewSongs').appendChild(titleTextBox);
+                audio = document.createElement("source");
+                document.getElementById("previewSongs").appendChild(audioplayer);
+                audio.setAttribute("src", URL.createObjectURL(files[i]));
+                document.getElementById("player").appendChild(audio);
+                audioplayer.load();
+                audioplayer.play();
+
+                */
             }
+           // var files = document.getElementById("songs").files;
+           // for (var i = 0; i < files.length; i++) {
+             //   songCount += 1;
+               // songfile = event.target.files[0];
+                //songfiles.push(files[i]);
+                //audio = new Audio();
+                //reader = new FileReader();
+                //reader.readAsDataURL(files[i]);
+                //reader.onload = function (e){
+                    //audio.setAttribute('src', URL.createObjectURL(songfile));
+                    //var col = document.createElement('div');
+                    //col.setAttribute('style', "flex-basis: 0; margin: 5px 8px 8px 5px;");
+                    //document.getElementById("previewSongs").appendChild(col);
+                    //audio.onload = function () {
+                       // document.getElementById("previewSongs").appendChild(audio);
+                        ///audio.play();
+                        //rowDiv = document.createElement("div");
+                        //rowDiv.setAttribute('class', 'row justify-content-center');
+
+                        //progressBar = document.createElement("progress");
+                        //progressBar.setAttribute('id', 'progressBar');
+                        //progressBar.setAttribute("value", "0");
+                        //progressBar.setAttribute("max", "1");
+                        //titleTextBox = document.createElement("input");
+                        //titleTextBox.setAttribute('style', 'height: 30px; width: 100px;');
+                        //document.getElementById('')
+                        //document.getElementById("previewSongs").firstChild.appendChild(progressBar);
+                        //audioTag.setAttribute("ontimeupdate", "initProgressBar()");
+                        //document.getElementById("previewSongs").appendChild(audioTag);
+                        //audioTag.setAttribute("ontimeupdate", "initProgressBar()");
+                        //do
+                        //document.getElementById("previewSongs").appendChild(audioTag);
+                    //}
+               // }
+
+            });
         });
 
-        var textarea = document.querySelector('textarea');
+    var textarea = document.querySelector('textarea');
 
-        textarea.addEventListener('keydown', autosize);
+    textarea.addEventListener('keydown', autosize);
 
-        function autosize() {
-            var el = this;
-            setTimeout(function () {
-                el.style.cssText = 'height:auto;';
-                // for box-sizing other than "content-box" use:
-                // el.style.cssText = '-moz-box-sizing:content-box';
-                el.style.cssText = 'height:' + (el.scrollHeight + 10) + 'px';
-            }, 0);
+    function autosize() {
+        var el = this;
+        setTimeout(function () {
+            el.style.cssText = 'height:auto;';
+            // for box-sizing other than "content-box" use:
+            // el.style.cssText = '-moz-box-sizing:content-box';
+            el.style.cssText = 'height:' + (el.scrollHeight + 10) + 'px';
+        }, 0);
+    }
+
+    function addGenreTag(key, str){
+        var keynum;
+        var strr;
+        if(window.event){
+            keynum = key.keyCode;
+        }else if(key.which){
+            keynum = key.which;
         }
-    })
-    ;
+        if(keynum == 13){
+            window.event.preventDefault();
+            if(str.value[0] == '#'){ // tag
+                strr = str.value.substring(1, str.length);
+                tags.push(strr);
+            }else{
+                genre.push(str);
+            }
+
+        }
+    }
+    function addGenreTagElement(){
+
+    }
 
     function removeImage(i) {
         var col = i.parentNode;
@@ -228,7 +337,7 @@
             player.currentTime = percent * player.duration;
             progressbar.value = percent / 100;
         }
-    };
+    }
 
     function calculateTotalValue(length) {
         var minutes = Math.floor(length / 60);
