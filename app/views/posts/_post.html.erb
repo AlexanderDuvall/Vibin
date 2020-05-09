@@ -24,17 +24,17 @@
     <p class="ss" style="width: 100%; font-size:18px; text-align: left;margin-left:18px; margin-top: 10px"><%= post.content %></p>
   </div>
   <% if post.images.length == 1 %>
-    <div style="display: block;margin:auto; ">
+    <div style="margin: auto">
       <%= render partial: 'posts/OneImage', locals: {images: post.images} %>
     </div>
   <% elsif post.images.length == 2 %>
-    <div style="display: block;margin:auto; ">
+    <div class="imageCenter">
       <%= render partial: 'posts/TwoImages', locals: {images: post.images} %>
     </div>
   <% elsif post.images.length == 3 %>
     <%= render partial: 'posts/ThreeImages', locals: {images: post.images} %>
   <% elsif post.images.length == 4 %>
-    <div style="margin:auto">
+    <div style="margin:auto; ">
       <%= render partial: 'posts/FourImages', locals: {images: post.images} %>
     </div>
   <% end %>

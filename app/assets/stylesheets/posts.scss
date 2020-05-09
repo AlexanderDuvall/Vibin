@@ -199,13 +199,12 @@
 }
 
 .imagePost2 {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
-  width: auto;
-  display: block;
   margin: auto;
-  padding-bottom: 10px;
   border-radius: 15px;
+  overflow: hidden;
+
 }
 
 .imagePost3 {
@@ -255,10 +254,9 @@
   overflow: hidden;
   border-radius: 6px;
   object-fit: cover;
-  object-position: 20% 0;
   min-width: 50%;
   border: none;
-
+  padding-left: 24%;
 }
 
 .bottomImage {
@@ -267,4 +265,10 @@
 
 .wave {
   width: 100%;
+}
+
+.imageCenter {
+  margin-left: 21%;
+  margin-right: auto;
+  width: 92%;
 }

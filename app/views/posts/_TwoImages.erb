@@ -1,9 +1,8 @@
-<% images.each do |f| %>
+<% html1 = image_tag(images[0], class: "expandedImage") %>
+<button class="divCropper  " onclick='expand("<%=escape_javascript html1 %>")'>
+  <%= image_tag (images[0]), class: "imagePost3", id: "postImage" %></button>
 
-
-  <% html = image_tag(f, class: "expandedImage")%>
-  <button class=imageExpander onclick='expand("<%=escape_javascript html %>")'>
-    <%= image_tag (f), class: "imagePost2", id: "postImage" %></button>
-<% end %>
-
+<% html2 = image_tag(images[1], class: "expandedImage") %>
+<button class="divCropper bottomImage" onclick='expand("<%=escape_javascript html2 %>")'>
+  <%= image_tag (images[1]), class: "imagePost3", id: "postImage" %></button>
 
