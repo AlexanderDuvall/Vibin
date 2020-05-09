@@ -23,22 +23,20 @@
   <div style="margin-left: 4px; display: block; overflow: hidden;" id="content">
     <p class="ss" style="width: 100%; font-size:18px; text-align: left;margin-left:18px; margin-top: 10px"><%= post.content %></p>
   </div>
-  <div style="display: block; overflow: hidden;">
-    <% if post.images.length == 1 %>
-      <div style="margin:auto">
-        <%= render partial: 'posts/OneImage', locals: {images: post.images} %>
-      </div>
-    <% elsif post.images.length == 2 %>
-      <div style="margin:auto;">
-        <%= render partial: 'posts/TwoImages', locals: {images: post.images} %>
-      </div>
-    <% elsif post.images.length == 3 %>
-      <%= render partial: 'posts/ThreeImages', locals: {images: post.images} %>
-    <% elsif post.images.length == 4 %>
-      <div style="margin:auto">
-        <%= render partial: 'posts/FourImages', locals: {images: post.images} %>
-      </div>
-    <% end %>
+  <% if post.images.length == 1 %>
+    <div style="display: block;margin:auto; ">
+      <%= render partial: 'posts/OneImage', locals: {images: post.images} %>
+    </div>
+  <% elsif post.images.length == 2 %>
+    <div style="display: block;margin:auto; ">
+      <%= render partial: 'posts/TwoImages', locals: {images: post.images} %>
+    </div>
+  <% elsif post.images.length == 3 %>
+    <%= render partial: 'posts/ThreeImages', locals: {images: post.images} %>
+  <% elsif post.images.length == 4 %>
+    <div style="margin:auto">
+      <%= render partial: 'posts/FourImages', locals: {images: post.images} %>
+    </div>
+  <% end %>
 
-  </div>
 </div>

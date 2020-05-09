@@ -1,7 +1,9 @@
 <% images.each do |f| %>
+
+
   <% html = image_tag(f, class: "expandedImage")%>
-      <button class=imageExpander onclick='expand("<%=escape_javascript html %>")'>
-      <%= image_tag (f), class: "imagePost2", id: "postImage" %></button>
- <% end %>
+  <button class=imageExpander onclick='expand("<%=escape_javascript html %>")'>
+    <%= image_tag (f), class: "imagePost2", id: "postImage" %></button>
+<% end %>
 
 

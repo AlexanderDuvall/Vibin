@@ -17,7 +17,7 @@
   </div>
   <div class="row justify-content-center" id="previewImages">
   </div>
-  <div class="container justify-content-center" style="display: flex;" id="previewSongs">
+  <div class="container justify-content-center" id="previewSongs">
 
   </div>
   <input hidden class="photo_upload" id="images" type="file" multiple="true" accept="image/jpeg, image/tiff, image/png">
@@ -35,7 +35,7 @@
     <input hidden class="" name="post[songs][]" id="songs" type="file" multiple="true" accept="audio/*">
     <div class="col-3">
       <button class="PostFormSubmitButton" id="submitt" onclick=submitPost($(".PostFormText").val())>
-        Submish
+        Submit
       </button>
     </div>
   </div>
@@ -47,14 +47,16 @@
     var imagesCount = 0;
     var imagefiles = new Array();
     var songCount = 0;
-    var songfiles;
-    var totalGenreTags = 0;
-    var genre = new Array();
+    var songfiles = new Array();
+    var genreCount = 0;
+    var genres = new Array();
+    var tagCount = 0;
     var tags = new Array();
+
     function submitPost(content) {
         var form = new FormData();
-        form.append("content",content);
-        for(var i = 0; i < imagesCount; i++){
+        form.append("content", content);
+        for (var i = 0; i < imagesCount; i++) {
             form.append("images[]", imagefiles[i]);
         }
         Rails.ajax({
@@ -71,6 +73,7 @@
             }
         });
     }
+
     window.addEventListener('DOMContentLoaded', function () {
         document.getElementById("cancelPostModal").addEventListener("click", function () {
             document.getElementById("post_content").value = "";
@@ -107,7 +110,7 @@
                 imagefiles.push(files[i]);
                 img = new Image();
                 reader = new FileReader();
-                imagesCount +=1;
+                imagesCount += 1;
                 console.log("imagefiles length: " + imagefiles.length);
                 console.log("files length: " + files.length);
                 console.log(files[i].name);
@@ -168,14 +171,20 @@
         earnMoney.appendChild(earnMoneyText);
         var earnMoneyHyperLink;
         var linkText = document.createTextNode("Learn More");
+        var previewRow;
         var audioplayer;
         $("#songs").change(function (event) {
             var files = event.target.files;
-            for(var i = 0; i < files.length; i++){
+            for (var i = 0; i < files.length; i++) {
                 songCount += 1;
+                var songfile = event.target.files[0];
+                songfiles.push(files[i]);
+                audio = new Audio();
+                reader = new FileReader();
+                reader.readAsDataURL(files[i]);
                 rowDiv = document.createElement('div');
                 rowDiv.setAttribute('class', 'row');
-                rowDiv.setAttribute('style', 'margin-left: -10px; width: 95%;');
+                rowDiv.setAttribute('style', 'margin-left: -10px; width: 98%;');
                 document.getElementById('previewSongs').appendChild(rowDiv);
                 coverImage = document.createElement("img");
                 coverImage.setAttribute('style', 'height: 100px; width: 100px;');
@@ -185,93 +194,208 @@
                 col2.appendChild(coverImage);
                 rowDiv.appendChild(col2);
                 titleTextBox = document.createElement('input');
-                titleTextBox.setAttribute('style', 'height: 30px; width: 62%;');
+                titleTextBox.setAttribute('style', 'height: 30px; width: 60%;');
                 titleTextBox.setAttribute('placeholder', 'Title of Song');
                 featuredArtistTextBox = document.createElement('input');
                 featuredArtistTextBox.setAttribute('type', 'text');
-                featuredArtistTextBox.setAttribute('style', 'width: 200px; height: 25px; display: block;');
+                featuredArtistTextBox.setAttribute('style', 'width: 170px; height: 30px; display: inline;');
                 featuredArtistTextBox.setAttribute('placeholder', 'Featured Artist');
                 featuredArtistTextBox.setAttribute('id', 'featuredArtist');
                 featuredArtistTextBox.setAttribute('onkeyup', 'addFeaturedArtist(event, this)');
+                featuredArtistTextBox.setAttribute('onkeydown', 'testt(event)');
                 featuredArtistTextBox.setAttribute('onfocus', 'addAtSign(this)');
                 genreTagsTextBox = document.createElement('input');
-                genreTagsTextBox.setAttribute('style', 'width: 200px; height: 30px; display: block;');
+                genreTagsTextBox.setAttribute('style', 'width: 170px; height: 30px; display: inline;');
                 genreTagsTextBox.setAttribute('type', 'text');
                 genreTagsTextBox.setAttribute('placeholder', 'Genres/#Tags');
                 genreTagsTextBox.setAttribute('id', 'genreTags');
                 genreTagsTextBox.setAttribute('onkeypress', 'addGenreTag(event, this)');
                 col9 = document.createElement('div');
-                col9.setAttribute('id', 'test');
-                col9.setAttribute('style', 'height: 200px; margin-left: 5px; flex: 1; ');
-                col9.appendChild(titleTextBox);
+                col9.setAttribute('style', 'height: min-content; margin-left: 5px; flex: 1; ');
                 rowDiv.appendChild(col9);
                 premiumCheckBox = document.createElement('input');
                 premiumCheckBox.setAttribute('type', 'checkbox');
                 premiumCheckBox.setAttribute('style', 'margin-left: 5px; margin-right: 1px;');
-                col9.appendChild(premiumCheckBox);
-                col9.appendChild(earnMoney);
+                var row1 = document.createElement('div');
+                row1.setAttribute('style', 'height: 30px; width: 100%; display: block;');
+                row1.setAttribute('id', 'row1');
+                col9.appendChild(row1);
+                row1.appendChild(titleTextBox);
+                row1.appendChild(premiumCheckBox);
+                row1.appendChild(earnMoney);
                 earnMoneyHyperLink = document.createElement('a');
                 earnMoneyHyperLink.appendChild(linkText);
                 earnMoneyHyperLink.setAttribute('href', '');
                 earnMoneyHyperLink.setAttribute("style", 'font-size: 13px; word-break: break-all');
-                col9.appendChild(earnMoneyHyperLink);
-                col9.appendChild(featuredArtistTextBox);
-                col9.appendChild(genreTagsTextBox);
+                row1.appendChild(earnMoneyHyperLink);
+                var row2 = document.createElement('div');
+                row2.setAttribute('style', 'height: 30px; width: 100%; display: block;');
+                row2.setAttribute('id', 'row2');
+                row2.appendChild(featuredArtistTextBox);
+                col9.appendChild(row2);
+                var row3 = document.createElement('div');
+                row3.setAttribute('style', 'height: 30px; width: 100%; display: block;');
+                row3.setAttribute('id', 'row3');
+                row3.appendChild(genreTagsTextBox);
+                col9.appendChild(row3);
+                previewRow = document.createElement('div');
+                previewRow.setAttribute('class', 'row');
+                previewRow.setAttribute('style', 'height: min-content; margin-top:5px;');
+                previewRow.setAttribute('id', 'wave');
+                var setPreviewParagraph = document.createElement('p');
+                setPreviewParagraph.setAttribute('style', 'margin-left: 90px;');
+                var setPreviewText = document.createTextNode("Set Preview");
+                setPreviewParagraph.appendChild(setPreviewText);
+                previewRow.appendChild(setPreviewParagraph);
+                var playButton = document.createElement('button');
+                playButton.setAttribute('style', 'margin-left: 10px; height: 20px; width: 20px;');
+                previewRow.appendChild(playButton);
+                rowDiv.after(previewRow);
+                var wavesurfer = WaveSurfer.create({
+                    container: '#wave',
+                    waveColor: 'violet',
+                    progressColor: 'purple',
+                    height: 100,
+                });
+                reader.onload = function (e) {
+                    wavesurfer.load(URL.createObjectURL(songfile));
+                };
+                var wave = document.getElementsByTagName('wave')[0];
+                //var waveRegion = WaveSurfer.create.region;
+                wave.className = "wave";
+                wavesurfer.on('ready', function () {
+                    //  wavesurfer.play();
+                    var regionElement = wavesurfer.addRegion({//not recognizing function for some reason, but ide sees it
+                        id: "main",
+                        start: 0,
+                        end: 30,
+                        color: 'hsla(200, 50%, 70%, 0.7)'
+                    });
 
-               /*
-                audioplayer = document.createElement("audio");
-                audioplayer.setAttribute("id", "player");
-                audioplayer.setAttribute("style", "height: 20px; width: 100px;");
-                titleTextBox = document.createElement("div");
-                titleTextBox.setAttribute('class', 'row');
-                titleTextBox.appendChild(coverDiv);
-                document.getElementById('previewSongs').appendChild(titleTextBox);
-                audio = document.createElement("source");
-                document.getElementById("previewSongs").appendChild(audioplayer);
-                audio.setAttribute("src", URL.createObjectURL(files[i]));
-                document.getElementById("player").appendChild(audio);
-                audioplayer.load();
-                audioplayer.play();
+                    document.getElementsByTagName('canvas')[0].style.width = '100%';
+                    document.getElementsByTagName('canvas')[0].style.height = '100%';
+                    var regionDiv = document.getElementsByClassName('wavesurfer-region')[0];
+                    regionDiv.enableDragSelection();
+                    var regio = document.getElementsByClassName('wave')[0];
 
-                */
+                    var regionLeft;
+                    var regionLeftMoved;
+                    regionDiv.addEventListener('mousedown', function (e) {
+                        e.preventDefault();
+                        if (wavesurfer.isPlaying()) {
+                            wavesurfer.pause();
+                        }
+                       regionLeft = regionDiv.style.left;
+
+                    });
+                    regionDiv.addEventListener('mouseup', function (e) {
+                        regionLeftMoved = regionDiv.style.left;
+                        e.preventDefault();
+                        if (wavesurfer.isPlaying()) {
+                            wavesurfer.pause();
+                        }
+                        if(regionLeftMoved != regionLeft){
+                            setTimeout(timeo, 800);
+                        }else{
+                            wavesurfer.play();
+                        }
+                    });
+                    regionDiv.draggable = true;
+                    //regio.setAttribute('region-updated', 'testingR()');
+                    regionElement.on('update', function(){
+                        var regionLeft = regionDiv.style.left;
+                        var waveformWidth = document.getElementsByClassName('wave')[0].clientWidth;
+                        var idth = waveformWidth-41;
+/*
+                        if(regionLeft <= 0){
+                            return;
+                            //regionDiv.style.left = "0px";
+                            //regionDiv.style.width = '41px';
+                            //regionDiv.setAttribute('title', '0:00-0:30');
+                        }else if(regionLeft>= idth){
+                            regionDiv.style.left = idth.toString() + "px";
+                            regionDiv.style.width = '41px';
+                            regionDiv.setAttribute('title', '0:00-0:30');
+                        }else{
+                            regionDiv.style.width = "41px";
+                        }*/
+                    });
+
+                });
+
+                function timeo() {
+                    var duration =wavesurfer.getDuration();
+                    var start = wavesurfer.regions.list['main'].start;
+                    var startplayTime = start/duration;
+                    console.log(startplayTime);
+                    wavesurfer.seekTo(startplayTime);
+                    wavesurfer.play();
+
+                }
+
+                playButton.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (wavesurfer.isPlaying()) {
+                        wavesurfer.pause();
+                    } else {
+                        wavesurfer.play();
+                    }
+                });
+                /*
+                 audioplayer = document.createElement("audio");
+                 audioplayer.setAttribute("id", "player");
+                 audioplayer.setAttribute("style", "height: 20px; width: 100px;");
+                 titleTextBox = document.createElement("div");
+                 titleTextBox.setAttribute('class', 'row');
+                 titleTextBox.appendChild(coverDiv);
+                 document.getElementById('previewSongs').appendChild(titleTextBox);
+                 audio = document.createElement("source");
+                 document.getElementById("previewSongs").appendChild(audioplayer);
+                 audio.setAttribute("src", URL.createObjectURL(files[i]));
+                 document.getElementById("player").appendChild(audio);
+                 audioplayer.load();
+                 audioplayer.play();
+
+                 */
             }
-           // var files = document.getElementById("songs").files;
-           // for (var i = 0; i < files.length; i++) {
-             //   songCount += 1;
-               // songfile = event.target.files[0];
-                //songfiles.push(files[i]);
-                //audio = new Audio();
-                //reader = new FileReader();
-                //reader.readAsDataURL(files[i]);
-                //reader.onload = function (e){
-                    //audio.setAttribute('src', URL.createObjectURL(songfile));
-                    //var col = document.createElement('div');
-                    //col.setAttribute('style', "flex-basis: 0; margin: 5px 8px 8px 5px;");
-                    //document.getElementById("previewSongs").appendChild(col);
-                    //audio.onload = function () {
-                       // document.getElementById("previewSongs").appendChild(audio);
-                        ///audio.play();
-                        //rowDiv = document.createElement("div");
-                        //rowDiv.setAttribute('class', 'row justify-content-center');
+            // var files = document.getElementById("songs").files;
+            // for (var i = 0; i < files.length; i++) {
+            //   songCount += 1;
+            // songfile = event.target.files[0];
+            //songfiles.push(files[i]);
+            //audio = new Audio();
+            //reader = new FileReader();
+            //reader.readAsDataURL(files[i]);
+            //reader.onload = function (e){
+            //audio.setAttribute('src', URL.createObjectURL(songfile));
+            //var col = document.createElement('div');
+            //col.setAttribute('style', "flex-basis: 0; margin: 5px 8px 8px 5px;");
+            //document.getElementById("previewSongs").appendChild(col);
+            //audio.onload = function () {
+            // document.getElementById("previewSongs").appendChild(audio);
+            ///audio.play();
+            //rowDiv = document.createElement("div");
+            //rowDiv.setAttribute('class', 'row justify-content-center');
 
-                        //progressBar = document.createElement("progress");
-                        //progressBar.setAttribute('id', 'progressBar');
-                        //progressBar.setAttribute("value", "0");
-                        //progressBar.setAttribute("max", "1");
-                        //titleTextBox = document.createElement("input");
-                        //titleTextBox.setAttribute('style', 'height: 30px; width: 100px;');
-                        //document.getElementById('')
-                        //document.getElementById("previewSongs").firstChild.appendChild(progressBar);
-                        //audioTag.setAttribute("ontimeupdate", "initProgressBar()");
-                        //document.getElementById("previewSongs").appendChild(audioTag);
-                        //audioTag.setAttribute("ontimeupdate", "initProgressBar()");
-                        //do
-                        //document.getElementById("previewSongs").appendChild(audioTag);
-                    //}
-               // }
+            //progressBar = document.createElement("progress");
+            //progressBar.setAttribute('id', 'progressBar');
+            //progressBar.setAttribute("value", "0");
+            //progressBar.setAttribute("max", "1");
+            //titleTextBox = document.createElement("input");
+            //titleTextBox.setAttribute('style', 'height: 30px; width: 100px;');
+            //document.getElementById('')
+            //document.getElementById("previewSongs").firstChild.appendChild(progressBar);
+            //audioTag.setAttribute("ontimeupdate", "initProgressBar()");
+            //document.getElementById("previewSongs").appendChild(audioTag);
+            //audioTag.setAttribute("ontimeupdate", "initProgressBar()");
+            //do
+            //document.getElementById("previewSongs").appendChild(audioTag);
+            //}
+            // }
 
-            });
         });
+    });
+
 
     var textarea = document.querySelector('textarea');
 
@@ -287,79 +411,140 @@
         }, 0);
     }
 
-    function addAtSign(box){
+    function addAtSign(box) {
         box.value = "@";
     }
-    function addFeaturedArtist(key, str){
+
+    function testingR(){
+        console.log('df');
+    }
+
+    function testt(th) {
         var keynum;
-        var s = str.value;
-        if(window.event){
-            keynum = key.keyCode;
-        }else if(key.which){
-            keynum = key.which;
+        if (window.event) {
+            keynum = th.keyCode;
+        } else if (key.which) {
+            keynum = th.which;
         }
-        if(keynum == 8 && s.length == 1){
-            console.log('sdf');
-            str.value = "@";
-        }
-        if(keynum == 13) {
+        if (keynum == 13) {
             window.event.preventDefault();
-            console.log(s);
-            addFeaturedArtistElement(s);
-            str.value = "";
+            console.log('keydown');
         }
     }
 
-    function addFeaturedArtistElement(str){
+    function addFeaturedArtist(key, str) {
+        var keynum;
+        if (window.event) {
+            keynum = key.keyCode;
+        } else if (key.which) {
+            keynum = key.which;
+        }
+        if (keynum == 8 && s.length == 0) {
+            console.log('sdf');
+            str.value = "@";
+        }
+        if (str.value[0] != '@') {
+            str.value = '@' + str.value;
+        }
+        if (keynum == 13) {
+            window.event.preventDefault();
+            addFeaturedArtistElement(str.value);
+            featuredArtist.push(str.value);
+            str.value = "@";
+        }
+    }
+
+    function addFeaturedArtistElement(str) {
         var span;
         span = document.createElement('span');
-        span.setAttribute('style', ' margin-left: 3px; margin-right:3px; width: min-content; height: 25px; background-color: pink; display: inline;');
+        span.setAttribute('style', 'padding: 3px; border-radius: 5px; margin-left: 3px; margin-right:3px; width: min-content; height: 25px; background-color: pink; display: inline;');
         var textNode = document.createTextNode(str);
+        span.setAttribute('onclick', 'removetest(this, "row2")');
+        var strr = str + '2';
+        span.setAttribute('id', strr);
         span.appendChild(textNode);
-        var colDiv = document.getElementById('test');
+        var colDiv = document.getElementById('row2');
         var featuredArtistBox = document.getElementById('featuredArtist');
         colDiv.insertBefore(span, featuredArtistBox);
-       // totalGenreTags += 1;
     }
-    function addGenreTag(key, str){
+
+    function addGenreTag(key, str) {
         var keynum;
         var s = str.value;
         var typpe;
-        if(window.event){
+        if (window.event) {
             keynum = key.keyCode;
-        }else if(key.which){
+        } else if (key.which) {
             keynum = key.which;
         }
-        if(keynum == 13){
+        if (keynum == 13) {
             window.event.preventDefault();
-            if(str.value[0] == '#'){ // tag
+            if (str.value[0] == '#') { // tag
                 var strr = s.substring(1, s.length);
-                tags.push(strr);
-                typpe = 0;
-            }else{
-                genre.push(s);
-                typpe = 1;
+                if (!tags.includes(strr)) { // check if already exist
+                    tags.push(strr);
+                    typpe = 0;
+                } else {
+                    return;
+                }
+            } else {
+                if (!genres.includes(s)) {
+                    genres.push(s);
+                    typpe = 1;
+                } else {
+                    return;
+                }
             }
-            console.log(s);
             addGenreTagElement(s, typpe);
             str.value = "";
         }
     }
 
-    function addGenreTagElement(str, genreOrTag){
+    function addGenreTagElement(str, genreOrTag) {
         var span;
         span = document.createElement('span');
-        if(genreOrTag == 0){
-            span.setAttribute('style', ' margin-left: 3px; margin-right:3px; width: min-content; height: 25px; background-color: pink; display: inline;');
-        }else{
-            span.setAttribute('style', ' margin-left: 3px; margin-right:3px; width: min-content; height: 25px; background-color: purple; display: inline;');
+        if (genreOrTag == 0) { //tag
+            span.setAttribute('style', 'padding: 3px; border-radius: 5px; margin-left: 3px; margin-right:3px; width: min-content; height: 25px; background-color: pink; display: inline;');
+        } else { // genre
+            span.setAttribute('style', 'padding: 3px; border-radius: 5px; margin-left: 3px; margin-right:3px; width: min-content; height: 25px; background-color: purple; display: inline;');
         }
+        var strr = str + genreOrTag;
+        if (strr[0] == '#') {
+            strr = strr.substring(1, strr.length);
+        }
+        span.setAttribute('id', strr);
+        span.setAttribute('onclick', 'removetest(this, "row3")');
         var textNode = document.createTextNode(str);
         span.appendChild(textNode);
-        var colDiv = document.getElementById('test');
+        var colDiv = document.getElementById('row3');
         var genreTagBox = document.getElementById('genreTags');
         colDiv.insertBefore(span, genreTagBox);
-        totalGenreTags += 1;
+    }
+
+    function removetest(obj, type) {
+        var parent = document.getElementById(type);
+        var child = document.getElementById(obj.id);
+        parent.removeChild(child);
+        var text = obj.id.substring(0, obj.id.length - 1);
+        console.log('text ' + text);
+        var GorT = obj.id.substring(obj.id.length - 1, obj.id.length);
+        console.log("GorT ", GorT);
+        if (GorT == '0') {//tag
+            var index = tags.indexOf(text);
+            console.log('tag index ' + index);
+            tags.splice(index, 1);
+            tagCount -= 1;
+        } else if (GorT == '1') { //genre
+            var index = genres.indexOf(text);
+            console.log('genre index ' + index);
+            genres.splice(index, 1);
+            genreCount -= 1;
+        } else if (GorT == '2') { //featuredArtist
+            var index = featuredArtist.indexOf(text);
+            console.log('featured Artist index ' + index);
+            genres.splice(index, 1);
+            featuredArtistCount -= 1;
+        }
     }
 
     function removeImage(i) {
