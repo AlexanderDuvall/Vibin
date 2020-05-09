@@ -259,6 +259,17 @@
   padding-left: 24%;
 }
 
+.twoImageDivCropper {
+  max-width: 75%;
+  height: 143px;
+  overflow: hidden;
+  border-radius: 6px;
+  object-fit: cover;
+  min-width: 50%;
+  border: none;
+  padding-left: 24%;
+}
+
 .bottomImage {
   margin-top: -87px;
 }
@@ -268,7 +279,11 @@
 }
 
 .imageCenter {
-  margin-left: 21%;
+  margin-left: 15%;
   margin-right: auto;
   width: 92%;
+  height: 295px;
+}
+.imageBackground{
+  background: black;
 }

@@ -2,14 +2,14 @@
   <% html = image_tag (images[0]), class: "expandedImage" %>
   <% html2 = image_tag (images[1]), class: "expandedImage" %>
   <% html3 = image_tag (images[2]), class: "expandedImage" %>
-  <button class="divCropperLong" onclick='expand("<%=escape_javascript html %>")'>
+  <button class="divCropperLong imageBackground" onclick='expand("<%=escape_javascript html %>")'>
     <%= image_tag (images[0]), class: "imagePost3", id: "postImage" %>
   </button>
   <div class="sCol">
-    <button class="divCropper" onclick='expand("<%=escape_javascript html2 %>")'>
+    <button class="divCropper imageBackground" onclick='expand("<%=escape_javascript html2 %>")'>
       <%= image_tag (images[1]), class: "imagePost3", id: "postImage" %>
     </button>
-    <button class="divCropper bottomImage" onclick='expand("<%=escape_javascript html3 %>")'>
+    <button class="divCropper bottomImage imageBackground" onclick='expand("<%=escape_javascript html3 %>")'>
       <%= image_tag (images[2]), class: "imagePost3", id: "postImage" %>
     </button>
   </div>

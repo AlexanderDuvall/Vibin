@@ -1,8 +1,8 @@
 <% html1 = image_tag(images[0], class: "expandedImage") %>
-<button class="divCropper  " onclick='expand("<%=escape_javascript html1 %>")'>
+<button class="twoImageDivCropper imageBackground " onclick='expand("<%=escape_javascript html1 %>")'>
   <%= image_tag (images[0]), class: "imagePost3", id: "postImage" %></button>
 
 <% html2 = image_tag(images[1], class: "expandedImage") %>
-<button class="divCropper bottomImage" onclick='expand("<%=escape_javascript html2 %>")'>
+<button class="twoImageDivCropper bottomImage imageBackground" onclick='expand("<%=escape_javascript html2 %>")'>
   <%= image_tag (images[1]), class: "imagePost3", id: "postImage" %></button>
 
