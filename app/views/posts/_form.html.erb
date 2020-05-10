@@ -251,12 +251,30 @@
                 playButton.setAttribute('style', 'margin-left: 10px; height: 20px; width: 20px;');
                 previewRow.appendChild(playButton);
                 rowDiv.after(previewRow);
-                var wavesurfer = WaveSurfer.create({
+                let wavesurfer = WaveSurfer.create({
+                    name:"main",
                     container: '#wave',
-                    waveColor: 'violet',
-                    progressColor: 'purple',
-                    height: 100,
+                    waveColor: '#A8DBA8',
+                    progressColor: '#3B8686',
+                    backend: 'MediaElement',
+                    plugins: [
+                        WaveSurfer.regions.create({
+                            regions: [
+                                {
+                                    start: 1,
+                                    end: 30,
+                                    loop: false,
+                                    color: 'hsla(400, 100%, 30%, 0.5)'
+                                },
+
+                            ],
+                            dragSelection: {
+                                slop: 5
+                            }
+                        })
+                    ]
                 });
+
                 reader.onload = function (e) {
                     wavesurfer.load(URL.createObjectURL(songfile));
                 };
@@ -265,18 +283,10 @@
                 wave.className = "wave";
                 wavesurfer.on('ready', function () {
                     //  wavesurfer.play();
-                    var regionElement = wavesurfer.addRegion({//not recognizing function for some reason, but ide sees it
-                        id: "main",
-                        start: 0,
-                        end: 30,
-                        color: 'hsla(200, 50%, 70%, 0.7)'
-                    });
-
                     document.getElementsByTagName('canvas')[0].style.width = '100%';
                     document.getElementsByTagName('canvas')[0].style.height = '100%';
                     var regionDiv = document.getElementsByClassName('wavesurfer-region')[0];
-                    regionDiv.enableDragSelection();
-                    var regio = document.getElementsByClassName('wave')[0];
+                     var regio = document.getElementsByClassName('wave')[0];
 
                     var regionLeft;
                     var regionLeftMoved;
@@ -289,8 +299,7 @@
 
                     });
                     regionDiv.addEventListener('mouseup', function (e) {
-                        regionLeftMoved = regionDiv.style.left;
-                        e.preventDefault();
+                         e.preventDefault();
                         if (wavesurfer.isPlaying()) {
                             wavesurfer.pause();
                         }
@@ -300,27 +309,6 @@
                             wavesurfer.play();
                         }
                     });
-                    regionDiv.draggable = true;
-                    //regio.setAttribute('region-updated', 'testingR()');
-                    regionElement.on('update', function(){
-                        var regionLeft = regionDiv.style.left;
-                        var waveformWidth = document.getElementsByClassName('wave')[0].clientWidth;
-                        var idth = waveformWidth-41;
-/*
-                        if(regionLeft <= 0){
-                            return;
-                            //regionDiv.style.left = "0px";
-                            //regionDiv.style.width = '41px';
-                            //regionDiv.setAttribute('title', '0:00-0:30');
-                        }else if(regionLeft>= idth){
-                            regionDiv.style.left = idth.toString() + "px";
-                            regionDiv.style.width = '41px';
-                            regionDiv.setAttribute('title', '0:00-0:30');
-                        }else{
-                            regionDiv.style.width = "41px";
-                        }*/
-                    });
-
                 });
 
                 function timeo() {

@@ -1,5 +1,7 @@
 {
   "name": "VibinMusic_Beta",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "wavesurfer.js": "^3.3.3"
+  }
 }

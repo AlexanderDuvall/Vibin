@@ -23,8 +23,8 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //= require croppie
-//= require wavesurfer
-//= require wavesurfer-plugins
+//= require wavesurfer.js/dist/wavesurfer.js
+//= require wavesurfer.js/dist/plugin/wavesurfer.regions.js
 
 let Server_Address = "172.25.61.104"; // broadcasting ipv4 remote host address
 let isShuffled = false;
@@ -51,6 +51,33 @@ function addtoPL(song_id, playlist_id, dom_id) {
             console.log("Playlist post failed")
         }
     })
+}
+
+function wave() {
+    console.log("what it do")
+    wavesurfer = WaveSurfer.create({
+        container: '#waver',
+        waveColor: '#A8DBA8',
+        progressColor: '#3B8686',
+        backend: 'MediaElement',
+        plugins: [
+            WaveSurfer.regions.create({
+                regions: [
+                    {
+                        start: 1,
+                        end: 3,
+                        loop: false,
+                        color: 'hsla(400, 100%, 30%, 0.5)'
+                    },
+
+                ],
+                dragSelection: {
+                    slop: 5
+                }
+            })
+        ]
+    });
+    wavesurfer.load("https://www.mfiles.co.uk/mp3-downloads/gs-cd-track2.mp3")
 }
 
 function removeFromPL(song_id, playlist_id, dom_id) {
