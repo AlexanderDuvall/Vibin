@@ -20,14 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14d1d3d5-2720-4fb4-8789-5c02e60b908d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.browserslistrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/packs/application.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/packs/hello_react.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/webpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/webpack-dev-server" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack/development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack/environment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack/production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpacker.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,14 +126,14 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\floobits\share\edwardsotelojr\VibinMusic_Beta\app\assets\javascripts" />
+      <recent name="C:\Users\Alex\floobits\share\edwardsotelojr\VibinMusic_Beta\app\assets\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\floobits\share\edwardsotelojr\VibinMusic_Beta\app\javascript\src" />
       <recent name="C:\Users\Alex\floobits\share\edwardsotelojr\VibinMusic_Beta\app\javascript\packs" />
       <recent name="C:\Users\Alex\floobits\share\edwardsotelojr\VibinMusic_Beta\app\assets\javascripts" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Alex\floobits\share\edwardsotelojr\VibinMusic_Beta\app\assets\javascripts" />
-      <recent name="C:\Users\Alex\floobits\share\edwardsotelojr\VibinMusic_Beta\app\assets\images" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -901,6 +916,8 @@
       <workItem from="1589142942401" duration="1237000" />
       <workItem from="1589144240381" duration="237000" />
       <workItem from="1589144929376" duration="1882000" />
+      <workItem from="1589561502869" duration="206000" />
+      <workItem from="1589561808150" duration="1430000" />
     </task>
     <task id="LOCAL-00001" summary="Drag and drop playlists">
       <created>1560095000649</created>
@@ -1307,67 +1324,67 @@
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
     <state x="-760" y="-18" key="FileChooserDialogImpl/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589127612860" />
-    <state width="1020" height="252" key="GridCell.Tab.0.bottom" timestamp="1589146625796">
+    <state width="1037" height="396" key="GridCell.Tab.0.bottom" timestamp="1589563239322">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.0.bottom/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
-    <state width="1020" height="252" key="GridCell.Tab.0.bottom/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589146625796" />
-    <state width="1877" height="214" key="GridCell.Tab.0.bottom/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483530" />
+    <state width="1037" height="396" key="GridCell.Tab.0.bottom/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
+    <state width="1877" height="194" key="GridCell.Tab.0.bottom/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589561708057" />
     <state width="1877" height="203" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
     <state width="914" height="202" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
-    <state width="1020" height="252" key="GridCell.Tab.0.center" timestamp="1589146625796">
+    <state width="1037" height="396" key="GridCell.Tab.0.center" timestamp="1589563239322">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.0.center/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373233" />
-    <state width="1020" height="252" key="GridCell.Tab.0.center/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589146625796" />
-    <state width="1877" height="214" key="GridCell.Tab.0.center/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483529" />
+    <state width="1037" height="396" key="GridCell.Tab.0.center/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
+    <state width="1877" height="194" key="GridCell.Tab.0.center/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589561708057" />
     <state width="1877" height="203" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
     <state width="914" height="202" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
-    <state width="1020" height="252" key="GridCell.Tab.0.left" timestamp="1589146625796">
+    <state width="1037" height="396" key="GridCell.Tab.0.left" timestamp="1589563239322">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.0.left/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373233" />
-    <state width="1020" height="252" key="GridCell.Tab.0.left/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589146625796" />
-    <state width="1877" height="214" key="GridCell.Tab.0.left/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483529" />
+    <state width="1037" height="396" key="GridCell.Tab.0.left/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
+    <state width="1877" height="194" key="GridCell.Tab.0.left/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589561708057" />
     <state width="1877" height="203" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
     <state width="914" height="202" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
-    <state width="1020" height="252" key="GridCell.Tab.0.right" timestamp="1589146625796">
+    <state width="1037" height="396" key="GridCell.Tab.0.right" timestamp="1589563239322">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.0.right/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
-    <state width="1020" height="252" key="GridCell.Tab.0.right/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589146625796" />
-    <state width="1877" height="214" key="GridCell.Tab.0.right/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483529" />
+    <state width="1037" height="396" key="GridCell.Tab.0.right/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
+    <state width="1877" height="194" key="GridCell.Tab.0.right/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589561708057" />
     <state width="1877" height="203" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
     <state width="914" height="202" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
-    <state width="1020" height="252" key="GridCell.Tab.1.bottom" timestamp="1589146625796">
+    <state width="1037" height="396" key="GridCell.Tab.1.bottom" timestamp="1589563239323">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.1.bottom/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
-    <state width="1020" height="252" key="GridCell.Tab.1.bottom/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589146625796" />
+    <state width="1037" height="396" key="GridCell.Tab.1.bottom/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239323" />
     <state width="1877" height="214" key="GridCell.Tab.1.bottom/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483530" />
     <state width="1877" height="203" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
     <state width="914" height="202" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
-    <state width="1020" height="252" key="GridCell.Tab.1.center" timestamp="1589146625796">
+    <state width="1037" height="396" key="GridCell.Tab.1.center" timestamp="1589563239322">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.1.center/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
-    <state width="1020" height="252" key="GridCell.Tab.1.center/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589146625796" />
+    <state width="1037" height="396" key="GridCell.Tab.1.center/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
     <state width="1877" height="214" key="GridCell.Tab.1.center/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483530" />
     <state width="1877" height="203" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
     <state width="914" height="202" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
-    <state width="1020" height="252" key="GridCell.Tab.1.left" timestamp="1589146625796">
+    <state width="1037" height="396" key="GridCell.Tab.1.left" timestamp="1589563239322">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.1.left/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
-    <state width="1020" height="252" key="GridCell.Tab.1.left/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589146625796" />
+    <state width="1037" height="396" key="GridCell.Tab.1.left/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
     <state width="1877" height="214" key="GridCell.Tab.1.left/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483530" />
     <state width="1877" height="203" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
     <state width="914" height="202" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
-    <state width="1020" height="252" key="GridCell.Tab.1.right" timestamp="1589146625796">
+    <state width="1037" height="396" key="GridCell.Tab.1.right" timestamp="1589563239323">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.1.right/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
-    <state width="1020" height="252" key="GridCell.Tab.1.right/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589146625796" />
+    <state width="1037" height="396" key="GridCell.Tab.1.right/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239323" />
     <state width="1877" height="214" key="GridCell.Tab.1.right/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483530" />
     <state width="1877" height="203" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
     <state width="914" height="202" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587060077280" />
@@ -1387,10 +1404,10 @@
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
     <state width="1037" height="434" key="GridCell.Tab.2.right/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589049057882" />
-    <state x="-1083" y="93" width="998" height="708" key="SettingsEditor" timestamp="1589146899377">
+    <state x="-1083" y="93" width="998" height="708" key="SettingsEditor" timestamp="1589561968606">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
-    <state x="-1083" y="93" width="998" height="708" key="SettingsEditor/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589146899377" />
+    <state x="-1083" y="93" width="998" height="708" key="SettingsEditor/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589561968606" />
     <state x="922" y="209" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588208334210" />
     <state x="922" y="209" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587843643493" />
     <state x="-816" y="-264" key="Vcs.Push.Dialog.v2" timestamp="1589048946392">
@@ -1408,10 +1425,10 @@
     </state>
     <state x="-463" y="-271" width="672" height="677" key="run.anything.popup/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589143391711" />
     <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588208688673" />
-    <state x="-898" y="540" width="672" height="455" key="search.everywhere.popup" timestamp="1589146260824">
+    <state x="-898" y="540" width="672" height="455" key="search.everywhere.popup" timestamp="1589562215776">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
-    <state x="-898" y="540" width="672" height="455" key="search.everywhere.popup/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589146260824" />
+    <state x="-898" y="540" width="672" height="455" key="search.everywhere.popup/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589562215776" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588213276748" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589064967311" />
   </component>
@@ -1423,6 +1440,7 @@
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@assets_clean__VibinMusic_Beta.rcov" NAME="assets:clean: VibinMusic_Beta Coverage Results" MODIFIED="1589123044388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@assets_precompile__VibinMusic_Beta.rcov" NAME="assets:precompile: VibinMusic_Beta Coverage Results" MODIFIED="1589123225899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@db_create__VibinMusic_Beta.rcov" NAME="db:create: VibinMusic_Beta Coverage Results" MODIFIED="1558118844575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
+    <SUITE FILE_PATH="coverage/Alex_Work@Development__VibinMusic_Beta.rcov" NAME="Development: VibinMusic_Beta Coverage Results" MODIFIED="1589567526927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@Development__VibinMusic_Beta.rcov" NAME="Development: VibinMusic_Beta Coverage Results" MODIFIED="1589146625789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@IRB_console__VibinMusic_Beta.rcov" NAME="IRB console: VibinMusic_Beta Coverage Results" MODIFIED="1588099807000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
   </component>
