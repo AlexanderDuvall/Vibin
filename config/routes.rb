@@ -35,7 +35,13 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
 
-  root 'home#home'
+
+
+  get '*page', to: 'home#index', constraints: -> (req) do
+    !req.xhr? && req.format.html?
+  end
+  root 'home#index'
+
 
   get '/search' => 'home#search'
   get '/explore' => 'home#explore'
@@ -72,6 +78,8 @@ Rails.application.routes.draw do
   get '/deactivate_current_user', to: 'users#deactivate'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/logged_in', to: 'sessions#is_logged_in?'
+
   post "/newPost", to: 'posts#create'
   get 'users/:id/add_album', to: 'albums#new'
   get 'albums/new'

@@ -1,0 +1,36 @@
+
+nav {
+    position: fixed;
+    z-index: 999;
+    background-color: #eaa766;
+    top: 0;
+    left:0;
+    width: 100%;
+    min-width: 400px;
+    height: 50px;
+    overflow: hidden;
+    justify-content: space-between;
+}
+.VibinTab {
+    position: fixed;
+    top: 0;
+    left: 1px;
+    width: 55px;
+    height: 45px;
+}
+
+.ExploreTab {
+    position: fixed;
+    top: 0;
+    left: 50px;
+    width: 45px;
+    height: 45px;
+}
+
+.GroupiesTab {
+    position: fixed;
+    top: 0;
+    left: 95px;
+    height: 45px;
+    width: 45px;
+}

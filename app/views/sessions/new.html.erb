@@ -1,3 +1,6 @@
 <div id="login">
   <%= render 'form' %>
 </div>
+<%= form_with(model: @session, local: true) do |form| %>
+  <%= react_component 'LoginForm', { session: @session } %>
+<% end %>

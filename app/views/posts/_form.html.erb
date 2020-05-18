@@ -252,25 +252,21 @@
                 previewRow.appendChild(playButton);
                 rowDiv.after(previewRow);
                 let wavesurfer = WaveSurfer.create({
-                    name:"main",
                     container: '#wave',
                     waveColor: '#A8DBA8',
                     progressColor: '#3B8686',
-                    backend: 'MediaElement',
                     plugins: [
                         WaveSurfer.regions.create({
                             regions: [
                                 {
+                                    name:"main",
                                     start: 1,
                                     end: 30,
-                                    loop: false,
                                     color: 'hsla(400, 100%, 30%, 0.5)'
                                 },
 
                             ],
-                            dragSelection: {
-                                slop: 5
-                            }
+                            dragSelection: false
                         })
                     ]
                 });
@@ -282,33 +278,7 @@
                 //var waveRegion = WaveSurfer.create.region;
                 wave.className = "wave";
                 wavesurfer.on('ready', function () {
-                    //  wavesurfer.play();
-                    document.getElementsByTagName('canvas')[0].style.width = '100%';
-                    document.getElementsByTagName('canvas')[0].style.height = '100%';
-                    var regionDiv = document.getElementsByClassName('wavesurfer-region')[0];
-                     var regio = document.getElementsByClassName('wave')[0];
 
-                    var regionLeft;
-                    var regionLeftMoved;
-                    regionDiv.addEventListener('mousedown', function (e) {
-                        e.preventDefault();
-                        if (wavesurfer.isPlaying()) {
-                            wavesurfer.pause();
-                        }
-                       regionLeft = regionDiv.style.left;
-
-                    });
-                    regionDiv.addEventListener('mouseup', function (e) {
-                         e.preventDefault();
-                        if (wavesurfer.isPlaying()) {
-                            wavesurfer.pause();
-                        }
-                        if(regionLeftMoved != regionLeft){
-                            setTimeout(timeo, 800);
-                        }else{
-                            wavesurfer.play();
-                        }
-                    });
                 });
 
                 function timeo() {

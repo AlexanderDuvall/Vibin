@@ -216,8 +216,14 @@ window.addEventListener("DOMContentLoaded", function (e) {
             pastAudio = audio.volume;
             // audio.currentTime = p * audio.duration;
         }
-
-        console.log("------------Mouse Up -------------");
+/*
+        if(window.location.href == "http://localhost:3000/groupies"){
+            console.log("groupies page");
+        }else if(window.location.href == "http://localhost:3000/"){
+            console.log("home page");
+        }
+        console.log(window.location.href);
+        console.log("------------Mouse Up -------------");*/
     });
 });
 

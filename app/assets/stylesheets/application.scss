@@ -146,7 +146,7 @@ a:hover {
   background: #ddd;
 }
 
-.login {
+.Login {
   float: right;
   position: fixed;
   width: 45px;
@@ -156,13 +156,13 @@ a:hover {
   color: white;
 }
 
-.dropdown-content-login {
+.Dropdown-content-login {
   top: 45px;
   right: 0;
   display: none;
   position: fixed;
   width: 300px;
-  background-color: #f1f1f1;
+  height: min-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
