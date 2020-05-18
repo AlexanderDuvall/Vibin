@@ -1,5 +1,14 @@
 class ChangeUsersTable < ActiveRecord::Migration[5.2]
   def up
+    create_table "broadcasters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+      t.integer "user_id"
+      t.string "broadcast_key"
+       t.integer "num_listeners"
+      t.index ["user_id"], name: "index_broadcasters_on_user_id"
+    end
+
     #STRIP ALL FOREIGN KEYS
     remove_reference :albums, :user if column_exists?(:albums, :user_id)
     remove_reference :albumlikes, :users if column_exists?(:albumlikes, :users_id)

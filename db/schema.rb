@@ -37,19 +37,21 @@ ActiveRecord::Schema.define(version: 2020_04_12_002219) do
     t.string "musiclist"
     t.string "title"
     t.string "message"
+    t.integer "users_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_albums_on_user_id"
+    t.index ["users_id"], name: "index_albums_on_users_id"
   end
 
   create_table "broadcasters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "num_listeners"
     t.integer "user_id"
     t.string "broadcast_key"
     t.boolean "is_playing", default: false
-    t.integer "num_listeners"
     t.index ["user_id"], name: "index_broadcasters_on_user_id"
   end
 
@@ -160,8 +162,8 @@ ActiveRecord::Schema.define(version: 2020_04_12_002219) do
   create_table "songlikes", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "song_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["song_id"], name: "index_songlikes_on_song_id"
     t.index ["user_id"], name: "index_songlikes_on_user_id"
   end
@@ -215,13 +217,13 @@ ActiveRecord::Schema.define(version: 2020_04_12_002219) do
     t.datetime "updated_at", null: false
     t.boolean "Terms_of_Agreement", default: true
     t.string "remember_digest"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
     t.boolean "Verified", default: false
     t.string "longitude", null: false
     t.string "latitude", null: false

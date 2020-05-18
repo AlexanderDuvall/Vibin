@@ -19,40 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14d1d3d5-2720-4fb4-8789-5c02e60b908d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db/VibinSchema" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.floo" beforeDir="false" afterPath="$PROJECT_DIR$/.floo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
+    <list default="true" id="14d1d3d5-2720-4fb4-8789-5c02e60b908d" name="Default Changelist" comment="Latest React Files from edwawrd. Fixed db migrations up so they all work in one go. Added Broadcasters table in change_users_table.rb.">
       <change beforePath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ruby-version" beforeDir="false" afterPath="$PROJECT_DIR$/.ruby-version" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/config/manifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/config/manifest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/audio-player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/sessions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/sessions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/packs/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/packs/hello_react.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/hello_react.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/groupies.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/groupies.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/home.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_nav_user.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_nav_user.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/puma.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/puma.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpacker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpacker.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20190607193030_change_id_data_type_in_songs.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190607193030_change_id_data_type_in_songs.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20190708140632_change_users_table.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190708140632_change_users_table.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20190725181734_add_num_listeners_to_broadcasters.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190725181734_add_num_listeners_to_broadcasters.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -931,7 +903,8 @@
       <workItem from="1589561502869" duration="206000" />
       <workItem from="1589561808150" duration="1430000" />
       <workItem from="1589812747396" duration="42000" />
-      <workItem from="1589812791498" duration="2342000" />
+      <workItem from="1589812791498" duration="2666000" />
+      <workItem from="1589815612001" duration="1015000" />
     </task>
     <task id="LOCAL-00001" summary="Drag and drop playlists">
       <created>1560095000649</created>
@@ -1241,7 +1214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589048901162</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Latest React Files from edwawrd. Fixed db migrations up so they all work in one go. Added Broadcasters table in change_users_table.rb.">
+      <created>1589815368647</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1589815368647</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1276,7 +1256,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed bugs for Top Song by Genre. Now shoes whether or not there is a top song in that genre and displays top song if present. Removes Append Bug." />
     <MESSAGE value="Edwards audio player" />
     <MESSAGE value="Playlist Fully Functional" />
     <MESSAGE value="Playlist goes back a song and forward a song. Shuffle does not work yet, and started created formats for different song scenarios." />
@@ -1301,7 +1280,8 @@
     <MESSAGE value="Three image format finished. Pushing unversioned files." />
     <MESSAGE value="Format fixes for white space on two images" />
     <MESSAGE value="Fixed white space background to black. Extended image length and fixed center on _TwoImages.erb." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed white space background to black. Extended image length and fixed center on _TwoImages.erb." />
+    <MESSAGE value="Latest React Files from edwawrd. Fixed db migrations up so they all work in one go. Added Broadcasters table in change_users_table.rb." />
+    <option name="LAST_COMMIT_MESSAGE" value="Latest React Files from edwawrd. Fixed db migrations up so they all work in one go. Added Broadcasters table in change_users_table.rb." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1032" y="178" key="#Notifications" timestamp="1587080506466">
@@ -1338,70 +1318,70 @@
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
     <state x="-760" y="-18" key="FileChooserDialogImpl/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589127612860" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1589814356594">
+    <state width="916" height="275" key="GridCell.Tab.0.bottom" timestamp="1589816122032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.0.bottom/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
     <state width="1037" height="396" key="GridCell.Tab.0.bottom/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
     <state width="1877" height="194" key="GridCell.Tab.0.bottom/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589561708057" />
     <state width="1877" height="203" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589814356594" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1589814356592">
+    <state width="916" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589816122032" />
+    <state width="916" height="275" key="GridCell.Tab.0.center" timestamp="1589816122032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.0.center/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373233" />
     <state width="1037" height="396" key="GridCell.Tab.0.center/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
     <state width="1877" height="194" key="GridCell.Tab.0.center/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589561708057" />
     <state width="1877" height="203" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589814356592" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1589814356592">
+    <state width="916" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589816122032" />
+    <state width="916" height="275" key="GridCell.Tab.0.left" timestamp="1589816122032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.0.left/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373233" />
     <state width="1037" height="396" key="GridCell.Tab.0.left/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
     <state width="1877" height="194" key="GridCell.Tab.0.left/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589561708057" />
     <state width="1877" height="203" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589814356592" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1589814356593">
+    <state width="916" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589816122032" />
+    <state width="916" height="275" key="GridCell.Tab.0.right" timestamp="1589816122032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.0.right/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
     <state width="1037" height="396" key="GridCell.Tab.0.right/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
     <state width="1877" height="194" key="GridCell.Tab.0.right/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589561708057" />
     <state width="1877" height="203" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589814356593" />
-    <state width="1877" height="275" key="GridCell.Tab.1.bottom" timestamp="1589814356594">
+    <state width="916" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589816122032" />
+    <state width="916" height="275" key="GridCell.Tab.1.bottom" timestamp="1589816122032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.1.bottom/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
     <state width="1037" height="396" key="GridCell.Tab.1.bottom/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239323" />
     <state width="1877" height="214" key="GridCell.Tab.1.bottom/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483530" />
     <state width="1877" height="203" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
-    <state width="1877" height="275" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589814356594" />
-    <state width="1877" height="275" key="GridCell.Tab.1.center" timestamp="1589814356594">
+    <state width="916" height="275" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589816122032" />
+    <state width="916" height="275" key="GridCell.Tab.1.center" timestamp="1589816122032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.1.center/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
     <state width="1037" height="396" key="GridCell.Tab.1.center/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
     <state width="1877" height="214" key="GridCell.Tab.1.center/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483530" />
     <state width="1877" height="203" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
-    <state width="1877" height="275" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589814356594" />
-    <state width="1877" height="275" key="GridCell.Tab.1.left" timestamp="1589814356594">
+    <state width="916" height="275" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589816122032" />
+    <state width="916" height="275" key="GridCell.Tab.1.left" timestamp="1589816122032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.1.left/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
     <state width="1037" height="396" key="GridCell.Tab.1.left/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239322" />
     <state width="1877" height="214" key="GridCell.Tab.1.left/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483530" />
     <state width="1877" height="203" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
-    <state width="1877" height="275" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589814356594" />
-    <state width="1877" height="275" key="GridCell.Tab.1.right" timestamp="1589814356594">
+    <state width="916" height="275" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589816122032" />
+    <state width="916" height="275" key="GridCell.Tab.1.right" timestamp="1589816122032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1036" height="252" key="GridCell.Tab.1.right/-1080.-543.1080.1880/0.0.1920.1040@-1080.-543.1080.1880" timestamp="1588392373234" />
     <state width="1037" height="396" key="GridCell.Tab.1.right/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589563239323" />
     <state width="1877" height="214" key="GridCell.Tab.1.right/-1080.-712.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1589071483530" />
     <state width="1877" height="203" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588221079503" />
-    <state width="1877" height="275" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589814356594" />
+    <state width="916" height="275" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589816122032" />
     <state width="1037" height="434" key="GridCell.Tab.2.bottom" timestamp="1589049057882">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
@@ -1424,11 +1404,12 @@
     <state x="-1083" y="93" width="998" height="708" key="SettingsEditor/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589561968606" />
     <state x="922" y="209" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588208334210" />
     <state x="922" y="209" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587843643493" />
-    <state x="-816" y="-264" key="Vcs.Push.Dialog.v2" timestamp="1589048946392">
-      <screen x="-1080" y="-712" width="1080" height="1880" />
+    <state x="469" y="248" key="Vcs.Push.Dialog.v2" timestamp="1589815453614">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-816" y="-264" key="Vcs.Push.Dialog.v2/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589048946392" />
     <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588220177375" />
+    <state x="469" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589815453614" />
     <state x="-730" y="-403" key="VcsDiffUtil.ChangesDialog" timestamp="1589133932383">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>
@@ -1439,12 +1420,12 @@
     </state>
     <state x="-463" y="-271" width="672" height="677" key="run.anything.popup/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589143391711" />
     <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588208688673" />
-    <state x="-898" y="540" width="672" height="455" key="search.everywhere.popup" timestamp="1589562215776">
-      <screen x="-1080" y="-712" width="1080" height="1880" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1589816426335">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-898" y="540" width="672" height="455" key="search.everywhere.popup/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589562215776" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588213276748" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589064967311" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589816426335" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@Rails_console__VibinMusic_Beta.rcov" NAME="Rails console: VibinMusic_Beta Coverage Results" MODIFIED="1588103086000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
@@ -1455,7 +1436,7 @@
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@assets_precompile__VibinMusic_Beta.rcov" NAME="assets:precompile: VibinMusic_Beta Coverage Results" MODIFIED="1589123225899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@db_create__VibinMusic_Beta.rcov" NAME="db:create: VibinMusic_Beta Coverage Results" MODIFIED="1558118844575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/Alex_Work@Development__VibinMusic_Beta.rcov" NAME="Development: VibinMusic_Beta Coverage Results" MODIFIED="1589567526927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
-    <SUITE FILE_PATH="coverage/Vibin@Development__VibinMusic_Beta.rcov" NAME="Development: VibinMusic_Beta Coverage Results" MODIFIED="1589814319399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
+    <SUITE FILE_PATH="coverage/Vibin@Development__VibinMusic_Beta.rcov" NAME="Development: VibinMusic_Beta Coverage Results" MODIFIED="1589815883272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@Development__VibinMusic_Beta.rcov" NAME="Development: VibinMusic_Beta Coverage Results" MODIFIED="1589146625789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
     <SUITE FILE_PATH="coverage/VibinMusic_Beta@IRB_console__VibinMusic_Beta.rcov" NAME="IRB console: VibinMusic_Beta Coverage Results" MODIFIED="1588099807000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VibinMusic_Beta" />
   </component>
