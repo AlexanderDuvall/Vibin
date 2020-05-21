@@ -1,6 +1,6 @@
-<%= image_tag "Vibin", class: "VibinTab", onclick: "sendTheAJAX('', '')"%>
-<%= image_tag "explore", class: "ExploreTab", onclick: "sendTheAJAX('explore', '')"%>
-<%= image_tag "groupies", class: "GroupiesTab", onclick: "sendTheAJAX('groupies', '')"%>
+<%= image_tag "Vibin", class: "VibinTab", onclick: "ajaxToPage('', '')"%>
+<%= image_tag "explore", class: "ExploreTab", onclick: "ajaxToPage('explore', '')"%>
+<%= image_tag "groupies", class: "GroupiesTab", onclick: "ajaxToPage('groupies', '')"%>
 
 <%= form_tag search_path, method: :get, remote: true do %>
   <%= text_field_tag :term, nil, placeholder: "Search", class: "SearchBar" %>
@@ -9,19 +9,19 @@
 <script>
 
     function openLogin(){
-        $('.dropdown-content-login').css('display', 'block');
+        $('.Dropdown-content-login').css('display', 'block');
     }
     $("body").click(function(e) {
         if (!e.target.id == "login" || !$(e.target).parents("#login").length) {
-            $('.dropdown-content-login').css('display', 'none');
+            $('.Dropdown-content-login').css('display', 'none');
         }
     });
 
 </script>
 
 
-<div class="login" onmouseover="openLogin()" id="login">Login
-  <div class="dropdown-content-login">
+<div class="Login" onmouseover="openLogin()" id="login">Login
+  <div class="Dropdown-content-login">
     <%= render 'sessions/form'%>
   </div>
 </div>

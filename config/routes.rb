@@ -37,10 +37,7 @@ Rails.application.routes.draw do
 
 
 
-  get '*page', to: 'home#index', constraints: -> (req) do
-    !req.xhr? && req.format.html?
-  end
-  root 'home#index'
+  root 'home#home'
 
 
   get '/search' => 'home#search'
@@ -71,7 +68,7 @@ Rails.application.routes.draw do
   get 'songs/:id' => 'songs#show'
   get '/signup' => 'users#new'
   get '/YourTaste' => 'users#new2'
-  get '/login', to: 'sessions#new'
+  #get '/login', to: 'sessions#new'
   get '/settings', to: 'users#edit'
   get '/password_reset', to: 'password_resets#new'
   get '/privacy_settings', to: 'privacy_settings#edit'

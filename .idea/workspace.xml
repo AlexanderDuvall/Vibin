@@ -16,15 +16,19 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14d1d3d5-2720-4fb4-8789-5c02e60b908d" name="Default Changelist" comment="Latest React Files from edwawrd. Fixed db migrations up so they all work in one go. Added Broadcasters table in change_users_table.rb.">
+      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VibinMusic_Beta.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190607193030_change_id_data_type_in_songs.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190607193030_change_id_data_type_in_songs.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190708140632_change_users_table.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190708140632_change_users_table.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190725181734_add_num_listeners_to_broadcasters.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190725181734_add_num_listeners_to_broadcasters.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -905,6 +909,7 @@
       <workItem from="1589812747396" duration="42000" />
       <workItem from="1589812791498" duration="2666000" />
       <workItem from="1589815612001" duration="1015000" />
+      <workItem from="1590084140016" duration="74000" />
     </task>
     <task id="LOCAL-00001" summary="Drag and drop playlists">
       <created>1560095000649</created>
@@ -1247,6 +1252,17 @@
                   <entry key="Show.Git.Branches" value="true" />
                 </map>
               </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
           </value>
         </entry>
@@ -1304,11 +1320,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1120" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587843035573" />
-    <state x="-1080" y="-708" key="CommitChangelistDialog2" timestamp="1589048900526">
-      <screen x="-1080" y="-712" width="1080" height="1880" />
+    <state x="0" y="2" key="CommitChangelistDialog2" timestamp="1590084205800">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1080" y="-708" key="CommitChangelistDialog2/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589048900526" />
     <state x="1047" y="2" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588220162235" />
+    <state x="0" y="2" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590084205800" />
     <state x="90" y="-14" width="977" height="1548" maximized="true" key="DiffContextDialog" timestamp="1589812788453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -1404,12 +1421,12 @@
     <state x="-1083" y="93" width="998" height="708" key="SettingsEditor/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589561968606" />
     <state x="922" y="209" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588208334210" />
     <state x="922" y="209" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587843643493" />
-    <state x="469" y="248" key="Vcs.Push.Dialog.v2" timestamp="1589815453614">
+    <state x="491" y="114" key="Vcs.Push.Dialog.v2" timestamp="1590084199049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-816" y="-264" key="Vcs.Push.Dialog.v2/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589048946392" />
     <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588220177375" />
-    <state x="469" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589815453614" />
+    <state x="491" y="114" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590084199049" />
     <state x="-730" y="-403" key="VcsDiffUtil.ChangesDialog" timestamp="1589133932383">
       <screen x="-1080" y="-712" width="1080" height="1880" />
     </state>

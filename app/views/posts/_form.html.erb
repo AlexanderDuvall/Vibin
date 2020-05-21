@@ -93,7 +93,6 @@
         document.getElementById("songUploader").addEventListener("click", function (event) {
             event.preventDefault();
             $("#songs").trigger("click");
-            event.preventDefault();
         });
         document.getElementById("submitt").addEventListener("click", function (event) {
             event.preventDefault();
@@ -182,7 +181,8 @@
                 audio = new Audio();
                 reader = new FileReader();
                 reader.readAsDataURL(files[i]);
-                rowDiv = document.createElement('div');
+                
+               /* rowDiv = document.createElement('div');
                 rowDiv.setAttribute('class', 'row');
                 rowDiv.setAttribute('style', 'margin-left: -10px; width: 98%;');
                 document.getElementById('previewSongs').appendChild(rowDiv);
@@ -259,14 +259,17 @@
                         WaveSurfer.regions.create({
                             regions: [
                                 {
-                                    name:"main",
+                                    name: "main",
                                     start: 1,
                                     end: 30,
                                     color: 'hsla(400, 100%, 30%, 0.5)'
-                                },
+                                }
 
                             ],
-                            dragSelection: false
+
+                            dragSelection: {
+                                slop:3
+                            }
                         })
                     ]
                 });
@@ -282,9 +285,9 @@
                 });
 
                 function timeo() {
-                    var duration =wavesurfer.getDuration();
+                    var duration = wavesurfer.getDuration();
                     var start = wavesurfer.regions.list['main'].start;
-                    var startplayTime = start/duration;
+                    var startplayTime = start / duration;
                     console.log(startplayTime);
                     wavesurfer.seekTo(startplayTime);
                     wavesurfer.play();
@@ -298,7 +301,7 @@
                     } else {
                         wavesurfer.play();
                     }
-                });
+                });*/
                 /*
                  audioplayer = document.createElement("audio");
                  audioplayer.setAttribute("id", "player");
@@ -373,7 +376,7 @@
         box.value = "@";
     }
 
-    function testingR(){
+    function testingR() {
         console.log('df');
     }
 

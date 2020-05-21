@@ -1,4 +1,4 @@
-<div class="loginBox">
+<div class="LoginBox">
   <h3 class="h3"> Log In </h3>
   <%= form_for(:session, url: login_path, remote: true) do |f| %>
     <%= f.email_field :email, class: "emailBox", placeholder: "email/username" %>
@@ -13,15 +13,15 @@
   <p onclick="dooo()"> New User? </p>
 </div>
 <script>
-  function dooo(){
-    $( "#main" ).load( "signup");
-    window.history.pushState("object or string", "Sign up", "/signup");
-   // var script = document.createElement('script');
-   // script.onload = function () {
-          //console.log("Lmaoo");
-      //rails};
-      //script.src = '/users.js';
-     console.log("dooo function");
-    //  document.head.appendChild(script); //or something of the likes
-  }
+    function dooo(){
+        $( "#main" ).load( "signup");
+        window.history.pushState("object or string", "Sign up", "/signup");
+        // var script = document.createElement('script');
+        // script.onload = function () {
+        //console.log("Lmaoo");
+        //rails};
+        //script.src = '/users.js';
+        console.log("dooo function");
+        //  document.head.appendChild(script); //or something of the likes
+    }
 </script>

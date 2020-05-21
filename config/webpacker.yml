@@ -1,3 +1,4 @@
+# Note: You must restart bin/webpack-dev-server for changes to take effect
 
 default: &default
   source_path: app/javascript
@@ -6,9 +7,9 @@ default: &default
   public_output_path: packs
   cache_path: tmp/cache/webpacker
   webpack_compile_output: true
-
   # Additional paths webpack should lookup modules
   # ['app/assets', 'engine/foo/app/assets']
+  additional_paths: ['app/assets', 'app/views']
   resolved_paths: []
 
   # Reload manifest.json on all requests so we reload latest compiled packs
@@ -32,6 +33,7 @@ default: &default
     - .woff2
 
   extensions:
+    - .erb
     - .jsx
     - .mjs
     - .js

@@ -1,1 +1,416 @@
-<%= react_component("HelloWorld", { greeting: "Hello from react-rails." }) %>
+<% if logged_in? %>
+  <% @user = current_user %>
+  <div class="UserHomePage">
+    <div class="HomeUserFeed">
+      <div class="post">
+        <div class="postLeft">
+          <% if @user.avatar.attached? %>
+            <%= image_tag (@user.avatar), class: "post-ava", style:"margin-left:13px" %>
+          <% else %>
+            <img src="http://localhost:3000/default-avatar.jpg" class='post-ava'>
+          <% end %>
+        </div>
+        <div class="postForm">
+          <p> We'll be back</p>
+        </div>
+      </div>
+      <%= render "/posts/userfeed" %>
+    </div>
+    <div class="homeRecommended">
+      <h4>Music Library</h4>
+      <div class="homeLibrary">
+        <div class="container">
+          <div class="row" style="margin-top: 3px;">
+            <div class="col-4" style="text-align: left;">
+              <h5>Playlists</h5>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom: -8px;">
+            <div class="homeLibraryPlaylist">
+              <img src="default-avatar.jpg" class="homeLibraryPlaylistCover">
+              <p style="margin-bottom: 3px;">Playlist Name Name</p>
+            </div>
+            <div class="homeLibraryPlaylist">
+              <img src="default-avatar.jpg" class="homeLibraryPlaylistCover">
+              <p style="margin-bottom: 3px;">Playlist Name</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row" style="margin-top: -8px;">
+            <div class="homeLibrarySong">
+              <div class="row">
+                <div class="col-3">
+                  <img src="default-avatar.jpg" class="homeLibrarySongArtistAva">
+                </div>
+                <div class="col-9">
+                  <p style="font-size: 14px; margin: 10px 0 0 -10px;">@TameImpala</p>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <img src="default-avatar.jpg" class="homeLibrarySongCover">
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p style="margin-bottom: 3px; margin-top: 6px; font-size: 14px;"> Song Title</p>
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 10px;">
+                <div class="col">
+                  <img src="default-avatar.jpg" class="homeLibrarySongFeaturedArtistAva">
+                  <img src="default-avatar.jpg" class="homeLibrarySongFeaturedArtistAva">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="RecommendedContainer">
+        <h5 style="float:left; margin-left: 30px;">Recommendations</h5>
+        <div class="RecommendedRow">
+          <% @recommendedUsers.each do |user| %>
+            <div class="exploreUserBox">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <%= user.name %>
+                </div>
+                <div class="row justify-content-center" style="font-size: 14px; margin-top: -5px;">
+                  @<%= user.username %>
+                </div>
+                <div class="row justify-content-center" style="font-size: 12px; margin-top: -5px;">
+                  <%= user.hometown %>
+                </div>
+                <div class="row" style="margin-top: 18px;">
+                  <div class="col" style="max-width: 33%; font-size: 11px; white-space: initial;">
+                    Rap Alternative Chopped & Screwed
+                  </div>
+                  <div class="col" style="max-width: 33%;">
+                    <!%= image_tag !user.avatar.nil? ? url_for(user.avatar) : "default-avatar.jpg", class:
+                    "exploreTopArtistAva"%>
+                    <%= image_tag "default-avatar.jpg", class: "exploreTopArtistAva" %>
+
+                  </div>
+                  <div class="col" style="max-width: 33%;">
+                    <h4><span class="badge badge-light"> Live</span></h4>
+                  </div>
+                </div>
+                <div class="row justify-content-between">
+                  <div class="col-6" style="font-size: 14px;">
+                    Favorite Artist
+                  </div>
+                  <div class="col-6" style="font-size: 14px; text-align: end;">
+                    Favorite Song
+                  </div>
+                </div>
+                <div class="row justify-content-center" style="margin-top: 5px;">
+                  <div class="col-10">
+                    <img src="default-avatar.jpg" class="exploreTopSongArtistAva" style="margin-right: 15px;">
+                    <button class="btn-primary btn-sm" style="margin-top: 5px; margin-right: 5px;">Follow</button>
+                    <img src="default-avatar.jpg" class="exploreTopSongCover" style="width: 35px; height: 35px;">
+                  </div>
+                </div>
+                <div class="row" style="margin-bottom: 5px;">
+                  <div class="col-6" style="font-size: 13px; text-align: center;">
+                    @TameImpala
+                  </div>
+                  <div class="col-6" style="font-size: 13px; white-space: normal; text-align: center;">
+                    One More Hour
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <!--
+      <div class="RecommendedContainer">
+        <div class="RecommendedRow" id="recommendedrowsong">
+           <!% @recommendedSongs.each do |song| %>
+            <!% user = nil %>
+            <!% album = nil %>
+            <div class="exploreTopSongBox">
+              <div class="row align-content-left">
+                <div class="col-1" style="margin-top: 3px; margin-left: 8px;">
+                  1
+                </div>
+                <div class="col-8" style="margin-top: 10px;">
+                  <p class="text-center" style="margin-bottom:1px; white-space: normal;
+                      font-size: 17px; font-family: Arial, Helvetica, sans-serif; letter-spacing: 0.2px;"><!%= song.title %></p>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-8">
+                  <!% if !song.user_id.nil? %>
+                    <!% user = User.find(song.user_id) %>
+                    <button class="exploreTopSongCover" onclick="SelectedSong(this, String(<!%=user.name%>), String(<!%=user.username%>), String(<!%=song.title%>), true, parseInt(<!%=song.id %>), String(<!%=song.song_file%>), String(<!%= song.song_file%>)); incrementPlays(<!%= song.id %>, <!%= song.user_id%>)"></button>
+                  <!% elsif !song.album_id.nil? %>
+                    <!% album = Album.find(song.album_id) %>
+                    <!% user = User.find(album.user_id) %>
+                    <button class="exploreTopSongCover" onclick="SelectedSong(this, String(<!%=user.name%>), String(<!%=user.username%>), String(<!%=song.title%>), true, parseInt(<!%=song.id %>), String(<!%=song.song_file%>), String(<!%= album.album_cover%>)); incrementPlays(<!%= song.id %>, <!%= song.user_id%>)"></button>
+                  <!% end %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <img src=<!%= !song.cover_image.nil? ? song.cover_image : album.album_cover %>
+                           class="exploreTopSongArtistAva">
+                </div>
+                <div class="col-10">
+                  <p style="margin-bottom: 0; margin-left: 12px;">@<!%= user.username %></p>
+                  <p style="margin-bottom: 0; font-size: 10px; margin-left: 17px;">Hometown: </p>
+                  <p style="margin-bottom: 5px; font-size: 12px; margin-left: 10px;"><!%= user.hometown %></p>
+                </div>
+              </div>
+              <div class="row" style="margin-left: 10px; font-size: 12px; margin-bottom: 3px;">
+                Featured:
+                <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+                <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva">
+              </div>
+            </div>
+          <!% end %>
+        </div>
+      </div>
+      -->
+      <div class="RecommendedContainer">
+        <div class="RecommendedRow">
+          <div class="exploreEventBox">
+            <div class="row justify-content-between">
+              <div class="col-7" style="margin-top: 7px; margin-left: 8px;">
+                Tame Impala's Concert
+              </div>
+              <div class="col-4" style="margin-top: 7px; margin-right: 8px;">4/20/2020
+              </div>
+            </div>
+            <div class="row justify-content-center" style="margin-top: 5px;">
+              <div class="col-4">
+                <img src="default-avatar.jpg" class="exploreEventFlyer" style="margin-left: 9px;">
+              </div>
+              <div class="col-8" style="display: flex; flex-wrap: wrap">
+                <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva" style="">
+                <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva" style="">
+                <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva" style="display: block;">
+                <img src="default-avatar.jpg" class="exploreTopSongFeaturedAva" style="display: block;">
+                <br>
+                <span class="badge badge-secondary tag" style="display: inline-block; width: max-content; height: min-content;">Rap</span>
+                <span class="badge badge-secondary tag" style="display: inline-block; width: max-content; height: min-content;">Trap Music</span>
+                <span class="badge badge-secondary tag" style="display: inline-block; width: max-content; height: min-content;">#YoungDolph</span>
+                <span class="badge badge-secondary tag" style="display: inline-block; width: max-content; height: min-content;">#HellofALife</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-7" style="margin-left: 8px;">
+                Venue Name <br>Location
+                <p style="font-size: 12px; white-space: normal;">Event Post (info) goes right here.</p>
+              </div>
+              <div class="col-4 justify-content-center" style="border-color: black; border-style: solid;">
+                <p style="margin-bottom: 0; font-size: 15px;">GA: $10</p>
+                <p style="margin-bottom: 0; font-size: 15px;">VIP: $20</p>
+                <p style="margin-bottom: 5px; font-size: 15px;">M&G: $40</p>
+                <a href="">Parking</a>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 5px; font-size: 12px; margin-bottom: 3px;">
+              <div class="col-2">
+                <img src="default-avatar.jpg" class="exploreEventHostAva">
+              </div>
+              <div class="col-5">
+                <p style="margin-left: 5px;">@TameImpala<br>
+                  Houston, TX</p>
+              </div>
+              <div class="col-3">
+                <button class="btn btn-light btn-sm" style="margin-top: 7px;"> Follow</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= will_paginate @combine, style: "display: none;" %>
+<% else %>
+  <%= react_component("NonUserHomePage") %>
+
+  <!--
+  <div class="Non-UserHomePage" id="home" name="non-UserHomePage">
+    <div class="LeftSide">
+      <div class="TopBroadcast">
+        Top live stream
+      </div>
+      <div class="Slideshow">
+        About Vibin
+      </div>
+    </div>
+    <div class="RightSide" id="rightSide">
+      <div class="TopSongs">
+        Top songs from the past week
+      </div>
+      <div class="TopBroadcasts">
+        Top streamers from the past week.
+      </div>
+      <div class="Trending">
+        Treading songs. highest plays from the past 3 days
+      </div>
+      <div class="GenreList">
+        select genre then display top songs from the past month.
+      </div>
+    </div>
+  </div>
+
+
+  <-- Welcome to Vibin First Impression --
+  <div class="topRow">
+
+    <div class="slideshow">
+      <--Carousel --
+      <div id="carouselExampleIndicators" class="carousel slide carouselBox" data-ride="carousel" data-interval="12000">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner carouselBox">
+          <div class="carousel-item active">
+            <img class="d-block w-100 carouselBox" src="http://localhost:3000/slide1.png" alt="First slide">
+          </div>
+          <div class="carousel-item carouselBox">
+            <img class="d-block w-100 carouselBox" src="" alt="talk about groupies">
+          </div>
+          <div class="carousel-item carouselBox">
+            <img class="d-block w-100 carouselBox" src="" alt="talk about premium">
+          </div>
+        </div>
+        <a class="carousel-control-prev remove" href="#carouselExampleIndicators" role="button" data-slide="prev" style="background-color: inherit;">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="background-color: inherit;">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <-- Mobile App details, Premium Details --
+  <div class="bottomRow">
+    <div class="mobileAppColumn">
+      <div class="iphone">
+        <img src="http://localhost:3000/iphone.png" style="height: 100%; width: 100%;">
+      </div>
+    </div>
+    <div class="premiumColumn">
+      <div class="premiumTab">
+        <p> Non User Benefits<br>
+          Premium Benefits</p>
+      </div>
+    </div>
+  </div>
+  <-- Top broadcast Right Now, Top Songs --
+  <div class="rightMenu">
+    <div class="topBroadcast">
+      <div class="BCPlayer">
+        <div class="BCPlayerUserAvatar">
+        </div>
+        <div class="BCUserInfo">
+          <h6>User name</h6>
+          <h6>@username</h6>
+          <h6>Houston, TX</h6>
+        </div>
+        <div class="BCCurrentSongCover">
+        </div>
+        <div class="BCInfo">
+          <h6>Listeners: 1000</h6>
+        </div>
+      </div>
+      <div class="BCChat">
+      </div>
+    </div>
+    <div class="topChart">
+      <center><h4> Top Chart </h4></center>
+      <div class="topChartFeed">
+        <!% @TopChart.each do |song| %>
+          <div class="topChart-row">
+            <div class="topChart-info-column">
+              <p><!%= song.title %><br>
+                subgenre, genre </p>
+            </div>
+            <div class="topChart-cover-column">
+              <center>
+                <button class="playButton" onclick="SelectedSong(this,  '<!%=song.user.username%>' ,'<!%= song.title %>', true ,<!%=song.id %>,'<!%=url_for(song.song_file) %>', '<!%=url_for(song.cover_image) %>'); incrementPlays(<!%= song.id %>, <!%= song.user_id%>)">
+                  <!%= image_tag (song.cover_image), class: "playButtonImage" %>
+                </button>
+              </center>
+            </div>
+            <div class="topChart-artist-column">
+              <p><!%= song.user.name %><br>
+                @<!%= song.user.username %><br>
+                Houston, TX</p>
+            </div>
+          </div>
+        <!% end %>
+      </div>
+    </div>
+<!% end %>
+</div>-->
+
+<% end %>
+<script>
+    $("#refresh").on("click", function () {
+        // will call refreshPartial every 3 seconds
+        //  setInterval(refreshPartial, 10000)
+
+    });
+    var topp = 110;
+    $(function () {
+        var item = document.getElementById('recommendedrowsong');
+        document.getElementById('recommendedrowsong').addEventListener('wheel', function (e) {
+
+            if (e.deltaY > 0) {
+                item.scrollLeft += 6;
+                e.preventDefault();
+            } else {
+                item.scrollLeft -= 6;
+                e.preventDefault();
+            }
+        });
+
+        $(window).on('scroll', function () {
+            topp = 110 + window.scrollY;
+            $('.recommended').css("top", topp);
+            // console.log(topp);
+        });
+        $(window).on('resize', function () {
+            if (document.getElementById("#GuestUserPage") != null) {
+                var container = document.getElementsByClassName("Non-UserHomePage").offsetWidth;
+                if (window.innerWidth < 777) {
+                    rightSide.display = "none";
+                    // console.log("loog");
+                } else {
+                    rightSide.display = "block";
+                    //   console.log(container);
+                    var newRightSide = (container - 500) + "px";
+                    $("#rightSide").css("width", newRightSide);
+
+                }
+            }
+        });
+        //$('.iphone').on('click', function(){
+        //  var url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyABBVE90zE3SB_kb52KWFSS2Fqumy303do",
+        //  $(this).getJSON( url, {
+        //    format: "json"
+        //  })
+        //  .done(function( data ) {
+        //      console.log(data);
+        //  });
+        //  });
+
+        $(".main").on("scroll", function (e) {
+            if ($(".main").scrollTop() == -1) {
+                // refresh timeline
+                console.log("refresh timeline");
+                $('.center-column').html("<%#= escape_javascript(render 'posts/userfeed')%>");
+            }
+        });
+    });
+
+
+</script>

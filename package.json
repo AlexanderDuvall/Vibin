@@ -7,6 +7,7 @@
         "axios": "^0.19.2",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
         "prop-types": "^15.7.2",
+        "rails-erb-loader": "^5.5.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-redux": "^7.2.0",
@@ -15,7 +16,8 @@
         "redux": "^4.0.5",
         "redux-thunk": "^2.3.0",
         "reselect": "^4.0.0",
-        "wavesurfer.js": "^3.3.3"
+        "wavesurfer.js": "^3.3.3",
+        "webpacker-react": "^0.3.2"
     },
     "devDependencies": {
         "install": "^0.13.0",

@@ -10,8 +10,10 @@ import GroupiesPage from "./GroupiesPage"
 import ExplorePage from './ExplorePage'
 import Login from './Login'
 
+//import {getMsg, getLogin} from "./RaTest.js.erb";
 
 const store = configureStore();
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -43,6 +45,7 @@ class App extends React.Component {
         axios.get('http://localhost:3000/logged_in',
             {withCredentials: true})
             .then(response => {
+                console.log('logged_in ' + response);
                 if (response.data.logged_in) {
                     this.handleLogin(response)
                 } else {
@@ -59,8 +62,8 @@ class App extends React.Component {
                     <NavBar/>
                     <Switch>
                         <Route exact path="/" render={props =>
-                            (<NonUserHomePage{...props}
-                                             loggedInStatus={this.state.isLoggedIn}/>)}/>
+                            (<NonUserHomePage  {...props} handleLogout={this.handleLogout}
+                                               loggedInStatus={this.state.isLoggedIn}/>)}/>
                         <Route path="/explore" render={() => <ExplorePage/>}/>
                         <Route path="/groupies" render={() => <GroupiesPage/>}/>
                         <Route
@@ -72,8 +75,10 @@ class App extends React.Component {
                         />
                     </Switch>
                 </BrowserRouter>
+
             </Provider>
         );
     }
 }
+
 export default App;

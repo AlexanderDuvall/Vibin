@@ -25,7 +25,8 @@
 //= require croppie
 //= require wavesurfer.js/dist/wavesurfer.js
 //= require wavesurfer.js/dist/plugin/wavesurfer.regions.js
-
+//= require react
+//= require("GroupiesPage");
 let Server_Address = "172.25.61.104"; // broadcasting ipv4 remote host address
 let isShuffled = false;
 var counter = 0;
@@ -51,6 +52,22 @@ function addtoPL(song_id, playlist_id, dom_id) {
             console.log("Playlist post failed")
         }
     })
+}
+
+function ajaxToPage(page) {
+    $.ajax({
+        type: 'GET',
+        url: '/' + page,
+        data: {},
+        success: function (result) {
+            document.getElementById('main').innerHTML = result;
+            ReactRailsUJS.mountComponents();
+        },
+        error: function (error) {
+            console.log("error ", error);
+        }
+    });
+    window.history.pushState("object or string", "", "/" + page);
 }
 
 function wave() {

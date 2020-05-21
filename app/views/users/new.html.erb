@@ -1,9 +1,9 @@
 
 <%= form_with(model: @user, multipart: true) do |f| %>
   <div id="signUp" class="SignUp">
-    <div class="Header" id="header">
+    <!--<div class="Header" id="header">
       <div class="LeftHeader" id="leftHeader">
-        <%= image_tag "insert.png", :class => "LeftHeaderImage", :id => "leftHeaderImage" %>
+        <!%= image_tag "insert.png", :class => "LeftHeaderImage", :id => "leftHeaderImage" %>
         <div class="Badge LeftBadge" id="badge1">
           Banner Color
          </div>
@@ -12,13 +12,12 @@
         <img src="/default-avatar.jpg" style="width:100%; height:100%; object-fit:cover;" id="avatarImage">
       </div>
       <div class="RightHeader" id="rightHeader">
-        <%= image_tag "insert.png", :class => "RightHeaderImage", :id => "rightHeaderImage" %>
+        <!%= image_tag "insert.png", :class => "RightHeaderImage", :id => "rightHeaderImage" %>
         <div class="Badge RightBadge" id="badge2">
           Banner Text Color
         </div>
       </div>
-
-    </div>
+     </div--><%= react_component "UserSignUp/UserHeader" %>
     <script src="https://unpkg.com/vanilla-picker@2"></script>
     <script>
         var rgbColor1 = "rgb(234,167,102)";
@@ -454,7 +453,7 @@
         //  $('#user_birthday').on('click', function () {
         //    $('#ui-datepicker-div').css('z-index', '100');
         //});
-        $(".Avatar").on("click", function () {
+        /*$(".Avatar").on("click", function () {
             $("#avatarUpload").trigger("click");
         });
         $("#leftHeaderImage").on("click", function () {
@@ -463,7 +462,7 @@
         $("#rightHeaderImage").on("click", function () {
             $("#secondHeader").trigger("click");
         });
-
+*/
         $("#firstHeader").change(function () {
             var info;
             var firstHeaderPic = document.getElementById("leftHeaderImage");

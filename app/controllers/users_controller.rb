@@ -75,13 +75,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    render json: {
-        :users => [
-            {
-                :name => 'Edward',
-                :username => 'edwardsotelo'
-            }
-        ]}.to_json
   end
 
   def new

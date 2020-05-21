@@ -1,6 +1,6 @@
 import React from "react";
 
-class GroupiesPage extends React.Component {
+class NewSong extends React.Component {
     consolelog(e) {
         e.preventDefault();
         console.log("lmaoooooo");
@@ -17,4 +17,4 @@ class GroupiesPage extends React.Component {
     }
 }
 
-export default GroupiesPage;
+export default NewSong;
