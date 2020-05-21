@@ -102,7 +102,6 @@ GEM
     concurrent-ruby (1.1.6)
     connection_pool (2.2.2)
     crass (1.0.6)
-    croppie_rails (2.4.0)
     elasticsearch (7.7.0)
       elasticsearch-api (= 7.7.0)
       elasticsearch-transport (= 7.7.0)
@@ -299,7 +298,6 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   coffee-rails (~> 5.0.0)
-  croppie_rails
   elasticsearch-model
   elasticsearch-rails
   faker

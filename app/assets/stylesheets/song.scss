@@ -145,19 +145,24 @@ $buttonColor: #eaa766;
 }
 
 .playButton {
-  height: 140px;
-  width: 140px;
+position: relative;
+margin-left: 0%;
 }
 
 .playButtonImage {
-  height: 140px;
-  width: 140px;
+  max-height: 100%;
+  max-width: 100%;
   border-style: solid;
   border-radius: 10px;
   border-color: white;
   background-color: inherit;
+  margin-bottom: 15px;
 }
-
+.songTitle{
+  font-size:18px;
+  text-align: left;
+  font-family: Calibri;
+}
 .Center-Audio {
   margin: auto;
   text-align: center;

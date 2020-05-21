@@ -8,6 +8,19 @@ module SongsHelper
     end
   end
 
+  def apostFormat(name)
+    check = name.upcase
+
+    last = name[check.length - 1..check.length]
+    if last.equal? "s"
+      name += "\' "
+      return name
+    else
+      name += "\'s "
+
+    end
+  end
+
   def incrementSongPlays
     #  song = Song.find(params[:id])
     #  if song.present?
@@ -21,13 +34,13 @@ module SongsHelper
   end
 
   def getTopSong(genre)
-    @songs = Song.find_by(:genre => genre).sort_by {|e| -e[:plays]}
+    @songs = Song.find_by(:genre => genre).sort_by { |e| -e[:plays] }
     song = song.first
     song
   end
 
   def set_up_Post(post)
-    3.times {post.songs.build}
+    3.times { post.songs.build }
     post
   end
 

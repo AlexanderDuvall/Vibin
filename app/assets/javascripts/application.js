@@ -22,11 +22,7 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require_tree .
-//= require croppie
-//= require wavesurfer.js/dist/wavesurfer.js
-//= require wavesurfer.js/dist/plugin/wavesurfer.regions.js
 //= require react
-//= require("GroupiesPage");
 let Server_Address = "172.25.61.104"; // broadcasting ipv4 remote host address
 let isShuffled = false;
 var counter = 0;
