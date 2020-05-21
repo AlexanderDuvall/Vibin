@@ -141,7 +141,7 @@
       </div>
     </div>
   </div>
-  <input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader" onchange=
+  <!--input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader" onchange=
       "document.getElementById('leftHeaderImage').src = window.URL.createObjectURL(this.files[0]);
           oneTimeImageSelection('firstHeader');
           $('#leftHeaderImage').height = $('.Images').height;">
@@ -155,7 +155,7 @@
           $('#avatarImage').height = $('.images').height * .33;">
   <input style="visibility: hidden" type="text" id="user_bio" name="user[bio]" value="nullnull">
 <input hidden type="text" name="user[badgeColor]" id="user_badgeColor" value="rgb(234,167,102)">
-  <input hidden type="text" name="user[badgeTextColor]" id="user_badgeTextColor" value="rgb(0,0,0)">
+  <input hidden type="text" name="user[badgeTextColor]" id="user_badgeTextColor" value="rgb(0,0,0)"-->
 
 <% end %>
 
@@ -462,7 +462,7 @@
         $("#rightHeaderImage").on("click", function () {
             $("#secondHeader").trigger("click");
         });
-*/
+*//*
         $("#firstHeader").change(function () {
             var info;
             var firstHeaderPic = document.getElementById("leftHeaderImage");
@@ -486,7 +486,7 @@
                   //  console.log(imagesProperties);
                 }
             });
-        });
+        });*/
         $("#secondHeader").change(function () {
             var secondHeaderPic = document.getElementById("rightHeaderImage");
             var secondHeaderCrop = new Croppie(secondHeaderPic, {

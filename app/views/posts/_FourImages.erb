@@ -1,0 +1,23 @@
+<div style="display: flex;width: 95%;margin: auto;">
+  <% html = image_tag (images[0]), class: "expandedImage" %>
+  <% html2 = image_tag (images[1]), class: "expandedImage" %>
+  <% html3 = image_tag (images[2]), class: "expandedImage" %>
+  <% html4 = image_tag (images[3]), class: "expandedImage" %>
+  <div class="sCol">
+    <button class="divCropper imageBackground" onclick='expand("<%= escape_javascript html %>")'>
+      <%= image_tag (images[0]), class: "imagePost3", id: "postImage" %>
+    </button>
+    <button class="divCropper bottomImage imageBackground" onclick='expand("<%= escape_javascript html2 %>")'>
+      <%= image_tag (images[1]), class: "imagePost3", id: "postImage" %>
+    </button>
+  </div>
+  <div class="sColRight">
+    <button class="divCropper imageBackground" onclick='expand("<%= escape_javascript html3 %>")'>
+      <%= image_tag (images[2]), class: "imagePost3", id: "postImage" %>
+    </button>
+    <button class="divCropper bottomImage imageBackground" onclick='expand("<%= escape_javascript html4 %>")'>
+      <%= image_tag (images[3]), class: "imagePost3", id: "postImage" %>
+    </button>
+  </div>
+</div>
+

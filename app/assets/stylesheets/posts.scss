@@ -162,13 +162,13 @@
 }
 
 .expandedImage {
-  max-width: 75%;
-  height: auto;
-  width: auto;
+  max-height: 800px;
   display: block;
-  margin-top: auto;
+  margin-top: -2%;
   margin-bottom: auto;
   margin-left: 50px;
+  position: relative;
+  max-width: 1400px;
 }
 
 .imageExpander {
@@ -238,9 +238,20 @@
   max-height: 295px;
 }
 
+.sColRight {
+  max-width: 80%;
+  display: block;
+  max-height: 295px;
+  margin-left: -30%;
+}
+
+.imageConstraint {
+  max-width: 200px;
+}
+
 .divCropperLong {
   max-width: 62%;
-  min-width: 48%;
+  min-width: 49.3%;
   height: 289px;
   overflow: hidden;
   border-radius: 6px;
@@ -284,6 +295,7 @@
   width: 92%;
   height: 295px;
 }
-.imageBackground{
+
+.imageBackground {
   background: black;
 }
