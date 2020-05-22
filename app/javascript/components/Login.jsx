@@ -36,6 +36,7 @@ class Login extends React.Component {
                 if (response.data.logged_in) {
                     this.props.handleLogin(response.data)
                     this.redirect()
+                    console.log("redirecting");
                 } else {
                     this.setState({
                         errors: response.data.errors
@@ -65,11 +66,6 @@ class Login extends React.Component {
     //        </div>hello
     //    )hello
     //};
-
-
-
-
-
     render() {
         const {email, password} = this.state;
         return (

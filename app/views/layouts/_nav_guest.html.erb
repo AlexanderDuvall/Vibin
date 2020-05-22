@@ -1,8 +1,7 @@
 <%= image_tag "Vibin", class: "VibinTab", onclick: "ajaxToPage('', '')"%>
 <%= image_tag "explore", class: "ExploreTab", onclick: "ajaxToPage('explore', '')"%>
 <%= image_tag "groupies", class: "GroupiesTab", onclick: "ajaxToPage('groupies', '')"%>
-
-<%= form_tag search_path, method: :get, remote: true do %>
+ <%= form_tag search_path, method: :get, remote: true do %>
   <%= text_field_tag :term, nil, placeholder: "Search", class: "SearchBar" %>
 <% end %>
 
@@ -16,11 +15,9 @@
             $('.Dropdown-content-login').css('display', 'none');
         }
     });
+ </script>
 
-</script>
-
-
-<div class="Login" onmouseover="openLogin()" id="login">Login
+ <div class="Login" onmouseover="openLogin()" id="login">Login
   <div class="Dropdown-content-login">
     <%= render 'sessions/form'%>
   </div>

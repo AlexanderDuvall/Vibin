@@ -17,6 +17,7 @@
   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   <%= stylesheet_link_tag 'application.css', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'audio-player.js', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application' %>
 </head>
 <body>
@@ -24,7 +25,6 @@
   <%= render "layouts/nav" %>
 </div>
 <div class="main" id="main">
-
   <%= yield %>
 
 </div>
@@ -37,10 +37,14 @@
   </div>
 </div>
 <% if logged_in? %>
-  <div class="musicbar">
+  <div class="musicbar" style="visibility: visible">
     <%= render "songs/song_player" %>
+  </div>
+<% else %>
+  <div class="musicbar" style="visibility: hidden">
+    <%= render "songs/song_player" %>
+  </div>
 <% end %>
-</div>
 </body>
 </html>
 

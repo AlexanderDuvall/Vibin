@@ -28,7 +28,8 @@ class HelloWorld extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <button className="" onClick={() => this.props.getUsers()}>getUsers</button>
+        <button className="" onClick={() => this.props.getUsers()}>
+      {getUsers()} </button>
 
       </React.Fragment>
     );

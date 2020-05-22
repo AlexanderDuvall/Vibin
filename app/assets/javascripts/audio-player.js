@@ -1,4 +1,3 @@
-let pastAudio = 1;
 let isPlayList = false;
 let mouseDownSeek = false;
 let mouseDownVolume = false;
@@ -13,11 +12,12 @@ let backward = null;
 let skipForward = null;
 let repeat = false;
 window.addEventListener("DOMContentLoaded", function (e) {
-    //var username = document.querySelector("#usernameSong");
-    //username.innerHTML = "";
+    console.log("I loaded correctly n_n")
+    let pastAudio = 1;
     let seekBar = document.querySelector('.seek-bar');
     let muteButton = document.querySelector(".volume");
     let muteButtonIcon = muteButton.querySelector(".ion-volume-high");
+    console.log("I loaded correctly n_n")
     playButton = document.querySelector('#music_bar_play_button');
     let playButtonIcon = playButton.querySelector(".ion-play");
     let fillBar = seekBar.querySelector('.fill');
@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
         let id = $("#broadcast_text").data("session");
         let key = $("#broadcast_text").data("key");
         console.log(id + " uhuh");
-        connect(id,key);
+        connect(id, key);
     };
     skipForward.addEventListener('click', function () {
         if (isPlayList) {
@@ -216,14 +216,14 @@ window.addEventListener("DOMContentLoaded", function (e) {
             pastAudio = audio.volume;
             // audio.currentTime = p * audio.duration;
         }
-/*
-        if(window.location.href == "http://localhost:3000/groupies"){
-            console.log("groupies page");
-        }else if(window.location.href == "http://localhost:3000/"){
-            console.log("home page");
-        }
-        console.log(window.location.href);
-        console.log("------------Mouse Up -------------");*/
+        /*
+                if(window.location.href == "http://localhost:3000/groupies"){
+                    console.log("groupies page");
+                }else if(window.location.href == "http://localhost:3000/"){
+                    console.log("home page");
+                }
+                console.log(window.location.href);
+                console.log("------------Mouse Up -------------");*/
     });
 });
 

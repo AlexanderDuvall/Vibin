@@ -1,23 +1,23 @@
-
 <%= form_with(model: @user, multipart: true) do |f| %>
   <div id="signUp" class="SignUp">
-    <!--<div class="Header" id="header">
+    <div class="Header" id="header">
       <div class="LeftHeader" id="leftHeader">
-        <!%= image_tag "insert.png", :class => "LeftHeaderImage", :id => "leftHeaderImage" %>
+        <%= image_tag "insert.png", :class => "LeftHeaderImage", :id => "leftHeaderImage" %>
         <div class="Badge LeftBadge" id="badge1">
           Banner Color
-         </div>
+        </div>
       </div>
       <div class="Avatar" id="avatar">
         <img src="/default-avatar.jpg" style="width:100%; height:100%; object-fit:cover;" id="avatarImage">
       </div>
       <div class="RightHeader" id="rightHeader">
-        <!%= image_tag "insert.png", :class => "RightHeaderImage", :id => "rightHeaderImage" %>
+        <%= image_tag "insert.png", :class => "RightHeaderImage", :id => "rightHeaderImage" %>
         <div class="Badge RightBadge" id="badge2">
           Banner Text Color
         </div>
       </div>
-     </div--><%= react_component "UserSignUp/UserHeader" %>
+    </div>
+    <!%= react_component "UserSignUp/UserHeader" %>
     <script src="https://unpkg.com/vanilla-picker@2"></script>
     <script>
         var rgbColor1 = "rgb(234,167,102)";
@@ -141,7 +141,7 @@
       </div>
     </div>
   </div>
-  <!--input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader" onchange=
+  <input hidden class="photo_upload" type="file" name="user[firstHeader]" id="firstHeader" onchange=
       "document.getElementById('leftHeaderImage').src = window.URL.createObjectURL(this.files[0]);
           oneTimeImageSelection('firstHeader');
           $('#leftHeaderImage').height = $('.Images').height;">
@@ -154,27 +154,13 @@
           oneTimeImageSelection('avatarUpload');
           $('#avatarImage').height = $('.images').height * .33;">
   <input style="visibility: hidden" type="text" id="user_bio" name="user[bio]" value="nullnull">
-<input hidden type="text" name="user[badgeColor]" id="user_badgeColor" value="rgb(234,167,102)">
-  <input hidden type="text" name="user[badgeTextColor]" id="user_badgeTextColor" value="rgb(0,0,0)"-->
+  <input hidden type="text" name="user[badgeColor]" id="user_badgeColor" value="rgb(234,167,102)">
+  <input hidden type="text" name="user[badgeTextColor]" id="user_badgeTextColor" value="rgb(0,0,0)">
 
 <% end %>
 
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABBVE90zE3SB_kb52KWFSS2Fqumy303do&libraries=places"></script>
-<style>
-  .iw_table_row {
-    height: 18px;
-  }
-
-  .iw_attribute_name {
-    font-weight: bold;
-    text-align: right;
-  }
-
-  .iw_table_icon {
-    text-align: right;
-  }
-</style>
 <script>
 
     function geocode() {
@@ -207,7 +193,7 @@
             if (event.keyCode == 13) {
                 event.preventDefault();
                 return false;
-            }else if(event.keyCode == 9){
+            } else if (event.keyCode == 9) {
                 window.scrollBy(0, 50);
             }
         });
@@ -370,11 +356,11 @@
         if (validateEmail(email)) {
             //console.log("valid");
         } else {
-           // console.log("non");
+            // console.log("non");
         }
     }
 
-   // var imagesProperties = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+    var imagesProperties = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 
     $(function () {
         var $username = $('#user_name');
@@ -384,7 +370,7 @@
         var $userPasswordConfirm = $('#user_password_confirmation');
         $username.bind('keyup', 'keydown', function (e) {
             if ($username.val().length > 30 || $username.val().length < 4) {
-            //    console.log('Invalid Name');
+                //    console.log('Invalid Name');
                 $username.css('background-color', '#FF5353');
             } else {
                 $username.css('background-color', 'white');
@@ -393,7 +379,7 @@
         });
         $userusername.bind('keyup', 'keydown', function (e) {
             if ($userusername.val().length > 30 || $userusername.val().length < 4) {
-              //  console.log('Invalid UserName');
+                //  console.log('Invalid UserName');
                 $userusername.css('background-color', '#FF5353');
             } else {
                 $userusername.css('background-color', 'white');
@@ -404,14 +390,14 @@
             if (validateEmail($useremail.val())) {
                 $useremail.css('background-color', 'white');
             } else {
-            //    console.log('Invalid email');
+                //    console.log('Invalid email');
                 $useremail.css('background-color', '#FF5353');
             }
             readyToSubmit();
         });
         $userPassword.bind('keyup', 'keydown', function (e) {
             if ($userPassword.val().length > 30 || $userPassword.val().length < 4) {
-            //    console.log('Invalid Password');
+                //    console.log('Invalid Password');
                 $userPassword.css('background-color', '#FF5353');
                 $userPasswordConfirm.css('background-color', '#FF5353');
             } else {
@@ -428,7 +414,7 @@
         });
         $userPasswordConfirm.bind('keyup', 'keydown', function (e) {
             if ($userPassword.val() != $userPasswordConfirm.val()) {
-              //  console.log('passwords are not the same');
+                //  console.log('passwords are not the same');
                 $userPassword.css('background-color', '#FF5353');
                 $userPasswordConfirm.css('background-color', '#FF5353');
             } else {
@@ -453,7 +439,7 @@
         //  $('#user_birthday').on('click', function () {
         //    $('#ui-datepicker-div').css('z-index', '100');
         //});
-        /*$(".Avatar").on("click", function () {
+        $(".Avatar").on("click", function () {
             $("#avatarUpload").trigger("click");
         });
         $("#leftHeaderImage").on("click", function () {
@@ -462,11 +448,12 @@
         $("#rightHeaderImage").on("click", function () {
             $("#secondHeader").trigger("click");
         });
-*//*
+
         $("#firstHeader").change(function () {
             var info;
             var firstHeaderPic = document.getElementById("leftHeaderImage");
-            var firstHeaderCrop = new Croppie(firstHeaderPic, {
+            $('#leftHeaderImage').croppie();
+            /* var first = new Croppie(firstHeaderPic, {
                 viewport: {
                     width: $('#main').width / 2,
                     height: $('.Images').height,
@@ -483,10 +470,10 @@
                         imagesProperties[i] = data.points[i];
                     }
                     imagesProperties[4] = String(data.zoom);
-                  //  console.log(imagesProperties);
+                    //  console.log(imagesProperties);
                 }
-            });
-        });*/
+            });*/
+        });
         $("#secondHeader").change(function () {
             var secondHeaderPic = document.getElementById("rightHeaderImage");
             var secondHeaderCrop = new Croppie(secondHeaderPic, {
@@ -505,13 +492,12 @@
                         imagesProperties[i] = data.points[i - 5];
                     }
                     imagesProperties[9] = String(data.zoom);
-                   // console.log(imagesProperties);
+                    // console.log(imagesProperties);
                 }
             });
         });
         $("#avatarUpload").change(function () {
-            var avatarPic = document.getElementById("avatarImage");
-            var avatarCrop = new Croppie(avatarPic, {
+            var avatarCrop = new Croppie(document.getElementById("avatarImage"), {
                 viewport: {
                     width: $('#avatar').width,
                     height: $('#avatar').height,
@@ -541,32 +527,32 @@
             if ($('#user_username').css('background-color') != 'rgb(255, 83, 83)' && $('#user_username').val().length > 3) {
                 //console.log("username");
                 if ($('#user_email').css('background-color') != 'rgb(255, 83, 83)' && $('#user_email').val().length > 3) {
-                 //   console.log("email");
+                    //   console.log("email");
                     if ($('#user_password').css('background-color') != 'rgb(255, 83, 83)' && $('#user_password').val().length > 3) {
-                      //  console.log("passwor");
+                        //  console.log("passwor");
                         if ($('#user_password_confirmation').css('background-color') != 'rgb(255, 83, 83)' && $('#user_password_confirmation').val().length > 3) {
-                      //      console.log("con password");
+                            //      console.log("con password");
                             if ($('#user_birthday').css('background-color') != 'rgb(255, 83, 83)') {
-                           //     console.log("birth");
+                                //     console.log("birth");
                                 if ($('#user_hometown').css('background-color') != 'rgb(255, 83, 83)' && $('#user_hometown').val().length > 3) {
-                            //        console.log("home");
+                                    //        console.log("home");
                                     if ($('#user_location').css('background-color') != 'rgb(255, 83, 83)' && $('#user_location').val().length > 3) {
-                               //         console.log("lcoa");
+                                        //         console.log("lcoa");
                                         if (document.getElementById("user_Terms_of_Agreement").checked) {
                                             $('#submit').css('display', 'block');
                                             //var a = document.querySelector('#user_imagesproperties');
                                             //a.attributes.value = imagesProperties.toString();
-                                           // console.log(imagesProperties.toString());
+                                            // console.log(imagesProperties.toString());
                                             $('#user_bio').val(imagesProperties.toString());
                                             geocode();
                                             $("#user_badgeColor").val(rgbColor1);
                                             $("#user_badgeTextColor").val(rgbColor2);
-                                      //      console.log("user_imagesproperties " + $('#user_imagesproperties').val());
+                                            //      console.log("user_imagesproperties " + $('#user_imagesproperties').val());
                                             //console.log("user_imagesproperties2 " + a.attributes.value);
-                                  //          console.log("user_badgeColor" + $("#user_badgeColor").val());
-                                   //         console.log("user_badgeTextColor" + $("#user_badgeTextColor").val());
-                                        //    console.log("user_location " + $("#user_location").val());
-                                        //    console.log("user_hometown " + $("#user_hometown").val());
+                                            //          console.log("user_badgeColor" + $("#user_badgeColor").val());
+                                            //         console.log("user_badgeTextColor" + $("#user_badgeTextColor").val());
+                                            //    console.log("user_location " + $("#user_location").val());
+                                            //    console.log("user_hometown " + $("#user_hometown").val());
                                             return;
                                         }
                                     }

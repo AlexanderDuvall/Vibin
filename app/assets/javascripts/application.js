@@ -16,6 +16,7 @@
 // require cable
 //= require jquery
 //= require jquery-ui/widget
+//= require rails-ujs
 //= require jquery-ui/widgets/sortable
 //= require turbolinks
 //= require popper
@@ -23,6 +24,10 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //= require react
+//= require wavesurfer.js/dist/wavesurfer.js
+//= require wavesurfer.js/dist/plugin/wavesurfer.regions.js
+//= require croppie/croppie.js
+
 let Server_Address = "172.25.61.104"; // broadcasting ipv4 remote host address
 let isShuffled = false;
 var counter = 0;
@@ -33,11 +38,11 @@ var SongUsername = null;
 var songQueue = new Array();
 var listening = false;
 
-
 function addtoPL(song_id, playlist_id, dom_id) {
     Rails.ajax({
         url: "/add_to_playlist?song_id=" + song_id + "&playlist_id=" + playlist_id,
         type: "POST",
+        dataType: "html",
         processData: false,
         success: function () {
             console.log("success bitc");
@@ -54,7 +59,7 @@ function ajaxToPage(page) {
     $.ajax({
         type: 'GET',
         url: '/' + page,
-        data: {},
+        dataType: "html",
         success: function (result) {
             document.getElementById('main').innerHTML = result;
             ReactRailsUJS.mountComponents();
@@ -139,6 +144,7 @@ function shuffleSongs() {
 
 function buildPlayer(song, username, title, ...args) {
     //build song player
+    console.log("build song player")
     let buildSong = function () {
         isLikedSong();
         audio.src = "";
