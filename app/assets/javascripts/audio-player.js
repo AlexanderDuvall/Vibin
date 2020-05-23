@@ -2,38 +2,59 @@ let isPlayList = false;
 let mouseDownSeek = false;
 let mouseDownVolume = false;
 let isMute = false;
-var broadcasting = false;
+let broadcasting = false;
 let lastTime = 0;
-var playButton = null;
-var update = false;
-var currentBroadcaster = null;
+let playButton = null;
+let update = false;
+let currentBroadcaster = null;
 let shuffle = null;
 let backward = null;
 let skipForward = null;
 let repeat = false;
-window.addEventListener("DOMContentLoaded", function (e) {
+let pastAudio;
+let seekBar;
+let muteButton;
+let muteButtonIcon;
+let playButtonIcon;
+let fillBar;
+let volume;
+let volume_fill;
+let modal;
+let addPlaylistModal;
+let renderPlaylist;
+let renderAddPlaylist;
+let broadcast;
+let optionslistbutton;
+let repeatButton;
+let likeButton;
+
+function setUp() {
     console.log("I loaded correctly n_n")
-    let pastAudio = 1;
-    let seekBar = document.querySelector('.seek-bar');
-    let muteButton = document.querySelector(".volume");
-    let muteButtonIcon = muteButton.querySelector(".ion-volume-high");
+    pastAudio = 1;
+    seekBar = document.querySelector('.seek-bar');
+    muteButton = document.querySelector(".volume");
+    muteButtonIcon = muteButton.querySelector(".ion-volume-high");
     console.log("I loaded correctly n_n")
     playButton = document.querySelector('#music_bar_play_button');
-    let playButtonIcon = playButton.querySelector(".ion-play");
-    let fillBar = seekBar.querySelector('.fill');
+    playButtonIcon = playButton.querySelector(".ion-play");
+    fillBar = seekBar.querySelector('.fill');
     skipForward = document.querySelector('.skip_forward');
     shuffle = document.querySelector('.shuffle');
     backward = document.querySelector(".back");
-    let volume = document.querySelector('.volume_bar');
-    let volume_fill = volume.querySelector(".volume_fill");
-    let modal = document.getElementById("audio-modal");
-    let addPlaylistModal = document.getElementById("add-playlist-modal");
-    let renderPlaylist = document.getElementById("renderPlaylist");
-    let renderAddPlaylist = document.getElementById("renderAddPlaylist");
-    let broadcast = document.getElementById("broadcast_text");
-    let optionslistbutton = document.querySelector(".options_list");
-    let repeatButton = document.querySelector(".repeat");
-    let likeButton = document.querySelector("#like_button");
+    volume = document.querySelector('.volume_bar');
+    volume_fill = volume.querySelector(".volume_fill");
+    modal = document.getElementById("audio-modal");
+    addPlaylistModal = document.getElementById("add-playlist-modal");
+    renderPlaylist = document.getElementById("renderPlaylist");
+    renderAddPlaylist = document.getElementById("renderAddPlaylist");
+    broadcast = document.getElementById("broadcast_text");
+    optionslistbutton = document.querySelector(".options_list");
+    repeatButton = document.querySelector(".repeat");
+    likeButton = document.querySelector("#like_button");
+}
+
+window.addEventListener("DOMContentLoaded", function (e) {
+    setUp();
     $('.exploreTopStreamerBox').hover(function () {
         $("#Top_Streamer").css("filter", "blur(2px)");
     }, function () {

@@ -616,6 +616,7 @@ function resetCurrentSong() {
 }
 
 function SelectedSong(song, username, title, singleSong, ...args) {
+    setUp();
     if (singleSong) {
         console.log("SINGLE SONG");
         set_current_song(args[0]);
