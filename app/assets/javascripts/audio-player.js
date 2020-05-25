@@ -227,18 +227,16 @@ function setUpWindowFunctions(windows) {
 }
 
 /**
- * @deprecated no longer used
- */
-window.addEventListener("DOMContentLoaded", function (e) {
+ @deprecated no longer used
+ window.addEventListener("DOMContentLoaded", function (e) {
 
-    /**  $('.exploreTopStreamerBox').hover(function () {
+    $('.exploreTopStreamerBox').hover(function () {
         $("#Top_Streamer").css("filter", "blur(2px)");
     }, function () {
         $("#Top_Streamer").css("filter", "blur(0px)");
-    });*/
+    });
 });
-
-
+*/
 function clamp(min, val, max) {
     return Math.min(Math.max(min, val), max);
 }

@@ -1,4 +1,5 @@
 require "will_paginate/array"
+
 class HomeController < ApplicationController
   before_action :logged_in?, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user, only: [:edit, :update]
@@ -7,8 +8,9 @@ class HomeController < ApplicationController
 
   # back-end code for pages/home
   def home
-    @TopChart = Song.where("user_id > 0")
     @user = current_user
+    UserMailer.tester(@user).deliver_now if logged_in?
+    @TopChart = Song.where("user_id > 0")
     @recommendedSongs = Song.all.where("genre = ?", "NULL")
     if logged_in?
       # array with current_user id
@@ -26,7 +28,7 @@ class HomeController < ApplicationController
       @broadcasters = Broadcaster.all.where("user_id IN (?) AND is_playing IN (?)", @asss, 1)
       @albums = Album.all.where("user_id IN (?)", @asss)
       @combine = (@usersongpost + @posts + @broadcasters + @albums)
-      @combine = @combine.sort_by {|f| f.created_at}.reverse.paginate(page: params[:page], per_page: 10)
+      @combine = @combine.sort_by { |f| f.created_at }.reverse.paginate(page: params[:page], per_page: 10)
       @recommendedUsers = User.last(5) # FIXME get mutual friends.
       # @songs = Array.new
       #following = Array.new

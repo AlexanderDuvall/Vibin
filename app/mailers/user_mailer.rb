@@ -7,7 +7,7 @@ class UserMailer < ActionMailer::Base
   #
   def account_activation(user)
     @user = user
-    mail(:to => @user.email, :subject => "Registration Confirmation")
+    mail(:to => "#{user.name} <#{user.email}>", :subject => "Registration Confirmation")
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -18,5 +18,10 @@ class UserMailer < ActionMailer::Base
   def password_reset(user)
     @user = user
     mail to: user.email, subject: "Password Change Requested"
+  end
+
+  def tester(user)
+    @user = user
+    mail(:to => "#{user.name} <#{user.email}>", :subject => "Registration Confirmation")
   end
 end
