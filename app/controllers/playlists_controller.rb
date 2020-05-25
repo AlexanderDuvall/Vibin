@@ -72,7 +72,7 @@ class PlaylistsController < ApplicationController
           :cover => url_for(@song.cover_image),
           :genre => @song.genre,
           :subgenre => @song.subGenre,
-          :avatar => url_for(@song.user.avatar)
+          :avatar => User.getAvatar(@song.user)
       }
     end
   end

@@ -17,7 +17,7 @@
   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   <%= stylesheet_link_tag 'application.css', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application.js', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'audio-player.js', 'data-turbolinks-track': 'reload' %>
+  <!%= javascript_include_tag 'audio-player.js', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application' %>
 </head>
 <body>
@@ -27,6 +27,25 @@
 <div class="main" id="main">
   <%= yield %>
 
+</div>
+<div class="modal show" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 <div class=Modal id=imageExpander>
   <!-- Dont Delete!! Need for Images!-->
@@ -59,15 +78,14 @@
 
     $('#cancelPostModal').click(function () {
         console.log("d");
+        let modal = document.getElementById('modal');
         modal = document.querySelector("#modal");
         modal.style.display = "none";
     });
 
-    var modal = document.getElementById('modal');
     $(window).click(function (event) {
         if (event.target.id == 'modal') {
             $("#modal").css('display', 'none');
         }
     });
-
-</script>
+ </script>

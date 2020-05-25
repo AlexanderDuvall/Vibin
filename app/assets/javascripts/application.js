@@ -23,7 +23,6 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require_tree .
-//= require react
 //= require wavesurfer.js/dist/wavesurfer.js
 //= require wavesurfer.js/dist/plugin/wavesurfer.regions.js
 //= require croppie/croppie.js
@@ -73,6 +72,7 @@ function ajaxToPage(page) {
 
 function wave() {
     console.log("what it do")
+    var wavesurfer;
     wavesurfer = WaveSurfer.create({
         container: '#waver',
         waveColor: '#A8DBA8',
@@ -144,7 +144,8 @@ function shuffleSongs() {
 
 function buildPlayer(song, username, title, ...args) {
     //build song player
-    console.log("build song player")
+    console.log("build song player");
+    var lastTime;
     let buildSong = function () {
         isLikedSong();
         audio.src = "";
@@ -169,6 +170,7 @@ function buildPlayer(song, username, title, ...args) {
         let duration = args[0];
         console.log("duration" + duration);
         audio.currentTime = duration;
+        var lastTime;
         lastTime = duration;
     };
     ///for live streaming
@@ -309,6 +311,7 @@ function listenerCallback(results) {
 }
 
 function needsUpdate(...args) {
+    var update;
     if (args.length == 1 && (args[0] == false || args[0] == true))
         update = args[0];
     return update;
@@ -417,7 +420,7 @@ function nextSong(...args) {
 
 // if the song isn't liked, light the fire (like it)
 function setUpLikedSong() {
-    likeButton = document.querySelector(".like_button");
+    var likeButton = document.querySelector(".like_button");
     likeButton.className = "like_button_liked";
     likeButton.onclick = function () {
         Rails.ajax({
@@ -436,7 +439,7 @@ function setUpLikedSong() {
 /// if the song is liked, put the fire out(unlike it)
 function setUpUnlikedSong() {
     console.log("setting up unliked song");
-    likeButton = document.querySelector("#like_button");
+    var likeButton = document.querySelector("#like_button");
     likeButton.className = "like_button";
     likeButton.onclick = function () {
         console.log("nagato");
@@ -455,7 +458,7 @@ function setUpUnlikedSong() {
 }
 
 function isLikedSong() {
-    likeButton = document.querySelector("#like_button");
+    var likeButton = document.querySelector("#like_button");
     likeButton.className = "like_button";
     Rails.ajax({
         type: "GET",
@@ -616,7 +619,11 @@ function resetCurrentSong() {
 }
 
 function SelectedSong(song, username, title, singleSong, ...args) {
-    setUp();
+    if (pastAudio == null) {
+        setUp();
+        setUpFunctions();
+        setUpWindowFunctions(window);
+    }
     if (singleSong) {
         console.log("SINGLE SONG");
         set_current_song(args[0]);

@@ -1,7 +1,8 @@
 import React from 'react'
-import { connect } from "react-redux"
+import {connect} from "react-redux"
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+//import {setUp, setUpFunctions, setUpWindowFunctions} from "../../assets/javascripts/audio-player";
 
 class Login extends React.Component {
     constructor(props) {
@@ -23,20 +24,23 @@ class Login extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-       // const csrfToken = document.querySelector('[name=csrf-token]').content;
+        // const csrfToken = document.querySelector('[name=csrf-token]').content;
         //axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
         const {email, password} = this.state;
-        axios.post('http://localhost:3000/login',{
+        axios.post('http://localhost:3000/login', {
             user: {
                 email: email,
                 password: password
             }
-        },{withCredentials: true})
+        }, {withCredentials: true})
             .then(response => {
                 if (response.data.logged_in) {
                     this.props.handleLogin(response.data)
                     this.redirect()
                     console.log("redirecting");
+                   //setUp();
+                   //setUpFunctions();
+                   //setUpWindowFunctions(window);
                 } else {
                     this.setState({
                         errors: response.data.errors

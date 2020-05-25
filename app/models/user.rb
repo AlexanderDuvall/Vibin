@@ -81,6 +81,14 @@ class User < ApplicationRecord
     __elasticsearch__.client.perform_request('GET', "#{index_name}/_suggest", {}, search_definition).body['name-suggest'].first['options']
   end
 
+  def User.getAvatar(user)
+    if user.avatar.nil? || !user.avatar.attached?
+      return "http://localhost:3000/default-avatar.jpg"
+    else
+      return url_for(user.avatar)
+    end
+  end
+
   def User.get_broadcasters
     conn = User.openConn
     conn.puts "Action:get_users"

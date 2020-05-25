@@ -8,6 +8,7 @@
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
         "bootstrap": "^4.5.0",
         "croppie": "^2.6.4",
+        "js-datepicker": "^5.14.0",
         "prop-types": "^15.7.2",
         "rails-erb-loader": "^5.5.2",
         "react": "^16.13.1",

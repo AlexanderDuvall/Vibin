@@ -44,7 +44,6 @@ function setUp() {
     volume = document.querySelector('.volume_bar');
     volume_fill = volume.querySelector(".volume_fill");
     modal = document.getElementById("audio-modal");
-    addPlaylistModal = document.getElementById("add-playlist-modal");
     renderPlaylist = document.getElementById("renderPlaylist");
     renderAddPlaylist = document.getElementById("renderAddPlaylist");
     broadcast = document.getElementById("broadcast_text");
@@ -53,13 +52,32 @@ function setUp() {
     likeButton = document.querySelector("#like_button");
 }
 
-window.addEventListener("DOMContentLoaded", function (e) {
-    setUp();
-    $('.exploreTopStreamerBox').hover(function () {
-        $("#Top_Streamer").css("filter", "blur(2px)");
-    }, function () {
-        $("#Top_Streamer").css("filter", "blur(0px)");
-    });
+function renderPlaylists() {
+    if (pastAudio == null) {
+        setUp();
+        setUpFunctions();
+        setUpWindowFunctions(window)
+    }
+    addPlaylistModal = document.getElementById("add-playlist-modal");
+    let song = get_current_song();
+    //loadPlaylistSongs();
+    if (isPlayList) {
+        if (isShuffled) {
+            $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=true&data=" + songQueue + "&playlist=" + get_current_playlist());
+            console.log("shuffled showing");
+        } else {
+            $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=false&data=" + songQueue + "&playlist=" + get_current_playlist());
+            console.log("not shuffled showing");
+        }
+    } else {
+        $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=0&playlist=0&currentPlaylist=0");
+        console.log("no playlist");
+    }
+    addPlaylistModal.style.display = "block";
+}
+
+function setUpFunctions() {
+    console.log("setting up functions")
     repeatButton.onclick = function () {
         if (repeat) {
             repeat = false;
@@ -78,36 +96,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
             nextSong();
         }
     });
-    renderAddPlaylist.onclick = function () {
-
-        let song = get_current_song();
-        //loadPlaylistSongs();
-        if (isPlayList) {
-            if (isShuffled) {
-                $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=true&data=" + songQueue + "&playlist=" + get_current_playlist());
-                console.log("shuffled showing");
-            } else {
-                $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=false&data=" + songQueue + "&playlist=" + get_current_playlist());
-                console.log("not shuffled showing");
-            }
-        } else {
-            $('.modal-content-add-playlist').load("/exists_in_playlist?song_id=" + song + "&shuffle=0&playlist=0&currentPlaylist=0");
-            console.log("no playlist");
-        }
-
-        addPlaylistModal.style.display = "block";
-
-    };
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            console.log("ffacs");
-        } else if (event.target == addPlaylistModal) {
-            addPlaylistModal.style.display = "none";
-            console.log("sayo");
-        }
-    };
-
     backward.addEventListener('click', function () {
         if (audio.currentTime < 5 && isPlayList) {
             backSong();
@@ -128,17 +116,14 @@ window.addEventListener("DOMContentLoaded", function (e) {
             isMute = true;
         }
     });
-
     audio.addEventListener('error', function (e) {
         console.log(e);
     });
-
     audio.addEventListener('play', function () {
         playButtonIcon.className = 'ion-pause';
         volume_fill.style.width = 100 + '%';
         audio.volume = 1;
     });
-
     audio.addEventListener('pause', function () {
         playButtonIcon.className = 'ion-play';
     });
@@ -176,24 +161,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
                 }, currentBroadcaster);
         }
     });
-
-    function clamp(min, val, max) {
-        return Math.min(Math.max(min, val), max);
-    }
-
-    function getP(e) {
-        let p;
-        if (mouseDownSeek) {
-            p = (e.clientX - seekBar.getBoundingClientRect().left) / seekBar.clientWidth;
-            p = clamp(0, p, 1);
-        } else {
-            p = (e.clientX - volume.getBoundingClientRect().left) / volume.clientWidth;
-            p = clamp(0, p, 1);
-        }
-        return p;
-    }
-
-
     volume.addEventListener('mousedown', function (e) {
         mouseDownVolume = true;
         let p = getP(e);
@@ -202,13 +169,24 @@ window.addEventListener("DOMContentLoaded", function (e) {
         pastAudio = audio.volume;
         //changing volume
     });
-
     seekBar.addEventListener('mousedown', function (e) {
         mouseDownSeek = true;
         let p = getP(e);
         fillBar.style.width = p * 100 + '%';
     });
+}
 
+function setUpWindowFunctions(windows) {
+    console.log("setting up windows")
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            console.log("ffacs");
+        } else if (event.target == addPlaylistModal) {
+            addPlaylistModal.style.display = "none";
+            console.log("sayo");
+        }
+    };
     window.addEventListener('mousemove', function (e) {
         if (mouseDownVolume) {
             let p = getP(e);
@@ -222,7 +200,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
         }
 
     });
-
     window.addEventListener('mouseup', function (e) {
         if (mouseDownSeek) {
             let p = getP(e);
@@ -246,8 +223,37 @@ window.addEventListener("DOMContentLoaded", function (e) {
                 console.log(window.location.href);
                 console.log("------------Mouse Up -------------");*/
     });
+
+}
+
+/**
+ * @deprecated no longer used
+ */
+window.addEventListener("DOMContentLoaded", function (e) {
+
+    /**  $('.exploreTopStreamerBox').hover(function () {
+        $("#Top_Streamer").css("filter", "blur(2px)");
+    }, function () {
+        $("#Top_Streamer").css("filter", "blur(0px)");
+    });*/
 });
 
+
+function clamp(min, val, max) {
+    return Math.min(Math.max(min, val), max);
+}
+
+function getP(e) {
+    let p;
+    if (mouseDownSeek) {
+        p = (e.clientX - seekBar.getBoundingClientRect().left) / seekBar.clientWidth;
+        p = clamp(0, p, 1);
+    } else {
+        p = (e.clientX - volume.getBoundingClientRect().left) / volume.clientWidth;
+        p = clamp(0, p, 1);
+    }
+    return p;
+}
 
 function incrementPlays(id, artist_id) {
     console.log(id + "in incrementPlays");

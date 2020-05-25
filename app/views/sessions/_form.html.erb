@@ -10,18 +10,5 @@
       <span>Remember me on this computer</span>
     <% end %>
   <% end %>
-  <p onclick="dooo()"> New User? </p>
+  <p onclick="ajaxToPage('signup', '')"> New User? </p>
 </div>
-<script>
-    function dooo(){
-        $( "#main" ).load( "signup");
-        window.history.pushState("object or string", "Sign up", "/signup");
-        // var script = document.createElement('script');
-        // script.onload = function () {
-        //console.log("Lmaoo");
-        //rails};
-        //script.src = '/users.js';
-        console.log("dooo function");
-        //  document.head.appendChild(script); //or something of the likes
-    }
-</script>
