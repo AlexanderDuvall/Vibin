@@ -27,10 +27,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14d1d3d5-2720-4fb4-8789-5c02e60b908d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/images/final-logo-example.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/user_mailer/welcome.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/user_mailer/welcome.text.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/user_mailer/account_activation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_mailer/account_activation.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_mailer/tester.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_mailer/tester.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/user_mailer/password_reset.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_mailer/password_reset.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -936,14 +937,7 @@
       <workItem from="1590428530416" duration="7324000" />
       <workItem from="1590435885650" duration="426000" />
       <workItem from="1590512278705" duration="13000" />
-      <workItem from="1590512294123" duration="11518000" />
-    </task>
-    <task id="LOCAL-00003" summary="Order Functionality not synced with playlists">
-      <created>1560383364914</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1560383364914</updated>
+      <workItem from="1590512294123" duration="12195000" />
     </task>
     <task id="LOCAL-00004" summary="Able to push data to the Broadcasting Server. &#10;Able to pull data from the dedicated server for Broadcaster Id.">
       <created>1561668395964</created>
@@ -1281,7 +1275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590435436529</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Created format for email confirmation.">
+      <created>1590524356310</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1590524356311</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1327,7 +1328,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Can add to playlist and create a new playlist." />
     <MESSAGE value="Able to remove and Add songs from to Playlist. Updates function on image change." />
     <MESSAGE value="Pop up options for song playlist. No functions" />
     <MESSAGE value="Play Bar will reformat with window size" />
@@ -1352,7 +1352,8 @@
     <MESSAGE value="Able to listen to songs without error when loggin in." />
     <MESSAGE value="Fix bugs pertaining to the music bar. Seeking bars and  playlist modal work on log in. No longer fatal error when setting up functions." />
     <MESSAGE value="Email Function works again. Will send an email on login for testing purposes. Format bing created." />
-    <option name="LAST_COMMIT_MESSAGE" value="Email Function works again. Will send an email on login for testing purposes. Format bing created." />
+    <MESSAGE value="Created format for email confirmation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created format for email confirmation." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1032" y="178" key="#Notifications" timestamp="1587080506466">
@@ -1375,11 +1376,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1120" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587843035573" />
-    <state x="-1080" y="-414" width="873" height="1457" key="CommitChangelistDialog2" timestamp="1590435435812">
-      <screen x="-1080" y="-696" width="1080" height="1880" />
+    <state x="0" y="156" width="873" height="1457" key="CommitChangelistDialog2" timestamp="1590524355551">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1080" y="-708" key="CommitChangelistDialog2/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589048900526" />
     <state x="-1039" y="-476" width="873" height="1457" key="CommitChangelistDialog2/-1080.-758.1080.1880/0.0.1920.1040@-1080.-758.1080.1880" timestamp="1590262793146" />
+    <state x="0" y="156" key="CommitChangelistDialog2/-1080.-758.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1590524355551" />
     <state x="-1080" y="-414" key="CommitChangelistDialog2/-2104.1224.2880.1560/-1080.-696.1080.1880/0.0.1920.1040@-1080.-696.1080.1880" timestamp="1590435435812" />
     <state x="1047" y="2" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588220162235" />
     <state x="631" y="156" width="993" height="806" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590095876055" />
@@ -1504,11 +1506,12 @@
     <state x="-916" y="-380" width="916" height="1280" key="SettingsEditor/-1080.-758.1080.1880/0.0.1920.1040@-1080.-758.1080.1880" timestamp="1590172129260" />
     <state x="922" y="209" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588208334210" />
     <state x="922" y="209" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1590160198623" />
-    <state x="-816" y="-490" key="Vcs.Push.Dialog.v2" timestamp="1590435506859">
-      <screen x="-1080" y="-696" width="1080" height="1880" />
+    <state x="469" y="114" key="Vcs.Push.Dialog.v2" timestamp="1590524240595">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-816" y="-264" key="Vcs.Push.Dialog.v2/-1080.-712.1080.1880/0.0.1920.1040@-1080.-712.1080.1880" timestamp="1589048946392" />
     <state x="-816" y="-552" key="Vcs.Push.Dialog.v2/-1080.-758.1080.1880/0.0.1920.1040@-1080.-758.1080.1880" timestamp="1590261835872" />
+    <state x="469" y="114" key="Vcs.Push.Dialog.v2/-1080.-758.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1590524240595" />
     <state x="-816" y="-490" key="Vcs.Push.Dialog.v2/-2104.1224.2880.1560/-1080.-696.1080.1880/0.0.1920.1040@-1080.-696.1080.1880" timestamp="1590435506859" />
     <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588220177375" />
     <state x="491" y="114" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590095880645" />
