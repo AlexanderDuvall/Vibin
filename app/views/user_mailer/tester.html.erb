@@ -1,7 +1,66 @@
-<h1>Welcome to Vibin Music, <%= @user.name %>!</h1>
-<h1>Enjoy your 3 three month subscription</h1>
-<p>Thank you for choosing Vibin Music, your hot spot for not just music! </p>
-<p>Vibin Music is a place for you to find new music and other people that like the same music.</p>
-<p>Not only that, we provide you with nearby music events! If you're an artist, we can also get you're event going.</p>
-<p></p>
-<h2>Supposed link</h2>
+<style>
+
+
+  .box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 320px;
+  }
+
+
+  .font {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  .confirm_button {
+    width: 64%;
+    border-radius: 5px;
+    border: none;
+    height: 42px;
+    font-size: 22px;
+    background: #eb9849;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    -ms-appearance: button;
+  }
+
+  .confirm_button:hover {
+    background: #ffa54f;
+  }
+</style>
+<div class="" style="margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 420px; border-radius: 17px;">
+  <img src="https://logosbynick.com/wp-content/uploads/2018/03/final-logo-example.png"/>
+  <h1 style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;">Almost there!</h1>
+  <p style="font-size:19px;font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;">Press the button below to confirm your
+    email and start streaming on VibinMusic.</p>
+  <%= link_to "Activate", "#", {:style => "min-width: 196px;
+    border-top: 13px solid;
+    border-top-color: #eb9849;;
+    border-bottom: 13px solid;
+    border-bottom-color: #eb9849;;
+    border-right: 24px solid;
+    border-right-color:#eb9849;
+    border-left: 24px solid;
+    border-left-color: #eb9849;
+    border-color:#eb9849;
+    border-radius: 4px;
+    background-color: #eb9849;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 18px;
+    word-break: break-word;
+    display: inline-block;
+    text-align: center;
+    font-weight: 900;
+    text-decoration: none !important;"} %>
+
+  <p style="font-size:19px;font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;">If you didn't sign up for this, you
+    can safely ignore this email.
+  </p>
+  <p style="font-size:19px;font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;">If this was sent from the dev server,
+    you can ignore this too. </p>
+</div>

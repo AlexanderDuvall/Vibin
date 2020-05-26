@@ -1,3 +1,67 @@
-<h1>Welcome to Vibin Music, <%= @user.name %>!</h1>
- <p>To confirm your registration, click the URL below.</p>
-<%= link_to "Activate", confirm_email_url(@user.confirm_token, host: "localhost:3000") %>
+<style>
+
+
+  .box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 320px;
+  }
+
+
+  .font {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  .confirm_button {
+    width: 64%;
+    border-radius: 5px;
+    border: none;
+    height: 42px;
+    font-size: 22px;
+    background: #eb9849;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    -ms-appearance: button;
+  }
+
+  .confirm_button:hover {
+    background: #ffa54f;
+  }
+</style>
+<div class="" style="margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 320px; border-radius: 17px;">
+  <img src="https://logosbynick.com/wp-content/uploads/2018/03/final-logo-example.png"/>
+  <h1 style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;">Almost there!</h1>
+  <p style="font-size:19px;font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;">Press the button below
+    to confirm your
+    email and start streaming on VibinMusic.</p>
+  <%= link_to "Activate", confirm_email_url(@user.confirm_token, host: "localhost:3000"), style = {:style => "min-width: 196px;
+    border-top: 13px solid;
+    border-top-color: #eb9849;;
+    border-bottom: 13px solid;
+    border-bottom-color: #eb9849;;
+    border-right: 24px solid;
+    border-right-color:#eb9849;
+    border-left: 24px solid;
+    border-left-color: #eb9849;
+    border-color:#eb9849;
+    border-radius: 4px;
+    background-color: #eb9849;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 18px;
+    word-break: break-word;
+    display: inline-block;
+    text-align: center;
+    font-weight: 900;
+    text-decoration: none !important;"} %>
+
+  <p style="font-size:19px;font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;">If you didn't sign up
+    for this, you
+    can safely ignore this email.
+    <this class=""></this>
+  </p>
+</div>
